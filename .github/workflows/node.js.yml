@@ -1,7 +1,8 @@
 name: Build and Deploy
 on: 
-  repository_dispatch:
-    types: [update]
+ repository_dispatch:
+ push:
+ 
 env:
     folder: src
     token: ${{ secrets.t }}
