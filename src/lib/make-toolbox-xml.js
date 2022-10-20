@@ -702,6 +702,18 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
+        <block type="operator_advlog">
+            <value name="NUM1">
+                <shadow type="math_number">
+                    <field name="NUM1"/>
+                </shadow>
+            </value>
+            <value name="NUM2">
+                <shadow type="math_number">
+                    <field name="NUM2"/>
+                </shadow>
+            </value>
+        </block>
         ${categorySeparator}
     </category>
     `;
