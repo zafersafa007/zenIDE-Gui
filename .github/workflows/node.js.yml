@@ -1,28 +1,15 @@
-name: Build and Deploy
-env:
-    folder: src
-    token: ${{ secrets.t }}
+name: Build & Deploy to Github Pages
+
 on:
-  workflow_dispatch:
   push:
-  repository_dispatch:
-permissions:
-  contents: write
+    branches: [master]
+
+# Don't forget to set up the github pages to point to the `gh-pages` branch!
+
 jobs:
-  build-and-deploy:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+  node-to-gh:
     runs-on: ubuntu-latest
+    name: Build & Deploy to Github Pages
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
-        run: |
-          npm install --package-lock-only --force
-          npm ci --force
-          npm run build --force
-
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: build # The folder the action should deploy.
+      - id: node-to-gh
+        uses: fdelmazo/node-to-gh-action@v1
