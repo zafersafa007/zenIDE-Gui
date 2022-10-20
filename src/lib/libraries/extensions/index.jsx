@@ -50,6 +50,8 @@ import twIcon from './tw/tw.svg';
 
 import customExtensionIcon from './custom/custom.svg';
 
+import filesExtensionIcon from './penguinmod/extensions/files.png';
+
 export default [
     {
         name: (
@@ -347,16 +349,16 @@ export default [
             <FormattedMessage
                 defaultMessage="File Blocks"
                 description="Name of Files extension"
-                id="jg_files.jg_filesExtension.name"
+                id="jgFiles.jgFilesExtension.name"
             />
         ),
-        extensionId: 'jg_files',
-        iconURL: twIcon,
+        extensionId: 'jgFiles',
+        iconURL: filesExtensionIcon,
         description: (
             <FormattedMessage
                 defaultMessage="Blocks for reading and creating files."
                 description="Description of Files extension"
-                id="jg_files.jg_filesExtension.description"
+                id="jgFiles.jgFilesExtension.description"
             />
         ),
         featured: true,
