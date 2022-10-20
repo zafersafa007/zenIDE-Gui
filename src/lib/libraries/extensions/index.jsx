@@ -173,6 +173,46 @@ export default [
         featured: true
     },
     {
+        name: (
+            <FormattedMessage
+                defaultMessage="File Blocks"
+                description="Name of Files extension"
+                id="jgFiles.jgFilesExtension.name"
+            />
+        ),
+        extensionId: 'jgFiles',
+        iconURL: filesExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Blocks for reading and creating files."
+                description="Description of Files extension"
+                id="jgFiles.jgFilesExtension.description"
+            />
+        ),
+        featured: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="TurboWarp Blocks"
+                description="Name of TW extension"
+                id="tw.twExtension.name"
+            />
+        ),
+        extensionId: 'tw',
+        iconURL: twIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Weird new blocks. Not compatible with Scratch."
+                description="Description of TW extension"
+                id="tw.twExtension.description"
+            />
+        ),
+        featured: true,
+        incompatibleWithScratch: true
+    },
+    {
         name: 'micro:bit',
         extensionId: 'microbit',
         collaborator: 'micro:bit',
@@ -323,46 +363,6 @@ export default [
             />
         ),
         helpLink: 'https://scratch.mit.edu/vernier'
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="TurboWarp Blocks"
-                description="Name of TW extension"
-                id="tw.twExtension.name"
-            />
-        ),
-        extensionId: 'tw',
-        iconURL: twIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Weird new blocks. Not compatible with Scratch."
-                description="Description of TW extension"
-                id="tw.twExtension.description"
-            />
-        ),
-        featured: true,
-        incompatibleWithScratch: true
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="File Blocks"
-                description="Name of Files extension"
-                id="jgFiles.jgFilesExtension.name"
-            />
-        ),
-        extensionId: 'jgFiles',
-        iconURL: filesExtensionIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Blocks for reading and creating files."
-                description="Description of Files extension"
-                id="jgFiles.jgFilesExtension.description"
-            />
-        ),
-        featured: true,
-        incompatibleWithScratch: true
     },
     {
         name: (
