@@ -1,5 +1,5 @@
 import React from 'react';
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import musicIconURL from './music/music.png';
 import musicInsetIconURL from './music/music-small.svg';
@@ -337,6 +337,26 @@ export default [
                 defaultMessage="Weird new blocks. Not compatible with Scratch."
                 description="Description of TW extension"
                 id="tw.twExtension.description"
+            />
+        ),
+        featured: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="File Blocks"
+                description="Name of Files extension"
+                id="jg_files.jg_filesExtension.name"
+            />
+        ),
+        extensionId: 'jg_files',
+        iconURL: twIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Blocks for reading and creating files."
+                description="Description of Files extension"
+                id="jg_files.jg_filesExtension.description"
             />
         ),
         featured: true,
