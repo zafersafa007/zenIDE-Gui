@@ -14,6 +14,6 @@ jobs:
     steps:
       - id: node-to-gh
         run: |
-          - npm list gh-pages || npm i -g gh-pages
-          - npm ci
-          - gh-pages -d src -t ${{ secrets.t }}
+          npm list gh-pages || npm i -g gh-pages
+          npm ci
+          gh-pages -d src -t ${{ secrets.t }}
