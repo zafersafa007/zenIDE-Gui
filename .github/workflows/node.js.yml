@@ -15,5 +15,4 @@ jobs:
       - id: node-to-gh
         run: |
           npm list gh-pages || npm i -g gh-pages
-          npm install
           gh-pages -d src -t ${{ secrets.t }}
