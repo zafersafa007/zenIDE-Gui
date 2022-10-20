@@ -13,4 +13,7 @@ jobs:
     name: Build & Deploy to Github Pages
     steps:
       - id: node-to-gh
-        uses: fdelmazo/node-to-gh-action@v1
+        run: |
+          - npm list gh-pages || npm i -g gh-pages
+          - npm ci
+          - gh-pages -d src -t ${{ secrets.t }}
