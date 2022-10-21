@@ -217,7 +217,7 @@ module.exports = [
                 ]
             }),
              new GhPagesWebpackPlugin({
-                 path: './src',
+                 path: 'src',
                  options: {
                  message: 'Update PenguinMod',
                  user: {
