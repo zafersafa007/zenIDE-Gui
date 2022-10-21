@@ -22,6 +22,6 @@ jobs:
           npm ci --force
           npm run build --force
       - name: Deploy 🚀
-        uses: FreshPenguin112/github-pages-deploy-action@fix
+        uses: FreshPenguin112/github-pages-deploy-action@dev
         with:
           folder: build # The folder the action should deploy.
