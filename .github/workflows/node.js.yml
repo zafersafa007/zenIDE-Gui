@@ -21,6 +21,5 @@ jobs:
           npm install --force
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          npm i gh-pages-webpack-plugin -g --save-dev
-          npm run build --force
+          webpack --colors --bail
           touch build/.nojekyll
