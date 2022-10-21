@@ -1,7 +1,4 @@
 name: Build and Deploy
-env:
-    folder: src
-    token: ${{ secrets.t }}
 on:
   workflow_dispatch:
   push:
@@ -13,15 +10,8 @@ jobs:
     concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🛎️
-        uses: actions/checkout@v3
-
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: build site # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
         run: |
           npm install --package-lock-only --force
           npm ci --force
-          npm run build --force
-      - name: Deploy 🚀
-        uses: FreshPenguin112/github-pages-deploy-action@dev
-        with:
-          folder: build # The folder the action should deploy.
+          npm run runall --force
