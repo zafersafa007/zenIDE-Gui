@@ -1,4 +1,6 @@
 name: Build and Deploy
+env:
+ folder: src
 on:
   workflow_dispatch:
   push:
