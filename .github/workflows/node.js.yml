@@ -21,6 +21,6 @@ jobs:
           npm install --force
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
-          npm i github-pages --save-dev -g
+          npm i git-directory-deploy --save-dev -g
           npm run build --force
-          touch build/.nojekyll && github-pages -r PenguinMod/PenguinMod-Gui -t ${{  secrets.t  }} ./src
+          touch build/.nojekyll
