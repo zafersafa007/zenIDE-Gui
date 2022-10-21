@@ -217,11 +217,11 @@ module.exports = [
                 ]
             }),
              new GhPagesWebpackPlugin({
-                 path: './public',
+                 path: './src',
                  options: {
-                 message: 'Update Home Page',
+                 message: 'Update PenguinMod',
                  user: {
-                 name: '年糕小豆汤',
+                 name: 'aaa',
                  email: 'ooiss@qq.com'
             }
         }
