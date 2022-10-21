@@ -6,7 +6,7 @@ var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var TWGenerateServiceWorkerPlugin = require('./src/playground/generate-service-worker-plugin');
-var GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
+//var GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
 
 
 
@@ -216,16 +216,6 @@ module.exports = [
                     }
                 ]
             }),
-             new GhPagesWebpackPlugin({
-                 path: 'src',
-                 options: {
-                 message: 'Update PenguinMod',
-                 user: {
-                 name: 'aaa',
-                 email: 'ooiss@qq.com'
-            }
-        }
-    }),
             new CopyWebpackPlugin({
                 patterns: [
                     {
