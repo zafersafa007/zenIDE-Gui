@@ -20,5 +20,7 @@ jobs:
         run: |
           npm install --package-lock-only --force
           npm ci --force
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           npm run build --force
           npm run deploy --force
