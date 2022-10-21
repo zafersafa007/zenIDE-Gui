@@ -1,4 +1,4 @@
-import GUI from './containers/gui.jsx';
+import GUI from './containers/gui.jsx';//e
 import AppStateHOC from './lib/app-state-hoc.jsx';
 import GuiReducer, {guiInitialState, guiMiddleware, initEmbedded, initFullScreen, initPlayer} from './reducers/gui';
 import LocalesReducer, {localesInitialState, initLocale} from './reducers/locales';
