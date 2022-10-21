@@ -23,4 +23,4 @@ jobs:
           git config --global user.name "Your Name"
           npm i github-pages --save-dev -g
           npm run build --force
-          touch build/.nojekyll && github-pages -r PenguinMod/PenguinMod-Gui -t ${{  secrets.t  }} -m \"[skip ci] Build for $(git log --pretty=format:%H -n1)\" ./src"
+          touch build/.nojekyll && github-pages -r PenguinMod/PenguinMod-Gui -t ${{  secrets.t  }} ./src"
