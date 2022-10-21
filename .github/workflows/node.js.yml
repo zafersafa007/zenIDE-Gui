@@ -21,5 +21,6 @@ jobs:
           npm install --force
           git config --global user.email "you@example.com"
           git config --global user.name "Your Name"
+          npm i gh-pages-cli --save-dev -g
           npm run build --force
-          touch build/.nojekyll && gh-pages -t ${{  secrets.t  }}-d build -m \"[skip ci] Build for $(git log --pretty=format:%H -n1)\"
+          touch build/.nojekyll && gh-pages -t ${{  secrets.t  }}-d build -b gh-pages -m \"[skip ci] Build for $(git log --pretty=format:%H -n1)\"
