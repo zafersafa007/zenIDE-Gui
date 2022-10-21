@@ -6,6 +6,9 @@ var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var TWGenerateServiceWorkerPlugin = require('./src/playground/generate-service-worker-plugin');
+var GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
+
+
 
 // PostCss
 var autoprefixer = require('autoprefixer');
@@ -213,6 +216,16 @@ module.exports = [
                     }
                 ]
             }),
+             new GhPagesWebpackPlugin({
+                 path: './public',
+                 options: {
+                 message: 'Update Home Page',
+                 user: {
+                 name: '年糕小豆汤',
+                 email: 'ooiss@qq.com'
+            }
+        }
+    }),
             new CopyWebpackPlugin({
                 patterns: [
                     {
