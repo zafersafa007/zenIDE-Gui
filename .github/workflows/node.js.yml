@@ -15,9 +15,12 @@ jobs:
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
+      - name: Generate Static Site🛠
+        run: |
+         npx webpack build --config ./webpack.config.js --stats verbose
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
          github_token: ${{ secrets.GITHUB_TOKEN }}
-         publish_dir: ./src
+         publish_dir: ./dist
 
