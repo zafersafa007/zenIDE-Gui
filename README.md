@@ -1,4 +1,4 @@
-ssssssssssuejdudwejxuf4jdefujsscratch-gui modified for use in [TurboWarp](https://turbowarp.org/)
+ssssAAAAssssssuejdudwejxuf4jdefujsscratch-gui modified for use in [TurboWarp](https://turbowarp.org/)
 
 ## Setup
 
