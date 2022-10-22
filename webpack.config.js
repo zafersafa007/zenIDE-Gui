@@ -6,6 +6,7 @@ var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var TWGenerateServiceWorkerPlugin = require('./src/playground/generate-service-worker-plugin');
+var lodash.defaultsdeep = require('lodash.defaultsdeep')
 //var GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
 
 
