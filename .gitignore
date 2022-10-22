@@ -11,8 +11,8 @@ npm-*
 
 # Build
 /.opt-in
-!/build
-!/dist
+!build/
+!dist/
 
 # Generated translation files
 /translations
