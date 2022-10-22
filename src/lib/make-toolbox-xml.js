@@ -356,6 +356,7 @@ const events = function (isInitialSetup, isStage) {
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
         <block type="event_whenflagclicked"/>
         <block type="event_whenanything">
+        </block>
         <block type="event_whenkeypressed">
         </block>
         ${isStage ? `
