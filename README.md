@@ -1,4 +1,4 @@
-ssssAAAAssssssuejdudwejxuf4jdefujsscratch-gui modified for use in [TurboWarp](https://turbowarp.org/)
+scratch-gui modified for use in [TurboWarp](https://turbowarp.org/) then modified for use in [PenguinMod](https://penguinmod.github.io/PenguinMod-Gui/)
 
 ## Setup
 
