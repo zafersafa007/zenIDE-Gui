@@ -51,6 +51,7 @@ import twIcon from './tw/tw.svg';
 import customExtensionIcon from './custom/custom.svg';
 
 import filesExtensionIcon from './penguinmod/extensions/files.png';
+import jgWebsiteRequestsExtensionIcon from './penguinmod/extensions/websiteRequests.png'
 
 export default [
     {
@@ -190,6 +191,27 @@ export default [
             />
         ),
         featured: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Website Request Blocks"
+                description="Name of Website Requests extension"
+                id="jgWebsiteRequests.jgWebsiteRequestsExtension.name"
+            />
+        ),
+        extensionId: 'jgWebsiteRequests',
+        iconURL: jgWebsiteRequestsExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Blocks to communicate with APIs and websites."
+                description="Description of Website Requests extension"
+                id="jgWebsiteRequests.jgWebsiteRequestsExtension.description"
+            />
+        ),
+        featured: true,
+        internetConnectionRequired: true,
         incompatibleWithScratch: true
     },
     {
