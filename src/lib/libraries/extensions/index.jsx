@@ -217,6 +217,26 @@ export default [
     {
         name: (
             <FormattedMessage
+                defaultMessage="Unite"
+                description="Name of Unite extension"
+                id="jwUnite.jwUniteExtension.name"
+            />
+        ),
+        extensionId: 'jwUnite',
+        iconURL: twIcon, //will change soon
+        description: (
+            <FormattedMessage
+                defaultMessage="Useful blocks that should of been added to scratch already"
+                description="Description of Unite extension"
+                id="jwUnite.jwUniteExtension.description"
+            />
+        ),
+        featured: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
                 defaultMessage="TurboWarp Blocks"
                 description="Name of TW extension"
                 id="tw.twExtension.name"
