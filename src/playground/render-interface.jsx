@@ -17,10 +17,10 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import {connect} from 'react-redux';
-import {compose} from 'redux';
-import {FormattedMessage, defineMessages, injectIntl, intlShape} from 'react-intl';
-import {getIsLoading} from '../reducers/project-state.js';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+import { FormattedMessage, defineMessages, injectIntl, intlShape } from 'react-intl';
+import { getIsLoading } from '../reducers/project-state.js';
 import DOMElementRenderer from '../containers/dom-element-renderer.jsx';
 import AppStateHOC from '../lib/app-state-hoc.jsx';
 import ErrorBoundaryHOC from '../lib/error-boundary-hoc.jsx';
@@ -40,16 +40,16 @@ import Description from '../components/tw-description/description.jsx';
 import WebGlModal from '../containers/webgl-modal.jsx';
 import BrowserModal from '../components/browser-modal/browser-modal.jsx';
 import CloudVariableBadge from '../components/tw-cloud-variable-badge/cloud-variable-badge.jsx';
-import {isRendererSupported, isBrowserSupported} from '../lib/tw-environment-support-prober';
+import { isRendererSupported, isBrowserSupported } from '../lib/tw-environment-support-prober';
 import AddonChannels from '../addons/channels';
-import {loadServiceWorker} from './load-service-worker';
+import { loadServiceWorker } from './load-service-worker';
 import runAddons from '../addons/entry';
 
 import styles from './interface.css';
 
 if (window.parent !== window) {
     // eslint-disable-next-line no-alert
-    alert('This page is embedding TurboWarp in a way that is unsupported and will cease to function in the near future. Please read https://docs.turbowarp.org/embedding');
+    alert('This page is embedding PenguinMod/TurboWarp in a way that is unsupported and will cease to function in the near future. Please read https://docs.turbowarp.org/embedding');
     throw new Error('Invalid embed');
 }
 
@@ -98,8 +98,8 @@ const Footer = () => (
             <div className={styles.footerText}>
                 <FormattedMessage
                     // eslint-disable-next-line max-len
-                    defaultMessage="TurboWarp is not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
-                    description="Disclaimer that TurboWarp is not connected to Scratch"
+                    defaultMessage="PenguinMod and TurboWarp are not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
+                    description="Disclaimer that PenguinMod and TurboWarp are not connected to Scratch"
                     id="tw.footer.disclaimer"
                 />
             </div>
@@ -187,23 +187,23 @@ const Footer = () => (
 );
 
 class Interface extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
     }
-    componentDidUpdate (prevProps) {
+    componentDidUpdate(prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
             loadServiceWorker();
         }
     }
-    handleUpdateProjectTitle (title, isDefault) {
+    handleUpdateProjectTitle(title, isDefault) {
         if (isDefault || !title) {
-            document.title = `TurboWarp - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
+            document.title = `PenguinMod - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
         } else {
-            document.title = `${title} - TurboWarp`;
+            document.title = `${title} - PenguinMod`;
         }
     }
-    render () {
+    render() {
         const {
             /* eslint-disable no-unused-vars */
             intl,
@@ -269,52 +269,52 @@ class Interface extends React.Component {
                                 // eslint-disable-next-line max-len
                                 projectId === '0' || description.instructions === 'unshared' || description.credits === 'unshared'
                             ) && (
-                                <div className={styles.unsharedUpdate}>
-                                    {/* I won't link these in the public website because there will be way */}
-                                    {/* too much spam if we do that, but here are the relevant links: */}
-                                    {/* https://github.com/LLK/scratch-gui/pull/8269 */}
-                                    {/* https://github.com/LLK/scratch-www/pull/6773 */}
-                                    <p>
-                                        <FormattedMessage
-                                            // eslint-disable-next-line max-len
-                                            defaultMessage="Unshared projects will no longer be accessible using just their project ID at some point in the future due to upcoming Scratch API changes."
-                                            description="Appears on unshared projects"
-                                            id="tw.unshared.1"
-                                        />
-                                    </p>
-                                    <p>
-                                        <FormattedMessage
-                                            defaultMessage="For more information, visit: {link}"
-                                            description="Appears on unshared projects"
-                                            id="tw.unshared.2"
-                                            values={{
-                                                link: (
-                                                    <a
-                                                        href="https://docs.turbowarp.org/unshared-projects"
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                    >
-                                                        {'https://docs.turbowarp.org/unshared-projects'}
-                                                    </a>
-                                                )
-                                            }}
-                                        />
-                                    </p>
-                                    {(
-                                        description.instructions === 'unshared' ||
-                                        description.credits === 'unshared'
-                                    ) && (
+                                    <div className={styles.unsharedUpdate}>
+                                        {/* I won't link these in the public website because there will be way */}
+                                        {/* too much spam if we do that, but here are the relevant links: */}
+                                        {/* https://github.com/LLK/scratch-gui/pull/8269 */}
+                                        {/* https://github.com/LLK/scratch-www/pull/6773 */}
                                         <p>
                                             <FormattedMessage
                                                 // eslint-disable-next-line max-len
-                                                defaultMessage="If the project was shared recently, this message may appear incorrectly for a few minutes."
+                                                defaultMessage="Unshared projects will no longer be accessible using just their project ID at some point in the future due to upcoming Scratch API changes."
                                                 description="Appears on unshared projects"
-                                                id="tw.unshared.cache"
+                                                id="tw.unshared.1"
                                             />
                                         </p>
-                                    )}
-                                </div>
-                            )}
+                                        <p>
+                                            <FormattedMessage
+                                                defaultMessage="For more information, visit: {link}"
+                                                description="Appears on unshared projects"
+                                                id="tw.unshared.2"
+                                                values={{
+                                                    link: (
+                                                        <a
+                                                            href="https://docs.turbowarp.org/unshared-projects"
+                                                            target="_blank"
+                                                            rel="noopener noreferrer"
+                                                        >
+                                                            {'https://docs.turbowarp.org/unshared-projects'}
+                                                        </a>
+                                                    )
+                                                }}
+                                            />
+                                        </p>
+                                        {(
+                                            description.instructions === 'unshared' ||
+                                            description.credits === 'unshared'
+                                        ) && (
+                                                <p>
+                                                    <FormattedMessage
+                                                        // eslint-disable-next-line max-len
+                                                        defaultMessage="If the project was shared recently, this message may appear incorrectly for a few minutes."
+                                                        description="Appears on unshared projects"
+                                                        id="tw.unshared.cache"
+                                                    />
+                                                </p>
+                                            )}
+                                    </div>
+                                )}
                             {hasCloudVariables && projectId !== '0' && (
                                 <div className={styles.section}>
                                     <CloudVariableBadge />
@@ -333,8 +333,8 @@ class Interface extends React.Component {
                                 <p>
                                     <FormattedMessage
                                         // eslint-disable-next-line max-len
-                                        defaultMessage="TurboWarp is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by inputting a project ID or URL above or choosing a featured project below."
-                                        description="Description of TurboWarp"
+                                        defaultMessage="PenguinMod is a mod of TurboWarp to add new blocks and features. TurboWarp is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by inputting a project ID or URL above or choosing a featured project below."
+                                        description="Description of PenguinMod and TurboWarp"
                                         id="tw.home.description"
                                     />
                                 </p>

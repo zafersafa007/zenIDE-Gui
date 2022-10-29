@@ -364,7 +364,7 @@ export default async function ({ addon, global, console, msg }) {
   });
 
   let getCanvasSize;
-  // Support modern ResizeObserver and slow getBoundingClientRect version for improved browser support (matters for TurboWarp)
+  // Support modern ResizeObserver and slow getBoundingClientRect version for improved browser support (matters for Turbo Warp)
   if (window.ResizeObserver) {
     let canvasWidth = width;
     let canvasHeight = height;

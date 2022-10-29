@@ -1,4 +1,4 @@
-import {defineMessages, FormattedMessage, intlShape, injectIntl} from 'react-intl';
+import { defineMessages, FormattedMessage, intlShape, injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
@@ -41,7 +41,7 @@ const LearnMore = props => (
 );
 
 class UnwrappedSetting extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         bindAll(this, [
             'handleClickHelp'
@@ -50,7 +50,7 @@ class UnwrappedSetting extends React.Component {
             helpVisible: false
         };
     }
-    componentDidUpdate (prevProps) {
+    componentDidUpdate(prevProps) {
         if (this.props.active && !prevProps.active) {
             // eslint-disable-next-line react/no-did-update-set-state
             this.setState({
@@ -58,12 +58,12 @@ class UnwrappedSetting extends React.Component {
             });
         }
     }
-    handleClickHelp () {
+    handleClickHelp() {
         this.setState(prevState => ({
             helpVisible: !prevState.helpVisible
         }));
     }
-    render () {
+    render() {
         return (
             <div
                 className={classNames(styles.setting, {
@@ -99,7 +99,7 @@ UnwrappedSetting.propTypes = {
 };
 const Setting = injectIntl(UnwrappedSetting);
 
-const BooleanSetting = ({value, onChange, label, ...props}) => (
+const BooleanSetting = ({ value, onChange, label, ...props }) => (
     <Setting
         {...props}
         active={value}
@@ -385,7 +385,7 @@ CustomStageSize.propTypes = {
     onStageHeightChange: PropTypes.func
 };
 
-const StoreProjectOptions = ({onStoreProjectOptions}) => (
+const StoreProjectOptions = ({ onStoreProjectOptions }) => (
     <div className={styles.setting}>
         <div>
             <button
@@ -401,7 +401,7 @@ const StoreProjectOptions = ({onStoreProjectOptions}) => (
             <p>
                 <FormattedMessage
                     // eslint-disable-next-line max-len
-                    defaultMessage="Stores the selected settings in the project so they will be automatically applied when TurboWarp loads this project. Warp timer and disable compiler will not be saved."
+                    defaultMessage="Stores the selected settings in the project so they will be automatically applied when PenguinMod loads this project. Warp timer and disable compiler will not be saved."
                     description="Help text for the store settings in project button"
                     id="tw.settingsModal.storeProjectOptionsHelp"
                 />

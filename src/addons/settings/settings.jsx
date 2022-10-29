@@ -24,8 +24,8 @@ import messagesByLocale from '../generated/l10n-settings-entries';
 import settingsTranslationsEnglish from './en.json';
 import settingsTranslationsOther from './translations.json';
 import upstreamMeta from '../generated/upstream-meta.json';
-import {detectLocale} from '../../lib/detect-locale';
-import {getInitialDarkMode} from '../../lib/tw-theme-hoc.jsx';
+import { detectLocale } from '../../lib/detect-locale';
+import { getInitialDarkMode } from '../../lib/tw-theme-hoc.jsx';
 import SettingsStore from '../settings-store-singleton';
 import Channels from '../channels';
 import extensionImage from './extension.svg';
@@ -55,7 +55,7 @@ if (locale !== 'en') {
     }
 }
 
-document.title = `${settingsTranslations.title} - TurboWarp`;
+document.title = `${settingsTranslations.title} - PenguinMod`;
 
 const theme = getInitialDarkMode() ? 'dark' : 'light';
 document.body.setAttribute('theme', theme);
@@ -88,7 +88,7 @@ const filterAddonsBySupport = () => {
         unsupported
     };
 };
-const {supported: supportedAddons, unsupported: unsupportedAddons} = filterAddonsBySupport();
+const { supported: supportedAddons, unsupported: unsupportedAddons } = filterAddonsBySupport();
 
 const groupAddons = () => {
     const groups = {
@@ -123,7 +123,7 @@ const groupAddons = () => {
 };
 const groupedAddons = groupAddons();
 
-const CreditList = ({credits}) => (
+const CreditList = ({ credits }) => (
     credits.map((author, index) => {
         const isLast = index === credits.length - 1;
         return (
@@ -156,7 +156,7 @@ CreditList.propTypes = {
     }))
 };
 
-const Switch = ({onChange, value, ...props}) => (
+const Switch = ({ onChange, value, ...props }) => (
     <button
         className={styles.switch}
         state={value ? 'on' : 'off'}
@@ -185,7 +185,7 @@ const Select = ({
                 <button
                     key={id}
                     onClick={() => onChange(id)}
-                    className={classNames(styles.selectOption, {[styles.selected]: selected})}
+                    className={classNames(styles.selectOption, { [styles.selected]: selected })}
                 >
                     {potentialValue.name}
                 </button>
@@ -202,7 +202,7 @@ Select.propTypes = {
     }))
 };
 
-const Tags = ({manifest}) => (
+const Tags = ({ manifest }) => (
     <span className={styles.tagContainer}>
         {manifest.tags.includes('recommended') && (
             <span className={classNames(styles.tag, styles.tagRecommended)}>
@@ -238,7 +238,7 @@ Tags.propTypes = {
 };
 
 class TextInput extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.handleKeyPress = this.handleKeyPress.bind(this);
         this.handleFocus = this.handleFocus.bind(this);
@@ -249,18 +249,18 @@ class TextInput extends React.Component {
             focused: false
         };
     }
-    handleKeyPress (e) {
+    handleKeyPress(e) {
         if (e.key === 'Enter') {
             this.handleFlush(e);
             e.target.blur();
         }
     }
-    handleFocus () {
+    handleFocus() {
         this.setState({
             focused: true
         });
     }
-    handleFlush (e) {
+    handleFlush(e) {
         this.setState({
             focused: false
         });
@@ -279,18 +279,18 @@ class TextInput extends React.Component {
         } else {
             this.props.onChange(this.state.value);
         }
-        this.setState({value: null});
+        this.setState({ value: null });
     }
-    handleChange (e) {
+    handleChange(e) {
         e.persist();
-        this.setState({value: e.target.value}, () => {
+        this.setState({ value: e.target.value }, () => {
             // A change event can be fired when not focused by using the browser's number spinners
             if (!this.state.focused) {
                 this.handleFlush(e);
             }
         });
     }
-    render () {
+    render() {
         return (
             <input
                 {...this.props}
@@ -417,7 +417,7 @@ const Setting = ({
                     {label}
                     <Select
                         value={value}
-                        values={setting.potentialValues.map(({id, name}) => ({
+                        values={setting.potentialValues.map(({ id, name }) => ({
                             id,
                             name: addonTranslations[`${addonId}/@settings-select-${settingId}-${id}`] || name
                         }))}
@@ -518,7 +518,7 @@ const Addon = ({
     manifest,
     extended
 }) => (
-    <div className={classNames(styles.addon, {[styles.addonDirty]: settings.dirty})}>
+    <div className={classNames(styles.addon, { [styles.addonDirty]: settings.dirty })}>
         <div className={styles.addonHeader}>
             <label className={styles.addonTitle}>
                 <div className={styles.addonSwitch}>
@@ -674,12 +674,12 @@ Dirty.propTypes = {
     onReloadNow: PropTypes.func
 };
 
-const UnsupportedAddons = ({addons: addonList}) => (
+const UnsupportedAddons = ({ addons: addonList }) => (
     <div className={styles.unsupportedContainer}>
         <span className={styles.unsupportedText}>
             {settingsTranslations.unsupported}
         </span>
-        {addonList.map(({id, manifest}, index) => (
+        {addonList.map(({ id, manifest }, index) => (
             <span
                 key={id}
                 className={styles.unsupportedAddon}
@@ -701,8 +701,8 @@ UnsupportedAddons.propTypes = {
     }))
 };
 
-const InternalAddonList = ({addons, extended}) => (
-    addons.map(({id, manifest, state}) => (
+const InternalAddonList = ({ addons, extended }) => (
+    addons.map(({ id, manifest, state }) => (
         <Addon
             key={id}
             id={id}
@@ -714,13 +714,13 @@ const InternalAddonList = ({addons, extended}) => (
 );
 
 class AddonGroup extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.state = {
             open: props.open
         };
     }
-    render () {
+    render() {
         if (this.props.addons.length === 0) {
             return null;
         }
@@ -763,7 +763,7 @@ AddonGroup.propTypes = {
     extended: PropTypes.bool.isRequired
 };
 
-const addonToSearchItem = ({id, manifest}) => {
+const addonToSearchItem = ({ id, manifest }) => {
     const texts = new Set();
     const addText = (score, text) => {
         if (text) {
@@ -808,16 +808,16 @@ const addonToSearchItem = ({id, manifest}) => {
 };
 
 class AddonList extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.search = new Search(this.props.addons.map(addonToSearchItem));
         this.groups = [];
     }
-    render () {
+    render() {
         if (this.props.search) {
             const addons = this.search.search(this.props.search)
                 .slice(0, 20)
-                .map(({index}) => this.props.addons[index]);
+                .map(({ index }) => this.props.addons[index]);
             if (addons.length === 0) {
                 return (
                     <div className={styles.noResults}>
@@ -836,7 +836,7 @@ class AddonList extends React.Component {
         }
         return (
             <div>
-                {Object.entries(groupedAddons).map(([id, {label, addons, open}]) => (
+                {Object.entries(groupedAddons).map(([id, { label, addons, open }]) => (
                     <AddonGroup
                         key={id}
                         label={label}
@@ -860,7 +860,7 @@ AddonList.propTypes = {
 };
 
 class AddonSettingsComponent extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         this.handleSettingStoreChanged = this.handleSettingStoreChanged.bind(this);
         this.handleReloadNow = this.handleReloadNow.bind(this);
@@ -887,15 +887,15 @@ class AddonSettingsComponent extends React.Component {
             });
         }
     }
-    componentDidMount () {
+    componentDidMount() {
         SettingsStore.addEventListener('setting-changed', this.handleSettingStoreChanged);
         document.body.addEventListener('keydown', this.handleKeyDown);
     }
-    componentWillUnmount () {
+    componentWillUnmount() {
         SettingsStore.removeEventListener('setting-changed', this.handleSettingStoreChanged);
         document.body.removeEventListener('keydown', this.handleKeyDown);
     }
-    readFullAddonState () {
+    readFullAddonState() {
         const result = {};
         for (const [id, manifest] of Object.entries(supportedAddons)) {
             const enabled = SettingsStore.getAddonEnabled(id);
@@ -912,8 +912,8 @@ class AddonSettingsComponent extends React.Component {
         }
         return result;
     }
-    handleSettingStoreChanged (e) {
-        const {addonId, settingId, value} = e.detail;
+    handleSettingStoreChanged(e) {
+        const { addonId, settingId, value } = e.detail;
         // If channels are unavailable, every change requires reload.
         const reloadRequired = e.detail.reloadRequired || !Channels.changeChannel;
         this.setState(state => {
@@ -933,7 +933,7 @@ class AddonSettingsComponent extends React.Component {
             postThrottledSettingsChange(SettingsStore.store);
         }
     }
-    handleReloadNow () {
+    handleReloadNow() {
         // Value posted does not matter
         Channels.reloadChannel.postMessage(0);
         this.setState({
@@ -950,7 +950,7 @@ class AddonSettingsComponent extends React.Component {
             }
         }
     }
-    handleResetAll () {
+    handleResetAll() {
         if (confirm(settingsTranslations.confirmResetAll)) {
             SettingsStore.resetAllAddons();
             this.setState({
@@ -958,13 +958,13 @@ class AddonSettingsComponent extends React.Component {
             });
         }
     }
-    handleExport () {
+    handleExport() {
         const exportedData = SettingsStore.export({
             theme
         });
         this.props.onExportSettings(exportedData);
     }
-    handleImport () {
+    handleImport() {
         const fileSelector = document.createElement('input');
         fileSelector.type = 'file';
         fileSelector.accept = '.json';
@@ -989,27 +989,27 @@ class AddonSettingsComponent extends React.Component {
             }
         });
     }
-    handleSearch (e) {
+    handleSearch(e) {
         const value = e.target.value;
         this.setState({
             search: value
         });
     }
-    handleClickSearchButton () {
+    handleClickSearchButton() {
         this.setState({
             search: ''
         });
         this.searchBar.focus();
     }
-    handleClickVersion () {
+    handleClickVersion() {
         this.setState({
             extended: !this.state.extended
         });
     }
-    searchRef (searchBar) {
+    searchRef(searchBar) {
         this.searchBar = searchBar;
     }
-    handleKeyDown (e) {
+    handleKeyDown(e) {
         const key = e.key;
         if (key.length === 1 && key !== ' ' && e.target === document.body && !(e.ctrlKey || e.metaKey || e.altKey)) {
             this.searchBar.focus();
@@ -1021,7 +1021,7 @@ class AddonSettingsComponent extends React.Component {
             e.preventDefault();
         }
     }
-    render () {
+    render() {
         const addonState = Object.entries(supportedAddons).map(([id, manifest]) => ({
             id,
             manifest,

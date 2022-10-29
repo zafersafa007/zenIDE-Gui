@@ -996,7 +996,7 @@ export default class DevTools {
     }
 
     let li = e.target;
-    for (;;) {
+    for (; ;) {
       if (!li || li === this.dd) {
         return;
       }
@@ -1373,7 +1373,7 @@ export default class DevTools {
         // console.log("I found a new block!!! - " + block.id);
         // todo: move the block to the mouse pointer?
         let mouseXYClone = { x: this.mouseXY.x, y: this.mouseXY.y };
-        block.setIntersects(true); // fixes offscreen block pasting in TurboWarp
+        block.setIntersects(true); // fixes offscreen block pasting in Turbo Warp
         this.domHelpers.triggerDragAndDrop(block.svgPath_, null, mouseXYClone);
       }
     }
@@ -1637,8 +1637,8 @@ export default class DevTools {
                     <span id=s3devInsert class="s3devWrap">
                         <div id='s3devIDDOut' class="s3devDDOut">
                             <input id='s3devIInp' class="${this.addon.tab.scratchClass("input_input-form", {
-                              others: "s3devInp",
-                            })}" type='search' placeholder='${this.m("start-typing")}' autocomplete='off'>
+        others: "s3devInp",
+      })}" type='search' placeholder='${this.m("start-typing")}' autocomplete='off'>
                             <ul id='s3devIDD' class="s3devDD"></ul>
                         </div>
                     </span>
@@ -2194,26 +2194,24 @@ export default class DevTools {
         `
                 <div id="s3devToolBar">
                     <div class='title s3devLabel' id=s3devFindLabel>
-                        <label for="s3devInp">${this.m("find")} ${
-          this.addon.self._isDevtoolsExtension
-            ? ""
-            : '<a href="#" class="s3devAction" id="s3devHelp" style="/*s-a*/ margin-left: 0; font-size: 10px; /*s-a*/">(?)</a>'
+                        <label for="s3devInp">${this.m("find")} ${this.addon.self._isDevtoolsExtension
+          ? ""
+          : '<a href="#" class="s3devAction" id="s3devHelp" style="/*s-a*/ margin-left: 0; font-size: 10px; /*s-a*/">(?)</a>'
         } </label>
                         <span id=s3devFind class="s3devWrap">
                             <label id='s3devDDOut' class="s3devDDOut">
                                 <input id='s3devInp' class="${this.addon.tab.scratchClass("input_input-form", {
-                                  others: "s3devInp",
-                                })}" type='search' placeholder='${this.m("find-placeholder")}' autocomplete='off'>
+          others: "s3devInp",
+        })}" type='search' placeholder='${this.m("find-placeholder")}' autocomplete='off'>
                                 <ul id='s3devDD' class="s3devDD"></ul>
                             </label>
                         </span>
                         <a id="s3devDeep" class="s3devAction s3devHide" href="#">${this.m("deep")}</a>
-                        <div ${
-                          this.addon.self._isDevtoolsExtension ? "" : 'style="display: none;"'
-                        }><a href="#" class="s3devAction" id="s3devHelp"><b>${this.m("help")}</b></a>
+                        <div ${this.addon.self._isDevtoolsExtension ? "" : 'style="display: none;"'
+        }><a href="#" class="s3devAction" id="s3devHelp"><b>${this.m("help")}</b></a>
                         <a href="https://www.youtube.com/griffpatch" class="s3devAction" target="_blank" id="s3devHelp" rel="noreferrer noopener">${this.m(
-                          "tutorials"
-                        )}</a></div>
+          "tutorials"
+        )}</a></div>
                     </div>
                 </div>
             `
