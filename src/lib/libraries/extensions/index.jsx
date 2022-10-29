@@ -52,6 +52,7 @@ import customExtensionIcon from './custom/custom.svg';
 
 import filesExtensionIcon from './penguinmod/extensions/files.png';
 import jgWebsiteRequestsExtensionIcon from './penguinmod/extensions/websiteRequests.png'
+import jwUniteIcon_temporary from './penguinmod/extensions/jwUnite_temp.svg'
 
 export default [
     {
@@ -223,7 +224,7 @@ export default [
             />
         ),
         extensionId: 'jwUnite',
-        iconURL: twIcon, //will change soon
+        iconURL: jwUniteIcon_temporary, //will change soon
         description: (
             <FormattedMessage
                 defaultMessage="Useful blocks that should of been added to scratch already"
