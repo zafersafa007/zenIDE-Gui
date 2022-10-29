@@ -52,6 +52,7 @@ import customExtensionIcon from './custom/custom.svg';
 
 import filesExtensionIcon from './penguinmod/extensions/files.png';
 import jgWebsiteRequestsExtensionIcon from './penguinmod/extensions/websiteRequests.png'
+import jgJSONExtensionIcon from './penguinmod/extensions/json.png'
 import jwUniteIcon_temporary from './penguinmod/extensions/jwUnite_temp.svg'
 
 export default [
@@ -213,6 +214,26 @@ export default [
         ),
         featured: true,
         internetConnectionRequired: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="JSON Blocks"
+                description="Name of JSON extension"
+                id="jgJSON.jgJSONExtension.name"
+            />
+        ),
+        extensionId: 'jgJSON',
+        iconURL: jgJSONExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Blocks for handling JSON objects. Arrays are not supported yet."
+                description="Description of JSON extension"
+                id="jgJSON.jgJSONExtension.description"
+            />
+        ),
+        featured: true,
         incompatibleWithScratch: true
     },
     {
