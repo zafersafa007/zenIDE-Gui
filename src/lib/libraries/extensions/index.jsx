@@ -53,6 +53,7 @@ import customExtensionIcon from './custom/custom.svg';
 import filesExtensionIcon from './penguinmod/extensions/files.png';
 import jgWebsiteRequestsExtensionIcon from './penguinmod/extensions/websiteRequests.png'
 import jgJSONExtensionIcon from './penguinmod/extensions/json.png'
+import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png'
 import jwUniteIcon_temporary from './penguinmod/extensions/jwUnite_temp.svg'
 
 export default [
@@ -251,6 +252,26 @@ export default [
                 defaultMessage="Useful blocks that should of been added to scratch already"
                 description="Description of Unite extension"
                 id="jwUnite.jwUniteExtension.description"
+            />
+        ),
+        featured: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Runtime tools"
+                description="Name of Runtime extension"
+                id="jgRuntime.jgRuntimeExtension.name"
+            />
+        ),
+        extensionId: 'jgRuntime',
+        iconURL: jgRuntimeExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Blocks for updating Scratch objects like the stage."
+                description="Description of Runtime extension"
+                id="jgRuntime.jgRuntimeExtension.description"
             />
         ),
         featured: true,
