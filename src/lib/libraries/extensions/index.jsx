@@ -55,7 +55,9 @@ import jgWebsiteRequestsExtensionIcon from './penguinmod/extensions/websiteReque
 import jgJSONExtensionIcon from './penguinmod/extensions/json.png'
 import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png'
 import jgPrismExtensionIcon from './penguinmod/extensions/prism.png'
-import jwUniteIcon_temporary from './penguinmod/extensions/jwUnite_temp.svg'
+
+import jwUniteExtensionIcon from './penguinmod/extensions/Unite.png'
+import jwUniteInsetIcon from './penguinmod/extensions/UniteSmall.png'
 
 export default [
     {
@@ -247,7 +249,8 @@ export default [
             />
         ),
         extensionId: 'jwUnite',
-        iconURL: jwUniteIcon_temporary, //will change soon
+        iconURL: jwUniteExtensionIcon,
+        insetIconURL: jwUniteInsetIcon,
         description: (
             <FormattedMessage
                 defaultMessage="Useful blocks that should of been added to scratch already"
