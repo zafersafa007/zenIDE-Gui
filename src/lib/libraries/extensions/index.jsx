@@ -275,6 +275,7 @@ export default [
             />
         ),
         featured: true,
+        internetConnectionRequired: true,
         incompatibleWithScratch: true
     },
     {
