@@ -54,6 +54,7 @@ import filesExtensionIcon from './penguinmod/extensions/files.png';
 import jgWebsiteRequestsExtensionIcon from './penguinmod/extensions/websiteRequests.png'
 import jgJSONExtensionIcon from './penguinmod/extensions/json.png'
 import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png'
+import jgPrismExtensionIcon from './penguinmod/extensions/prism.png'
 import jwUniteIcon_temporary from './penguinmod/extensions/jwUnite_temp.svg'
 
 export default [
@@ -255,6 +256,27 @@ export default [
             />
         ),
         featured: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Prism"
+                description="Name of Prism extension"
+                id="jgPrism.jgPrismExtension.name"
+            />
+        ),
+        extensionId: 'jgPrism',
+        iconURL: jgPrismExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Blocks for specific use-cases or major convenience."
+                description="Description of Prism extension"
+                id="jgPrism.jgPrismExtension.description"
+            />
+        ),
+        featured: true,
+        internetConnectionRequired: true,
         incompatibleWithScratch: true
     },
     {
