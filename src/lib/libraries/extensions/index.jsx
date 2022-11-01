@@ -59,6 +59,10 @@ import jgPrismExtensionIcon from './penguinmod/extensions/prism.png'
 import jwUniteExtensionIcon from './penguinmod/extensions/Unite.png'
 import jwUniteInsetIcon from './penguinmod/extensions/UniteSmall.png'
 
+// griffpatch stuff that hopefully we can keep pls plsplspl !!S!
+import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
+import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg'
+
 export default [
     {
         name: (
@@ -302,6 +306,22 @@ export default [
         featured: true,
         internetConnectionRequired: true,
         incompatibleWithScratch: true
+    },
+    {
+        name: 'Physics',
+        extensionId: 'griffpatch',
+        collaborator: 'Griffpatch',
+        iconURL: griffpatchPhysicsThumb,
+        insetIconURL: griffpatchPhysicsIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Box2D Physics extension created by Griffpatch."
+                description="Description for the 'Griffpatch' extension"
+                id="gui.extension.test.description"
+            />
+        ),
+        featured: true,
+        disabled: false
     },
     {
         name: (
