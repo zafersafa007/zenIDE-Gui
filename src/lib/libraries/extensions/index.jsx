@@ -59,6 +59,8 @@ import jgPrismExtensionIcon from './penguinmod/extensions/prism.png'
 import jwUniteExtensionIcon from './penguinmod/extensions/Unite.png'
 import jwUniteInsetIcon from './penguinmod/extensions/UniteSmall.png'
 
+import jwStructsExtensionIcon from './penguinmod/extensions/Structs.png'
+
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
 import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg'
@@ -260,6 +262,27 @@ export default [
                 defaultMessage="Useful blocks that should of been added to scratch already"
                 description="Description of Unite extension"
                 id="jwUnite.jwUniteExtension.description"
+            />
+        ),
+        featured: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Structs"
+                description="Name of Structs extension"
+                id="jwStructs.jwStructsExtension.name"
+            />
+        ),
+        extensionId: 'jwStructs',
+        iconURL: jwStructsExtensionIcon,
+        insetIconURL: jwStructsExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Structs for struct things. Usful for oop"
+                description="Description of Structs extension"
+                id="jwStructs.jwStructsExtension.description"
             />
         ),
         featured: true,
