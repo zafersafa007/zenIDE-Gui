@@ -59,6 +59,8 @@ import jgPrismExtensionIcon from './penguinmod/extensions/prism.png'
 import jwUniteExtensionIcon from './penguinmod/extensions/Unite.png'
 import jwUniteInsetIcon from './penguinmod/extensions/UniteSmall.png'
 
+import jwProtoExtensionIcon from './penguinmod/extensions/Proto.svg'
+
 import jwStructsExtensionIcon from './penguinmod/extensions/Structs.png'
 
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
@@ -262,6 +264,26 @@ export default [
                 defaultMessage="Useful blocks that should of been added to scratch already"
                 description="Description of Unite extension"
                 id="jwUnite.jwUniteExtension.description"
+            />
+        ),
+        featured: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Proto"
+                description="Name of Proto extension"
+                id="jwProto.jwProtoExtension.name"
+            />
+        ),
+        extensionId: 'jwProto',
+        iconURL: jwProtoExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Labelling, Placeholders and Defenitions packed into one sweet extension"
+                description="Description of Proto extension"
+                id="jwProto.jwProtoExtension.description"
             />
         ),
         featured: true,
