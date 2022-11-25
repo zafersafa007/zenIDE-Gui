@@ -233,16 +233,16 @@ export default [
             <FormattedMessage
                 defaultMessage="JSON Blocks"
                 description="Name of JSON extension"
-                id="jgJSON.jgJSONExtension.name"
+                id="jsonblocks.jsonblocksExtension.name"
             />
         ),
-        extensionId: 'jgJSON',
+        extensionId: 'jsonblocks',
         iconURL: jgJSONExtensionIcon,
         description: (
             <FormattedMessage
                 defaultMessage="Blocks for handling JSON objects. Arrays are not supported yet."
                 description="Description of JSON extension"
-                id="jgJSON.jgJSONExtension.description"
+                id="jsonblocks.jsonblocksExtension.description"
             />
         ),
         featured: true,
