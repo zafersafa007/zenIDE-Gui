@@ -61,7 +61,7 @@ import jwUniteInsetIcon from './penguinmod/extensions/UniteSmall.png'
 
 import jwProtoExtensionIcon from './penguinmod/extensions/Proto.svg'
 
-import jwStructsExtensionIcon from './penguinmod/extensions/Structs.png'
+import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
 
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
@@ -302,7 +302,7 @@ export default [
         insetIconURL: jwStructsExtensionIcon,
         description: (
             <FormattedMessage
-                defaultMessage="Structs for struct things. Usful for oop"
+                defaultMessage="Structs for struct things. Useful for OOP."
                 description="Description of Structs extension"
                 id="jwStructs.jwStructsExtension.description"
             />
