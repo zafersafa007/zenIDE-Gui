@@ -312,7 +312,7 @@ export default [
         featured: true,
         incompatibleWithScratch: true
     },
-    {
+    /*{
         name: (
             <FormattedMessage
                 defaultMessage="Text"
@@ -332,7 +332,7 @@ export default [
         ),
         featured: true,
         incompatibleWithScratch: true
-    },
+    },*/
     {
         name: (
             <FormattedMessage
