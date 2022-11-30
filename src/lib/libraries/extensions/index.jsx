@@ -63,6 +63,8 @@ import jwProtoExtensionIcon from './penguinmod/extensions/Proto.svg'
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
 
+import textExtensionIcon from './penguinmod/extensions/textext.png'
+
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
 import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg'
@@ -305,6 +307,27 @@ export default [
                 defaultMessage="Structs for struct things. Useful for OOP."
                 description="Description of Structs extension"
                 id="jwStructs.jwStructsExtension.description"
+            />
+        ),
+        featured: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Text"
+                description="Name of Text extension"
+                id="text.TextExtension.name"
+            />
+        ),
+        extensionId: 'text',
+        iconURL: textExtensionIcon,
+        insetIconURL: textExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Use dynamic text for instructions, dialogue, and more!"
+                description="Description of Text extension"
+                id="text.textExtension.description"
             />
         ),
         featured: true,
