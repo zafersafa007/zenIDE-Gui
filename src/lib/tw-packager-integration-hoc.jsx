@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import log from './log';
 import {getIsShowingProject} from '../reducers/project-state';
 
-const PACKAGER = 'https://packager.turbowarp.org';
+const PACKAGER = 'https://penguinmod.github.io/PenguinMod-Packager';
 
 const readBlobAsArrayBuffer = blob => new Promise((resolve, reject) => {
     const fr = new FileReader();
