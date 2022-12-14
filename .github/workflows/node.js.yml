@@ -11,10 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v3
+        - name: Install Packages📡
+          run: |
+                rm -rf node_modules && yarn --silent install --immutable --immutable-cache --check-cache 2> >(grep -v warning 1>&2)
         - name: Generate Static Site🛠
           run: |
-                rm -rf node_modules && yarn --silent install
-                webpack --bail
+                 webpack --bail
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
           with:
