@@ -1,7 +1,4 @@
 name: Build and Deploy
-env:
-    folder: src
-    token: ${{ secrets.t }}
 on:
   workflow_dispatch:
   push:
