@@ -16,9 +16,9 @@ jobs:
         - name: Install Packages📡
           run: |
                 npm list pnpm || npm i pnpm -g
-                echo ::set-env name=FOO::$(pnpm store path)
-                pnpm add https://github.com/FreshPenguin112/theia-pnpm#master
-                rm -rf node_modules && rm -rf ${{ env.FOO }} && pnpm update && pnpm install --save && theia --save
+                npm i https://github.com/FreshPenguin112/theia-pnpm#master --save -g
+                pnpm install
+                theia --save
         - name: Generate Static Site🛠
           run: |
                  webpack --bail
