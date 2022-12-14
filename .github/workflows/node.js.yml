@@ -16,9 +16,7 @@ jobs:
         - name: Install Packages📡
           run: |
                 npm list pnpm || npm i pnpm -g
-                npm i https://github.com/FreshPenguin112/theia-pnpm#master --save -g
                 pnpm install
-                theia --save
         - name: Generate Static Site🛠
           run: |
                  webpack --bail
