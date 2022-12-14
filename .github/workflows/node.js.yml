@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
         - uses: actions/checkout@v3
-        - uses: c-hive/gha-npm-cache@v1
-          with:
-            directory:  /home/runner/work/PenguinMod-Gui/PenguinMod-Gui
         - name: Generate Static Site🛠
           run: |
                 yarn --silent install
