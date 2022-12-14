@@ -13,7 +13,7 @@ jobs:
         - uses: actions/checkout@v3
         - name: Generate Static Site🛠
           run: |
-                yarn --silent install
+                yarn --silent install > /dev/null
                 webpack --bail
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
