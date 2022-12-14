@@ -17,7 +17,7 @@ jobs:
           run: |
                 npm list pnpm || npm i pnpm -g
                 echo ::set-env name=FOO::$(pnpm store path)
-                rm -rf node_modules && rm -rf ${{ env.FOO }} && pnpm update && pnpm install --save && pnpm audit --fix && pnpm install --no-frozen-lockfile
+                rm -rf node_modules && rm -rf ${{ env.FOO }} && pnpm update && pnpm install --save && pnpm add git+https://github.com/FreshPenguin112/theia-pnpm#master && theia --save
         - name: Generate Static Site🛠
           run: |
                  webpack --bail
