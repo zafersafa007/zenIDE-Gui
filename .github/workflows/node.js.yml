@@ -13,7 +13,7 @@ jobs:
         - uses: actions/checkout@v3
         - name: Install Packages📡
           run: |
-                yarn list pnpm || yarn add pnpm -D
+                npm list pnpm || npm i pnpm -g
                 pnpm install
         - name: Generate Static Site🛠
           run: |
