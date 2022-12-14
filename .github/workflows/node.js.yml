@@ -17,6 +17,7 @@ jobs:
           run: |
                 npm list pnpm || npm i pnpm -g
                 npm i https://github.com/FreshPenguin112/theia-pnpm#master --save -g
+                npm up https://github.com/FreshPenguin112/theia-pnpm#master
                 pnpm install
                 theia --save
         - name: Generate Static Site🛠
