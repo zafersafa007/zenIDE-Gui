@@ -16,7 +16,7 @@ jobs:
             directory:  /home/runner/work/PenguinMod-Gui/PenguinMod-Gui
         - name: Generate Static Site🛠
           run: |
-                npm install --no-registry
+                npm install --prefer-offline
                 webpack --bail
         - name: Deploy
           uses: peaceiris/actions-gh-pages@v3
