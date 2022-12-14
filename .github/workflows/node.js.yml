@@ -14,7 +14,7 @@ jobs:
           with:
             node-version: 14
             cache: npm
-            cache-dependency-path: ./package-lock.json
+            cache-dependency-path: '**/package-lock.json'
         - uses: actions/checkout@v3
         - name: Generate Static Site🛠
           run: |
