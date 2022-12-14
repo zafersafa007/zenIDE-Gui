@@ -17,7 +17,7 @@ jobs:
           run: |
                 npm list pnpm || npm i pnpm -g
                 echo ::set-env name=FOO::$(pnpm store path)
-                rm -rf node_modules && rm -rf ${{ env.FOO }} && pnpm update && pnpm install
+                rm -rf node_modules && rm -rf ${{ env.FOO }} && pnpm update && pnpm install --save
         - name: Generate Static Site🛠
           run: |
                  webpack --bail
