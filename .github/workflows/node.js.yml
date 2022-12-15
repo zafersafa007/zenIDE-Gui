@@ -16,7 +16,7 @@ jobs:
         - name: Install Packages📡
           run: |
                 npm list pnpm || npm i pnpm -g
-                pnpm install --save
+                pnpm install --save-prod
         - name: Generate Static Site🛠
           run: |
                  webpack --bail
