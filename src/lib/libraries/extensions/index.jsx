@@ -69,6 +69,10 @@ import textExtensionIcon from './penguinmod/extensions/textext.png'
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
 import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg'
 
+// gCloudLink stuff that hopefully we can keep pls plsplspl !!S!
+import mikeDevCloudLinkThumb from './penguinmod/extensions/cloudlinkThumb.png'
+import mikeDevCloudLinkIcon from './penguinmod/extensions/cloudlinkIcon.svg'
+
 export default [
     {
         name: (
@@ -384,11 +388,28 @@ export default [
         description: (
             <FormattedMessage
                 defaultMessage="Box2D Physics extension created by Griffpatch."
-                description="Description for the 'Griffpatch' extension"
+                description="Description for the 'Griffpatch Physics' extension"
                 id="gui.extension.test.description"
             />
         ),
         featured: true,
+        disabled: false
+    },
+    {
+        name: 'CloudLink',
+        extensionId: 'mikedev_cloudlink',
+        collaborator: 'MikeDev',
+        iconURL: mikeDevCloudLinkThumb,
+        insetIconURL: mikeDevCloudLinkIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="A powerful WebSocket extension for Scratch 3 and an easy to use WebSocket framework."
+                description="Description for the 'MikeDev CloudLink' extension"
+                id="gui.extension.test.description"
+            />
+        ),
+        featured: true,
+        internetConnectionRequired: true,
         disabled: false
     },
     {
