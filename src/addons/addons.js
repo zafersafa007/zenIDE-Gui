@@ -52,7 +52,6 @@ const addons = [
     'move-to-top-bottom',
     'disable-paste-offset',
     'block-duplicate',
-    'rename-broadcasts',
     'swap-local-global',
     'editor-comment-previews',
     'columns',
@@ -67,7 +66,8 @@ const addons = [
 ];
 
 const newAddons = [
-    'rename-broadcasts'
+    'pick-colors-from-stage',
+    'zebra-striping'
 ];
 
 // eslint-disable-next-line import/no-commonjs
