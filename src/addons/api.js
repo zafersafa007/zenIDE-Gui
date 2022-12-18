@@ -437,8 +437,8 @@ class Tab extends EventTargetShim {
                 break;
             }
 
-            if (child.dataset.addonSharedSpaceOrder) {
-                if (Number(child.dataset.addonSharedSpaceOrder) > order) {
+            if (child.dataset.saSharedSpaceOrder) {
+                if (Number(child.dataset.saSharedSpaceOrder) > order) {
                     // We found another SA element with higher order number
                     // If from = [] and this is the first child, prepend.
                     // Otherwise, append before this child.
@@ -484,13 +484,14 @@ class Tab extends EventTargetShim {
             displayName = procedureCode;
         }
 
+        const wrappedCallback = (a, util) => callback(a, util.thread);
+
         const vm = this.traps.vm;
         vm.addAddonBlock({
             procedureCode,
             arguments: args,
-            callback,
-            color: '#29beb8',
-            secondaryColor: '#3aa8a4',
+            callback: wrappedCallback,
+            // Ignored by VM but used by scratch-blocks traps
             displayName
         });
 

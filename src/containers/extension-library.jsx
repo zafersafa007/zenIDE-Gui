@@ -64,17 +64,6 @@ class ExtensionLibrary extends React.PureComponent {
                 this.props.vm.extensionManager.loadExtensionURL(parsedURL)
                     .then(() => {
                         this.props.onCategorySelected(id);
-                        if (isCustomURL) {
-                            let newUrl = location.pathname;
-                            if (location.search) {
-                                newUrl += location.search;
-                                newUrl += '&';
-                            } else {
-                                newUrl += '?';
-                            }
-                            newUrl += `extension=${encodeURIComponent(url)}`;
-                            history.replaceState('', '', newUrl);
-                        }
                     })
                     .catch(err => {
                         // eslint-disable-next-line no-alert
