@@ -405,7 +405,7 @@ export default [
             <FormattedMessage
                 defaultMessage="A powerful WebSocket extension for Scratch 3 and an easy to use WebSocket framework."
                 description="Description for the 'MikeDev CloudLink' extension"
-                id="cloudlink.extensionTile.description"
+                id="Cloudlink.extensionTile.description"
             />
         ),
         featured: true,
