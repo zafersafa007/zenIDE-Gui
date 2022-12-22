@@ -397,7 +397,7 @@ export default [
     },
     {
         name: 'CloudLink',
-        extensionId: 'mikedev_cloudlink',
+        extensionId: 'cloudlink',
         collaborator: 'MikeDev',
         iconURL: mikeDevCloudLinkThumb,
         insetIconURL: mikeDevCloudLinkIcon,
@@ -405,7 +405,7 @@ export default [
             <FormattedMessage
                 defaultMessage="A powerful WebSocket extension for Scratch 3 and an easy to use WebSocket framework."
                 description="Description for the 'MikeDev CloudLink' extension"
-                id="Cloudlink.extensionTile.description"
+                id="CloudLink.extensionTile.description"
             />
         ),
         featured: true,
