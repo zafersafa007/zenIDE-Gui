@@ -397,7 +397,7 @@ export default [
     },
     {
         name: 'CloudLink',
-        extensionId: 'cloudlink',
+        extensionId: 'CloudLink',
         collaborator: 'MikeDev',
         iconURL: mikeDevCloudLinkThumb,
         insetIconURL: mikeDevCloudLinkIcon,
