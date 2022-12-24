@@ -63,7 +63,7 @@ import jwProtoExtensionIcon from './penguinmod/extensions/Proto.svg'
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
 
-import textExtensionIcon from './penguinmod/extensions/textext.png'
+import BetterTextBlocksExtensionIcon from './penguinmod/extensions/textext.png'
 
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
@@ -245,6 +245,26 @@ export default [
                 defaultMessage="Blocks for handling JSON objects. Arrays are not supported yet."
                 description="Description of JSON extension"
                 id="jgJSON.jgJSONExtension.description"
+            />
+        ),
+        featured: true,
+        incompatibleWithScratch: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Better text blocks"
+                description="Name of the extension"
+                id="BetterTextBlocks.ExtensionName"
+            />
+        ),
+        extensionId: 'text',
+        iconURL: BetterTextBlocksExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Adds better text drawing blocks to pm!"
+                description="Description of the extension"
+                id="BetterTextBlocks.ExtensionDescription"
             />
         ),
         featured: true,
