@@ -18,7 +18,7 @@ jobs:
           with:
              node-version: "15"
         - name: Install Packages📡
-          run: npm i
+          run: npm i --force
                 # npm list pnpm || npm i pnpm -g
                 # pnpm install --shamefully-hoist
         - name: Generate Static Site🛠
