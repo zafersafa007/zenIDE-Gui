@@ -18,9 +18,9 @@ jobs:
           with:
              node-version: "15"
         - name: Install Packages📡
-          run: |
-                npm list pnpm || npm i pnpm -g
-                pnpm install --shamefully-hoist
+          run: npm i
+                # npm list pnpm || npm i pnpm -g
+                # pnpm install --shamefully-hoist
         - name: Generate Static Site🛠
           run: |
                  webpack --bail
