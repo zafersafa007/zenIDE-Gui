@@ -316,8 +316,8 @@ export default [
     {
         name: (
             <FormattedMessage
-                defaultMessage="Structs"
-                description="Name of Structs extension"
+                defaultMessage="OOP"
+                description="Name of OOP extension"
                 id="jwStructs.jwStructsExtension.name"
             />
         ),
@@ -326,8 +326,8 @@ export default [
         insetIconURL: jwStructsExtensionIcon,
         description: (
             <FormattedMessage
-                defaultMessage="Structs for struct things. Useful for OOP."
-                description="Description of Structs extension"
+                defaultMessage="OOP blocks. OOp is a programming paradigm that uses objects and their interactions to design applications and computer programs."
+                description="Description of OOP extension"
                 id="jwStructs.jwStructsExtension.description"
             />
         ),
