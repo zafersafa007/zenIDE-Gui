@@ -1,5 +1,7 @@
 tasks:
-  - name: Setup gitpod and deploy a preview
-    before: npm i -g pnpm
-    init: pnpm install
-    command: npm run build && npm run start
+  - name: Start web server
+    init: python -m http.server 8000
+
+ports:
+  - port: 8000
+    onOpen: open-preview
