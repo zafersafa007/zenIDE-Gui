@@ -49,10 +49,8 @@ specifiers:
   lodash.defaultsdeep: 4.6.1
   lodash.omit: 4.5.0
   lodash.throttle: 4.0.1
-  microee: ^0.0.6
   minilog: 3.1.0
   mkdirp: 1.0.3
-  npm-install-missing: ^0.1.4
   omggif: 1.0.9
   papaparse: 5.3.0
   postcss-import: ^12.0.0
@@ -131,9 +129,7 @@ dependencies:
   lodash.debounce: 4.0.8
   lodash.omit: 4.5.0
   lodash.throttle: 4.0.1
-  microee: 0.0.6
   minilog: 3.1.0
-  npm-install-missing: 0.1.4
   omggif: 1.0.9
   papaparse: 5.3.0
   postcss-import: 12.0.1
@@ -2174,10 +2170,6 @@ packages:
     dependencies:
       lodash: 4.17.21
     dev: true
-
-  /async/3.2.4:
-    resolution: {integrity: sha512-iAB+JbDEGXhyIUavoDl9WP/Jj106Kz9DEn1DPgYw5ruDn0e3Wgi3sKFm55sASdGBNOQB8F59d9qQ7deqrHA8wQ==}
-    dev: false
 
   /asynckit/0.4.0:
     resolution: {integrity: sha512-Oei9OH4tRh0YqU3GxhX79dM/mwVgvbZJaSNaRk+bshkj0S5cfHcgYakreBjrHwatXKbz+IoIdYLxrKim2MjW0Q==}
@@ -7558,16 +7550,6 @@ packages:
       sort-keys: 1.1.2
     dev: true
 
-  /npm-install-missing/0.1.4:
-    resolution: {integrity: sha512-Jo+EwmnyqZrNemu9cVVHVV4hu5fBi1aBSj6fytu9DZScn+AaI3wv+Ltl2ukMQGsEGohycCEbdWNiB7tRrUMTeA==}
-    engines: {node: '>= 0.9.x'}
-    deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
-    hasBin: true
-    dependencies:
-      async: 3.2.4
-      npm: 9.2.0
-    dev: false
-
   /npm-normalize-package-bin/1.0.1:
     resolution: {integrity: sha512-EPfafl6JL5/rU+ot6P3gRSCpPDW5VmIzX959Ob1+ySFUuuYHWHekXpwdUZcKP5C+DS4GEtdJluwBjnsNDl+fSA==}
     dev: false
@@ -7578,81 +7560,6 @@ packages:
     dependencies:
       path-key: 2.0.1
     dev: true
-
-  /npm/9.2.0:
-    resolution: {integrity: sha512-oypVdaWGHDuV79RXLvp+B9gh6gDyAmoHKrQ0/JBYTWWx5D8/+AAxFdZC84fSIiyDdyW4qfrSyYGKhekxDOaMXQ==}
-    engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
-    hasBin: true
-    dev: false
-    bundledDependencies:
-      - '@isaacs/string-locale-compare'
-      - '@npmcli/arborist'
-      - '@npmcli/config'
-      - '@npmcli/map-workspaces'
-      - '@npmcli/package-json'
-      - '@npmcli/run-script'
-      - abbrev
-      - archy
-      - cacache
-      - chalk
-      - ci-info
-      - cli-columns
-      - cli-table3
-      - columnify
-      - fastest-levenshtein
-      - fs-minipass
-      - glob
-      - graceful-fs
-      - hosted-git-info
-      - ini
-      - init-package-json
-      - is-cidr
-      - json-parse-even-better-errors
-      - libnpmaccess
-      - libnpmdiff
-      - libnpmexec
-      - libnpmfund
-      - libnpmhook
-      - libnpmorg
-      - libnpmpack
-      - libnpmpublish
-      - libnpmsearch
-      - libnpmteam
-      - libnpmversion
-      - make-fetch-happen
-      - minimatch
-      - minipass
-      - minipass-pipeline
-      - mkdirp
-      - ms
-      - node-gyp
-      - nopt
-      - npm-audit-report
-      - npm-install-checks
-      - npm-package-arg
-      - npm-pick-manifest
-      - npm-profile
-      - npm-registry-fetch
-      - npm-user-validate
-      - npmlog
-      - p-map
-      - pacote
-      - parse-conflict-json
-      - proc-log
-      - qrcode-terminal
-      - read
-      - read-package-json
-      - read-package-json-fast
-      - rimraf
-      - semver
-      - ssri
-      - tar
-      - text-table
-      - tiny-relative-date
-      - treeverse
-      - validate-npm-package-name
-      - which
-      - write-file-atomic
 
   /nth-check/2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
