@@ -1,0 +1,5 @@
+tasks:
+  - name: Setup gitpod and deploy a preview
+    before: npm i -g pnpm
+    init: pnpm install
+    command: npm run build && npm run start
