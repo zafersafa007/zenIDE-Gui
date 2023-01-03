@@ -1,6 +1,6 @@
 tasks:
     - name: Install and build
-       init: npm i -g pnpm && pnpm i --shamefully-hoist
+      init: npm i -g pnpm && pnpm i --shamefully-hoist
     - name: Start web server
       command: npm run start
 
