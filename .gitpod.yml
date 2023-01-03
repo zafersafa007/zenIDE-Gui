@@ -1,7 +1,9 @@
 tasks:
-  - name: Start web server
-    init: npm i -g pnpm && pnpm i --shamefully-hoist && npm run start
-    
+    - name: Install and build
+       init: npm i -g pnpm && pnpm i --shamefully-hoist
+    - name: Start web server
+      command: npm run start
+
 ports:
-  - port: 3000
-    onOpen: open-browser
+     - port: 3000
+        onOpen: open-browser
