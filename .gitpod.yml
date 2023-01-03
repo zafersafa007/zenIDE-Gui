@@ -1,3 +1,3 @@
 tasks:
   - name: Start web server
-    init: npm i pnpm && pnpm i --shamefully-hoist && npm run start
+    init: npm i -g pnpm && pnpm i --shamefully-hoist && npm run start
