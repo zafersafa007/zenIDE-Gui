@@ -23,10 +23,13 @@ import stageSizeReducer, {stageSizeInitialState} from './stage-size';
 import targetReducer, {targetsInitialState} from './targets';
 import timeoutReducer, {timeoutInitialState} from './timeout';
 import toolboxReducer, {toolboxInitialState} from './toolbox';
-import twReducer, {twInitialState} from './tw';
-import customStageSizeReducer, {customStageSizeInitialState} from './custom-stage-size';
 import vmReducer, {vmInitialState} from './vm';
 import vmStatusReducer, {vmStatusInitialState} from './vm-status';
+import settingsReducer, {settingsInitialState} from './settings';
+import extensionReducer, {extensionInitialState} from './extension';
+import loadErrorReducer, {loadErrorInitialState} from './load-error';
+import extensionSettingsReducer, {extensionSettingsInitialState} from './extension-settings';
+
 import workspaceMetricsReducer, {workspaceMetricsInitialState} from './workspace-metrics';
 import throttle from 'redux-throttle';
 
@@ -41,7 +44,6 @@ const guiInitialState = {
     cards: cardsInitialState,
     colorPicker: colorPickerInitialState,
     connectionModal: connectionModalInitialState,
-    customStageSize: customStageSizeInitialState,
     customProcedures: customProceduresInitialState,
     editorTab: editorTabInitialState,
     mode: modeInitialState,
@@ -60,10 +62,13 @@ const guiInitialState = {
     targets: targetsInitialState,
     timeout: timeoutInitialState,
     toolbox: toolboxInitialState,
-    tw: twInitialState,
     vm: vmInitialState,
     vmStatus: vmStatusInitialState,
-    workspaceMetrics: workspaceMetricsInitialState
+    settings: settingsInitialState,
+    extension: extensionInitialState,
+    workspaceMetrics: workspaceMetricsInitialState,
+    loadError: loadErrorInitialState,
+    extensionSettings: extensionSettingsInitialState
 };
 
 const initPlayer = function (currentState) {
@@ -71,7 +76,6 @@ const initPlayer = function (currentState) {
         {},
         currentState,
         {mode: {
-            isEmbedded: false,
             isFullScreen: currentState.mode.isFullScreen,
             isPlayerOnly: true,
             // When initializing in player mode, make sure to reset
@@ -85,7 +89,6 @@ const initFullScreen = function (currentState) {
         {},
         currentState,
         {mode: {
-            isEmbedded: false,
             isFullScreen: true,
             isPlayerOnly: currentState.mode.isPlayerOnly,
             hasEverEnteredEditor: currentState.mode.hasEverEnteredEditor
@@ -98,9 +101,8 @@ const initEmbedded = function (currentState) {
         {},
         currentState,
         {mode: {
-            isEmbedded: true,
-            // tw: embed does not need isFullScreen anymore
-            isFullScreen: false,
+            showBranding: true,
+            isFullScreen: true,
             isPlayerOnly: true,
             hasEverEnteredEditor: false
         }}
@@ -145,7 +147,6 @@ const guiReducer = combineReducers({
     cards: cardsReducer,
     colorPicker: colorPickerReducer,
     connectionModal: connectionModalReducer,
-    customStageSize: customStageSizeReducer,
     customProcedures: customProceduresReducer,
     editorTab: editorTabReducer,
     mode: modeReducer,
@@ -164,10 +165,13 @@ const guiReducer = combineReducers({
     targets: targetReducer,
     timeout: timeoutReducer,
     toolbox: toolboxReducer,
-    tw: twReducer,
     vm: vmReducer,
     vmStatus: vmStatusReducer,
-    workspaceMetrics: workspaceMetricsReducer
+    settings: settingsReducer,
+    extension: extensionReducer,
+    workspaceMetrics: workspaceMetricsReducer,
+    loadError: loadErrorReducer,
+    extensionSettings: extensionSettingsReducer
 });
 
 export {
