@@ -1,6 +1,6 @@
 tasks:
-    - name: InstalInstalll and buildbuild
-      init: npm i-g pnpm && pnpm i --shamefully-hoist
+    - name: Install and build
+      init: npm i -g pnpm && pnpm i --shamefully-hoist
       command: npm run start
 
 ports:
