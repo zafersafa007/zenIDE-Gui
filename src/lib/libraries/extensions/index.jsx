@@ -417,45 +417,20 @@ export default [
         disabled: false
     },
     {
-        name: (
-            <FormattedMessage
-                defaultMessage="CloudLink"
-                description="Description of CloudLink extension"
-                id="gui.extension.cloudlink.description"
-            />
-        ),
+        name: "CloudLink",
         extensionId: 'cloudlink',
-        iconURL: cloudlinkThumb,
-        insetIconURL: cloudlinkIcon,
+        iconURL: cloudlinkIcon,
+        insetIconURL: cloudlinkThumb
         description: (
             <FormattedMessage
-                defaultMessage="A useful extension to connect to webservers"
-                description="Description of Unite extension"
+                defaultMessage="CloudLink: Link to the Cloud"
+                description="Scratch utilities"
                 id="gui.extension.cloudlink.description"
             />
         ),
         featured: true,
-        collaborator: "MikeDev",
-        incompatibleWithScratch: true
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="TurboWarp Blocks"
-                description="Name of TW extension"
-                id="tw.twExtension.name"
-            />
-        ),
-        extensionId: 'tw',
-        iconURL: twIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Weird new blocks. Not compatible with Scratch."
-                description="Description of TW extension"
-                id="tw.twExtension.description"
-            />
-        ),
-        featured: true,
+        collaborator: 'MikeDev',
+        internetConnectionRequired: true,
         incompatibleWithScratch: true
     },
     {
