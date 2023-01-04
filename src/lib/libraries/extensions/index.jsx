@@ -68,6 +68,9 @@ import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
 import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg'
+//cl waw
+import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png'
+import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg'
 
 export default [
     {
@@ -412,6 +415,28 @@ export default [
         ),
         featured: true,
         disabled: false
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="CloudLink"
+                description="Description of CloudLink extension"
+                id="gui.extension.cloudlink.description"
+            />
+        ),
+        extensionId: 'cloudlink',
+        iconURL: cloudlinkThumb,
+        insetIconURL: cloudlinkIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="A useful extension to connect to webservers"
+                description="Description of Unite extension"
+                id="gui.extension.cloudlink.description"
+            />
+        ),
+        featured: true,
+        collaborator: "MikeDev",
+        incompatibleWithScratch: true
     },
     {
         name: (
