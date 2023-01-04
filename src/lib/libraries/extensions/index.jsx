@@ -420,10 +420,10 @@ export default [
         name: "CloudLink",
         extensionId: 'cloudlink',
         iconURL: cloudlinkIcon,
-        insetIconURL: cloudlinkThumb
+        insetIconURL: cloudlinkThumb,
         description: (
             <FormattedMessage
-                defaultMessage="CloudLink: Link to the Cloud"
+                defaultMessage="An extension to communicate with webservers with tons of blocks"
                 description="Scratch utilities"
                 id="gui.extension.cloudlink.description"
             />
