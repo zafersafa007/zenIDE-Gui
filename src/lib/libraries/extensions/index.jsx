@@ -418,9 +418,9 @@ export default [
     },
     {
         name: "CloudLink",
-        extensionId: 'cloudlink',
-        iconURL: cloudlinkIcon,
-        insetIconURL: cloudlinkThumb,
+        extensionId: 'cl',
+        iconURL: cloudlinkThumb,
+        insetIconURL: cloudlinkIcon,
         description: (
             <FormattedMessage
                 defaultMessage="An extension to communicate with webservers with tons of blocks"
