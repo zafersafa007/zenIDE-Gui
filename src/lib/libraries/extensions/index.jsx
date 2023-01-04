@@ -415,7 +415,7 @@ export default [
         ),
         featured: true,
         disabled: false
-    },
+    },/*
     {
         name: "CloudLink",
         extensionId: 'cl',
@@ -432,7 +432,7 @@ export default [
         collaborator: 'MikeDev',
         internetConnectionRequired: true,
         incompatibleWithScratch: true
-    },
+    },*/
     {
         name: 'micro:bit',
         extensionId: 'microbit',
