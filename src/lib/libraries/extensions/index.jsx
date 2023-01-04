@@ -425,7 +425,7 @@ export default [
             <FormattedMessage
                 defaultMessage="An extension to communicate with webservers with tons of blocks"
                 description="Scratch utilities"
-                id="gui.extension.cloudlink.description"
+                id="gui.extension.cl.description"
             />
         ),
         featured: true,
