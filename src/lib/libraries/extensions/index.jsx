@@ -415,24 +415,27 @@ export default [
         ),
         featured: true,
         disabled: false
-    },/*
+    },
     {
-        name: "CloudLink",
-        extensionId: 'cl',
-        iconURL: cloudlinkThumb,
-        insetIconURL: cloudlinkIcon,
+        name: (
+            <FormattedMessage
+                defaultMessage="TurboWarp Blocks"
+                description="Name of TW extension"
+                id="tw.twExtension.name"
+            />
+        ),
+        extensionId: 'tw',
+        iconURL: twIcon,
         description: (
             <FormattedMessage
-                defaultMessage="An extension to communicate with webservers with tons of blocks"
-                description="Scratch utilities"
-                id="gui.extension.cl.description"
+                defaultMessage="Weird new blocks. Not compatible with Scratch."
+                description="Description of TW extension"
+                id="tw.twExtension.description"
             />
         ),
         featured: true,
-        collaborator: 'MikeDev',
-        internetConnectionRequired: true,
         incompatibleWithScratch: true
-    },*/
+    },
     {
         name: 'micro:bit',
         extensionId: 'microbit',
