@@ -8,9 +8,9 @@ specifiers:
   '@babel/plugin-transform-async-to-generator': 7.14.5
   '@babel/preset-env': 7.14.8
   '@babel/preset-react': 7.14.5
-  '@turbowarp/scratch-l10n': ^3.999.20221007210204
-  arraybuffer-loader: ^1.0.6
-  autoprefixer: ^9.0.1
+  '@turbowarp/scratch-l10n': ^3.999.20221220224553
+  arraybuffer-loader: ^1.0.8
+  autoprefixer: ^9.8.8
   babel-core: 7.0.0-bridge.0
   babel-eslint: 10.0.3
   babel-loader: 8.2.2
@@ -21,7 +21,7 @@ specifiers:
   computed-style-to-inline-style: 3.0.0
   copy-webpack-plugin: 6.4.1
   core-js: 2.5.7
-  css-loader: ^1.0.0
+  css-loader: ^1.0.1
   enzyme: 3.10.0
   enzyme-adapter-react-16: 1.3.0
   es6-object-assign: 1.1.0
@@ -35,8 +35,8 @@ specifiers:
   get-float-time-domain-data: 0.1.0
   get-user-media-promise: 1.1.4
   gh-pages: 3.2.3
-  gh-pages-webpack-plugin: git+https://github.com/FreshPenguin112/gh-pages-webpack-plugin
-  html-webpack-plugin: ^4.2.0
+  gh-pages-webpack-plugin: github:FreshPenguin112/gh-pages-webpack-plugin
+  html-webpack-plugin: ^4.5.2
   immutable: 3.8.2
   intl: 1.2.5
   intl-messageformat: ^2.2.0
@@ -53,10 +53,10 @@ specifiers:
   mkdirp: 1.0.3
   omggif: 1.0.9
   papaparse: 5.3.0
-  postcss-import: ^12.0.0
+  postcss-import: ^12.0.1
   postcss-loader: ^3.0.0
-  postcss-simple-vars: ^5.0.1
-  prop-types: ^15.5.10
+  postcss-simple-vars: ^5.0.2
+  prop-types: ^15.8.1
   query-string: ^5.1.1
   raf: 3.4.1
   raw-loader: ^0.5.1
@@ -70,7 +70,7 @@ specifiers:
   react-modal: 3.9.1
   react-popover: 0.5.10
   react-redux: 5.0.7
-  react-responsive: ^4
+  react-responsive: ^4.1.0
   react-string-replace: ^0.4.4
   react-style-proptype: 3.2.2
   react-tabs: 2.3.0
@@ -81,19 +81,19 @@ specifiers:
   redux-mock-store: 1.5.3
   redux-throttle: 0.1.1
   rimraf: 2.7.1
-  scratch-audio: git+https://github.com/TurboWarp/scratch-audio.git#develop
-  scratch-blocks: git+https://github.com/PenguinMod/PenguinMod-Blocks.git#develop-builds
-  scratch-paint: git+https://github.com/TurboWarp/scratch-paint.git#develop
-  scratch-render: git+https://github.com/PenguinMod/PenguinMod-Render.git#develop
+  scratch-audio: github:TurboWarp/scratch-audio#develop
+  scratch-blocks: github:PenguinMod/PenguinMod-Blocks#develop-builds
+  scratch-paint: github:TurboWarp/scratch-paint#develop
+  scratch-render: github:PenguinMod/PenguinMod-Render#develop
   scratch-render-fonts: 1.0.0-prerelease.20210401210003
-  scratch-storage: git+https://github.com/TurboWarp/scratch-storage.git#develop
-  scratch-svg-renderer: git+https://github.com/TurboWarp/scratch-svg-renderer.git#develop
-  scratch-vm: git+https://github.com/PenguinMod/PenguinMod-Vm.git#develop
+  scratch-storage: github:TurboWarp/scratch-storage#develop
+  scratch-svg-renderer: github:TurboWarp/scratch-svg-renderer#develop
+  scratch-vm: github:PenguinMod/PenguinMod-Vm#develop
   selenium-webdriver: 3.6.0
   startaudiocontext: 1.2.1
-  style-loader: ^0.23.0
+  style-loader: ^0.23.1
   text-encoding: 0.7.0
-  theia: git+https://github.com/FreshPenguin112/theia-pnpm#master
+  theia: github:FreshPenguin112/theia-pnpm#master
   to-style: 1.3.3
   uglifyjs-webpack-plugin: 1.3.0
   url-loader: ^4.1.1
@@ -157,13 +157,13 @@ dependencies:
   redux: 3.7.2
   redux-throttle: 0.1.1
   scratch-audio: github.com/TurboWarp/scratch-audio/30e31c4c5ea4b1c85fe4d579c7fef847fe64ff7b
-  scratch-blocks: github.com/PenguinMod/PenguinMod-Blocks/b855c097a13e65fbd1fb7c906e54449fb32cabe2
-  scratch-paint: github.com/TurboWarp/scratch-paint/3a46599373eb3418ea164d1ba27221d5e7fd9a16_6k6rspeql5cezdcqbrutshycvq
+  scratch-blocks: github.com/PenguinMod/PenguinMod-Blocks/5a2f22355274da8a07e3ccb556fdb4d4362eabb7
+  scratch-paint: github.com/TurboWarp/scratch-paint/b99d6e0f23d8e7a1d68d279e6af4c1da693ede31_6k6rspeql5cezdcqbrutshycvq
   scratch-render: github.com/PenguinMod/PenguinMod-Render/96ec5550992d75f9f688222d7b17a29f8db4698a_jgmwvpsb5yiknzfs7zehpymxpy
   scratch-render-fonts: 1.0.0-prerelease.20210401210003
   scratch-storage: github.com/TurboWarp/scratch-storage/5392b136b2e6982231023bf4bf9c14c4b890dd46_webpack@4.46.0
   scratch-svg-renderer: github.com/TurboWarp/scratch-svg-renderer/3aaf933b19b55d632b6319cb05ab276528b9964d_jgmwvpsb5yiknzfs7zehpymxpy
-  scratch-vm: github.com/PenguinMod/PenguinMod-Vm/a0f08dcb7753873f41e130954a712be917385a22_cnjjgryycnetjxj63hj6pfbvmu
+  scratch-vm: github.com/PenguinMod/PenguinMod-Vm/e1363170a934a5e73d9725a321799da144b2d755_cnjjgryycnetjxj63hj6pfbvmu
   startaudiocontext: 1.2.1
   style-loader: 0.23.1
   text-encoding: 0.7.0
@@ -257,7 +257,7 @@ packages:
       '@babel/helpers': 7.20.7
       '@babel/parser': 7.20.7
       '@babel/template': 7.20.7
-      '@babel/traverse': 7.20.10
+      '@babel/traverse': 7.20.12
       '@babel/types': 7.20.7
       convert-source-map: 1.9.0
       debug: 4.3.4
@@ -304,8 +304,8 @@ packages:
       lru-cache: 5.1.1
       semver: 6.3.0
 
-  /@babel/helper-create-class-features-plugin/7.20.7_@babel+core@7.14.8:
-    resolution: {integrity: sha512-LtoWbDXOaidEf50hmdDqn9g8VEzsorMexoWMQdQODbvmqYmaF23pBP5VNPAGIFHsFQCIeKokDiz3CH5Y2jlY6w==}
+  /@babel/helper-create-class-features-plugin/7.20.12_@babel+core@7.14.8:
+    resolution: {integrity: sha512-9OunRkbT0JQcednL0UFvbfXpAsUXiGjUk0a7sN8fUXX7Mue79cUSMjHGDRRi/Vz9vYlpIhLV5fMD5dKoMhhsNQ==}
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0
@@ -317,6 +317,7 @@ packages:
       '@babel/helper-member-expression-to-functions': 7.20.7
       '@babel/helper-optimise-call-expression': 7.18.6
       '@babel/helper-replace-supers': 7.20.7
+      '@babel/helper-skip-transparent-expression-wrappers': 7.20.0
       '@babel/helper-split-export-declaration': 7.18.6
     transitivePeerDependencies:
       - supports-color
@@ -342,7 +343,7 @@ packages:
       '@babel/helper-compilation-targets': 7.20.7_@babel+core@7.14.8
       '@babel/helper-module-imports': 7.18.6
       '@babel/helper-plugin-utils': 7.20.2
-      '@babel/traverse': 7.20.10
+      '@babel/traverse': 7.20.12
       debug: 4.3.4
       lodash.debounce: 4.0.8
       resolve: 1.22.1
@@ -398,7 +399,7 @@ packages:
       '@babel/helper-split-export-declaration': 7.18.6
       '@babel/helper-validator-identifier': 7.19.1
       '@babel/template': 7.20.7
-      '@babel/traverse': 7.20.10
+      '@babel/traverse': 7.20.12
       '@babel/types': 7.20.7
     transitivePeerDependencies:
       - supports-color
@@ -437,7 +438,7 @@ packages:
       '@babel/helper-member-expression-to-functions': 7.20.7
       '@babel/helper-optimise-call-expression': 7.18.6
       '@babel/template': 7.20.7
-      '@babel/traverse': 7.20.10
+      '@babel/traverse': 7.20.12
       '@babel/types': 7.20.7
     transitivePeerDependencies:
       - supports-color
@@ -480,7 +481,7 @@ packages:
     dependencies:
       '@babel/helper-function-name': 7.19.0
       '@babel/template': 7.20.7
-      '@babel/traverse': 7.20.10
+      '@babel/traverse': 7.20.12
       '@babel/types': 7.20.7
     transitivePeerDependencies:
       - supports-color
@@ -491,7 +492,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/template': 7.20.7
-      '@babel/traverse': 7.20.10
+      '@babel/traverse': 7.20.12
       '@babel/types': 7.20.7
     transitivePeerDependencies:
       - supports-color
@@ -545,7 +546,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.14.8
-      '@babel/helper-create-class-features-plugin': 7.20.7_@babel+core@7.14.8
+      '@babel/helper-create-class-features-plugin': 7.20.12_@babel+core@7.14.8
       '@babel/helper-plugin-utils': 7.20.2
     transitivePeerDependencies:
       - supports-color
@@ -558,7 +559,7 @@ packages:
       '@babel/core': ^7.12.0
     dependencies:
       '@babel/core': 7.14.8
-      '@babel/helper-create-class-features-plugin': 7.20.7_@babel+core@7.14.8
+      '@babel/helper-create-class-features-plugin': 7.20.12_@babel+core@7.14.8
       '@babel/helper-plugin-utils': 7.20.2
       '@babel/plugin-syntax-class-static-block': 7.14.5_@babel+core@7.14.8
     transitivePeerDependencies:
@@ -675,7 +676,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.14.8
-      '@babel/helper-create-class-features-plugin': 7.20.7_@babel+core@7.14.8
+      '@babel/helper-create-class-features-plugin': 7.20.12_@babel+core@7.14.8
       '@babel/helper-plugin-utils': 7.20.2
     transitivePeerDependencies:
       - supports-color
@@ -689,7 +690,7 @@ packages:
     dependencies:
       '@babel/core': 7.14.8
       '@babel/helper-annotate-as-pure': 7.18.6
-      '@babel/helper-create-class-features-plugin': 7.20.7_@babel+core@7.14.8
+      '@babel/helper-create-class-features-plugin': 7.20.12_@babel+core@7.14.8
       '@babel/helper-plugin-utils': 7.20.2
       '@babel/plugin-syntax-private-property-in-object': 7.14.5_@babel+core@7.14.8
     transitivePeerDependencies:
@@ -1387,8 +1388,8 @@ packages:
       '@babel/parser': 7.20.7
       '@babel/types': 7.20.7
 
-  /@babel/traverse/7.20.10:
-    resolution: {integrity: sha512-oSf1juCgymrSez8NI4A2sr4+uB/mFd9MXplYGPEBnfAuWmmyeVcHa6xLPiaRBcXkcb/28bgxmQLTVwFKE1yfsg==}
+  /@babel/traverse/7.20.12:
+    resolution: {integrity: sha512-MsIbFN0u+raeja38qboyF8TIT7K0BFzz/Yd/77ta4MsUsmP2RAnidIlwq7d5HFQrH/OZJecGV6B71C4zAgpoSQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/code-frame': 7.18.6
@@ -1486,7 +1487,7 @@ packages:
     engines: {node: '>= 8'}
     dependencies:
       '@nodelib/fs.scandir': 2.1.5
-      fastq: 1.14.0
+      fastq: 1.15.0
 
   /@npmcli/fs/1.1.1:
     resolution: {integrity: sha512-8KG5RD0GVP4ydEzRn/I4BNDuxDtqVbOdm8675T49OIG/NGhaK0pjPX7ZcDlvKYbA+ulvVK3ztfcF4uBdOxuJbQ==}
@@ -2022,7 +2023,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
       get-intrinsic: 1.1.3
       is-string: 1.0.7
     dev: true
@@ -2058,7 +2059,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
       es-array-method-boxes-properly: 1.0.0
       is-string: 1.0.7
     dev: true
@@ -2068,7 +2069,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
       es-shim-unscopables: 1.0.0
     dev: true
 
@@ -2078,7 +2079,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
       es-shim-unscopables: 1.0.0
     dev: true
 
@@ -2088,7 +2089,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
       es-shim-unscopables: 1.0.0
     dev: true
 
@@ -2098,7 +2099,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
       es-array-method-boxes-properly: 1.0.0
       is-string: 1.0.7
     dev: true
@@ -2192,13 +2193,18 @@ packages:
     hasBin: true
     dependencies:
       browserslist: 4.21.4
-      caniuse-lite: 1.0.30001441
+      caniuse-lite: 1.0.30001442
       normalize-range: 0.1.2
       num2fraction: 1.2.2
       picocolors: 0.2.1
       postcss: 7.0.39
       postcss-value-parser: 4.2.0
     dev: false
+
+  /available-typed-arrays/1.0.5:
+    resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
+    engines: {node: '>= 0.4'}
+    dev: true
 
   /aws-sign2/0.7.0:
     resolution: {integrity: sha512-08kcGqnYf/YmjoRhfxyu+CLxBjUtHLXLXX/vUfx9l2LYzG3c1m61nrpyFUZI6zeS+Li/wWMMidD9KgrqtGq3mA==}
@@ -2267,7 +2273,7 @@ packages:
     dependencies:
       '@babel/code-frame': 7.18.6
       '@babel/parser': 7.20.7
-      '@babel/traverse': 7.20.10
+      '@babel/traverse': 7.20.12
       '@babel/types': 7.20.7
       eslint: 5.16.0
       eslint-visitor-keys: 1.3.0
@@ -2715,7 +2721,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001441
+      caniuse-lite: 1.0.30001442
       electron-to-chromium: 1.4.284
       node-releases: 2.0.8
       update-browserslist-db: 1.0.10_browserslist@4.21.4
@@ -2904,8 +2910,8 @@ packages:
     resolution: {integrity: sha512-L28STB170nwWS63UjtlEOE3dldQApaJXZkOI1uMFfzf3rRuPegHaHesyee+YxQ+W6SvRDQV6UrdOdRiR153wJg==}
     engines: {node: '>=6'}
 
-  /caniuse-lite/1.0.30001441:
-    resolution: {integrity: sha512-OyxRR4Vof59I3yGWXws6i908EtGbMzVUi3ganaZQHmydk1iwDhRnvaPG2WaR0KcqrDFKrxVZHULT396LEPhXfg==}
+  /caniuse-lite/1.0.30001442:
+    resolution: {integrity: sha512-239m03Pqy0hwxYPYR5JwOIxRJfLTWtle9FV8zosfV5pHg+/51uD4nxcUlM8+mWWGfwKtt8lJNHnD3cWw9VZ6ow==}
 
   /canvas-toBlob/1.0.0:
     resolution: {integrity: sha512-oU5bawygt/Nef9F+C49eTFmzXzz6yKdGqn6J1wn/LZQF5ulnnZVm0KIZzik85I6tjCbZFH6aa47j4bU2tkHxRw==}
@@ -4022,26 +4028,31 @@ packages:
     dependencies:
       is-arrayish: 0.2.1
 
-  /es-abstract/1.20.5:
-    resolution: {integrity: sha512-7h8MM2EQhsCA7pU/Nv78qOXFpD8Rhqd12gYiSJVkrH9+e8VuA8JlPJK/hQjjlLv6pJvx/z1iRFKzYb0XT/RuAQ==}
+  /es-abstract/1.21.0:
+    resolution: {integrity: sha512-GUGtW7eXQay0c+PRq0sGIKSdaBorfVqsCMhGHo4elP7YVqZu9nCZS4UkK4gv71gOWNMra/PaSKD3ao1oWExO0g==}
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
+      es-set-tostringtag: 2.0.1
       es-to-primitive: 1.2.1
       function-bind: 1.1.1
       function.prototype.name: 1.1.5
       get-intrinsic: 1.1.3
       get-symbol-description: 1.0.0
+      globalthis: 1.0.3
       gopd: 1.0.1
       has: 1.0.3
       has-property-descriptors: 1.0.0
+      has-proto: 1.0.1
       has-symbols: 1.0.3
       internal-slot: 1.0.4
+      is-array-buffer: 3.0.1
       is-callable: 1.2.7
       is-negative-zero: 2.0.2
       is-regex: 1.1.4
       is-shared-array-buffer: 1.0.2
       is-string: 1.0.7
+      is-typed-array: 1.1.10
       is-weakref: 1.0.2
       object-inspect: 1.12.2
       object-keys: 1.1.1
@@ -4050,11 +4061,22 @@ packages:
       safe-regex-test: 1.0.0
       string.prototype.trimend: 1.0.6
       string.prototype.trimstart: 1.0.6
+      typed-array-length: 1.0.4
       unbox-primitive: 1.0.2
+      which-typed-array: 1.1.9
     dev: true
 
   /es-array-method-boxes-properly/1.0.0:
     resolution: {integrity: sha512-wd6JXUmyHmt8T5a2xreUwKcGPq6f1f+WwIJkijUqiGcJz1qqnZgP6XIK+QyIWU5lT7imeNxUll48bziG+TSYcA==}
+    dev: true
+
+  /es-set-tostringtag/2.0.1:
+    resolution: {integrity: sha512-g3OMbtlwY3QewlqAiMLI47KywjWZoEytKr8pf6iTC8uJq5bIAH52Z9pnQ8pVL6whrCto53JZDuUIsifGeLorTg==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      get-intrinsic: 1.1.3
+      has: 1.0.3
+      has-tostringtag: 1.0.0
     dev: true
 
   /es-shim-unscopables/1.0.0:
@@ -4640,8 +4662,8 @@ packages:
     resolution: {integrity: sha512-483XLLxTVIwWK3QTrMGRqUfUpoOs/0hbQrl2oz4J0pAcm3A3bu84wxTFqGqkJzewCLdME38xJLJAxBABfQT8sQ==}
     dev: false
 
-  /fastq/1.14.0:
-    resolution: {integrity: sha512-eR2D+V9/ExcbF9ls441yIuN6TI2ED1Y2ZcA5BmMtJsOkWOFRJQ0Jt0g1UwqXJJVAb+V+umH5Dfr8oh4EVP7VVg==}
+  /fastq/1.15.0:
+    resolution: {integrity: sha512-wBrocU2LCXXa+lWBt8RoIRD89Fi8OdABODa/kEnyeyjS5aZO5/GNvI5sEINADqP/h8M29UHTHUb53sUu5Ihqdw==}
     dependencies:
       reusify: 1.0.4
 
@@ -4912,6 +4934,12 @@ packages:
       debug: 4.3.4_supports-color@6.1.0
     dev: true
 
+  /for-each/0.3.3:
+    resolution: {integrity: sha512-jqYfLp7mo9vIyQf8ykW2v7A+2N4QjeCeI5+Dz9XraiO1ign81wjiH7Fb9vSOWvQfNtmSa4H2RoQTrrXivdUZmw==}
+    dependencies:
+      is-callable: 1.2.7
+    dev: true
+
   /for-in/1.0.2:
     resolution: {integrity: sha512-7EwmXrOjyL+ChxMhmG5lnW9MPt1aIeZEwKhQzoBUdTV0N3zuwWDZYVJatDvZ2OyzPUvdIAZDsCetk3coyMfcnQ==}
     engines: {node: '>=0.10.0'}
@@ -5000,7 +5028,7 @@ packages:
   /fs-extra/5.0.0:
     resolution: {integrity: sha512-66Pm4RYbjzdyeuqudYqhFiNBbCIuI9kgRqLPSHIlXHidW8NIQtVdkM1yeZ4lXwuhbTETv3EUGMNHAAw6hiundQ==}
     dependencies:
-      graceful-fs: 4.2.10
+      graceful-fs: 4.1.11
       jsonfile: 4.0.0
       universalify: 0.1.2
     dev: true
@@ -5062,7 +5090,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
       functions-have-names: 1.2.3
     dev: true
 
@@ -5258,6 +5286,13 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /globalthis/1.0.3:
+    resolution: {integrity: sha512-sFdI5LyBiNTHjRd7cGPWapiHWMOXKyuBNX/cWJ3NfzrZQVa8GI/8cofCl74AOVqq9W5kNmguTIzJ/1s2gyI9wA==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      define-properties: 1.1.4
+    dev: true
+
   /globby/11.1.0:
     resolution: {integrity: sha512-jhIXaOzy1sb8IyocaruWSn1TjmnBVs8Ayhcy83rmxNJ8q2uWKCAj3CnJY+KpGSXCueAPc0i05kVvVKtP1t9S3g==}
     engines: {node: '>=10'}
@@ -5359,6 +5394,11 @@ packages:
     resolution: {integrity: sha512-62DVLZGoiEBDHQyqG4w9xCuZ7eJEwNmJRWw2VY84Oedb7WFcA27fiEVe8oUQx9hAUJ4ekurquucTGwsyO1XGdQ==}
     dependencies:
       get-intrinsic: 1.1.3
+    dev: true
+
+  /has-proto/1.0.1:
+    resolution: {integrity: sha512-7qE+iP+O+bgF9clE5+UoBFzE65mlBiVj3tKCrlNQ0Ogwm0BjpT/gK4SlLYDMybDh5I3TCTKnPPa0oMG7JDYrhg==}
+    engines: {node: '>= 0.4'}
     dev: true
 
   /has-symbols/1.0.3:
@@ -5899,6 +5939,14 @@ packages:
       has-tostringtag: 1.0.0
     dev: true
 
+  /is-array-buffer/3.0.1:
+    resolution: {integrity: sha512-ASfLknmY8Xa2XtB4wmbz13Wu202baeA18cJBCeCy0wXUHZF0IPyVEXqKEcd+t2fNSLLL1vC6k7lxZEojNbISXQ==}
+    dependencies:
+      call-bind: 1.0.2
+      get-intrinsic: 1.1.3
+      is-typed-array: 1.1.10
+    dev: true
+
   /is-arrayish/0.2.1:
     resolution: {integrity: sha512-zz06S8t0ozoDXMG+ube26zeCTNXcKIPJZJi8hBrF4idCLms4CG9QtK7qBl1boi5ODzFpjswb5JPmHCbMpjaYzg==}
 
@@ -6182,6 +6230,17 @@ packages:
     engines: {node: '>= 0.4'}
     dependencies:
       has-symbols: 1.0.3
+    dev: true
+
+  /is-typed-array/1.1.10:
+    resolution: {integrity: sha512-PJqgEHiWZvMpaFZ3uTc8kHPM4+4ADTlDniuQL7cU/UDA0Ql7F70yGfHph3cLNe+c9toaigv+DFzTJKhc2CtO6A==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      available-typed-arrays: 1.0.5
+      call-bind: 1.0.2
+      for-each: 0.3.3
+      gopd: 1.0.1
+      has-tostringtag: 1.0.0
     dev: true
 
   /is-typedarray/1.0.0:
@@ -7638,7 +7697,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
     dev: true
 
   /object.fromentries/2.0.6:
@@ -7647,7 +7706,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
     dev: true
 
   /object.getownpropertydescriptors/2.1.5:
@@ -7657,7 +7716,7 @@ packages:
       array.prototype.reduce: 1.0.5
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
     dev: true
 
   /object.omit/2.0.1:
@@ -7680,7 +7739,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
     dev: true
 
   /obuf/1.1.2:
@@ -8103,8 +8162,8 @@ packages:
       find-up: 2.1.0
     dev: true
 
-  /pnpm/7.21.0:
-    resolution: {integrity: sha512-zDsRciscnXmp8AVD0u9eSoJrGfXywepuwMmFstsd+Vfl/wDZUxgaSaZ/6Nkx3bBftC+oBpWFkAGBRyjy58jvZg==}
+  /pnpm/7.22.0:
+    resolution: {integrity: sha512-dkhne1O1ktNz/Cn/GZU5wnjhP/aNEfmJGW5UdILyDnptgw84jauOf2Mk5jTe3gp4OZWZN1szcBrjyOZ7Uxxilw==}
     engines: {node: '>=14.6'}
     hasBin: true
     dev: false
@@ -9727,7 +9786,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
       get-intrinsic: 1.1.3
       has-symbols: 1.0.3
       internal-slot: 1.0.4
@@ -9741,7 +9800,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
     dev: true
 
   /string.prototype.trimend/1.0.6:
@@ -9749,7 +9808,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
     dev: true
 
   /string.prototype.trimstart/1.0.6:
@@ -9757,7 +9816,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.5
+      es-abstract: 1.21.0
     dev: true
 
   /string_decoder/0.10.31:
@@ -10133,6 +10192,14 @@ packages:
     dependencies:
       media-typer: 0.3.0
       mime-types: 2.1.35
+    dev: true
+
+  /typed-array-length/1.0.4:
+    resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
+    dependencies:
+      call-bind: 1.0.2
+      for-each: 0.3.3
+      is-typed-array: 1.1.10
     dev: true
 
   /typedarray/0.0.6:
@@ -10627,6 +10694,18 @@ packages:
   /which-module/2.0.0:
     resolution: {integrity: sha512-B+enWhmw6cjfVC7kS8Pj9pCrKSc5txArRyaYGe088shv/FGWH+0Rjx/xPgtsWfsUtS27FkP697E4DDhgrgoc0Q==}
 
+  /which-typed-array/1.1.9:
+    resolution: {integrity: sha512-w9c4xkx6mPidwp7180ckYWfMmvxpjlZuIudNtDf4N/tTAUB8VJbX25qZoAsrtGuYNnGw3pa0AXgbGKRB8/EceA==}
+    engines: {node: '>= 0.4'}
+    dependencies:
+      available-typed-arrays: 1.0.5
+      call-bind: 1.0.2
+      for-each: 0.3.3
+      gopd: 1.0.1
+      has-tostringtag: 1.0.0
+      is-typed-array: 1.1.10
+    dev: true
+
   /which/1.3.1:
     resolution: {integrity: sha512-HxJdYWq1MTIQbJ3nw0cqssHoTNU267KlrDuGZ1WYlxDStUtKUhOaJmh112/TZmHxxUfuJqPXSOm7tDyas0OSIQ==}
     hasBin: true
@@ -10856,13 +10935,13 @@ packages:
     dependencies:
       chalk: 1.1.3
       inquirer: 0.8.5
-      pnpm: 7.21.0
+      pnpm: 7.22.0
       q: 1.5.1
       yargs: 3.32.0
     dev: false
 
-  github.com/PenguinMod/PenguinMod-Blocks/b855c097a13e65fbd1fb7c906e54449fb32cabe2:
-    resolution: {tarball: https://codeload.github.com/PenguinMod/PenguinMod-Blocks/tar.gz/b855c097a13e65fbd1fb7c906e54449fb32cabe2}
+  github.com/PenguinMod/PenguinMod-Blocks/5a2f22355274da8a07e3ccb556fdb4d4362eabb7:
+    resolution: {tarball: https://codeload.github.com/PenguinMod/PenguinMod-Blocks/tar.gz/5a2f22355274da8a07e3ccb556fdb4d4362eabb7}
     name: scratch-blocks
     version: 0.1.0
     dev: false
@@ -10886,9 +10965,9 @@ packages:
       twgl.js: 4.4.0
     dev: false
 
-  github.com/PenguinMod/PenguinMod-Vm/a0f08dcb7753873f41e130954a712be917385a22_cnjjgryycnetjxj63hj6pfbvmu:
-    resolution: {tarball: https://codeload.github.com/PenguinMod/PenguinMod-Vm/tar.gz/a0f08dcb7753873f41e130954a712be917385a22}
-    id: github.com/PenguinMod/PenguinMod-Vm/a0f08dcb7753873f41e130954a712be917385a22
+  github.com/PenguinMod/PenguinMod-Vm/e1363170a934a5e73d9725a321799da144b2d755_cnjjgryycnetjxj63hj6pfbvmu:
+    resolution: {tarball: https://codeload.github.com/PenguinMod/PenguinMod-Vm/tar.gz/e1363170a934a5e73d9725a321799da144b2d755}
+    id: github.com/PenguinMod/PenguinMod-Vm/e1363170a934a5e73d9725a321799da144b2d755
     name: scratch-vm
     version: 0.2.0
     peerDependencies:
@@ -10927,9 +11006,9 @@ packages:
       startaudiocontext: 1.2.1
     dev: false
 
-  github.com/TurboWarp/scratch-paint/3a46599373eb3418ea164d1ba27221d5e7fd9a16_6k6rspeql5cezdcqbrutshycvq:
-    resolution: {tarball: https://codeload.github.com/TurboWarp/scratch-paint/tar.gz/3a46599373eb3418ea164d1ba27221d5e7fd9a16}
-    id: github.com/TurboWarp/scratch-paint/3a46599373eb3418ea164d1ba27221d5e7fd9a16
+  github.com/TurboWarp/scratch-paint/b99d6e0f23d8e7a1d68d279e6af4c1da693ede31_6k6rspeql5cezdcqbrutshycvq:
+    resolution: {tarball: https://codeload.github.com/TurboWarp/scratch-paint/tar.gz/b99d6e0f23d8e7a1d68d279e6af4c1da693ede31}
+    id: github.com/TurboWarp/scratch-paint/b99d6e0f23d8e7a1d68d279e6af4c1da693ede31
     name: scratch-paint
     version: 0.2.0
     peerDependencies:

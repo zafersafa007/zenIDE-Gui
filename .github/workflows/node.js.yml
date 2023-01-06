@@ -20,7 +20,8 @@ jobs:
         - name: Install Packages📡
           run: |
                 npm list pnpm || npm i pnpm -g
-                pnpm install --shamefully-hoist
+                pnpm up
+                pnpm i --shamefully-hoist
         - name: Generate Static Site🛠
           run: |
                  webpack --bail
