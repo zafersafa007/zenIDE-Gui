@@ -112,18 +112,6 @@ const CustomProcedures = props => (
                         id="gui.customProcedures.runWithoutScreenRefresh"
                     />
                 </label>
-                <label>
-                    <input
-                        checked={props.return}
-                        type="checkbox"
-                        onChange={props.onToggleReturn}
-                    />
-                    <FormattedMessage
-                        defaultMessage="Custom reporter"
-                        description="Label for checkbox to custom reporter"
-                        id="gui.customProcedures.customReporter"
-                    />
-                </label>
             </div>
             <Box className={styles.buttonRow}>
                 <button
