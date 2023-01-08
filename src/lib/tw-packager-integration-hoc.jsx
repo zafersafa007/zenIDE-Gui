@@ -45,7 +45,7 @@ const PackagerIntegrationHOC = function (WrappedComponent) {
                 p4: {
                     type: 'start-import'
                 }
-            }, PACKAGER);
+            }, "https://penguinmod.github.io");
 
             this.props.vm.saveProjectSb3()
                 .then(readBlobAsArrayBuffer)
