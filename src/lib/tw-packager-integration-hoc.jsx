@@ -57,7 +57,7 @@ const PackagerIntegrationHOC = function (WrappedComponent) {
                             data: buffer,
                             name
                         }
-                    }, PACKAGER, [buffer]);
+                    }, "https://penguinmod.github.io", [buffer]);
                 })
                 .catch(err => {
                     log.error(err);
@@ -65,7 +65,7 @@ const PackagerIntegrationHOC = function (WrappedComponent) {
                         p4: {
                             type: 'cancel-import'
                         }
-                    }, PACKAGER);
+                    }, "https://penguinmod.github.io");
                 });
         }
         render () {
