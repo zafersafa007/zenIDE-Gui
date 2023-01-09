@@ -425,7 +425,7 @@ export default [
             <FormattedMessage
                 defaultMessage="A cool extension to interact with gamepads(aka controllers) such as xbox controllers"
                 description="Description for the 'GamePad' extension"
-                id="gui.extension.GamepadExtension.description"
+                id="GamepadExtension.GamepadExtension.description"
             />
         ),
         featured: true,
