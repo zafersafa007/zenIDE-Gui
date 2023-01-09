@@ -71,6 +71,7 @@ import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIco
 //cl waw
 import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png'
 import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg'
+import gp from './penguinmod/extensions/gp.png'
 
 export default [
     {
@@ -411,6 +412,20 @@ export default [
                 defaultMessage="Box2D Physics extension created by Griffpatch."
                 description="Description for the 'Griffpatch Physics' extension"
                 id="gui.extension.test.description"
+            />
+        ),
+        featured: true,
+        disabled: false
+    },
+    {
+        name: 'GamePad',
+        extensionId: 'GamepadExtension',
+        iconURL: gp,
+        description: (
+            <FormattedMessage
+                defaultMessage="A cool extension to interact with gamepads(aka controllers) such as xbox controllers"
+                description="Description for the 'GamePad' extension"
+                id="gui.extension.GamepadExtension.description"
             />
         ),
         featured: true,
