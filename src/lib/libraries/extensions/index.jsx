@@ -254,7 +254,6 @@ export default [
         featured: true,
         incompatibleWithScratch: true
     },
-    /*
     {
         name: (
             <FormattedMessage
@@ -275,7 +274,6 @@ export default [
         featured: true,
         incompatibleWithScratch: true
     },
-    */
     {
         name: (
             <FormattedMessage
