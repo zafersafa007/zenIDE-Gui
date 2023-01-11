@@ -63,7 +63,7 @@ import jwProtoExtensionIcon from './penguinmod/extensions/Proto.svg'
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
 
-//import BetterTextBlocksExtensionIcon from './penguinmod/extensions/textext.png'
+import BetterTextBlocksExtensionIcon from './penguinmod/extensions/textext.png'
 
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
