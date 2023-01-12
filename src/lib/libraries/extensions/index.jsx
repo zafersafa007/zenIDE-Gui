@@ -266,7 +266,7 @@ export default [
         iconURL: BetterTextBlocksExtensionIcon,
         description: (
             <FormattedMessage
-                defaultMessage="Adds better text drawing blocks to pm!"
+                defaultMessage="Adds the ability to manipulate what the say block displays"
                 description="Description of the extension"
                 id="BetterTextBlocks.ExtensionDescription"
             />
