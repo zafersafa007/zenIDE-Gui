@@ -1,34 +1,44 @@
-name: Build and Deploy
-env:
-  ACTIONS_ALLOW_UNSECURE_COMMANDS: true
 on:
   workflow_dispatch:
-  push:
   repository_dispatch:
+  push:
+
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "deploy"
+  cancel-in-progress: true
+  #ci-${{ github.ref }}
+
 jobs:
-  build-and-deploy:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+  build:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/checkout@v3
-        - name: Setup NODE
-          uses: actions/setup-node@v1
-          with:
-             node-version: "15"
-        - name: Install Packages📡
-          run: |
-                npm list pnpm || npm i pnpm -g
-                pnpm up
-                pnpm i --shamefully-hoist
-        - name: Generate Static Site🛠
-          run: |
-                 webpack --bail
-        - name: Deploy
-          uses: peaceiris/actions-gh-pages@v3
-          with:
-            github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./build
-            publish_branch: gh-pages
-            allow_empty_commit: true
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup GitHub Pages
+      id: pages
+      uses: actions/configure-pages@v1
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 14.x
+    - name: Install dependencies and build site
+      run: npm i -g pnpm && pnpm up && pnpm i --shamefully-hoist && webpack --bail
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        path: ./dist/
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v1
