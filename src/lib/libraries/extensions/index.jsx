@@ -257,7 +257,7 @@ export default [
     {
         name: (
             <FormattedMessage
-                defaultMessage="Better text blocks"
+                defaultMessage="Say Block Control"
                 description="Name of the extension"
                 id="BetterTextBlocks.ExtensionName"
             />
