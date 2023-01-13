@@ -216,13 +216,13 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
             </value>
         </block>
         <block type="looks_setColor">
-            <field name="prop">boarder</field>
+            <field name="prop">border</field>
             <value name="color">
                 <shadow type="colour_picker"></shadow>
             </value>
         </block>
         <block type="looks_setShape">
-            <field name="prop">boarder line width</field>
+            <field name="prop">border line width</field>
             <value name="color">
                 <shadow type="math_number">
                     <field name="NUM">0</field>
