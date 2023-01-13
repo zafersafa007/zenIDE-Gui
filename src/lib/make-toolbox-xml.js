@@ -203,7 +203,7 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                 </shadow>
             </value>
         </block>
-        <block type="text_setFont">
+        <block type="looks_setFont">
             <value name="font">
                 <shadow type="text_menu_FONT">
                     <field name="FONT">Helvetica</field>
@@ -215,13 +215,13 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                 </shadow>
             </value>
         </block>
-        <block type="text_setColor">
+        <block type="looks_setColor">
             <field name="prop">boarder</field>
             <value name="color">
                 <shadow type="colour_picker"></shadow>
             </value>
         </block>
-        <block type="text_setShape">
+        <block type="looks_setShape">
             <field name="prop">boarder line width</field>
             <value name="color">
                 <shadow type="math_number">
