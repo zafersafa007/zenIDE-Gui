@@ -206,7 +206,7 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
         <block type="looks_setFont">
             <value name="font">
                 <shadow type="text">
-                    <field name="FONT">Helvetica</field>
+                    <field name="TEXT">Helvetica</field>
                 </shadow>
             </value>
             <value name="size">
