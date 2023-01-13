@@ -203,6 +203,32 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                 </shadow>
             </value>
         </block>
+        <block type="text_setFont">
+            <value name="font">
+                <shadow type="text_menu_FONT">
+                    <field name="FONT">Helvetica</field>
+                </shadow>
+            </value>
+            <value name="size">
+                <shadow type="math_number">
+                    <field name="NUM">14</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="text_setColor">
+            <field name="prop">boarder</field>
+            <value name="color">
+                <shadow type="colour_picker"></shadow>
+            </value>
+        </block>
+        <block type="text_setShape">
+            <field name="prop">boarder line width</field>
+            <value name="color">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
         ${blockSeparator}
         `}
         ${isStage ? `

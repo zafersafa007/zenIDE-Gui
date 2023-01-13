@@ -154,6 +154,24 @@ export default async function ({ addon, global, console, msg }) {
         },
         noopSwitch,
       ];
+      blockSwitches["looks_setShape"] = [
+        {
+          opcode: "looks_setShape",
+        },
+        noopSwitch,
+      ];
+      blockSwitches["looks_setColor"] = [
+        {
+          opcode: "looks_setColor",
+        },
+        noopSwitch,
+      ];
+      blockSwitches["looks_setFont"] = [
+        {
+          opcode: "looks_setFont",
+        },
+        noopSwitch,
+      ];
       blockSwitches["looks_nextcostume"] = [
         noopSwitch,
         {
