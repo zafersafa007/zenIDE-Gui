@@ -257,26 +257,6 @@ export default [
     {
         name: (
             <FormattedMessage
-                defaultMessage="Say Block Control"
-                description="Name of the extension"
-                id="BetterTextBlocks.ExtensionName"
-            />
-        ),
-        extensionId: 'text',
-        iconURL: BetterTextBlocksExtensionIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Adds the ability to manipulate what the say block displays"
-                description="Description of the extension"
-                id="BetterTextBlocks.ExtensionDescription"
-            />
-        ),
-        featured: true,
-        incompatibleWithScratch: true
-    },
-    {
-        name: (
-            <FormattedMessage
                 defaultMessage="Unite"
                 description="Name of Unite extension"
                 id="jwUnite.jwUniteExtension.name"
