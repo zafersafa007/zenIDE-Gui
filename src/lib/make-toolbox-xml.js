@@ -381,7 +381,10 @@ const events = function (isInitialSetup, isStage) {
     return `
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
         <block type="event_whenflagclicked"/>
-        <block type="event_whenanything"/>
+        <block type="event_always"></block>
+        <block type="event_whenanything">
+            <value name="ANYTHING"></value>
+        </block>
         <block type="event_whenkeypressed">
         </block>
         ${isStage ? `
@@ -449,7 +452,21 @@ const control = function (isInitialSetup, isStage) {
                 </shadow>
             </value>
         </block>
+        <block type="control_if_return_else_return">
+            <value name="boolean"></value>
+            <value name="TEXT1">
+                <shadow type="text">
+                    <field name="TEXT">foo</field>
+                </shadow>
+            </value>
+            <value name="TEXT2">
+                <shadow type="text">
+                    <field name="TEXT">bar</field>
+                </shadow>
+            </value>
+        </block>
         ${blockSeparator}
+        <block type="control_backToGreenFlag"></block>
         <block type="control_stop"/>
         ${blockSeparator}
         ${isStage ? `
@@ -502,6 +519,18 @@ const sensing = function (isInitialSetup, isStage) {
             </block>
             ${blockSeparator}
         `}
+        <block type="sensing_getspritewithattrib">
+            <value name="var">
+                <shadow type="text">
+                    <field name="TEXT">my variable</field>
+                </shadow>
+            </value>
+            <value name="val">
+                <shadow type="text">
+                    <field name="TEXT">0</field>
+                </shadow>
+            </value>
+        </block>
         ${isInitialSetup ? '' : `
             <block id="askandwait" type="sensing_askandwait">
                 <value name="QUESTION">
@@ -512,6 +541,32 @@ const sensing = function (isInitialSetup, isStage) {
             </block>
         `}
         <block id="answer" type="sensing_answer"/>
+        <block type="sensing_thing_is_text">
+            <value name="TEXT1">
+                <shadow type="text">
+                    <field name="TEXT">world</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="sensing_thing_is_number">
+            <value name="TEXT1">
+                <shadow type="text">
+                    <field name="TEXT">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="sensing_regextest">
+            <value name="text">
+                <shadow type="text">
+                    <field name="TEXT">foo bar</field>
+                </shadow>
+            </value>
+            <value name="reg">
+                <shadow type="text">
+                    <field name="TEXT">/foo/g</field>
+                </shadow>
+            </value>
+        </block>
         ${blockSeparator}
         <block type="sensing_keypressed">
             <value name="KEY_OPTION">
@@ -523,7 +578,7 @@ const sensing = function (isInitialSetup, isStage) {
         <block type="sensing_mousey"/>
         ${isStage ? '' : `
             ${blockSeparator}
-            '<block type="sensing_setdragmode" id="sensing_setdragmode"></block>'+
+            <block type="sensing_setdragmode" id="sensing_setdragmode"></block>
             ${blockSeparator}
         `}
         ${blockSeparator}
@@ -541,6 +596,7 @@ const sensing = function (isInitialSetup, isStage) {
         <block id="current" type="sensing_current"/>
         <block type="sensing_dayssince2000"/>
         ${blockSeparator}
+        <block type="sensing_mobile"></block>
         <block type="sensing_username"/>
         ${categorySeparator}
     </category>
@@ -601,6 +657,19 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
+        <block type="operator_advMath">
+            <value name="ONE">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <field name="OPTION">^</field>
+            <value name="TWO">
+                <shadow type="math_number">
+                    <field name="NUM">2</field>
+                </shadow>
+            </value>
+        </block>
         ${blockSeparator}
         <block type="operator_random">
             <value name="FROM">
@@ -611,6 +680,40 @@ const operators = function (isInitialSetup) {
             <value name="TO">
                 <shadow type="math_number">
                     <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_constrainnumber">
+            <value name="inp">
+                <shadow type="math_number">
+                    <field name="NUM">50</field>
+                </shadow>
+            </value>
+            <value name="min">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="max">
+                <shadow type="math_number">
+                    <field name="NUM">100</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_lerpFunc">
+            <value name="ONE">
+                <shadow type="math_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+            <value name="TWO">
+                <shadow type="math_number">
+                    <field name="NUM">3</field>
+                </shadow>
+            </value>
+            <value name="AMOUNT">
+                <shadow type="math_number">
+                    <field name="NUM">0.5</field>
                 </shadow>
             </value>
         </block>
@@ -651,12 +754,16 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
+        <block type="operator_trueBoolean"></block>
+        <block type="operator_falseBoolean"></block>
+        <block type="operator_randomBoolean"></block>
         ${blockSeparator}
         <block type="operator_and"/>
         <block type="operator_or"/>
         <block type="operator_not"/>
         ${blockSeparator}
         ${isInitialSetup ? '' : `
+            <block type="operator_newLine"></block>
             <block type="operator_join">
                 <value name="STRING1">
                     <shadow type="text">
@@ -669,6 +776,18 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
+            <block type="operator_indexOfTextInText">
+                <value name="TEXT1">
+                    <shadow type="text">
+                        <field name="TEXT">world</field>
+                    </shadow>
+                </value>
+                <value name="TEXT2">
+                    <shadow type="text">
+                        <field name="TEXT">Hello world!</field>
+                    </shadow>
+                </value>
+            </block>
             <block type="operator_letter_of">
                 <value name="LETTER">
                     <shadow type="math_whole_number">
@@ -678,6 +797,35 @@ const operators = function (isInitialSetup) {
                 <value name="STRING">
                     <shadow type="text">
                         <field name="TEXT">${apple}</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="operator_getLettersFromIndexToIndexInText">
+                <value name="INDEX1">
+                    <shadow type="math_number">
+                        <field name="NUM">2</field>
+                    </shadow>
+                </value>
+                <value name="INDEX2">
+                    <shadow type="math_number">
+                        <field name="NUM">3</field>
+                    </shadow>
+                </value>
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">Hello!</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="operator_readLineInMultilineText">
+                <value name="LINE">
+                    <shadow type="math_number">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">Text with multiple lines here</field>
                     </shadow>
                 </value>
             </block>
@@ -700,6 +848,36 @@ const operators = function (isInitialSetup) {
                 </shadow>
               </value>
             </block>
+            <block type="operator_replaceAll">
+                <value name="text">
+                    <shadow type="text">
+                        <field name="TEXT">foo bar</field>
+                    </shadow>
+                </value>
+                <value name="term">
+                    <shadow type="text">
+                        <field name="TEXT">foo</field>
+                    </shadow>
+                </value>
+                <value name="res">
+                    <shadow type="text">
+                        <field name="TEXT">bar</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="operator_regexmatch">
+                <value name="text">
+                    <shadow type="text">
+                        <field name="TEXT">foo bar</field>
+                    </shadow>
+                </value>
+                <value name="reg">
+                    <shadow type="text">
+                        <field name="TEXT">/foo/g</field>
+                    </shadow>
+                </value>
+            </block>
+
         `}
         ${blockSeparator}
         <block type="operator_mod">
@@ -729,15 +907,11 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
-        <block type="operator_advlog">
-            <value name="NUM1">
-                <shadow type="math_number">
-                    <field name="NUM1"/>
-                </shadow>
-            </value>
-            <value name="NUM2">
-                <shadow type="math_number">
-                    <field name="NUM2"/>
+        ${blockSeparator}
+        <block type="operator_stringify">
+            <value name="ONE">
+                <shadow type="text">
+                    <field name="TEXT">foo</field>
                 </shadow>
             </value>
         </block>
