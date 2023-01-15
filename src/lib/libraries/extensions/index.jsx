@@ -316,27 +316,27 @@ export default [
         featured: true,
         incompatibleWithScratch: true
     },
-    /*{
+    {
         name: (
             <FormattedMessage
-                defaultMessage="Text"
+                defaultMessage="HTML Canvas"
                 description="Name of Text extension"
-                id="text.TextExtension.name"
+                id="canvas.name"
             />
         ),
-        extensionId: 'text',
+        extensionId: 'canvas',
         iconURL: textExtensionIcon,
         insetIconURL: textExtensionIcon,
         description: (
             <FormattedMessage
-                defaultMessage="Use dynamic text for instructions, dialogue, and more!"
+                defaultMessage="blocks for the HTML Canvas"
                 description="Description of Text extension"
-                id="text.textExtension.description"
+                id="text.description"
             />
         ),
         featured: true,
         incompatibleWithScratch: true
-    },*/
+    },
     {
         name: (
             <FormattedMessage
