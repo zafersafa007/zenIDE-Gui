@@ -63,15 +63,14 @@ import jwProtoExtensionIcon from './penguinmod/extensions/Proto.svg'
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
 
-import BetterTextBlocksExtensionIcon from './penguinmod/extensions/textext.png'
+import canvasExtensionIcon from './penguinmod/extensions/placeholder.png'
 
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
 import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg'
-//cl waw
-import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png'
-import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg'
 import gp from './penguinmod/extensions/gp.png'
+
+
 
 export default [
     {
@@ -325,8 +324,8 @@ export default [
             />
         ),
         extensionId: 'canvas',
-        iconURL: textExtensionIcon,
-        insetIconURL: textExtensionIcon,
+        iconURL: canvasExtensionIcon,
+        insetIconURL: canvasExtensionIcon,
         description: (
             <FormattedMessage
                 defaultMessage="blocks for using an HTML Canvas"
