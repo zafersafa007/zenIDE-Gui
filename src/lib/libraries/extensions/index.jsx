@@ -329,7 +329,7 @@ export default [
         insetIconURL: textExtensionIcon,
         description: (
             <FormattedMessage
-                defaultMessage="blocks for the HTML Canvas"
+                defaultMessage="blocks for using an HTML Canvas"
                 description="Description of Text extension"
                 id="text.description"
             />
