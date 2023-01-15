@@ -467,6 +467,8 @@ class Blocks extends React.Component {
                         dynamicBlocksInfo.push(blockInfo);
                     } else if (blockInfo.json) {
                         staticBlocksJson.push(blockInfo.json);
+                    } else if (blockInfo.info.type === 'button') {
+                        this.workspace.registerButtonCallback(blockInfo.info.opcode, blockInfo.info.func);
                     }
                     // otherwise it's a non-block entry such as '---'
                 });
