@@ -211,8 +211,7 @@ export default [
                 id="jgFiles.jgFilesExtension.description"
             />
         ),
-        featured: true,
-        incompatibleWithScratch: true
+        featured: true
     },
     {
         name: (
@@ -231,9 +230,7 @@ export default [
                 id="jgWebsiteRequests.jgWebsiteRequestsExtension.description"
             />
         ),
-        featured: true,
-        internetConnectionRequired: true,
-        incompatibleWithScratch: true
+        featured: true
     },
     {
         name: (
@@ -252,8 +249,7 @@ export default [
                 id="jgJSON.jgJSONExtension.description"
             />
         ),
-        featured: true,
-        incompatibleWithScratch: true
+        featured: true
     },
     {
         name: (
@@ -273,8 +269,7 @@ export default [
                 id="jwUnite.jwUniteExtension.description"
             />
         ),
-        featured: true,
-        incompatibleWithScratch: true
+        featured: true
     },
     {
         name: (
@@ -293,8 +288,7 @@ export default [
                 id="jwProto.jwProtoExtension.description"
             />
         ),
-        featured: true,
-        incompatibleWithScratch: true
+        featured: true
     },
     {
         name: (
@@ -314,8 +308,7 @@ export default [
                 id="jwStructs.jwStructsExtension.description"
             />
         ),
-        featured: true,
-        incompatibleWithScratch: true
+        featured: true
     },
     {
         name: (
@@ -335,8 +328,7 @@ export default [
                 id="text.description"
             />
         ),
-        featured: true,
-        incompatibleWithScratch: true
+        featured: true
     },
     {
         name: (
@@ -355,9 +347,7 @@ export default [
                 id="jgPrism.jgPrismExtension.description"
             />
         ),
-        featured: true,
-        internetConnectionRequired: true,
-        incompatibleWithScratch: true
+        featured: true
     },
     {
         name: (
@@ -376,9 +366,7 @@ export default [
                 id="jgRuntime.jgRuntimeExtension.description"
             />
         ),
-        featured: true,
-        internetConnectionRequired: true,
-        incompatibleWithScratch: true
+        featured: true
     },
     {
         name: 'Physics',
@@ -393,8 +381,7 @@ export default [
                 id="gui.extension.test.description"
             />
         ),
-        featured: true,
-        disabled: false
+        featured: true
     },
     {
         name: 'GamePad',
@@ -407,8 +394,7 @@ export default [
                 id="GamepadExtension.GamepadExtension.description"
             />
         ),
-        featured: true,
-        disabled: false
+        featured: true
     },
     {
         name: (
@@ -427,8 +413,7 @@ export default [
                 id="tw.twExtension.description"
             />
         ),
-        featured: true,
-        incompatibleWithScratch: true
+        featured: true
     },
     {
         name: 'micro:bit',
