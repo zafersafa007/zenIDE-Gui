@@ -63,7 +63,9 @@ import jwProtoExtensionIcon from './penguinmod/extensions/Proto.svg'
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
 
-import canvasExtensionIcon from './penguinmod/extensions/placeholder.png'
+// thx jeremey
+import canvasExtensionBanner from './penguinmod/extensions/CanvasExtensionMenu.png'
+import canvasExtensionIcon from './penguinmod/extensions/CanvasSmall.png'
 
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
@@ -324,7 +326,7 @@ export default [
             />
         ),
         extensionId: 'canvas',
-        iconURL: canvasExtensionIcon,
+        iconURL: canvasExtensionBanner,
         insetIconURL: canvasExtensionIcon,
         description: (
             <FormattedMessage
