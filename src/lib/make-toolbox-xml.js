@@ -580,6 +580,11 @@ const sensing = function (isInitialSetup, isStage) {
                     <field name="TEXT">/foo/g</field>
                 </shadow>
             </value>
+            <value name="regrule">
+                <shadow type="text">
+                    <field name="TEXT">/foo/g</field>
+                </shadow>
+            </value>
         </block>
         ${blockSeparator}
         <block type="sensing_keypressed">
@@ -886,6 +891,11 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
                 <value name="reg">
+                    <shadow type="text">
+                        <field name="TEXT">/foo/g</field>
+                    </shadow>
+                </value>
+                <value name="regrule">
                     <shadow type="text">
                         <field name="TEXT">/foo/g</field>
                     </shadow>
