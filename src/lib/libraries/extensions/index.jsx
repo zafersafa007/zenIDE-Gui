@@ -402,8 +402,8 @@ export default [
     {
         name: "CloudLink",
         extensionId: 'cloudlink',
-        iconURL: cloudlinkThumb,
-        insetIconURL: cloudlinkIcon,
+        iconURL: cloudlinkIcon,
+        insetIconURL: cloudlinkThumb,
         description: (
             <FormattedMessage
                 defaultMessage="A cool extension to interact with webservers"
