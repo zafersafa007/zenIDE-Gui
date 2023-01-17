@@ -71,6 +71,9 @@ import canvasExtensionIcon from './penguinmod/extensions/CanvasSmall.png'
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
 import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg'
 import gp from './penguinmod/extensions/gp.png'
+//cl waw
+import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png'
+import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg'
 
 
 
@@ -395,24 +398,24 @@ export default [
             />
         ),
         featured: true
-    },/*
+    },
     {
         name: "CloudLink",
         extensionId: 'cloudlink',
-        tags: ["utils"],
         iconURL: cloudlinkIcon,
+        insetIconURL: cloudlinkThumb,
         description: (
             <FormattedMessage
-                defaultMessage="CloudLink: Link to the Cloud"
+                defaultMessage="CA cool extension to interact with webservers"
                 description="Scratch utilities"
                 id="gui.extension.cloudlink.description"
             />
         ),
         featured: true,
-        collaborator: 'MikeDev101',
-        internetConnectionRequired: true,
-        incompatibleWithScratch: true
-    },*/
+        collaborator: 'MikeDev',
+        internetConnectionRequired: false,
+        incompatibleWithScratch: false
+    },
     {
         name: (
             <FormattedMessage
