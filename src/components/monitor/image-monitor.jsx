@@ -23,28 +23,14 @@ const ImageMonitor = ({width, label, value}) => (
 );
 
 ImageMonitor.propTypes = {
-    activeIndex: PropTypes.number,
     categoryColor: PropTypes.string.isRequired,
-    draggable: PropTypes.bool.isRequired,
-    height: PropTypes.number,
     label: PropTypes.string.isRequired,
-    onActivate: PropTypes.func,
-    onAdd: PropTypes.func,
-    onResizeMouseDown: PropTypes.func,
-    value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-        PropTypes.arrayOf(PropTypes.oneOfType([
-            PropTypes.string,
-            PropTypes.number
-        ]))
-    ]),
+    value: PropTypes.oneOfType(PropTypes.string),
     width: PropTypes.number
 };
 
 ImageMonitor.defaultProps = {
     width: 110,
-    height: 200
 };
 
 export default ImageMonitor;
