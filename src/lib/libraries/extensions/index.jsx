@@ -402,11 +402,11 @@ export default [
     {
         name: "CloudLink",
         extensionId: 'cloudlink',
-        iconURL: cloudlinkIcon,
-        insetIconURL: cloudlinkThumb,
+        iconURL: cloudlinkThumb,
+        insetIconURL: cloudlinkIcon,
         description: (
             <FormattedMessage
-                defaultMessage="CA cool extension to interact with webservers"
+                defaultMessage="A cool extension to interact with webservers"
                 description="Scratch utilities"
                 id="gui.extension.cloudlink.description"
             />
