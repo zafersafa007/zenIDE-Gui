@@ -395,7 +395,24 @@ export default [
             />
         ),
         featured: true
-    },
+    },/*
+    {
+        name: "CloudLink",
+        extensionId: 'cloudlink',
+        tags: ["utils"],
+        iconURL: cloudlinkIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="CloudLink: Link to the Cloud"
+                description="Scratch utilities"
+                id="gui.extension.cloudlink.description"
+            />
+        ),
+        featured: true,
+        collaborator: 'MikeDev101',
+        internetConnectionRequired: true,
+        incompatibleWithScratch: true
+    },*/
     {
         name: (
             <FormattedMessage
