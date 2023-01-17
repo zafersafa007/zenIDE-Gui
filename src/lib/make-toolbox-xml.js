@@ -577,12 +577,12 @@ const sensing = function (isInitialSetup, isStage) {
             </value>
             <value name="reg">
                 <shadow type="text">
-                    <field name="TEXT">/foo/g</field>
+                    <field name="TEXT">foo</field>
                 </shadow>
             </value>
             <value name="regrule">
                 <shadow type="text">
-                    <field name="TEXT">/foo/g</field>
+                    <field name="TEXT">g</field>
                 </shadow>
             </value>
         </block>
@@ -892,12 +892,12 @@ const operators = function (isInitialSetup) {
                 </value>
                 <value name="reg">
                     <shadow type="text">
-                        <field name="TEXT">/foo/g</field>
+                        <field name="TEXT">foo</field>
                     </shadow>
                 </value>
                 <value name="regrule">
                     <shadow type="text">
-                        <field name="TEXT">/foo/g</field>
+                        <field name="TEXT">g</field>
                     </shadow>
                 </value>
             </block>
