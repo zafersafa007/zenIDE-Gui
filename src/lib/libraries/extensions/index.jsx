@@ -403,7 +403,7 @@ export default [
     },
     {
         name: "CloudLink",
-        extensionId: 'cloudlink',
+        extensionId: 'https://raw.githack.com/MikeDev101/cloudlink/master/S4-0-nosuite.js',
         iconURL: cloudlinkThumb,
         insetIconURL: cloudlinkIcon,
         description: (
@@ -417,10 +417,10 @@ export default [
         collaborator: 'MikeDev',
         internetConnectionRequired: false,
         incompatibleWithScratch: false
-    },/*
+    },
     {
-        name: "PointerLock",
-        extensionId: 'pointerlock',
+        name: "Pointer Lock",
+        extensionId: 'https://extensions.turbowarp.org/pointerlock.js',
         iconURL: pointerlockThumb,
         description: (
             <FormattedMessage
@@ -435,7 +435,7 @@ export default [
     },
     {
         name: "Mouse Cursor",
-        extensionId: 'MouseCursor',
+        extensionId: 'https://extensions.turbowarp.org/cursor.js',
         iconURL: mousecursorThumb,
         description: (
             <FormattedMessage
@@ -447,7 +447,7 @@ export default [
         featured: true,
         internetConnectionRequired: false,
         incompatibleWithScratch: false
-    },*/
+    },
     {
         name: (
             <FormattedMessage
