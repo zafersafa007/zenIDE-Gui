@@ -36,7 +36,7 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: 'https://penguinmod.is-an.app'
+      url: 'https://penguinmod.github.io'
     runs-on: ubuntu-latest
     needs: build
     steps:
