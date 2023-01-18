@@ -75,6 +75,8 @@ import gp from './penguinmod/extensions/gp.png'
 import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png'
 import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg'
 
+import pointerlockThumb from './penguinmod/extensions/pointerlock.svg'
+import cursorThumb from './penguinmod/extensions/cursor.svg'
 
 
 export default [
@@ -413,6 +415,36 @@ export default [
         ),
         featured: true,
         collaborator: 'MikeDev',
+        internetConnectionRequired: false,
+        incompatibleWithScratch: false
+    },
+    {
+        name: "PointerLock",
+        extensionId: 'pointerlock',
+        iconURL: pointerlockThumb,
+        description: (
+            <FormattedMessage
+                defaultMessage="A extension to lock the mouse cursor in the stage"
+                description="Scratch utilities"
+                id="gui.extension.pointerlock.description"
+            />
+        ),
+        featured: true,
+        internetConnectionRequired: false,
+        incompatibleWithScratch: false
+    },
+    {
+        name: "Mouse Cursor",
+        extensionId: 'MouseCursor',
+        iconURL: mousecursorThumb,
+        description: (
+            <FormattedMessage
+                defaultMessage="A extension to change what the mouse cursor looks like on the stage"
+                description="Scratch utilities"
+                id="gui.extension.MouseCursor.description"
+            />
+        ),
+        featured: true,
         internetConnectionRequired: false,
         incompatibleWithScratch: false
     },
