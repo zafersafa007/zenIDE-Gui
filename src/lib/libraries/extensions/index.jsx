@@ -417,7 +417,7 @@ export default [
         collaborator: 'MikeDev',
         internetConnectionRequired: false,
         incompatibleWithScratch: false
-    },
+    },/*
     {
         name: "PointerLock",
         extensionId: 'pointerlock',
@@ -432,7 +432,7 @@ export default [
         featured: true,
         internetConnectionRequired: false,
         incompatibleWithScratch: false
-    }, //hi
+    },
     {
         name: "Mouse Cursor",
         extensionId: 'MouseCursor',
@@ -447,7 +447,7 @@ export default [
         featured: true,
         internetConnectionRequired: false,
         incompatibleWithScratch: false
-    },
+    },*/
     {
         name: (
             <FormattedMessage
