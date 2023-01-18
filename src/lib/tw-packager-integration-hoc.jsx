@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import log from './log';
 import {getIsShowingProject} from '../reducers/project-state';
 
-const PACKAGER_URL = 'https://penguinmod.github.io/PenguinMod-Packager';
-const PACKAGER_ORIGIN = "https://penguinmod.github.io";
+const PACKAGER_URL = 'https://penguinmod.is-an.app/PenguinMod-Packager';
+const PACKAGER_ORIGIN = "https://penguinmod.is-an.app/";
 
 const readBlobAsArrayBuffer = blob => new Promise((resolve, reject) => {
     const fr = new FileReader();
