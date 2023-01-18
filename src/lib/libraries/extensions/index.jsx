@@ -432,7 +432,7 @@ export default [
         featured: true,
         internetConnectionRequired: false,
         incompatibleWithScratch: false
-    },
+    }, //hi
     {
         name: "Mouse Cursor",
         extensionId: 'MouseCursor',
