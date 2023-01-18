@@ -375,7 +375,7 @@ export default [
     },
     {
         name: 'Physics',
-        extensionId: 'griffpatch',
+        extensionId: 'https://extensions.turbowarp.org/box2d.js',
         collaborator: 'Griffpatch',
         iconURL: griffpatchPhysicsThumb,
         insetIconURL: griffpatchPhysicsIcon,
@@ -403,7 +403,7 @@ export default [
     },
     {
         name: "CloudLink",
-        extensionId: 'https://raw.githack.com/MikeDev101/cloudlink/master/S4-0-nosuite.js',
+        extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
         iconURL: cloudlinkThumb,
         insetIconURL: cloudlinkIcon,
         description: (
