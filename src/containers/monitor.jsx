@@ -16,13 +16,15 @@ import {Map} from 'immutable';
 import VM from 'scratch-vm';
 
 const availableModes = opcode => (
-    monitorModes.filter(t => {
+    monitorModes.filter(mode => {
         if (opcode === 'data_variable') {
-            return t !== 'list';
+            return mode !== 'list';
         } else if (opcode === 'data_listcontents') {
-            return t === 'list';
+            return mode === 'list';
+        } else if (opcode === 'canvas_canvasGetter') {
+            return mode === 'image';
         }
-        return t !== 'slider' && t !== 'list';
+        return mode !== 'slider' && mode !== 'list';
     })
 );
 
@@ -203,6 +205,7 @@ class Monitor extends React.Component {
         const monitorProps = monitorAdapter(this.props);
         const showSliderOption = availableModes(this.props.opcode).indexOf('slider') !== -1;
         const isList = this.props.mode === 'list';
+        const isImage = this.props.mode === 'image';
         return (
             <React.Fragment>
                 {this.state.sliderPrompt && <SliderPrompt
@@ -224,12 +227,12 @@ class Monitor extends React.Component {
                     targetId={this.props.targetId}
                     width={this.props.width}
                     onDragEnd={this.handleDragEnd}
-                    onExport={isList ? this.handleExport : null}
-                    onImport={isList ? this.handleImport : null}
+                    onExport={isList || isImage ? this.handleExport : null}
+                    onImport={isList || isImage ? this.handleImport : null}
                     onHide={this.handleHide}
                     onNextMode={this.handleNextMode}
-                    onSetModeToDefault={isList ? null : this.handleSetModeToDefault}
-                    onSetModeToLarge={isList ? null : this.handleSetModeToLarge}
+                    onSetModeToDefault={isList || isImage ? null : this.handleSetModeToDefault}
+                    onSetModeToLarge={isList || isImage ? null : this.handleSetModeToLarge}
                     onSetModeToSlider={showSliderOption ? this.handleSetModeToSlider : null}
                     onSliderPromptOpen={this.handleSliderPromptOpen}
                 />

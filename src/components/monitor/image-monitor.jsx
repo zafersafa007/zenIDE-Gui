@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './monitor.css';
 
-const ImageMonitor = ({width, label, value}) => (
+const ImageMonitor = ({width, height, label, value}) => (
     <div
         className={styles.ListMonitor}
         style={{
@@ -17,6 +17,7 @@ const ImageMonitor = ({width, label, value}) => (
             <image 
                 src={value}
                 width={width}
+                height={height}
             ></image>
         </div>
     </div>
