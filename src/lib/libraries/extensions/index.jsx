@@ -436,7 +436,7 @@ export default [
     {
         name: "Mouse Cursor",
         extensionId: 'https://extensions.turbowarp.org/cursor.js',
-        iconURL: mousecursorThumb,
+        iconURL: cursorThumb,
         description: (
             <FormattedMessage
                 defaultMessage="A extension to change what the mouse cursor looks like on the stage"
