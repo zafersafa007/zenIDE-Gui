@@ -5,7 +5,7 @@ import log from './log';
 import {getIsShowingProject} from '../reducers/project-state';
 
 const PACKAGER_URL = 'https://penguinmod.is-an.app/PenguinMod-Packager';
-const PACKAGER_ORIGIN = "https://penguinmod.is-an.app/";
+const PACKAGER_ORIGIN = "https://penguinmod.is-an.app";
 
 const readBlobAsArrayBuffer = blob => new Promise((resolve, reject) => {
     const fr = new FileReader();
