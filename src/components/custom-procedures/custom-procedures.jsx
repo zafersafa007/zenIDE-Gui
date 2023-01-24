@@ -112,7 +112,7 @@ const CustomProcedures = props => (
                         id="gui.customProcedures.runWithoutScreenRefresh"
                     />
                 </label>
-                <br>
+                <br/>
                 <label>
                     <input
                         checked={props.returns}
