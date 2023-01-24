@@ -61,6 +61,8 @@ import jwUniteInsetIcon from './penguinmod/extensions/UniteSmall.png'
 
 import jwProtoExtensionIcon from './penguinmod/extensions/Proto.svg'
 
+import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
+
 // thx jeremey
 import canvasExtensionBanner from './penguinmod/extensions/CanvasExtensionMenu.png'
 import canvasExtensionIcon from './penguinmod/extensions/CanvasSmall.png'
@@ -289,6 +291,26 @@ export default [
                 defaultMessage="Labelling, Placeholders and Defenitions packed into one sweet extension"
                 description="Description of Proto extension"
                 id="jwProto.jwProtoExtension.description"
+            />
+        ),
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="OOP"
+                description="Name of OOP extension"
+                id="jwStructs.jwStructsExtension.name"
+            />
+        ),
+        extensionId: 'jwStructs',
+        iconURL: jwStructsExtensionIcon,
+        insetIconURL: jwStructsExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="OOP blocks. OOp is a programming paradigm that uses objects and their interactions to design applications and computer programs."
+                description="Description of OOP extension"
+                id="jwStructs.jwStructsExtension.description"
             />
         ),
         featured: true
