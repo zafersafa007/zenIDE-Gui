@@ -48,7 +48,7 @@ export default async function ({ addon, global, console }) {
       }
       const id = procedurePrototype.id;
       return Object.values(vm.editingTarget.blocks._blocks).find(
-        (i) => i.opcode === "procedures_definition" && i.inputs.custom_block && i.inputs.custom_block.block === id
+        (i) => (i.opcode === "procedures_definition" || i.opcode === "procedures_definition_return") && i.inputs.custom_block && i.inputs.custom_block.block === id
       );
     }
     return null;

@@ -279,7 +279,7 @@ export default class DevTools {
     }
 
     for (const root of topBlocks) {
-      if (root.type === "procedures_definition") {
+      if (root.type === "procedures_definition" || root.type === "procedures_definition_return") {
         const label = root.getChildren()[0];
         const procCode = label.getProcCode();
         if (!procCode) {
@@ -1702,7 +1702,7 @@ export default class DevTools {
         let wksp = this.utils.getWorkspace();
         let topBlocks = wksp.getTopBlocks();
         for (const root of topBlocks) {
-          if (root.type === "procedures_definition") {
+          if (root.type === "procedures_definition" || root.type === "procedures_definition_return") {
             let label = root.getChildren()[0];
             let procCode = label.getProcCode();
             if (procCode && procCode === findProcCode) {
@@ -1714,7 +1714,7 @@ export default class DevTools {
         }
       }
 
-      if (block.type === "procedures_definition") {
+      if (block.type === "procedures_definition" || block.type === "procedures_definition_return") {
         let id = block.id ? block.id : block.getId ? block.getId() : null;
 
         this.findInp.focus();

@@ -766,7 +766,7 @@ export default async function ({ addon, global, console, msg }) {
             }
           } else if (customArgsMode === "defOnly") {
             const root = block.getRootBlock();
-            if (root.type !== "procedures_definition") return items;
+            if (root.type !== "procedures_definition" || root.type !== "procedures_definition_return") return items;
             const customBlockObj = customBlocks[root.getChildren(true)[0].getProcCode()];
             switch (type) {
               case "argument_reporter_string_number":

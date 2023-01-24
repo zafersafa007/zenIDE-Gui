@@ -447,7 +447,7 @@ export default async function ({ addon, global, console, msg }) {
       } else {
         category = "more";
       }
-    } else if (block.opcode === "procedures_definition") {
+    } else if (block.opcode === "procedures_definition" || block.opcode === "procedures_definition_return") {
       const prototypeBlockId = block.inputs.custom_block.block;
       const prototypeBlock = getBlock(target, prototypeBlockId);
       const proccode = prototypeBlock.mutation.proccode;

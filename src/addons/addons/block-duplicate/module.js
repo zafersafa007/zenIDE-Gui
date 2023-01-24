@@ -48,7 +48,8 @@ export async function load(addon) {
       !isRightClickDuplicate &&
       !this.flyout_ &&
       !this.shouldDuplicateOnDrag_ &&
-      this.targetBlock_.type !== "procedures_definition";
+      (this.targetBlock_.type !== "procedures_definition" ||
+      this.targetBlock_.type !== "procedures_definition_return");
 
     const isCherryPickingInverted = invertCherryPicking && !isRightClickDuplicate && block.getParent();
     const isCherryPicking = isDuplicating
