@@ -118,11 +118,7 @@ const CustomProcedures = props => (
                         type="checkbox"
                         onChange={props.onToggleReturns}
                     />
-                    <FormattedMessage
-                        defaultMessage="Returns a value"
-                        description="Label for checkbox to allow the block to return a value"
-                        id="gui.customProcedures.runWithoutScreenRefresh"
-                    />
+                    Returns a value
                 </label>
             </div>
             <Box className={styles.buttonRow}>
