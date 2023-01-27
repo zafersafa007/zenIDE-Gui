@@ -121,6 +121,7 @@ class CustomProcedures extends React.Component {
         this.props.onRequestClose();
     }
     handleOk () {
+        this.mutationRoot.setEdited(true)
         const newMutation = this.mutationRoot ? this.mutationRoot.mutationToDom(true) : null;
         this.props.onRequestClose(newMutation);
     }
