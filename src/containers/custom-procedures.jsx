@@ -22,8 +22,7 @@ class CustomProcedures extends React.Component {
         this.state = {
             rtlOffset: 0,
             warp: false,
-            returns: false,
-            editing: false
+            returns: false
         };
     }
     componentWillUnmount () {
@@ -109,8 +108,7 @@ class CustomProcedures extends React.Component {
         this.mutationRoot.render();
         this.setState({
             warp: this.mutationRoot.getWarp(),
-            returns: this.mutationRoot.getReturns(),
-            editing: this.mutationRoot.getEdited()
+            returns: this.mutationRoot.getReturns()
         });
         // Allow the initial events to run to position this block, then focus.
         setTimeout(() => {
@@ -166,7 +164,6 @@ class CustomProcedures extends React.Component {
                 onOk={this.handleOk}
                 onToggleWarp={this.handleToggleWarp}
                 onToggleReturns={this.handleToggleReturns}
-                editing={this.state.editing}
             />
         );
     }
