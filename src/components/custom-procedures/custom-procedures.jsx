@@ -113,14 +113,14 @@ const CustomProcedures = props => (
                     />
                 </label>
                 <br/>
-                <label>
+                {props.editing ? (<label>
                     <input
                         checked={props.returns}
                         type="checkbox"
                         onChange={props.onToggleReturns}
                     />
                     Returns a value
-                </label>
+                </label>) : null}
             </div>
             <Box className={styles.buttonRow}>
                 <button
@@ -159,7 +159,8 @@ CustomProcedures.propTypes = {
     onToggleWarp: PropTypes.func.isRequired,
     onToggleReturns: PropTypes.func.isRequired,
     warp: PropTypes.bool.isRequired,
-    returns: PropTypes.bool.isRequired
+    returns: PropTypes.bool.isRequired,
+    editing: PropTypes.bool.isRequired
 };
 
 export default injectIntl(CustomProcedures);
