@@ -27,7 +27,7 @@ jobs:
       with:
         node-version: 14.x
     - name: Install dependencies and build site
-      run: npm i -g pnpm && pnpm up && pnpm add child_process && pnpm i --shamefully-hoist && webpack --bail
+      run: npm i -g pnpm && pnpm up && pnpm i --shamefully-hoist && webpack --bail
     - name: Upload artifact
       uses: actions/upload-pages-artifact@v1
       with:
