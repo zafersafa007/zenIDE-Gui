@@ -113,7 +113,7 @@ const CustomProcedures = props => (
                     />
                 </label>
                 <br/>
-                {!props.editing ? (<label>
+                {props.editing ? (<label>
                     <input
                         checked={props.returns}
                         type="checkbox"
