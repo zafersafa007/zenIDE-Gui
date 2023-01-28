@@ -56,9 +56,6 @@ import jgJSONExtensionIcon from './penguinmod/extensions/json.png'
 import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png'
 import jgPrismExtensionIcon from './penguinmod/extensions/prism.png'
 
-import jwUniteExtensionIcon from './penguinmod/extensions/Unite.png'
-import jwUniteInsetIcon from './penguinmod/extensions/UniteSmall.png'
-
 import jwProtoExtensionIcon from './penguinmod/extensions/Proto.svg'
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
@@ -252,26 +249,6 @@ export default [
                 defaultMessage="Blocks for handling JSON objects. Arrays are not supported yet."
                 description="Description of JSON extension"
                 id="jgJSON.jgJSONExtension.description"
-            />
-        ),
-        featured: true
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="Unite"
-                description="Name of Unite extension"
-                id="jwUnite.jwUniteExtension.name"
-            />
-        ),
-        extensionId: 'jwUnite',
-        iconURL: jwUniteExtensionIcon,
-        insetIconURL: jwUniteInsetIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Useful blocks that should of been added to scratch already"
-                description="Description of Unite extension"
-                id="jwUnite.jwUniteExtension.description"
             />
         ),
         featured: true
