@@ -17,13 +17,15 @@ class CustomProcedures extends React.Component {
             'handleToggleReturns',
             'handleCancel',
             'handleOk',
+            'handleChangeType',
             'setBlocks'
         ]);
         this.state = {
             rtlOffset: 0,
             warp: false,
             returns: false,
-            editing: false
+            editing: false,
+            type: 'statement'
         };
     }
     componentWillUnmount () {
@@ -154,6 +156,11 @@ class CustomProcedures extends React.Component {
             this.setState({returns: newReturns});
         }
     }
+    handleChangeType (element) {
+        const newType = element.target.value
+        this.setType(newType)
+        this.setState({type: newType})
+    }
     render () {
         return (
             <CustomProceduresComponent
@@ -168,6 +175,8 @@ class CustomProcedures extends React.Component {
                 onToggleWarp={this.handleToggleWarp}
                 onToggleReturns={this.handleToggleReturns}
                 editing={this.state.editing}
+                selectedType={this.state.type}
+                onOutputTypeChanged={this.handleChangeType}
             />
         );
     }

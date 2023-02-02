@@ -113,14 +113,70 @@ const CustomProcedures = props => (
                     />
                 </label>
                 <br/>
-                {!props.editing ? (<label>
-                    <input
-                        checked={props.returns}
-                        type="checkbox"
-                        onChange={props.onToggleReturns}
-                    />
-                    Returns a value
-                </label>) : null}
+                {!props.editing ? (<div>
+                    <label>
+                        <input
+                            checked={props.returns}
+                            type="checkbox"
+                            onChange={props.onToggleReturns}
+                        />
+                        Returns a value
+                    </label>
+                    <br/>
+                    {props.returns ? (<div>
+                        <label>
+                            <input
+                                checked={props.selectedType === 'string'}
+                                name="procReturnString"
+                                type="radio"
+                                value="string"
+                                onChange={props.onOutputTypeChanged}
+                            />
+                            Returns text
+                        </label>
+                        <label>
+                            <input
+                                checked={props.selectedType === 'number'}
+                                name="procReturnNumber"
+                                type="radio"
+                                value="number"
+                                onChange={props.onOutputTypeChanged}
+                            />
+                            Returns number
+                        </label>
+                        <label>
+                            <input
+                                checked={props.selectedType === 'boolean'}
+                                name="procReturnBoolean"
+                                type="radio"
+                                value="boolean"
+                                onChange={props.onOutputTypeChanged}
+                            />
+                            Returns boolean
+                        </label>
+                    </div>) : (<div>
+                        <label>
+                            <input
+                                checked={props.selectedType === 'statement'}
+                                name="procStatement"
+                                type="radio"
+                                value="statement"
+                                onChange={props.onOutputTypeChanged}
+                            />
+                            Normal
+                        </label>
+                        <label>
+                            <input
+                                checked={props.selectedType === 'end'}
+                                name="procStatementEnd"
+                                type="radio"
+                                value="end"
+                                onChange={props.onOutputTypeChanged}
+                            />
+                            End-cap
+                        </label>
+                    </div>)}
+                </div>) : null}
             </div>
             <Box className={styles.buttonRow}>
                 <button
@@ -160,7 +216,9 @@ CustomProcedures.propTypes = {
     onToggleReturns: PropTypes.func.isRequired,
     warp: PropTypes.bool.isRequired,
     returns: PropTypes.bool.isRequired,
-    editing: PropTypes.bool.isRequired
+    editing: PropTypes.bool.isRequired,
+    selectedType: PropTypes.string.isRequired,
+    onOutputTypeChanged: PropTypes.func.isRequired
 };
 
 export default injectIntl(CustomProcedures);
