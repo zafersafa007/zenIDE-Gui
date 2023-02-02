@@ -153,7 +153,7 @@ class CustomProcedures extends React.Component {
         if (this.mutationRoot) {
             const newReturns = !this.mutationRoot.getReturns();
             this.mutationRoot.setReturns(newReturns);
-            this.setState({returns: newReturns});
+            this.setState({returns: newReturns, type: newReturns ? 'string' : 'statement'});
         }
     }
     handleChangeType (element) {
