@@ -158,7 +158,7 @@ class CustomProcedures extends React.Component {
     }
     handleChangeType (element) {
         const newType = element.target.value
-        this.setType(newType)
+        this.mutationRoot.setType(newType)
         this.setState({type: newType})
     }
     render () {
