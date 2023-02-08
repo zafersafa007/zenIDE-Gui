@@ -254,6 +254,13 @@ export default [
         featured: true
     },
     {
+        name: "Temporary variables",
+        extensionId: 'tempVars',
+        iconURL: jwProtoExtensionIcon,
+        description: "allows you to make temporary variables",
+        featured: true
+    },
+    {
         name: (
             <FormattedMessage
                 defaultMessage="Proto"
