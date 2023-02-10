@@ -904,6 +904,19 @@ class MenuBar extends React.Component {
                     <div className={styles.menuBarItem}>
                         <TWSaveStatus />
                     </div>
+                    <div className={styles.menuBarItem}>
+                        <a
+                            className={styles.feedbackLink}
+                            href="https://scratch.mit.edu/discuss/topic/636814/"
+                            rel="noopener noreferrer"
+                            target="_blank"
+                        >
+                            {/* todo: icon */}
+                            <Button className={styles.feedbackButton}>
+                                Join out server!
+                            </Button>
+                        </a>
+                    </div>
                 </div>
 
                 {aboutButton}
