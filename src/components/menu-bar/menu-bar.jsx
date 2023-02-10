@@ -912,7 +912,7 @@ class MenuBar extends React.Component {
                             target="_blank"
                         >
                             <Button className={styles.feedbackButton}>
-                                Join out server!
+                                Join our server!
                             </Button>
                         </a>
                     </div>
