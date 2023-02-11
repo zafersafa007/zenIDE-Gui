@@ -532,6 +532,50 @@ const sensing = function (isInitialSetup, isStage) {
                     <shadow type="sensing_distancetomenu"/>
                 </value>
             </block>
+            <block type="sensing_distanceTo">
+                <value name="x1">
+                    <shadow type="text">
+                        <field name="TEXT">10</field>
+                    </shadow>
+                </value>
+                <value name="y1">
+                    <shadow type="text">
+                        <field name="TEXT">-10</field>
+                    </shadow>
+                </value>
+                <value name="x2">
+                    <shadow type="text">
+                        <field name="TEXT">-10</field>
+                    </shadow>
+                </value>
+                <value name="y2">
+                    <shadow type="text">
+                        <field name="TEXT">10</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="sensing_directionTo">
+                <value name="x1">
+                    <shadow type="text">
+                        <field name="TEXT">10</field>
+                    </shadow>
+                </value>
+                <value name="y1">
+                    <shadow type="text">
+                        <field name="TEXT">-10</field>
+                    </shadow>
+                </value>
+                <value name="x2">
+                    <shadow type="text">
+                        <field name="TEXT">-10</field>
+                    </shadow>
+                </value>
+                <value name="y2">
+                    <shadow type="text">
+                        <field name="TEXT">10</field>
+                    </shadow>
+                </value>
+            </block>
             ${blockSeparator}
         `}
         <block type="sensing_getspritewithattrib">
