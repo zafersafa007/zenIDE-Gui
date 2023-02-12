@@ -262,44 +262,11 @@ class Interface extends React.Component {
                             {isBrowserSupported() ? null : (
                                 <BrowserModal isRtl={isRtl} />
                             )}
-                            <div className={styles.section}>
-                                <ProjectInput />
-                            </div>
                             {(
                                 // eslint-disable-next-line max-len
                                 projectId === '0' || description.instructions === 'unshared' || description.credits === 'unshared'
                             ) && (
                                     <div className={styles.unsharedUpdate}>
-                                        {/* I won't link these in the public website because there will be way */}
-                                        {/* too much spam if we do that, but here are the relevant links: */}
-                                        {/* https://github.com/LLK/scratch-gui/pull/8269 */}
-                                        {/* https://github.com/LLK/scratch-www/pull/6773 */}
-                                        <p>
-                                            <FormattedMessage
-                                                // eslint-disable-next-line max-len
-                                                defaultMessage="Unshared projects will no longer be accessible using just their project ID at some point in the future due to upcoming Scratch API changes."
-                                                description="Appears on unshared projects"
-                                                id="tw.unshared.1"
-                                            />
-                                        </p>
-                                        <p>
-                                            <FormattedMessage
-                                                defaultMessage="For more information, visit: {link}"
-                                                description="Appears on unshared projects"
-                                                id="tw.unshared.2"
-                                                values={{
-                                                    link: (
-                                                        <a
-                                                            href="https://docs.turbowarp.org/unshared-projects"
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                        >
-                                                            {'https://docs.turbowarp.org/unshared-projects'}
-                                                        </a>
-                                                    )
-                                                }}
-                                            />
-                                        </p>
                                         {(
                                             description.instructions === 'unshared' ||
                                             description.credits === 'unshared'
