@@ -131,7 +131,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                     })
                     .then(buffer => ({data: buffer}));
             } else {
-                projectUrl = `${this.defaultProps.projectHost}/projects/download/${projectId}`
+                projectUrl = `https://PMProjectServer.freshpenguin112.repl.co/projects/download/${projectId}`
                 assetPromise = progressMonitor.fetchWithProgress(projectUrl)
                     .then(r => {
                         this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
