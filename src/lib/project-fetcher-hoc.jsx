@@ -132,6 +132,11 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                     .then(buffer => ({data: buffer}));
             } else {
                 assetPromise = fetchProjectToken(projectId).then(realId => {
+                    // patch for default project(?)
+                    if (!realId) {
+                        storage.setProjectToken(token);
+                        return storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
+                    }
                     projectUrl = `https://PMProjectServer.freshpenguin112.repl.co/projects/download/${realId}`
                     return progressMonitor.fetchWithProgress(projectUrl)
                         .then(r => {
