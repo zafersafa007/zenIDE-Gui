@@ -140,7 +140,10 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                         }
                         return r.arrayBuffer();
                     })
-                    .then(buffer => ({data: buffer}));
+                    .then(buffer => ({data: buffer}))
+                    .catch(error => {
+                        console.log(error)
+                    })
             }
 
             return assetPromise

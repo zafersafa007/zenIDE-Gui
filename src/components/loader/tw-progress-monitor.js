@@ -64,7 +64,7 @@ export const fetchWithProgress = url => {
             }));
         };
         xhr.onloadend = () => setProgress(1);
-        xhr.onerror = () => reject(new Error('[tw-progress-monitor] xhr failed'));
+        xhr.onerror = () => reject(new Error('[tw-progress-monitor] xhr failed with status' + xhr.status));
         xhr.onprogress = e => {
             if (e.lengthComputable) {
                 setProgress(e.loaded / e.total);
