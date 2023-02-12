@@ -6,7 +6,7 @@ import log from './log';
 import {setProjectTitle} from '../reducers/project-title';
 import {setAuthor, setDescription} from '../reducers/tw';
 
-const API_URL = 'https://PMProjectServer.freshpenguin112.repl.co/$id';
+const API_URL = 'https://PMProjectServer.freshpenguin112.repl.co/projects/$id';
 
 const fetchProjectMeta = projectId => fetch(API_URL.replace('$id', projectId))
     .then(r => {
