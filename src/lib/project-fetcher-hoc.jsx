@@ -134,7 +134,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 assetPromise = fetchProjectToken(projectId).then(realId => {
                     // patch for default project(?)
                     if (!realId) {
-                        storage.setProjectToken(token);
+                        storage.setProjectToken(realId);
                         return storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
                     }
                     projectUrl = `https://PMProjectServer.freshpenguin112.repl.co/projects/download/${realId}`
