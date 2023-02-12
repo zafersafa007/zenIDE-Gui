@@ -222,7 +222,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
     };
     ProjectFetcherComponent.defaultProps = {
         assetHost: 'https://assets.scratch.mit.edu',
-        projectHost: 'https://PMProjectServer.freshpenguin112.repl.co'
+        projectHost: 'https://projects.scratch.mit.edu'
     };
 
     const mapStateToProps = state => ({
