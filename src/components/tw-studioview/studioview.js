@@ -284,33 +284,27 @@ StudioView.prototype.loadNextPage = function () {
     }.bind(this);
 
     var url = StudioView.STUDIO_API
-        .replace('$id', this.studioId)
-        .replace('$offset', '' + this.offset);
     xhr.open('GET', url);
     xhr.send();
 };
 
 StudioView.prototype.getURL = function () {
-    return StudioView.STUDIO_PAGE.replace('$id', this.studioId);
+    return 'no studio'
 };
 
 StudioView.prototype.onselect = function (id, el) { };
 StudioView.prototype.onpageload = function () { };
 StudioView.prototype.onend = function () { };
 
-StudioView.STUDIO_API = 'https://trampoline.turbowarp.org/proxy/studios/$id/projects?offset=$offset';
+StudioView.STUDIO_API = 'https://PMProjectServer.freshpenguin112.repl.co';
 
 // The URL to download thumbnails from.
 // $id is replaced with the project's ID.
-StudioView.THUMBNAIL_SRC = 'https://trampoline.turbowarp.org/thumbnails/$id?width=144&height=108';
+StudioView.THUMBNAIL_SRC = 'https://PMProjectServer.freshpenguin112.repl.co/iconUrl/$id';
 
 // The URL for project pages.
 // $id is replaced with the project ID.
-StudioView.PROJECT_PAGE = 'https://turbowarp.org/$id';
-
-// The URL for studio pages.
-// $id is replaced with the studio ID.
-StudioView.STUDIO_PAGE = 'https://scratch.mit.edu/studios/$id/';
+StudioView.PROJECT_PAGE = 'https://turbowarp.org/#$id';
 
 // The amount of "placeholders" to insert before the next page loads.
 StudioView.PLACEHOLDER_COUNT = 9;

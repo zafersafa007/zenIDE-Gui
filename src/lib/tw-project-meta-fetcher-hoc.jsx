@@ -6,7 +6,7 @@ import log from './log';
 import {setProjectTitle} from '../reducers/project-title';
 import {setAuthor, setDescription} from '../reducers/tw';
 
-const API_URL = 'https://trampoline.turbowarp.org/proxy/projects/$id';
+const API_URL = 'https://PMProjectServer.freshpenguin112.repl.co/$id';
 
 const fetchProjectMeta = projectId => fetch(API_URL.replace('$id', projectId))
     .then(r => {
@@ -55,15 +55,15 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                     if (this.props.projectId !== projectId) {
                         return;
                     }
-                    const title = data.title;
+                    const title = data.name;
                     if (title) {
                         this.props.onSetProjectTitle(title);
                     }
                     const authorName = data.author.username;
                     const authorThumbnail = `https://trampoline.turbowarp.org/avatars/${data.author.id}`;
                     this.props.onSetAuthor(authorName, authorThumbnail);
-                    const instructions = data.instructions || '';
-                    const credits = data.description || '';
+                    const instructions = data.notes || '';
+                    const credits = data.desc || '';
                     if (instructions || credits) {
                         this.props.onSetDescription(instructions, credits);
                     }

@@ -42,13 +42,13 @@ const fetchProjectToken = projectId => {
     if (hashParams.has('token')) {
         return Promise.resolve(hashParams.get('token'));
     }
-    return fetch(`https://trampoline.turbowarp.org/proxy/projects/${projectId}`)
+    return fetch(`https://PMProjectServer.freshpenguin112.repl.co/projects/download/${projectId}`)
         .then(r => {
             if (!r.ok) return null;
             return r.json();
         })
         .then(dataOrNull => {
-            const token = dataOrNull ? dataOrNull.project_token : null;
+            const token = dataOrNull ? dataOrNull.id : null;
             return token;
         })
         .catch(err => {

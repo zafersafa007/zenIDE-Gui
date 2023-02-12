@@ -70,19 +70,6 @@ class FeaturedProjects extends React.Component {
                         </div>
                     )}
                 </div>
-                <div className={styles.footer}>
-                    <a
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        href={`https://scratch.mit.edu/studios/${this.props.studio}/`}
-                    >
-                        <FormattedMessage
-                            defaultMessage="View studio on Scratch."
-                            description="Link to turbowarp featured projects studio"
-                            id="tw.featuredProjectsStudio"
-                        />
-                    </a>
-                </div>
             </div>
         );
     }
