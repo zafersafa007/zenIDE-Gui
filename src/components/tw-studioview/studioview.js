@@ -250,8 +250,8 @@ StudioView.prototype.loadNextPage = function () {
             var p = rawProjects[i];
             projects.push({
                 id: p.id,
-                title: p.title,
-                author: p.username,
+                title: p.name,
+                author: p.author.username,
             });
         }
         projects = this.shuffler(projects);

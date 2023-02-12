@@ -42,7 +42,7 @@ const fetchProjectToken = projectId => {
     if (hashParams.has('token')) {
         return Promise.resolve(hashParams.get('token'));
     }
-    return fetch(`https://PMProjectServer.freshpenguin112.repl.co/projects/download/${projectId}`)
+    return fetch(`https://PMProjectServer.freshpenguin112.repl.co/${projectId}`)
         .then(r => {
             if (!r.ok) return null;
             return r.json();
