@@ -131,26 +131,25 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                     })
                     .then(buffer => ({data: buffer}));
             } else {
-                assetPromise = fetchProjectToken(projectId).then(realId => {
-                    // patch for default project(?)
-                    if (!realId) {
-                        storage.setProjectToken(realId);
-                        return storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
-                    }
-                    projectUrl = `https://PMProjectServer.freshpenguin112.repl.co/projects/download/${realId}`
-                    return progressMonitor.fetchWithProgress(projectUrl)
-                        .then(r => {
-                            this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
-                            if (!r.ok) {
-                                throw new Error(`Request returned status ${r.status}`);
-                            }
-                            return r.arrayBuffer();
-                        })
-                        .then(buffer => ({data: buffer}))
-                        .catch(error => {
-                            console.log(error)
-                        })
-                })
+                // patch for default project
+                if (!projectId) {
+                    storage.setProjectToken(projectId);
+                    return storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
+                }
+    
+                projectUrl = `https://PMProjectServer.freshpenguin112.repl.co/projects/download/${projectId}`
+                assetPromise = progressMonitor.fetchWithProgress(projectUrl)
+                    .then(r => {
+                        this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
+                        if (!r.ok) {
+                            throw new Error(`Request returned status ${r.status}`);
+                        }
+                        return r.arrayBuffer();
+                    })
+                    .then(buffer => ({data: buffer}))
+                    .catch(error => {
+                        console.log(error)
+                    })
             }
 
             return assetPromise
