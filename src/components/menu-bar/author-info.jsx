@@ -53,16 +53,7 @@ ActualAuthorInfo.propTypes = {
 };
 
 const AuthorInfo = ({projectId, ...props}) => (
-    projectId ? (
-        <a
-            className={styles.link}
-            href={`https://scratch.mit.edu/projects/${projectId}`}
-            target="_blank"
-            rel="noreferrer"
-        >
-            <ActualAuthorInfo {...props} />
-        </a>
-    ) : <ActualAuthorInfo {...props} />
+    <ActualAuthorInfo {...props} />
 );
 AuthorInfo.propTypes = {
     projectId: PropTypes.string
