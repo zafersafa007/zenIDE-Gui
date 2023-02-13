@@ -132,7 +132,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                     .then(buffer => ({data: buffer}));
             } else {
                 // patch for default project
-                if (!projectId) {
+                if (projectId === '0') {
                     storage.setProjectToken(projectId);
                     return storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
                 }
