@@ -134,22 +134,22 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 // patch for default project
                 if (projectId === '0') {
                     storage.setProjectToken(projectId);
-                    return storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
+                    assetPromise = storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
+                } else {
+                    projectUrl = `https://PMProjectServer.freshpenguin112.repl.co/projects/download/${projectId}`
+                    assetPromise = progressMonitor.fetchWithProgress(projectUrl)
+                        .then(r => {
+                            this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
+                            if (!r.ok) {
+                                throw new Error(`Request returned status ${r.status}`);
+                            }
+                            return r.arrayBuffer();
+                        })
+                        .then(buffer => ({data: buffer}))
+                        .catch(error => {
+                            console.log(error)
+                        })
                 }
-    
-                projectUrl = `https://PMProjectServer.freshpenguin112.repl.co/projects/download/${projectId}`
-                assetPromise = progressMonitor.fetchWithProgress(projectUrl)
-                    .then(r => {
-                        this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
-                        if (!r.ok) {
-                            throw new Error(`Request returned status ${r.status}`);
-                        }
-                        return r.arrayBuffer();
-                    })
-                    .then(buffer => ({data: buffer}))
-                    .catch(error => {
-                        console.log(error)
-                    })
             }
 
             return assetPromise
