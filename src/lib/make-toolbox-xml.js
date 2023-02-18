@@ -461,14 +461,14 @@ const control = function (isInitialSetup, isStage) {
         <block type="control_switch_default"/>
         <block type="control_exitCase"/>
         <block type="control_case_next">
-            <value name="condition">
+            <value name="CONDITION">
                 <shadow type="text">
                     <field name="TEXT">ello</field>
                 </shadow>
             </value>
         </block>
         <block type="control_case">
-            <value name="condition">
+            <value name="CONDITION">
                 <shadow type="text">
                     <field name="TEXT">ello</field>
                 </shadow>
