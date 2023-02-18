@@ -457,6 +457,24 @@ const control = function (isInitialSetup, isStage) {
         </block>
         <block id="forever" type="control_forever"/>
         ${blockSeparator}
+        <block type="control_switch"/>
+        <block type="control_switch_default"/>
+        <block type="control_exitCase"/>
+        <block type="control_case_next">
+            <value name="condition">
+                <shadow type="text">
+                    <field name="TEXT">ello</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="control_case">
+            <value name="condition">
+                <shadow type="text">
+                    <field name="TEXT">ello</field>
+                </shadow>
+            </value>
+        </block>
+        ${blockSeparator}
         <block type="control_if"/>
         <block type="control_if_else"/>
         <block id="wait_until" type="control_wait_until"/>
@@ -613,6 +631,13 @@ const sensing = function (isInitialSetup, isStage) {
             <value name="TEXT1">
                 <shadow type="text">
                     <field name="TEXT">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="sensing_isUpperCase">
+            <value name="text">
+                <shadow type="text">
+                    <field name="TEXT">${letter}</field>
                 </shadow>
             </value>
         </block>
