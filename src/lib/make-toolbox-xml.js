@@ -637,7 +637,7 @@ const sensing = function (isInitialSetup, isStage) {
         <block type="sensing_isUpperCase">
             <value name="text">
                 <shadow type="text">
-                    <field name="TEXT">${letter}</field>
+                    <field name="TEXT">A</field>
                 </shadow>
             </value>
         </block>
