@@ -229,6 +229,8 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                 </shadow>
             </value>
         </block>
+        <block type="looks_sayWidth"></block>
+        <block type="looks_sayHeight"></block>
         ${blockSeparator}
         `}
         ${isStage ? `
