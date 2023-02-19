@@ -973,6 +973,13 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
+            <block type="operator_toUpperLowerCase">
+                <value name="TEXT">
+                    <shadow type="text">
+                        <field name="TEXT">ello</field>
+                    </shadow>
+                </value>
+            </block>
 
         `}
         ${blockSeparator}
