@@ -261,6 +261,13 @@ export default [
         featured: true
     },
     {
+        name: "Color Utility Blocks",
+        extensionId: 'colors',
+        iconURL: jwProtoExtensionIcon,
+        description: "color blocks",
+        featured: true
+    },
+    {
         name: (
             <FormattedMessage
                 defaultMessage="Proto"
