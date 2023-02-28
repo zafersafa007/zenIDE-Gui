@@ -44,9 +44,12 @@ class UsernameModal extends React.Component {
             this.props.vm.setFramerate(parsed);
         }
     }
+    /*
+    add back: nohqpen
     handleHighQualityPenChange (e) {
         this.props.vm.renderer.setUseHighQualityRender(e.target.checked);
     }
+    */
     handleInterpolationChange (e) {
         this.props.vm.setInterpolation(e.target.checked);
     }
