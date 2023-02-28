@@ -318,8 +318,8 @@ const TWStateManager = function (WrappedComponent) {
                 }
             }
 
-            if (!urlParams.has('nohqpen')) {
-                this.props.vm.renderer.setUseHighQualityRender(true);
+            if (urlParams.has('nohqpen')) {
+                this.props.vm.renderer.setUseHighQualityRender(false);
             }
 
             if (urlParams.has('turbo')) {
