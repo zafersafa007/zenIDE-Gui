@@ -21,7 +21,10 @@ class UsernameModal extends React.Component {
         bindAll(this, [
             'handleFramerateChange',
             'handleCustomizeFramerate',
+            /*
+            add back: nohqpen
             'handleHighQualityPenChange',
+            */
             'handleInterpolationChange',
             'handleInfiniteClonesChange',
             'handleRemoveFencingChange',
