@@ -318,8 +318,8 @@ const TWStateManager = function (WrappedComponent) {
                 }
             }
 
-            if (urlParams.has('hqpen')) {
-                this.props.vm.renderer.setUseHighQualityRender(true);
+            if (urlParams.has('nohqpen')) {
+                this.props.vm.renderer.setUseHighQualityRender(false);
             }
 
             if (urlParams.has('turbo')) {
@@ -439,10 +439,10 @@ const TWStateManager = function (WrappedComponent) {
                     searchParams.delete('turbo');
                 }
 
-                if (this.props.highQualityPen) {
-                    searchParams.set('hqpen', '');
+                if (!this.props.highQualityPen) {
+                    searchParams.set('nohqpen', '');
                 } else {
-                    searchParams.delete('hqpen');
+                    searchParams.delete('nohqpen');
                 }
 
                 if (compilerOptions.enabled) {
