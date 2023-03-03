@@ -80,6 +80,9 @@ import gsaTempVariablesExtensionIcon from './penguinmod/extensions/tempvariables
 import gsaColorUtilExtensionIcon from './penguinmod/extensions/colorutil.png'
 import jgIframeExtensionIcon from './penguinmod/extensions/iframe.png'
 
+// default icon if you are too lazy to make one and you want me to make one instead
+// import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
+
 export default [
     {
         name: (
