@@ -19,6 +19,9 @@ import translateInsetIconURL from './translate/translate-small.png';
 import makeymakeyIconURL from './makeymakey/makeymakey.png';
 import makeymakeyInsetIconURL from './makeymakey/makeymakey-small.svg';
 
+import animatedTextIconURL from './penguinmod/extensions/text extension.png';
+import animatedTextInsetIconURL from './penguinmod/extensions/text extension small.svg';
+
 import microbitIconURL from './microbit/microbit.png';
 import microbitInsetIconURL from './microbit/microbit-small.svg';
 import microbitConnectionIconURL from './microbit/microbit-illustration.svg';
@@ -122,6 +125,14 @@ export default [
                 id="gui.extension.pen.description"
             />
         ),
+        featured: true
+    },
+    {
+        name: 'Animated Text',
+        extensionId: 'text',
+        iconURL: animatedTextIconURL,
+        insetIconURL: animatedTextInsetIconURL,
+        description: 'Bring words to life.',
         featured: true
     },
     {
