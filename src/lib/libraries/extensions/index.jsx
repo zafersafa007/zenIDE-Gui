@@ -75,6 +75,10 @@ import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg'
 import pointerlockThumb from './penguinmod/extensions/pointerlock.svg'
 import cursorThumb from './penguinmod/extensions/cursor.svg'
 
+// more icons so they arent just red when the extension color is not red
+import gsaTempVariablesExtensionIcon from './penguinmod/extensions/tempvariables.png'
+import gsaColorUtilExtensionIcon from './penguinmod/extensions/colorutil.png'
+import jgIframeExtensionIcon from './penguinmod/extensions/iframe.png'
 
 export default [
     {
@@ -232,7 +236,28 @@ export default [
                 id="jgWebsiteRequests.jgWebsiteRequestsExtension.description"
             />
         ),
-        featured: true
+        featured: true,
+        internetConnectionRequired: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="HTML iframe Elements"
+                description="Name of iFrame extension"
+                id="jgIframe.jgIframeExtension.name"
+            />
+        ),
+        extensionId: 'jgIframe',
+        iconURL: jgIframeExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Blocks to place and move around frames that contain HTML content or websites."
+                description="Description of iFrame extension"
+                id="jgIframe.jgIframeExtension.description"
+            />
+        ),
+        featured: true,
+        internetConnectionRequired: true
     },
     {
         name: (
@@ -254,17 +279,17 @@ export default [
         featured: true
     },
     {
-        name: "Temporary variables",
+        name: "Temporary Variables",
         extensionId: 'tempVars',
-        iconURL: jwProtoExtensionIcon,
-        description: "allows you to make temporary variables",
+        iconURL: gsaTempVariablesExtensionIcon,
+        description: "Create variables for use in one block stack. Useful to not clutter the variable list with variables you only use once.",
         featured: true
     },
     {
         name: "Color Utility Blocks",
         extensionId: 'colors',
-        iconURL: jwProtoExtensionIcon,
-        description: "color blocks",
+        iconURL: gsaColorUtilExtensionIcon,
+        description: "Converters for Hex, RGB, HSV and Decimal colors and other color related things.",
         featured: true
     },
     {
