@@ -76,7 +76,7 @@ export default function (vm) {
 
     const jsonForSensingSetMenus = function (menuOptionsFn) {
         return {
-            message0: ScratchBlocks.Msg.SENSING_OF,
+            message0: 'set %1 of %2 to %3',
             args0: [
                 {
                     type: 'field_dropdown',
