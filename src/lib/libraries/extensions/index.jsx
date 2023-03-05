@@ -83,6 +83,7 @@ import gsaTempVariablesExtensionIcon from './penguinmod/extensions/tempvariables
 import gsaColorUtilExtensionIcon from './penguinmod/extensions/colorutil.png'
 import jgIframeExtensionIcon from './penguinmod/extensions/iframe.png'
 import jgExtendedAudioExtensionIcon from './penguinmod/extensions/extendedaudio.png'
+import jgScratchAuthExtensionIcon from './penguinmod/extensions/scratchauth.png'
 
 // default icon if you are too lazy to make one and you want me to make one instead
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
@@ -485,6 +486,13 @@ export default [
         featured: true,
         internetConnectionRequired: false,
         incompatibleWithScratch: false
+    },
+    {
+        name: "Scratch Authentication",
+        extensionId: 'jgScratchAuthenticate',
+        iconURL: jgScratchAuthExtensionIcon,
+        description: "Get a user's scratch name to prove they are a real scratch user.",
+        featured: true
     },
     {
         name: (
