@@ -82,6 +82,7 @@ import cursorThumb from './penguinmod/extensions/cursor.svg'
 import gsaTempVariablesExtensionIcon from './penguinmod/extensions/tempvariables.png'
 import gsaColorUtilExtensionIcon from './penguinmod/extensions/colorutil.png'
 import jgIframeExtensionIcon from './penguinmod/extensions/iframe.png'
+import jgExtendedAudioExtensionIcon from './penguinmod/extensions/extendedaudio.png'
 
 // default icon if you are too lazy to make one and you want me to make one instead
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
@@ -231,6 +232,13 @@ export default [
                 id="jgFiles.jgFilesExtension.description"
             />
         ),
+        featured: true
+    },
+    {
+        name: "Extended Sound",
+        extensionId: 'jgExtendedAudio',
+        iconURL: jgExtendedAudioExtensionIcon,
+        description: "Free speed and pitch control, starting sounds at certain positions, stopping sounds, etc.",
         featured: true
     },
     {
