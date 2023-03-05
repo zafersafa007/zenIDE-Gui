@@ -74,6 +74,34 @@ export default function (vm) {
         };
     };
 
+    const jsonForSensingSetMenus = function (menuOptionsFn) {
+        return {
+            message0: ScratchBlocks.Msg.SENSING_OF,
+            args0: [
+                {
+                    type: 'field_dropdown',
+                    name: 'PROPERTY',
+                    options: function () {
+                        return menuOptionsFn();
+                    }
+
+                },
+                {
+                    type: 'input_value',
+                    name: 'OBJECT'
+                },
+                {
+                    type: 'input_value',
+                    name: 'VALUE'
+                }
+            ],
+            colour: ScratchBlocks.Colours.sensing.primary,
+            colourSecondary: ScratchBlocks.Colours.sensing.secondary,
+            colourTertiary: ScratchBlocks.Colours.sensing.tertiary,
+            extensions: ["shape_statement"]
+        };
+    };
+
     const soundsMenu = function () {
         let menu = [['', '']];
         if (vm.editingTarget && vm.editingTarget.sprite.sounds.length > 0) {
@@ -372,7 +400,7 @@ export default function (vm) {
             return [['', '']];
         };
 
-        const json = jsonForSensingMenus(menuFn);
+        const json = jsonForSensingSetMenus(menuFn);
         this.jsonInit(json);
     };
 
