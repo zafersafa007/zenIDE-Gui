@@ -317,7 +317,7 @@ export default [
     {
         name: (
             <FormattedMessage
-                defaultMessage="Proto"
+                defaultMessage="Labels"
                 description="Name of Proto extension"
                 id="jwProto.jwProtoExtension.name"
             />
@@ -326,7 +326,7 @@ export default [
         iconURL: jwProtoExtensionIcon,
         description: (
             <FormattedMessage
-                defaultMessage="Labelling, Placeholders and Defenitions packed into one sweet extension"
+                defaultMessage="Labelling and Placeholders." // change this back if you update the extension to have more things
                 description="Description of Proto extension"
                 id="jwProto.jwProtoExtension.description"
             />
