@@ -59,7 +59,7 @@ import jgJSONExtensionIcon from './penguinmod/extensions/json.png'
 import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png'
 import jgPrismExtensionIcon from './penguinmod/extensions/prism.png'
 
-import jwProtoExtensionIcon from './penguinmod/extensions/Proto.svg'
+import jwProtoExtensionIcon from './penguinmod/extensions/proto.png'
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
 
