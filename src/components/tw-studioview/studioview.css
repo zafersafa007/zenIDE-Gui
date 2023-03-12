@@ -86,6 +86,7 @@ With changes to make it work properly in the scratch-gui environment.
 .studioview-thumbnail img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .studioview-placeholder .studioview-thumbnail,

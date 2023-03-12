@@ -1,15 +1,15 @@
 import bindAll from 'lodash.bindall';
 import PropTypes from 'prop-types';
 import React from 'react';
-import {FormattedMessage} from 'react-intl';
-import {connect} from 'react-redux';
+import { FormattedMessage } from 'react-intl';
+import { connect } from 'react-redux';
 import StudioView from '../tw-studioview/studioview.jsx';
 import styles from './featured-projects.css';
-import {setProjectId} from '../../lib/tw-navigation-utils.js';
+import { setProjectId } from '../../lib/tw-navigation-utils.js';
 import classNames from 'classnames';
 
 class FeaturedProjects extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         bindAll(this, [
             'handleSelect',
@@ -20,7 +20,7 @@ class FeaturedProjects extends React.Component {
             transition: true
         };
     }
-    componentDidUpdate (prevProps) {
+    componentDidUpdate(prevProps) {
         if (this.props.projectId === '0' && prevProps.projectId === null) {
             // eslint-disable-next-line react/no-did-update-set-state
             this.setState({
@@ -29,15 +29,15 @@ class FeaturedProjects extends React.Component {
             });
         }
     }
-    handleSelect (id) {
+    handleSelect(id) {
         this.props.setProjectId(id);
     }
-    handleOpenProjects () {
+    handleOpenProjects() {
         this.setState({
             opened: true
         });
     }
-    render () {
+    render() {
         const opened = this.state.opened;
         return (
             <div className={styles.container}>
@@ -62,7 +62,7 @@ class FeaturedProjects extends React.Component {
                         >
                             <div className={styles.openerContent}>
                                 <FormattedMessage
-                                    defaultMessage="Click to view featured projects."
+                                    defaultMessage="Click to view uploaded projects."
                                     description="Text to view featured projects"
                                     id="tw.viewFeaturedProjects"
                                 />

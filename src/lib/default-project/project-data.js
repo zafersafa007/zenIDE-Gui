@@ -1,4 +1,4 @@
-import {defineMessages} from 'react-intl';
+import { defineMessages } from 'react-intl';
 import sharedMessages from '../shared-messages';
 
 let messages = defineMessages({
@@ -9,7 +9,7 @@ let messages = defineMessages({
     }
 });
 
-messages = {...messages, ...sharedMessages};
+messages = { ...messages, ...sharedMessages };
 
 // use the default message if a translation function is not passed
 const defaultTranslator = msgObj => msgObj.defaultMessage;
@@ -39,7 +39,7 @@ const projectData = translateFunction => {
                 costumes: [
                     {
                         assetId: 'cd21514d0531fdffb22204e0ec5ed84a',
-                        name: translator(messages.backdrop, {index: 1}),
+                        name: translator(messages.backdrop, { index: 1 }),
                         md5ext: 'cd21514d0531fdffb22204e0ec5ed84a.svg',
                         dataFormat: 'svg',
                         rotationCenterX: 240,
@@ -51,7 +51,7 @@ const projectData = translateFunction => {
             },
             {
                 isStage: false,
-                name: translator(messages.sprite, {index: 1}),
+                name: translator(messages.sprite, { index: 1 }),
                 variables: {},
                 lists: {},
                 broadcasts: {},
@@ -61,12 +61,12 @@ const projectData = translateFunction => {
                 costumes: [
                     {
                         assetId: '592bae6f8bb9c8d88401b54ac431f7b6',
-                        name: translator(messages.costume, {index: 1}),
+                        name: translator(messages.costume, { index: 1 }),
                         bitmapResolution: 1,
                         md5ext: '592bae6f8bb9c8d88401b54ac431f7b6.svg',
                         dataFormat: 'svg',
-                        rotationCenterX: 44,
-                        rotationCenterY: 44
+                        rotationCenterX: 26,
+                        rotationCenterY: 47
                     }
                 ],
                 sounds: [],

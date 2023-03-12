@@ -2,9 +2,9 @@ import projectData from './project-data';
 
 /* eslint-disable import/no-unresolved */
 import backdrop from '!raw-loader!./cd21514d0531fdffb22204e0ec5ed84a.svg';
-import costume1 from '!raw-loader!./dango.svg';
+import costume1 from '!raw-loader!./penguin.svg';
 /* eslint-enable import/no-unresolved */
-import {TextEncoder} from '../tw-text-encoder';
+import { TextEncoder } from '../tw-text-encoder';
 
 const defaultProject = translator => {
     const encoder = new TextEncoder();
