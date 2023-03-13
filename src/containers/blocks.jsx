@@ -466,7 +466,7 @@ class Blocks extends React.Component {
                 blockInfoArray.forEach(blockInfo => {
                     if (blockInfo.info && blockInfo.info.isDynamic) {
                         dynamicBlocksInfo.push(blockInfo);
-                    } else if (blockInfo.json) {
+                    } else if (blockInfo.json && !this.ScratchBlocks.Blocks[blockInfo.json.opcode]) {
                         staticBlocksJson.push(blockInfo.json);
                     } else if (blockInfo.info.blockType === 'button') {
                         this.workspace.registerButtonCallback(blockInfo.info.opcode, blockInfo.info.func);
