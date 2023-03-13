@@ -390,7 +390,6 @@ class Blocks extends React.Component {
                 targetSounds.length > 0 ? targetSounds[targetSounds.length - 1].name : ''
             );
         } catch (error) {
-            console.error(error)
             return null;
         }
     }
