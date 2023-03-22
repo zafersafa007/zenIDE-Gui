@@ -1,7 +1,10 @@
 @import "../../css/colors.css";
 
 .share-button {
-    background: $data-primary;
+    background: $motion-primary;
+    color: $ui-white;
+    box-shadow: 0 0 0 1px $ui-black-transparent;
+    transition-duration: 0.35s;
 }
 
 .share-button-is-shared {

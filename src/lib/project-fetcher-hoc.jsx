@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {intlShape, injectIntl} from 'react-intl';
+import { intlShape, injectIntl } from 'react-intl';
 import bindAll from 'lodash.bindall';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 
-import {setProjectUnchanged} from '../reducers/project-changed';
+import { setProjectUnchanged } from '../reducers/project-changed';
 import {
     LoadingStates,
     getIsCreatingNew,
@@ -23,7 +23,7 @@ import {
 import log from './log';
 import storage from './storage';
 
-import {MISSING_PROJECT_ID} from './tw-missing-project';
+import { MISSING_PROJECT_ID } from './tw-missing-project';
 import VM from 'scratch-vm';
 import * as progressMonitor from '../components/loader/tw-progress-monitor';
 
@@ -42,7 +42,7 @@ const fetchProjectToken = projectId => {
     if (hashParams.has('token')) {
         return Promise.resolve(hashParams.get('token'));
     }
-    return fetch(`https://PMProjectServer.freshpenguin112.repl.co/${projectId}`)
+    return fetch(`https://projects.penguinmod.site/api/projects/getPublished?id=${projectId}`)
         .then(r => {
             if (!r.ok) return null;
             return r.json();
@@ -64,7 +64,7 @@ const fetchProjectToken = projectId => {
  */
 const ProjectFetcherHOC = function (WrappedComponent) {
     class ProjectFetcherComponent extends React.Component {
-        constructor (props) {
+        constructor(props) {
             super(props);
             bindAll(this, [
                 'fetchProject'
@@ -85,7 +85,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 this.props.setProjectId(props.projectId.toString());
             }
         }
-        componentDidUpdate (prevProps) {
+        componentDidUpdate(prevProps) {
             if (prevProps.projectHost !== this.props.projectHost) {
                 storage.setProjectHost(this.props.projectHost);
             }
@@ -105,7 +105,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 this.props.onActivateTab(BLOCKS_TAB_INDEX);
             }
         }
-        fetchProject (projectId, loadingState) {
+        fetchProject(projectId, loadingState) {
             // tw: clear and stop the VM before fetching
             // these will also happen later after the project is fetched, but fetching may take a while and
             // the project shouldn't be running while fetching the new project
@@ -129,14 +129,14 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                         }
                         return r.arrayBuffer();
                     })
-                    .then(buffer => ({data: buffer}));
+                    .then(buffer => ({ data: buffer }));
             } else {
                 // patch for default project
                 if (projectId === '0') {
                     storage.setProjectToken(projectId);
                     assetPromise = storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
                 } else {
-                    projectUrl = `https://PMProjectServer.freshpenguin112.repl.co/projects/download/${projectId}`
+                    projectUrl = `https://projects.penguinmod.site/api/projects/getPublished?type=file&id=${projectId}`
                     assetPromise = progressMonitor.fetchWithProgress(projectUrl)
                         .then(r => {
                             this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
@@ -145,7 +145,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                             }
                             return r.arrayBuffer();
                         })
-                        .then(buffer => ({data: buffer}))
+                        .then(buffer => ({ data: buffer }))
                         .catch(error => {
                             console.log(error)
                         })
@@ -179,7 +179,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                     log.error(err);
                 });
         }
-        render () {
+        render() {
             const {
                 /* eslint-disable no-unused-vars */
                 assetHost,

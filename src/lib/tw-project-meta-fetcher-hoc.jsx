@@ -1,12 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import log from './log';
 
-import {setProjectTitle} from '../reducers/project-title';
-import {setAuthor, setDescription} from '../reducers/tw';
+import { setProjectTitle } from '../reducers/project-title';
+import { setAuthor, setDescription } from '../reducers/tw';
 
-const API_URL = 'https://PMProjectServer.freshpenguin112.repl.co/projects/$id';
+const API_URL = 'https://projects.penguinmod.site/api/projects/getPublished?id=$id';
+
+function APIProjectToReadableProject(apiProject) {
+    return {
+        id: apiProject.id,
+        name: apiProject.name,
+        desc: apiProject.instructions,
+        notes: apiProject.notes,
+        author: { id: -1, username: apiProject.owner }
+    }
+}
 
 const fetchProjectMeta = projectId => fetch(API_URL.replace('$id', projectId))
     .then(r => {
@@ -36,10 +46,10 @@ const setIndexable = indexable => {
 
 const TWProjectMetaFetcherHOC = function (WrappedComponent) {
     class ProjectMetaFetcherComponent extends React.Component {
-        shouldComponentUpdate (nextProps) {
+        shouldComponentUpdate(nextProps) {
             return this.props.projectId !== nextProps.projectId;
         }
-        componentDidUpdate () {
+        componentDidUpdate() {
             // project title resetting is handled in titled-hoc.jsx
             this.props.vm.runtime.renderer.setPrivateSkinAccess(true);
             this.props.onSetAuthor('', '');
@@ -51,6 +61,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
             }
             fetchProjectMeta(projectId)
                 .then(data => {
+                    data = APIProjectToReadableProject(data)
                     // If project ID changed, ignore the results.
                     if (this.props.projectId !== projectId) {
                         return;
@@ -60,7 +71,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         this.props.onSetProjectTitle(title);
                     }
                     const authorName = data.author.username;
-                    const authorThumbnail = `https://trampoline.turbowarp.org/avatars/${data.author.id}`;
+                    const authorThumbnail = `https://projects.penguinmod.site/api/pmWrapper/scratchUserImage?username=${data.author.username}`;
                     this.props.onSetAuthor(authorName, authorThumbnail);
                     const instructions = data.notes || '';
                     const credits = data.desc || '';
@@ -78,7 +89,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                     log.warn('cannot fetch project meta', err);
                 });
         }
-        render () {
+        render() {
             const {
                 /* eslint-disable no-unused-vars */
                 projectId,

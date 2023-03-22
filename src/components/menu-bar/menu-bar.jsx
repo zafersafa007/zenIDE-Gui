@@ -824,31 +824,6 @@ class MenuBar extends React.Component {
                         />
                     ) : null)}
                     <div className={classNames(styles.menuBarItem)}>
-                        {this.props.canShare ? (
-                            (this.props.isShowingProject || this.props.isUpdating) && (
-                                <ProjectWatcher onDoneUpdating={this.props.onSeeCommunity}>
-                                    {
-                                        waitForUpdate => (
-                                            <ShareButton
-                                                className={styles.menuBarButton}
-                                                isShared={this.props.isShared}
-                                                /* eslint-disable react/jsx-no-bind */
-                                                onClick={() => {
-                                                    this.handleClickShare(waitForUpdate);
-                                                }}
-                                            /* eslint-enable react/jsx-no-bind */
-                                            />
-                                        )
-                                    }
-                                </ProjectWatcher>
-                            )
-                        ) : (
-                            this.props.showComingSoon ? (
-                                <MenuBarItemTooltip id="share-button">
-                                    <ShareButton className={styles.menuBarButton} />
-                                </MenuBarItemTooltip>
-                            ) : []
-                        )}
                         {this.props.canRemix ? remixButton : []}
                     </div>
                     <div className={classNames(styles.menuBarItem, styles.communityButtonWrapper)}>
@@ -882,9 +857,17 @@ class MenuBar extends React.Component {
                     </div>
                     {/* tw: add a feedback button */}
                     <div className={styles.menuBarItem}>
+                        {this.props.isShowingProject && this.props.canEditTitle && (!window.location.href.includes("#")) ?
+                            (<ShareButton
+                                className={styles.menuBarButton}
+                                isShared={this.props.isShared}
+                            />)
+                            : (null)}
+                    </div>
+                    <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href="https://scratch.mit.edu/discuss/topic/636814/"
+                            href="https://discord.gg/NZ9MBMYTZh"
                             rel="noopener noreferrer"
                             target="_blank"
                         >

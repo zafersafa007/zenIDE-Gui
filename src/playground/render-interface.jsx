@@ -105,11 +105,11 @@ const Footer = () => (
             </div>
             <div className={styles.footerColumns}>
                 <div className={styles.footerSection}>
-                    <a href="https://fosshost.org/">
+                    <a href="https://pages.github.com/">
                         <FormattedMessage
-                            defaultMessage="Hosting provided by Fosshost"
-                            description="Fosshost link in footer"
-                            id="tw.footer.fosshost"
+                            defaultMessage="Hosting provided by Github Pages"
+                            description="Github Pages link in footer"
+                            id="pm.footer.githubpages"
                         />
                     </a>
                     <a href="credits.html">
@@ -121,20 +121,20 @@ const Footer = () => (
                     </a>
                     <a href="https://github.com/sponsors/GarboMuffin">
                         <FormattedMessage
-                            defaultMessage="Donate"
+                            defaultMessage="Donate to TurboWarp Developer"
                             description="Donation link in footer"
                             id="tw.footer.donate"
                         />
                     </a>
                 </div>
                 <div className={styles.footerSection}>
+                    <a href="https://penguinmod.site/PenguinMod-Packager">
+                        {/* Do not translate */}
+                        {'PenguinMod Packager'}
+                    </a>
                     <a href="https://desktop.turbowarp.org/">
                         {/* Do not translate */}
                         {'TurboWarp Desktop'}
-                    </a>
-                    <a href="https://packager.turbowarp.org/">
-                        {/* Do not translate */}
-                        {'TurboWarp Packager'}
                     </a>
                     <a href="https://docs.turbowarp.org/embedding">
                         <FormattedMessage
@@ -159,14 +159,14 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://scratch.mit.edu/users/GarboMuffin/#comments">
+                    <a href="https://discord.gg/NZ9MBMYTZh">
                         <FormattedMessage
                             defaultMessage="Feedback & Bugs"
                             description="Link to feedback/bugs page"
                             id="tw.feedback"
                         />
                     </a>
-                    <a href="https://github.com/TurboWarp/">
+                    <a href="https://github.com/PenguinMod">
                         <FormattedMessage
                             defaultMessage="Source Code"
                             description="Link to source code"
@@ -300,15 +300,16 @@ class Interface extends React.Component {
                                 <p>
                                     <FormattedMessage
                                         // eslint-disable-next-line max-len
-                                        defaultMessage="PenguinMod is a mod of TurboWarp to add new blocks and features. TurboWarp is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by inputting a project ID or URL above or choosing a featured project below."
+                                        defaultMessage="PenguinMod is a mod of TurboWarp to add new blocks and features. TurboWarp is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by inputting a project ID or URL above or choosing an uploaded project below."
                                         description="Description of PenguinMod and TurboWarp"
                                         id="tw.home.description"
                                     />
                                 </p>
                             </div>
                             <div className={styles.section}>
-                                <FeaturedProjects/>
+                                <FeaturedProjects />
                             </div>
+                            <a style={{ textAlign: 'center' }} target="_blank" href="https://projects.penguinmod.site/">View projects in new tab</a>
                         </React.Fragment>
                     ) : null}
                 </div>
