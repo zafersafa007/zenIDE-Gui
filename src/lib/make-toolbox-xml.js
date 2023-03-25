@@ -1108,9 +1108,6 @@ const makeToolboxXML = function (isInitialSetup, isStage = true, targetId, categ
         variablesXML, gap,
         myBlocksXML, gap
     ];
-    if (turbowarpXML) {
-        everything.push(turbowarpXML);
-    }
 
     for (const extensionCategory of categoriesXML) {
         everything.push(gap, extensionCategory.xml);
