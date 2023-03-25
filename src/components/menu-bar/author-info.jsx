@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classNames from 'classnames';
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import UserAvatar from './user-avatar.jsx';
 
 import styles from './author-info.css';
@@ -23,6 +23,7 @@ const ActualAuthorInfo = ({
         <UserAvatar
             className={styles.avatar}
             imageUrl={imageUrl}
+            username={username}
         />
         <div className={styles.titleAuthor}>
             <h1 className={styles.projectTitle}>
@@ -30,14 +31,16 @@ const ActualAuthorInfo = ({
             </h1>
             <div>
                 <span className={styles.usernameLine}>
-                    <FormattedMessage
-                        defaultMessage="by {username}"
-                        description="Shows that a project was created by this user"
-                        id="gui.authorInfo.byUser"
-                        values={{
-                            username: <span className={styles.username}>{username}</span>
-                        }}
-                    />
+                    <a style={{ color: "white" }} target="_blank" href={"https://projects.penguinmod.site/?user=" + username}>
+                        <FormattedMessage
+                            defaultMessage="by {username}"
+                            description="Shows that a project was created by this user"
+                            id="gui.authorInfo.byUser"
+                            values={{
+                                username: <span className={styles.username}>{username}</span>
+                            }}
+                        />
+                    </a>
                 </span>
             </div>
         </div>
@@ -52,7 +55,7 @@ ActualAuthorInfo.propTypes = {
     username: PropTypes.oneOfType([PropTypes.string, PropTypes.bool])
 };
 
-const AuthorInfo = ({projectId, ...props}) => (
+const AuthorInfo = ({ projectId, ...props }) => (
     <ActualAuthorInfo {...props} />
 );
 AuthorInfo.propTypes = {

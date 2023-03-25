@@ -6,15 +6,18 @@ import styles from './user-avatar.css';
 
 const UserAvatar = ({
     className,
-    imageUrl
+    imageUrl,
+    username
 }) => (
-    <img
-        className={classNames(
-            className,
-            styles.userThumbnail
-        )}
-        src={imageUrl}
-    />
+    <a target="_blank" href={"https://projects.penguinmod.site/?user=" + username}>
+        <img
+            className={classNames(
+                className,
+                styles.userThumbnail
+            )}
+            src={imageUrl}
+        />
+    </a>
 );
 
 UserAvatar.propTypes = {

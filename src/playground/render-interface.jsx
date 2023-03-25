@@ -92,6 +92,20 @@ if (AddonChannels.changeChannel) {
 
 runAddons();
 
+const projectDetailCache = {};
+const getProjectDetailsById = async (id) => {
+    // if we have already gotten the details of this project, avoid making another request since they likely never changed
+    if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
+
+    const response = await fetch(`https://projects.penguinmod.site/api/projects/getPublished?id=${id}`);
+    // dont continue if the api never returned 200-299 since we would cache an error as project details
+    if (!response.ok) return {};
+
+    const project = await response.json();
+    projectDetailCache[String(id)] = project;
+    return projectDetailCache[String(id)];
+};
+
 const Footer = () => (
     <footer className={styles.footer}>
         <div className={styles.footerContent}>
@@ -256,6 +270,16 @@ class Interface extends React.Component {
                     />
                     {isHomepage ? (
                         <React.Fragment>
+                            {/* its time for some absolutely BANGER react code boys */}
+                            {(window.LastFetchedProject) != null && (window.LastFetchedProject.remix != null) ? (
+                                <div className={styles.unsharedUpdate}>
+                                    <div style={{ display: "flex", flexDirection: "row" }}>
+                                        <a target="_blank" href={"https://projects.penguinmod.site/?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://projects.penguinmod.site/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
+                                        <p>Thanks to <b><a target="_blank" href={"https://projects.penguinmod.site/?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}</a></b> for the original project <b><a href={window.location.origin + "/#" + projectDetailCache[String(window.LastFetchedProject.remix)]?.id}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.name}</a></b>.</p>
+                                    </div>
+                                    <div style={{ display: 'none' }}>{getProjectDetailsById(window.LastFetchedProject.remix).yesIDefinetlyKnowHowToUseReactProperlyShutUp}</div>
+                                </div>
+                            ) : null}
                             {isRendererSupported() ? null : (
                                 <WebGlModal isRtl={isRtl} />
                             )}
@@ -296,11 +320,14 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
+                            {((window.LastFetchedProject) != null) ? (
+                                <a target="_blank" href={"https://projects.penguinmod.site/?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
+                            ) : null}
                             <div className={styles.section}>
                                 <p>
                                     <FormattedMessage
                                         // eslint-disable-next-line max-len
-                                        defaultMessage="PenguinMod is a mod of TurboWarp to add new blocks and features. TurboWarp is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by inputting a project ID or URL above or choosing an uploaded project below."
+                                        defaultMessage="PenguinMod is a mod of TurboWarp to add new blocks and features either in extensions or in PenguinMod's main toolbox. TurboWarp is a Scratch mod that compiles projects to JavaScript to make them run really fast. Try it out by choosing an uploaded project below or making your own in the editor."
                                         description="Description of PenguinMod and TurboWarp"
                                         id="tw.home.description"
                                     />
@@ -309,7 +336,7 @@ class Interface extends React.Component {
                             <div className={styles.section}>
                                 <FeaturedProjects />
                             </div>
-                            <a style={{ textAlign: 'center' }} target="_blank" href="https://projects.penguinmod.site/">View projects in new tab</a>
+                            <a target="_blank" href="https://projects.penguinmod.site/">View projects in new tab</a>
                         </React.Fragment>
                     ) : null}
                 </div>

@@ -61,6 +61,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
             }
             fetchProjectMeta(projectId)
                 .then(data => {
+                    window.LastFetchedProject = data
                     data = APIProjectToReadableProject(data)
                     // If project ID changed, ignore the results.
                     if (this.props.projectId !== projectId) {
