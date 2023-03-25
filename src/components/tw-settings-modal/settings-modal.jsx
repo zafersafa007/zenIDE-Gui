@@ -297,28 +297,6 @@ const WarpTimer = props => (
     />
 );
 
-const DisableCompiler = props => (
-    <BooleanSetting
-        {...props}
-        label={
-            <FormattedMessage
-                defaultMessage="Disable Compiler"
-                description="Disable Compiler setting"
-                id="tw.settingsModal.disableCompiler"
-            />
-        }
-        help={
-            <FormattedMessage
-                // eslint-disable-next-line max-len
-                defaultMessage="Disables the TurboWarp compiler. You may want to enable this while editing projects so that scripts update immediately. Otherwise, you should never enable this."
-                description="Disable Compiler help"
-                id="tw.settingsModal.disableCompilerHelp"
-            />
-        }
-        slug="disable-compiler"
-    />
-);
-
 const CustomStageSize = ({
     customStageSizeEnabled,
     stageWidth,
@@ -404,7 +382,7 @@ const StoreProjectOptions = ({ onStoreProjectOptions }) => (
             <p>
                 <FormattedMessage
                     // eslint-disable-next-line max-len
-                    defaultMessage="Stores the selected settings in the project so they will be automatically applied when PenguinMod loads this project. Warp timer and disable compiler will not be saved."
+                    defaultMessage="Stores the selected settings in the project so they will be automatically applied when PenguinMod loads this project. Warp timer will not be saved."
                     description="Help text for the store settings in project button"
                     id="tw.settingsModal.storeProjectOptionsHelp"
                 />
@@ -492,10 +470,6 @@ const SettingsModalComponent = props => (
                     {...props}
                 />
             )}
-            <DisableCompiler
-                value={props.disableCompiler}
-                onChange={props.onDisableCompilerChange}
-            />
             {!props.isEmbedded && (
                 <StoreProjectOptions
                     {...props}
