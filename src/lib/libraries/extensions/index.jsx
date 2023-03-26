@@ -85,6 +85,7 @@ import jgIframeExtensionIcon from './penguinmod/extensions/iframe.png'
 import jgExtendedAudioExtensionIcon from './penguinmod/extensions/extendedaudio.png'
 import jgScratchAuthExtensionIcon from './penguinmod/extensions/scratchauth.png'
 import jgPermissionExtensionIcon from './penguinmod/extensions/permissions.png'
+import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessages.svg'
 
 // default icon if you are too lazy to make one and you want me to make one instead
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
@@ -262,6 +263,14 @@ export default [
         ),
         featured: true,
         internetConnectionRequired: true
+    },
+    {
+        name: "Odd Messages",
+        extensionId: 'https://ultrascratch.jaxonbaxon.repl.co/oddmsg.js',
+        iconURL: silvxrcatOddMessagesExtensionIcon,
+        description: "For logging and variable utilization.",
+        featured: true,
+        collaborator: 'silvxrcat'
     },
     {
         name: (
