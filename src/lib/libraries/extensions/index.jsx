@@ -447,7 +447,7 @@ export default [
     },
     {
         name: 'GamePad',
-        extensionId: 'GamepadExtension',
+        extensionId: 'Gamepad',
         iconURL: gp,
         description: (
             <FormattedMessage
@@ -528,7 +528,7 @@ export default [
     },
     {
         name: "PenguinMod Permissions",
-        extensionId: 'jgPermissions',
+        extensionId: 'JgPermissionBlocks',
         iconURL: jgPermissionExtensionIcon,
         description: "Direct blocks to manage permissions that PenguinMod requires you have to do certain tasks.",
         featured: true
