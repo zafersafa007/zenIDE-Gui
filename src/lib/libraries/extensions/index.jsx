@@ -86,6 +86,7 @@ import jgExtendedAudioExtensionIcon from './penguinmod/extensions/extendedaudio.
 import jgScratchAuthExtensionIcon from './penguinmod/extensions/scratchauth.png'
 import jgPermissionExtensionIcon from './penguinmod/extensions/permissions.png'
 import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessages.svg'
+import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.png'
 
 // default icon if you are too lazy to make one and you want me to make one instead
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
@@ -263,6 +264,13 @@ export default [
         ),
         featured: true,
         internetConnectionRequired: true
+    },
+    {
+        name: "Clone Communication",
+        extensionId: 'jgClones',
+        iconURL: jgCloneManagerExtensionIcon,
+        description: "Mainly sharing data between clones and the main sprite, but also some other small features.",
+        featured: true
     },
     {
         name: "Odd Messages",
