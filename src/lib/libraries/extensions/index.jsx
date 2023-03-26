@@ -442,6 +442,20 @@ export default [
         featured: true
     },
     {
+        name: "Camera Controls",
+        extensionId: 'https://extensions.turbowarp.org/DT/cameracontrols.js',
+        iconURL: 'https://extensions.turbowarp.org/images/DT/cameracontrols.svg',
+        description: (
+            <FormattedMessage
+                defaultMessage="Move the visible part of the stage."
+                description=""
+                id="gui.extension.cameracontrols.description"
+            />
+        ),
+        featured: true,
+        collaborator: 'DT (TurboWarp Extensions Repo)'
+    },
+    {
         name: "CloudLink",
         extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
         iconURL: cloudlinkThumb,

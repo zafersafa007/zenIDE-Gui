@@ -50,7 +50,8 @@ import styles from './interface.css';
 if (window.parent !== window) {
     // eslint-disable-next-line no-alert
     alert('This page is embedding PenguinMod/TurboWarp in a way that is unsupported and will cease to function in the near future. Please read https://docs.turbowarp.org/embedding');
-    throw new Error('Invalid embed');
+    // throw new Error('Invalid embed');
+    // ha ha i love iframe
 }
 
 let announcement = null;
