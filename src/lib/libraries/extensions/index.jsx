@@ -84,6 +84,7 @@ import gsaColorUtilExtensionIcon from './penguinmod/extensions/colorutil.png'
 import jgIframeExtensionIcon from './penguinmod/extensions/iframe.png'
 import jgExtendedAudioExtensionIcon from './penguinmod/extensions/extendedaudio.png'
 import jgScratchAuthExtensionIcon from './penguinmod/extensions/scratchauth.png'
+import jgPermissionExtensionIcon from './penguinmod/extensions/permissions.png'
 
 // default icon if you are too lazy to make one and you want me to make one instead
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
@@ -492,6 +493,13 @@ export default [
         extensionId: 'jgScratchAuthenticate',
         iconURL: jgScratchAuthExtensionIcon,
         description: "Get a user's scratch name to prove they are a real scratch user.",
+        featured: true
+    },
+    {
+        name: "PenguinMod Permissions",
+        extensionId: 'jgPermissions',
+        iconURL: jgPermissionExtensionIcon,
+        description: "Direct blocks to manage permissions that PenguinMod requires you have to do certain tasks.",
         featured: true
     },
     {
