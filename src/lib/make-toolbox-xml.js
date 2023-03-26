@@ -314,6 +314,7 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
         ${isStage ? '' : `
             <block type="looks_show"/>
             <block type="looks_hide"/>
+            <block type="looks_getSpriteVisible"/>
         ${blockSeparator}
             <block type="looks_gotofrontback"/>
             <block type="looks_goforwardbackwardlayers">
