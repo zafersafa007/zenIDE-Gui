@@ -274,7 +274,7 @@ export default [
     },
     {
         name: "Odd Messages",
-        extensionId: 'https://ultrascratch.jaxonbaxon.repl.co/oddmsg.js',
+        extensionId: 'oddMessage',
         iconURL: silvxrcatOddMessagesExtensionIcon,
         description: "For logging and variable utilization.",
         featured: true,
