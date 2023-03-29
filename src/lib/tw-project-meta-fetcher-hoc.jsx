@@ -74,8 +74,8 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                     const authorName = data.author.username;
                     const authorThumbnail = `https://projects.penguinmod.site/api/pmWrapper/scratchUserImage?username=${data.author.username}`;
                     this.props.onSetAuthor(authorName, authorThumbnail);
-                    const instructions = data.notes || '';
-                    const credits = data.desc || '';
+                    const instructions = data.desc || '';
+                    const credits = data.notes || '';
                     if (instructions || credits) {
                         this.props.onSetDescription(instructions, credits);
                     }
