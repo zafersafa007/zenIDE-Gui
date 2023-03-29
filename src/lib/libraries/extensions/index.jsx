@@ -88,6 +88,8 @@ import jgPermissionExtensionIcon from './penguinmod/extensions/permissions.png'
 import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessages.svg'
 import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.png'
 
+import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png'
+
 // default icon if you are too lazy to make one and you want me to make one instead
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
 
@@ -217,6 +219,14 @@ export default [
                 id="gui.extension.makeymakey.description"
             />
         ),
+        featured: true
+    },
+    {
+        name: 'Tweening',
+        extensionId: 'jgTween',
+        collaborator: 'Arrow & easings.net',
+        description: "Smoothly animating values using different easing functions and directions.",
+        iconURL: jgTweeningExtensionIcon,
         featured: true
     },
     {
