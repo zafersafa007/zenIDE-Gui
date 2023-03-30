@@ -34,6 +34,9 @@ With changes to make it work properly in the scratch-gui environment.
   background: rgb(255, 213, 55);
   background: linear-gradient(151deg, rgba(255, 213, 55, 1) 4%, rgba(254, 255, 191, 1) 12%, rgba(255, 213, 55, 1) 21%);
 }
+[theme="dark"] .featured-studioview-project > div {
+  color: black;
+}
 .studioview-root .studioview-project {
   color: inherit;
   position: relative;
