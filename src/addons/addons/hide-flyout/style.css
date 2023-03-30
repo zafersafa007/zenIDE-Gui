@@ -85,8 +85,8 @@
 }
 
 .sa-lock-object.locked .sa-lock-button {
-  background-color: #ff4c4c;
-  border-color: #cc4c4c;
+  background-color: #00c3ff;
+  border-color: #0099ff;
 }
 
 .sa-lock-button img {
