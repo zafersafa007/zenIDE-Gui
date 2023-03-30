@@ -271,6 +271,12 @@ class Interface extends React.Component {
                     />
                     {isHomepage ? (
                         <React.Fragment>
+                            {/* project too large to remix message */}
+                            {(window.LastFetchedProject) != null && (window.LastFetchedProject.tooLarge == true) ? (
+                                <div className={styles.remixWarningBox}>
+                                    <p>This project is too large to be remixed. If you would like to remix this project, please contact someone who can manually upload it for you.</p>
+                                </div>
+                            ) : null}
                             {/* its time for some absolutely BANGER react code boys */}
                             {(window.LastFetchedProject) != null && (window.LastFetchedProject.remix != null) ? (
                                 <div className={styles.unsharedUpdate}>

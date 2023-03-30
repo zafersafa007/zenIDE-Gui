@@ -126,3 +126,23 @@ a {
     font-weight: bold;
     text-decoration: none;
 }
+
+.remix-warning-box {
+    line-height: 1.5em;
+    padding: 0.5rem;
+    margin: 5px 0 8px 0;
+    border: 1px solid #ffdbb9;
+    background-color: #ffecdb;
+    border-radius: 0.5rem;
+}
+[theme="dark"] .remix-warning-box {
+    border-color: #523720;
+    background-color: #2c2016;
+}
+.remix-warning-box p {
+    margin: 4px 0;
+}
+.remix-warning-box a {
+    font-weight: bold;
+    text-decoration: none;
+}
