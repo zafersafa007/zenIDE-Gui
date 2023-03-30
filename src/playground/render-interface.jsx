@@ -329,6 +329,7 @@ class Interface extends React.Component {
                             ) : null}
                             {isHomepage && window.FetchedProjectRemixes ? (
                                 <div>
+                                    {/* i have absolutely no interest in figuring out how the hell to get this to work properly */}
                                     <div style={{ display: "none" }}>{window.ForceProjectRemixListUpdate}</div>
                                     <p>Remixes of <b>{window.LastFetchedProject.name}</b></p>
                                     <div className={styles.remixList}>
