@@ -56,7 +56,7 @@ StudioView.prototype.addProject = function (details) {
         el = this.createPlaceholder();
         this.projectList.appendChild(el);
     }
-    this.placeholderToProject(el, details.id, details.title, details.author);
+    this.placeholderToProject(el, details.id, details.title, details.author, details.featured);
 };
 
 /**
@@ -104,8 +104,11 @@ StudioView.prototype.createPlaceholder = function () {
 /**
  * Convert a placeholder element made by createPlaceholder to a project element.
  */
-StudioView.prototype.placeholderToProject = function (el, id, title, author) {
+StudioView.prototype.placeholderToProject = function (el, id, title, author, featured) {
     el.className = classNames(styles.studioviewProject, styles.studioviewLoaded);
+    if (featured == true) {
+        el.className = classNames(styles.studioviewProject, styles.studioviewLoaded, styles.featuredStudioviewProject);
+    }
     el.dataset.id = id;
     el.dataset.title = title;
     el.dataset.author = author;
@@ -252,6 +255,7 @@ StudioView.prototype.loadNextPage = function () {
                 id: p.id,
                 title: p.name,
                 author: p.author.username,
+                featured: p.featured,
             });
         }
         projects = this.shuffler(projects);

@@ -29,6 +29,11 @@ With changes to make it work properly in the scratch-gui environment.
   margin-bottom: 1px;
   margin-right: 1px;
 }
+.featured-studioview-project {
+  border-radius: 4px;
+  background: rgb(255, 213, 55);
+  background: linear-gradient(151deg, rgba(255, 213, 55, 1) 4%, rgba(254, 255, 191, 1) 12%, rgba(255, 213, 55, 1) 21%);
+}
 .studioview-root .studioview-project {
   color: inherit;
   position: relative;
@@ -87,6 +92,8 @@ With changes to make it work properly in the scratch-gui environment.
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
+  position: relative;
 }
 
 .studioview-placeholder .studioview-thumbnail,
