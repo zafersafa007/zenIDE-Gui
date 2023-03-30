@@ -7,6 +7,7 @@ import { setProjectTitle } from '../reducers/project-title';
 import { setAuthor, setDescription } from '../reducers/tw';
 
 const API_URL = 'https://projects.penguinmod.site/api/projects/getPublished?id=$id';
+const API_REMIX_URL = 'https://projects.penguinmod.site/api/pmWrapper/remixes?id=$id';
 
 function APIProjectToReadableProject(apiProject) {
     return {
@@ -28,6 +29,13 @@ const fetchProjectMeta = projectId => fetch(API_URL.replace('$id', projectId))
         }
         return r.json();
     });
+const fetchProjectRemixes = projectId => fetch(API_REMIX_URL.replace('$id', projectId))
+    .then(r => {
+        if (r.status !== 200) {
+            throw new Error(`Unexpected status code: ${r.status}`);
+        }
+        return r.json();
+    });
 
 const getNoIndexTag = () => document.querySelector('meta[name="robots"][content="noindex"]');
 const setIndexable = indexable => {
@@ -44,6 +52,7 @@ const setIndexable = indexable => {
     }
 };
 
+window.ForceProjectRemixListUpdate = 0
 const TWProjectMetaFetcherHOC = function (WrappedComponent) {
     class ProjectMetaFetcherComponent extends React.Component {
         shouldComponentUpdate(nextProps) {
@@ -62,6 +71,18 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
             fetchProjectMeta(projectId)
                 .then(data => {
                     window.LastFetchedProject = data
+                    window.FetchedProjectRemixes = null
+                    window.CurrentRemixFetchRequestId += 1
+                    let currentReq = window.CurrentRemixFetchRequestId
+                    fetchProjectRemixes(projectId).then(remixes => {
+                        if (!currentReq == window.CurrentRemixFetchRequestId) return console.log("abandoned request");
+                        if (remixes.length <= 0) {
+                            window.FetchedProjectRemixes = null;
+                            return;
+                        }
+                        window.FetchedProjectRemixes = remixes
+                        window.ForceProjectRemixListUpdate += 1
+                    })
                     data = APIProjectToReadableProject(data)
                     // If project ID changed, ignore the results.
                     if (this.props.projectId !== projectId) {
@@ -141,6 +162,8 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
         mapDispatchToProps
     )(ProjectMetaFetcherComponent);
 };
+
+window.CurrentRemixFetchRequestId = 0
 
 export {
     TWProjectMetaFetcherHOC as default

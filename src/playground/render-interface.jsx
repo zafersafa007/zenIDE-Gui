@@ -327,6 +327,25 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
+                            {isHomepage && window.FetchedProjectRemixes ? (
+                                <div>
+                                    <div style={{ display: "none" }}>{window.ForceProjectRemixListUpdate}</div>
+                                    <p>Remixes of <b>{window.LastFetchedProject.name}</b></p>
+                                    <div className={styles.remixList}>
+                                        {window.FetchedProjectRemixes.map(remix => {
+                                            return <a key={remix.id} href={"#" + remix.id} style={{ textDecoration: "none", width: "115%" }}>
+                                                <div className={styles.remixProject}>
+                                                    <img style={{ height: "72px" }} src={remix.image} alt={remix.name}></img>
+                                                    <div style={{ width: "100%", display: "flex", textAlign: "left", textDecoration: "none", flexDirection: "column", alignItems: "flex-start" }}>
+                                                        <p style={{ fontSize: "1em" }}><b>{remix.name}</b></p>
+                                                        <p style={{ fontSize: "1em" }}>by <b>{remix.owner}</b></p>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        })}
+                                    </div>
+                                </div>
+                            ) : null}
                             {((window.LastFetchedProject) != null) ? (
                                 <a target="_blank" href={"https://projects.penguinmod.site/?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
                             ) : null}
