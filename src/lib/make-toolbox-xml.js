@@ -1049,6 +1049,27 @@ const myBlocks = function () {
     `;
 };
 
+const liveTests = function (isLiveTest) {
+    return `
+    <category name="Live Tests" id="liveTests" colour="#FF0000" secondaryColour="#FF0000">
+        <block type="looks_setVertTransform">
+            <value name="PERCENT">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="looks_setHorizTransform">
+            <value name="PERCENT">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+    </category>
+    `
+}
+
 /* eslint-enable no-unused-vars */
 
 const xmlOpen = '<xml style="display: none">';
@@ -1070,7 +1091,7 @@ const xmlClose = '</xml>';
  * @returns {string} - a ScratchBlocks-style XML document for the contents of the toolbox.
  */
 const makeToolboxXML = function (isInitialSetup, isStage = true, targetId, categoriesXML = [],
-    costumeName = '', backdropName = '', soundName = '') {
+    costumeName = '', backdropName = '', soundName = '', isLiveTest = false) {
     isStage = isInitialSetup || isStage;
     const gap = [categorySeparator];
 
@@ -1097,6 +1118,7 @@ const makeToolboxXML = function (isInitialSetup, isStage = true, targetId, categ
     const operatorsXML = moveCategory('operators') || operators(isInitialSetup, isStage, targetId);
     const variablesXML = moveCategory('data') || variables(isInitialSetup, isStage, targetId);
     const myBlocksXML = moveCategory('procedures') || myBlocks(isInitialSetup, isStage, targetId);
+    const liveTestsXML = moveCategory('liveTests') || liveTests(isLiveTest);
 
     const everything = [
         xmlOpen,
@@ -1108,7 +1130,8 @@ const makeToolboxXML = function (isInitialSetup, isStage = true, targetId, categ
         sensingXML, gap,
         operatorsXML, gap,
         variablesXML, gap,
-        myBlocksXML, gap
+        myBlocksXML, gap,
+        isLiveTest ? [liveTestsXML, gap] : ''
     ];
 
     for (const extensionCategory of categoriesXML) {

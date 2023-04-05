@@ -335,10 +335,17 @@ const TWStateManager = function (WrappedComponent) {
                 });
             }
 
+            /*
             if (urlParams.has('nocompile')) {
                 this.props.vm.setCompilerOptions({
                     enabled: false
                 });
+            }
+            */
+
+            if (urlParams.has('livetests')) {
+                // massive mega brained hack bc i cant figure out how the fuck to make a state
+                this.props.vm.isLiveTest = true;
             }
 
             if (urlParams.has('clones')) {
@@ -451,9 +458,11 @@ const TWStateManager = function (WrappedComponent) {
                 }
                 */
 
+                /*
                 if (compilerOptions.enabled) {
                     searchParams.delete('nocompile');
                 }
+                */
 
                 if (this.props.isPlayerOnly) {
                     if (compilerOptions.warpTimer) {
