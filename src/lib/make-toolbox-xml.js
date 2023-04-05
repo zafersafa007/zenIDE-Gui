@@ -1052,6 +1052,16 @@ const myBlocks = function () {
 const liveTests = function (isLiveTest) {
     return `
     <category name="Live Tests" id="liveTests" colour="#FF0000" secondaryColour="#FF0000">
+        <block type="sensing_set_of">
+            <value name="OBJECT">
+                <shadow id="sensing_of_object_menu" type="sensing_of_object_menu"/>
+            </value>
+            <value name="VALUE">
+                <shadow type="text">
+                    <field name="TEXT">jooj idk</field>
+                </shadow>
+            </value>
+        </block>
         <block type="looks_setVertTransform">
             <value name="PERCENT">
                 <shadow type="math_number">
