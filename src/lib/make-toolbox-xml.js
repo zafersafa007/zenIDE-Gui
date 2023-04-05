@@ -1052,6 +1052,10 @@ const myBlocks = function () {
 const liveTests = function (isLiveTest) {
     return `
     <category name="Live Tests" id="liveTests" colour="#FF0000" secondaryColour="#FF0000">
+        <block type="procedures_call">
+            <mutation proccode="tw:debugger;" argumentids="[]" warp="false" returns="null" edited="true" optype="null"></mutation>
+        </block>
+        ${blockSeparator}
         <block type="sensing_set_of">
             <value name="OBJECT">
                 <shadow id="sensing_of_object_menu" type="sensing_of_object_menu"/>
