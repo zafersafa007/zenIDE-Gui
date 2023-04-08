@@ -455,11 +455,12 @@ export default [
         iconURL: jgRuntimeExtensionIcon,
         description: (
             <FormattedMessage
-                defaultMessage="Blocks for updating Scratch objects like the stage."
+                defaultMessage="Blocks for updating Scratch objects like the stage and sprites."
                 description="Description of Runtime extension"
                 id="jgRuntime.jgRuntimeExtension.description"
             />
         ),
+        collaborator: "TheShovel, showierdata9978",
         featured: true
     },
     {
