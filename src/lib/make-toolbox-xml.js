@@ -316,7 +316,7 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
             <block type="looks_show"/>
             <block type="looks_hide"/>
             <block type="looks_getSpriteVisible"/>
-        ${blockSeparator}
+            ${blockSeparator}
             <block type="looks_gotofrontback"/>
             <block type="looks_goforwardbackwardlayers">
                 <value name="NUM">
@@ -325,6 +325,15 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                     </shadow>
                 </value>
             </block>
+            <block type="looks_layersSetLayer">
+                <value name="NUM">
+                    <shadow type="math_integer">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="looks_layersGetLayer"></block>
+            ${blockSeparator}
         `}
         ${isStage ? `
             <block id="backdropnumbername" type="looks_backdropnumbername"/>
