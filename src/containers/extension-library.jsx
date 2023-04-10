@@ -86,6 +86,7 @@ class ExtensionLibrary extends React.PureComponent {
     render () {
         const extensionLibraryThumbnailData = extensionLibraryContent.map(extension => ({
             rawURL: extension.iconURL || extensionIcon,
+            disabled: extension.disabled && !this.props.liveTest,
             ...extension
         }));
         return (

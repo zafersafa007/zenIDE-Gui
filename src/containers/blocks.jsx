@@ -621,6 +621,7 @@ class Blocks extends React.Component {
                 {extensionLibraryVisible ? (
                     <ExtensionLibrary
                         vm={vm}
+                        liveTest={dataItem.liveTest}
                         onCategorySelected={this.handleCategorySelected}
                         onRequestClose={onRequestCloseExtensionLibrary}
                     />
