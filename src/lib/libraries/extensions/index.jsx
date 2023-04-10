@@ -93,8 +93,8 @@ import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png'
 // import jg3dExtensionIcon from './penguinmod/extensions/3d.png'
 // import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png'
 
-
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png'
+import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png'
 
 // default icon if you are too lazy to make one and you want me to make one instead
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
@@ -302,6 +302,14 @@ export default [
         extensionId: 'jgClones',
         iconURL: jgCloneManagerExtensionIcon,
         description: "Mainly sharing data between clones and the main sprite, but also some other small features.",
+        featured: true
+    },
+    {
+        name: "Multiple Timers",
+        extensionId: 'jgTimers',
+        iconURL: jgTimersExtensionIcon,
+        description: "Create different timers you can control seperately.",
+        collaborator: 'Arrow',
         featured: true
     },
     {
