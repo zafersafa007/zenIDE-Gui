@@ -293,6 +293,8 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                     </shadow>
                 </value>
             </block>
+            <block type="looks_stretchGetX"></block>
+            <block type="looks_stretchGetY"></block>
         `}
         ${blockSeparator}
         <block type="looks_changeeffectby">
@@ -341,9 +343,6 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
             <block id="${targetId}_costumenumbername" type="looks_costumenumbername"/>
             <block id="backdropnumbername" type="looks_backdropnumbername"/>
             <block id="${targetId}_size" type="looks_size"/>
-
-            <block type="looks_stretchGetX"></block>
-            <block type="looks_stretchGetY"></block>
         `}
         ${categorySeparator}
     </category>
