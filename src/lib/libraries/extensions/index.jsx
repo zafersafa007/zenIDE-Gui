@@ -717,7 +717,7 @@ export default [
         helpLink: 'https://scratch.mit.edu/wedo'
     },
     IsLocal ? {
-        name: "JeremysDevTools",
+        name: "Jeremys Dev Tools",
         extensionId: 'jgDev',
         description: "Test extension to see if things are possible.",
         featured: true
