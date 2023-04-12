@@ -374,6 +374,13 @@ const sound = function (isInitialSetup, isStage, targetId, soundName) {
             </value>
         </block>
         <block type="sound_stopallsounds"/>
+        <block id="${targetId}_sound_isSoundPlaying" type="sound_isSoundPlaying">
+            <value name="SOUND_MENU">
+                <shadow type="sound_sounds_menu">
+                    <field name="SOUND_MENU">${soundName}</field>
+                </shadow>
+            </value>
+        </block>
         ${blockSeparator}
         <block type="sound_changeeffectby">
             <value name="VALUE">
@@ -390,6 +397,7 @@ const sound = function (isInitialSetup, isStage, targetId, soundName) {
             </value>
         </block>
         <block type="sound_cleareffects"/>
+        <block type="sound_getEffectValue"/>
         ${blockSeparator}
         <block type="sound_changevolumeby">
             <value name="VOLUME">
