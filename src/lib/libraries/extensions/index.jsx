@@ -90,14 +90,16 @@ import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.pn
 
 import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png'
 
-// import jg3dExtensionIcon from './penguinmod/extensions/3d.png'
-// import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png'
+import jg3dExtensionIcon from './penguinmod/extensions/3d.png'
+import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png'
 
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png'
 import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png'
 
 // default icon if you are too lazy to make one and you want me to make one instead
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
+
+const IsLocal = String(window.location.href).startsWith(`http://localhost:`)
 
 export default [
     {
@@ -140,14 +142,6 @@ export default [
         ),
         featured: true
     },
-    // {
-    //     name: "3D",
-    //     extensionId: 'jg3d',
-    //     iconURL: jg3dExtensionIcon,
-    //     insetIconURL: jg3dInsetExtensionIcon,
-    //     description: "Use the magic of 3D to spice up your project.",
-    //     featured: true
-    // },
     {
         name: 'Animated Text',
         extensionId: 'text',
@@ -684,7 +678,14 @@ export default [
         ),
         helpLink: 'https://scratch.mit.edu/boost'
     },
-    {
+    IsLocal ? {
+        name: "3D",
+        extensionId: 'jg3d',
+        iconURL: jg3dExtensionIcon,
+        insetIconURL: jg3dInsetExtensionIcon,
+        description: "Use the magic of 3D to spice up your project.",
+        featured: true
+    } : {
         name: 'LEGO Education WeDo 2.0',
         extensionId: 'wedo2',
         collaborator: 'LEGO',
@@ -715,7 +716,12 @@ export default [
         ),
         helpLink: 'https://scratch.mit.edu/wedo'
     },
-    {
+    IsLocal ? {
+        name: "JeremysDevTools",
+        extensionId: 'jgDev',
+        description: "Test extension to see if things are possible.",
+        featured: true
+    } : {
         name: 'Go Direct Force & Acceleration',
         extensionId: 'gdxfor',
         collaborator: 'Vernier',
@@ -763,5 +769,5 @@ export default [
             />
         ),
         featured: true
-    }
+    },
 ];
