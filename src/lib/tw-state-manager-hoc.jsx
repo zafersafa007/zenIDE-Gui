@@ -343,9 +343,14 @@ const TWStateManager = function (WrappedComponent) {
             }
             */
 
-            if (urlParams.has('livetests')) {
+            if (urlParams.has('livetests') || String(window.location.href).startsWith(`http://localhost:`)) {
                 // massive mega brained hack bc i cant figure out how the fuck to make a state
                 this.props.vm.isLiveTest = true;
+            }
+
+            if (urlParams.has('noLiveTest')) {
+                // force live tests to off no matter what
+                this.props.vm.isLiveTest = false;
             }
 
             if (urlParams.has('clones')) {
