@@ -382,6 +382,14 @@ const sound = function (isInitialSetup, isStage, targetId, soundName) {
             </value>
         </block>
         ${blockSeparator}
+        <block id="${targetId}_sound_getLength" type="sound_getLength">
+            <value name="SOUND_MENU">
+                <shadow type="sound_sounds_menu">
+                    <field name="SOUND_MENU">${soundName}</field>
+                </shadow>
+            </value>
+        </block>
+        ${blockSeparator}
         <block type="sound_changeeffectby">
             <value name="VALUE">
                 <shadow type="math_number">
