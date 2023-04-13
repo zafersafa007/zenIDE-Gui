@@ -98,7 +98,7 @@ export default function (vm) {
             colour: ScratchBlocks.Colours.sensing.primary,
             colourSecondary: ScratchBlocks.Colours.sensing.secondary,
             colourTertiary: ScratchBlocks.Colours.sensing.tertiary,
-            extensions: ["shape_statement"]
+            extensions: ['shape_statement']
         };
     };
 
@@ -340,16 +340,14 @@ export default function (vm) {
         // Called every time it opens since it depends on the values in the other block input.
         const menuFn = function () {
             const stageOptions = [
-                [ScratchBlocks.Msg.SENSING_OF_BACKDROPNUMBER, 'backdrop #'],
-                [ScratchBlocks.Msg.SENSING_OF_BACKDROPNAME, 'backdrop name'],
+                ['backdrop', 'backdrop'],
                 [ScratchBlocks.Msg.SENSING_OF_VOLUME, 'volume']
             ];
             const spriteOptions = [
                 [ScratchBlocks.Msg.SENSING_OF_XPOSITION, 'x position'],
                 [ScratchBlocks.Msg.SENSING_OF_YPOSITION, 'y position'],
                 [ScratchBlocks.Msg.SENSING_OF_DIRECTION, 'direction'],
-                [ScratchBlocks.Msg.SENSING_OF_COSTUMENUMBER, 'costume #'],
-                [ScratchBlocks.Msg.SENSING_OF_COSTUMENAME, 'costume name'],
+                ['costume', 'costume'],
                 [ScratchBlocks.Msg.SENSING_OF_SIZE, 'size'],
                 [ScratchBlocks.Msg.SENSING_OF_VOLUME, 'volume']
             ];

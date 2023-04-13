@@ -150,11 +150,11 @@ const motion = function (isInitialSetup, isStage, targetId) {
 const xmlEscape = function (unsafe) {
     return unsafe.replace(/[<>&'"]/g, c => {
         switch (c) {
-            case '<': return '&lt;';
-            case '>': return '&gt;';
-            case '&': return '&amp;';
-            case '\'': return '&apos;';
-            case '"': return '&quot;';
+        case '<': return '&lt;';
+        case '>': return '&gt;';
+        case '&': return '&amp;';
+        case '\'': return '&apos;';
+        case '"': return '&quot;';
         }
     });
 };
@@ -716,6 +716,16 @@ const sensing = function (isInitialSetup, isStage) {
                 <shadow id="sensing_of_object_menu" type="sensing_of_object_menu"/>
             </value>
         </block>
+        <block type="sensing_set_of">
+            <value name="OBJECT">
+                <shadow id="sensing_of_object_menu" type="sensing_of_object_menu"/>
+            </value>
+            <value name="VALUE">
+                <shadow type="text">
+                    <field name="TEXT">0</field>
+                </shadow>
+            </value>
+        </block>
         ${blockSeparator}
         <block id="current" type="sensing_current"/>
         <block type="sensing_dayssince2000"/>
@@ -1080,23 +1090,13 @@ const myBlocks = function () {
     `;
 };
 
-const liveTests = function (isLiveTest) {
+const liveTests = function () {
     return `
     <category name="Live Tests" id="liveTests" colour="#FF0000" secondaryColour="#FF0000">
         <block type="procedures_call">
             <mutation proccode="tw:debugger;" argumentids="[]" warp="false" returns="null" edited="true" optype="null"></mutation>
         </block>
         ${blockSeparator}
-        <block type="sensing_set_of">
-            <value name="OBJECT">
-                <shadow id="sensing_of_object_menu" type="sensing_of_object_menu"/>
-            </value>
-            <value name="VALUE">
-                <shadow type="text">
-                    <field name="TEXT">jooj idk</field>
-                </shadow>
-            </value>
-        </block>
         <block type="looks_setVertTransform">
             <value name="PERCENT">
                 <shadow type="math_number">
@@ -1112,8 +1112,8 @@ const liveTests = function (isLiveTest) {
             </value>
         </block>
     </category>
-    `
-}
+    `;
+};
 
 /* eslint-enable no-unused-vars */
 
@@ -1133,6 +1133,7 @@ const xmlClose = '</xml>';
  * @param {?string} costumeName - The name of the default selected costume dropdown.
  * @param {?string} backdropName - The name of the default selected backdrop dropdown.
  * @param {?string} soundName -  The name of the default selected sound dropdown.
+ * @param {?boolean} isLiveTest - whether or not we should display the live tests categpory
  * @returns {string} - a ScratchBlocks-style XML document for the contents of the toolbox.
  */
 const makeToolboxXML = function (isInitialSetup, isStage = true, targetId, categoriesXML = [],
