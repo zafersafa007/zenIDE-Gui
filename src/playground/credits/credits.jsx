@@ -5,7 +5,7 @@ import appTarget from '../app-target';
 import styles from './credits.css';
 import {getInitialDarkMode} from '../../lib/tw-theme-hoc.jsx';
 
-import fosshostLogo from './fosshost-light.png';
+// import fosshostLogo from './fosshost-light.png';
 import UserData from './users';
 
 /* eslint-disable react/jsx-no-literals */
@@ -67,6 +67,9 @@ const Credits = () => (
                 Thank you to everyone who worked on Scratch and TurboWarp,
                 you have made many people finally be able to make whatever they can imagine.
             </p>
+            <a href="https://github.com/sponsors/GarboMuffin">
+                Donate to support TurboWarp.
+            </a>
             <h2>Contributors</h2>
             <p>
                 PenguinMod is made by a small bunch of developers.
@@ -74,6 +77,22 @@ const Credits = () => (
             </p>
             <UserList users={UserData.pmDevelopers} />
             <p>The list order is randomized.</p>
+        </section>
+        <section>
+            <h2>GitHub Pages</h2>
+            <p>We currently use <a href="https://pages.github.com/">GitHub Pages</a> to host PenguinMod.</p>
+            <a href="https://pages.github.com/">
+                <img
+                    src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/collections/github-pages-examples/github-pages-examples.png"
+                    width="160"
+                    height="160"
+                />
+            </a>
+            <h2>Domain Provider</h2>
+            <p>
+                <a href="https://penguinmod.site">penguinmod.site</a> (and any subdomains) are currently provided by NotHouse.
+                Currently no link to any known profile of theirs is publicly known.
+            </p>
         </section>
         <section>
             <h1>PenguinMod & TurboWarp</h1>
