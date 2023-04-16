@@ -24,7 +24,8 @@ const CrashMessage = props => (
                 <FormattedMessage
                     defaultMessage={'We are so sorry, but it looks like the page has crashed.' +
                         ' Please refresh your page to try' +
-                        ' again.'}
+                        ' again.' +
+                        ' If the problem persists, please report this error to our Discord.'}
                     description="Message to inform the user that page has crashed."
                     id="tw.gui.crashMessage.description"
                 />

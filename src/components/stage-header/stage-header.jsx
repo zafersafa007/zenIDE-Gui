@@ -17,6 +17,10 @@ import smallStageIcon from './icon--small-stage.svg';
 import unFullScreenIcon from './icon--unfullscreen.svg';
 import settingsIcon from './icon--settings.svg';
 
+// import popoutIcon from './icon--popout.svg';
+// import bringBackIcon from './icon--popin.svg';
+// import Popout from './popout.js';
+
 import styles from './stage-header.css';
 
 import FullscreenAPI from '../../lib/tw-fullscreen-api';
@@ -73,6 +77,19 @@ const StageHeaderComponent = function (props) {
     } = props;
 
     let header = null;
+
+    // const popoutWindowButton = <Button
+    //     className={styles.stageButton}
+    //     onClick={Popout.toggle}
+    // >
+    //     <img
+    //         alt={"Popout Window"}
+    //         className={styles.stageButtonIcon}
+    //         draggable={false}
+    //         src={popoutIcon}
+    //         title={"Popout Window"}
+    //     />
+    // </Button>
 
     if (isFullScreen || isEmbedded) {
         const stageDimensions = getStageDimensions(null, customStageSize, true);
@@ -131,6 +148,7 @@ const StageHeaderComponent = function (props) {
                     <Controls vm={vm} />
                     <div className={styles.embedButtons}>
                         {settingsButton}
+                        {/* {popoutWindowButton} */}
                         {fullscreenButton}
                     </div>
                 </Box>
@@ -187,7 +205,8 @@ const StageHeaderComponent = function (props) {
                     />
                     <div className={styles.stageSizeRow}>
                         {stageControls}
-                        <div>
+                        <div className={styles.embedButtons}>
+                            {/* {popoutWindowButton} */}
                             <Button
                                 className={styles.stageButton}
                                 onClick={onSetStageFull}
