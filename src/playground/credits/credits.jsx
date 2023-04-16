@@ -54,15 +54,50 @@ const Credits = () => (
     <main className={styles.main}>
         <header className={styles.headerContainer}>
             <h1 className={styles.headerText}>
-                TurboWarp Credits
+                PenguinMod Credits
             </h1>
         </header>
+        <section>
+            <h1>PenguinMod</h1>
+        </section>
+        <section>
+            <h2>Thank you</h2>
+            <p>
+                Without TurboWarp, PenguinMod may have never existed.
+                Thank you to everyone who worked on Scratch and TurboWarp,
+                you have made many people finally be able to make whatever they can imagine.
+            </p>
+            <h2>Contributors</h2>
+            <p>
+                PenguinMod is made by a small bunch of developers.
+                A list is below, but you can also check <a href="https://github.com/orgs/PenguinMod/people">our GitHub</a> incase this one is out of date.
+            </p>
+            <UserList users={UserData.pmDevelopers} />
+            <p>The list order is randomized.</p>
+        </section>
+        <section>
+            <h1>PenguinMod & TurboWarp</h1>
+        </section>
+        <section>
+            <h2>Addons</h2>
+            <p>
+                Addons are mostly taken from <a href="https://scratchaddons.com/">Scratch Addons</a>,
+                but we hope to have some PenguinMod addons in the future.
+                Here are the developers that made the current addons available.
+            </p>
+            <UserList users={UserData.addonDevelopers} />
+            <p>The list order is randomized.</p>
+        </section>
+        <section>
+            <h1>TurboWarp</h1>
+        </section>
         <section>
             <p>
                 The TurboWarp project is made possible by the work of many volunteers.
             </p>
         </section>
-        <section>
+        {/* RIP Fosshost */}
+        {/* <section>
             <h2>Fosshost</h2>
             <p>
                 The TurboWarp project is proudly hosted by <a href="https://fosshost.org/">Fosshost</a> who provide free computing resources to the open source community.
@@ -79,7 +114,7 @@ const Credits = () => (
                     height="125"
                 />
             </a>
-        </section>
+        </section> */}
         <section>
             <h2>Scratch</h2>
             <p>
@@ -92,13 +127,9 @@ const Credits = () => (
             </p>
         </section>
         <section>
-            <h2>Addons</h2>
-            <UserList users={UserData.addonDevelopers} />
-        </section>
-        <section>
             <h2>Translators</h2>
             <p>
-                More than 100 people have helped translate TurboWarp and its addons into many languages --
+                More than 100 people have helped translate TurboWarp and its addons into many languages —
                 far more than we could hope to list here.
             </p>
         </section>

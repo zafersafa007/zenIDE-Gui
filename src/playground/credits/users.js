@@ -14,6 +14,12 @@ const fromHardcoded = ({userId, username, name}) => ({
     text: name || username
 });
 
+const fromHardcodedGithub = (username) => ({
+    image: `https://github.com/${username}.png`,
+    href: `https://github.com/${username}/`,
+    text: username
+});
+
 const addonDevelopers = [
     {
         userId: '34018398',
@@ -99,6 +105,20 @@ const addonDevelopers = [
     // TODO: retronbv is banned?
 ].map(fromHardcoded);
 
+const pmDevelopers = [
+    'asmarly',
+    'CST1229',
+    'FreshPenguin112',
+    'Ianyourgod',
+    'jdev082',
+    'JeremyGamer13',
+    'jwklong',
+    'MaterArc',
+    'RedMan13',
+    'showierdata9978'
+].map(fromHardcodedGithub);
+
 export default {
-    addonDevelopers: shuffle(addonDevelopers)
+    addonDevelopers: shuffle(addonDevelopers),
+    pmDevelopers: shuffle(pmDevelopers)
 };
