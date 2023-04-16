@@ -60,6 +60,7 @@ import _tw_straighten_comments from "../addons/tw-straighten-comments/_manifest_
 import _tw_remove_backpack from "../addons/tw-remove-backpack/_manifest_entry.js";
 import _tw_remove_feedback from "../addons/tw-remove-feedback/_manifest_entry.js";
 import _editor_stepping from "../addons/editor-stepping/_manifest_entry.js";
+import _paint_skew from "../addons/paint-skew/_manifest_entry.js";
 export default {
   "cat-blocks": _cat_blocks,
   "editor-devtools": _editor_devtools,
@@ -122,4 +123,5 @@ export default {
   "tw-remove-backpack": _tw_remove_backpack,
   "tw-remove-feedback": _tw_remove_feedback,
   "editor-stepping": _editor_stepping,
+  "paint-skew": _paint_skew,
 };

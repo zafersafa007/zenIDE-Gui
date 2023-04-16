@@ -61,4 +61,5 @@ export default {
   "tw-remove-backpack": () => import(/* webpackChunkName: "addon-entry-tw-remove-backpack" */ "../addons/tw-remove-backpack/_runtime_entry.js"),
   "tw-remove-feedback": () => import(/* webpackChunkName: "addon-entry-tw-remove-feedback" */ "../addons/tw-remove-feedback/_runtime_entry.js"),
   "editor-stepping": () => import(/* webpackChunkName: "addon-entry-editor-stepping" */ "../addons/editor-stepping/_runtime_entry.js"),
+  "paint-skew": () => import(/* webpackChunkName: "addon-entry-editor-stepping" */ "../addons/paint-skew/_runtime_entry.js"),
 };

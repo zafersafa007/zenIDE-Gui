@@ -66,7 +66,8 @@ const addons = [
 
 const newAddons = [
     'pick-colors-from-stage',
-    'zebra-striping'
+    'zebra-striping',
+    'paint-skew'
 ];
 
 // eslint-disable-next-line import/no-commonjs
