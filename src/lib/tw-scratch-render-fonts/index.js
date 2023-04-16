@@ -14,6 +14,8 @@ const Bubbly = require('./QTKooper.otf');
 const Playful = require('./BadComic-Regular.ttf');
 const BitsAndBytes = require('./freecam-v2.ttf');
 const Arcade = require('./PressStart2P.ttf');
+const Archivo = require('./Archivo-Regular.ttf');
+const ArchivoBlack = require('./Archivo-Black.ttf');
 
 const log = require('../log').default;
 
@@ -29,7 +31,9 @@ const fontSource = {
     'Bubbly': Bubbly,
     'Bits and Bytes': BitsAndBytes,
     'Playful': Playful,
-    'Arcade': Arcade
+    'Arcade': Arcade,
+    'Archivo': Archivo,
+    'Archivo Black': ArchivoBlack
 };
 
 const fontData = {};
