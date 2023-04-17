@@ -1,5 +1,6 @@
+/* eslint-disable max-len */
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 
 import musicIconURL from './music/music.png';
 import musicInsetIconURL from './music/music-small.svg';
@@ -54,53 +55,53 @@ import twIcon from './tw/tw.svg';
 import customExtensionIcon from './custom/custom.svg';
 
 import filesExtensionIcon from './penguinmod/extensions/files.png';
-import jgWebsiteRequestsExtensionIcon from './penguinmod/extensions/websiteRequests.png'
-import jgJSONExtensionIcon from './penguinmod/extensions/json.png'
-import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png'
-import jgPrismExtensionIcon from './penguinmod/extensions/prism.png'
+import jgWebsiteRequestsExtensionIcon from './penguinmod/extensions/websiteRequests.png';
+import jgJSONExtensionIcon from './penguinmod/extensions/json.png';
+import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png';
+import jgPrismExtensionIcon from './penguinmod/extensions/prism.png';
 
-import jwProtoExtensionIcon from './penguinmod/extensions/proto.png'
+import jwProtoExtensionIcon from './penguinmod/extensions/proto.png';
 
-import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png'
+import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png';
 
 // thx jeremey
-import canvasExtensionBanner from './penguinmod/extensions/CanvasExtensionMenu.png'
-import canvasExtensionIcon from './penguinmod/extensions/CanvasSmall.png'
+import canvasExtensionBanner from './penguinmod/extensions/CanvasExtensionMenu.png';
+import canvasExtensionIcon from './penguinmod/extensions/CanvasSmall.png';
 
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
-import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png'
-import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg'
-import gp from './penguinmod/extensions/gp.png'
-//cl waw
-import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png'
-import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg'
+import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png';
+import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg';
+import gp from './penguinmod/extensions/gp.png';
+// cl waw
+import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
+import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg';
 
-import pointerlockThumb from './penguinmod/extensions/pointerlock.svg'
-import cursorThumb from './penguinmod/extensions/cursor.svg'
+import pointerlockThumb from './penguinmod/extensions/pointerlock.svg';
+import cursorThumb from './penguinmod/extensions/cursor.svg';
 
 // more icons so they arent just red when the extension color is not red
-import gsaTempVariablesExtensionIcon from './penguinmod/extensions/tempvariables.png'
-import gsaColorUtilExtensionIcon from './penguinmod/extensions/colorutil.png'
-import jgIframeExtensionIcon from './penguinmod/extensions/iframe.png'
-import jgExtendedAudioExtensionIcon from './penguinmod/extensions/extendedaudio.png'
-import jgScratchAuthExtensionIcon from './penguinmod/extensions/scratchauth.png'
-import jgPermissionExtensionIcon from './penguinmod/extensions/permissions.png'
-import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessages.svg'
-import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.png'
+import gsaTempVariablesExtensionIcon from './penguinmod/extensions/tempvariables.png';
+import gsaColorUtilExtensionIcon from './penguinmod/extensions/colorutil.png';
+import jgIframeExtensionIcon from './penguinmod/extensions/iframe.png';
+import jgExtendedAudioExtensionIcon from './penguinmod/extensions/extendedaudio.png';
+import jgScratchAuthExtensionIcon from './penguinmod/extensions/scratchauth.png';
+import jgPermissionExtensionIcon from './penguinmod/extensions/permissions.png';
+import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessages.svg';
+import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.png';
 
-import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png'
+import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png';
 
-import jg3dExtensionIcon from './penguinmod/extensions/3d.png'
-import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png'
+import jg3dExtensionIcon from './penguinmod/extensions/3d.png';
+import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png';
 
-import jgStorageExtensionIcon from './penguinmod/extensions/storage.png'
-import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png'
+import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
+import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png';
 
 // jg: default icon if you are too lazy to make one and you want me to make one instead lololol
-// gsa: olo
+// gsa: ololo
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
 
-const IsLocal = String(window.location.href).startsWith(`http://localhost:`)
+const IsLocal = String(window.location.href).startsWith(`http://localhost:`);
 
 export default [
     {
@@ -234,7 +235,7 @@ export default [
         name: 'Tweening',
         extensionId: 'jgTween',
         collaborator: 'Arrow & easings.net',
-        description: "Smoothly animating values using different easing functions and directions.",
+        description: 'Smoothly animating values using different easing functions and directions.',
         iconURL: jgTweeningExtensionIcon,
         featured: true
     },
@@ -258,18 +259,18 @@ export default [
         featured: true
     },
     {
-        name: "Storage",
+        name: 'Storage',
         extensionId: 'jgStorage',
         iconURL: jgStorageExtensionIcon,
-        description: "Store data after PenguinMod has already been closed out. Basic Server Storage is also included.",
+        description: 'Store data after PenguinMod has already been closed out. Basic Server Storage is also included.',
         collaborator: 'Fir & silvxrcat',
         featured: true
     },
     {
-        name: "Extended Sound",
+        name: 'Extended Sound',
         extensionId: 'jgExtendedAudio',
         iconURL: jgExtendedAudioExtensionIcon,
-        description: "Free speed and pitch control, starting sounds at certain positions, stopping sounds, etc.",
+        description: 'Free speed and pitch control, starting sounds at certain positions, stopping sounds, etc.',
         featured: true
     },
     {
@@ -293,25 +294,25 @@ export default [
         internetConnectionRequired: true
     },
     {
-        name: "Clone Communication",
+        name: 'Clone Communication',
         extensionId: 'jgClones',
         iconURL: jgCloneManagerExtensionIcon,
-        description: "Mainly sharing data between clones and the main sprite, but also some other small features.",
+        description: 'Mainly sharing data between clones and the main sprite, but also some other small features.',
         featured: true
     },
     {
-        name: "Multiple Timers",
+        name: 'Multiple Timers',
         extensionId: 'jgTimers',
         iconURL: jgTimersExtensionIcon,
-        description: "Create different timers you can control seperately.",
+        description: 'Create different timers you can control seperately.',
         collaborator: 'Arrow',
         featured: true
     },
     {
-        name: "Odd Messages",
+        name: 'Odd Messages',
         extensionId: 'oddMessage',
         iconURL: silvxrcatOddMessagesExtensionIcon,
-        description: "For logging and variable utilization.",
+        description: 'For logging and variable utilization.',
         featured: true,
         collaborator: 'silvxrcat'
     },
@@ -355,17 +356,17 @@ export default [
         featured: true
     },
     {
-        name: "Temporary Variables",
+        name: 'Temporary Variables',
         extensionId: 'tempVars',
         iconURL: gsaTempVariablesExtensionIcon,
-        description: "Create variables for use in one block stack. Useful to not clutter the variable list with variables you only use once.",
+        description: 'Create variables for use in one block stack. Useful to not clutter the variable list with variables you only use once.',
         featured: true
     },
     {
-        name: "Color Utility Blocks",
+        name: 'Color Utility Blocks',
         extensionId: 'colors',
         iconURL: gsaColorUtilExtensionIcon,
-        description: "Converters for Hex, RGB, HSV and Decimal colors and other color related things.",
+        description: 'Converters for Hex, RGB, HSV and Decimal colors and other color related things.',
         featured: true
     },
     {
@@ -380,7 +381,8 @@ export default [
         iconURL: jwProtoExtensionIcon,
         description: (
             <FormattedMessage
-                defaultMessage="Labelling and Placeholders." // change this back if you update the extension to have more things
+                // change this back if you update the extension to have more things
+                defaultMessage="Labelling and Placeholders."
                 description="Description of Proto extension"
                 id="jwProto.jwProtoExtension.description"
             />
@@ -463,7 +465,7 @@ export default [
                 id="jgRuntime.jgRuntimeExtension.description"
             />
         ),
-        collaborator: "TheShovel, showierdata9978",
+        collaborator: 'TheShovel, showierdata9978',
         featured: true
     },
     {
@@ -495,7 +497,7 @@ export default [
         featured: true
     },
     {
-        name: "Camera Controls",
+        name: 'Camera Controls',
         extensionId: 'https://extensions.turbowarp.org/DT/cameracontrols.js',
         iconURL: 'https://extensions.turbowarp.org/images/DT/cameracontrols.svg',
         description: (
@@ -509,7 +511,7 @@ export default [
         collaborator: 'DT (TurboWarp Extensions Repo)'
     },
     {
-        name: "CloudLink",
+        name: 'CloudLink',
         extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
         iconURL: cloudlinkThumb,
         insetIconURL: cloudlinkIcon,
@@ -526,7 +528,7 @@ export default [
         incompatibleWithScratch: false
     },
     {
-        name: "Pointer Lock",
+        name: 'Pointer Lock',
         extensionId: 'https://extensions.turbowarp.org/pointerlock.js',
         iconURL: pointerlockThumb,
         description: (
@@ -541,7 +543,7 @@ export default [
         incompatibleWithScratch: false
     },
     {
-        name: "Mouse Cursor",
+        name: 'Mouse Cursor',
         extensionId: 'https://extensions.turbowarp.org/cursor.js',
         iconURL: cursorThumb,
         description: (
@@ -556,17 +558,17 @@ export default [
         incompatibleWithScratch: false
     },
     {
-        name: "Scratch Authentication",
+        name: 'Scratch Authentication',
         extensionId: 'jgScratchAuthenticate',
         iconURL: jgScratchAuthExtensionIcon,
         description: "Get a user's scratch name to prove they are a real scratch user.",
         featured: true
     },
     {
-        name: "PenguinMod Permissions",
+        name: 'PenguinMod Permissions',
         extensionId: 'JgPermissionBlocks',
         iconURL: jgPermissionExtensionIcon,
-        description: "Direct blocks to manage permissions that PenguinMod requires you have to do certain tasks.",
+        description: 'Direct blocks to manage permissions that PenguinMod requires you have to do certain tasks.',
         featured: true
     },
     {
@@ -680,11 +682,11 @@ export default [
         helpLink: 'https://scratch.mit.edu/boost'
     },
     IsLocal ? {
-        name: "3D",
+        name: '3D',
         extensionId: 'jg3d',
         iconURL: jg3dExtensionIcon,
         insetIconURL: jg3dInsetExtensionIcon,
-        description: "Use the magic of 3D to spice up your project.",
+        description: 'Use the magic of 3D to spice up your project.',
         featured: true
     } : {
         name: 'LEGO Education WeDo 2.0',
@@ -718,9 +720,9 @@ export default [
         helpLink: 'https://scratch.mit.edu/wedo'
     },
     IsLocal ? {
-        name: "Jeremys Dev Tools",
+        name: 'Jeremys Dev Tools',
         extensionId: 'jgDev',
-        description: "Test extension to see if things are possible.",
+        description: 'Test extension to see if things are possible.',
         featured: true
     } : {
         name: 'Go Direct Force & Acceleration',
@@ -770,5 +772,5 @@ export default [
             />
         ),
         featured: true
-    },
+    }
 ];
