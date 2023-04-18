@@ -348,7 +348,7 @@ export default [
         iconURL: jgJSONExtensionIcon,
         description: (
             <FormattedMessage
-                defaultMessage="Blocks for handling JSON objects. Arrays are not supported yet."
+                defaultMessage="Blocks for handling JSON objects and Arrays."
                 description="Description of JSON extension"
                 id="jgJSON.jgJSONExtension.description"
             />
