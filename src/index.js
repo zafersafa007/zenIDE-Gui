@@ -7,8 +7,7 @@ import {setFullScreen, setPlayer} from './reducers/mode';
 import {remixProject} from './reducers/project-state';
 import {setAppElement} from 'react-modal';
 import totallyNormalStrings from './lib/l10n.js';
-//fetch('https://raw.githubusercontent.com/showierdata9978/GameUtils/master/src/GameUtils.js').then(r=>r.text()).then(t=>eval(t))
-console.log('e')
+
 const guiReducers = {
     locales: LocalesReducer,
     scratchGui: GuiReducer,
