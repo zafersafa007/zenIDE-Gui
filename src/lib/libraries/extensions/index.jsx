@@ -98,7 +98,7 @@ import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
 import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png';
 
 // jg: default icon if you are too lazy to make one and you want me to make one instead lololol
-// gsa: olololo
+// gsa: ololololo
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
 
 const IsLocal = String(window.location.href).startsWith(`http://localhost:`);
