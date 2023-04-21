@@ -137,8 +137,8 @@ export default defineMessages({
         id: 'gui.libraryTags.scratch'
     },
     turbowarp: {
-        defaultMessage: 'Turbowarp',
-        description: 'Tag for filtering a library by Turbowarp',
+        defaultMessage: 'TurboWarp',
+        description: 'Tag for filtering a library by TurboWarp',
         id: 'gui.libraryTags.turbowarp'
     }
 });
