@@ -115,6 +115,7 @@ export default [
         extensionId: 'music',
         iconURL: musicIconURL,
         insetIconURL: musicInsetIconURL,
+        tags: ["scratch"],
         description: (
             <FormattedMessage
                 defaultMessage="Play instruments and drums."
@@ -135,6 +136,7 @@ export default [
         extensionId: 'pen',
         iconURL: penIconURL,
         insetIconURL: penInsetIconURL,
+        tags: ["scratch"],
         description: (
             <FormattedMessage
                 defaultMessage="Draw with your sprites."
@@ -149,6 +151,7 @@ export default [
         extensionId: 'text',
         iconURL: animatedTextIconURL,
         insetIconURL: animatedTextInsetIconURL,
+        tags: ["scratch"],
         description: 'Bring words to life.',
         featured: true
     },
@@ -163,6 +166,7 @@ export default [
         extensionId: 'videoSensing',
         iconURL: videoSensingIconURL,
         insetIconURL: videoSensingInsetIconURL,
+        tags: ["scratch"],
         description: (
             <FormattedMessage
                 defaultMessage="Sense motion with the camera."
@@ -184,6 +188,7 @@ export default [
         collaborator: 'Amazon Web Services',
         iconURL: text2speechIconURL,
         insetIconURL: text2speechInsetIconURL,
+        tags: ["scratch"],
         description: (
             <FormattedMessage
                 defaultMessage="Make your projects talk."
@@ -206,6 +211,7 @@ export default [
         collaborator: 'Google',
         iconURL: translateIconURL,
         insetIconURL: translateInsetIconURL,
+        tags: ["scratch"],
         description: (
             <FormattedMessage
                 defaultMessage="Translate text into many languages."
@@ -222,6 +228,7 @@ export default [
         collaborator: 'JoyLabz',
         iconURL: makeymakeyIconURL,
         insetIconURL: makeymakeyInsetIconURL,
+        tags: ["scratch"],
         description: (
             <FormattedMessage
                 defaultMessage="Make anything into a key."
@@ -237,6 +244,7 @@ export default [
         collaborator: 'Arrow & easings.net',
         description: 'Smoothly animating values using different easing functions and directions.',
         iconURL: jgTweeningExtensionIcon,
+        tags: ["penguinmod"],
         featured: true
     },
     {
@@ -249,6 +257,7 @@ export default [
         ),
         extensionId: 'jgFiles',
         iconURL: filesExtensionIcon,
+        tags: ["penguinmod"],
         description: (
             <FormattedMessage
                 defaultMessage="Blocks for reading and creating files."
@@ -262,6 +271,7 @@ export default [
         name: 'Storage',
         extensionId: 'jgStorage',
         iconURL: jgStorageExtensionIcon,
+        tags: ["penguinmod"],
         description: 'Store data after PenguinMod has already been closed out. Basic Server Storage is also included.',
         collaborator: 'Fir & silvxrcat',
         featured: true
@@ -270,6 +280,7 @@ export default [
         name: 'Extended Sound',
         extensionId: 'jgExtendedAudio',
         iconURL: jgExtendedAudioExtensionIcon,
+        tags: ["penguinmod"],
         description: 'Free speed and pitch control, starting sounds at certain positions, stopping sounds, etc.',
         featured: true
     },
@@ -283,6 +294,7 @@ export default [
         ),
         extensionId: 'jgWebsiteRequests',
         iconURL: jgWebsiteRequestsExtensionIcon,
+        tags: ["penguinmod"],
         description: (
             <FormattedMessage
                 defaultMessage="Blocks to communicate with APIs and websites."
@@ -297,6 +309,7 @@ export default [
         name: 'Clone Communication',
         extensionId: 'jgClones',
         iconURL: jgCloneManagerExtensionIcon,
+        tags: ["penguinmod"],
         description: 'Mainly sharing data between clones and the main sprite, but also some other small features.',
         featured: true
     },
@@ -304,6 +317,7 @@ export default [
         name: 'Multiple Timers',
         extensionId: 'jgTimers',
         iconURL: jgTimersExtensionIcon,
+        tags: ["penguinmod"],
         description: 'Create different timers you can control seperately.',
         collaborator: 'Arrow',
         featured: true
@@ -326,6 +340,7 @@ export default [
         ),
         extensionId: 'jgIframe',
         iconURL: jgIframeExtensionIcon,
+        tags: ["penguinmod"],
         description: (
             <FormattedMessage
                 defaultMessage="Blocks to place and move around frames that contain HTML content or websites."
@@ -346,6 +361,7 @@ export default [
         ),
         extensionId: 'jgJSON',
         iconURL: jgJSONExtensionIcon,
+        tags: ["penguinmod"],
         description: (
             <FormattedMessage
                 defaultMessage="Blocks for handling JSON objects and Arrays."
@@ -359,6 +375,7 @@ export default [
         name: 'Temporary Variables',
         extensionId: 'tempVars',
         iconURL: gsaTempVariablesExtensionIcon,
+        tags: ["penguinmod"],
         description: 'Create variables for use in one block stack. Useful to not clutter the variable list with variables you only use once.',
         featured: true
     },
@@ -366,6 +383,7 @@ export default [
         name: 'Color Utility Blocks',
         extensionId: 'colors',
         iconURL: gsaColorUtilExtensionIcon,
+        tags: ["penguinmod"],
         description: 'Converters for Hex, RGB, HSV and Decimal colors and other color related things.',
         featured: true
     },
@@ -379,6 +397,7 @@ export default [
         ),
         extensionId: 'jwProto',
         iconURL: jwProtoExtensionIcon,
+        tags: ["penguinmod"],
         description: (
             <FormattedMessage
                 // change this back if you update the extension to have more things
@@ -398,6 +417,7 @@ export default [
             />
         ),
         extensionId: 'jwStructs',
+        tags: ["penguinmod"],
         iconURL: jwStructsExtensionIcon,
         insetIconURL: jwStructsExtensionIcon,
         description: (
@@ -419,6 +439,7 @@ export default [
         ),
         extensionId: 'canvas',
         iconURL: canvasExtensionBanner,
+        tags: ["penguinmod"],
         insetIconURL: canvasExtensionIcon,
         description: (
             <FormattedMessage
@@ -438,6 +459,7 @@ export default [
             />
         ),
         extensionId: 'jgPrism',
+        tags: ["penguinmod"],
         iconURL: jgPrismExtensionIcon,
         description: (
             <FormattedMessage
@@ -457,6 +479,7 @@ export default [
             />
         ),
         extensionId: 'jgRuntime',
+        tags: ["penguinmod"],
         iconURL: jgRuntimeExtensionIcon,
         description: (
             <FormattedMessage
@@ -471,6 +494,7 @@ export default [
     {
         name: 'Physics',
         extensionId: 'https://extensions.turbowarp.org/box2d.js',
+        tags: ["turbowarp"],
         collaborator: 'Griffpatch',
         iconURL: griffpatchPhysicsThumb,
         insetIconURL: griffpatchPhysicsIcon,
@@ -486,6 +510,7 @@ export default [
     {
         name: 'GamePad',
         extensionId: 'Gamepad',
+        tags: ["turbowarp"],
         iconURL: gp,
         description: (
             <FormattedMessage
@@ -500,6 +525,7 @@ export default [
         name: 'Camera Controls',
         extensionId: 'https://extensions.turbowarp.org/DT/cameracontrols.js',
         iconURL: 'https://extensions.turbowarp.org/images/DT/cameracontrols.svg',
+        tags: ["turbowarp"],
         description: (
             <FormattedMessage
                 defaultMessage="Move the visible part of the stage."
@@ -513,6 +539,7 @@ export default [
     {
         name: 'CloudLink',
         extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
+        tags: ["turbowarp"],
         iconURL: cloudlinkThumb,
         insetIconURL: cloudlinkIcon,
         description: (
@@ -530,6 +557,7 @@ export default [
     {
         name: 'Pointer Lock',
         extensionId: 'https://extensions.turbowarp.org/pointerlock.js',
+        tags: ["turbowarp"],
         iconURL: pointerlockThumb,
         description: (
             <FormattedMessage
@@ -545,6 +573,7 @@ export default [
     {
         name: 'Mouse Cursor',
         extensionId: 'https://extensions.turbowarp.org/cursor.js',
+        tags: ["turbowarp"],
         iconURL: cursorThumb,
         description: (
             <FormattedMessage
@@ -561,6 +590,7 @@ export default [
         name: 'Scratch Authentication',
         extensionId: 'jgScratchAuthenticate',
         iconURL: jgScratchAuthExtensionIcon,
+        tags: ["penguinmod"],
         description: "Get a user's scratch name to prove they are a real scratch user.",
         featured: true
     },
@@ -568,6 +598,7 @@ export default [
         name: 'PenguinMod Permissions',
         extensionId: 'JgPermissionBlocks',
         iconURL: jgPermissionExtensionIcon,
+        tags: ["penguinmod"],
         description: 'Direct blocks to manage permissions that PenguinMod requires you have to do certain tasks.',
         featured: true
     },
@@ -580,6 +611,7 @@ export default [
             />
         ),
         extensionId: 'tw',
+        tags: ["turbowarp"],
         iconURL: twIcon,
         description: (
             <FormattedMessage
@@ -596,6 +628,7 @@ export default [
         collaborator: 'micro:bit',
         iconURL: microbitIconURL,
         insetIconURL: microbitInsetIconURL,
+        tags: ["scratch"],
         description: (
             <FormattedMessage
                 defaultMessage="Connect your projects with the world."
@@ -626,6 +659,7 @@ export default [
         collaborator: 'LEGO',
         iconURL: ev3IconURL,
         insetIconURL: ev3InsetIconURL,
+        tags: ["scratch"],
         description: (
             <FormattedMessage
                 defaultMessage="Build interactive robots and more."
@@ -656,6 +690,7 @@ export default [
         collaborator: 'LEGO',
         iconURL: boostIconURL,
         insetIconURL: boostInsetIconURL,
+        tags: ["scratch"],
         description: (
             <FormattedMessage
                 defaultMessage="Bring robotic creations to life."
@@ -679,6 +714,7 @@ export default [
                 id="gui.extension.boost.connectingMessage"
             />
         ),
+        tags: ["scratch"],
         helpLink: 'https://scratch.mit.edu/boost'
     },
     IsLocal ? {
@@ -703,6 +739,7 @@ export default [
         ),
         featured: true,
         disabled: false,
+        tags: ["scratch"],
         bluetoothRequired: true,
         internetConnectionRequired: true,
         launchPeripheralConnectionFlow: true,
@@ -730,6 +767,7 @@ export default [
         collaborator: 'Vernier',
         iconURL: gdxforIconURL,
         insetIconURL: gdxforInsetIconURL,
+        tags: ["scratch"],
         description: (
             <FormattedMessage
                 defaultMessage="Sense push, pull, motion, and spin."

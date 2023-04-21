@@ -125,5 +125,20 @@ export default defineMessages({
         defaultMessage: 'Letters',
         description: 'Tag for filtering a library for letters',
         id: 'gui.libraryTags.letters'
+    },
+    penguinmod: {
+        defaultMessage: 'PenguinMod',
+        description: 'Tag for filtering a library by PenguinMod',
+        id: 'gui.libraryTags.penguinmod'
+    },
+    scratch: {
+        defaultMessage: 'Scratch',
+        description: 'Tag for filtering a library by Scratch',
+        id: 'gui.libraryTags.scratch'
+    },
+    turbowarp: {
+        defaultMessage: 'Turbowarp',
+        description: 'Tag for filtering a library by Turbowarp',
+        id: 'gui.libraryTags.turbowarp'
     }
 });
