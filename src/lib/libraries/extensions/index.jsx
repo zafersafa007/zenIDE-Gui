@@ -538,7 +538,7 @@ export default [
     },
     {
         name: 'LMS Utilities',
-        extensionId: 'https://extensions.turbowarp.org/LukeManiaStudios/lmsutils.js',
+        extensionId: 'lmsutilsblocks',
         iconURL: 'https://extensions.turbowarp.org/images/LukeManiaStudios/lmsutils.svg',
         tags: ["turbowarp"],
         description: "Adds utility blocks such as user prompts, encoding & events.",

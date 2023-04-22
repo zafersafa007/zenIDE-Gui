@@ -929,6 +929,7 @@ const operators = function (isInitialSetup) {
         ${isInitialSetup ? '' : `
             <block type="operator_newLine"></block>
             <block type="operator_tabCharacter"></block>
+            ${blockSeparator}
             <block type="operator_join">
                 <value name="STRING1">
                     <shadow type="text">
