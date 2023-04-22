@@ -431,12 +431,14 @@ const events = function (isInitialSetup, isStage) {
     return `
     <category name="%{BKY_CATEGORY_EVENTS}" id="events" colour="#FFD500" secondaryColour="#CC9900">
         <block type="event_whenflagclicked"/>
+        <block type="event_whenstopclicked"/>
         <block type="event_always"></block>
         <block type="event_whenanything">
             <value name="ANYTHING"></value>
         </block>
-        <block type="event_whenkeypressed">
-        </block>
+        <block type="event_whenkeypressed"></block>
+        <block type="event_whenkeyhit"></block>
+        <block type="event_whenmousescrolled"></block>
         ${isStage ? `
             <block type="event_whenstageclicked"/>
         ` : `
@@ -474,6 +476,13 @@ const control = function (isInitialSetup, isStage) {
     return `
     <category name="%{BKY_CATEGORY_CONTROL}" id="control" colour="#FFAB19" secondaryColour="#CF8B17">
         <block type="control_wait">
+            <value name="DURATION">
+                <shadow type="math_positive_number">
+                    <field name="NUM">1</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="control_waitsecondsoruntil">
             <value name="DURATION">
                 <shadow type="math_positive_number">
                     <field name="NUM">1</field>
@@ -543,9 +552,19 @@ const control = function (isInitialSetup, isStage) {
                     <shadow type="control_create_clone_of_menu"/>
                 </value>
             </block>
+            <block type="control_delete_clones_of">
+                <value name="CLONE_OPTION">
+                    <shadow type="control_create_clone_of_menu"/>
+                </value>
+            </block>
         ` : `
             <block type="control_start_as_clone"/>
             <block type="control_create_clone_of">
+                <value name="CLONE_OPTION">
+                    <shadow type="control_create_clone_of_menu"/>
+                </value>
+            </block>
+            <block type="control_delete_clones_of">
                 <value name="CLONE_OPTION">
                     <shadow type="control_create_clone_of_menu"/>
                 </value>
@@ -697,7 +716,18 @@ const sensing = function (isInitialSetup, isStage) {
                 <shadow type="sensing_keyoptions"/>
             </value>
         </block>
+        <block type="sensing_keyhit">
+            <value name="KEY_OPTION">
+                <shadow type="sensing_keyoptions"/>
+            </value>
+        </block>
+        <block type="sensing_mousescrolling">
+            <value name="SCROLL_OPTION">
+                <shadow type="sensing_scrolldirections"/>
+            </value>
+        </block>
         <block type="sensing_mousedown"/>
+        <block type="sensing_mouseclicked"/>
         <block type="sensing_mousex"/>
         <block type="sensing_mousey"/>
         ${isStage ? '' : `
@@ -898,6 +928,7 @@ const operators = function (isInitialSetup) {
         ${blockSeparator}
         ${isInitialSetup ? '' : `
             <block type="operator_newLine"></block>
+            <block type="operator_tabCharacter"></block>
             <block type="operator_join">
                 <value name="STRING1">
                     <shadow type="text">
@@ -1058,6 +1089,28 @@ const operators = function (isInitialSetup) {
             <value name="ONE">
                 <shadow type="text">
                     <field name="TEXT">foo</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_boolify">
+            <value name="ONE">
+                <shadow type="text">
+                    <field name="TEXT">true</field>
+                </shadow>
+            </value>
+        </block>
+        ${blockSeparator}
+        <block type="operator_character_to_code">
+            <value name="ONE">
+                <shadow type="text">
+                    <field name="TEXT">a</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_code_to_character">
+            <value name="ONE">
+                <shadow type="text">
+                    <field name="TEXT">97</field>
                 </shadow>
             </value>
         </block>
