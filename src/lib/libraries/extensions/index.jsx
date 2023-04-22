@@ -248,23 +248,12 @@ export default [
         featured: true
     },
     {
-        name: (
-            <FormattedMessage
-                defaultMessage="File Blocks"
-                description="Name of Files extension"
-                id="jgFiles.jgFilesExtension.name"
-            />
-        ),
-        extensionId: 'jgFiles',
+        name: "Files",
+        extensionId: 'twFiles',
+        collaborator: 'GarboMuffin',
         iconURL: filesExtensionIcon,
-        tags: ["penguinmod"],
-        description: (
-            <FormattedMessage
-                defaultMessage="Blocks for reading and creating files."
-                description="Description of Files extension"
-                id="jgFiles.jgFilesExtension.description"
-            />
-        ),
+        tags: ["turbowarp"],
+        description: "Blocks for reading and creating files.",
         featured: true
     },
     {
@@ -631,6 +620,14 @@ export default [
         ),
         featured: true
     },
+    // {
+    //     name: "Legacy Files",
+    //     extensionId: 'jgFiles',
+    //     iconURL: filesExtensionIcon,
+    //     tags: ["penguinmod"],
+    //     description: "Basic blocks for files. This has been replaced by the TurboWarp files extension.",
+    //     featured: true
+    // },
     {
         name: 'micro:bit',
         extensionId: 'microbit',
