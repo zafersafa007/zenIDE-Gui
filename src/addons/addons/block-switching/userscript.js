@@ -573,6 +573,15 @@ export default async function ({ addon, global, console, msg }) {
         },
         noopSwitch,
       ];
+
+      if (vm.extensionManager) {
+        const switches = vm.extensionManager.getAddonBlockSwitches();
+        Object.getOwnPropertyNames(switches).forEach(extID => {
+          Object.getOwnPropertyNames(switches[extID]).forEach(block => {
+            blockSwitches[`${extID}_${block}`] = switches[extID][block];
+          })
+        })
+      }
     }
 
     if (addon.settings.get("sa")) {

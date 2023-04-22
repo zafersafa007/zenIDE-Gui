@@ -10,6 +10,10 @@ const manifest = {
     {
       "name": "pufferfish101007",
       "link": "https://scratch.mit.edu/users/pufferfish101007/"
+    },
+    {
+      "name": "JeremyGamer13",
+      "link": "https://projects.penguinmod.site/?user=JGamerTesting"
     }
   ],
   "dynamicDisable": true,
