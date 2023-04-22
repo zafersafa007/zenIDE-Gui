@@ -23,6 +23,8 @@ const messages = defineMessages({
     }
 });
 
+const PM_LIBRARY_API = "https://pmobjectlibrary.jeremygamer13.repl.co/";
+
 // @todo need to use this hack to avoid library using md5 for image
 const getSoundLibraryThumbnailData = (soundLibraryContent, isRtl) => soundLibraryContent.map(sound => {
     const {
@@ -35,6 +37,30 @@ const getSoundLibraryThumbnailData = (soundLibraryContent, isRtl) => soundLibrar
         ...otherData
     };
 });
+
+const getPenguinModSoundAsset = (soundObject, vm) => {
+    return new Promise((resolve, reject) => {
+        fetch(`${PM_LIBRARY_API}?file=${soundObject.libraryFilePage}`)
+            .then((r) => r.arrayBuffer())
+            .then((arrayBuffer) => {
+                const storage = vm.runtime.storage;
+                const asset = new storage.Asset(
+                    // asset type Sound cant be used since it defaults to wav files
+                    {
+                        contentType: 'audio/mpeg',
+                        name: 'Sound',
+                        runtimeFormat: storage.DataFormat.MP3,
+                        immutable: true
+                    },
+                    null,
+                    storage.DataFormat.MP3,
+                    new Uint8Array(arrayBuffer),
+                    true
+                );
+                resolve(asset);
+            }).catch(reject);
+    })
+}
 
 class SoundLibrary extends React.PureComponent {
     constructor (props) {
@@ -133,6 +159,35 @@ class SoundLibrary extends React.PureComponent {
         // inbetween, stop the last playback before queueing a new sound.
         this.stopPlayingSound();
 
+        // pm: check if we are using the PM object library instead of the normal one
+        if (soundItem.fromPenguinModLibrary === true) {
+            this.playingSoundPromise = getPenguinModSoundAsset(soundItem, vm)
+                .then(soundAsset => {
+                    if (soundAsset) {
+                        const sound = {
+                            md5: md5ext,
+                            name: soundItem.name,
+                            format: "mpeg",
+                            data: soundAsset.data
+                        };
+                        return this.audioEngine.decodeSoundPlayer(sound)
+                            .then(soundPlayer => {
+                                soundPlayer.connect(this.audioEngine);
+                                // Play the sound. Playing the sound will always come before a
+                                // paired stop if the sound must stop early.
+                                soundPlayer.play();
+                                soundPlayer.addListener('stop', this.onStop);
+                                // Set that the sound is playing. This affects the type of stop
+                                // instruction given if the sound must stop early.
+                                if (this.playingSoundPromise !== null) {
+                                    this.playingSoundPromise.isPlaying = true;
+                                }
+                                return soundPlayer;
+                            });
+                    }
+                });
+            return;
+        }
         // Save the promise so code to stop the sound may queue the stop
         // instruction after the play instruction.
         this.playingSoundPromise = vm.runtime.storage.load(vm.runtime.storage.AssetType.Sound, md5)
@@ -171,6 +226,10 @@ class SoundLibrary extends React.PureComponent {
             rate: soundItem.rate,
             sampleCount: soundItem.sampleCount,
             name: soundItem.name
+        };
+        if (soundItem.fromPenguinModLibrary) {
+            vmSound.fromPenguinModLibrary = true;
+            vmSound.libraryId = soundItem.libraryFilePage;
         };
         this.props.vm.addSound(vmSound).then(() => {
             this.props.onNewSound();

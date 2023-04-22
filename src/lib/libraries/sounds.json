@@ -1482,6 +1482,20 @@
         "rate": 22050
     },
     {
+        "name": "Deep Underground",
+        "tags": [
+            "music",
+            "themes"
+        ],
+        "assetId": "0f162a753dca8fbdfb243c5aa4b70892",
+        "dataFormat": "mpeg",
+        "md5ext": "0f162a753dca8fbdfb243c5aa4b70892.mp3",
+        "sampleCount": 2119666500,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/cave_theme.mp3"
+    },
+    {
         "name": "Disconnect",
         "tags": [
             "effects",
@@ -2134,12 +2148,27 @@
     },
     {
         "name": "Fairydust",
-        "tags": [],
+        "tags": [
+            "effects"
+        ],
         "assetId": "b92de59d992a655c1b542223a784cda6",
         "dataFormat": "",
         "md5ext": "b92de59d992a655c1b542223a784cda6.wav",
         "sampleCount": 22494,
         "rate": 44100
+    },
+    {
+        "name": "Fard",
+        "tags": [
+            "effects"
+        ],
+        "assetId": "97056ee8e57305ef80971cf29d332c86",
+        "dataFormat": "mpeg",
+        "md5ext": "97056ee8e57305ef80971cf29d332c86.mp3",
+        "sampleCount": 15479100,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/fard.mp3"
     },
     {
         "name": "Finger Snap",
@@ -2416,6 +2445,20 @@
         "md5ext": "caa0a1685ef7a5334413834c6c818c5a.wav",
         "sampleCount": 21337,
         "rate": 22050
+    },
+    {
+        "name": "Gryrow",
+        "tags": [
+            "music",
+            "themes"
+        ],
+        "assetId": "683650166591b98bf1c3033b530a6f94",
+        "dataFormat": "mpeg",
+        "md5ext": "683650166591b98bf1c3033b530a6f94.mp3",
+        "sampleCount": 2472819300,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/gryrow.mp3"
     },
     {
         "name": "Guitar Chords1",
@@ -2743,7 +2786,9 @@
     },
     {
         "name": "Laser1",
-        "tags": [],
+        "tags": [
+            "effects"
+        ],
         "assetId": "46571f8ec0f2cc91666c80e312579082",
         "dataFormat": "",
         "md5ext": "46571f8ec0f2cc91666c80e312579082.wav",
@@ -2752,7 +2797,9 @@
     },
     {
         "name": "Laser2",
-        "tags": [],
+        "tags": [
+            "effects"
+        ],
         "assetId": "27654ed2e3224f0a3f77c244e4fae9aa",
         "dataFormat": "",
         "md5ext": "27654ed2e3224f0a3f77c244e4fae9aa.wav",
@@ -2871,7 +2918,11 @@
     },
     {
         "name": "Low Tom",
-        "tags": [],
+        "tags": [
+            "drums",
+            "instrument",
+            "percussion"
+        ],
         "assetId": "1569bbbd8952b0575e5a5cb5aefb50ba",
         "dataFormat": "",
         "md5ext": "1569bbbd8952b0575e5a5cb5aefb50ba.wav",
@@ -3095,7 +3146,10 @@
     },
     {
         "name": "Owl",
-        "tags": [],
+        "tags": [
+            "animals",
+            "owl"
+        ],
         "assetId": "e8b6d605f5a1bb36c29e4e21ef754209",
         "dataFormat": "",
         "md5ext": "e8b6d605f5a1bb36c29e4e21ef754209.wav",
@@ -3179,12 +3233,28 @@
     },
     {
         "name": "Pop",
-        "tags": [],
+        "tags": [
+            "effects"
+        ],
         "assetId": "83a9787d4cb6f3b7632b4ddfebf74367",
         "dataFormat": "",
         "md5ext": "83a9787d4cb6f3b7632b4ddfebf74367.wav",
         "sampleCount": 1032,
         "rate": 44100
+    },
+    {
+        "name": "Pralax",
+        "tags": [
+            "music",
+            "themes"
+        ],
+        "assetId": "12993e8ef231b8e7c51158265394d81e",
+        "dataFormat": "mpeg",
+        "md5ext": "12993e8ef231b8e7c51158265394d81e.mp3",
+        "sampleCount": 1766646000,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/pralax.mp3"
     },
     {
         "name": "Rain",
@@ -3202,7 +3272,9 @@
     },
     {
         "name": "Rattle",
-        "tags": [],
+        "tags": [
+            "effects"
+        ],
         "assetId": "74f1c07e0bcd7811fd9d456a5f8667f8",
         "dataFormat": "",
         "md5ext": "74f1c07e0bcd7811fd9d456a5f8667f8.wav",
@@ -3295,7 +3367,11 @@
     },
     {
         "name": "Roll Cymbal",
-        "tags": [],
+        "tags": [
+            "instrument",
+            "instruments",
+            "percussion"
+        ],
         "assetId": "da8355d753cd2a5ddd19cb2bb41c1547",
         "dataFormat": "",
         "md5ext": "da8355d753cd2a5ddd19cb2bb41c1547.wav",
@@ -3304,7 +3380,9 @@
     },
     {
         "name": "Rooster",
-        "tags": [],
+        "tags": [
+            "animals"
+        ],
         "assetId": "2e375acae2c7c0d655935a9de14b12f6",
         "dataFormat": "",
         "md5ext": "2e375acae2c7c0d655935a9de14b12f6.wav",
@@ -3326,7 +3404,11 @@
     },
     {
         "name": "Scratch Beatbox",
-        "tags": [],
+        "tags": [
+            "wacky",
+            "voice",
+            "vocals"
+        ],
         "assetId": "859249563a7b1fc0f6e92e36d1db81c7",
         "dataFormat": "",
         "md5ext": "859249563a7b1fc0f6e92e36d1db81c7.wav",
@@ -3669,7 +3751,10 @@
     },
     {
         "name": "Space Ripple",
-        "tags": [],
+        "tags": [
+            "effects",
+            "space"
+        ],
         "assetId": "ff8b8c3bf841a11fd5fe3afaa92be1b5",
         "dataFormat": "",
         "md5ext": "ff8b8c3bf841a11fd5fe3afaa92be1b5.wav",
@@ -4260,7 +4345,10 @@
     },
     {
         "name": "Wolf Howl",
-        "tags": [],
+        "tags": [
+            "animals",
+            "wolf"
+        ],
         "assetId": "5e36d74bb16aa5085b901362788b0fbf",
         "dataFormat": "",
         "md5ext": "5e36d74bb16aa5085b901362788b0fbf.wav",

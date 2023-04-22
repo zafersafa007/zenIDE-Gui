@@ -46,6 +46,11 @@ export default defineMessages({
         description: 'Tag for filtering a library for loops',
         id: 'gui.libraryTags.loops'
     },
+    themes: {
+        defaultMessage: 'Themes',
+        description: 'Tag for filtering a library for Themes',
+        id: 'gui.libraryTags.themes'
+    },
     music: {
         defaultMessage: 'Music',
         description: 'Tag for filtering a library for music',
