@@ -169,9 +169,23 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                     if (projectAsset) {
                         this.props.onFetchedProjectData(projectAsset.data, loadingState);
                     } else {
-                        // Treat failure to load as an error
-                        // Throw to be caught by catch later on
-                        throw new Error('Could not find project');
+                        // pm: Failed to grab data, use the "fetch" API as a backup
+                        // we shouldnt be interrupted by the fetch replacement in tw-progress-monitor
+                        // as it uses projects.scratch.mit.edu still
+                        fetch(projectUrl).then(res => {
+                            if (!res.ok) {
+                                // Treat failure to load as an error
+                                // Throw to be caught by catch later on
+                                throw new Error('Could not find project; ' + err);
+                            }
+                            res.arrayBuffer().then(data => {
+                                this.props.onFetchedProjectData(data, loadingState);
+                            }).catch(err => {
+                                throw new Error('ArrayBuffer conversion failed; ' + err);
+                            })
+                        }).catch(err => {
+                            throw new Error('Could not find project; ' + err);
+                        })
                     }
                 })
                 .catch(err => {
