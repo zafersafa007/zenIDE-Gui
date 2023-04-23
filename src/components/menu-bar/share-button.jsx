@@ -81,7 +81,7 @@ ShareButton.propTypes = {
 
 ShareButton.defaultProps = {
     onClick: () => {
-        // const savedCode = localStorage.getItem("PM_API_AUTHPRIVATECODE");
+        const savedCode = "";
         (function () {
             return new Promise((resolve, reject) => {
                 fetch(API_URL + "users/usernameFromCode?privateCode=" + savedCode).then(res => res.json().then(json => {
