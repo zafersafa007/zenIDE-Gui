@@ -523,7 +523,16 @@ export default [
             />
         ),
         featured: true,
-        collaborator: 'DT (TurboWarp Extensions Repo)'
+        collaborator: 'DT-is-not-available'
+    },
+    {
+        name: 'Clipping and Blending',
+        extensionId: 'xeltallivclipblend',
+        iconURL: 'https://extensions.turbowarp.org/images/Xeltalliv/clippingblending.svg',
+        tags: ["turbowarp"],
+        description: "Clipping outside of a specified rectangular area and additive color blending.",
+        featured: true,
+        collaborator: 'Vadik1'
     },
     {
         name: 'LMS Utilities',
