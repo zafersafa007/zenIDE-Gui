@@ -694,6 +694,13 @@ const sensing = function (isInitialSetup, isStage) {
                 </shadow>
             </value>
         </block>
+        <block type="sensing_thing_has_number">
+            <value name="TEXT1">
+                <shadow type="text">
+                    <field name="TEXT">abc 10 def</field>
+                </shadow>
+            </value>
+        </block>
         <block type="sensing_isUpperCase">
             <value name="text">
                 <shadow type="text">
