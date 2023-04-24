@@ -97,7 +97,7 @@ import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png';
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
 import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png';
 
-// jg: default icon if you are too lazy to make one and you want me to make one instead lololol
+// jg: default icon if you are too lazy to make one and you want me to make one instead lolololol
 // gsa: olololololo
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
 
