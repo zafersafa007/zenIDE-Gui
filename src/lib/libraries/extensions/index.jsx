@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import musicIconURL from './music/music.png';
 import musicInsetIconURL from './music/music-small.svg';
@@ -97,7 +97,7 @@ import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png';
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
 import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png';
 
-// jg: default icon if you are too lazy to make one and you want me to make one instead lolololol
+// jg: default icon if you are too lazy to make one and you want me to make one instead lololololol
 // gsa: olololololo
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
 
