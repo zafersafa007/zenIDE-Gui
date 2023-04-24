@@ -112,6 +112,13 @@ const messages = defineMessages({
         defaultMessage: 'timer',
         description: 'Label for the timer monitor when shown on the stage',
         id: 'gui.opcodeLabels.timer'
+    },
+
+    // Control
+    control_get_counter: {
+        defaultMessage: 'counter',
+        description: 'Label for the counter monitor when shown on the stage',
+        id: 'gui.opcodeLabels.counter'
     }
 });
 
@@ -154,7 +161,10 @@ class OpcodeLabels {
             sensing_loudness: {category: 'sensing'},
             sensing_username: {category: 'sensing'},
             sensing_current: {category: 'sensing'},
-            sensing_timer: {category: 'sensing'}
+            sensing_timer: {category: 'sensing'},
+
+            // Control
+            control_get_counter: {category: 'control'}
         };
 
         // Initialize opcodeMap with default strings
@@ -228,6 +238,9 @@ class OpcodeLabels {
             }
         };
         this._opcodeMap.sensing_timer.labelFn = () => this._translator(messages.sensing_timer);
+
+        // Control
+        this._opcodeMap.control_get_counter.labelFn = () => this._translator(messages.control_get_counter);
     }
 
     /**

@@ -22,6 +22,7 @@ const categories = {
     looks: '#9966FF',
     motion: '#4C97FF',
     list: '#FC662C',
+    control: '#FFAB19',
     extension: '#0FBD8C'
 };
 
