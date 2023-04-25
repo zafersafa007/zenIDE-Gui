@@ -443,6 +443,34 @@ export default function (vm) {
         this.jsonInit(json);
     };
 
+    ScratchBlocks.Blocks.control_run_as_sprite_menu.init = function () {
+        const json = jsonForMenuBlock('RUN_AS_OPTION', spriteMenu, controlColors, [
+            ['Stage', '_stage_']
+        ]);
+        this.jsonInit(json);
+    };
+
+    ScratchBlocks.Blocks.control_stop_sprite_menu.init = function () {
+        const json = jsonForMenuBlock('STOP_OPTION', spriteMenu, controlColors, [
+            ['Stage', '_stage_']
+        ]);
+        this.jsonInit(json);
+    };
+
+    ScratchBlocks.Blocks.looks_getOtherSpriteVisible_menu.init = function () {
+        const json = jsonForMenuBlock('VISIBLE_OPTION', spriteMenu, looksColors, [
+            ["this sprite", '_myself_']
+        ]);
+        this.jsonInit(json);
+    };
+
+    ScratchBlocks.Blocks.looks_changeVisibilityOfSprite_menu.init = function () {
+        const json = jsonForMenuBlock('VISIBLE_OPTION', spriteMenu, looksColors, [
+            ["this sprite", '_myself_']
+        ]);
+        this.jsonInit(json);
+    };
+
     ScratchBlocks.VerticalFlyout.getCheckboxState = function (blockId) {
         const monitoredBlock = vm.runtime.monitorBlocks._blocks[blockId];
         return monitoredBlock ? monitoredBlock.isMonitored : false;

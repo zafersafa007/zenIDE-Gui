@@ -249,6 +249,7 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                 </value>
             </block>
             <block type="looks_nextbackdrop"/>
+            <block type="looks_previousbackdrop"/>
         ` : `
             <block id="${targetId}_switchcostumeto" type="looks_switchcostumeto">
                 <value name="COSTUME">
@@ -258,6 +259,7 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                 </value>
             </block>
             <block type="looks_nextcostume"/>
+            <block type="looks_previouscostume"/>
             <block type="looks_switchbackdropto">
                 <value name="BACKDROP">
                     <shadow type="looks_backdrops">
@@ -266,6 +268,7 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                 </value>
             </block>
             <block type="looks_nextbackdrop"/>
+            <block type="looks_previousbackdrop"/>
             ${blockSeparator}
             <block type="looks_changesizeby">
                 <value name="CHANGE">
@@ -315,8 +318,18 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
         <block type="looks_getEffectValue"/>
         ${blockSeparator}
         ${isStage ? '' : `
+            <block type="looks_changeVisibilityOfSprite">
+                <value name="VISIBLE_OPTION">
+                    <shadow type="looks_changeVisibilityOfSprite_menu"/>
+                </value>
+            </block>
             <block type="looks_show"/>
             <block type="looks_hide"/>
+            <block type="looks_getOtherSpriteVisible">
+                <value name="VISIBLE_OPTION">
+                    <shadow type="looks_getOtherSpriteVisible_menu"/>
+                </value>
+            </block>
             <block type="looks_getSpriteVisible"/>
             ${blockSeparator}
             <block type="looks_gotofrontback"/>
@@ -544,7 +557,18 @@ const control = function (isInitialSetup, isStage) {
         </block>
         ${blockSeparator}
         <block type="control_backToGreenFlag"></block>
+        <block type="control_stop_sprite">
+            <value name="STOP_OPTION">
+                <shadow type="control_stop_sprite_menu"/>
+            </value>
+        </block>
         <block type="control_stop"/>
+        ${blockSeparator}
+        <block type="control_run_as_sprite">
+            <value name="RUN_AS_OPTION">
+                <shadow type="control_run_as_sprite_menu"/>
+            </value>
+        </block>
         ${blockSeparator}
         ${isStage ? `
             <block type="control_create_clone_of">
@@ -921,6 +945,18 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
+        <block type="operator_gtorequal">
+            <value name="OPERAND1">
+                <shadow type="text">
+                    <field name="TEXT"/>
+                </shadow>
+            </value>
+            <value name="OPERAND2">
+                <shadow type="text">
+                    <field name="TEXT">50</field>
+                </shadow>
+            </value>
+        </block>
         <block type="operator_lt">
             <value name="OPERAND1">
                 <shadow type="text">
@@ -933,7 +969,31 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
+        <block type="operator_ltorequal">
+            <value name="OPERAND1">
+                <shadow type="text">
+                    <field name="TEXT"/>
+                </shadow>
+            </value>
+            <value name="OPERAND2">
+                <shadow type="text">
+                    <field name="TEXT">50</field>
+                </shadow>
+            </value>
+        </block>
         <block type="operator_equals">
+            <value name="OPERAND1">
+                <shadow type="text">
+                    <field name="TEXT"/>
+                </shadow>
+            </value>
+            <value name="OPERAND2">
+                <shadow type="text">
+                    <field name="TEXT">50</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_notequal">
             <value name="OPERAND1">
                 <shadow type="text">
                     <field name="TEXT"/>
@@ -969,6 +1029,23 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
+            <block type="operator_join3">
+                <value name="STRING1">
+                    <shadow type="text">
+                        <field name="TEXT">${apple} </field>
+                    </shadow>
+                </value>
+                <value name="STRING2">
+                    <shadow type="text">
+                        <field name="TEXT">${banana} </field>
+                    </shadow>
+                </value>
+                <value name="STRING3">
+                    <shadow type="text">
+                        <field name="TEXT">pear</field>
+                    </shadow>
+                </value>
+            </block>
             <block type="operator_indexOfTextInText">
                 <value name="TEXT1">
                     <shadow type="text">
@@ -978,6 +1055,30 @@ const operators = function (isInitialSetup) {
                 <value name="TEXT2">
                     <shadow type="text">
                         <field name="TEXT">Hello world!</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="operator_lastIndexOfTextInText">
+                <value name="TEXT1">
+                    <shadow type="text">
+                        <field name="TEXT">world</field>
+                    </shadow>
+                </value>
+                <value name="TEXT2">
+                    <shadow type="text">
+                        <field name="TEXT">Hello world!</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="operator_countAppearTimes">
+                <value name="TEXT1">
+                    <shadow type="text">
+                        <field name="TEXT">a</field>
+                    </shadow>
+                </value>
+                <value name="TEXT2">
+                    <shadow type="text">
+                        <field name="TEXT">abc abc abc</field>
                     </shadow>
                 </value>
             </block>
@@ -1041,6 +1142,30 @@ const operators = function (isInitialSetup) {
                 </shadow>
               </value>
             </block>
+            <block type="operator_textIncludesLetterFrom" id="operator_textIncludesLetterFrom">
+              <value name="TEXT1">
+                <shadow type="text">
+                  <field name="TEXT">abcdef</field>
+                </shadow>
+              </value>
+              <value name="TEXT2">
+                <shadow type="text">
+                  <field name="TEXT">fgh</field>
+                </shadow>
+              </value>
+            </block>
+            <block type="operator_textStartsOrEndsWith" id="operator_textStartsOrEndsWith">
+              <value name="TEXT1">
+                <shadow type="text">
+                  <field name="TEXT">abcdef</field>
+                </shadow>
+              </value>
+              <value name="TEXT2">
+                <shadow type="text">
+                  <field name="TEXT">abc</field>
+                </shadow>
+              </value>
+            </block>
             <block type="operator_replaceAll">
                 <value name="text">
                     <shadow type="text">
@@ -1055,6 +1180,23 @@ const operators = function (isInitialSetup) {
                 <value name="res">
                     <shadow type="text">
                         <field name="TEXT">bar</field>
+                    </shadow>
+                </value>
+            </block>
+            <block type="operator_replaceFirst">
+                <value name="text">
+                    <shadow type="text">
+                        <field name="TEXT">bar bar doo</field>
+                    </shadow>
+                </value>
+                <value name="term">
+                    <shadow type="text">
+                        <field name="TEXT">bar</field>
+                    </shadow>
+                </value>
+                <value name="res">
+                    <shadow type="text">
+                        <field name="TEXT">foo</field>
                     </shadow>
                 </value>
             </block>
