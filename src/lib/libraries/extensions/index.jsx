@@ -512,7 +512,7 @@ export default [
     },
     {
         name: 'Camera Controls',
-        extensionId: 'https://extensions.turbowarp.org/DT/cameracontrols.js',
+        extensionId: 'DTcameracontrols',
         iconURL: 'https://extensions.turbowarp.org/images/DT/cameracontrols.svg',
         tags: ['turbowarp'],
         description: (
