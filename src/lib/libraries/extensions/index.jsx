@@ -97,7 +97,7 @@ import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png';
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
 import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png';
 
-// jg: default icon if you are too lazy to make one and you want me to make one instead lolololololololol
+// jg: default icon if you are too lazy to make one and you want me to make one instead lololololololol
 // gsa: olololololo
 // import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
 
@@ -512,7 +512,7 @@ export default [
     },
     {
         name: 'Camera Controls',
-        extensionId: 'https://penguinmod.site/PenguinMod-Extensions/turbowarp/DT/cameracontrols.js',
+        extensionId: 'https://extensions.turbowarp.org/DT/cameracontrols.js',
         iconURL: 'https://extensions.turbowarp.org/images/DT/cameracontrols.svg',
         tags: ['turbowarp'],
         description: (
