@@ -3838,6 +3838,20 @@
         "rate": 44100
     },
     {
+        "name": "Scream3",
+        "tags": [
+            "voice",
+            "wacky",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/scream3.mp3"
+    },
+    {
         "name": "Screech",
         "tags": [
             "animals",
