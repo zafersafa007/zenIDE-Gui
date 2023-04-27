@@ -131,6 +131,16 @@ export default defineMessages({
         description: 'Tag for filtering a library for letters',
         id: 'gui.libraryTags.letters'
     },
+    swords: {
+        defaultMessage: 'Swords',
+        description: 'Tag for filtering a library for swords',
+        id: 'gui.libraryTags.swords'
+    },
+    guns: {
+        defaultMessage: 'Guns',
+        description: 'Tag for filtering a library for guns',
+        id: 'gui.libraryTags.guns'
+    },
     penguinmod: {
         defaultMessage: 'PenguinMod',
         description: 'Tag for filtering a library by PenguinMod',

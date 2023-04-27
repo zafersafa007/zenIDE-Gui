@@ -133,7 +133,10 @@
     },
     {
         "name": "Afro String",
-        "tags": [],
+        "tags": [
+            "effects",
+            "music"
+        ],
         "assetId": "3477ccfde26047eeb93ff43a21ac7d3d",
         "dataFormat": "",
         "md5ext": "3477ccfde26047eeb93ff43a21ac7d3d.wav",
@@ -309,8 +312,25 @@
         "rate": 22050
     },
     {
+        "name": "Bamboo Whoosh",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "assetId": "da6abd4eb96a9a9fe1cd7d97688d5aa9",
+        "dataFormat": "mpeg",
+        "md5ext": "da6abd4eb96a9a9fe1cd7d97688d5aa9.mp3",
+        "sampleCount": 19580400,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/woosh.mp3"
+    },
+    {
         "name": "Bark",
-        "tags": [],
+        "tags": [
+            "animals",
+            "dog"
+        ],
         "assetId": "cd8fa8390b0efdd281882533fbfcfcfb",
         "dataFormat": "",
         "md5ext": "cd8fa8390b0efdd281882533fbfcfcfb.wav",
@@ -331,7 +351,12 @@
     },
     {
         "name": "Bass Beatbox",
-        "tags": [],
+        "tags": [
+            "voice",
+            "human",
+            "music",
+            "hiphop"
+        ],
         "assetId": "28153621d293c86da0b246d314458faf",
         "dataFormat": "",
         "md5ext": "28153621d293c86da0b246d314458faf.wav",
@@ -367,8 +392,26 @@
         "rate": 44100
     },
     {
+        "name": "Beep",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "assetId": "def40378587aedc70331e645e3ed9646",
+        "dataFormat": "mpeg",
+        "md5ext": "def40378587aedc70331e645e3ed9646.mp3",
+        "sampleCount": 16493400,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/censorbeep.mp3"
+    },
+    {
         "name": "Bell Cymbal",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instrument",
+            "instruments"
+        ],
         "assetId": "efddec047de95492f775a1b5b2e8d19e",
         "dataFormat": "",
         "md5ext": "efddec047de95492f775a1b5b2e8d19e.wav",
@@ -402,7 +445,10 @@
     },
     {
         "name": "Bird",
-        "tags": [],
+        "tags": [
+            "animals",
+            "bird"
+        ],
         "assetId": "18bd4b634a3f992a16b30344c7d810e0",
         "dataFormat": "",
         "md5ext": "18bd4b634a3f992a16b30344c7d810e0.wav",
@@ -411,7 +457,9 @@
     },
     {
         "name": "Birthday",
-        "tags": [],
+        "tags": [
+            "music"
+        ],
         "assetId": "89691587a169d935a58c48c3d4e78534",
         "dataFormat": "",
         "md5ext": "89691587a169d935a58c48c3d4e78534.wav",
@@ -509,7 +557,9 @@
     },
     {
         "name": "Bubbles",
-        "tags": [],
+        "tags": [
+            "effects"
+        ],
         "assetId": "78b0be9c9c2f664158b886bc7e794095",
         "dataFormat": "",
         "md5ext": "78b0be9c9c2f664158b886bc7e794095.wav",
@@ -517,8 +567,26 @@
         "rate": 44100
     },
     {
+        "name": "Burp",
+        "tags": [
+            "effects",
+            "voice",
+            "human",
+            "penguinmod"
+        ],
+        "assetId": "68c0be2effb06199717003e0a00bca5f",
+        "dataFormat": "mpeg",
+        "md5ext": "68c0be2effb06199717003e0a00bca5f.mp3",
+        "sampleCount": 5997600,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/smallburp.mp3"
+    },
+    {
         "name": "Buzz Whir",
-        "tags": [],
+        "tags": [
+            "effects"
+        ],
         "assetId": "d4f76ded6bccd765958d15b63804de55",
         "dataFormat": "",
         "md5ext": "d4f76ded6bccd765958d15b63804de55.wav",
@@ -712,7 +780,11 @@
     },
     {
         "name": "C2 Guitar",
-        "tags": [],
+        "tags": [
+            "music",
+            "instruments",
+            "notes"
+        ],
         "assetId": "c8d2851bd99d8e0ce6c1f05e4acc7f34",
         "dataFormat": "",
         "md5ext": "c8d2851bd99d8e0ce6c1f05e4acc7f34.wav",
@@ -788,13 +860,31 @@
         "tags": [
             "transportation",
             "ambience",
-            "background"
+            "background",
+            "effects"
         ],
         "assetId": "c21a5ad00b40b5ce923e56c905c94a9f",
         "dataFormat": "",
         "md5ext": "c21a5ad00b40b5ce923e56c905c94a9f.wav",
         "sampleCount": 339968,
         "rate": 44100
+    },
+    {
+        "name": "Car Passing2",
+        "tags": [
+            "effects",
+            "transportation",
+            "ambience",
+            "background",
+            "penguinmod"
+        ],
+        "assetId": "c4cc0078550f601976944884e9c1cf3b",
+        "dataFormat": "mpeg",
+        "md5ext": "c4cc0078550f601976944884e9c1cf3b.mp3",
+        "sampleCount": 217192500,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/carpass.mp3"
     },
     {
         "name": "Car Vroom",
@@ -885,6 +975,21 @@
         "rate": 22050
     },
     {
+        "name": "Chirping",
+        "tags": [
+            "animals",
+            "bird",
+            "penguinmod"
+        ],
+        "assetId": "17248821948ccc421923839011251f32",
+        "dataFormat": "mpeg",
+        "md5ext": "17248821948ccc421923839011251f32.mp3",
+        "sampleCount": 185837400,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/chirping.mp3"
+    },
+    {
         "name": "Chomp",
         "tags": [
             "effects",
@@ -921,8 +1026,36 @@
         "rate": 22050
     },
     {
+        "name": "Clang2",
+        "tags": [
+            "effects",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/clang2.mp3"
+    },
+    {
+        "name": "Clang3",
+        "tags": [
+            "effects",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/clang3.mp3"
+    },
+    {
         "name": "Clap Beatbox",
-        "tags": [],
+        "tags": [
+            "voice"
+        ],
         "assetId": "abc70bb390f8e55f22f32265500d814a",
         "dataFormat": "",
         "md5ext": "abc70bb390f8e55f22f32265500d814a.wav",
@@ -992,6 +1125,34 @@
         "rate": 22050
     },
     {
+        "name": "Coin2",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/coin2.mp3"
+    },
+    {
+        "name": "Coin3",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/coin3.mp3"
+    },
+    {
         "name": "Collect",
         "tags": [
             "effects",
@@ -1005,8 +1166,40 @@
         "rate": 22050
     },
     {
+        "name": "Collect2",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "penguinmod",
+            "banban"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/banban.mp3"
+    },
+    {
+        "name": "Collect3",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/collect2.mp3"
+    },
+    {
         "name": "Computer Beep",
-        "tags": [],
+        "tags": [
+            "effects",
+            "electronic"
+        ],
         "assetId": "28c76b6bebd04be1383fe9ba4933d263",
         "dataFormat": "",
         "md5ext": "28c76b6bebd04be1383fe9ba4933d263.wav",
@@ -1073,7 +1266,11 @@
     },
     {
         "name": "Crash Beatbox",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instruments",
+            "instrument"
+        ],
         "assetId": "725e29369e9138a43f11e0e5eb3eb562",
         "dataFormat": "",
         "md5ext": "725e29369e9138a43f11e0e5eb3eb562.wav",
@@ -1082,7 +1279,11 @@
     },
     {
         "name": "Crash Cymbal",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instruments",
+            "instrument"
+        ],
         "assetId": "f2c47a46f614f467a7ac802ed9ec3d8e",
         "dataFormat": "",
         "md5ext": "f2c47a46f614f467a7ac802ed9ec3d8e.wav",
@@ -1485,7 +1686,8 @@
         "name": "Deep Underground",
         "tags": [
             "music",
-            "themes"
+            "themes",
+            "penguinmod"
         ],
         "assetId": "0f162a753dca8fbdfb243c5aa4b70892",
         "dataFormat": "mpeg",
@@ -1567,6 +1769,21 @@
         "rate": 22050
     },
     {
+        "name": "Door Open",
+        "tags": [
+            "effects",
+            "home",
+            "penguinmod"
+        ],
+        "assetId": "8ecf0570b205889eaa07c23ca2349bf9",
+        "dataFormat": "mpeg",
+        "md5ext": "8ecf0570b205889eaa07c23ca2349bf9.mp3",
+        "sampleCount": 13318200,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/dooropen.mp3"
+    },
+    {
         "name": "Drip Drop",
         "tags": [
             "music",
@@ -1609,7 +1826,11 @@
     },
     {
         "name": "Drum Bass1",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instruments",
+            "instrument"
+        ],
         "assetId": "48328c874353617451e4c7902cc82817",
         "dataFormat": "",
         "md5ext": "48328c874353617451e4c7902cc82817.wav",
@@ -1618,7 +1839,11 @@
     },
     {
         "name": "Drum Bass2",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instruments",
+            "instrument"
+        ],
         "assetId": "711a1270d1cf2e5de9b145ee539213e4",
         "dataFormat": "adpcm",
         "md5ext": "711a1270d1cf2e5de9b145ee539213e4.wav",
@@ -1627,7 +1852,11 @@
     },
     {
         "name": "Drum Bass3",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instruments",
+            "instrument"
+        ],
         "assetId": "c21704337b16359ea631b5f8eb48f765",
         "dataFormat": "",
         "md5ext": "c21704337b16359ea631b5f8eb48f765.wav",
@@ -2160,7 +2389,8 @@
     {
         "name": "Fard",
         "tags": [
-            "effects"
+            "effects",
+            "penguinmod"
         ],
         "assetId": "97056ee8e57305ef80971cf29d332c86",
         "dataFormat": "mpeg",
@@ -2185,7 +2415,11 @@
     },
     {
         "name": "Flam Snare",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instruments",
+            "instrument"
+        ],
         "assetId": "3b6cce9f8c56c0537ca61eee3945cd1d",
         "dataFormat": "",
         "md5ext": "3b6cce9f8c56c0537ca61eee3945cd1d.wav",
@@ -2450,7 +2684,8 @@
         "name": "Gryrow",
         "tags": [
             "music",
-            "themes"
+            "themes",
+            "penguinmod"
         ],
         "assetId": "683650166591b98bf1c3033b530a6f94",
         "dataFormat": "mpeg",
@@ -2500,6 +2735,58 @@
         "rate": 44100
     },
     {
+        "name": "Gunshot 1",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/gunshot1.mp3"
+    },
+    {
+        "name": "Gunshot 2",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/gunshot2.mp3"
+    },
+    {
+        "name": "Gunshot 3",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/gunshot3.mp3"
+    },
+    {
+        "name": "Gunshot 4",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/gunshot4.mp3"
+    },
+    {
         "name": "Hand Clap",
         "tags": [
             "human",
@@ -2538,7 +2825,9 @@
     },
     {
         "name": "Hi Beatbox",
-        "tags": [],
+        "tags": [
+            "voice"
+        ],
         "assetId": "5a07847bf246c227204728b05a3fc8f3",
         "dataFormat": "",
         "md5ext": "5a07847bf246c227204728b05a3fc8f3.wav",
@@ -2599,7 +2888,11 @@
     },
     {
         "name": "High Tom",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instrument",
+            "instruments"
+        ],
         "assetId": "d623f99b3c8d33932eb2c6c9cfd817c5",
         "dataFormat": "",
         "md5ext": "d623f99b3c8d33932eb2c6c9cfd817c5.wav",
@@ -2634,7 +2927,11 @@
     },
     {
         "name": "Hihat Cymbal",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instrument",
+            "instruments"
+        ],
         "assetId": "2d01f60d0f20ab39facbf707899c6b2a",
         "dataFormat": "",
         "md5ext": "2d01f60d0f20ab39facbf707899c6b2a.wav",
@@ -2668,7 +2965,10 @@
     },
     {
         "name": "Horse Gallop",
-        "tags": [],
+        "tags": [
+            "animals",
+            "effects"
+        ],
         "assetId": "058a34b5fb8b57178b5322d994b6b8c8",
         "dataFormat": "",
         "md5ext": "058a34b5fb8b57178b5322d994b6b8c8.wav",
@@ -2717,6 +3017,34 @@
         "md5ext": "6fcd64d6357e4ea03704e5f96bfd35ba.wav",
         "sampleCount": 7113,
         "rate": 22050
+    },
+    {
+        "name": "Jump2",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/jump8bit.mp3"
+    },
+    {
+        "name": "Jump3",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/hop.mp3"
     },
     {
         "name": "Jungle",
@@ -2880,6 +3208,34 @@
         "md5ext": "d73eacaf5a905bf864041c7a70937ac4.wav",
         "sampleCount": 82297,
         "rate": 22050
+    },
+    {
+        "name": "Lose2",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/lose2.mp3"
+    },
+    {
+        "name": "Lose3",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/lose3.mp3"
     },
     {
         "name": "Low Boing",
@@ -3092,6 +3448,19 @@
         "rate": 22050
     },
     {
+        "name": "Nailgun",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/nailgun.mp3"
+    },
+    {
         "name": "Ocean Wave",
         "tags": [
             "effects",
@@ -3246,7 +3615,8 @@
         "name": "Pralax",
         "tags": [
             "music",
-            "themes"
+            "themes",
+            "penguinmod"
         ],
         "assetId": "12993e8ef231b8e7c51158265394d81e",
         "dataFormat": "mpeg",
@@ -3255,6 +3625,21 @@
         "rate": 44100,
         "fromPenguinModLibrary": true,
         "libraryFilePage": "sounds/pralax.mp3"
+    },
+    {
+        "name": "Radar",
+        "tags": [
+            "effects",
+            "electronic",
+            "penguinmod"
+        ],
+        "assetId": "2ca85187888f98f6ab68620867309c2d",
+        "dataFormat": "mpeg",
+        "md5ext": "2ca85187888f98f6ab68620867309c2d.mp3",
+        "sampleCount": 176135400,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/radarping.mp3"
     },
     {
         "name": "Rain",
@@ -3514,7 +3899,11 @@
     },
     {
         "name": "Sidestick Snare",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instrument",
+            "instruments"
+        ],
         "assetId": "f6868ee5cf626fc4ef3ca1119dc95592",
         "dataFormat": "",
         "md5ext": "f6868ee5cf626fc4ef3ca1119dc95592.wav",
@@ -3616,7 +4005,10 @@
     },
     {
         "name": "Snare Beatbox",
-        "tags": [],
+        "tags": [
+            "voice",
+            "human"
+        ],
         "assetId": "c642c4c00135d890998f351faec55498",
         "dataFormat": "adpcm",
         "md5ext": "c642c4c00135d890998f351faec55498.wav",
@@ -3625,7 +4017,10 @@
     },
     {
         "name": "Snare Beatbox2",
-        "tags": [],
+        "tags": [
+            "voice",
+            "human"
+        ],
         "assetId": "7ede1382b578d8fc32850b48d082d914",
         "dataFormat": "",
         "md5ext": "7ede1382b578d8fc32850b48d082d914.wav",
@@ -3788,7 +4183,11 @@
     },
     {
         "name": "Splash Cymbal",
-        "tags": [],
+        "tags": [
+            "instrument",
+            "instruments",
+            "percussion"
+        ],
         "assetId": "9d63ed5be96c43b06492e8b4a9cea8d8",
         "dataFormat": "",
         "md5ext": "9d63ed5be96c43b06492e8b4a9cea8d8.wav",
@@ -3908,6 +4307,71 @@
         "rate": 44100
     },
     {
+        "name": "Sword Unsheathe 1",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_unleash1.mp3"
+    },
+    {
+        "name": "Sword Unsheathe 2",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_unleash2.mp3"
+    },
+    {
+        "name": "Sword Unsheathe 3",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_unleash3.mp3"
+    },
+    {
+        "name": "Sword Unsheathe 4",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_unleash4.mp3"
+    },
+    {
+        "name": "Sword Unsheathe 5",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_unleash5.mp3"
+    },
+    {
         "name": "Tada",
         "tags": [
             "effects",
@@ -3949,12 +4413,30 @@
     },
     {
         "name": "Tap Snare",
-        "tags": [],
+        "tags": [
+            "percussion",
+            "instrument",
+            "instruments"
+        ],
         "assetId": "d55b3954d72c6275917f375e49b502f3",
         "dataFormat": "",
         "md5ext": "d55b3954d72c6275917f375e49b502f3.wav",
         "sampleCount": 6592,
         "rate": 44100
+    },
+    {
+        "name": "Tear",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "assetId": "b0e5e9fc583d414a2d99ad0fa4ffe53f",
+        "dataFormat": "mpeg",
+        "md5ext": "b0e5e9fc583d414a2d99ad0fa4ffe53f.mp3",
+        "sampleCount": 26107200,
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/tear.mp3"
     },
     {
         "name": "Techno",
@@ -4236,7 +4718,11 @@
     },
     {
         "name": "Wah Beatbox",
-        "tags": [],
+        "tags": [
+            "music",
+            "human",
+            "voice"
+        ],
         "assetId": "9021b7bb06f2399f18e2db4fb87095dc",
         "dataFormat": "",
         "md5ext": "9021b7bb06f2399f18e2db4fb87095dc.wav",
@@ -4331,6 +4817,34 @@
         "rate": 22050
     },
     {
+        "name": "Win2",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/win2.mp3"
+    },
+    {
+        "name": "Win3",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/win3.mp3"
+    },
+    {
         "name": "Wobble",
         "tags": [
             "wacky",
@@ -4368,7 +4882,11 @@
     },
     {
         "name": "Wub Beatbox",
-        "tags": [],
+        "tags": [
+            "music",
+            "human",
+            "voice"
+        ],
         "assetId": "e1f32c057411da4237181ce72ae15d23",
         "dataFormat": "",
         "md5ext": "e1f32c057411da4237181ce72ae15d23.wav",
