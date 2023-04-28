@@ -535,15 +535,6 @@ export default [
         collaborator: 'Vadik1'
     },
     {
-        name: 'LMS Utilities',
-        extensionId: 'lmsutilsblocks',
-        iconURL: 'https://extensions.turbowarp.org/images/LukeManiaStudios/lmsutils.svg',
-        tags: ['turbowarp'],
-        description: 'Adds utility blocks such as user prompts, encoding & events.',
-        featured: true,
-        collaborator: 'LukeManiaStudios'
-    },
-    {
         name: 'CloudLink',
         extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
         tags: ['turbowarp'],
