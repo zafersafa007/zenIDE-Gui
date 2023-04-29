@@ -47,12 +47,12 @@ import runAddons from '../addons/entry';
 
 import styles from './interface.css';
 
-if (window.parent !== window) {
+// if (window.parent !== window) {
     // eslint-disable-next-line no-alert
-    alert('This page is embedding PenguinMod/TurboWarp in a way that is unsupported and will cease to function in the near future. Please read https://docs.turbowarp.org/embedding');
+    // alert('This page is embedding PenguinMod/TurboWarp in a way that is unsupported and will cease to function in the near future. Please read https://docs.turbowarp.org/embedding');
     // throw new Error('Invalid embed');
     // ha ha i love iframe
-}
+// }
 
 let announcement = null;
 if (process.env.ANNOUNCEMENT) {
@@ -120,13 +120,6 @@ const Footer = () => (
             </div>
             <div className={styles.footerColumns}>
                 <div className={styles.footerSection}>
-                    <a href="https://pages.github.com/">
-                        <FormattedMessage
-                            defaultMessage="Hosting provided by Github Pages"
-                            description="Github Pages link in footer"
-                            id="pm.footer.githubpages"
-                        />
-                    </a>
                     <a href="credits.html">
                         <FormattedMessage
                             defaultMessage="Credits"

@@ -112,6 +112,10 @@ class LibraryItem extends React.PureComponent {
             <LibraryItemComponent
                 bluetoothRequired={this.props.bluetoothRequired}
                 collaborator={this.props.collaborator}
+                twDeveloper={this.props.twDeveloper}
+                credits={this.props.credits}
+                extDeveloper={this.props.extDeveloper}
+                eventSubmittor={this.props.eventSubmittor}
                 description={this.props.description}
                 disabled={this.props.disabled}
                 extensionId={this.props.extensionId}
@@ -141,6 +145,10 @@ class LibraryItem extends React.PureComponent {
 LibraryItem.propTypes = {
     bluetoothRequired: PropTypes.bool,
     collaborator: PropTypes.string,
+    twDeveloper: PropTypes.string,
+    extDeveloper: PropTypes.string,
+    credits: PropTypes.string,
+    eventSubmittor: PropTypes.string,
     description: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.node

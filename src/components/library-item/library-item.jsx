@@ -58,7 +58,15 @@ class LibraryItemComponent extends React.PureComponent {
                     <br />
                     <span className={styles.featuredDescription}>{this.props.description}</span>
                 </div>
-                {this.props.bluetoothRequired || this.props.internetConnectionRequired || this.props.collaborator ? (
+                {
+                    this.props.bluetoothRequired ||
+                    this.props.internetConnectionRequired ||
+                    this.props.collaborator ||
+                    this.props.extDeveloper ||
+                    this.props.twDeveloper ||
+                    this.props.eventSubmittor ||
+                    this.props.credits
+                    ? (
                     <div className={styles.featuredExtensionMetadata}>
                         <div className={styles.featuredExtensionRequirement}>
                             {this.props.bluetoothRequired || this.props.internetConnectionRequired ? (
@@ -97,6 +105,54 @@ class LibraryItemComponent extends React.PureComponent {
                                         className={styles.featuredExtensionMetadataDetail}
                                     >
                                         {this.props.collaborator}
+                                    </div>
+                                </div>
+                            ) : null}
+                            {this.props.twDeveloper ? (
+                                <div>
+                                    <div>
+                                        Originally for TurboWarp by
+                                    </div>
+                                    <div
+                                        className={styles.featuredExtensionMetadataDetail}
+                                    >
+                                        {this.props.twDeveloper}
+                                    </div>
+                                </div>
+                            ) : null}
+                            {this.props.extDeveloper ? (
+                                <div>
+                                    <div>
+                                        Created by
+                                    </div>
+                                    <div
+                                        className={styles.featuredExtensionMetadataDetail}
+                                    >
+                                        {this.props.extDeveloper}
+                                    </div>
+                                </div>
+                            ) : null}
+                            {this.props.eventSubmittor ? (
+                                <div>
+                                    <div>
+                                        Event Submission by
+                                    </div>
+                                    <div
+                                        className={styles.featuredExtensionMetadataDetail}
+                                    >
+                                        {this.props.eventSubmittor}
+                                    </div>
+                                </div>
+                            ) : null}
+                            {this.props.credits ? (
+                                <div>
+                                    <div>
+                                        Credits
+                                    </div>
+                                    <div
+                                        className={styles.featuredExtensionMetadataDetail}
+                                    >
+                                        {this.props.credits}
                                     </div>
                                 </div>
                             ) : null}
@@ -152,6 +208,10 @@ class LibraryItemComponent extends React.PureComponent {
 LibraryItemComponent.propTypes = {
     bluetoothRequired: PropTypes.bool,
     collaborator: PropTypes.string,
+    credits: PropTypes.string,
+    twDeveloper: PropTypes.string,
+    extDeveloper: PropTypes.string,
+    eventSubmittor: PropTypes.string,
     description: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.node

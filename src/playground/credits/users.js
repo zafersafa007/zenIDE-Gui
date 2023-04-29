@@ -118,7 +118,16 @@ const pmDevelopers = [
     'showierdata9978'
 ].map(fromHardcodedGithub);
 
+const extensionDevelopers = [
+    'GarboMuffin',
+    'griffpatch',
+    'DT-is-not-available',
+    'Vadik1',
+    'MikeDev'
+].map(fromHardcodedGithub)
+
 export default {
     addonDevelopers: shuffle(addonDevelopers),
-    pmDevelopers: shuffle(pmDevelopers)
+    pmDevelopers: shuffle(pmDevelopers),
+    extensionDevelopers: shuffle(extensionDevelopers)
 };

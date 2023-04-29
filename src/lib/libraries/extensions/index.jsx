@@ -241,7 +241,7 @@ export default [
     {
         name: 'Tweening',
         extensionId: 'jgTween',
-        collaborator: 'Arrow & easings.net',
+        credits: 'easings.net & Arrow',
         description: 'Smoothly animating values using different easing functions and directions.',
         iconURL: jgTweeningExtensionIcon,
         tags: ['penguinmod'],
@@ -250,7 +250,7 @@ export default [
     {
         name: 'Files',
         extensionId: 'twFiles',
-        collaborator: 'GarboMuffin',
+        twDeveloper: 'GarboMuffin',
         iconURL: filesExtensionIcon,
         tags: ['turbowarp'],
         description: 'Blocks for reading and creating files.',
@@ -262,7 +262,7 @@ export default [
         iconURL: jgStorageExtensionIcon,
         tags: ['penguinmod'],
         description: 'Store data after PenguinMod has already been closed out. Basic Server Storage is also included.',
-        collaborator: 'Fir & silvxrcat',
+        eventSubmittor: 'Fir & silvxrcat',
         featured: true
     },
     {
@@ -308,7 +308,7 @@ export default [
         iconURL: jgTimersExtensionIcon,
         tags: ['penguinmod'],
         description: 'Create different timers you can control seperately.',
-        collaborator: 'Arrow',
+        eventSubmittor: 'Arrow',
         featured: true
     },
     {
@@ -317,7 +317,7 @@ export default [
         iconURL: silvxrcatOddMessagesExtensionIcon,
         description: 'For logging and variable utilization.',
         featured: true,
-        collaborator: 'silvxrcat'
+        extDeveloper: 'silvxrcat'
     },
     {
         name: (
@@ -477,14 +477,14 @@ export default [
                 id="jgRuntime.jgRuntimeExtension.description"
             />
         ),
-        collaborator: 'TheShovel, showierdata9978',
+        credits: 'TheShovel, showierdata9978',
         featured: true
     },
     {
         name: 'Physics',
         extensionId: 'https://extensions.turbowarp.org/box2d.js',
         tags: ['turbowarp'],
-        collaborator: 'Griffpatch',
+        extDeveloper: 'Griffpatch',
         iconURL: griffpatchPhysicsThumb,
         insetIconURL: griffpatchPhysicsIcon,
         description: (
@@ -500,6 +500,7 @@ export default [
         name: 'GamePad',
         extensionId: 'Gamepad',
         tags: ['turbowarp'],
+        twDeveloper: "GarboMuffin",
         iconURL: gp,
         description: (
             <FormattedMessage
@@ -523,7 +524,7 @@ export default [
             />
         ),
         featured: true,
-        collaborator: 'DT-is-not-available'
+        twDeveloper: 'DT-is-not-available'
     },
     {
         name: 'Clipping and Blending',
@@ -532,7 +533,7 @@ export default [
         tags: ['turbowarp'],
         description: 'Clipping outside of a specified rectangular area and additive color blending.',
         featured: true,
-        collaborator: 'Vadik1'
+        twDeveloper: 'Vadik1'
     },
     {
         name: 'CloudLink',
@@ -548,7 +549,7 @@ export default [
             />
         ),
         featured: true,
-        collaborator: 'MikeDev',
+        extDeveloper: 'MikeDev',
         internetConnectionRequired: false,
         incompatibleWithScratch: false
     },
@@ -566,7 +567,8 @@ export default [
         ),
         featured: true,
         internetConnectionRequired: false,
-        incompatibleWithScratch: false
+        incompatibleWithScratch: false,
+        twDeveloper: "GarboMuffin"
     },
     {
         name: 'Mouse Cursor',
@@ -582,7 +584,8 @@ export default [
         ),
         featured: true,
         internetConnectionRequired: false,
-        incompatibleWithScratch: false
+        incompatibleWithScratch: false,
+        twDeveloper: "GarboMuffin"
     },
     {
         name: 'Scratch Authentication',
@@ -609,6 +612,7 @@ export default [
             />
         ),
         extensionId: 'tw',
+        twDeveloper: "GarboMuffin",
         tags: ['turbowarp'],
         iconURL: twIcon,
         description: (

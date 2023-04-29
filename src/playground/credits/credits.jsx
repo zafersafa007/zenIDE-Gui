@@ -67,6 +67,10 @@ const Credits = () => (
                 Thank you to everyone who worked on Scratch and TurboWarp,
                 you have made many people finally be able to make whatever they can imagine.
             </p>
+            <a href="https://scratch.mit.edu/donate">
+                Donate to support Scratch.
+            </a>
+            <br></br><br></br>
             <a href="https://github.com/sponsors/GarboMuffin">
                 Donate to support TurboWarp.
             </a>
@@ -76,7 +80,7 @@ const Credits = () => (
                 A list is below, but you can also check <a href="https://github.com/orgs/PenguinMod/people">our GitHub</a> incase this one is out of date.
             </p>
             <UserList users={UserData.pmDevelopers} />
-            <p>The list order is randomized.</p>
+            <p><i>The list order is randomized on each refresh.</i></p>
         </section>
         <section>
             <h2>GitHub Pages</h2>
@@ -98,6 +102,21 @@ const Credits = () => (
             <h1>PenguinMod & TurboWarp</h1>
         </section>
         <section>
+            <h2>Extensions</h2>
+            <p><i>
+                If you are an extension developer who wants their extension removed from PenguinMod's extensions list,
+                contact us as soon as you can. We'll get it removed as soon as we are able to.
+            </i></p>
+            <p>
+                We use some MIT licensed extensions from TurboWarp as they are really useful!
+                Check out the full list of TurboWarp extensions <a href="https://extensions.turbowarp.org/">here</a>,
+                but we still need to credit these people!
+                Check them out below:
+            </p>
+            <UserList users={UserData.extensionDevelopers} />
+            <p><i>The list order is randomized on each refresh.</i></p>
+        </section>
+        <section>
             <h2>Addons</h2>
             <p>
                 Addons are mostly taken from <a href="https://scratchaddons.com/">Scratch Addons</a>,
@@ -105,7 +124,7 @@ const Credits = () => (
                 Here are the developers that made the current addons available.
             </p>
             <UserList users={UserData.addonDevelopers} />
-            <p>The list order is randomized.</p>
+            <p><i>The list order is randomized on each refresh.</i></p>
         </section>
         <section>
             <h1>TurboWarp</h1>
@@ -113,6 +132,12 @@ const Credits = () => (
         <section>
             <p>
                 The TurboWarp project is made possible by the work of many volunteers.
+                <br></br>
+                You can check out TurboWarp's individual credits <a href="https://turbowarp.org/credits.html">here</a>.
+                <br></br>
+                <a href="https://github.com/sponsors/GarboMuffin">
+                    Donate to support TurboWarp.
+                </a>
             </p>
         </section>
         {/* RIP Fosshost */}
@@ -150,6 +175,10 @@ const Credits = () => (
             <p>
                 More than 100 people have helped translate TurboWarp and its addons into many languages —
                 far more than we could hope to list here.
+            </p>
+            <p>
+                Unfortunately due to PenguinMod's small size, we have decided to mainly focus on English.
+                You can still use PenguinMod with the other languages, but they will not be updated at this time.
             </p>
         </section>
         <section>

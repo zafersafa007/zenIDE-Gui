@@ -229,6 +229,10 @@ class LibraryComponent extends React.Component {
                         <LibraryItem
                             bluetoothRequired={dataItem.bluetoothRequired}
                             collaborator={dataItem.collaborator}
+                            extDeveloper={dataItem.extDeveloper}
+                            credits={dataItem.credits}
+                            twDeveloper={dataItem.twDeveloper}
+                            eventSubmittor={dataItem.eventSubmittor}
                             description={dataItem.description}
                             disabled={dataItem.disabled}
                             extensionId={dataItem.extensionId}
