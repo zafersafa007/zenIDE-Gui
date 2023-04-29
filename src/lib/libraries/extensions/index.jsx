@@ -484,7 +484,7 @@ export default [
         name: 'Physics',
         extensionId: 'https://extensions.turbowarp.org/box2d.js',
         tags: ['turbowarp'],
-        extDeveloper: 'Griffpatch',
+        extDeveloper: 'griffpatch',
         iconURL: griffpatchPhysicsThumb,
         insetIconURL: griffpatchPhysicsIcon,
         description: (
