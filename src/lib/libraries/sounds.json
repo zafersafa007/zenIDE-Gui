@@ -3006,6 +3006,20 @@
         "rate": 22050
     },
     {
+        "name": "Intricate Wireframe",
+        "tags": [
+            "music",
+            "loops",
+            "electronic",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/intricate-wireframe.mp3"
+    },
+    {
         "name": "Jump",
         "tags": [
             "effects",
