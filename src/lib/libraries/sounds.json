@@ -2244,6 +2244,66 @@
         "rate": 22050
     },
     {
+        "name": "Explosion1",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/explosion1.mp3"
+    },
+    {
+        "name": "Explosion2",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/explosion2.mp3"
+    },
+    {
+        "name": "Explosion3",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/explosion3.mp3"
+    },
+    {
+        "name": "Explosion4",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/explosion4.mp3"
+    },
+    {
+        "name": "Explosion5",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/explosion5.mp3"
+    },
+    {
         "name": "F Bass",
         "tags": [
             "music",
@@ -4309,6 +4369,19 @@
         "md5ext": "d658129427a96764819cb9bd52076860.wav",
         "sampleCount": 19904,
         "rate": 44100
+    },
+    {
+        "name": "Submerge",
+        "tags": [
+            "effects",
+            "water",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/water_submerge.mp3"
     },
     {
         "name": "Suction Cup",
