@@ -97,6 +97,13 @@ const Credits = () => (
                 <a href="https://penguinmod.site">penguinmod.site</a> (and any subdomains) are currently provided by NotHouse.
                 Currently no link to any known profile of theirs is publicly known.
             </p>
+            <h2>Sound Effects</h2>
+            <p>
+                PenguinMod has added some more sounds to the Sound Library.
+                All PenguinMod sounds are
+                from <a href="https://freesound.org/">https://freesound.org/</a> and <a href="https://archive.org/">https://archive.org/</a> under
+                the Public Domain license.
+            </p>
         </section>
         <section>
             <h1>PenguinMod & TurboWarp</h1>
