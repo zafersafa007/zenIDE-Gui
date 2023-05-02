@@ -14,7 +14,6 @@ import {STAGE_SIZE_MODES} from '../../lib/layout-constants';
 import fullScreenIcon from './icon--fullscreen.svg';
 import largeStageIcon from './icon--large-stage.svg';
 import smallStageIcon from './icon--small-stage.svg';
-import hideStageIcon from './icon--hide-stage.svg';
 import unFullScreenIcon from './icon--unfullscreen.svg';
 import settingsIcon from './icon--settings.svg';
 
@@ -69,7 +68,6 @@ const StageHeaderComponent = function (props) {
         onKeyPress,
         onSetStageLarge,
         onSetStageSmall,
-        onSetStageHide,
         onSetStageFull,
         onSetStageUnFull,
         onOpenSettings,
@@ -167,23 +165,6 @@ const StageHeaderComponent = function (props) {
                             className={classNames(
                                 styles.stageButton,
                                 styles.stageButtonFirst,
-                                (stageSizeMode === STAGE_SIZE_MODES.none) ? null : styles.stageButtonToggledOff
-                            )}
-                            onClick={onSetStageHide}
-                        >
-                            <img
-                                alt={"Hide the stage area"}
-                                className={styles.stageButtonIcon}
-                                draggable={false}
-                                src={hideStageIcon}
-                            />
-                        </Button>
-                    </div>
-                    <div>
-                        <Button
-                            className={classNames(
-                                styles.stageButton,
-                                styles.stageButtonFirst,
                                 (stageSizeMode === STAGE_SIZE_MODES.small) ? null : styles.stageButtonToggledOff
                             )}
                             onClick={onSetStageSmall}
@@ -266,7 +247,6 @@ StageHeaderComponent.propTypes = {
     onSetStageFull: PropTypes.func.isRequired,
     onSetStageLarge: PropTypes.func.isRequired,
     onSetStageSmall: PropTypes.func.isRequired,
-    onSetStageHide: PropTypes.func.isRequired,
     onSetStageUnFull: PropTypes.func.isRequired,
     onOpenSettings: PropTypes.func.isRequired,
     isEmbedded: PropTypes.bool.isRequired,
