@@ -10,12 +10,15 @@ import escape from 'scratch-vm/src/util/xml-escape'
 
 const decorate = text => {
     // https://github.com/LLK/scratch-www/blob/25232a06bcceeaddec8fcb24fb63a44d870cf1cf/src/lib/decorate-text.jsx
+    
+    const isPmLink = /https:\/(\/\w+\.|\/)penguinmod\.(site\/.*|site)/s
+    const escaped = escape(text)
+    const htmlText = mdParser(escaped, {
+        linksInNewTab: (link) => isPmLink.test(link)
+    })
+    const html = (<div dangerouslySetInnerHTML={{__html: htmlText}} />)
 
     // Make links clickable
-    
-    const escaped = escape(text)
-    const htmlText = mdParser(escaped)
-    const html = (<div dangerouslySetInnerHTML={{__html: htmlText}} />)
     const linkRegex = /(https?:\/\/[\w\d_\-.]{1,256}(?:\/(?:\S*[\w:/#[\]@$&'()*+=])?)?(?![^?!,:;\w\s]\S))/g;
     text = reactStringReplace(html, linkRegex, (match, i) => (
         <a
