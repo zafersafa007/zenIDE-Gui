@@ -5,18 +5,19 @@ import {FormattedMessage} from 'react-intl';
 import styles from './description.css';
 import reactStringReplace from 'react-string-replace';
 
-import mdParser from 'md'
-import escape from 'scratch-vm/src/util/xml-escape'
+import mdParser from 'md';
+import escape from 'scratch-vm/src/util/xml-escape';
 
 const decorate = text => {
     // https://github.com/LLK/scratch-www/blob/25232a06bcceeaddec8fcb24fb63a44d870cf1cf/src/lib/decorate-text.jsx
     
-    const isPmLink = /https:\/(\/\w+\.|\/)penguinmod\.(site\/.*|site)/s
-    const escaped = escape(text)
+    const isPmLink = /https:\/(\/\w+\.|\/)penguinmod\.(site\/.*|site)/sg;
+    const escaped = escape(text);
     const htmlText = mdParser(escaped, {
-        linksInNewTab: (link) => isPmLink.test(link)
-    })
-    const html = (<div dangerouslySetInnerHTML={{__html: htmlText}} />)
+        linksInNewTab: link => isPmLink.test(link)
+    });
+    // not disabling this just incase, but this is intentional
+    const html = (<div dangerouslySetInnerHTML={{__html: htmlText}} />);
 
     // Make links clickable
     const linkRegex = /(https?:\/\/[\w\d_\-.]{1,256}(?:\/(?:\S*[\w:/#[\]@$&'()*+=])?)?(?![^?!,:;\w\s]\S))/g;
@@ -49,8 +50,7 @@ const decorate = text => {
 
 const Description = ({
     instructions,
-    credits,
-    projectId
+    credits
 }) => instructions !== 'unshared' && credits !== 'unshared' && (
     <div className={styles.description}>
         {instructions ? (
@@ -85,8 +85,7 @@ const Description = ({
 
 Description.propTypes = {
     instructions: PropTypes.string,
-    credits: PropTypes.string,
-    projectId: PropTypes.string
+    credits: PropTypes.string
 };
 
 export default Description;
