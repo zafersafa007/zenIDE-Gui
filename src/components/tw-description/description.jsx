@@ -5,12 +5,19 @@ import {FormattedMessage} from 'react-intl';
 import styles from './description.css';
 import reactStringReplace from 'react-string-replace';
 
+import mdParser from 'md'
+import escape from 'scratch-vm/src/util/xml-escape'
+
 const decorate = text => {
     // https://github.com/LLK/scratch-www/blob/25232a06bcceeaddec8fcb24fb63a44d870cf1cf/src/lib/decorate-text.jsx
 
     // Make links clickable
+    
+    const escaped = escape(text)
+    const htmlText = mdParser(escaped)
+    const html = (<div dangerouslySetInnerHTML={{__html: htmlText}} />)
     const linkRegex = /(https?:\/\/[\w\d_\-.]{1,256}(?:\/(?:\S*[\w:/#[\]@$&'()*+=])?)?(?![^?!,:;\w\s]\S))/g;
-    text = reactStringReplace(text, linkRegex, (match, i) => (
+    text = reactStringReplace(html, linkRegex, (match, i) => (
         <a
             href={match}
             rel="noreferrer"
@@ -22,6 +29,14 @@ const decorate = text => {
     text = reactStringReplace(text, /#([\w-]+)/g, (match, i) => (
         <a
             href={`https://penguinmod.site/#${match}`}
+            key={match + i}
+        >{`#${match}`}</a>
+    ));
+
+    // Make @s clickable
+    text = reactStringReplace(text, /@([\w-]+)/g, (match, i) => (
+        <a
+            href={`https://scratch.mit.edu/users/${match}`}
             key={match + i}
         >{`#${match}`}</a>
     ));
