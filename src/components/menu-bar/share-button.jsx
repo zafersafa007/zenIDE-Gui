@@ -139,6 +139,10 @@ ShareButton.defaultProps = {
     onClick: (e) => {
         if (e.shiftKey && e.ctrlKey) {
             // testing for new upload system
+            let _projectName = document.title.split(" - ");
+            _projectName.pop();
+            const projectName = _projectName.join(" - ");
+
             const url = location.origin;
             window.open(`https://home.penguinmod.site/upload?name=${encodeURIComponent(projectName)}&external=${url}`, "_blank");
             return;
