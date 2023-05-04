@@ -121,7 +121,7 @@ window.addEventListener("message", async (e) => {
             uri: imageUri
         }
     }, e.origin);
-    const projectUri = await getProjectThumbnail();
+    const projectUri = await getProjectUri();
     e.source.postMessage({
         p4: {
             type: 'project',
