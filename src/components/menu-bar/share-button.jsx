@@ -79,8 +79,70 @@ ShareButton.propTypes = {
     onClick: PropTypes.func
 };
 
+const getProjectThumbnail = () => {
+    return new Promise((resolve, reject) => {
+        window.vm.renderer.requestSnapshot(uri => {
+            resolve(uri);
+        })
+    })
+}
+const getProjectUri = () => {
+    return new Promise((resolve, reject) => {
+        window.vm.saveProjectSb3().then(blob => {
+            return new Promise(resolve => {
+                const reader = new FileReader();
+                reader.onload = element => {
+                    resolve(element.target.result);
+                }
+                reader.readAsDataURL(blob);
+            })
+        }).then(resolve);
+    })
+}
+
+window.addEventListener("message", async (e) => {
+    if (!e.origin.startsWith(`https://home.penguinmod.site`)) {
+        return;
+    }
+
+    if (!e.data.p4) {
+        return
+    }
+
+    const packagerData = e.data.p4;
+    if (packagerData.type !== 'validate') {
+        return;
+    }
+
+    const imageUri = await getProjectThumbnail();
+    e.source.postMessage({
+        p4: {
+            type: 'image',
+            uri: imageUri
+        }
+    }, e.origin);
+    const projectUri = await getProjectThumbnail();
+    e.source.postMessage({
+        p4: {
+            type: 'project',
+            uri: projectUri
+        }
+    }, e.origin);
+    e.source.postMessage({
+        p4: {
+            type: 'finished'
+        }
+    }, e.origin);
+})
+
 ShareButton.defaultProps = {
-    onClick: () => {
+    onClick: (e) => {
+        if (e.shiftKey && e.ctrlKey) {
+            // testing for new upload system
+            const url = location.origin;
+            window.open(`https://home.penguinmod.site/upload?name=${encodeURIComponent(projectName)}&external=${url}`, "_blank");
+            return;
+        }
         const savedCode = "";
         (function () {
             return new Promise((resolve, reject) => {
