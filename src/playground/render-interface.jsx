@@ -47,13 +47,6 @@ import runAddons from '../addons/entry';
 
 import styles from './interface.css';
 
-// if (window.parent !== window) {
-    // eslint-disable-next-line no-alert
-    // alert('This page is embedding PenguinMod/TurboWarp in a way that is unsupported and will cease to function in the near future. Please read https://docs.turbowarp.org/embedding');
-    // throw new Error('Invalid embed');
-    // ha ha i love iframe
-// }
-
 let announcement = null;
 if (process.env.ANNOUNCEMENT) {
     announcement = document.createElement('p');
@@ -280,8 +273,8 @@ class Interface extends React.Component {
                             {(window.LastFetchedProject) != null && (window.LastFetchedProject.remix != null) ? (
                                 <div className={styles.unsharedUpdate}>
                                     <div style={{ display: "flex", flexDirection: "row" }}>
-                                        <a style={{ height: "32px" }} target="_blank" href={"https://projects.penguinmod.site/?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://projects.penguinmod.site/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
-                                        <p>Thanks to <b><a target="_blank" href={"https://projects.penguinmod.site/?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}</a></b> for the original project <b><a href={window.location.origin + "/#" + projectDetailCache[String(window.LastFetchedProject.remix)]?.id}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.name}</a></b>.</p>
+                                        <a style={{ height: "32px" }} target="_blank" href={"https://home.penguinmod.site/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://projects.penguinmod.site/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
+                                        <p>Thanks to <b><a target="_blank" href={"https://home.penguinmod.site/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}</a></b> for the original project <b><a href={window.location.origin + "/#" + projectDetailCache[String(window.LastFetchedProject.remix)]?.id}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.name}</a></b>.</p>
                                     </div>
                                     <div style={{ display: 'none' }}>{getProjectDetailsById(window.LastFetchedProject.remix).yesIDefinetlyKnowHowToUseReactProperlyShutUp}</div>
                                 </div>
@@ -347,7 +340,7 @@ class Interface extends React.Component {
                                 </div>
                             ) : null}
                             {((window.LastFetchedProject) != null) ? (
-                                <a target="_blank" href={"https://projects.penguinmod.site/?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
+                                <a target="_blank" href={"https://home.penguinmod.site/profile?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
                             ) : null}
                             <div className={styles.section}>
                                 <p>
@@ -362,7 +355,7 @@ class Interface extends React.Component {
                             <div className={styles.section}>
                                 <FeaturedProjects />
                             </div>
-                            <a target="_blank" href="https://projects.penguinmod.site/">View projects in new tab</a>
+                            <a target="_blank" href="https://home.penguinmod.site/search?q=all%projects">View projects in new tab</a>
                         </React.Fragment>
                     ) : null}
                 </div>

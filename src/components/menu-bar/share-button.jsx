@@ -6,9 +6,6 @@ import Button from '../button/button.jsx';
 
 import styles from './share-button.css';
 
-const API_URL = "https://projects.penguinmod.site/api/";
-const PROJECTS_URL = "https://projects.penguinmod.site/";
-
 function authenticate() {
     return new Promise((resolve, reject) => {
         const login = window.open(
@@ -136,80 +133,14 @@ window.addEventListener("message", async (e) => {
 })
 
 ShareButton.defaultProps = {
-    onClick: (e) => {
-        if (e.shiftKey && e.ctrlKey) {
-            // testing for new upload system
-            let _projectName = document.title.split(" - ");
-            _projectName.pop();
-            const projectName = _projectName.join(" - ");
+    onClick: () => {
+        let _projectName = document.title.split(" - ");
+        _projectName.pop();
+        const projectName = _projectName.join(" - ");
 
-            const url = location.origin;
-            window.open(`https://home.penguinmod.site/upload?name=${encodeURIComponent(projectName)}&external=${url}`, "_blank");
-            return;
-        }
-        const savedCode = "";
-        (function () {
-            return new Promise((resolve, reject) => {
-                fetch(API_URL + "users/usernameFromCode?privateCode=" + savedCode).then(res => res.json().then(json => {
-                    if (json.error != null) {
-                        authenticate().then(privateCode => {
-                            fetch(API_URL + "users/login?privateCode=" + privateCode).finally(() => {
-                                resolve(privateCode)
-                            })
-                        }).catch(() => resolve(""))
-                        return
-                    }
-                    resolve(savedCode)
-                }).catch(() => resolve(""))).catch(() => {
-                    resolve("")
-                })
-            })
-        })().then(privateCode => {
-            fetch(API_URL + "users/usernameFromCode?privateCode=" + privateCode).then(res => {
-                return new Promise((resolve, reject) => {
-                    res.json().then(json => {
-                        resolve(json.username)
-                    })
-                })
-            }).then(username => {
-                window.vm.renderer.requestSnapshot(uri => {
-                    fetch(API_URL + "users/store", {
-                        "method": "POST", "body": JSON.stringify({
-                            container: username,
-                            token: privateCode,
-                            key: "projectThumbnail",
-                            value: String(uri)
-                        }), "headers": { "Content-Type": "application/json" }
-                    }).finally(() => {
-                        window.vm.saveProjectSb3().then(blob => {
-                            return new Promise(resolve => {
-                                const reader = new FileReader();
-                                reader.onload = element => {
-                                    resolve(element.target.result)
-                                }
-                                reader.readAsDataURL(blob)
-                            })
-                        }).then(dataUri => {
-                            fetch(API_URL + "users/store", {
-                                "method": "POST", "body": JSON.stringify({
-                                    container: username,
-                                    token: privateCode,
-                                    key: "projectUpload",
-                                    value: String(dataUri)
-                                }), "headers": { "Content-Type": "application/json" }
-                            }).finally(() => {
-                                let _projectName = document.title.split(" - ")
-                                _projectName.pop()
-                                const projectName = _projectName.join(" - ")
-                                const filler = Array.from(Array(768).keys()).map(() => { return Math.round(Math.random() * 9) }).join("")
-                                // filler text to hopefully hide any privateCodes if the user is recording or something
-                                const newTab = window.open(`${PROJECTS_URL}projects/upload?name=[${JSON.stringify(projectName)}]&rt=[${filler}]&privateCode=${privateCode}#`, "_blank")
-                            })
-                        })
-                    })
-                });
-            })
-        })
+        const url = location.origin;
+        window.open(`https://home.penguinmod.site/upload?name=${encodeURIComponent(projectName)}&external=${url}`, "_blank");
+        return;
     }
 };
 

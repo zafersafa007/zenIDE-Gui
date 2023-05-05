@@ -867,15 +867,15 @@ class MenuBar extends React.Component {
                     <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href="https://discord.gg/NZ9MBMYTZh"
+                            href="https://home.penguinmod.site"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
                             {/* todo: icon */}
                             <Button className={styles.feedbackButton}>
                                 <FormattedMessage
-                                    defaultMessage="Join our Discord!"
-                                    description="Button to give feedback in the menu bar"
+                                    defaultMessage="Back to Home"
+                                    description="Button to your moms house"
                                     id="tw.feedbackButton"
                                 />
                             </Button>
