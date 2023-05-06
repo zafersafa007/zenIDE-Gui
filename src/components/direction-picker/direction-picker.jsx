@@ -13,7 +13,9 @@ import styles from './direction-picker.css';
 
 import allAroundIcon from './icon--all-around.svg';
 import leftRightIcon from './icon--left-right.svg';
+import upDownIcon from './icon--up-down.svg';
 import dontRotateIcon from './icon--dont-rotate.svg';
+import lookAtIcon from './icon--look-at.svg';
 
 const BufferedInput = BufferedInputHOC(Input);
 
@@ -27,8 +29,10 @@ const directionLabel = (
 
 const RotationStyles = {
     ALL_AROUND: 'all around',
+    LOOK_AT: 'look at',
     LEFT_RIGHT: 'left-right',
-    DONT_ROTATE: "don't rotate"
+    UP_DOWN: 'up-down',
+    DONT_ROTATE: "don't rotate",
 };
 
 const messages = defineMessages({
@@ -37,10 +41,20 @@ const messages = defineMessages({
         description: 'Button to change to the all around rotation style',
         defaultMessage: 'All Around'
     },
+    lookAt: {
+        id: 'gui.directionPicker.rotationStyles.lookAt',
+        description: 'Button to change to the look at rotation style',
+        defaultMessage: 'Look At'
+    },
     leftRight: {
         id: 'gui.directionPicker.rotationStyles.leftRight',
         description: 'Button to change to the left-right rotation style',
         defaultMessage: 'Left/Right'
+    },
+    upDown: {
+        id: 'gui.directionPicker.rotationStyles.upDown',
+        description: 'Button to change to the up-down rotation style',
+        defaultMessage: 'Up/Down'
     },
     dontRotate: {
         id: 'gui.directionPicker.rotationStyles.dontRotate',
@@ -77,6 +91,18 @@ const DirectionPicker = props => (
                         </button>
                         <button
                             className={classNames(styles.iconButton, {
+                                [styles.active]: props.rotationStyle === RotationStyles.LOOK_AT
+                            })}
+                            title={props.intl.formatMessage(messages.lookAt)}
+                            onClick={props.onClickLookAt}
+                        >
+                            <img
+                                draggable={false}
+                                src={lookAtIcon}
+                            />
+                        </button>
+                        <button
+                            className={classNames(styles.iconButton, {
                                 [styles.active]: props.rotationStyle === RotationStyles.LEFT_RIGHT
                             })}
                             title={props.intl.formatMessage(messages.leftRight)}
@@ -85,6 +111,18 @@ const DirectionPicker = props => (
                             <img
                                 draggable={false}
                                 src={leftRightIcon}
+                            />
+                        </button>
+                        <button
+                            className={classNames(styles.iconButton, {
+                                [styles.active]: props.rotationStyle === RotationStyles.UP_DOWN
+                            })}
+                            title={props.intl.formatMessage(messages.upDown)}
+                            onClick={props.onClickUpDown}
+                        >
+                            <img
+                                draggable={false}
+                                src={upDownIcon}
                             />
                         </button>
                         <button
@@ -130,6 +168,8 @@ DirectionPicker.propTypes = {
     onClickAllAround: PropTypes.func.isRequired,
     onClickDontRotate: PropTypes.func.isRequired,
     onClickLeftRight: PropTypes.func.isRequired,
+    onClickLookAt: PropTypes.func.isRequired,
+    onClickUpDown: PropTypes.func.isRequired,
     onClosePopover: PropTypes.func.isRequired,
     onOpenPopover: PropTypes.func.isRequired,
     popoverOpen: PropTypes.bool.isRequired,
