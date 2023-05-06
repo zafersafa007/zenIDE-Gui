@@ -25,6 +25,8 @@ import louderIcon from './icon--louder.svg';
 import softerIcon from './icon--softer.svg';
 import robotIcon from './icon--robot.svg';
 import echoIcon from './icon--echo.svg';
+import highpassIcon from './icon--highpass.svg';
+import lowpassIcon from './icon--lowpass.svg';
 import reverseIcon from './icon--reverse.svg';
 import fadeOutIcon from './icon--fade-out.svg';
 import fadeInIcon from './icon--fade-in.svg';
@@ -360,6 +362,18 @@ const SoundEditor = props => (
                     title={<FormattedMessage {...messages.echo} />}
                     onClick={props.onEcho}
                 />
+                <IconButton
+                    className={styles.effectButton}
+                    img={lowpassIcon}
+                    title={"Low Pass"}
+                    onClick={props.onLowPass}
+                />
+                <IconButton
+                    className={styles.effectButton}
+                    img={highpassIcon}
+                    title={"High Pass"}
+                    onClick={props.onHighPass}
+                />
             </div>
         </div>
         <div className={styles.infoRow}>
@@ -424,6 +438,8 @@ SoundEditor.propTypes = {
     onCopyToNew: PropTypes.func.isRequired,
     onDelete: PropTypes.func,
     onEcho: PropTypes.func.isRequired,
+    onLowPass: PropTypes.func.isRequired,
+    onHighPass: PropTypes.func.isRequired,
     onFadeIn: PropTypes.func.isRequired,
     onFadeOut: PropTypes.func.isRequired,
     onFaster: PropTypes.func.isRequired,

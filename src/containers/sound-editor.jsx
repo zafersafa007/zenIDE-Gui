@@ -453,6 +453,11 @@ class SoundEditor extends React.Component {
         const bufferSelection = this.getSelectionBuffer();
         // for preview
         const audio = new AudioContext();
+        // const testNode = audio.createBiquadFilter();
+        // testNode.type = "lowpass";
+        // testNode.frequency.value = 880;
+        // testNode.Q.value = 0.7;
+        // testNode.connect(audio.destination);
         const gainNode = audio.createGain();
         gainNode.gain.value = 1;
         gainNode.connect(audio.destination);
@@ -660,6 +665,8 @@ class SoundEditor extends React.Component {
                 onRedo={this.handleRedo}
                 onReverse={this.effectFactory(effectTypes.REVERSE)}
                 onRobot={this.effectFactory(effectTypes.ROBOT)}
+                onLowPass={this.effectFactory(effectTypes.LOWPASS)}
+                onHighPass={this.effectFactory(effectTypes.HIGHPASS)}
                 onSetTrim={this.handleUpdateTrim}
                 onSlower={this.effectFactory(effectTypes.SLOWER)}
                 onSofter={this.effectFactory(effectTypes.SOFTER)}
