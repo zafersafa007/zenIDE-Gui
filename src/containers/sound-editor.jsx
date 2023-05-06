@@ -16,8 +16,9 @@ import AudioEffects from '../lib/audio/audio-effects.js';
 import SoundEditorComponent from '../components/sound-editor/sound-editor.jsx';
 import AudioBufferPlayer from '../lib/audio/audio-buffer-player.js';
 import log from '../lib/log.js';
+import confirmStyles from '../css/confirm-dialog.css';
 
-const UNDO_STACK_SIZE = 99;
+const UNDO_STACK_SIZE = 250;
 
 const MAX_RMS = 1.2;
 
@@ -45,7 +46,9 @@ class SoundEditor extends React.Component {
             'handleKeyPress',
             'handleContainerClick',
             'setRef',
-            'resampleBufferToRate'
+            'resampleBufferToRate',
+            'handleModifyMenu',
+            'getSelectionBuffer'
         ]);
         this.state = {
             copyBuffer: null,
@@ -330,6 +333,17 @@ class SoundEditor extends React.Component {
             copyBuffer: newCopyBuffer
         }, callback);
     }
+    getSelectionBuffer () {
+        const trimStart = this.state.trimStart === null ? 0.0 : this.state.trimStart;
+        const trimEnd = this.state.trimEnd === null ? 1.0 : this.state.trimEnd;
+
+        const newCopyBuffer = this.copyCurrentBuffer();
+        const trimStartSamples = trimStart * newCopyBuffer.samples.length;
+        const trimEndSamples = trimEnd * newCopyBuffer.samples.length;
+        newCopyBuffer.samples = newCopyBuffer.samples.slice(trimStartSamples, trimEndSamples);
+
+        return newCopyBuffer;
+    }
     handleCopyToNew () {
         this.copy(() => {
             encodeAndAddSoundToVM(this.props.vm, this.state.copyBuffer.samples,
@@ -434,6 +448,183 @@ class SoundEditor extends React.Component {
             this.handleUpdateTrim(null, null);
         }
     }
+    handleModifyMenu () {
+        // get selected audio
+        const bufferSelection = this.getSelectionBuffer();
+        // for preview
+        const audio = new AudioContext();
+        const gainNode = audio.createGain();
+        gainNode.gain.value = 1;
+        gainNode.connect(audio.destination);
+        // create inputs before menu so we can get the value easier
+        const pitch = document.createElement("input");
+        const volume = document.createElement("input");
+        const menu = this.displayPopup("Modify Sound", 200, 280, "Apply", "Cancel", () => {
+            // accepted
+            audio.close();
+            const truePitch = isNaN(Number(pitch.value)) ? 0 : Number(pitch.value);
+            const trueVolume = isNaN(Number(volume.value)) ? 0 : Number(volume.value);
+            this.handleEffect({
+                special: true,
+                pitch: truePitch * 10,
+                volume: trueVolume
+            });
+        }, () => {
+            // denied
+            audio.close();
+            // we dont need to do anything else
+        });
+        menu.textarea.style = "position: relative;display: flex;justify-content: flex-end;flex-direction: row;height: calc(100% - (3.125em + 2.125em + 16px));align-items: center;";
+        // set pitch stuff
+        pitch.type = "range";
+        pitch.classList.add(confirmStyles.verticalSlider);
+        pitch.style = "position: absolute;left: -40px;top: 80px;";
+        pitch.value = 0;
+        pitch.min = -360;
+        pitch.max = 360;
+        pitch.step = 1;
+        // set volume stuff
+        volume.type = "range";
+        volume.classList.add(confirmStyles.verticalSlider);
+        volume.style = "position: absolute;left: 0px;top: 80px;";
+        volume.value = 1;
+        volume.min = 0;
+        volume.max = 2;
+        volume.step = 0.01;
+        menu.textarea.append(pitch);
+        menu.textarea.append(volume);
+        const labelPitch = document.createElement("p");
+        const labelVolume = document.createElement("p");
+        labelPitch.style = "text-align: center;width: 35px;font-size: 12px;position: absolute;left: 7.5px;top: 3.5px;";
+        labelVolume.style = "text-align: center;width: 35px;font-size: 12px;position: absolute;left: 47.5px;top: 3.5px;";
+        labelPitch.innerHTML = "Pitch";
+        labelVolume.innerHTML = "Volume";
+        menu.textarea.append(labelPitch);
+        menu.textarea.append(labelVolume);
+        const valuePitch = document.createElement("input");
+        const valueVolume = document.createElement("input");
+        valuePitch.style = "text-align: center;width: 35px;font-size: 12px;position: absolute;left: 4px;top: 152.5px;";
+        valueVolume.style = "text-align: center;width: 35px;font-size: 12px;position: absolute;left: 44px;top: 152.5px;";
+        valuePitch.value = 0;
+        valueVolume.value = 100;
+        valuePitch.min = -360;
+        valuePitch.max = 360;
+        valuePitch.step = 1;
+        valueVolume.min = 0;
+        valueVolume.max = 200;
+        valueVolume.step = 1;
+        valuePitch.type = "number";
+        valueVolume.type = "number";
+        menu.textarea.append(valuePitch);
+        menu.textarea.append(valueVolume);
+        const previewButton = document.createElement("button");
+        previewButton.style = "font-weight: bold;color: white;border-radius: 1000px;width: 46px;margin-right: 28px;height: 46px;border-style: none;background: #00c3ff;";
+        previewButton.innerHTML = "Play";
+        menu.textarea.append(previewButton);
+        // playing audio
+        // create an audio buffer using the selection
+        const properBuffer = audio.createBuffer(1, bufferSelection.samples.length, bufferSelection.sampleRate);
+        properBuffer.getChannelData(0).set(bufferSelection.samples);
+        // button functionality
+        let bufferSource;
+        let audioPlaying = false;
+        function play() {
+            bufferSource = audio.createBufferSource();
+            bufferSource.connect(gainNode);
+            bufferSource.buffer = properBuffer;
+            bufferSource.start(0);
+            bufferSource.detune.value = pitch.value * 10;
+            previewButton.innerHTML = "Stop";
+            audioPlaying = true;
+            bufferSource.onended = () => {
+                previewButton.innerHTML = "Play";
+                audioPlaying = false;
+            }
+        }
+        function stop() {
+            bufferSource.stop();
+            previewButton.innerHTML = "Play";
+            audioPlaying = false;
+        }
+        previewButton.onclick = () => {
+            if (audioPlaying) {
+                return stop();
+            }
+            play();
+        }
+        // updates
+        pitch.onchange = (updateValue) => {
+            if (updateValue !== false) {
+                valuePitch.value = Number(pitch.value);
+            };
+            if (!bufferSource) return;
+            bufferSource.detune.value = pitch.value * 10;
+        }
+        pitch.oninput = pitch.onchange;
+        volume.onchange = (updateValue) => {
+            gainNode.gain.value = volume.value;
+            if (updateValue === false) return;
+            valueVolume.value = Number(volume.value) * 100;
+        }
+        volume.oninput = volume.onchange;
+        // value changes
+        valuePitch.onchange = () => {
+            pitch.value = valuePitch.value;
+            pitch.onchange(false);
+        };
+        valuePitch.oninput = valuePitch.onchange;
+        valueVolume.onchange = () => {
+            volume.value = valueVolume.value / 100;
+            volume.onchange(false);
+        };
+        valueVolume.oninput = valueVolume.onchange;
+    }
+    displayPopup(title, width, height, okname, denyname, accepted, cancelled) {
+        const div = document.createElement("div");
+        document.body.append(div);
+        div.classList.add(confirmStyles.base);
+        const box = document.createElement("div");
+        div.append(box);
+        box.classList.add(confirmStyles.promptBox);
+        box.style.width = `${width}px`;
+        box.style.height = `${height}px`;
+        const header = document.createElement("div");
+        box.append(header);
+        header.classList.add(confirmStyles.header);
+        header.innerText = title;
+        const textarea = document.createElement("div");
+        box.append(textarea);
+        const buttonRow = document.createElement("div");
+        box.append(buttonRow);
+        buttonRow.classList.add(confirmStyles.buttonRow);
+        const deny = document.createElement("button");
+        buttonRow.append(deny);
+        deny.classList.add(confirmStyles.promptButton);
+        deny.classList.add(confirmStyles.deny);
+        deny.innerHTML = denyname ? denyname : "Cancel";
+        const accept = document.createElement("button");
+        buttonRow.append(accept);
+        accept.classList.add(confirmStyles.promptButton);
+        accept.classList.add(confirmStyles.accept);
+        accept.innerHTML = okname ? okname : "OK";
+        accept.onclick = () => {
+            div.remove();
+            if (accepted) accepted();
+        }
+        deny.onclick = () => {
+            div.remove();
+            if (cancelled) cancelled();
+        }
+        return {
+            popup: div,
+            container: box,
+            header: header,
+            buttonRow: buttonRow,
+            textarea: textarea,
+            cancel: deny,
+            ok: accept
+        }
+    }
     render () {
         const {effectTypes} = AudioEffects;
         return (
@@ -462,6 +653,7 @@ class SoundEditor extends React.Component {
                 onFadeOut={this.effectFactory(effectTypes.FADEOUT)}
                 onFaster={this.effectFactory(effectTypes.FASTER)}
                 onLouder={this.effectFactory(effectTypes.LOUDER)}
+                onModifySound={this.handleModifyMenu}
                 onMute={this.effectFactory(effectTypes.MUTE)}
                 onPaste={this.handlePaste}
                 onPlay={this.handlePlay}

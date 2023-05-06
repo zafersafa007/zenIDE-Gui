@@ -18,6 +18,7 @@ import playIcon from './icon--play.svg';
 import stopIcon from './icon--stop.svg';
 import redoIcon from './icon--redo.svg';
 import undoIcon from './icon--undo.svg';
+import modifyIcon from './icon--modify.svg';
 import fasterIcon from './icon--faster.svg';
 import slowerIcon from './icon--slower.svg';
 import louderIcon from './icon--louder.svg';
@@ -294,6 +295,12 @@ const SoundEditor = props => (
             <div className={styles.effects}>
                 <IconButton
                     className={styles.effectButton}
+                    img={modifyIcon}
+                    title={"Modify"}
+                    onClick={props.onModifySound}
+                />
+                <IconButton
+                    className={styles.effectButton}
                     img={fasterIcon}
                     title={<FormattedMessage {...messages.faster} />}
                     onClick={props.onFaster}
@@ -420,6 +427,7 @@ SoundEditor.propTypes = {
     onFadeIn: PropTypes.func.isRequired,
     onFadeOut: PropTypes.func.isRequired,
     onFaster: PropTypes.func.isRequired,
+    onModifySound: PropTypes.func.isRequired,
     onLouder: PropTypes.func.isRequired,
     onMute: PropTypes.func.isRequired,
     onPaste: PropTypes.func.isRequired,

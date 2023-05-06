@@ -17,6 +17,10 @@ const effectTypes = {
     MUTE: 'mute'
 };
 
+const centsToFrequency = (cents) => {
+    return Math.round(1000000 * Math.pow(2, (cents / 100 / 12))) / 1000000;
+}
+
 class AudioEffects {
     static get effectTypes () {
         return effectTypes;
@@ -38,21 +42,30 @@ class AudioEffects {
 
         this.playbackRate = 1;
         switch (name) {
-        case effectTypes.ECHO:
-            sampleCount = Math.max(sampleCount,
-                Math.floor((this.trimEndSeconds + EchoEffect.TAIL_SECONDS) * buffer.sampleRate));
-            break;
-        case effectTypes.FASTER:
-            this.playbackRate = pitchRatio;
-            adjustedAffectedSampleCount = Math.floor(affectedSampleCount / this.playbackRate);
-            sampleCount = unaffectedSampleCount + adjustedAffectedSampleCount;
+            case effectTypes.ECHO:
+                sampleCount = Math.max(sampleCount,
+                    Math.floor((this.trimEndSeconds + EchoEffect.TAIL_SECONDS) * buffer.sampleRate));
+                break;
+            case effectTypes.FASTER:
+                this.playbackRate = pitchRatio;
+                adjustedAffectedSampleCount = Math.floor(affectedSampleCount / this.playbackRate);
+                sampleCount = unaffectedSampleCount + adjustedAffectedSampleCount;
 
-            break;
-        case effectTypes.SLOWER:
-            this.playbackRate = 1 / pitchRatio;
-            adjustedAffectedSampleCount = Math.floor(affectedSampleCount / this.playbackRate);
-            sampleCount = unaffectedSampleCount + adjustedAffectedSampleCount;
-            break;
+                break;
+            case effectTypes.SLOWER:
+                this.playbackRate = 1 / pitchRatio;
+                adjustedAffectedSampleCount = Math.floor(affectedSampleCount / this.playbackRate);
+                sampleCount = unaffectedSampleCount + adjustedAffectedSampleCount;
+                break;
+            default:
+                if (!((typeof name === "object") && (name.special === true))) break;
+                const options = name;
+                if (options.pitch !== null) {
+                    this.playbackRate = centsToFrequency(options.pitch);
+                    adjustedAffectedSampleCount = Math.floor(affectedSampleCount / this.playbackRate);
+                    sampleCount = unaffectedSampleCount + adjustedAffectedSampleCount;
+                }
+                break;
         }
 
         const durationSeconds = sampleCount / buffer.sampleRate;
@@ -105,39 +118,52 @@ class AudioEffects {
         let input;
         let output;
         switch (this.name) {
-        case effectTypes.FASTER:
-        case effectTypes.SLOWER:
-            this.source.playbackRate.setValueAtTime(this.playbackRate, this.adjustedTrimStartSeconds);
-            this.source.playbackRate.setValueAtTime(1.0, this.adjustedTrimEndSeconds);
-            break;
-        case effectTypes.LOUDER:
-            ({input, output} = new VolumeEffect(this.audioContext, 1.25,
-                this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
-            break;
-        case effectTypes.SOFTER:
-            ({input, output} = new VolumeEffect(this.audioContext, 0.75,
-                this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
-            break;
-        case effectTypes.ECHO:
-            ({input, output} = new EchoEffect(this.audioContext,
-                this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
-            break;
-        case effectTypes.ROBOT:
-            ({input, output} = new RobotEffect(this.audioContext,
-                this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
-            break;
-        case effectTypes.FADEIN:
-            ({input, output} = new FadeEffect(this.audioContext, true,
-                this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
-            break;
-        case effectTypes.FADEOUT:
-            ({input, output} = new FadeEffect(this.audioContext, false,
-                this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
-            break;
-        case effectTypes.MUTE:
-            ({input, output} = new MuteEffect(this.audioContext,
-                this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
-            break;
+            case effectTypes.FASTER:
+            case effectTypes.SLOWER:
+                this.source.playbackRate.setValueAtTime(this.playbackRate, this.adjustedTrimStartSeconds);
+                this.source.playbackRate.setValueAtTime(1.0, this.adjustedTrimEndSeconds);
+                break;
+            case effectTypes.LOUDER:
+                ({input, output} = new VolumeEffect(this.audioContext, 1.25,
+                    this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
+                break;
+            case effectTypes.SOFTER:
+                ({input, output} = new VolumeEffect(this.audioContext, 0.75,
+                    this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
+                break;
+            case effectTypes.ECHO:
+                ({input, output} = new EchoEffect(this.audioContext,
+                    this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
+                break;
+            case effectTypes.ROBOT:
+                ({input, output} = new RobotEffect(this.audioContext,
+                    this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
+                break;
+            case effectTypes.FADEIN:
+                ({input, output} = new FadeEffect(this.audioContext, true,
+                    this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
+                break;
+            case effectTypes.FADEOUT:
+                ({input, output} = new FadeEffect(this.audioContext, false,
+                    this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
+                break;
+            case effectTypes.MUTE:
+                ({input, output} = new MuteEffect(this.audioContext,
+                    this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
+                break;
+            default:
+                const name = this.name;
+                if (!((typeof name === "object") && (name.special === true))) break;
+                const options = name;
+                if (options.pitch !== null) {
+                    this.source.playbackRate.setValueAtTime(this.playbackRate, this.adjustedTrimStartSeconds);
+                    this.source.playbackRate.setValueAtTime(1.0, this.adjustedTrimEndSeconds);
+                }
+                if (options.volume !== null) {
+                    ({input, output} = new VolumeEffect(this.audioContext, options.volume,
+                        this.adjustedTrimStartSeconds, this.adjustedTrimEndSeconds));
+                }
+                break;
         }
 
         if (input && output) {
