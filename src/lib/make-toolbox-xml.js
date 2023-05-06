@@ -812,6 +812,26 @@ const sensing = function (isInitialSetup, isStage) {
         <block type="sensing_dayssince2000"/>
         ${blockSeparator}
         <block type="sensing_mobile"></block>
+        <block type="sensing_fingerdown">
+            <value name="FINGER_OPTION">
+                <shadow id="sensing_fingeroptions" type="sensing_fingeroptions"/>
+            </value>
+        </block>
+        <block type="sensing_fingertapped">
+            <value name="FINGER_OPTION">
+                <shadow id="sensing_fingeroptions" type="sensing_fingeroptions"/>
+            </value>
+        </block>
+        <block type="sensing_fingerx">
+            <value name="FINGER_OPTION">
+                <shadow id="sensing_fingeroptions" type="sensing_fingeroptions"/>
+            </value>
+        </block>
+        <block type="sensing_fingery">
+            <value name="FINGER_OPTION">
+                <shadow id="sensing_fingeroptions" type="sensing_fingeroptions"/>
+            </value>
+        </block>
         <block type="sensing_username"/>
         ${categorySeparator}
     </category>

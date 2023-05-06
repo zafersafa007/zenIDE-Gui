@@ -34,6 +34,9 @@ class Stage extends React.Component {
             'onMouseUp',
             'onMouseMove',
             'onMouseDown',
+            'onTouchUp',
+            'onTouchMove',
+            'onTouchDown',
             'onStartDrag',
             'onStopDrag',
             'onWheel',
@@ -43,7 +46,9 @@ class Stage extends React.Component {
             'setDragCanvas',
             'clearDragCanvas',
             'drawDragCanvas',
-            'positionDragCanvas'
+            'positionDragCanvas',
+            'elementListToArray',
+            'correctTouchPosition'
         ]);
         this.state = {
             mouseDownTimeoutId: null,
@@ -142,20 +147,20 @@ class Stage extends React.Component {
     attachMouseEvents (canvas) {
         document.addEventListener('mousemove', this.onMouseMove);
         document.addEventListener('mouseup', this.onMouseUp);
-        document.addEventListener('touchmove', this.onMouseMove);
-        document.addEventListener('touchend', this.onMouseUp);
+        document.addEventListener('touchmove', this.onTouchMove);
+        document.addEventListener('touchend', this.onTouchUp);
         canvas.addEventListener('mousedown', this.onMouseDown);
-        canvas.addEventListener('touchstart', this.onMouseDown);
+        canvas.addEventListener('touchstart', this.onTouchDown);
         canvas.addEventListener('wheel', this.onWheel);
         canvas.addEventListener('contextmenu', this.onContextMenu);
     }
     detachMouseEvents (canvas) {
         document.removeEventListener('mousemove', this.onMouseMove);
         document.removeEventListener('mouseup', this.onMouseUp);
-        document.removeEventListener('touchmove', this.onMouseMove);
-        document.removeEventListener('touchend', this.onMouseUp);
+        document.removeEventListener('touchmove', this.onTouchMove);
+        document.removeEventListener('touchend', this.onTouchUp);
         canvas.removeEventListener('mousedown', this.onMouseDown);
-        canvas.removeEventListener('touchstart', this.onMouseDown);
+        canvas.removeEventListener('touchstart', this.onTouchDown);
         canvas.removeEventListener('wheel', this.onWheel);
         canvas.removeEventListener('contextmenu', this.onContextMenu);
     }
@@ -169,6 +174,14 @@ class Stage extends React.Component {
     }
     updateRect () {
         this.rect = this.canvas.getBoundingClientRect();
+    }
+    elementListToArray (list) {
+        const array = [];
+        for (let i = 0; i < list.length; i++) {
+            const element = list.item(i);
+            array.push(element);
+        }
+        return array;
     }
     getScratchCoords (x, y) {
         const nativeSize = this.renderer.getNativeSize();
@@ -277,6 +290,50 @@ class Stage extends React.Component {
             this.pickX = null;
             this.pickY = null;
         }
+    }
+    correctTouchPosition (touch) {
+        const x = touch.clientX;
+        const y = touch.clientY;
+        const mousePosition = [x - this.rect.left, y - this.rect.top];
+        touch.x = mousePosition[0];
+        touch.y = mousePosition[1];
+        return touch;
+    }
+    onTouchDown (e) {
+        this.updateRect();
+        const data = {
+            isDown: true,
+            canvasWidth: this.rect.width,
+            canvasHeight: this.rect.height,
+            changedTouches: this.elementListToArray(e.changedTouches).map(this.correctTouchPosition),
+            targetTouches: this.elementListToArray(e.targetTouches).map(this.correctTouchPosition),
+            touches: this.elementListToArray(e.touches).map(this.correctTouchPosition)
+        };
+        this.props.vm.postIOData('touch', data);
+        this.onMouseDown(e);
+    }
+    onTouchUp (e) {
+        const data = {
+            isDown: false,
+            canvasWidth: this.rect.width,
+            canvasHeight: this.rect.height,
+            changedTouches: this.elementListToArray(e.changedTouches).map(this.correctTouchPosition),
+            targetTouches: this.elementListToArray(e.targetTouches).map(this.correctTouchPosition),
+            touches: this.elementListToArray(e.touches).map(this.correctTouchPosition)
+        };
+        this.props.vm.postIOData('touch', data);
+        this.onMouseUp(e);
+    }
+    onTouchMove (e) {
+        const coordinates = {
+            canvasWidth: this.rect.width,
+            canvasHeight: this.rect.height,
+            changedTouches: this.elementListToArray(e.changedTouches).map(this.correctTouchPosition),
+            targetTouches: this.elementListToArray(e.targetTouches).map(this.correctTouchPosition),
+            touches: this.elementListToArray(e.touches).map(this.correctTouchPosition)
+        };
+        this.props.vm.postIOData('touch', coordinates);
+        this.onMouseMove(e);
     }
     onMouseDown (e) {
         this.updateRect();
