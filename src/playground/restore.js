@@ -46,7 +46,7 @@ function restore(importLocation) {
             alert('All local data has been saved again!');
         }
     });
-    post({ type: "validate" });
+    post({ type: "validate" }, opener);
 }
 
 export default restore;
