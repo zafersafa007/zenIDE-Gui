@@ -12,6 +12,12 @@ function post(data, reciever) {
     }
 }
 
+/**
+ * 
+ * @param {string} importLocation Tries to listen for messages from this location.
+ * Messages with the proper format get saved to local storage.
+ * @returns {void}
+ */
 function restore(importLocation) {
     const opener = window.opener || window.parent;
     if (!opener || opener === window) {
@@ -42,4 +48,7 @@ function restore(importLocation) {
     post({ type: "validate" });
 }
 
-export default restore;
+export default {
+    restore,
+    post
+};
