@@ -412,19 +412,25 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
         <block type="looks_getEffectValue"/>
         ${blockSeparator}
         ${isStage ? '' : `
-            <block type="looks_changeVisibilityOfSprite">
+            <block type="looks_show"/>
+            <block type="looks_hide"/>
+            <block type="looks_getSpriteVisible"/>
+            ${blockSeparator}
+            <block type="looks_changeVisibilityOfSpriteShow">
                 <value name="VISIBLE_OPTION">
                     <shadow type="looks_changeVisibilityOfSprite_menu"/>
                 </value>
             </block>
-            <block type="looks_show"/>
-            <block type="looks_hide"/>
+            <block type="looks_changeVisibilityOfSpriteHide">
+                <value name="VISIBLE_OPTION">
+                    <shadow type="looks_changeVisibilityOfSprite_menu"/>
+                </value>
+            </block>
             <block type="looks_getOtherSpriteVisible">
                 <value name="VISIBLE_OPTION">
                     <shadow type="looks_getOtherSpriteVisible_menu"/>
                 </value>
             </block>
-            <block type="looks_getSpriteVisible"/>
             ${blockSeparator}
             <block type="looks_gotofrontback"/>
             <block type="looks_goforwardbackwardlayers">
