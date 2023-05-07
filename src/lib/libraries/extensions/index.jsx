@@ -72,6 +72,7 @@ import canvasExtensionIcon from './penguinmod/extensions/CanvasSmall.png';
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png';
 import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg';
 import gp from './penguinmod/extensions/gp.png';
+
 // cl waw
 import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
 import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg';
