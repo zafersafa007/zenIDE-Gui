@@ -30,6 +30,20 @@ const motion = function (isInitialSetup, isStage, targetId) {
                 </shadow>
             </value>
         </block>
+        <block type="motion_movebacksteps">
+            <value name="STEPS">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_moveupdownsteps">
+            <value name="STEPS">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
         <block type="motion_turnright">
             <value name="DEGREES">
                 <shadow type="math_number">
@@ -41,6 +55,40 @@ const motion = function (isInitialSetup, isStage, targetId) {
             <value name="DEGREES">
                 <shadow type="math_number">
                     <field name="NUM">15</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_turnrightaroundxy">
+            <value name="DEGREES">
+                <shadow type="math_number">
+                    <field name="NUM">15</field>
+                </shadow>
+            </value>
+            <value name="X">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+            <value name="Y">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_turnleftaroundxy">
+            <value name="DEGREES">
+                <shadow type="math_number">
+                    <field name="NUM">15</field>
+                </shadow>
+            </value>
+            <value name="X">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+            <value name="Y">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
                 </shadow>
             </value>
         </block>
@@ -60,6 +108,18 @@ const motion = function (isInitialSetup, isStage, targetId) {
             <value name="Y">
                 <shadow id="movey" type="math_number">
                     <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_changebyxy">
+            <value name="DX">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+            <value name="DY">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
                 </shadow>
             </value>
         </block>
@@ -105,6 +165,19 @@ const motion = function (isInitialSetup, isStage, targetId) {
                 </shadow>
             </value>
         </block>
+        <block type="motion_pointtowardsxy">
+            <value name="X">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+            <value name="Y">
+                <shadow type="math_number">
+                    <field name="NUM">0</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="motion_turnaround"/>
         ${blockSeparator}
         <block type="motion_changexby">
             <value name="DX">
@@ -136,8 +209,27 @@ const motion = function (isInitialSetup, isStage, targetId) {
         </block>
         ${blockSeparator}
         <block type="motion_ifonedgebounce"/>
+        <block type="motion_ifonspritebounce">
+            <value name="SPRITE">
+                <shadow type="motion_pointtowards_menu"></shadow>
+            </value>
+        </block>
+        <block type="motion_ifonxybounce">
+            <value name="X">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+            <value name="Y">
+                <shadow type="math_number">
+                    <field name="NUM">10</field>
+                </shadow>
+            </value>
+        </block>
         ${blockSeparator}
         <block type="motion_setrotationstyle"/>
+        ${blockSeparator}
+        <block type="motion_move_sprite_to_scene_side"/>
         ${blockSeparator}
         <block id="${targetId}_xposition" type="motion_xposition"/>
         <block id="${targetId}_yposition" type="motion_yposition"/>
@@ -203,6 +295,8 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                 </shadow>
             </value>
         </block>
+        <block type="looks_stoptalking"/>
+        ${blockSeparator}
         <block type="looks_setFont">
             <value name="font">
                 <shadow type="text">
@@ -386,6 +480,7 @@ const sound = function (isInitialSetup, isStage, targetId, soundName) {
                 </shadow>
             </value>
         </block>
+        <block type="sound_playallsounds"/>
         <block type="sound_stopallsounds"/>
         <block id="${targetId}_sound_isSoundPlaying" type="sound_isSoundPlaying">
             <value name="SOUND_MENU">
@@ -478,6 +573,14 @@ const events = function (isInitialSetup, isStage) {
         <block type="event_broadcastandwait">
             <value name="BROADCAST_INPUT">
               <shadow type="event_broadcast_menu"></shadow>
+            </value>
+        </block>
+        ${blockSeparator}
+        <block type="event_whenjavascript">
+            <value name="JS">
+                <shadow type="text">
+                    <field name="TEXT">false</field>
+                </shadow>
             </value>
         </block>
         ${categorySeparator}
@@ -607,6 +710,14 @@ const control = function (isInitialSetup, isStage) {
             </value>
         </block>
         <block type="control_clear_counter"/>
+        ${blockSeparator}
+        <block type="control_javascript_command">
+            <value name="JS">
+                <shadow type="text">
+                    <field name="TEXT">alert('hello!')</field>
+                </shadow>
+            </value>
+        </block>
         ${categorySeparator}
     </category>
     `;
@@ -781,9 +892,19 @@ const sensing = function (isInitialSetup, isStage) {
         <block type="sensing_mouseclicked"/>
         <block type="sensing_mousex"/>
         <block type="sensing_mousey"/>
+        ${blockSeparator}
+        <block type="sensing_setclipboard">
+            <value name="ITEM">
+                <shadow type="text">
+                    <field name="TEXT">Hello!</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="sensing_getclipboard"/>
         ${isStage ? '' : `
             ${blockSeparator}
             <block type="sensing_setdragmode" id="sensing_setdragmode"></block>
+            <block type="sensing_getdragmode" id="sensing_getdragmode"></block>
             ${blockSeparator}
         `}
         ${blockSeparator}
@@ -810,6 +931,10 @@ const sensing = function (isInitialSetup, isStage) {
         ${blockSeparator}
         <block id="current" type="sensing_current"/>
         <block type="sensing_dayssince2000"/>
+        ${blockSeparator}
+        <block type="sensing_getoperatingsystem"/>
+        <block type="sensing_getbrowser"/>
+        <block type="sensing_geturl"/>
         ${blockSeparator}
         <block type="sensing_mobile"></block>
         <block type="sensing_fingerdown">
@@ -1301,6 +1426,21 @@ const operators = function (isInitialSetup) {
             <value name="ONE">
                 <shadow type="text">
                     <field name="TEXT">97</field>
+                </shadow>
+            </value>
+        </block>
+        ${blockSeparator}
+        <block type="operator_javascript_output">
+            <value name="JS">
+                <shadow type="text">
+                    <field name="TEXT">Math.random()</field>
+                </shadow>
+            </value>
+        </block>
+        <block type="operator_javascript_boolean">
+            <value name="JS">
+                <shadow type="text">
+                    <field name="TEXT">Math.round(Math.random()) === 1</field>
                 </shadow>
             </value>
         </block>
