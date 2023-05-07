@@ -93,7 +93,7 @@ const getProjectDetailsById = async (id) => {
     if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
 
     const response = await fetch(`https://projects.penguinmod.site/api/projects/getPublished?id=${id}`);
-    // dont continue if the api never returned 200-299 since we would cache an error as project details
+    // Don't continue if the api never returned 200-299 since we would cache an error as project details
     if (!response.ok) return {};
 
     const project = await response.json();
