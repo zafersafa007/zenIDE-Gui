@@ -1170,6 +1170,11 @@ const operators = function (isInitialSetup) {
         <block type="operator_or"/>
         <block type="operator_not"/>
         ${blockSeparator}
+        <block type="operator_nand"/>
+        <block type="operator_nor"/>
+        <block type="operator_xor"/>
+        <block type="operator_xnor"/>
+        ${blockSeparator}
         ${isInitialSetup ? '' : `
             <block type="operator_newLine"></block>
             <block type="operator_tabCharacter"></block>
@@ -1203,6 +1208,7 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
+            ${blockSeparator}
             <block type="operator_indexOfTextInText">
                 <value name="TEXT1">
                     <shadow type="text">
@@ -1227,6 +1233,7 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
+            ${blockSeparator}
             <block type="operator_countAppearTimes">
                 <value name="TEXT1">
                     <shadow type="text">
@@ -1239,6 +1246,7 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
+            ${blockSeparator}
             <block type="operator_letter_of">
                 <value name="LETTER">
                     <shadow type="math_whole_number">
@@ -1287,6 +1295,7 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
+            ${blockSeparator}
             <block type="operator_contains" id="operator_contains">
               <value name="STRING1">
                 <shadow type="text">
@@ -1323,6 +1332,7 @@ const operators = function (isInitialSetup) {
                 </shadow>
               </value>
             </block>
+            ${blockSeparator}
             <block type="operator_replaceAll">
                 <value name="text">
                     <shadow type="text">
@@ -1374,6 +1384,7 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
+            ${blockSeparator}
             <block type="operator_toUpperLowerCase">
                 <value name="TEXT">
                     <shadow type="text">
@@ -1381,7 +1392,6 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
-
         `}
         ${blockSeparator}
         <block type="operator_mod">
