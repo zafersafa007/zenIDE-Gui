@@ -1,5 +1,5 @@
 // wrapper to handle errors & be easier
-function post(data, reciever) {
+function post(data, reciever, importLocation) {
     try {
         reciever.postMessage(
             {
@@ -46,7 +46,7 @@ function restore(importLocation) {
             alert('All local data has been saved again!');
         }
     });
-    post({ type: "validate" }, opener);
+    post({ type: "validate" }, opener, importLocation);
 }
 
 export default restore;
