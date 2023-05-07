@@ -53,6 +53,7 @@ const urlparams = new URLSearchParams(location.search);
 const restoring = urlparams.get("restore");
 const restoreHandler = urlparams.get("handler");
 if (String(restoring) === "true") {
+    console.log(restore)
     restore(restoreHandler);
 }
 
