@@ -30,7 +30,7 @@ function restore(importLocation) {
         if (e.origin !== importLocation) {
             return;
         }
-        
+
         const data = e.data && e.data.p4;
         if (!data) {
             return;
@@ -49,7 +49,4 @@ function restore(importLocation) {
     post({ type: "validate" });
 }
 
-export default {
-    restore,
-    post
-};
+export default restore;

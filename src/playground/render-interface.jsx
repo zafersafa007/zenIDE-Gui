@@ -47,7 +47,7 @@ import { loadServiceWorker } from './load-service-worker';
 import runAddons from '../addons/entry';
 
 import styles from './interface.css';
-import { restore } from './restore.js';
+import restore from './restore.js';
 
 const urlparams = new URLSearchParams(location.search);
 const restoring = urlparams.get("restore");
