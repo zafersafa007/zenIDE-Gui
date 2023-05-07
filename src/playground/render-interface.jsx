@@ -47,6 +47,14 @@ import { loadServiceWorker } from './load-service-worker';
 import runAddons from '../addons/entry';
 
 import styles from './interface.css';
+import { restore } from './restore.js';
+
+const urlparams = new URLSearchParams(location.search);
+const restoring = urlparams.get("restore");
+const restoreHandler = urlparams.get("handler");
+if (String(restoring) === "true") {
+    restore(restoreHandler);
+}
 
 let announcement = null;
 if (process.env.ANNOUNCEMENT) {
