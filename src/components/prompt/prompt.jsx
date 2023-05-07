@@ -147,7 +147,7 @@ const PromptComponent = props => (
                         values={{
                             packager: (
                                 <a
-                                    href="https://penguinmod.site/PenguinMod-Packager"
+                                    href="https://studio.penguinmod.site/PenguinMod-Packager"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

@@ -98,7 +98,7 @@ const getProjectUri = () => {
 }
 
 window.addEventListener("message", async (e) => {
-    if (!e.origin.startsWith(`https://home.penguinmod.site`)) {
+    if (!e.origin.startsWith(`https://penguinmod.site`)) {
         return;
     }
 
@@ -139,7 +139,7 @@ ShareButton.defaultProps = {
         const projectName = _projectName.join(" - ");
 
         const url = location.origin;
-        window.open(`https://home.penguinmod.site/upload?name=${encodeURIComponent(projectName)}&external=${url}`, "_blank");
+        window.open(`https://penguinmod.site/upload?name=${encodeURIComponent(projectName)}&external=${url}`, "_blank");
         return;
     }
 };

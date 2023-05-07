@@ -867,7 +867,7 @@ class MenuBar extends React.Component {
                     <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href="https://home.penguinmod.site"
+                            href="https://penguinmod.site"
                             rel="noopener noreferrer"
                             target="_blank"
                         >

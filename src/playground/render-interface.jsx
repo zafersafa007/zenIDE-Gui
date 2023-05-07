@@ -33,6 +33,7 @@ import TWRestorePointHOC from '../lib/tw-restore-point-hoc.jsx';
 import SettingsStore from '../addons/settings-store-singleton';
 import '../lib/tw-fix-history-api';
 import GUI from './render-gui.jsx';
+// import VoteFrame from './vote-frame.jsx';
 import MenuBar from '../components/menu-bar/menu-bar.jsx';
 import ProjectInput from '../components/tw-project-input/project-input.jsx';
 import FeaturedProjects from '../components/tw-featured-projects/featured-projects.jsx';
@@ -129,7 +130,7 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://penguinmod.site/PenguinMod-Packager">
+                    <a href="https://studio.penguinmod.site/PenguinMod-Packager">
                         {/* Do not translate */}
                         {'PenguinMod Packager'}
                     </a>
@@ -273,8 +274,8 @@ class Interface extends React.Component {
                             {(window.LastFetchedProject) != null && (window.LastFetchedProject.remix != null) ? (
                                 <div className={styles.unsharedUpdate}>
                                     <div style={{ display: "flex", flexDirection: "row" }}>
-                                        <a style={{ height: "32px" }} target="_blank" href={"https://home.penguinmod.site/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://projects.penguinmod.site/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
-                                        <p>Thanks to <b><a target="_blank" href={"https://home.penguinmod.site/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}</a></b> for the original project <b><a href={window.location.origin + "/#" + projectDetailCache[String(window.LastFetchedProject.remix)]?.id}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.name}</a></b>.</p>
+                                        <a style={{ height: "32px" }} target="_blank" href={"https://penguinmod.site/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://projects.penguinmod.site/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
+                                        <p>Thanks to <b><a target="_blank" href={"https://penguinmod.site/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}</a></b> for the original project <b><a href={window.location.origin + "/#" + projectDetailCache[String(window.LastFetchedProject.remix)]?.id}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.name}</a></b>.</p>
                                     </div>
                                     <div style={{ display: 'none' }}>{getProjectDetailsById(window.LastFetchedProject.remix).yesIDefinetlyKnowHowToUseReactProperlyShutUp}</div>
                                 </div>
@@ -285,26 +286,6 @@ class Interface extends React.Component {
                             {isBrowserSupported() ? null : (
                                 <BrowserModal isRtl={isRtl} />
                             )}
-                            {(
-                                // eslint-disable-next-line max-len
-                                projectId === '0' || description.instructions === 'unshared' || description.credits === 'unshared'
-                            ) && (
-                                    <div className={styles.unsharedUpdate}>
-                                        {(
-                                            description.instructions === 'unshared' ||
-                                            description.credits === 'unshared'
-                                        ) && (
-                                                <p>
-                                                    <FormattedMessage
-                                                        // eslint-disable-next-line max-len
-                                                        defaultMessage="If the project was shared recently, this message may appear incorrectly for a few minutes."
-                                                        description="Appears on unshared projects"
-                                                        id="tw.unshared.cache"
-                                                    />
-                                                </p>
-                                            )}
-                                    </div>
-                                )}
                             {hasCloudVariables && projectId !== '0' && (
                                 <div className={styles.section}>
                                     <CloudVariableBadge />
@@ -319,6 +300,7 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
+                            {/* <VoteFrame id={projectId}></VoteFrame> */}
                             {isHomepage && window.FetchedProjectRemixes ? (
                                 <div>
                                     {/* i have absolutely no interest in figuring out how the hell to get this to work properly */}
@@ -340,7 +322,7 @@ class Interface extends React.Component {
                                 </div>
                             ) : null}
                             {((window.LastFetchedProject) != null) ? (
-                                <a target="_blank" href={"https://home.penguinmod.site/profile?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
+                                <a target="_blank" href={"https://penguinmod.site/profile?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
                             ) : null}
                             <div className={styles.section}>
                                 <p>
@@ -355,7 +337,7 @@ class Interface extends React.Component {
                             <div className={styles.section}>
                                 <FeaturedProjects />
                             </div>
-                            <a target="_blank" href="https://home.penguinmod.site/search?q=all%projects">View projects in new tab</a>
+                            <a target="_blank" href="https://penguinmod.site/search?q=all%projects">View projects in new tab</a>
                         </React.Fragment>
                     ) : null}
                 </div>

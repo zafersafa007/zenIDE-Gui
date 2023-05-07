@@ -13,7 +13,7 @@ const manifest = {
     },
     {
       "name": "JeremyGamer13",
-      "link": "https://home.penguinmod.site/profile?user=JGamerTesting"
+      "link": "https://penguinmod.site/profile?user=JGamerTesting"
     }
   ],
   "dynamicDisable": true,
