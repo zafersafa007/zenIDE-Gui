@@ -30,6 +30,7 @@ function restore(importLocation) {
         if (e.origin !== importLocation) {
             return;
         }
+        
         const data = e.data && e.data.p4;
         if (!data) {
             return;
