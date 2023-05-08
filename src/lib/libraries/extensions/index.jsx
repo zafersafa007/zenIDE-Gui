@@ -91,20 +91,27 @@ import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessag
 import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.png';
 
 import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png';
+import jgsilvxrcatInterfacesExtensionIcon from './penguinmod/extensions/interfaces.png';
 
+// 3D MAN WTF
 import jg3dExtensionIcon from './penguinmod/extensions/3d.png';
 import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png';
 
+// events
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
 import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png';
+import jgAdvancedTextExtensionIcon from './penguinmod/extensions/advancedtext.png';
 
 // jg: default icon if you are too lazy to make one and you want me to make one instead lololololololol
 // gsa: olololololo
-// import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
+import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
+
+const urlParams = new URLSearchParams(location.search);
 
 const IsLocal = String(window.location.href).startsWith(`http://localhost:`);
+const IsLiveTests = urlParams.has('livetests');
 
-export default [
+const menuItems = [
     {
         name: (
             <FormattedMessage
@@ -616,23 +623,9 @@ export default [
         twDeveloper: "GarboMuffin",
         tags: ['turbowarp'],
         iconURL: twIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Weird new blocks. Not compatible with Scratch."
-                description="Description of TW extension"
-                id="tw.twExtension.description"
-            />
-        ),
+        description: "Weird new blocks.",
         featured: true
     },
-    // {
-    //     name: "Legacy Files",
-    //     extensionId: 'jgFiles',
-    //     iconURL: filesExtensionIcon,
-    //     tags: ["penguinmod"],
-    //     description: "Basic blocks for files. This has been replaced by the TurboWarp files extension.",
-    //     featured: true
-    // },
     {
         name: 'micro:bit',
         extensionId: 'microbit',
@@ -727,14 +720,7 @@ export default [
         ),
         helpLink: 'https://scratch.mit.edu/boost'
     },
-    IsLocal ? {
-        name: '3D',
-        extensionId: 'jg3d',
-        iconURL: jg3dExtensionIcon,
-        insetIconURL: jg3dInsetExtensionIcon,
-        description: 'Use the magic of 3D to spice up your project.',
-        featured: true
-    } : {
+    {
         name: 'LEGO Education WeDo 2.0',
         extensionId: 'wedo2',
         collaborator: 'LEGO',
@@ -766,12 +752,7 @@ export default [
         ),
         helpLink: 'https://scratch.mit.edu/wedo'
     },
-    IsLocal ? {
-        name: 'Jeremys Dev Tools',
-        extensionId: 'jgDev',
-        description: 'Test extension to see if things are possible.',
-        featured: true
-    } : {
+    {
         name: 'Go Direct Force & Acceleration',
         extensionId: 'gdxfor',
         collaborator: 'Vernier',
@@ -822,3 +803,64 @@ export default [
         featured: true
     }
 ];
+
+if (IsLocal || IsLiveTests) {
+    const extras = [
+        {
+            name: "Legacy Files",
+            extensionId: 'jgFiles',
+            iconURL: filesExtensionIcon,
+            tags: ["penguinmod"],
+            description: "Basic blocks for files. This has been replaced by the TurboWarp files extension.",
+            featured: true
+        },
+        {
+            name: "Unite",
+            extensionId: 'jwUnite',
+            iconURL: defaultNoSpecificExtensionIcon,
+            tags: ["penguinmod"],
+            description: "Legacy extension that was eventually merged into the default toolbox.",
+            featured: true
+        },
+        {
+            name: 'Jeremys Dev Tools',
+            extensionId: 'jgDev',
+            iconURL: defaultNoSpecificExtensionIcon,
+            tags: ["penguinmod"],
+            description: 'Test extension to see if things are possible.\nDO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
+            featured: true
+        },
+        {
+            name: '3D',
+            extensionId: 'jg3d',
+            iconURL: jg3dExtensionIcon,
+            tags: ["penguinmod"],
+            insetIconURL: jg3dInsetExtensionIcon,
+            description: 'Use the magic of 3D to spice up your project.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
+            featured: true
+        },
+        {
+            name: "Advanced Text",
+            extensionId: 'jgAdvancedText',
+            eventSubmittor: 'eggo',
+            iconURL: jgAdvancedTextExtensionIcon,
+            tags: ["penguinmod"],
+            description: "In development.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.",
+            featured: true
+        },
+        {
+            name: "Interfaces",
+            extensionId: 'jgInterfaces',
+            iconURL: jgsilvxrcatInterfacesExtensionIcon,
+            credits: 'silvxrcat',
+            tags: ["penguinmod"],
+            description: "In development.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.",
+            featured: true
+        }
+    ]
+    extras.forEach(ext => {
+        menuItems.push(ext);
+    })
+}
+
+export default menuItems;

@@ -344,6 +344,16 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
             </block>
             <block type="looks_nextbackdrop"/>
             <block type="looks_previousbackdrop"/>
+            <block type="looks_getinputofcostume">
+                <value name="INPUT">
+                    <shadow type="looks_getinput_menu"/>
+                </value>
+                <value name="COSTUME">
+                    <shadow type="looks_backdrops">
+                        <field name="BACKDROP">${backdropName}</field>
+                    </shadow>
+                </value>
+            </block>
         ` : `
             <block id="${targetId}_switchcostumeto" type="looks_switchcostumeto">
                 <value name="COSTUME">
@@ -363,6 +373,16 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
             </block>
             <block type="looks_nextbackdrop"/>
             <block type="looks_previousbackdrop"/>
+            <block type="looks_getinputofcostume">
+                <value name="INPUT">
+                    <shadow type="looks_getinput_menu"/>
+                </value>
+                <value name="COSTUME">
+                    <shadow type="looks_costume">
+                        <field name="COSTUME">${costumeName}</field>
+                    </shadow>
+                </value>
+            </block>
             ${blockSeparator}
             <block type="looks_changesizeby">
                 <value name="CHANGE">
