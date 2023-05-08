@@ -33,7 +33,7 @@ import TWRestorePointHOC from '../lib/tw-restore-point-hoc.jsx';
 import SettingsStore from '../addons/settings-store-singleton';
 import '../lib/tw-fix-history-api';
 import GUI from './render-gui.jsx';
-// import VoteFrame from './vote-frame.jsx';
+import VoteFrame from './vote-frame.jsx';
 import MenuBar from '../components/menu-bar/menu-bar.jsx';
 import ProjectInput from '../components/tw-project-input/project-input.jsx';
 import FeaturedProjects from '../components/tw-featured-projects/featured-projects.jsx';
@@ -309,7 +309,7 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
-                            {/* <VoteFrame id={projectId}></VoteFrame> */}
+                            <VoteFrame id={projectId}></VoteFrame>
                             {isHomepage && window.FetchedProjectRemixes ? (
                                 <div>
                                     {/* i have absolutely no interest in figuring out how the hell to get this to work properly */}
