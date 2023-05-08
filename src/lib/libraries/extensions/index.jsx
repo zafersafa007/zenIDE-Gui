@@ -51,6 +51,7 @@ import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
 import twIcon from './tw/tw.svg';
+import turbowarpIcon from './penguinmod/extensions/turbowarp.png';
 
 import customExtensionIcon from './custom/custom.svg';
 
@@ -79,6 +80,9 @@ import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg';
 
 import pointerlockThumb from './penguinmod/extensions/pointerlock.svg';
 import cursorThumb from './penguinmod/extensions/cursor.svg';
+
+// lukemania studio 🙏
+import lmsMcUtilsIcon from './penguinmod/extensions/mcutils.png';
 
 // more icons so they arent just red when the extension color is not red
 import gsaTempVariablesExtensionIcon from './penguinmod/extensions/tempvariables.png';
@@ -260,6 +264,7 @@ const menuItems = [
         extensionId: 'twFiles',
         twDeveloper: 'GarboMuffin',
         iconURL: filesExtensionIcon,
+        insetIconURL: turbowarpIcon,
         tags: ['turbowarp'],
         description: 'Blocks for reading and creating files.',
         featured: true
@@ -427,6 +432,16 @@ const menuItems = [
         featured: true
     },
     {
+        name: 'McUtils',
+        extensionId: 'https://extensions.turbowarp.org/LukeManiaStudios/McUtils.js',
+        tags: ['turbowarp'],
+        iconURL: lmsMcUtilsIcon,
+        insetIconURL: turbowarpIcon,
+        description: 'Basic utilities for any fast food employee',
+        featured: true,
+        twDeveloper: "LukeManiaStudios"
+    },
+    {
         name: (
             <FormattedMessage
                 defaultMessage="HTML Canvas"
@@ -492,6 +507,7 @@ const menuItems = [
         name: 'Physics',
         extensionId: 'https://extensions.turbowarp.org/box2d.js',
         tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
         extDeveloper: 'griffpatch',
         iconURL: griffpatchPhysicsThumb,
         insetIconURL: griffpatchPhysicsIcon,
@@ -508,6 +524,7 @@ const menuItems = [
         name: 'GamePad',
         extensionId: 'Gamepad',
         tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
         twDeveloper: "GarboMuffin",
         iconURL: gp,
         description: (
@@ -524,6 +541,7 @@ const menuItems = [
         extensionId: 'DTcameracontrols',
         iconURL: 'https://extensions.turbowarp.org/images/DT/cameracontrols.svg',
         tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
         description: (
             <FormattedMessage
                 defaultMessage="Move the visible part of the stage."
@@ -539,6 +557,7 @@ const menuItems = [
         extensionId: 'xeltallivclipblend',
         iconURL: 'https://extensions.turbowarp.org/images/Xeltalliv/clippingblending.svg',
         tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
         description: 'Clipping outside of a specified rectangular area and additive color blending.',
         featured: true,
         twDeveloper: 'Vadik1'
@@ -547,6 +566,7 @@ const menuItems = [
         name: 'CloudLink',
         extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
         tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
         iconURL: cloudlinkThumb,
         insetIconURL: cloudlinkIcon,
         description: (
@@ -565,6 +585,7 @@ const menuItems = [
         name: 'Pointer Lock',
         extensionId: 'https://extensions.turbowarp.org/pointerlock.js',
         tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
         iconURL: pointerlockThumb,
         description: (
             <FormattedMessage
@@ -582,6 +603,7 @@ const menuItems = [
         name: 'Mouse Cursor',
         extensionId: 'https://extensions.turbowarp.org/cursor.js',
         tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
         iconURL: cursorThumb,
         description: (
             <FormattedMessage
@@ -622,6 +644,7 @@ const menuItems = [
         extensionId: 'tw',
         twDeveloper: "GarboMuffin",
         tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
         iconURL: twIcon,
         description: "Weird new blocks.",
         featured: true

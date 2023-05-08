@@ -74,6 +74,20 @@
     border: 0.25rem solid $ui-white;
 }
 
+.tw-library-item-inset-image-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2.5rem;
+    align-self: flex-start;
+    background-color: hsla(0, 100%, 65%, 1);
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 0.5rem;
+    border: 0.25rem solid $ui-white;
+}
+
 [dir="ltr"] .library-item-inset-image-container {
     margin-left: 1rem;
 }
