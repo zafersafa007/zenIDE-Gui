@@ -91,7 +91,7 @@ import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessag
 import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.png';
 
 import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png';
-import jgsilvxrcatInterfacesExtensionIcon from './penguinmod/extensions/interfaces.png';
+import jgsilvxrcatInterfacesExtensionIcon from './penguinmod/extensions/interfaces2.png';
 
 // 3D MAN WTF
 import jg3dExtensionIcon from './penguinmod/extensions/3d.png';
