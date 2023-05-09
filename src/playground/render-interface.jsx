@@ -309,7 +309,7 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
-                            <VoteFrame id={projectId}></VoteFrame>
+                            <VoteFrame id={projectId} darkmode={this.props.isDark}></VoteFrame>
                             {isHomepage && window.FetchedProjectRemixes ? (
                                 <div>
                                     {/* i have absolutely no interest in figuring out how the hell to get this to work properly */}
