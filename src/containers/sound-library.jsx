@@ -23,7 +23,7 @@ const messages = defineMessages({
     }
 });
 
-const PM_LIBRARY_API = "https://pmobjectlibrary.jeremygamer13.repl.co/";
+const PM_LIBRARY_API = "https://penguinmod-objectlibraries.vercel.app/";
 
 // @todo need to use this hack to avoid library using md5 for image
 const getSoundLibraryThumbnailData = (soundLibraryContent, isRtl) => soundLibraryContent.map(sound => {
@@ -40,7 +40,7 @@ const getSoundLibraryThumbnailData = (soundLibraryContent, isRtl) => soundLibrar
 
 const getPenguinModSoundAsset = (soundObject, vm) => {
     return new Promise((resolve, reject) => {
-        fetch(`${PM_LIBRARY_API}?file=${soundObject.libraryFilePage}`)
+        fetch(`${PM_LIBRARY_API}files/${soundObject.libraryFilePage}`)
             .then((r) => r.arrayBuffer())
             .then((arrayBuffer) => {
                 const storage = vm.runtime.storage;
