@@ -79,7 +79,7 @@
     "react-virtualized": "9.20.1",
     "redux": "3.7.2",
     "redux-throttle": "0.1.1",
-    "scratch-audio": "github:TurboWarp/scratch-audio#develop",
+    "scratch-audio": "github:PenguinMod/PenguinMod-Audio#develop",
     "scratch-blocks": "github:PenguinMod/PenguinMod-Blocks#develop-builds",
     "scratch-paint": "github:PenguinMod/PenguinMod-Paint#develop",
     "scratch-render": "github:PenguinMod/PenguinMod-Render#develop",
