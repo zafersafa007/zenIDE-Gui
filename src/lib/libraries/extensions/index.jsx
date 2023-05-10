@@ -94,7 +94,7 @@ import jgPermissionExtensionIcon from './penguinmod/extensions/permissions.png';
 import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessages.svg';
 import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.png';
 
-import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png';
+// import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png';
 import jgsilvxrcatInterfacesExtensionIcon from './penguinmod/extensions/interfaces2.png';
 
 // 3D MAN WTF
@@ -255,7 +255,7 @@ const menuItems = [
         extensionId: 'jgTween',
         credits: 'easings.net & Arrow',
         description: 'Smoothly animating values using different easing functions and directions.',
-        iconURL: jgTweeningExtensionIcon,
+        iconURL: 'https://extensions.turbowarp.org/images/JeremyGamer13/tween.svg',
         tags: ['penguinmod'],
         featured: true
     },
