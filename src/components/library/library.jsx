@@ -233,6 +233,7 @@ class LibraryComponent extends React.Component {
                             credits={dataItem.credits}
                             twDeveloper={dataItem.twDeveloper}
                             eventSubmittor={dataItem.eventSubmittor}
+                            customInsetColor={dataItem.customInsetColor}
                             description={dataItem.description}
                             disabled={dataItem.disabled}
                             extensionId={dataItem.extensionId}

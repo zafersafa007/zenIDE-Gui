@@ -127,6 +127,7 @@ const menuItems = [
         extensionId: 'music',
         iconURL: musicIconURL,
         insetIconURL: musicInsetIconURL,
+        customInsetColor: '#CF63CF',
         tags: ['scratch'],
         description: (
             <FormattedMessage
@@ -163,6 +164,7 @@ const menuItems = [
         extensionId: 'text',
         iconURL: animatedTextIconURL,
         insetIconURL: animatedTextInsetIconURL,
+        customInsetColor: '#9A66FF',
         tags: ['scratch'],
         description: 'Bring words to life.',
         featured: true
@@ -178,6 +180,7 @@ const menuItems = [
         extensionId: 'videoSensing',
         iconURL: videoSensingIconURL,
         insetIconURL: videoSensingInsetIconURL,
+        customInsetColor: '#74BDDC',
         tags: ['scratch'],
         description: (
             <FormattedMessage
@@ -200,6 +203,7 @@ const menuItems = [
         collaborator: 'Amazon Web Services',
         iconURL: text2speechIconURL,
         insetIconURL: text2speechInsetIconURL,
+        customInsetColor: '#9966FF',
         tags: ['scratch'],
         description: (
             <FormattedMessage
@@ -223,6 +227,7 @@ const menuItems = [
         collaborator: 'Google',
         iconURL: translateIconURL,
         insetIconURL: translateInsetIconURL,
+        customInsetColor: '#5CB1D6',
         tags: ['scratch'],
         description: (
             <FormattedMessage
@@ -240,6 +245,7 @@ const menuItems = [
         collaborator: 'JoyLabz',
         iconURL: makeymakeyIconURL,
         insetIconURL: makeymakeyInsetIconURL,
+        customInsetColor: '#E64D00',
         tags: ['scratch'],
         description: (
             <FormattedMessage
@@ -280,11 +286,11 @@ const menuItems = [
         name: 'Physics',
         extensionId: 'https://extensions.turbowarp.org/box2d.js',
         tags: ['turbowarp'],
-        insetIconURL: turbowarpIcon,
         extDeveloper: 'griffpatch',
         iconURL: griffpatchPhysicsThumb,
         insetIconURL: griffpatchPhysicsIcon,
         description: "Box2D Physics extension created by Griffpatch.",
+        customInsetColor: '#D9F0FF',
         featured: true
     },
     {
@@ -425,7 +431,6 @@ const menuItems = [
         extensionId: 'jwStructs',
         tags: ['penguinmod'],
         iconURL: jwStructsExtensionIcon,
-        insetIconURL: jwStructsExtensionIcon,
         description: (
             <FormattedMessage
                 defaultMessage="OOP blocks. OOp is a programming paradigm that uses objects and their interactions to design applications and computer programs."
@@ -457,6 +462,7 @@ const menuItems = [
         iconURL: canvasExtensionBanner,
         tags: ['penguinmod'],
         insetIconURL: canvasExtensionIcon,
+        customInsetColor: '#0094FF',
         description: (
             <FormattedMessage
                 defaultMessage="blocks for using an HTML Canvas"
@@ -629,6 +635,7 @@ const menuItems = [
         useAutoScan: false,
         connectionIconURL: ev3ConnectionIconURL,
         connectionSmallIconURL: ev3ConnectionSmallIconURL,
+        customInsetColor: '#FFBF00',
         connectingMessage: (
             <FormattedMessage
                 defaultMessage="Connecting. Make sure the pin on your EV3 is set to 1234."
@@ -661,6 +668,7 @@ const menuItems = [
         connectionIconURL: boostConnectionIconURL,
         connectionSmallIconURL: boostConnectionSmallIconURL,
         connectionTipIconURL: boostConnectionTipIconURL,
+        customInsetColor: '#FFAB19',
         connectingMessage: (
             <FormattedMessage
                 defaultMessage="Connecting"
@@ -693,6 +701,7 @@ const menuItems = [
         connectionIconURL: wedo2ConnectionIconURL,
         connectionSmallIconURL: wedo2ConnectionSmallIconURL,
         connectionTipIconURL: wedo2ConnectionTipIconURL,
+        customInsetColor: '#FF6680',
         connectingMessage: (
             <FormattedMessage
                 defaultMessage="Connecting"
@@ -708,6 +717,7 @@ const menuItems = [
         collaborator: 'Vernier',
         iconURL: gdxforIconURL,
         insetIconURL: gdxforInsetIconURL,
+        customInsetColor: '#4C97FF',
         tags: ['scratch'],
         description: (
             <FormattedMessage
@@ -785,6 +795,7 @@ if (IsLocal || IsLiveTests) {
             extensionId: 'jg3d',
             iconURL: jg3dExtensionIcon,
             tags: ["penguinmod"],
+            customInsetColor: '#B200FF',
             insetIconURL: jg3dInsetExtensionIcon,
             description: 'Use the magic of 3D to spice up your project.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
             featured: true

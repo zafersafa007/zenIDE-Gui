@@ -41,8 +41,25 @@ class LibraryItemComponent extends React.PureComponent {
                         src={this.props.iconURL}
                     />
                 </div>
-                {this.props.insetIconURL ? (
-                    <div className={this.props.twDeveloper ? classNames(styles.libraryItemInsetImageContainer, styles.twLibraryItemInsetImageContainer) : styles.libraryItemInsetImageContainer}>
+                {(this.props.insetIconURL && !this.props.customInsetColor) ? (
+                    <div className={
+                        this.props.twDeveloper ?
+                            classNames(styles.libraryItemInsetImageContainer, styles.twLibraryItemInsetImageContainer)
+                            : styles.libraryItemInsetImageContainer
+                    }
+                    >
+                        <img
+                            className={styles.libraryItemInsetImage}
+                            src={this.props.insetIconURL}
+                        />
+                    </div>
+                ) : null}
+                {(this.props.insetIconURL && this.props.customInsetColor) ? (
+                    <div className={
+                        styles.libraryItemInsetImageContainerNoBg
+                    }
+                        style={{ backgroundColor: this.props.customInsetColor }}
+                    >
                         <img
                             className={styles.libraryItemInsetImage}
                             src={this.props.insetIconURL}
@@ -222,6 +239,7 @@ LibraryItemComponent.propTypes = {
     hidden: PropTypes.bool,
     iconURL: PropTypes.string,
     insetIconURL: PropTypes.string,
+    customInsetColor: PropTypes.string,
     internetConnectionRequired: PropTypes.bool,
     isPlaying: PropTypes.bool,
     name: PropTypes.oneOfType([
