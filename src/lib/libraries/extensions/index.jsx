@@ -51,7 +51,7 @@ import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
 import twIcon from './tw/tw.svg';
-import turbowarpIcon from './penguinmod/extensions/turbowarp.png';
+import turbowarpIcon from './penguinmod/extensions/turbowarp_icon.svg';
 
 import customExtensionIcon from './custom/custom.svg';
 
@@ -108,7 +108,7 @@ import jgAdvancedTextExtensionIcon from './penguinmod/extensions/advancedtext.pn
 
 // jg: default icon if you are too lazy to make one and you want me to make one instead lololololololol
 // gsa: olololololo
-import defaultNoSpecificExtensionIcon from './penguinmod/extensions/no_image.png'
+import defaultExtensionIcon from './penguinmod/extensions/placeholder.png'
 
 const urlParams = new URLSearchParams(location.search);
 
@@ -251,15 +251,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Tweening',
-        extensionId: 'jgTween',
-        credits: 'easings.net & Arrow',
-        description: 'Smoothly animating values using different easing functions and directions.',
-        iconURL: 'https://extensions.turbowarp.org/images/JeremyGamer13/tween.svg',
-        tags: ['penguinmod'],
-        featured: true
-    },
-    {
         name: 'Files',
         extensionId: 'twFiles',
         twDeveloper: 'GarboMuffin',
@@ -267,15 +258,6 @@ const menuItems = [
         insetIconURL: turbowarpIcon,
         tags: ['turbowarp'],
         description: 'Blocks for reading and creating files.',
-        featured: true
-    },
-    {
-        name: 'Storage',
-        extensionId: 'jgStorage',
-        iconURL: jgStorageExtensionIcon,
-        tags: ['penguinmod'],
-        description: 'Store data after PenguinMod has already been closed out. Basic Server Storage is also included.',
-        eventSubmittor: 'Fir & silvxrcat',
         featured: true
     },
     {
@@ -287,25 +269,32 @@ const menuItems = [
         featured: true
     },
     {
-        name: (
-            <FormattedMessage
-                defaultMessage="Website Request Blocks"
-                description="Name of Website Requests extension"
-                id="jgWebsiteRequests.jgWebsiteRequestsExtension.name"
-            />
-        ),
-        extensionId: 'jgWebsiteRequests',
-        iconURL: jgWebsiteRequestsExtensionIcon,
+        name: "JSON",
+        extensionId: 'jgJSON',
+        iconURL: jgJSONExtensionIcon,
         tags: ['penguinmod'],
-        description: (
-            <FormattedMessage
-                defaultMessage="Blocks to communicate with APIs and websites."
-                description="Description of Website Requests extension"
-                id="jgWebsiteRequests.jgWebsiteRequestsExtension.description"
-            />
-        ),
-        featured: true,
-        internetConnectionRequired: true
+        description: "Blocks for handling JSON objects and Arrays.",
+        featured: true
+    },
+    {
+        name: 'Physics',
+        extensionId: 'https://extensions.turbowarp.org/box2d.js',
+        tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
+        extDeveloper: 'griffpatch',
+        iconURL: griffpatchPhysicsThumb,
+        insetIconURL: griffpatchPhysicsIcon,
+        description: "Box2D Physics extension created by Griffpatch.",
+        featured: true
+    },
+    {
+        name: 'Tweening',
+        extensionId: 'jgTween',
+        credits: 'easings.net & Arrow',
+        description: 'Smoothly animating values using different easing functions and directions.',
+        iconURL: 'https://extensions.turbowarp.org/images/JeremyGamer13/tween.svg',
+        tags: ['penguinmod'],
+        featured: true
     },
     {
         name: 'Clone Communication',
@@ -325,6 +314,61 @@ const menuItems = [
         featured: true
     },
     {
+        name: 'Temporary Variables',
+        extensionId: 'tempVars',
+        iconURL: gsaTempVariablesExtensionIcon,
+        tags: ['penguinmod'],
+        description: 'Create variables for use in one block stack. Useful to not clutter the variable list with variables you only use once.',
+        featured: true
+    },
+    {
+        name: "Runtime Modifications",
+        extensionId: 'jgRuntime',
+        tags: ['penguinmod'],
+        iconURL: jgRuntimeExtensionIcon,
+        description: "Blocks for updating Scratch objects like the stage and sprites.",
+        credits: 'TheShovel, showierdata9978',
+        featured: true
+    },
+    {
+        name: 'Storage',
+        extensionId: 'jgStorage',
+        iconURL: jgStorageExtensionIcon,
+        tags: ['penguinmod'],
+        description: 'Store data after PenguinMod has already been closed out. Basic Server Storage is also included.',
+        eventSubmittor: 'Fir & silvxrcat',
+        featured: true
+    },
+    {
+        name: "Website Requests",
+        extensionId: 'jgWebsiteRequests',
+        iconURL: jgWebsiteRequestsExtensionIcon,
+        tags: ['penguinmod'],
+        description: "Blocks to communicate with APIs and websites.",
+        featured: true,
+        internetConnectionRequired: true
+    },
+    {
+        name: 'CloudLink',
+        extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
+        tags: ['turbowarp'],
+        insetIconURL: turbowarpIcon,
+        iconURL: cloudlinkThumb,
+        insetIconURL: cloudlinkIcon,
+        description: "A cool extension to interact with webservers",
+        featured: true,
+        extDeveloper: 'MikeDev',
+        internetConnectionRequired: false
+    },
+    {
+        name: "Prism",
+        extensionId: 'jgPrism',
+        tags: ['penguinmod'],
+        iconURL: jgPrismExtensionIcon,
+        description: "Blocks for specific use-cases or major convenience.",
+        featured: true
+    },
+    {
         name: 'Odd Messages',
         extensionId: 'oddMessage',
         iconURL: silvxrcatOddMessagesExtensionIcon,
@@ -333,53 +377,13 @@ const menuItems = [
         extDeveloper: 'silvxrcat'
     },
     {
-        name: (
-            <FormattedMessage
-                defaultMessage="HTML iframe Elements"
-                description="Name of iFrame extension"
-                id="jgIframe.jgIframeExtension.name"
-            />
-        ),
+        name: "HTML iframe Elements",
         extensionId: 'jgIframe',
         iconURL: jgIframeExtensionIcon,
         tags: ['penguinmod'],
-        description: (
-            <FormattedMessage
-                defaultMessage="Blocks to place and move around frames that contain HTML content or websites."
-                description="Description of iFrame extension"
-                id="jgIframe.jgIframeExtension.description"
-            />
-        ),
+        description: "Blocks to place and move around frames that contain HTML content or websites.",
         featured: true,
         internetConnectionRequired: true
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="JSON Blocks"
-                description="Name of JSON extension"
-                id="jgJSON.jgJSONExtension.name"
-            />
-        ),
-        extensionId: 'jgJSON',
-        iconURL: jgJSONExtensionIcon,
-        tags: ['penguinmod'],
-        description: (
-            <FormattedMessage
-                defaultMessage="Blocks for handling JSON objects and Arrays."
-                description="Description of JSON extension"
-                id="jgJSON.jgJSONExtension.description"
-            />
-        ),
-        featured: true
-    },
-    {
-        name: 'Temporary Variables',
-        extensionId: 'tempVars',
-        iconURL: gsaTempVariablesExtensionIcon,
-        tags: ['penguinmod'],
-        description: 'Create variables for use in one block stack. Useful to not clutter the variable list with variables you only use once.',
-        featured: true
     },
     {
         name: 'Color Utility Blocks',
@@ -463,64 +467,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: (
-            <FormattedMessage
-                defaultMessage="Prism"
-                description="Name of Prism extension"
-                id="jgPrism.jgPrismExtension.name"
-            />
-        ),
-        extensionId: 'jgPrism',
-        tags: ['penguinmod'],
-        iconURL: jgPrismExtensionIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Blocks for specific use-cases or major convenience."
-                description="Description of Prism extension"
-                id="jgPrism.jgPrismExtension.description"
-            />
-        ),
-        featured: true
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="Runtime tools"
-                description="Name of Runtime extension"
-                id="jgRuntime.jgRuntimeExtension.name"
-            />
-        ),
-        extensionId: 'jgRuntime',
-        tags: ['penguinmod'],
-        iconURL: jgRuntimeExtensionIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Blocks for updating Scratch objects like the stage and sprites."
-                description="Description of Runtime extension"
-                id="jgRuntime.jgRuntimeExtension.description"
-            />
-        ),
-        credits: 'TheShovel, showierdata9978',
-        featured: true
-    },
-    {
-        name: 'Physics',
-        extensionId: 'https://extensions.turbowarp.org/box2d.js',
-        tags: ['turbowarp'],
-        insetIconURL: turbowarpIcon,
-        extDeveloper: 'griffpatch',
-        iconURL: griffpatchPhysicsThumb,
-        insetIconURL: griffpatchPhysicsIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Box2D Physics extension created by Griffpatch."
-                description="Description for the 'Griffpatch Physics' extension"
-                id="gui.extension.test.description"
-            />
-        ),
-        featured: true
-    },
-    {
         name: 'GamePad',
         extensionId: 'Gamepad',
         tags: ['turbowarp'],
@@ -561,25 +507,6 @@ const menuItems = [
         description: 'Clipping outside of a specified rectangular area and additive color blending.',
         featured: true,
         twDeveloper: 'Vadik1'
-    },
-    {
-        name: 'CloudLink',
-        extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
-        tags: ['turbowarp'],
-        insetIconURL: turbowarpIcon,
-        iconURL: cloudlinkThumb,
-        insetIconURL: cloudlinkIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="A cool extension to interact with webservers"
-                description="Scratch utilities"
-                id="gui.extension.cloudlink.description"
-            />
-        ),
-        featured: true,
-        extDeveloper: 'MikeDev',
-        internetConnectionRequired: false,
-        incompatibleWithScratch: false
     },
     {
         name: 'Pointer Lock',
@@ -832,7 +759,7 @@ if (IsLocal || IsLiveTests) {
         {
             name: "Legacy Files",
             extensionId: 'jgFiles',
-            iconURL: filesExtensionIcon,
+            iconURL: defaultExtensionIcon,
             tags: ["penguinmod"],
             description: "Basic blocks for files. This has been replaced by the TurboWarp files extension.",
             featured: true
@@ -840,7 +767,7 @@ if (IsLocal || IsLiveTests) {
         {
             name: "Unite",
             extensionId: 'jwUnite',
-            iconURL: defaultNoSpecificExtensionIcon,
+            iconURL: defaultExtensionIcon,
             tags: ["penguinmod"],
             description: "Legacy extension that was eventually merged into the default toolbox.",
             featured: true
@@ -848,7 +775,7 @@ if (IsLocal || IsLiveTests) {
         {
             name: 'Jeremys Dev Tools',
             extensionId: 'jgDev',
-            iconURL: defaultNoSpecificExtensionIcon,
+            iconURL: defaultExtensionIcon,
             tags: ["penguinmod"],
             description: 'Test extension to see if things are possible.\nDO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
             featured: true
