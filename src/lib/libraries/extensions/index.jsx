@@ -72,10 +72,12 @@ import canvasExtensionIcon from './penguinmod/extensions/CanvasSmall.png';
 // griffpatch stuff that hopefully we can keep pls plsplspl !!S!
 import griffpatchPhysicsThumb from './penguinmod/extensions/griffpatch_physics.png';
 import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIcon.svg';
-import gp from './penguinmod/extensions/gp.png';
+
+import gp from './penguinmod/extensions/gamepad.svg';
+import clippingblending from './penguinmod/extensions/clippingblending.svg';
 
 // cl waw
-import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
+// import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
 import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg';
 
 import pointerlockThumb from './penguinmod/extensions/pointerlock.svg';
@@ -359,7 +361,7 @@ const menuItems = [
         extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
         tags: ['turbowarp'],
         insetIconURL: turbowarpIcon,
-        iconURL: cloudlinkThumb,
+        iconURL: 'https://extensions.turbowarp.org/images/cloudlink.svg',
         insetIconURL: cloudlinkIcon,
         description: "A cool extension to interact with webservers",
         featured: true,
@@ -465,7 +467,7 @@ const menuItems = [
         customInsetColor: '#0094FF',
         description: (
             <FormattedMessage
-                defaultMessage="blocks for using an HTML Canvas"
+                defaultMessage="Extra drawing tools using an HTML Canvas. Works well when used with other extensions."
                 description="Description of Text extension"
                 id="text.description"
             />
@@ -481,7 +483,7 @@ const menuItems = [
         iconURL: gp,
         description: (
             <FormattedMessage
-                defaultMessage="A cool extension to interact with gamepads(aka controllers) such as xbox controllers"
+                defaultMessage="Directly access gamepads instead of just mapping buttons to keys."
                 description="Description for the 'GamePad' extension"
                 id="GamepadExtension.GamepadExtension.description"
             />
@@ -507,7 +509,7 @@ const menuItems = [
     {
         name: 'Clipping and Blending',
         extensionId: 'xeltallivclipblend',
-        iconURL: 'https://extensions.turbowarp.org/images/Xeltalliv/clippingblending.svg',
+        iconURL: clippingblending,
         tags: ['turbowarp'],
         insetIconURL: turbowarpIcon,
         description: 'Clipping outside of a specified rectangular area and additive color blending.',
