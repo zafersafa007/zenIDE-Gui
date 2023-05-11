@@ -87,6 +87,11 @@
     border: 0.25rem solid $ui-white;
 }
 
+[theme="dark"] .library-item-inset-image-container-no-bg,
+[theme="dark"] .library-item-inset-image-container {
+    border: 0.25rem solid #111;
+}
+
 .tw-library-item-inset-image-container {
     background-color: hsla(0, 100%, 65%, 1);
 }
