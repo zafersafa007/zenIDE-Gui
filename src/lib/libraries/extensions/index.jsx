@@ -561,14 +561,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'PenguinMod Permissions',
-        extensionId: 'JgPermissionBlocks',
-        iconURL: jgPermissionExtensionIcon,
-        tags: ['penguinmod'],
-        description: 'Direct blocks to manage permissions that PenguinMod requires you have to do certain tasks.',
-        featured: true
-    },
-    {
         name: (
             <FormattedMessage
                 defaultMessage="TurboWarp Blocks"
@@ -785,6 +777,14 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
+            name: 'PenguinMod Permissions',
+            extensionId: 'JgPermissionBlocks',
+            iconURL: jgPermissionExtensionIcon,
+            tags: ['penguinmod'],
+            description: 'Legacy extension, old blocks no longer serve a real purpose. Direct blocks to manage permissions that PenguinMod requires you have to do certain tasks.',
+            featured: true
+        },
+        {
             name: 'Jeremys Dev Tools',
             extensionId: 'jgDev',
             iconURL: defaultExtensionIcon,
@@ -818,6 +818,14 @@ if (IsLocal || IsLiveTests) {
             credits: 'silvxrcat',
             tags: ["penguinmod"],
             description: "In development.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.",
+            featured: true
+        },
+        {
+            name: "the doo doo extension",
+            extensionId: 'jgDooDoo',
+            iconURL: defaultExtensionIcon,
+            tags: ["penguinmod"],
+            description: "dr bob eae",
             featured: true
         }
     ]
