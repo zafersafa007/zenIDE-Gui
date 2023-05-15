@@ -123,7 +123,8 @@ const extensionDevelopers = [
     'griffpatch',
     'DT-is-not-available',
     'Vadik1',
-    'MikeDev'
+    'MikeDev',
+    'LukeManiaStudioss'
 ].map(fromHardcodedGithub)
 
 export default {
