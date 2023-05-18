@@ -305,12 +305,14 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Clone Communication',
-        extensionId: 'jgClones',
-        iconURL: jgCloneManagerExtensionIcon,
-        tags: ['penguinmod'],
-        description: 'Mainly sharing data between clones and the main sprite, but also some other small features.',
-        featured: true
+        name: 'Clones+',
+        extensionId: 'https://extensions.turbowarp.org/LukeManiaStudios/ClonesPlus.js',
+        tags: ['turbowarp'],
+        iconURL: 'https://extensions.turbowarp.org/images/LukeManiaStudios/ClonesPlus.svg',
+        insetIconURL: turbowarpIcon,
+        description: "Expansion of Scratch's clone features.",
+        featured: true,
+        twDeveloper: "LukeManiaStudios"
     },
     {
         name: 'Multiple Timers',
@@ -766,6 +768,14 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ["penguinmod"],
             description: "Basic blocks for files. This has been replaced by the TurboWarp files extension.",
+            featured: true
+        },
+        {
+            name: 'Clone Communication',
+            extensionId: 'jgClones',
+            iconURL: jgCloneManagerExtensionIcon,
+            tags: ['penguinmod'],
+            description: 'Mainly sharing data between clones and the main sprite, but also some other small features. This has been replaced by the TurboWarp Clones+ extension.',
             featured: true
         },
         {
