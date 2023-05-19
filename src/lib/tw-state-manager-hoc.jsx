@@ -39,6 +39,12 @@ const messages = defineMessages({
 const USERNAME_KEY = 'tw:username';
 
 /**
+ * react is stupid and we can never reach the playground from any other
+ * page so just have a value here to see if it is the playground
+ */
+let isPlayground = location.pathname.includes('playground.html');
+
+/**
  * The State Manager is responsible for managing persistent state and the URL.
  */
 
@@ -100,6 +106,7 @@ class FileHashRouter extends HashRouter {
         super(callbacks);
         this.playerPath = location.pathname.substring(0, location.pathname.lastIndexOf('/') + 1);
         this.editorPath = `${this.playerPath}editor.html`;
+        this.playgroundPath = `${this.playerPath}playground.html`;
         this.fullscreenPath = `${this.playerPath}fullscreen.html`;
     }
 
@@ -110,6 +117,10 @@ class FileHashRouter extends HashRouter {
             this.onSetIsPlayerOnly(true);
             this.onSetIsFullScreen(false);
         } else if (pathName === this.editorPath) {
+            this.onSetIsPlayerOnly(false);
+            this.onSetIsFullScreen(false);
+        } else if (pathName === this.playgroundPath) {
+            isPlayground = true;
             this.onSetIsPlayerOnly(false);
             this.onSetIsFullScreen(false);
         } else if (pathName === this.fullscreenPath) {
@@ -133,6 +144,8 @@ class FileHashRouter extends HashRouter {
             newPathname = this.fullscreenPath;
         } else if (isPlayerOnly) {
             newPathname = this.playerPath;
+        } else if (isPlayground) {
+            newPathname = this.playgroundPath;
         } else {
             newPathname = this.editorPath;
         }
@@ -193,7 +206,10 @@ class WildcardRouter extends Router {
             }
             if (type === 'fullscreen') {
                 this.onSetIsFullScreen(true);
-            } else if (type === 'editor') {
+            } else if (type === 'editor' || type === 'playground') {
+                if (type === 'playground') {
+                    isPlayground = true;
+                }
                 this.onSetIsPlayerOnly(false);
                 this.onSetIsFullScreen(false);
             } else {
@@ -219,6 +235,8 @@ class WildcardRouter extends Router {
         }
         if (isFullScreen) {
             parts.push('fullscreen');
+        } else if (isPlayground) {
+            parts.push('playground');
         } else if (!isPlayerOnly) {
             parts.push('editor');
         }
@@ -515,7 +533,7 @@ const TWStateManager = function (WrappedComponent) {
                 return true;
             }
             if (this.props.projectChanged) {
-                if (!confirm('Are you sure you want to switch project?')) {
+                if (!confirm('Are you sure you want to switch projects?')) {
                     return false;
                 }
             }

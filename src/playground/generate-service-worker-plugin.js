@@ -8,6 +8,7 @@ const SW_NAME = 'sw.js';
 const INCLUDE_HTML = [
     'index.html',
     'editor.html',
+    'playground.html',
     'fullscreen.html',
     'addons.html'
 ];

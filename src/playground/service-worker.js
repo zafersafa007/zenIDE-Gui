@@ -29,6 +29,8 @@ self.addEventListener('fetch', event => {
         relativePathname = 'index.html';
     } else if (/^(\d+\/)?editor\/?$/i.test(relativePathname)) {
         relativePathname = 'editor.html';
+    } else if (/^(\d+\/)?playground\/?$/i.test(relativePathname)) {
+        relativePathname = 'playground.html';
     } else if (/^(\d+\/)?fullscreen\/?$/i.test(relativePathname)) {
         relativePathname = 'fullscreen.html';
     } else if (/^addons\/?$/i.test(relativePathname)) {

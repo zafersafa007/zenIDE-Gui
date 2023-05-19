@@ -81,11 +81,13 @@ class GUI extends React.Component {
             fetchingProject,
             isLoading,
             loadingStateVisible,
+            isPlayground,
             ...componentProps
         } = this.props;
         return (
             <GUIComponent
                 loading={fetchingProject || isLoading || loadingStateVisible}
+                isPlayground={isPlayground}
                 {...componentProps}
             >
                 {children}
@@ -107,6 +109,7 @@ GUI.propTypes = {
     isLoading: PropTypes.bool,
     isScratchDesktop: PropTypes.bool,
     isShowingProject: PropTypes.bool,
+    isPlayground: PropTypes.bool,
     loadingStateVisible: PropTypes.bool,
     onProjectLoaded: PropTypes.func,
     onSeeCommunity: PropTypes.func,
@@ -121,6 +124,7 @@ GUI.propTypes = {
 
 GUI.defaultProps = {
     isScratchDesktop: false,
+    isPlayground: false,
     onStorageInit: storageInstance => storageInstance.addOfficialScratchWebStores(),
     onProjectLoaded: () => {},
     onUpdateProjectId: () => {},

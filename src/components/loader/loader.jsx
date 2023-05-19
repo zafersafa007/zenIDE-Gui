@@ -33,6 +33,13 @@ const mainMessages = {
             description="Main creating message"
             id="gui.loader.creating"
         />
+    ),
+    'gui.loader.playground': (
+        <FormattedMessage
+            defaultMessage="Loading Playground"
+            description="Playground load message"
+            id="gui.loader.playground"
+        />
     )
 };
 

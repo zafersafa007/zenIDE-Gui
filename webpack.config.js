@@ -42,6 +42,7 @@ const base = {
                 { from: /^\/\d+\/?$/, to: '/index.html' },
                 { from: /^\/\d+\/fullscreen\/?$/, to: '/fullscreen.html' },
                 { from: /^\/\d+\/editor\/?$/, to: '/editor.html' },
+                { from: /^\/\d+\/playground\/?$/, to: '/playground.html' },
                 { from: /^\/\d+\/embed\/?$/, to: '/embed.html' },
                 { from: /^\/addons\/?$/, to: '/addons.html' }
             ]
@@ -120,6 +121,7 @@ module.exports = [
     defaultsDeep({}, base, {
         entry: {
             'editor': './src/playground/editor.jsx',
+            'playground': './src/playground/playground.jsx',
             'player': './src/playground/player.jsx',
             'fullscreen': './src/playground/fullscreen.jsx',
             'embed': './src/playground/embed.jsx',
@@ -161,6 +163,13 @@ module.exports = [
                 chunks: ['editor'],
                 template: 'src/playground/index.ejs',
                 filename: 'editor.html',
+                title: 'PenguinMod - A mod of TurboWarp',
+                ...htmlWebpackPluginCommon
+            }),
+            new HtmlWebpackPlugin({
+                chunks: ['playground'],
+                template: 'src/playground/index.ejs',
+                filename: 'playground.html',
                 title: 'PenguinMod - A mod of TurboWarp',
                 ...htmlWebpackPluginCommon
             }),
