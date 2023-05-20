@@ -346,7 +346,7 @@ class Interface extends React.Component {
                             <div className={styles.section}>
                                 <FeaturedProjects />
                             </div>
-                            <a target="_blank" href="https://penguinmod.site/search?q=all%projects">View projects in new tab</a>
+                            <a target="_blank" href="https://penguinmod.site/search?q=all:projects">View projects in new tab</a>
                         </React.Fragment>
                     ) : null}
                 </div>
