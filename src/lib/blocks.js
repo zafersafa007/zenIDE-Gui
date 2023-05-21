@@ -428,14 +428,14 @@ export default function (vm) {
         const json = jsonForMenuBlock('FULLTOUCHINGOBJECTMENU', spriteMenu, sensingColors, [
             [mouse, '_mouse_'],
             [edge, '_edge_'],
-            ["this sprite", '_myself_']
+            ['this sprite', '_myself_']
         ]);
         this.jsonInit(json);
     };
 
     ScratchBlocks.Blocks.sensing_touchingobjectmenusprites.init = function () {
         const json = jsonForMenuBlock('SPRITETOUCHINGOBJECTMENU', spriteMenu, sensingColors, [
-            ["this sprite", '_myself_']
+            ['this sprite', '_myself_']
         ]);
         this.jsonInit(json);
     };
@@ -461,14 +461,14 @@ export default function (vm) {
 
     ScratchBlocks.Blocks.looks_getOtherSpriteVisible_menu.init = function () {
         const json = jsonForMenuBlock('VISIBLE_OPTION', spriteMenu, looksColors, [
-            ["this sprite", '_myself_']
+            ['this sprite', '_myself_']
         ]);
         this.jsonInit(json);
     };
 
     ScratchBlocks.Blocks.looks_changeVisibilityOfSprite_menu.init = function () {
         const json = jsonForMenuBlock('VISIBLE_OPTION', spriteMenu, looksColors, [
-            ["this sprite", '_myself_']
+            ['this sprite', '_myself_']
         ]);
         this.jsonInit(json);
     };
