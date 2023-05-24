@@ -5,6 +5,28 @@ import React from 'react';
 import CustomProceduresComponent from '../components/custom-procedures/custom-procedures.jsx';
 import LazyScratchBlocks from '../lib/tw-lazy-scratch-blocks';
 import {connect} from 'react-redux';
+import Color from './custom-procedures-util/color.js';
+
+function createHeavyColorFromHex(hex, percentage) {
+    const rgb = Color.hexToRgb(hex);
+    const hsv = Color.rgbToHsv(rgb);
+
+    if (hsv.v > 0.75) {
+        // so that pure white can still get color change
+        hsv.v -= percentage / 4;
+    }
+    hsv.s += percentage * hsv.v;
+
+    // make sure values arent invalid
+    if (hsv.v > 1) hsv.v = 1;
+    if (hsv.v < 0) hsv.v = 0;
+
+    if (hsv.s > 1) hsv.s = 1;
+    if (hsv.s < 0) hsv.s = 0;
+
+    const newRgb = Color.hsvToRgb(hsv);
+    return Color.rgbToHex(newRgb);
+}
 
 class CustomProcedures extends React.Component {
     constructor (props) {
@@ -18,6 +40,8 @@ class CustomProcedures extends React.Component {
             'handleCancel',
             'handleOk',
             'handleChangeType',
+            'handleBlockColorChange',
+            'setHexBlockColor',
             'setBlocks'
         ]);
         this.state = {
@@ -25,6 +49,7 @@ class CustomProcedures extends React.Component {
             warp: false,
             returns: false,
             editing: false,
+            blockColor: '#000000',
             type: 'statement'
         };
     }
@@ -112,11 +137,22 @@ class CustomProcedures extends React.Component {
         this.setState({
             warp: this.mutationRoot.getWarp(),
             returns: this.mutationRoot.getReturns(),
-            editing: this.mutationRoot.getEdited()
+            editing: this.mutationRoot.getEdited(),
+            // sometimes color.primary exists but sometimes it doesnt
+            // i can blame gsa for this or just do nothing about it :troll:
+            blockColor: this.mutationRoot.color ? this.mutationRoot.color.primary : this.mutationRoot.colour_
         });
         // Allow the initial events to run to position this block, then focus.
         setTimeout(() => {
             this.mutationRoot.focusLastEditor_();
+            // if editing, apply block color
+            if (this.state.editing && this.mutationRoot.color) {
+                this.handleBlockColorChange({
+                    target: {
+                        value: this.mutationRoot.color.primary
+                    }
+                });
+            }
         });
     }
     handleCancel () {
@@ -164,11 +200,31 @@ class CustomProcedures extends React.Component {
             this.setState({type: newType})
         }
     }
+    handleBlockColorChange (element) {
+        if (this.mutationRoot) {
+            const newColor = element.target.value;
+            window.createHeavyColorFromHex = createHeavyColorFromHex
+            this.mutationRoot.setColor(
+                newColor,
+                createHeavyColorFromHex(newColor, 0.15),
+                createHeavyColorFromHex(newColor, 0.25)
+            );
+            this.setState({blockColor: newColor});
+        }
+    }
+    setHexBlockColor (hex) {
+        this.handleBlockColorChange({
+            target: {
+                value: hex
+            }
+        });
+    }
     render () {
         return (
             <CustomProceduresComponent
                 componentRef={this.setBlocks}
                 warp={this.state.warp}
+                blockColor={this.state.blockColor}
                 returns={this.state.returns}
                 onAddBoolean={this.handleAddBoolean}
                 onAddLabel={this.handleAddLabel}
@@ -180,6 +236,8 @@ class CustomProcedures extends React.Component {
                 editing={this.state.editing}
                 selectedType={this.state.type}
                 onOutputTypeChanged={this.handleChangeType}
+                onBlockColorChange={this.handleBlockColorChange}
+                setHexBlockColor={this.setHexBlockColor}
             />
         );
     }

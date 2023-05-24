@@ -20,6 +20,52 @@
     margin: 3px;
 }
 
+/* Color inputs & color swatch */
+.body input[type="color"] {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 1px solid #333;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 2400px;
+    height: 15px;
+}
+[theme="dark"] .body input[type="color"] {
+    border: 1px solid #ddd;
+}
+::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+::-webkit-color-swatch {
+    border: 0;
+    border-radius: 2400px;
+}
+
+::-moz-color-swatch,
+::-moz-focus-inner {
+    border: 0;
+}
+
+::-moz-focus-inner {
+    padding: 0;
+}
+
+/* Preset color options */
+.preset-color {
+    border: 1px solid #333;
+    margin: 4px;
+    margin-left: 0px;
+    border-radius: 4px;
+    width: 1em;
+    height: 1em;
+}
+[theme="dark"] .preset-color {
+    border: 1px solid #ddd;
+}
+
 /* Blocks workspace for custom procedure declaration editor */
 .workspace {
     min-height: 200px;

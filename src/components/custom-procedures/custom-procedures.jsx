@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Modal from '../../containers/modal.jsx';
 import Box from '../box/box.jsx';
-import {defineMessages, injectIntl, intlShape, FormattedMessage} from 'react-intl';
+import { defineMessages, injectIntl, intlShape, FormattedMessage } from 'react-intl';
 
 import booleanInputIcon from './icon--boolean-input.svg';
 import textInputIcon from './icon--text-input.svg';
@@ -112,7 +112,7 @@ const CustomProcedures = props => (
                         id="gui.customProcedures.runWithoutScreenRefresh"
                     />
                 </label>
-                <br/>
+                <br />
                 {!props.editing ? (<div>
                     <label>
                         <input
@@ -122,7 +122,7 @@ const CustomProcedures = props => (
                         />
                         Returns a value
                     </label>
-                    <br/>
+                    <br />
                     {props.returns ? (<div>
                         <label>
                             <input
@@ -177,6 +177,76 @@ const CustomProcedures = props => (
                         </label>
                     </div>)}
                 </div>) : null}
+                <details>
+                    <summary>► Block Color</summary>
+                    <label>
+                        <input
+                            value={props.blockColor}
+                            type="color"
+                            onChange={props.onBlockColorChange}
+                            style={{ marginRight: "6px" }}
+                        />
+                        Custom Color
+                    </label>
+                    <br></br>
+                    <p><b>Presets</b></p>
+                    <button
+                        className={styles.presetColor}
+                        style={{ background: "#4C97FF" }}
+                        onClick={() => props.setHexBlockColor("#4C97FF")}
+                    />
+                    <button
+                        className={styles.presetColor}
+                        style={{ background: "#9966FF" }}
+                        onClick={() => props.setHexBlockColor("#9966FF")}
+                    />
+                    <button
+                        className={styles.presetColor}
+                        style={{ background: "#CF63CF" }}
+                        onClick={() => props.setHexBlockColor("#CF63CF")}
+                    />
+                    <button
+                        className={styles.presetColor}
+                        style={{ background: "#FFAB19" }}
+                        onClick={() => props.setHexBlockColor("#FFAB19")}
+                    />
+                    <button
+                        className={styles.presetColor}
+                        style={{ background: "#FFBF00" }}
+                        onClick={() => props.setHexBlockColor("#FFBF00")}
+                    />
+                    <button
+                        className={styles.presetColor}
+                        style={{ background: "#5CB1D6" }}
+                        onClick={() => props.setHexBlockColor("#5CB1D6")}
+                    />
+                    {/* todo: make this preset not look like doo doo */}
+                    {/* <button
+                        className={styles.presetColor}
+                        style={{ background: "#0FBD8C" }}
+                        onClick={() => props.setHexBlockColor("#0FBD8C")}
+                    /> */}
+                    <button
+                        className={styles.presetColor}
+                        style={{ background: "#59C059" }}
+                        onClick={() => props.setHexBlockColor("#59C059")}
+                    />
+                    <button
+                        className={styles.presetColor}
+                        style={{ background: "#FF8C1A" }}
+                        onClick={() => props.setHexBlockColor("#FF8C1A")}
+                    />
+                    <button
+                        className={styles.presetColor}
+                        style={{ background: "#FF661A" }}
+                        onClick={() => props.setHexBlockColor("#FF661A")}
+                    />
+                    <button
+                        className={styles.presetColor}
+                        style={{ background: "#FF6680" }}
+                        onClick={() => props.setHexBlockColor("#FF6680")}
+                    />
+                </details>
             </div>
             <Box className={styles.buttonRow}>
                 <button
