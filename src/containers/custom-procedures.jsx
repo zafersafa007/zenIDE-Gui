@@ -46,7 +46,8 @@ class CustomProcedures extends React.Component {
             'handleChangeType',
             'handleBlockColorChange',
             'setHexBlockColor',
-            'setBlocks'
+            'setBlocks',
+            'handleTestFunction'
         ]);
         this.state = {
             rtlOffset: 0,
@@ -142,9 +143,9 @@ class CustomProcedures extends React.Component {
             warp: this.mutationRoot.getWarp(),
             returns: this.mutationRoot.getReturns(),
             editing: this.mutationRoot.getEdited(),
-            // sometimes color.primary exists but sometimes it doesnt
+            // sometimes color[0] exists but sometimes it doesnt
             // i can blame gsa for this or just do nothing about it :troll:
-            blockColor: this.mutationRoot.color ? this.mutationRoot.color.primary : this.mutationRoot.colour_
+            blockColor: this.mutationRoot.color ? this.mutationRoot.color[0] : this.mutationRoot.colour_
         });
         // Allow the initial events to run to position this block, then focus.
         setTimeout(() => {
@@ -153,7 +154,7 @@ class CustomProcedures extends React.Component {
             if (this.state.editing && this.mutationRoot.color) {
                 this.handleBlockColorChange({
                     target: {
-                        value: this.mutationRoot.color.primary
+                        value: this.mutationRoot.color[0]
                     }
                 });
             }
@@ -222,6 +223,21 @@ class CustomProcedures extends React.Component {
             }
         });
     }
+    handleTestFunction (type) {
+        if (this.mutationRoot) {
+            switch (type) {
+                case 'icon': {
+                    const iconUri = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAMAAAC67D+PAAAAIGNIUk0AAHomAACAhAAA+gAAAIDoAAB1MAAA6mAAADqYAAAXcJy6UTwAAADwUExURf/////////////z8//v7//u7v/n5//j4//5+f/////////MzP+3t//////////9/f////+trf/////////Ozv/Pz//////////39//Jyf/8/P/////////////+/v/z8//////////S0v/Hx//////////e3v/e3v/////////////r6//e3v/j4//u7v////+Ghv+Fhf+Dg/95ef+bm/+Xl/+lpf+trf+rq/+fn/+kpP+Tk/9tbf+Cgv+Hh/9ZWf+cnP9ycv9bW/+Jif99ff+Li//ExP+zs/+EhP+Kiv+YmP9vb/+4uP9ubv+Bgf////kftB4AAAAwdFJOUwAQfdDW2u37siNq9f2ImKV0/JlH8PVlD6D6z2gMIc/DGDbt90Yr4uMvBHLr/fXjbhcejrAAAAABYktHRACIBR1IAAAAB3RJTUUH5wUYBDIzz3HsIQAAAHNJREFUCNdjYGRiZmFhZWPn4GTg4jYwMDA0MubhZeAzMTUzt7C0suZnEBC0trG1s7dzEGIQFnF0snV2cRYVYxCXkLSyc3WTkpZhYJCVc/fw9JJXYGBgUFTyNvfxVVYBMlXVjPz8DNQ1gExNLW0dXT19TQYA+wMO76YS2sEAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDUtMjRUMDQ6NTA6NTArMDA6MDDybVL4AAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTA1LTI0VDA0OjUwOjUwKzAwOjAwgzDqRAAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wNS0yNFQwNDo1MDo1MSswMDowMHJSwC8AAAAASUVORK5CYII=';
+                    this.mutationRoot.setImage(iconUri);
+                    break;
+                }
+                case 'removeicon': {
+                    this.mutationRoot.unsetImage();
+                    break;
+                }
+            }
+        }
+    }
     render () {
         return (
             <CustomProceduresComponent
@@ -241,6 +257,7 @@ class CustomProcedures extends React.Component {
                 onOutputTypeChanged={this.handleChangeType}
                 onBlockColorChange={this.handleBlockColorChange}
                 setHexBlockColor={this.setHexBlockColor}
+                onTestStart={this.handleTestFunction}
             />
         );
     }
