@@ -221,11 +221,11 @@ const CustomProcedures = props => (
                         onClick={() => props.setHexBlockColor("#5CB1D6")}
                     />
                     {/* todo: make this preset not look like doo doo */}
-                    {/* <button
+                    <button
                         className={styles.presetColor}
                         style={{ background: "#0FBD8C" }}
                         onClick={() => props.setHexBlockColor("#0FBD8C")}
-                    /> */}
+                    />
                     <button
                         className={styles.presetColor}
                         style={{ background: "#59C059" }}

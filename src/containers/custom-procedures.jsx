@@ -11,11 +11,15 @@ function createHeavyColorFromHex(hex, percentage) {
     const rgb = Color.hexToRgb(hex);
     const hsv = Color.rgbToHsv(rgb);
 
-    if (hsv.v > 0.75) {
+    if (hsv.v > 0.6) {
         // so that pure white can still get color change
-        hsv.v -= percentage / 4;
+        hsv.v -= percentage / 2;
     }
-    hsv.s += percentage * hsv.v;
+    // only white-black have this property
+    // so we can avoid adding red to them
+    if (!(hsv.h === 0 && hsv.s === 0)) {
+        hsv.s += percentage * hsv.v;
+    }
 
     // make sure values arent invalid
     if (hsv.v > 1) hsv.v = 1;
@@ -203,7 +207,6 @@ class CustomProcedures extends React.Component {
     handleBlockColorChange (element) {
         if (this.mutationRoot) {
             const newColor = element.target.value;
-            window.createHeavyColorFromHex = createHeavyColorFromHex
             this.mutationRoot.setColor(
                 newColor,
                 createHeavyColorFromHex(newColor, 0.15),
