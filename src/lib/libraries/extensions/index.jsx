@@ -108,6 +108,8 @@ import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
 import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png';
 import jgAdvancedTextExtensionIcon from './penguinmod/extensions/advancedtext.png';
 
+import jgJavascriptExtensionIcon from './penguinmod/extensions/javascript.png';
+
 // jg: default icon if you are too lazy to make one and you want me to make one instead lololololololol
 // gsa: olololololo
 import defaultExtensionIcon from './penguinmod/extensions/placeholder.png'
@@ -565,7 +567,7 @@ const menuItems = [
     {
         name: "JavaScript",
         extensionId: 'jgJavascript',
-        iconURL: defaultExtensionIcon,
+        iconURL: jgJavascriptExtensionIcon,
         tags: ["penguinmod"],
         description: "Run your own custom code written in JavaScript!",
         featured: true
