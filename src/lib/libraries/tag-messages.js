@@ -155,5 +155,15 @@ export default defineMessages({
         defaultMessage: 'TurboWarp',
         description: 'Tag for filtering a library by TurboWarp',
         id: 'gui.libraryTags.turbowarp'
-    }
+    },
+    programminglanguage: {
+        defaultMessage: 'Programming Languages',
+        description: 'Tag for filtering a library by programminglanguage',
+        id: 'gui.libraryTags.programminglanguage'
+    },
+    categoryexpansion: {
+        defaultMessage: 'Category Expansions',
+        description: 'Tag for filtering a library by categoryexpansion',
+        id: 'gui.libraryTags.categoryexpansion'
+    },
 });

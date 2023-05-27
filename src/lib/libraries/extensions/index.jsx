@@ -110,6 +110,10 @@ import jgAdvancedTextExtensionIcon from './penguinmod/extensions/advancedtext.pn
 
 import jgJavascriptExtensionIcon from './penguinmod/extensions/javascript.png';
 
+// category expansions
+import pmOperatorsExpansionExtensionIcon from './penguinmod/extensions/operators_expanded.png';
+import pmSensingExpansionExtensionIcon from './penguinmod/extensions/sensing_expanded.png';
+
 // jg: default icon if you are too lazy to make one and you want me to make one instead lololololololol
 // gsa: olololololo
 import defaultExtensionIcon from './penguinmod/extensions/placeholder.png'
@@ -274,8 +278,24 @@ const menuItems = [
         name: 'Extended Sound',
         extensionId: 'jgExtendedAudio',
         iconURL: jgExtendedAudioExtensionIcon,
-        tags: ['penguinmod'],
+        tags: ['penguinmod', 'categoryexpansion'],
         description: 'Free speed and pitch control, starting sounds at certain positions, stopping sounds, etc.',
+        featured: true
+    },
+    {
+        name: "Operators Expansion",
+        extensionId: 'pmOperatorsExpansion',
+        iconURL: pmOperatorsExpansionExtensionIcon,
+        tags: ["penguinmod", 'categoryexpansion'],
+        description: "More operators like nand, nor, character code to character, reading multiple lined text line by line, etc.",
+        featured: true
+    },
+    {
+        name: "Sensing Expansion",
+        extensionId: 'pmSensingExpansion',
+        iconURL: pmSensingExpansionExtensionIcon,
+        tags: ["penguinmod", 'categoryexpansion'],
+        description: "More sensing blocks for specific use cases or interacting with the user's device.",
         featured: true
     },
     {
@@ -309,7 +329,7 @@ const menuItems = [
     {
         name: 'Clones+',
         extensionId: 'https://extensions.turbowarp.org/LukeManiaStudios/ClonesPlus.js',
-        tags: ['turbowarp'],
+        tags: ['turbowarp', 'categoryexpansion'],
         iconURL: 'https://extensions.turbowarp.org/images/LukeManiaStudios/ClonesPlus.svg',
         insetIconURL: turbowarpIcon,
         description: "Expansion of Scratch's clone features.",
@@ -568,7 +588,7 @@ const menuItems = [
         name: "JavaScript",
         extensionId: 'jgJavascript',
         iconURL: jgJavascriptExtensionIcon,
-        tags: ["penguinmod"],
+        tags: ["penguinmod", "programminglanguage"],
         description: "Run your own custom code written in JavaScript!",
         featured: true
     },

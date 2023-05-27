@@ -860,18 +860,6 @@ const sensing = function (isInitialSetup, isStage) {
             </block>
             ${blockSeparator}
         `}
-        <block type="sensing_getspritewithattrib">
-            <value name="var">
-                <shadow type="text">
-                    <field name="TEXT">my variable</field>
-                </shadow>
-            </value>
-            <value name="val">
-                <shadow type="text">
-                    <field name="TEXT">0</field>
-                </shadow>
-            </value>
-        </block>
         ${isInitialSetup ? '' : `
             <block id="askandwait" type="sensing_askandwait">
                 <value name="QUESTION">
@@ -893,37 +881,6 @@ const sensing = function (isInitialSetup, isStage) {
             <value name="TEXT1">
                 <shadow type="text">
                     <field name="TEXT">10</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="sensing_thing_has_number">
-            <value name="TEXT1">
-                <shadow type="text">
-                    <field name="TEXT">abc 10 def</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="sensing_isUpperCase">
-            <value name="text">
-                <shadow type="text">
-                    <field name="TEXT">A</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="sensing_regextest">
-            <value name="text">
-                <shadow type="text">
-                    <field name="TEXT">foo bar</field>
-                </shadow>
-            </value>
-            <value name="reg">
-                <shadow type="text">
-                    <field name="TEXT">foo</field>
-                </shadow>
-            </value>
-            <value name="regrule">
-                <shadow type="text">
-                    <field name="TEXT">g</field>
                 </shadow>
             </value>
         </block>
@@ -986,10 +943,6 @@ const sensing = function (isInitialSetup, isStage) {
         ${blockSeparator}
         <block id="current" type="sensing_current"/>
         <block type="sensing_dayssince2000"/>
-        ${blockSeparator}
-        <block type="sensing_getoperatingsystem"/>
-        <block type="sensing_getbrowser"/>
-        <block type="sensing_geturl"/>
         ${blockSeparator}
         <block type="sensing_mobile"></block>
         <block type="sensing_fingerdown">
@@ -1205,18 +1158,13 @@ const operators = function (isInitialSetup) {
                 </shadow>
             </value>
         </block>
+        ${blockSeparator}
         <block type="operator_trueBoolean"></block>
         <block type="operator_falseBoolean"></block>
-        <block type="operator_randomBoolean"></block>
         ${blockSeparator}
         <block type="operator_and"/>
         <block type="operator_or"/>
         <block type="operator_not"/>
-        ${blockSeparator}
-        <block type="operator_nand"/>
-        <block type="operator_nor"/>
-        <block type="operator_xor"/>
-        <block type="operator_xnor"/>
         ${blockSeparator}
         ${isInitialSetup ? '' : `
             <block type="operator_newLine"></block>
@@ -1277,19 +1225,6 @@ const operators = function (isInitialSetup) {
                 </value>
             </block>
             ${blockSeparator}
-            <block type="operator_countAppearTimes">
-                <value name="TEXT1">
-                    <shadow type="text">
-                        <field name="TEXT">a</field>
-                    </shadow>
-                </value>
-                <value name="TEXT2">
-                    <shadow type="text">
-                        <field name="TEXT">abc abc abc</field>
-                    </shadow>
-                </value>
-            </block>
-            ${blockSeparator}
             <block type="operator_letter_of">
                 <value name="LETTER">
                     <shadow type="math_whole_number">
@@ -1319,18 +1254,6 @@ const operators = function (isInitialSetup) {
                     </shadow>
                 </value>
             </block>
-            <block type="operator_readLineInMultilineText">
-                <value name="LINE">
-                    <shadow type="math_number">
-                        <field name="NUM">1</field>
-                    </shadow>
-                </value>
-                <value name="TEXT">
-                    <shadow type="text">
-                        <field name="TEXT">Text with multiple lines here</field>
-                    </shadow>
-                </value>
-            </block>
             <block type="operator_length">
                 <value name="STRING">
                     <shadow type="text">
@@ -1348,18 +1271,6 @@ const operators = function (isInitialSetup) {
               <value name="STRING2">
                 <shadow type="text">
                   <field name="TEXT">${letter}</field>
-                </shadow>
-              </value>
-            </block>
-            <block type="operator_textIncludesLetterFrom" id="operator_textIncludesLetterFrom">
-              <value name="TEXT1">
-                <shadow type="text">
-                  <field name="TEXT">abcdef</field>
-                </shadow>
-              </value>
-              <value name="TEXT2">
-                <shadow type="text">
-                  <field name="TEXT">fgh</field>
                 </shadow>
               </value>
             </block>
@@ -1476,21 +1387,6 @@ const operators = function (isInitialSetup) {
             <value name="ONE">
                 <shadow type="text">
                     <field name="TEXT">true</field>
-                </shadow>
-            </value>
-        </block>
-        ${blockSeparator}
-        <block type="operator_character_to_code">
-            <value name="ONE">
-                <shadow type="text">
-                    <field name="TEXT">a</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="operator_code_to_character">
-            <value name="ONE">
-                <shadow type="text">
-                    <field name="TEXT">97</field>
                 </shadow>
             </value>
         </block>
