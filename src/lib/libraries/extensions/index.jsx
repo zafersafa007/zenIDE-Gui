@@ -563,6 +563,14 @@ const menuItems = [
         featured: true
     },
     {
+        name: "JavaScript",
+        extensionId: 'jgJavascript',
+        iconURL: defaultExtensionIcon,
+        tags: ["penguinmod"],
+        description: "Run your own custom code written in JavaScript!",
+        featured: true
+    },
+    {
         name: (
             <FormattedMessage
                 defaultMessage="TurboWarp Blocks"
@@ -838,6 +846,14 @@ if (IsLocal || IsLiveTests) {
             description: "Draw on and edit your costumes (either temporarily or not) while the project is running.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.",
             featured: true
         },
+        // {
+        //     name: "Javascript",
+        //     extensionId: 'jgJavascript',
+        //     iconURL: defaultExtensionIcon,
+        //     tags: ["penguinmod"],
+        //     description: "this shit should have been removed from PM permanently",
+        //     featured: true
+        // },
         {
             name: "the doo doo extension",
             extensionId: 'jgDooDoo',

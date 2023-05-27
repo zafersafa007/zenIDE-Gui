@@ -640,14 +640,6 @@ const events = function (isInitialSetup, isStage) {
               <shadow type="event_broadcast_menu"></shadow>
             </value>
         </block>
-        ${blockSeparator}
-        <block type="event_whenjavascript">
-            <value name="JS">
-                <shadow type="text">
-                    <field name="TEXT">false</field>
-                </shadow>
-            </value>
-        </block>
         ${categorySeparator}
     </category>
     `;
@@ -775,14 +767,6 @@ const control = function (isInitialSetup, isStage) {
             </value>
         </block>
         <block type="control_clear_counter"/>
-        ${blockSeparator}
-        <block type="control_javascript_command">
-            <value name="JS">
-                <shadow type="text">
-                    <field name="TEXT">alert('hello!')</field>
-                </shadow>
-            </value>
-        </block>
         ${categorySeparator}
     </category>
     `;
@@ -1507,21 +1491,6 @@ const operators = function (isInitialSetup) {
             <value name="ONE">
                 <shadow type="text">
                     <field name="TEXT">97</field>
-                </shadow>
-            </value>
-        </block>
-        ${blockSeparator}
-        <block type="operator_javascript_output">
-            <value name="JS">
-                <shadow type="text">
-                    <field name="TEXT">Math.random()</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="operator_javascript_boolean">
-            <value name="JS">
-                <shadow type="text">
-                    <field name="TEXT">Math.round(Math.random()) === 1</field>
                 </shadow>
             </value>
         </block>
