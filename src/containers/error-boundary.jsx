@@ -39,7 +39,7 @@ class ErrorBoundary extends React.Component {
         });
 
         // Log error locally for debugging as well.
-        log.error(`Unhandled Error: ${error.stack}\nComponent stack: ${info.componentStack}`);
+        log.error(`Unhandled Error: ${error.stack ? error.stack : error}\nComponent stack: ${info.componentStack}`);
     }
 
     handleBack () {
