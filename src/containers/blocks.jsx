@@ -474,7 +474,7 @@ class Blocks extends React.Component {
                     // otherwise it's a non-block entry such as '---'
                 });
 
-                this.ScratchBlocks.defineBlocksWithJsonArray(staticBlocksJson);
+                this.ScratchBlocks.defineBlocksWithJsonArray(staticBlocksJson, true);
                 dynamicBlocksInfo.forEach(blockInfo => {
                     // This is creating the block factory / constructor -- NOT a specific instance of the block.
                     // The factory should only know static info about the block: the category info and the opcode.
