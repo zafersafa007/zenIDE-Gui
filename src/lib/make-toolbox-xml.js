@@ -716,6 +716,8 @@ const control = function (isInitialSetup, isStage) {
             </value>
         </block>
         ${blockSeparator}
+        <block type="control_all_at_once"/>
+        ${blockSeparator}
         <block type="control_backToGreenFlag"></block>
         <block type="control_stop_sprite">
             <value name="STOP_OPTION">
