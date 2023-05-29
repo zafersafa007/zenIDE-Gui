@@ -115,7 +115,7 @@ import pmOperatorsExpansionExtensionIcon from './penguinmod/extensions/operators
 import pmSensingExpansionExtensionIcon from './penguinmod/extensions/sensing_expanded.png';
 
 // jg: default icon if you are too lazy to make one and you want me to make one instead lololololololol
-// gsa: olololololo
+// gsa: ololololololo
 import defaultExtensionIcon from './penguinmod/extensions/placeholder.png'
 
 const urlParams = new URLSearchParams(location.search);
