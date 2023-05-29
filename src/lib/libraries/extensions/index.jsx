@@ -839,7 +839,7 @@ if (IsLocal || IsLiveTests) {
             tags: ["penguinmod"],
             customInsetColor: '#B200FF',
             insetIconURL: jg3dInsetExtensionIcon,
-            description: 'Use the magic of 3D to spice up your project.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
+            description: 'Use the magic of 3D to spice up your project.',
             featured: true
         },
         {
