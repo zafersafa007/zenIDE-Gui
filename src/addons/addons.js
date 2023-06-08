@@ -3,6 +3,9 @@
 const addons = [
     'cat-blocks',
     'editor-devtools',
+    'find-bar',
+    'middle-click-popup',
+    'jump-to-def',
     'editor-searchable-dropdowns',
     'data-category-tweaks-v2',
     'block-palette-icons',
@@ -12,12 +15,14 @@ const addons = [
     'debugger',
     'pause',
     'mute-project',
+    'vol-slider',
     'clones',
     'mouse-pos',
     'color-picker',
     'remove-sprite-confirm',
     'block-count',
     'onion-skinning',
+    'paint-snap',
     'default-costume-editor-color',
     'bitmap-copy',
     '2d-color-picker',
@@ -32,6 +37,7 @@ const addons = [
     'editor-buttons-reverse-order',
     'variable-manager',
     'search-sprites',
+    'sprite-properties',
     'gamepad',
     'editor-sounds',
     'folders',
@@ -55,19 +61,24 @@ const addons = [
     'swap-local-global',
     'editor-comment-previews',
     'columns',
+    'number-pad',
     'script-snap',
     'fullscreen',
     'hide-stage',
     'tw-straighten-comments',
     'tw-remove-backpack',
     'tw-remove-feedback',
+    'tw-disable-cloud-variables',
+    'tw-disable-restore-points',
     'editor-stepping'
 ];
 
 const newAddons = [
-    'pick-colors-from-stage',
-    'zebra-striping',
-    'paint-skew'
+    'vol-slider',
+    'number-pad',
+    'rename-broadcasts',
+    'sprite-properties',
+    'paint-snap'
 ];
 
 // eslint-disable-next-line import/no-commonjs
