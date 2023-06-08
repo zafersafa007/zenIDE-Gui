@@ -35,7 +35,6 @@ const PackagerIntegrationHOC = function (WrappedComponent) {
         }
         handleMessage (e) {
             if (e.origin !== PACKAGER_ORIGIN) {
-            if (e.origin !== PACKAGER_ORIGIN) {
                 return;
             }
 
@@ -44,7 +43,7 @@ const PackagerIntegrationHOC = function (WrappedComponent) {
             }
 
             if (!e.data.p4) {
-                return
+                return;
             }
 
             const packagerData = e.data.p4;
