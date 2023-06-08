@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 
 import musicIconURL from './music/music.png';
 import musicInsetIconURL from './music/music-small.svg';
@@ -76,10 +76,6 @@ import griffpatchPhysicsIcon from './penguinmod/extensions/griffpatch_physicsIco
 import gp from './penguinmod/extensions/gamepad.svg';
 import clippingblending from './penguinmod/extensions/clippingblending.svg';
 
-// cl waw
-// import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
-import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg';
-
 import pointerlockThumb from './penguinmod/extensions/pointerlock.svg';
 import cursorThumb from './penguinmod/extensions/cursor.svg';
 
@@ -116,7 +112,7 @@ import pmSensingExpansionExtensionIcon from './penguinmod/extensions/sensing_exp
 
 // jg: default icon if you are too lazy to make one and you want me to make one instead lololololololol
 // gsa: ololololololo
-import defaultExtensionIcon from './penguinmod/extensions/placeholder.png'
+import defaultExtensionIcon from './penguinmod/extensions/placeholder.png';
 
 const urlParams = new URLSearchParams(location.search);
 
@@ -144,7 +140,6 @@ const menuItems = [
                 id="gui.extension.music.description"
             />
         ),
-        tags: ['scratch'],
         featured: true
     },
     {
@@ -198,7 +193,6 @@ const menuItems = [
                 id="gui.extension.videosensing.description"
             />
         ),
-        tags: ['scratch'],
         featured: true
     },
     {
@@ -222,7 +216,6 @@ const menuItems = [
                 id="gui.extension.text2speech.description"
             />
         ),
-        tags: ['scratch'],
         featured: true,
         internetConnectionRequired: true
     },
@@ -247,7 +240,6 @@ const menuItems = [
                 id="gui.extension.translate.description"
             />
         ),
-        tags: ['scratch'],
         featured: true,
         internetConnectionRequired: true
     },
@@ -287,27 +279,27 @@ const menuItems = [
         featured: true
     },
     {
-        name: "Operators Expansion",
+        name: 'Operators Expansion',
         extensionId: 'pmOperatorsExpansion',
         iconURL: pmOperatorsExpansionExtensionIcon,
-        tags: ["penguinmod", 'categoryexpansion'],
-        description: "More operators like nand, nor, character code to character, reading multiple lined text line by line, etc.",
+        tags: ['penguinmod', 'categoryexpansion'],
+        description: 'More operators like nand, nor, character code to character, reading multiple lined text line by line, etc.',
         featured: true
     },
     {
-        name: "Sensing Expansion",
+        name: 'Sensing Expansion',
         extensionId: 'pmSensingExpansion',
         iconURL: pmSensingExpansionExtensionIcon,
-        tags: ["penguinmod", 'categoryexpansion'],
+        tags: ['penguinmod', 'categoryexpansion'],
         description: "More sensing blocks for specific use cases or interacting with the user's device.",
         featured: true
     },
     {
-        name: "JSON",
+        name: 'JSON',
         extensionId: 'jgJSON',
         iconURL: jgJSONExtensionIcon,
         tags: ['penguinmod'],
-        description: "Blocks for handling JSON objects and Arrays.",
+        description: 'Blocks for handling JSON objects and Arrays.',
         featured: true
     },
     {
@@ -317,7 +309,7 @@ const menuItems = [
         extDeveloper: 'griffpatch',
         iconURL: griffpatchPhysicsThumb,
         insetIconURL: griffpatchPhysicsIcon,
-        description: "Box2D Physics extension created by Griffpatch.",
+        description: 'Box2D Physics extension created by Griffpatch.',
         customInsetColor: '#D9F0FF',
         featured: true
     },
@@ -338,7 +330,7 @@ const menuItems = [
         insetIconURL: turbowarpIcon,
         description: "Expansion of Scratch's clone features.",
         featured: true,
-        twDeveloper: "LukeManiaStudios"
+        twDeveloper: 'LukeManiaStudios'
     },
     {
         name: 'Multiple Timers',
@@ -358,11 +350,11 @@ const menuItems = [
         featured: true
     },
     {
-        name: "Runtime Modifications",
+        name: 'Runtime Modifications',
         extensionId: 'jgRuntime',
         tags: ['penguinmod'],
         iconURL: jgRuntimeExtensionIcon,
-        description: "Blocks for updating Scratch objects like the stage and sprites.",
+        description: 'Blocks for updating Scratch objects like the stage and sprites.',
         credits: 'TheShovel, showierdata9978',
         featured: true
     },
@@ -376,11 +368,11 @@ const menuItems = [
         featured: true
     },
     {
-        name: "Website Requests",
+        name: 'Website Requests',
         extensionId: 'jgWebsiteRequests',
         iconURL: jgWebsiteRequestsExtensionIcon,
         tags: ['penguinmod'],
-        description: "Blocks to communicate with APIs and websites.",
+        description: 'Blocks to communicate with APIs and websites.',
         featured: true,
         internetConnectionRequired: true
     },
@@ -390,18 +382,17 @@ const menuItems = [
         tags: ['turbowarp'],
         insetIconURL: turbowarpIcon,
         iconURL: 'https://extensions.turbowarp.org/images/cloudlink.svg',
-        insetIconURL: cloudlinkIcon,
-        description: "A cool extension to interact with webservers",
+        description: 'A cool extension to interact with webservers',
         featured: true,
         extDeveloper: 'MikeDev',
         internetConnectionRequired: false
     },
     {
-        name: "Prism",
+        name: 'Prism',
         extensionId: 'jgPrism',
         tags: ['penguinmod'],
         iconURL: jgPrismExtensionIcon,
-        description: "Blocks for specific use-cases or major convenience.",
+        description: 'Blocks for specific use-cases or major convenience.',
         featured: true
     },
     {
@@ -413,11 +404,11 @@ const menuItems = [
         extDeveloper: 'silvxrcat'
     },
     {
-        name: "HTML iframe Elements",
+        name: 'HTML iframe Elements',
         extensionId: 'jgIframe',
         iconURL: jgIframeExtensionIcon,
         tags: ['penguinmod'],
-        description: "Blocks to place and move around frames that contain HTML content or websites.",
+        description: 'Blocks to place and move around frames that contain HTML content or websites.',
         featured: true,
         internetConnectionRequired: true
     },
@@ -478,7 +469,7 @@ const menuItems = [
         insetIconURL: turbowarpIcon,
         description: 'Basic utilities for any fast food employee',
         featured: true,
-        twDeveloper: "LukeManiaStudios"
+        twDeveloper: 'LukeManiaStudios'
     },
     {
         name: (
@@ -507,7 +498,7 @@ const menuItems = [
         extensionId: 'Gamepad',
         tags: ['turbowarp'],
         insetIconURL: turbowarpIcon,
-        twDeveloper: "GarboMuffin",
+        twDeveloper: 'GarboMuffin',
         iconURL: gp,
         description: (
             <FormattedMessage
@@ -560,7 +551,7 @@ const menuItems = [
         featured: true,
         internetConnectionRequired: false,
         incompatibleWithScratch: false,
-        twDeveloper: "GarboMuffin"
+        twDeveloper: 'GarboMuffin'
     },
     {
         name: 'Mouse Cursor',
@@ -578,7 +569,7 @@ const menuItems = [
         featured: true,
         internetConnectionRequired: false,
         incompatibleWithScratch: false,
-        twDeveloper: "GarboMuffin"
+        twDeveloper: 'GarboMuffin'
     },
     {
         name: 'Scratch Authentication',
@@ -589,11 +580,11 @@ const menuItems = [
         featured: true
     },
     {
-        name: "JavaScript",
+        name: 'JavaScript',
         extensionId: 'jgJavascript',
         iconURL: jgJavascriptExtensionIcon,
-        tags: ["penguinmod", "programminglanguage"],
-        description: "Run your own custom code written in JavaScript!",
+        tags: ['penguinmod', 'programminglanguage'],
+        description: 'Run your own custom code written in JavaScript!',
         featured: true
     },
     {
@@ -605,11 +596,11 @@ const menuItems = [
             />
         ),
         extensionId: 'tw',
-        twDeveloper: "GarboMuffin",
+        twDeveloper: 'GarboMuffin',
         tags: ['turbowarp'],
         insetIconURL: turbowarpIcon,
         iconURL: twIcon,
-        description: "Weird new blocks.",
+        description: 'Weird new blocks.',
         featured: true
     },
     {
@@ -626,7 +617,6 @@ const menuItems = [
                 id="gui.extension.microbit.description"
             />
         ),
-        tags: ['scratch'],
         featured: true,
         disabled: false,
         bluetoothRequired: true,
@@ -658,7 +648,6 @@ const menuItems = [
                 id="gui.extension.ev3.description"
             />
         ),
-        tags: ['scratch'],
         featured: true,
         disabled: false,
         bluetoothRequired: true,
@@ -691,7 +680,6 @@ const menuItems = [
                 id="gui.extension.boost.description"
             />
         ),
-        tags: ['scratch'],
         featured: true,
         disabled: false,
         bluetoothRequired: true,
@@ -724,7 +712,6 @@ const menuItems = [
                 id="gui.extension.wedo2.description"
             />
         ),
-        tags: ['scratch'],
         featured: true,
         disabled: false,
         tags: ['scratch'],
@@ -760,7 +747,6 @@ const menuItems = [
                 id="gui.extension.gdxfor.description"
             />
         ),
-        tags: ['scratch'],
         featured: true,
         disabled: false,
         bluetoothRequired: true,
@@ -804,11 +790,11 @@ const menuItems = [
 if (IsLocal || IsLiveTests) {
     const extras = [
         {
-            name: "Legacy Files",
+            name: 'Legacy Files',
             extensionId: 'jgFiles',
             iconURL: defaultExtensionIcon,
-            tags: ["penguinmod"],
-            description: "Basic blocks for files. This has been replaced by the TurboWarp files extension.",
+            tags: ['penguinmod'],
+            description: 'Basic blocks for files. This has been replaced by the TurboWarp files extension.',
             featured: true
         },
         {
@@ -820,11 +806,11 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
-            name: "Unite",
+            name: 'Unite',
             extensionId: 'jwUnite',
             iconURL: defaultExtensionIcon,
-            tags: ["penguinmod"],
-            description: "Legacy extension that was eventually merged into the default toolbox.",
+            tags: ['penguinmod'],
+            description: 'Legacy extension that was eventually merged into the default toolbox.',
             featured: true
         },
         {
@@ -839,7 +825,7 @@ if (IsLocal || IsLiveTests) {
             name: 'Jeremys Dev Tools',
             extensionId: 'jgDev',
             iconURL: defaultExtensionIcon,
-            tags: ["penguinmod"],
+            tags: ['penguinmod'],
             description: 'Test extension to see if things are possible.\nDO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
             featured: true
         },
@@ -847,36 +833,36 @@ if (IsLocal || IsLiveTests) {
             name: '3D',
             extensionId: 'jg3d',
             iconURL: jg3dExtensionIcon,
-            tags: ["penguinmod"],
+            tags: ['penguinmod'],
             customInsetColor: '#B200FF',
             insetIconURL: jg3dInsetExtensionIcon,
             description: 'Use the magic of 3D to spice up your project.',
             featured: true
         },
         {
-            name: "Advanced Text",
+            name: 'Advanced Text',
             extensionId: 'jgAdvancedText',
             eventSubmittor: 'eggo',
             iconURL: jgAdvancedTextExtensionIcon,
-            tags: ["penguinmod"],
-            description: "In development.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.",
+            tags: ['penguinmod'],
+            description: 'In development.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
             featured: true
         },
         {
-            name: "Interfaces",
+            name: 'Interfaces',
             extensionId: 'jgInterfaces',
             iconURL: jgsilvxrcatInterfacesExtensionIcon,
             credits: 'silvxrcat',
-            tags: ["penguinmod"],
-            description: "In development.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.",
+            tags: ['penguinmod'],
+            description: 'In development.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
             featured: true
         },
         {
-            name: "Costume Drawing",
+            name: 'Costume Drawing',
             extensionId: 'jgCostumeDrawing',
             iconURL: defaultExtensionIcon,
-            tags: ["penguinmod"],
-            description: "Draw on and edit your costumes (either temporarily or not) while the project is running.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.",
+            tags: ['penguinmod'],
+            description: 'Draw on and edit your costumes (either temporarily or not) while the project is running.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
             featured: true
         },
         // {
@@ -888,17 +874,17 @@ if (IsLocal || IsLiveTests) {
         //     featured: true
         // },
         {
-            name: "the doo doo extension",
+            name: 'the doo doo extension',
             extensionId: 'jgDooDoo',
             iconURL: defaultExtensionIcon,
-            tags: ["penguinmod"],
-            description: "dr bob eae",
+            tags: ['penguinmod'],
+            description: 'dr bob eae',
             featured: true
         }
-    ]
+    ];
     extras.forEach(ext => {
         menuItems.push(ext);
-    })
+    });
 }
 
 export default menuItems;

@@ -61,7 +61,7 @@ class ExtensionLibrary extends React.PureComponent {
             } else {
                 const parsedURL = isCustomURL ? parseExtensionURL(url) : url;
                 this.props.vm.extensionManager.loadExtensionURL(parsedURL)
-                    .then(() => {
+                    .then(id => {
                         this.props.onCategorySelected(id);
                         if (isCustomURL) {
                             let newUrl = location.pathname;
@@ -95,7 +95,6 @@ class ExtensionLibrary extends React.PureComponent {
                 filterable={true}
                 tags={extensionTags}
                 id="extensionLibrary"
-                tags={extensionTags}
                 title={this.props.intl.formatMessage(messages.extensionTitle)}
                 visible={this.props.visible}
                 onItemSelected={this.handleItemSelect}
