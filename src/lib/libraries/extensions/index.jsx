@@ -138,6 +138,7 @@ const menuItems = [
                 id="gui.extension.music.description"
             />
         ),
+        tags: ['scratch'],
         featured: true
     },
     {
@@ -191,6 +192,7 @@ const menuItems = [
                 id="gui.extension.videosensing.description"
             />
         ),
+        tags: ['scratch'],
         featured: true
     },
     {
@@ -214,6 +216,7 @@ const menuItems = [
                 id="gui.extension.text2speech.description"
             />
         ),
+        tags: ['scratch'],
         featured: true,
         internetConnectionRequired: true
     },
@@ -238,6 +241,7 @@ const menuItems = [
                 id="gui.extension.translate.description"
             />
         ),
+        tags: ['scratch'],
         featured: true,
         internetConnectionRequired: true
     },
@@ -600,6 +604,7 @@ const menuItems = [
                 id="gui.extension.microbit.description"
             />
         ),
+        tags: ['scratch'],
         featured: true,
         disabled: false,
         bluetoothRequired: true,
@@ -631,6 +636,7 @@ const menuItems = [
                 id="gui.extension.ev3.description"
             />
         ),
+        tags: ['scratch'],
         featured: true,
         disabled: false,
         bluetoothRequired: true,
@@ -663,6 +669,7 @@ const menuItems = [
                 id="gui.extension.boost.description"
             />
         ),
+        tags: ['scratch'],
         featured: true,
         disabled: false,
         bluetoothRequired: true,
@@ -695,6 +702,7 @@ const menuItems = [
                 id="gui.extension.wedo2.description"
             />
         ),
+        tags: ['scratch'],
         featured: true,
         disabled: false,
         tags: ['scratch'],
@@ -730,6 +738,7 @@ const menuItems = [
                 id="gui.extension.gdxfor.description"
             />
         ),
+        tags: ['scratch'],
         featured: true,
         disabled: false,
         bluetoothRequired: true,
@@ -751,7 +760,7 @@ const menuItems = [
         name: (
             <FormattedMessage
                 defaultMessage="Custom Extension"
-                description="Name of custom extension category"
+                description="Name of library item to load a custom extension from a remote source"
                 id="tw.customExtension.name"
             />
         ),
@@ -759,11 +768,13 @@ const menuItems = [
         iconURL: customExtensionIcon,
         description: (
             <FormattedMessage
-                defaultMessage="Load custom extensions from URLs. For developers. Experimental."
-                description="Description of custom extension category"
+                defaultMessage="Load custom extensions from URLs, files, or JavaScript source code."
+                description="Description of library item to load a custom extension from a custom source"
                 id="tw.customExtension.description"
             />
         ),
+        tags: ['tw'],
+        incompatibleWithScratch: true,
         featured: true
     }
 ];

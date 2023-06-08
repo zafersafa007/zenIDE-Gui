@@ -1,17 +1,4 @@
-/* inserted by pull.js */
-import _twAsset0 from "!url-loader!./decrement.svg";
-import _twAsset1 from "!url-loader!./increment.svg";
-import _twAsset2 from "!url-loader!./settings.svg";
-import _twAsset3 from "!url-loader!./toggle.svg";
-const _twGetAsset = (path) => {
-  if (path === "/decrement.svg") return _twAsset0;
-  if (path === "/increment.svg") return _twAsset1;
-  if (path === "/settings.svg") return _twAsset2;
-  if (path === "/toggle.svg") return _twAsset3;
-  throw new Error(`Unknown asset: ${path}`);
-};
-
-export default async function ({ addon, global, console, msg }) {
+export default async function ({ addon, console, msg }) {
   const paper = await addon.tab.traps.getPaper();
 
   const paintEditorCanvasContainer = await addon.tab.waitForElement("[class^='paint-editor_canvas-container']");
@@ -584,13 +571,9 @@ export default async function ({ addon, global, console, msg }) {
     el.draggable = false;
     el.dataset.image = name;
     el.loading = "lazy";
-    el.src = _twGetAsset("/" + name + ".svg");
+    el.src = addon.self.getResource("/" + name + ".svg") /* rewritten by pull.js */;
     return el;
   };
-
-  const paintEditorControlsContainer = document.createElement("div");
-  paintEditorControlsContainer.className = "sa-onion-controls-container";
-  paintEditorControlsContainer.dir = "";
 
   const toggleControlsGroup = createGroup();
   addon.tab.displayNoneWhileDisabled(toggleControlsGroup, { display: "flex" });
@@ -600,19 +583,19 @@ export default async function ({ addon, global, console, msg }) {
   toggleButton.addEventListener("click", () => setEnabled(!settings.enabled));
   toggleButton.title = msg("toggle");
   toggleButton.appendChild(createButtonImage("toggle"));
-  toggleControlsGroup.appendChild(toggleButton);
 
   const settingButton = createButton();
   settingButton.addEventListener("click", () => setSettingsOpen(!areSettingsOpen()));
   settingButton.title = msg("settings");
   settingButton.appendChild(createButtonImage("settings"));
-  toggleControlsGroup.appendChild(settingButton);
-
-  paintEditorControlsContainer.appendChild(toggleControlsGroup);
 
   //
   // Settings page
   //
+
+  const settingPageWrapper = document.createElement("div");
+  settingPageWrapper.className = "sa-onion-settings-wrapper";
+  toggleControlsGroup.append(settingPageWrapper, toggleButton, settingButton);
 
   const settingsPage = document.createElement("div");
   settingsPage.className = "sa-onion-settings";
@@ -795,20 +778,13 @@ export default async function ({ addon, global, console, msg }) {
           state.scratchGui.editorTab.activeTabIndex === 1 && !state.scratchGui.mode.isPlayerOnly,
       });
       const zoomControlsContainer = canvasControls.querySelector("[class^='paint-editor_zoom-controls']");
-      const canvasContainer = document.querySelector("[class^='paint-editor_canvas-container']");
 
-      // TODO: when leaving the paint editor, references to the old zoom controls are kept around by our DOM
-      // Need to investigate whether this leaks memory or other issues.
-      const oldZoomControlsContainer = paintEditorControlsContainer.querySelector(
-        "[class^='paint-editor_zoom-controls']"
-      );
-      if (oldZoomControlsContainer) {
-        oldZoomControlsContainer.parentNode.removeChild(oldZoomControlsContainer);
-      }
-
-      paintEditorControlsContainer.appendChild(zoomControlsContainer);
-      canvasControls.appendChild(paintEditorControlsContainer);
-      canvasContainer.appendChild(settingsPage);
+      addon.tab.appendToSharedSpace({
+        space: "paintEditorZoomControls",
+        element: toggleControlsGroup,
+        order: 1,
+      });
+      settingPageWrapper.appendChild(settingsPage);
 
       if (!hasRunOnce) {
         hasRunOnce = true;

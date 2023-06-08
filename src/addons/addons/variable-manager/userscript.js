@@ -1,13 +1,4 @@
-/* inserted by pull.js */
-import _twAsset0 from "!url-loader!./icon.svg";
-import _twAsset1 from "!url-loader!./search.svg";
-const _twGetAsset = (path) => {
-  if (path === "/icon.svg") return _twAsset0;
-  if (path === "/search.svg") return _twAsset1;
-  throw new Error(`Unknown asset: ${path}`);
-};
-
-export default async function ({ addon, global, console, msg }) {
+export default async function ({ addon, console, msg }) {
   const vm = addon.tab.traps.vm;
 
   let localVariables = [];
@@ -60,7 +51,7 @@ export default async function ({ addon, global, console, msg }) {
 
   const varTabIcon = document.createElement("img");
   varTabIcon.draggable = false;
-  varTabIcon.src = _twGetAsset("/icon.svg");
+  varTabIcon.src = addon.self.getResource("/icon.svg") /* rewritten by pull.js */;
 
   const varTabText = document.createElement("span");
   varTabText.innerText = msg("variables");
@@ -94,31 +85,32 @@ export default async function ({ addon, global, console, msg }) {
       this.scratchVariable = scratchVariable;
       this.target = target;
       this.visible = false;
-      this.tooBig = false;
+      this.ignoreTooBig = false;
       this.buildDOM();
     }
 
     updateValue(force) {
       if (!this.visible && !force) return;
-      if (this.tooBig) return;
+
       let newValue;
+      let maxSafeLength;
       if (this.scratchVariable.type === "list") {
         newValue = this.scratchVariable.value.join("\n");
-        if (newValue.length > 12000000) {
-          this.tooBig = true;
-        }
+        maxSafeLength = 5000000;
       } else {
         newValue = this.scratchVariable.value;
-        if (newValue.length > 1000000) {
-          this.tooBig = true;
-        }
+        maxSafeLength = 1000000;
       }
-      if (this.tooBig) {
-        this.input.value = "Too big to safely display. If this limit is too low, use the feedback button at the top of the screen.";
-        this.input.disabled = true;
+
+      if (!this.ignoreTooBig && newValue.length > maxSafeLength) {
+        this.input.value = "";
+        this.row.dataset.tooBig = true;
         return;
       }
+
+      this.row.dataset.tooBig = false;
       if (newValue !== this.input.value) {
+        this.input.disabled = false;
         this.input.value = newValue;
       }
     }
@@ -128,7 +120,7 @@ export default async function ({ addon, global, console, msg }) {
       if (this.scratchVariable.name.toLowerCase().includes(search.toLowerCase()) || !search) {
         // fuzzy searches are lame we are too cool for fuzzy searches (& i doubt they're even the right thing to use here, this should work fine enough)
         this.row.style.display = ""; // make the row normal
-        this.updateValue(true); // force it to update because its hidden and it wouldnt be able to otherwise
+        this.updateValue(true); // force it to update because its hidden and it wouldn't be able to otherwise
       } else {
         this.row.style.display = "none"; // set the entire row as hidden
       }
@@ -186,8 +178,17 @@ export default async function ({ addon, global, console, msg }) {
           }
         }
 
+        let nameAlreadyUsed = false;
+        if (this.target.isStage) {
+          // Global variables must not conflict with any global variables or local variables in any sprite.
+          const existingNames = vm.runtime.getAllVarNamesOfType(this.scratchVariable.type);
+          nameAlreadyUsed = existingNames.includes(newName);
+        } else {
+          // Local variables must not conflict with any global variables or local variables in this sprite.
+          nameAlreadyUsed = !!workspace.getVariable(newName, this.scratchVariable.type);
+        }
+
         const isEmpty = !newName.trim();
-        const nameAlreadyUsed = !!workspace.getVariable(newName, this.scratchVariable.type);
         if (isEmpty || nameAlreadyUsed) {
           label.value = this.scratchVariable.name;
         } else {
@@ -199,7 +200,7 @@ export default async function ({ addon, global, console, msg }) {
         }
       };
       label.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.shiftKey) e.target.blur();
+        if (e.key === "Enter") e.target.blur();
       });
       label.addEventListener("focusout", onLabelOut);
 
@@ -220,12 +221,22 @@ export default async function ({ addon, global, console, msg }) {
       const valueCell = document.createElement("td");
       valueCell.className = "sa-var-manager-value";
 
+      const tooBigElement = document.createElement("button");
+      this.tooBigElement = tooBigElement;
+      tooBigElement.textContent = msg("too-big");
+      tooBigElement.className = "sa-var-manager-too-big";
+      tooBigElement.addEventListener("click", () => {
+        this.ignoreTooBig = true;
+        this.updateValue(true);
+      });
+
       let input;
       if (this.scratchVariable.type === "list") {
         input = document.createElement("textarea");
       } else {
         input = document.createElement("input");
       }
+      input.className = "sa-var-manager-value-input";
       input.id = id;
       this.input = input;
 
@@ -245,7 +256,7 @@ export default async function ({ addon, global, console, msg }) {
       };
 
       input.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.shiftKey) e.target.blur();
+        if (e.target.nodeName === "INPUT" && e.key === "Enter") e.target.blur();
       });
       input.addEventListener("focusout", onInputOut);
 
@@ -260,6 +271,7 @@ export default async function ({ addon, global, console, msg }) {
       });
 
       valueCell.appendChild(input);
+      valueCell.appendChild(tooBigElement);
       row.appendChild(labelCell);
       row.appendChild(valueCell);
 
