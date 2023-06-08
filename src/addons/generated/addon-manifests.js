@@ -70,7 +70,7 @@ import _tw_disable_cloud_variables from "../addons/tw-disable-cloud-variables/_m
 import _tw_disable_restore_points from "../addons/tw-disable-restore-points/_manifest_entry.js";
 import _editor_stepping from "../addons/editor-stepping/_manifest_entry.js";
 import _paint_skew from "../addons/paint-skew/_manifest_entry.js";
-import _vol_slider from "../addons/vol-slider/_manifest_entry.js";
+
 export default {
   "cat-blocks": _cat_blocks,
   "editor-devtools": _editor_devtools,
