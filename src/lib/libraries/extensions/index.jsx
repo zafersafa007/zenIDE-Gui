@@ -324,9 +324,9 @@ const menuItems = [
     },
     {
         name: 'Clones+',
-        extensionId: 'https://extensions.turbowarp.org/LilyMakesThings/ClonesPlus.js',
+        extensionId: 'https://extensions.turbowarp.org/LukeManiaStudios/ClonesPlus.js', // update reference once file names are updated
         tags: ['turbowarp', 'categoryexpansion'],
-        iconURL: 'https://extensions.turbowarp.org/images/LilyMakesThings/ClonesPlus.svg',
+        iconURL: 'https://extensions.turbowarp.org/images/LukeManiaStudios/ClonesPlus.svg', // update reference once file names are updated
         insetIconURL: turbowarpIcon,
         description: "Expansion of Scratch's clone features.",
         featured: true,
@@ -463,7 +463,7 @@ const menuItems = [
     },
     {
         name: 'McUtils',
-        extensionId: 'https://extensions.turbowarp.org/LilyMakesThings/McUtils.js',
+        extensionId: 'https://extensions.turbowarp.org/LukeManiaStudios/McUtils.js', // update reference once file names are updated
         tags: ['turbowarp'],
         iconURL: lmsMcUtilsIcon,
         insetIconURL: turbowarpIcon,

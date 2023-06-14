@@ -137,7 +137,7 @@ const extensionDevelopers = [
     'DT-is-not-available',
     'Vadik1',
     'MikeDev',
-    'LilyMakesThingss'
+    'LilyMakesThings'
 ].map(fromHardcodedGithub);
 
 export default {
