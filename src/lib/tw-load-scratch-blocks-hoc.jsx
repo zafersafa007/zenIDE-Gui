@@ -12,6 +12,7 @@ const LoadScratchBlocksHOC = function (WrappedComponent) {
                 loaded: LazyScratchBlocks.isLoaded(),
                 error: null
             };
+            console.log(this.state.loaded);
             if (!this.state.loaded) {
                 LazyScratchBlocks.load()
                     .then(() => {

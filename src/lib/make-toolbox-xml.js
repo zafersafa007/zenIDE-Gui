@@ -760,6 +760,7 @@ const control = function (isInitialSetup, isStage) {
         ${blockSeparator}
         <block type="control_get_counter"/>
         <block type="control_incr_counter"/>
+        ${LazyScratchBlocks.isNameUrMom() ? '<block type="your_mom"/>' : ''}
         <block type="control_decr_counter"/>
         <block type="control_set_counter">
             <value name="VALUE">
