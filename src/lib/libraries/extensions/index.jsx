@@ -79,7 +79,7 @@ import clippingblending from './penguinmod/extensions/clippingblending.svg';
 import pointerlockThumb from './penguinmod/extensions/pointerlock.svg';
 import cursorThumb from './penguinmod/extensions/cursor.svg';
 
-// lukemania studio 🙏
+// LilyMakesThings 🙏
 import lmsMcUtilsIcon from './penguinmod/extensions/mcutils.png';
 
 // more icons so they arent just red when the extension color is not red
@@ -324,13 +324,13 @@ const menuItems = [
     },
     {
         name: 'Clones+',
-        extensionId: 'https://extensions.turbowarp.org/LukeManiaStudios/ClonesPlus.js',
+        extensionId: 'https://extensions.turbowarp.org/LilyMakesThings/ClonesPlus.js',
         tags: ['turbowarp', 'categoryexpansion'],
-        iconURL: 'https://extensions.turbowarp.org/images/LukeManiaStudios/ClonesPlus.svg',
+        iconURL: 'https://extensions.turbowarp.org/images/LilyMakesThings/ClonesPlus.svg',
         insetIconURL: turbowarpIcon,
         description: "Expansion of Scratch's clone features.",
         featured: true,
-        twDeveloper: 'LukeManiaStudios'
+        twDeveloper: 'LilyMakesThings'
     },
     {
         name: 'Multiple Timers',
@@ -463,13 +463,13 @@ const menuItems = [
     },
     {
         name: 'McUtils',
-        extensionId: 'https://extensions.turbowarp.org/LukeManiaStudios/McUtils.js',
+        extensionId: 'https://extensions.turbowarp.org/LilyMakesThings/McUtils.js',
         tags: ['turbowarp'],
         iconURL: lmsMcUtilsIcon,
         insetIconURL: turbowarpIcon,
         description: 'Basic utilities for any fast food employee',
         featured: true,
-        twDeveloper: 'LukeManiaStudios'
+        twDeveloper: 'LilyMakesThings'
     },
     {
         name: (
