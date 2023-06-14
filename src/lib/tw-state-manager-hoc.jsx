@@ -362,7 +362,7 @@ const TWStateManager = function (WrappedComponent) {
             */
 
             if (urlParams.has('livetests') || String(window.location.href).startsWith(`http://localhost:`)) {
-                // massive mega brained hack bc i cant figure out how the fuck to make a state
+                // massive mega brained hack bc i cant figure out how to make a state
                 this.props.vm.isLiveTest = true;
             }
 

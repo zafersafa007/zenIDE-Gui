@@ -870,7 +870,7 @@ if (IsLocal || IsLiveTests) {
         //     extensionId: 'jgJavascript',
         //     iconURL: defaultExtensionIcon,
         //     tags: ["penguinmod"],
-        //     description: "this shit should have been removed from PM permanently",
+        //     description: "this should have been removed from PM permanently",
         //     featured: true
         // },
         {
