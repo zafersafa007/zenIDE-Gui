@@ -4,10 +4,9 @@ let _WasNameYourmom = false;
 // eslint-disable-next-line no-return-assign
 const isNameUrMom = () => _WasNameYourmom = (() => {
     const username = localStorage
-        .getItem('tw:username')
-        .toLowerCase();
-    return (username === 'yourmom') || (username === 'yourmother') ||
-        (username === 'urmom') || (username === 'urmother');
+        .getItem('tw:username');
+    return username && ((username.toLowerCase() === 'yourmom') || (username.toLowerCase() === 'yourmother') ||
+        (username.toLowerCase() === 'urmom') || (username.toLowerCase() === 'urmother'));
 })();
 
 const wasNameYourmom = () => {
