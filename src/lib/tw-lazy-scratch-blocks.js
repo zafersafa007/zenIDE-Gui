@@ -34,6 +34,30 @@ const load = () => {
             _ScratchBlocks = m.default;
 
             if (isNameUrMom()) {
+                _ScratchBlocks.Blocks.your_mom = {
+                    init () {
+                        this.jsonInit({
+                            message0: 'your mom %1',
+                            args0: [
+                                {
+                                    type: 'field_image',
+                                    src: 'https://cdn.discordapp.com/emojis/1039714598959452261.webp?size=128&quality=lossless',
+                                    width: 15,
+                                    height: 15,
+                                    alt: '*',
+                                    flipRtl: false
+                                }
+                            ],
+                            inputsInline: true,
+                            previousStatement: null,
+                            nextStatement: null,
+                            colour: '#ff0000',
+                            tooltip: 'your mom :trel:',
+                            helpUrl: 'https://tenor.com/view/urmom-your-mom-baldi-defaultdance-gif-19665250'
+                        });
+                    }
+                };
+
                 const oldFieldRenderer = _ScratchBlocks.BlockSvg.prototype.renderFields_;
                 _ScratchBlocks.BlockSvg.prototype.renderFields_ = function (fieldList, cursorX,
                     cursorY) {
