@@ -65,6 +65,10 @@ import jwProtoExtensionIcon from './penguinmod/extensions/proto.png';
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png';
 
+// cl waw
+// import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
+import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg';
+
 // thx jeremey
 import canvasExtensionBanner from './penguinmod/extensions/CanvasExtensionMenu.png';
 import canvasExtensionIcon from './penguinmod/extensions/CanvasSmall.png';
@@ -80,7 +84,7 @@ import pointerlockThumb from './penguinmod/extensions/pointerlock.svg';
 import cursorThumb from './penguinmod/extensions/cursor.svg';
 
 // LilyMakesThings 🙏
-import lmsMcUtilsIcon from './penguinmod/extensions/mcutils.png';
+// import lmsMcUtilsIcon from './penguinmod/extensions/mcutils.png';
 
 // more icons so they arent just red when the extension color is not red
 import gsaTempVariablesExtensionIcon from './penguinmod/extensions/tempvariables.png';
@@ -324,9 +328,9 @@ const menuItems = [
     },
     {
         name: 'Clones+',
-        extensionId: 'https://extensions.turbowarp.org/LukeManiaStudios/ClonesPlus.js', // update reference once file names are updated
+        extensionId: 'https://extensions.turbowarp.org/Lily/ClonesPlus.js',
         tags: ['turbowarp', 'categoryexpansion'],
-        iconURL: 'https://extensions.turbowarp.org/images/LukeManiaStudios/ClonesPlus.svg', // update reference once file names are updated
+        iconURL: 'https://extensions.turbowarp.org/images/Lily/ClonesPlus.svg',
         insetIconURL: turbowarpIcon,
         description: "Expansion of Scratch's clone features.",
         featured: true,
@@ -380,7 +384,7 @@ const menuItems = [
         name: 'CloudLink',
         extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
         tags: ['turbowarp'],
-        insetIconURL: turbowarpIcon,
+        insetIconURL: cloudlinkIcon,
         iconURL: 'https://extensions.turbowarp.org/images/cloudlink.svg',
         description: 'A cool extension to interact with webservers',
         featured: true,
@@ -463,9 +467,9 @@ const menuItems = [
     },
     {
         name: 'McUtils',
-        extensionId: 'https://extensions.turbowarp.org/LukeManiaStudios/McUtils.js', // update reference once file names are updated
+        extensionId: 'https://extensions.turbowarp.org/Lily/McUtils.js', // update reference once file names are updated
         tags: ['turbowarp'],
-        iconURL: lmsMcUtilsIcon,
+        iconURL: 'https://extensions.turbowarp.org/images/Lily/McUtils.png',
         insetIconURL: turbowarpIcon,
         description: 'Basic utilities for any fast food employee',
         featured: true,
@@ -550,7 +554,6 @@ const menuItems = [
         ),
         featured: true,
         internetConnectionRequired: false,
-        incompatibleWithScratch: false,
         twDeveloper: 'GarboMuffin'
     },
     {
@@ -568,7 +571,6 @@ const menuItems = [
         ),
         featured: true,
         internetConnectionRequired: false,
-        incompatibleWithScratch: false,
         twDeveloper: 'GarboMuffin'
     },
     {
@@ -782,7 +784,6 @@ const menuItems = [
             />
         ),
         tags: ['tw'],
-        incompatibleWithScratch: true,
         featured: true
     }
 ];
@@ -879,6 +880,14 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod'],
             description: 'dr bob eae',
+            featured: true
+        },
+        {
+            name: 'InlineBlocks',
+            extensionId: 'pmInlineBlocks',
+            iconURL: defaultExtensionIcon,
+            tags: ['penguinmod'],
+            description: 'testing',
             featured: true
         }
     ];
