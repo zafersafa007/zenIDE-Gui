@@ -95,6 +95,7 @@ import jgScratchAuthExtensionIcon from './penguinmod/extensions/scratchauth.png'
 import jgPermissionExtensionIcon from './penguinmod/extensions/permissions.png';
 import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessages.svg';
 import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.png';
+import pmInlineBlocksExtensionIcon from './penguinmod/extensions/inlineblocks.png';
 
 // import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png';
 import jgsilvxrcatInterfacesExtensionIcon from './penguinmod/extensions/interfaces2.png';
@@ -883,11 +884,11 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
-            name: 'InlineBlocks',
+            name: 'Inline Blocks',
             extensionId: 'pmInlineBlocks',
-            iconURL: defaultExtensionIcon,
+            iconURL: pmInlineBlocksExtensionIcon,
             tags: ['penguinmod'],
-            description: 'testing',
+            description: 'Create quick blocks for simple tasks. Insert them into any circle spot and have them return any value you want.',
             featured: true
         }
     ];
