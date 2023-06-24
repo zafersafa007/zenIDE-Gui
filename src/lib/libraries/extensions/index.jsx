@@ -112,8 +112,9 @@ import jgAdvancedTextExtensionIcon from './penguinmod/extensions/advancedtext.pn
 import jgJavascriptExtensionIcon from './penguinmod/extensions/javascript.png';
 
 // category expansions
-import pmOperatorsExpansionExtensionIcon from './penguinmod/extensions/operators_expanded.png';
+import pmControlsExpansionExtensionIcon from './penguinmod/extensions/controls_expanded.png';
 import pmSensingExpansionExtensionIcon from './penguinmod/extensions/sensing_expanded.png';
+import pmOperatorsExpansionExtensionIcon from './penguinmod/extensions/operators_expanded.png';
 
 // jg: default icon if you are too lazy to make one and you want me to make one instead lololololololol
 // gsa: ololololololo
@@ -283,20 +284,28 @@ const menuItems = [
         description: 'Free speed and pitch control, starting sounds at certain positions, stopping sounds, etc.',
         featured: true
     },
-    {
-        name: 'Operators Expansion',
-        extensionId: 'pmOperatorsExpansion',
-        iconURL: pmOperatorsExpansionExtensionIcon,
-        tags: ['penguinmod', 'categoryexpansion'],
-        description: 'More operators like nand, nor, character code to character, reading multiple lined text line by line, etc.',
-        featured: true
-    },
+    // {
+    //     name: 'Controls Expansion',
+    //     extensionId: 'pmControlsExpansion',
+    //     iconURL: pmControlsExpansionExtensionIcon,
+    //     tags: ['penguinmod', 'categoryexpansion'],
+    //     description: "More control blocks for complex systems or cleaner one-time use blocks.",
+    //     featured: true
+    // },
     {
         name: 'Sensing Expansion',
         extensionId: 'pmSensingExpansion',
         iconURL: pmSensingExpansionExtensionIcon,
         tags: ['penguinmod', 'categoryexpansion'],
         description: "More sensing blocks for specific use cases or interacting with the user's device.",
+        featured: true
+    },
+    {
+        name: 'Operators Expansion',
+        extensionId: 'pmOperatorsExpansion',
+        iconURL: pmOperatorsExpansionExtensionIcon,
+        tags: ['penguinmod', 'categoryexpansion'],
+        description: 'More operators like nand, nor, character code to character, reading multiple lined text line by line, etc.',
         featured: true
     },
     {

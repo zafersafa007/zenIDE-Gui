@@ -211,6 +211,7 @@ const GUIComponent = props => {
             >
                 {usernameModalVisible && <TWUsernameModal />}
                 {settingsModalVisible && <TWSettingsModal />}
+                {customExtensionModalVisible && <TWCustomExtensionModal />}
                 {telemetryModalVisible ? (
                     <TelemetryModal
                         isRtl={isRtl}

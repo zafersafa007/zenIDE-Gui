@@ -202,19 +202,43 @@ class LibraryComponent extends React.Component {
                         )}
                         {this.props.tags &&
                             <div className={styles.tagWrapper}>
-                                {tagListPrefix.concat(this.props.tags).map((tagProps, id) => (
-                                    <TagButton
-                                        active={this.state.selectedTag === tagProps.tag.toLowerCase()}
-                                        className={classNames(
-                                            styles.filterBarItem,
-                                            styles.tagButton,
-                                            tagProps.className
-                                        )}
-                                        key={`tag-button-${id}`}
-                                        onClick={this.handleTagClick}
-                                        {...tagProps}
-                                    />
-                                ))}
+                                {tagListPrefix.concat(this.props.tags).map((tagProps, id) => {
+                                    let onclick = this.handleTagClick;
+                                    if (tagProps.type === 'divider') {
+                                        return (<Divider className={classNames(styles.filterBarItem, styles.divider)} />);
+                                    }
+                                    if (tagProps.type === 'custom') {
+                                        onclick = () => {
+                                            const api = {};
+                                            api.useTag = this.handleTagClick;
+                                            api.close = this.handleClose;
+                                            api.select = (id) => {
+                                                const items = this.state.data;
+                                                for (const item of items) {
+                                                    if (item.extensionId === id) {
+                                                        this.handleClose();
+                                                        this.props.onItemSelected(item);
+                                                        return;
+                                                    };
+                                                }
+                                            };
+                                            tagProps.func(api);
+                                        };
+                                    }
+                                    return (
+                                        <TagButton
+                                            active={this.state.selectedTag === tagProps.tag.toLowerCase()}
+                                            className={classNames(
+                                                styles.filterBarItem,
+                                                styles.tagButton,
+                                                tagProps.className
+                                            )}
+                                            key={`tag-button-${id}`}
+                                            onClick={onclick}
+                                            {...tagProps}
+                                        />
+                                    );
+                                })}
                             </div>
                         }
                     </div>
