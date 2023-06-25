@@ -65,6 +65,8 @@ import jwProtoExtensionIcon from './penguinmod/extensions/proto.png';
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png';
 
+import iygPerlinNoiseExtensionIcon from './penguinmod/extensions/perlin.png';
+
 // cl waw
 // import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
 import cloudlinkIcon from './penguinmod/extensions/cloudlinkIcon.svg';
@@ -471,6 +473,26 @@ const menuItems = [
                 defaultMessage="OOP blocks. OOp is a programming paradigm that uses objects and their interactions to design applications and computer programs."
                 description="Description of OOP extension"
                 id="jwStructs.jwStructsExtension.description"
+            />
+        ),
+        featured: false
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="Perlin Noise"
+                description="Name of perlin noise extension"
+                id="iygPerlin.iygPerlinExtension.name"
+            />
+        ),
+        extensionId: 'iygPerlin',
+        tags: ['penguinmod'],
+        iconURL: iygPerlinNoiseExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="Blocks for generating and using Perlin noise. Good for generating terrain, clouds, and other things."
+                description="Description of perlin noise extension"
+                id="iygPerlin.iygPerlinExtension.description"
             />
         ),
         featured: true
