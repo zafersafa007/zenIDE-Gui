@@ -138,13 +138,7 @@ const CustomExtensionModal = props => (
             <p className={styles.unsandboxedWarning}>
                 <FormattedMessage
                     // eslint-disable-next-line max-len
-                    defaultMessage="In PenguinMod, extensions are always unsandboxed. If you don't know or trust the sites or places you are loading your extensions from, do not load them here."
-                    description="Warning that appears when disabling extension security sandbox"
-                    id="tw.customExtensionModal.unsandboxedWarning1"
-                />
-                <FormattedMessage
-                    // eslint-disable-next-line max-len
-                    defaultMessage="Unsandboxed extensions can corrupt your project, delete your settings, phish for passwords, and other bad things. The {APP_NAME} developers are not responsible for any resulting issues."
+                    defaultMessage="Custom extensions can corrupt your project, delete your settings, phish for passwords, and other bad things. If you don't know or trust the sites or places you are loading your extensions from, do not load them here. The {APP_NAME} developers are not responsible for any resulting issues."
                     description="Warning that appears when disabling extension security sandbox"
                     id="tw.customExtensionModal.unsandboxedWarning2"
                     values={{

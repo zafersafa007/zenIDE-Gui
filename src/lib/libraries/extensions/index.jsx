@@ -460,26 +460,6 @@ const menuItems = [
     {
         name: (
             <FormattedMessage
-                defaultMessage="OOP"
-                description="Name of OOP extension"
-                id="jwStructs.jwStructsExtension.name"
-            />
-        ),
-        extensionId: 'jwStructs',
-        tags: ['penguinmod'],
-        iconURL: jwStructsExtensionIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="OOP blocks. OOp is a programming paradigm that uses objects and their interactions to design applications and computer programs."
-                description="Description of OOP extension"
-                id="jwStructs.jwStructsExtension.description"
-            />
-        ),
-        featured: false
-    },
-    {
-        name: (
-            <FormattedMessage
                 defaultMessage="Perlin Noise"
                 description="Name of perlin noise extension"
                 id="iygPerlin.iygPerlinExtension.name"
@@ -844,6 +824,26 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod'],
             description: 'Legacy extension that was eventually merged into the default toolbox.',
+            featured: true
+        },
+        {
+            name: (
+                <FormattedMessage
+                    defaultMessage="OOP"
+                    description="Name of OOP extension"
+                    id="jwStructs.jwStructsExtension.name"
+                />
+            ),
+            extensionId: 'jwStructs',
+            tags: ['penguinmod'],
+            iconURL: jwStructsExtensionIcon,
+            description: (
+                <FormattedMessage
+                    defaultMessage="Removed from list. OOP blocks. OOp is a programming paradigm that uses objects and their interactions to design applications and computer programs."
+                    description="Description of OOP extension"
+                    id="jwStructs.jwStructsExtension.description"
+                />
+            ),
             featured: true
         },
         {
