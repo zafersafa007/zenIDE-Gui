@@ -65,7 +65,7 @@ import jwProtoExtensionIcon from './penguinmod/extensions/proto.png';
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png';
 
-import iygPerlinNoiseExtensionIcon from './penguinmod/extensions/perlin.png';
+import iygPerlinNoiseExtensionIcon from './penguinmod/extensions/perlinnoisebanner.png';
 
 // cl waw
 // import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
