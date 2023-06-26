@@ -6,7 +6,8 @@ var webpack = require('webpack');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var TWGenerateServiceWorkerPlugin = require('./src/playground/generate-service-worker-plugin');
-var defaultsdeep = require('lodash.defaultsdeep')
+var defaultsdeep = require('lodash.defaultsdeep');
+var InstallPlugin = require('webpack-install-plugin');
 //var GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
 
 
@@ -109,7 +110,13 @@ const base = {
             }]
         }]
     },
-    plugins: []
+    plugins: [
+        new InstallPlugin({
+            packageManager: {
+                type: 'pnpm'
+            },
+        }),
+    ],
 };
 
 if (!process.env.CI) {
