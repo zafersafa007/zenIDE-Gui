@@ -873,6 +873,16 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
+            name: '3D Physics',
+            extensionId: 'fr3d',
+            iconURL: jg3dExtensionIcon,
+            tags: ['penguinmod'],
+            customInsetColor: '#B200FF',
+            insetIconURL: jg3dInsetExtensionIcon,
+            description: 'Physics for the 3d extension.',
+            featured: true
+        },
+        {
             name: 'Advanced Text',
             extensionId: 'jgAdvancedText',
             eventSubmittor: 'eggo',
