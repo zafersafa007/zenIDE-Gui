@@ -7,7 +7,6 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var TWGenerateServiceWorkerPlugin = require('./src/playground/generate-service-worker-plugin');
 var defaultsdeep = require('lodash.defaultsdeep');
-var InstallPlugin = require('webpack-install-plugin');
 //var GhPagesWebpackPlugin = require('gh-pages-webpack-plugin');
 
 
@@ -111,7 +110,6 @@ const base = {
         }]
     },
     plugins: [
-        new InstallPlugin(),
     ],
 };
 
