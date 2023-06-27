@@ -105,6 +105,8 @@ import jgsilvxrcatInterfacesExtensionIcon from './penguinmod/extensions/interfac
 // 3D MAN WTF
 import jg3dExtensionIcon from './penguinmod/extensions/3d.png';
 import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png';
+import fr3dPhysicsExtensionIcon from './penguinmod/extensions/3d_physics.png';
+import fr3dPhysicsInsetExtensionIcon from './penguinmod/extensions/3d_physics_icon_sized.png';
 
 // events
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
@@ -112,6 +114,8 @@ import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png';
 import jgAdvancedTextExtensionIcon from './penguinmod/extensions/advancedtext.png';
 
 import jgJavascriptExtensionIcon from './penguinmod/extensions/javascript.png';
+import jgPathfindingExtensionIcon from './penguinmod/extensions/pathfinding.png';
+import jgAnimationExtensionIcon from './penguinmod/extensions/animation.png';
 
 // category expansions
 import pmControlsExpansionExtensionIcon from './penguinmod/extensions/controls_expanded.png';
@@ -875,11 +879,11 @@ if (IsLocal || IsLiveTests) {
         {
             name: '3D Physics',
             extensionId: 'fr3d',
-            iconURL: jg3dExtensionIcon,
+            iconURL: fr3dPhysicsExtensionIcon,
             tags: ['penguinmod'],
-            customInsetColor: '#B200FF',
-            insetIconURL: jg3dInsetExtensionIcon,
-            description: 'Physics for the 3d extension.',
+            customInsetColor: '#D066FE',
+            insetIconURL: fr3dPhysicsInsetExtensionIcon,
+            description: 'Physics for the 3D extension.',
             featured: true
         },
         {
@@ -888,7 +892,7 @@ if (IsLocal || IsLiveTests) {
             eventSubmittor: 'eggo',
             iconURL: jgAdvancedTextExtensionIcon,
             tags: ['penguinmod'],
-            description: 'In development.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
+            description: 'In development. Currently not publicly available.',
             featured: true
         },
         {
@@ -897,7 +901,7 @@ if (IsLocal || IsLiveTests) {
             iconURL: jgsilvxrcatInterfacesExtensionIcon,
             credits: 'silvxrcat',
             tags: ['penguinmod'],
-            description: 'In development.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
+            description: 'In development.',
             featured: true
         },
         {
@@ -905,7 +909,7 @@ if (IsLocal || IsLiveTests) {
             extensionId: 'jgCostumeDrawing',
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod'],
-            description: 'Draw on and edit your costumes (either temporarily or not) while the project is running.\nThis extension is still HIGHLY in development. DO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
+            description: 'In development. Currently not publicly available. Draw on and edit your costumes (either temporarily or not) while the project is running.',
             featured: true
         },
         // {
@@ -931,7 +935,35 @@ if (IsLocal || IsLiveTests) {
             tags: ['penguinmod'],
             description: 'Create quick blocks for simple tasks. Insert them into any circle spot and have them return any value you want.',
             featured: true
-        }
+        },
+        {
+            name: (
+                <FormattedMessage
+                    defaultMessage="Pathfinding"
+                    description="Name of Pathfinding extension"
+                    id="jgPathfinding.Pathfinding.name"
+                />
+            ),
+            extensionId: 'jgPathfinding',
+            tags: ['penguinmod'],
+            iconURL: jgPathfindingExtensionIcon,
+            description: (
+                <FormattedMessage
+                    defaultMessage="(Unstable and or laggy; Needs further work) Have sprites navigate around obstacles in your game instead of clipping into them."
+                    description="Description of Pathfinding extension"
+                    id="jgPathfinding.Pathfinding.description"
+                />
+            ),
+            featured: true
+        },
+        {
+            name: 'Animation',
+            extensionId: 'jgAnimation',
+            iconURL: jgAnimationExtensionIcon,
+            tags: ['penguinmod'],
+            description: 'In development. Currently not publicly available.',
+            featured: true
+        },
     ];
     extras.forEach(ext => {
         menuItems.push(ext);
