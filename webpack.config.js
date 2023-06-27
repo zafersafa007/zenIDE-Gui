@@ -61,6 +61,9 @@ const base = {
             'scratch-render-fonts$': path.resolve(__dirname, 'src/lib/tw-scratch-render-fonts')
         }
     },
+    node: {
+        fs: 'empty'
+    },
     module: {
         rules: [{
             test: /\.jsx?$/,
