@@ -94,7 +94,7 @@
     "to-style": "1.3.3",
     "wav-encoder": "1.3.0",
     "xhr": "2.5.0",
-    "webpack-install-plugin": "github:webpack-contrib/install-webpack-plugin#master"
+    "webpack-install-plugin": "github:FreshPenguin112/install-missing#master"
   },
   "peerDependencies": {
     "react": "^16.0.0",

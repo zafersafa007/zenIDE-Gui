@@ -111,11 +111,7 @@ const base = {
         }]
     },
     plugins: [
-        new InstallPlugin({
-            packageManager: {
-                type: 'pnpm'
-            },
-        }),
+        new InstallPlugin(),
     ],
 };
 
