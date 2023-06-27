@@ -127,6 +127,10 @@ const pmDevelopers = [
     'showierdata9978'
 ].map(fromHardcodedGithub);
 
+const pmTranslators = [
+    'kolikiscool'
+].map(fromHardcodedGithub);
+
 const logoArtists = Promise.all([
     '593554048188416001'
 ].map(fromHardcodedDiscord));
@@ -144,5 +148,6 @@ export default {
     addonDevelopers: shuffle(addonDevelopers),
     pmDevelopers: shuffle(pmDevelopers),
     logoArtists: shuffle(logoArtists),
-    extensionDevelopers: shuffle(extensionDevelopers)
+    extensionDevelopers: shuffle(extensionDevelopers),
+    pmTranslators: shuffle(pmTranslators),
 };

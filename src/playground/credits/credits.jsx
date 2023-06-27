@@ -184,9 +184,12 @@ const Credits = () => (
                 far more than we could hope to list here.
             </p>
             <p>
-                Unfortunately due to PenguinMod's small size, we have decided to mainly focus on English.
-                You can still use PenguinMod with the other languages, but they will not be updated at this time.
+                PenguinMod is also (very very slowly) getting translated into other languages, in the future
+                hopefully the same number of languages can be supported. It'll take a while until we get there though.
             </p>
+            <p>Contributors:</p>
+            <UserList users={UserData.pmTranslators} />
+            <p><i>The list order is randomized on each refresh.</i></p>
         </section>
         <section>
             <p>
