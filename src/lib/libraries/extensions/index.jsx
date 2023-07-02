@@ -118,6 +118,7 @@ import jgPathfindingExtensionIcon from './penguinmod/extensions/pathfinding.png'
 import jgAnimationExtensionIcon from './penguinmod/extensions/animation.png';
 
 // category expansions
+import pmEventsExpansionExtensionIcon from './penguinmod/extensions/events_expanded.png';
 import pmControlsExpansionExtensionIcon from './penguinmod/extensions/controls_expanded.png';
 import pmSensingExpansionExtensionIcon from './penguinmod/extensions/sensing_expanded.png';
 import pmOperatorsExpansionExtensionIcon from './penguinmod/extensions/operators_expanded.png';
@@ -290,13 +291,23 @@ const menuItems = [
         description: 'Free speed and pitch control, starting sounds at certain positions, stopping sounds, etc.',
         featured: true
     },
+    {
+        name: 'Events Expansion',
+        extensionId: 'pmEventsExpansion',
+        iconURL: pmEventsExpansionExtensionIcon,
+        tags: ['penguinmod', 'categoryexpansion'],
+        description: "More events for sending & receiving information, notifing specific sprites or better control when things should happen.",
+        featured: true,
+        credits: 'LilyMakesThings'
+    },
     // {
     //     name: 'Controls Expansion',
     //     extensionId: 'pmControlsExpansion',
     //     iconURL: pmControlsExpansionExtensionIcon,
     //     tags: ['penguinmod', 'categoryexpansion'],
-    //     description: "More control blocks for complex systems or cleaner one-time use blocks.",
-    //     featured: true
+    //     description: "More control blocks for animations, complex systems or cleaner one-time use blocks.",
+    //     featured: true,
+    //     credits: 'CST1229'
     // },
     {
         name: 'Sensing Expansion',
