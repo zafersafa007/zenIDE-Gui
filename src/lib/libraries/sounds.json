@@ -132,6 +132,18 @@
         "rate": 44100
     },
     {
+        "name": "Activate",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/activate.mp3"
+    },
+    {
         "name": "Afro String",
         "tags": [
             "effects",
@@ -489,6 +501,42 @@
         "md5ext": "53a3c2e27d1fb5fdb14aaf0cb41e7889.wav",
         "sampleCount": 7113,
         "rate": 22050
+    },
+    {
+        "name": "Boing 2",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/boing2.mp3"
+    },
+    {
+        "name": "Boing 3",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/boing3.mp3"
+    },
+    {
+        "name": "Boing 4",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/boing4.mp3"
     },
     {
         "name": "Bonk",
@@ -1088,6 +1136,45 @@
         "rate": 44100
     },
     {
+        "name": "Click1",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/click01.mp3"
+    },
+    {
+        "name": "Click2",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/click02.mp3"
+    },
+    {
+        "name": "Click3",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/click03.mp3"
+    },
+    {
         "name": "Clock Ticking",
         "tags": [
             "effects",
@@ -1230,6 +1317,19 @@
         "md5ext": "9aad12085708ccd279297d4bea9c5ae0.wav",
         "sampleCount": 23369,
         "rate": 22050
+    },
+    {
+        "name": "Cosmic Pluck",
+        "tags": [
+            "music",
+            "loops",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/cosmic_pluck.mp3"
     },
     {
         "name": "Cough1",
@@ -2705,6 +2805,19 @@
         "rate": 44100
     },
     {
+        "name": "Good",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/good.mp3"
+    },
+    {
         "name": "Goose",
         "tags": [
             "animals",
@@ -2999,6 +3112,19 @@
         "rate": 44100
     },
     {
+        "name": "Hint",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/hint.mp3"
+    },
+    {
         "name": "Hip Hop",
         "tags": [
             "music",
@@ -3036,6 +3162,19 @@
         "rate": 44100
     },
     {
+        "name": "Huh",
+        "tags": [
+            "human",
+            "voice",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/huh.mp3"
+    },
+    {
         "name": "Human Beatbox1",
         "tags": [
             "human",
@@ -3064,6 +3203,19 @@
         "md5ext": "f62e9f7deeb0e06268df6edffa14f5de.wav",
         "sampleCount": 62993,
         "rate": 22050
+    },
+    {
+        "name": "Inspect",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/inspect.mp3"
     },
     {
         "name": "Intricate Wireframe",

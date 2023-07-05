@@ -166,6 +166,11 @@ export default defineMessages({
         description: 'Tag for filtering a library by categoryexpansion',
         id: 'gui.libraryTags.categoryexpansion'
     },
+    ui: {
+        defaultMessage: 'UI',
+        description: 'Tag for filtering a library by ui',
+        id: 'gui.libraryTags.ui'
+    },
     custom: {
         defaultMessage: 'Custom',
         description: 'Tag for filtering a library by custom. Usually this is a custom button, not an actual tag',
