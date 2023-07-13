@@ -93,7 +93,7 @@
 }
 
 .tw-library-item-inset-image-container {
-    background-color: hsla(0, 100%, 65%, 1);
+    background-color: hsl(194, 100%, 50%);
 }
 
 [dir="ltr"] .library-item-inset-image-container-no-bg,
