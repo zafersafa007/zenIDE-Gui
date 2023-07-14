@@ -981,6 +981,7 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod', 'hardware'],
             description: 'In development.',
+            credits: 'Vadik1',
             featured: true
         },
     ];
