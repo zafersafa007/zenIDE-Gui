@@ -975,6 +975,14 @@ if (IsLocal || IsLiveTests) {
             description: 'In development. Currently not publicly available.',
             featured: true
         },
+        {
+            name: 'Virtual Reality',
+            extensionId: 'jgVr',
+            iconURL: defaultExtensionIcon,
+            tags: ['penguinmod', 'hardware'],
+            description: 'In development.',
+            featured: true
+        },
     ];
     extras.forEach(ext => {
         menuItems.push(ext);
