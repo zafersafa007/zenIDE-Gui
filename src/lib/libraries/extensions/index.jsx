@@ -898,6 +898,16 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
+            name: '3D Virtual Reality',
+            extensionId: 'jg3dVr',
+            iconURL: jg3dExtensionIcon,
+            tags: ['penguinmod', 'hardware'],
+            customInsetColor: '#B200FF',
+            insetIconURL: jg3dInsetExtensionIcon,
+            description: 'In development. May break compatibility. Allow players to really jump into your world!',
+            featured: true
+        },
+        {
             name: 'Advanced Text',
             extensionId: 'jgAdvancedText',
             eventSubmittor: 'eggo',
