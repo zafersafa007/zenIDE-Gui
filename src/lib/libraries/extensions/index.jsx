@@ -634,6 +634,26 @@ const menuItems = [
         featured: true
     },
     {
+        name: (
+            <FormattedMessage
+                defaultMessage="PenguinMod Extra Extensions"
+                description="Name of library item to open the Extra Extensions gallery"
+                id="pm.extraLibraryExtensions.name"
+            />
+        ),
+        extensionId: 'special_penguinmodExtensionLibrary',
+        iconURL: customExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="See some user-submitted extensions. Opens in a new tab."
+                description="Description of library item to open the Extra Extensions gallery"
+                id="pm.extraLibraryExtensions.description"
+            />
+        ),
+        tags: ['penguinmod'],
+        featured: true
+    },
+    {
         name: 'micro:bit',
         extensionId: 'microbit',
         collaborator: 'micro:bit',
