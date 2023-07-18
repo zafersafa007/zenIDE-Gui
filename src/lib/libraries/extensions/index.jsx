@@ -399,11 +399,12 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Website Requests',
-        extensionId: 'jgWebsiteRequests',
-        iconURL: jgWebsiteRequestsExtensionIcon,
-        tags: ['penguinmod'],
-        description: 'Blocks to communicate with APIs and websites.',
+        name: 'HTTP',
+        extensionId: 'https://extensions.turbowarp.org/godslayerakp/http.js',
+        iconURL: 'https://extensions.turbowarp.org/images/godslayerakp/http.svg',
+        insetIconURL: turbowarpIcon,
+        tags: ['turbowarp'],
+        description: 'Comprehensive extension for interacting with external websites.',
         featured: true,
         internetConnectionRequired: true
     },
