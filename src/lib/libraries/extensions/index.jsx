@@ -99,6 +99,8 @@ import jgPermissionExtensionIcon from './penguinmod/extensions/permissions.png';
 import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessages.svg';
 import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.png';
 import pmInlineBlocksExtensionIcon from './penguinmod/extensions/inlineblocks.png';
+import jgPackagerApplicationsExtensionIcon from './penguinmod/extensions/packagedApplications.png';
+import jgPackagerApplicationsInsetExtensionIcon from './penguinmod/extensions/packagedApplications_inset.png';
 
 // import jgTweeningExtensionIcon from './penguinmod/extensions/tween.png';
 import jgsilvxrcatInterfacesExtensionIcon from './penguinmod/extensions/interfaces2.png';
@@ -106,8 +108,13 @@ import jgsilvxrcatInterfacesExtensionIcon from './penguinmod/extensions/interfac
 // 3D MAN WTF
 import jg3dExtensionIcon from './penguinmod/extensions/3d.png';
 import jg3dInsetExtensionIcon from './penguinmod/extensions/3dicon.png';
+import jg3dVrExtensionIcon from './penguinmod/extensions/3dVr.png';
+import jg3dVrInsetExtensionIcon from './penguinmod/extensions/3dVr_Inset.png';
 import fr3dPhysicsExtensionIcon from './penguinmod/extensions/3d_physics.png';
 import fr3dPhysicsInsetExtensionIcon from './penguinmod/extensions/3d_physics_icon_sized.png';
+
+// virtal realty
+import jgVrExtensionIcon from './penguinmod/extensions/vr_extension.png';
 
 // events
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
@@ -407,7 +414,8 @@ const menuItems = [
         tags: ['turbowarp'],
         description: 'Comprehensive extension for interacting with external websites.',
         featured: true,
-        internetConnectionRequired: true
+        internetConnectionRequired: true,
+        customInsetColor: '#ff4d4d'
     },
     {
         name: 'CloudLink',
@@ -922,10 +930,10 @@ if (IsLocal || IsLiveTests) {
         {
             name: '3D Virtual Reality',
             extensionId: 'jg3dVr',
-            iconURL: jg3dExtensionIcon,
+            iconURL: jg3dVrExtensionIcon,
             tags: ['penguinmod', 'hardware'],
             customInsetColor: '#B200FF',
-            insetIconURL: jg3dInsetExtensionIcon,
+            insetIconURL: jg3dVrInsetExtensionIcon,
             description: 'In development. May break compatibility. Allow players to really jump into your world!',
             featured: true
         },
@@ -958,7 +966,9 @@ if (IsLocal || IsLiveTests) {
         {
             name: 'Packager Applications',
             extensionId: 'jgPackagerApplications',
-            iconURL: defaultExtensionIcon,
+            iconURL: jgPackagerApplicationsExtensionIcon,
+            insetIconURL: jgPackagerApplicationsInsetExtensionIcon,
+            customInsetColor: '#66B8FF',
             tags: ['penguinmod', 'packager'],
             description: 'In development. Do extra things in packaged applications that you can\'t do in the website!',
             featured: true
@@ -1018,7 +1028,7 @@ if (IsLocal || IsLiveTests) {
         {
             name: 'Virtual Reality',
             extensionId: 'jgVr',
-            iconURL: defaultExtensionIcon,
+            iconURL: jgVrExtensionIcon,
             tags: ['penguinmod', 'hardware'],
             description: 'In development.',
             credits: 'Vadik1',
