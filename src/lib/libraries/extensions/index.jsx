@@ -54,6 +54,7 @@ import twIcon from './tw/tw.svg';
 import turbowarpIcon from './penguinmod/extensions/turbowarp_icon.svg';
 
 import customExtensionIcon from './custom/custom.svg';
+import penguinmodLibraryExtensionIcon from './penguinmod/library.svg';
 
 import filesExtensionIcon from './penguinmod/extensions/files.png';
 import jgWebsiteRequestsExtensionIcon from './penguinmod/extensions/websiteRequests.png';
@@ -642,7 +643,7 @@ const menuItems = [
             />
         ),
         extensionId: 'special_penguinmodExtensionLibrary',
-        iconURL: customExtensionIcon,
+        iconURL: penguinmodLibraryExtensionIcon,
         description: (
             <FormattedMessage
                 defaultMessage="See some user-submitted extensions. Opens in a new tab."
