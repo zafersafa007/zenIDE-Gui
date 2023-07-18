@@ -10,4 +10,5 @@ export default [
     { tag: 'divider2', intlLabel: messages.scratch, type: 'divider' },
     { tag: 'categoryexpansion', intlLabel: messages.categoryexpansion },
     { tag: 'programminglanguage', intlLabel: messages.programminglanguage },
+    { tag: 'hardware', intlLabel: messages.hardware },
 ];

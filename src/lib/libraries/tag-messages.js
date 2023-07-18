@@ -176,4 +176,9 @@ export default defineMessages({
         description: 'Tag for filtering a library by custom. Usually this is a custom button, not an actual tag',
         id: 'gui.libraryTags.custom'
     },
+    hardware: {
+        defaultMessage: 'Hardware',
+        description: 'Tag for filtering a library by hardware.',
+        id: 'gui.libraryTags.hardware'
+    },
 });

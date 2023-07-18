@@ -668,7 +668,7 @@ const menuItems = [
         collaborator: 'micro:bit',
         iconURL: microbitIconURL,
         insetIconURL: microbitInsetIconURL,
-        tags: ['scratch'],
+        tags: ['scratch', 'hardware'],
         description: (
             <FormattedMessage
                 defaultMessage="Connect your projects with the world."
@@ -699,7 +699,7 @@ const menuItems = [
         collaborator: 'LEGO',
         iconURL: ev3IconURL,
         insetIconURL: ev3InsetIconURL,
-        tags: ['scratch'],
+        tags: ['scratch', 'hardware'],
         description: (
             <FormattedMessage
                 defaultMessage="Build interactive robots and more."
@@ -731,7 +731,7 @@ const menuItems = [
         collaborator: 'LEGO',
         iconURL: boostIconURL,
         insetIconURL: boostInsetIconURL,
-        tags: ['scratch'],
+        tags: ['scratch', 'hardware'],
         description: (
             <FormattedMessage
                 defaultMessage="Bring robotic creations to life."
@@ -773,7 +773,7 @@ const menuItems = [
         ),
         featured: true,
         disabled: false,
-        tags: ['scratch'],
+        tags: ['scratch', 'hardware'],
         bluetoothRequired: true,
         internetConnectionRequired: true,
         launchPeripheralConnectionFlow: true,
@@ -798,7 +798,7 @@ const menuItems = [
         iconURL: gdxforIconURL,
         insetIconURL: gdxforInsetIconURL,
         customInsetColor: '#4C97FF',
-        tags: ['scratch'],
+        tags: ['scratch', 'hardware'],
         description: (
             <FormattedMessage
                 defaultMessage="Sense push, pull, motion, and spin."
