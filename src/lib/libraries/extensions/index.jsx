@@ -933,6 +933,14 @@ if (IsLocal || IsLiveTests) {
             description: 'In development. Currently not publicly available. Draw on and edit your costumes (either temporarily or not) while the project is running.',
             featured: true
         },
+        {
+            name: 'Packager Applications',
+            extensionId: 'jgPackagerApplications',
+            iconURL: defaultExtensionIcon,
+            tags: ['penguinmod', 'packager'],
+            description: 'In development. Do extra things in packaged applications that you can\'t do in the website!',
+            featured: true
+        },
         // {
         //     name: "Javascript",
         //     extensionId: 'jgJavascript',
