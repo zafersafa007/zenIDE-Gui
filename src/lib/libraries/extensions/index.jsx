@@ -968,6 +968,7 @@ if (IsLocal || IsLiveTests) {
             extensionId: 'jgPackagerApplications',
             iconURL: jgPackagerApplicationsExtensionIcon,
             insetIconURL: jgPackagerApplicationsInsetExtensionIcon,
+            twDeveloper: 'CubesterYT',
             customInsetColor: '#66B8FF',
             tags: ['penguinmod', 'packager'],
             description: 'In development. Do extra things in packaged applications that you can\'t do in the website!',
