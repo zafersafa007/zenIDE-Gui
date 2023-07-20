@@ -94,10 +94,6 @@ const base = {
               },
             },
           },
-          {
-            test: /\.worker\.js$/,
-            use: { loader: 'worker-loader' },
-          },
         {
             test: /\.css$/,
             use: [{
