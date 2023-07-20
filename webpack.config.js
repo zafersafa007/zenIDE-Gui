@@ -109,12 +109,7 @@ const base = {
                         ];
                     }
                 }
-            },
-            {
-                test: /@react-three\/cannon/,
-                use: { loader: 'worker-loader' },
-              }
-        ]
+            }]
         }]
     },
     plugins: [
