@@ -87,8 +87,17 @@ const base = {
         },
         {
             test: /@react-three\/cannon/,
-            use: { loader: 'worker-loader' },
+            use: {
+              loader: 'babel-loader',
+              options: {
+                presets: ['@babel/preset-env'],
+              },
+            },
           },
+          {
+            test: /\.worker\.js$/,
+            use: { loader: 'worker-loader' },
+          }
         {
             test: /\.css$/,
             use: [{
