@@ -86,10 +86,6 @@ const base = {
             }
         },
         {
-            test: /@react-three\/cannon/,
-            use: { loader: 'worker-loader' },
-          },
-        {
             test: /\.css$/,
             use: [{
                 loader: 'style-loader'
@@ -113,7 +109,11 @@ const base = {
                         ];
                     }
                 }
-            }
+            },
+            {
+                test: /@react-three\/cannon/,
+                use: { loader: 'worker-loader' },
+              }
         ]
         }]
     },
