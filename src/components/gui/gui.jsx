@@ -200,8 +200,7 @@ const GUIComponent = props => {
                         <Alerts className={styles.alertsContainer} />
                     ) : null}
                 </StageWrapper>
-                {usernameModalVisible && <TWUsernameModal />}
-                {settingsModalVisible && <TWSettingsModal />}
+                {alwaysEnabledModals}
             </React.Fragment>
         ) : (
             <Box
@@ -209,9 +208,7 @@ const GUIComponent = props => {
                 dir={isRtl ? 'rtl' : 'ltr'}
                 {...componentProps}
             >
-                {usernameModalVisible && <TWUsernameModal />}
-                {settingsModalVisible && <TWSettingsModal />}
-                {customExtensionModalVisible && <TWCustomExtensionModal />}
+                {alwaysEnabledModals}
                 {telemetryModalVisible ? (
                     <TelemetryModal
                         isRtl={isRtl}

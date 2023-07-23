@@ -23,9 +23,10 @@ const manuallyTrustExtension = url => {
 const isTrustedExtension = url => (
     // Always trust our official extension repostiory.
     url.startsWith('https://extensions.turbowarp.org/') ||
+    url.startsWith('https://penguinmod-extensions-gallery.vercel.app/') ||
 
     // For development.
-    url.startsWith('http://localhost:8000/') ||
+    url.startsWith('http://localhost:8000') ||
 
     extensionsTrustedByUser.has(url)
 );
@@ -102,6 +103,7 @@ let allowedAudio = false;
 let allowedVideo = false;
 let allowedReadClipboard = false;
 let allowedNotify = false;
+let allowedGeolocation = false;
 
 const SECURITY_MANAGER_METHODS = [
     'getSandboxMode',
@@ -112,7 +114,8 @@ const SECURITY_MANAGER_METHODS = [
     'canRecordAudio',
     'canRecordVideo',
     'canReadClipboard',
-    'canNotify'
+    'canNotify',
+    'canGeolocate'
 ];
 
 class TWSecurityManagerComponent extends React.Component {
@@ -346,6 +349,17 @@ class TWSecurityManagerComponent extends React.Component {
             allowedNotify = await showModal(SecurityModals.Notify);
         }
         return allowedNotify;
+    }
+
+    /**
+     * @returns {Promise<boolean>} True if geolocation is allowed.
+     */
+    async canGeolocate () {
+        if (!allowedGeolocation) {
+            const {showModal} = await this.acquireModalLock();
+            allowedGeolocation = await showModal(SecurityModals.Geolocate);
+        }
+        return allowedGeolocation;
     }
 
     render () {
