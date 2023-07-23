@@ -2,79 +2,10 @@ import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import React from 'react';
+import bindAll from 'lodash.bindall';
 import Button from '../button/button.jsx';
 
 import styles from './share-button.css';
-
-function authenticate() {
-    return new Promise((resolve, reject) => {
-        const login = window.open(
-            `https://auth.itinerary.eu.org/auth/?redirect=${btoa(window.location.origin)}&name=PenguinMod`,
-            "Scratch Authentication",
-            `scrollbars=yes,resizable=yes,status=no,location=yes,toolbar=no,menubar=no,width=768,height=512,left=200,top=200`
-        );
-        if (!login) {
-            reject("PopupBlocked");
-        }
-        let cantAccessAnymore = false;
-        let finished = false;
-        let interval = null;
-        interval = setInterval(() => {
-            if (login?.closed && (!finished)) {
-                clearInterval(interval);
-                try {
-                    login.close();
-                } catch {
-                    // what a shame we couldnt close the window that doesnt exist anymore
-                }
-                reject("PopupClosed");
-            }
-            try {
-                const query = login.location.search;
-                if (!cantAccessAnymore) return;
-                const parameters = new URLSearchParams(query);
-                const privateCode = parameters.get("privateCode");
-                finished = true;
-                clearInterval(interval);
-                setTimeout(() => {
-                    login.close();
-                }, 1000);
-                resolve(privateCode);
-            } catch {
-                // due to strange chrome bug, window still has the previous url on it so we need to wait until we switch to the auth site
-                cantAccessAnymore = true;
-                // now we cant access the location yet since the user hasnt left the authentication site
-            }
-        }, 10);
-    })
-}
-
-const ShareButton = ({
-    className,
-    isShared,
-    onClick
-}) => (
-    <Button
-        className={classNames(
-            className,
-            styles.shareButton,
-            { [styles.shareButtonIsShared]: isShared }
-        )}
-        onClick={onClick}
-    >
-        <FormattedMessage
-            defaultMessage="Upload"
-            description="Label for project share button"
-            id="gui.menuBar.pmshare"
-        />
-    </Button>
-);
-
-ShareButton.propTypes = {
-    className: PropTypes.string,
-    isShared: PropTypes.bool,
-    onClick: PropTypes.func
-};
 
 const getProjectThumbnail = () => {
     return new Promise((resolve, reject) => {
@@ -97,51 +28,117 @@ const getProjectUri = () => {
     })
 }
 
-window.addEventListener("message", async (e) => {
-    if (!e.origin.startsWith(`https://penguinmod.site`)) {
-        return;
+const isUploadAvailable = async () => {
+    let res = null;
+    try {
+        res = await fetch('https://projects.penguinmod.site/api');
+    } catch {
+        // failed to fetch entirely
+        return false;
     }
+    return res.ok;
+};
 
-    if (!e.data.p4) {
-        return
-    }
-
-    const packagerData = e.data.p4;
-    if (packagerData.type !== 'validate') {
-        return;
-    }
-
-    const imageUri = await getProjectThumbnail();
-    e.source.postMessage({
-        p4: {
-            type: 'image',
-            uri: imageUri
+class ShareButton extends React.Component {
+    constructor(props) {
+        super(props);
+        bindAll(this, [
+            'handleMessageEvent',
+            'onUploadProject'
+        ]);
+        this.state = {
+            loading: false
         }
-    }, e.origin);
-    const projectUri = await getProjectUri();
-    e.source.postMessage({
-        p4: {
-            type: 'project',
-            uri: projectUri
-        }
-    }, e.origin);
-    e.source.postMessage({
-        p4: {
-            type: 'finished'
-        }
-    }, e.origin);
-})
-
-ShareButton.defaultProps = {
-    onClick: () => {
-        let _projectName = document.title.split(" - ");
-        _projectName.pop();
-        const projectName = _projectName.join(" - ");
-
-        const url = location.origin;
-        window.open(`https://penguinmod.site/upload?name=${encodeURIComponent(projectName)}&external=${url}`, "_blank");
-        return;
     }
+    componentDidMount() {
+        document.addEventListener('message', this.handleMessageEvent);
+    }
+    componentWillUnmount() {
+        document.removeEventListener('message', this.handleMessageEvent);
+    }
+    async handleMessageEvent(e) {
+        if (!e.origin.startsWith(`https://penguinmod.site`)) {
+            return;
+        }
+
+        if (!e.data.p4) {
+            return
+        }
+
+        const packagerData = e.data.p4;
+        if (packagerData.type !== 'validate') {
+            return;
+        }
+
+        const imageUri = await getProjectThumbnail();
+        e.source.postMessage({
+            p4: {
+                type: 'image',
+                uri: imageUri
+            }
+        }, e.origin);
+        const projectUri = await getProjectUri();
+        e.source.postMessage({
+            p4: {
+                type: 'project',
+                uri: projectUri
+            }
+        }, e.origin);
+        e.source.postMessage({
+            p4: {
+                type: 'finished'
+            }
+        }, e.origin);
+    }
+    onUploadProject() {
+        this.setState({
+            loading: true
+        });
+        isUploadAvailable().then(available => {
+            this.setState({
+                loading: false
+            });
+            if (!available) {
+                // error?
+                console.warn('Project Server did not respond. Uploading is not available.');
+                alert('Uploading is currently unavailable. Please wait for the server to be restored.');
+                return;
+            }
+            // we are available
+            let _projectName = document.title.split(" - ");
+            _projectName.pop();
+            const projectName = _projectName.join(" - ");
+
+            const url = location.origin;
+            window.open(`https://penguinmod.site/upload?name=${encodeURIComponent(projectName)}&external=${url}`, "_blank");
+        });
+    }
+    render() {
+        return (
+            <Button
+                className={classNames(
+                    this.props.className,
+                    styles.shareButton,
+                    { [styles.shareButtonIsShared]: this.props.isShared }
+                )}
+                onClick={this.onUploadProject}
+            >
+                <FormattedMessage
+                    defaultMessage="Upload"
+                    description="Label for project share button"
+                    id="gui.menuBar.pmshare"
+                />
+                {this.state.loading ? (
+                    <p>Please wait...</p>
+                ) : null}
+            </Button>
+        );
+    }
+}
+
+ShareButton.propTypes = {
+    className: PropTypes.string,
+    isShared: PropTypes.bool
 };
 
 export default ShareButton;
