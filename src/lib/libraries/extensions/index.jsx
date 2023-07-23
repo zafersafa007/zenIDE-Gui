@@ -386,6 +386,7 @@ const menuItems = [
         iconURL: gsaTempVariablesExtensionIcon,
         tags: ['penguinmod'],
         description: 'Create variables for use in one block stack. Useful to not clutter the variable list with variables you only use once.',
+        credits: 'LilyMakesThings',
         featured: true
     },
     {
