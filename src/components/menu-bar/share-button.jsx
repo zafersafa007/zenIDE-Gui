@@ -5,6 +5,7 @@ import React from 'react';
 import bindAll from 'lodash.bindall';
 import Button from '../button/button.jsx';
 
+import loadingIcon from './share-loading.svg';
 import styles from './share-button.css';
 
 const getProjectThumbnail = () => {
@@ -91,6 +92,8 @@ class ShareButton extends React.Component {
         }, e.origin);
     }
     onUploadProject() {
+        if (this.state.loading) return;
+        
         this.setState({
             loading: true
         });
@@ -119,18 +122,27 @@ class ShareButton extends React.Component {
                 className={classNames(
                     this.props.className,
                     styles.shareButton,
-                    { [styles.shareButtonIsShared]: this.props.isShared }
+                    { [styles.shareButtonIsShared]: this.props.isShared },
+                    { [styles.disabled]: this.state.loading },
                 )}
                 onClick={this.onUploadProject}
             >
-                <FormattedMessage
-                    defaultMessage="Upload"
-                    description="Label for project share button"
-                    id="gui.menuBar.pmshare"
-                />
-                {this.state.loading ? (
-                    <p>Please wait...</p>
-                ) : null}
+                <div className={classNames(styles.shareContent)}>
+                    <FormattedMessage
+                        defaultMessage="Upload"
+                        description="Label for project share button"
+                        id="gui.menuBar.pmshare"
+                    />
+                    {this.state.loading ? (
+                        <img
+                            className={classNames(styles.icon)}
+                            draggable={false}
+                            src={loadingIcon}
+                            height={20}
+                            width={20}
+                        />
+                    ) : null}
+                </div>
             </Button>
         );
     }
