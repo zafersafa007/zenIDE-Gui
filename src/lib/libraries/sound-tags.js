@@ -1,9 +1,11 @@
 import messages from './tag-messages.js';
 export default [
-    {tag: 'animals', intlLabel: messages.animals},
-    {tag: 'effects', intlLabel: messages.effects},
+    {tag: 'divider1', intlLabel: messages.scratch, type: 'divider'},
     {tag: 'themes', intlLabel: messages.themes},
     {tag: 'loops', intlLabel: messages.loops},
+    {tag: 'divider2', intlLabel: messages.scratch, type: 'divider'},
+    {tag: 'animals', intlLabel: messages.animals},
+    {tag: 'effects', intlLabel: messages.effects},
     {tag: 'notes', intlLabel: messages.notes},
     {tag: 'percussion', intlLabel: messages.percussion},
     {tag: 'space', intlLabel: messages.space},
