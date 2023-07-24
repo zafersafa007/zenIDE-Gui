@@ -239,21 +239,22 @@ class TWSecurityManagerComponent extends React.Component {
             return true;
         }
         const {showModal} = await this.acquireModalLock();
-        if (url.startsWith('data:')) {
-            const allowed = await showModal(SecurityModals.LoadExtension, {
-                url,
-                unsandboxed: false,
-                onChangeUnsandboxed: this.handleChangeUnsandboxed.bind(this)
-            });
-            if (this.state.data.unsandboxed) {
-                manuallyTrustExtension(url);
-            }
-            return allowed;
-        }
-        return showModal(SecurityModals.LoadExtension, {
+        // for backwards compatibility, allow urls to be unsandboxed
+        // if (url.startsWith('data:')) {
+        const allowed = await showModal(SecurityModals.LoadExtension, {
             url,
-            unsandboxed: false
+            unsandboxed: false,
+            onChangeUnsandboxed: this.handleChangeUnsandboxed.bind(this)
         });
+        if (this.state.data.unsandboxed) {
+            manuallyTrustExtension(url);
+        }
+        return allowed;
+        // }
+        // return showModal(SecurityModals.LoadExtension, {
+        //     url,
+        //     unsandboxed: false
+        // });
     }
 
     /**
