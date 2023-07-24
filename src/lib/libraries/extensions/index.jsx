@@ -308,15 +308,16 @@ const menuItems = [
         featured: true,
         credits: 'LilyMakesThings'
     },
-    // {
-    //     name: 'Controls Expansion',
-    //     extensionId: 'pmControlsExpansion',
-    //     iconURL: pmControlsExpansionExtensionIcon,
-    //     tags: ['penguinmod', 'categoryexpansion'],
-    //     description: "More control blocks for animations, complex systems or cleaner one-time use blocks.",
-    //     featured: true,
-    //     credits: 'CST1229'
-    // },
+    {
+        name: 'Controls Expansion',
+        extensionId: 'pmControlsExpansion',
+        iconURL: pmControlsExpansionExtensionIcon,
+        tags: ['penguinmod', 'categoryexpansion'],
+        description: "More control blocks for animations, complex systems or cleaner one-time use blocks.",
+        featured: true,
+        // uncomment when thread block is added
+        // credits: 'CST1229'
+    },
     {
         name: 'Sensing Expansion',
         extensionId: 'pmSensingExpansion',
