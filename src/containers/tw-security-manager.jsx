@@ -243,7 +243,7 @@ class TWSecurityManagerComponent extends React.Component {
         // if (url.startsWith('data:')) {
         const allowed = await showModal(SecurityModals.LoadExtension, {
             url,
-            unsandboxed: false,
+            unsandboxed: true,
             onChangeUnsandboxed: this.handleChangeUnsandboxed.bind(this)
         });
         if (this.state.data.unsandboxed) {
