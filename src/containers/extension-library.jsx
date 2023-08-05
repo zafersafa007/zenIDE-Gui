@@ -99,6 +99,7 @@ class ExtensionLibrary extends React.PureComponent {
                 filterable={true}
                 tags={extensionTags}
                 id="extensionLibrary"
+                header={"Extensions"}
                 title={this.props.intl.formatMessage(messages.extensionTitle)}
                 visible={this.props.visible}
                 onItemSelected={this.handleItemSelect}

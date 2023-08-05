@@ -40,6 +40,7 @@ class BackdropLibrary extends React.Component {
             <LibraryComponent
                 data={getBackdropLibrary()}
                 id="backdropLibrary"
+                header={"Backdrops"}
                 tags={backdropTags}
                 title={this.props.intl.formatMessage(messages.libraryTitle)}
                 onItemSelected={this.handleItemSelect}

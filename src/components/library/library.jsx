@@ -9,6 +9,7 @@ import Modal from '../../containers/modal.jsx';
 import Divider from '../divider/divider.jsx';
 import Filter from '../filter/filter.jsx';
 import TagButton from '../../containers/tag-button.jsx';
+import TagCheckbox from '../../containers/tag-checkbox.jsx';
 import Spinner from '../spinner/spinner.jsx';
 
 import styles from './library.css';
@@ -27,7 +28,23 @@ const messages = defineMessages({
 });
 
 const ALL_TAG = {tag: 'all', intlLabel: messages.allTag};
-const tagListPrefix = [ALL_TAG];
+const tagListPrefix = [];
+
+/**
+ * Returns true if the array includes items from the other array.
+ * @param {Array} array The array to check
+ * @param {Array} from The array with the items that need to be included
+ * @returns {boolean}
+ */
+const arrayIncludesItemsFrom = (array, from) => {
+    if (!Array.isArray(array)) array = [];
+    if (!Array.isArray(from)) from = [];
+    const value = from.every((value) => {
+        return array.indexOf(value) >= 0;
+    });
+    // console.log(array, from, value);
+    return value;
+};
 
 class LibraryComponent extends React.Component {
     constructor (props) {
@@ -46,7 +63,8 @@ class LibraryComponent extends React.Component {
         this.state = {
             playingItem: null,
             filterQuery: '',
-            selectedTag: ALL_TAG.tag,
+            selectedTags: [],
+            collapsed: false,
             loaded: false,
             data: props.data
         };
@@ -70,7 +88,7 @@ class LibraryComponent extends React.Component {
     }
     componentDidUpdate (prevProps, prevState) {
         if (prevState.filterQuery !== this.state.filterQuery ||
-            prevState.selectedTag !== this.state.selectedTag) {
+            prevState.selectedTags.length !== this.state.selectedTags.length) {
             this.scrollToTop();
         }
         if (prevProps.data !== this.props.data) {
@@ -87,18 +105,25 @@ class LibraryComponent extends React.Component {
     handleClose () {
         this.props.onRequestClose();
     }
-    handleTagClick (tag) {
+    handleTagClick (tag, enabled) {
+        console.log(tag, enabled);
         if (this.state.playingItem === null) {
             this.setState({
                 filterQuery: '',
-                selectedTag: tag.toLowerCase()
+                selectedTags: this.state.selectedTags.concat([tag.toLowerCase()])
             });
         } else {
             this.props.onItemMouseLeave(this.getFilteredData()[[this.state.playingItem]]);
             this.setState({
                 filterQuery: '',
                 playingItem: null,
-                selectedTag: tag.toLowerCase()
+                selectedTags: this.state.selectedTags.concat([tag.toLowerCase()])
+            });
+        }
+        if (!enabled) {
+            const tags = this.state.selectedTags.filter(t => (t !== tag));
+            this.setState({
+                selectedTags: tags
             });
         }
     }
@@ -130,14 +155,14 @@ class LibraryComponent extends React.Component {
         if (this.state.playingItem === null) {
             this.setState({
                 filterQuery: event.target.value,
-                selectedTag: ALL_TAG.tag
+                selectedTags: []
             });
         } else {
             this.props.onItemMouseLeave(this.getFilteredData()[[this.state.playingItem]]);
             this.setState({
                 filterQuery: event.target.value,
                 playingItem: null,
-                selectedTag: ALL_TAG.tag
+                selectedTags: []
             });
         }
     }
@@ -145,7 +170,7 @@ class LibraryComponent extends React.Component {
         this.setState({filterQuery: ''});
     }
     getFilteredData () {
-        if (this.state.selectedTag === 'all') {
+        if (this.state.selectedTags.length <= 0) {
             if (!this.state.filterQuery) return this.state.data;
             return this.state.data.filter(dataItem => (
                 (dataItem.tags || [])
@@ -161,12 +186,11 @@ class LibraryComponent extends React.Component {
                     .indexOf(this.state.filterQuery.toLowerCase()) !== -1
             ));
         }
-        return this.state.data.filter(dataItem => (
+        return this.state.data.filter(dataItem => (arrayIncludesItemsFrom(
             dataItem.tags &&
             dataItem.tags
-                .map(String.prototype.toLowerCase.call, String.prototype.toLowerCase)
-                .indexOf(this.state.selectedTag) !== -1
-        ));
+                .map(String.prototype.toLowerCase.call, String.prototype.toLowerCase),
+        this.state.selectedTags)));
     }
     scrollToTop () {
         this.filteredDataRef.scrollTop = 0;
@@ -182,30 +206,72 @@ class LibraryComponent extends React.Component {
                 id={this.props.id}
                 onRequestClose={this.handleClose}
             >
-                {(this.props.filterable || this.props.tags) && (
-                    <div className={styles.filterBar}>
-                        {this.props.filterable && (
-                            <Filter
-                                className={classNames(
-                                    styles.filterBarItem,
-                                    styles.filter
-                                )}
-                                filterQuery={this.state.filterQuery}
-                                inputClassName={styles.filterInput}
-                                placeholderText={this.props.intl.formatMessage(messages.filterPlaceholder)}
-                                onChange={this.handleFilterChange}
-                                onClear={this.handleFilterClear}
-                            />
+                {/*
+                    todo: translation support?
+                */}
+                {this.props.header ? (
+                    <h1
+                        style={{ marginLeft: "6px" }}
+                        className={classNames(
+                            styles.libraryHeader,
+                            styles.whiteTextInDarkMode
                         )}
-                        {this.props.filterable && this.props.tags && (
-                            <Divider className={classNames(styles.filterBarItem, styles.divider)} />
+                    >
+                        <button
+                            style={this.state.collapsed ? { transform: "scaleX(0.65)" } : null}
+                            className={classNames(styles.libraryFilterCollapse)}
+                            onClick={() => {
+                                this.setState({
+                                    collapsed: !this.state.collapsed
+                                });
+                            }}
+                        />
+                        {this.props.header}
+                        <p
+                            className={classNames(styles.libraryItemCount)}
+                        >
+                            {this.state.data.length}
+                        </p>
+                    </h1>
+                ) : null}
+                {/* filter bar & stuff */}
+                <div className={classNames(styles.libraryContentWrapper)}>
+                    <div
+                        className={classNames(styles.libraryFilterBar)}
+                        style={this.state.collapsed ? { display: "none" } : null}
+                    >
+                        {/*
+                            todo: translation?
+                        */}
+                        <h3 className={classNames(styles.whiteTextInDarkMode)}>Filters</h3>
+                        {this.props.filterable && (
+                            <div>
+                                    <Filter
+                                        className={classNames(
+                                            styles.filterBarItem,
+                                            styles.filter
+                                        )}
+                                        filterQuery={this.state.filterQuery}
+                                        inputClassName={styles.filterInput}
+                                        placeholderText={this.props.intl.formatMessage(messages.filterPlaceholder)}
+                                        onChange={this.handleFilterChange}
+                                        onClear={this.handleFilterClear}
+                                    />
+                                <Divider className={classNames(styles.filterBarItem, styles.divider)} />
+                            </div>
                         )}
                         {this.props.tags &&
-                            <div className={styles.tagWrapper}>
+                            <div>
                                 {tagListPrefix.concat(this.props.tags).map((tagProps, id) => {
                                     let onclick = this.handleTagClick;
                                     if (tagProps.type === 'divider') {
                                         return (<Divider className={classNames(styles.filterBarItem, styles.divider)} />);
+                                    }
+                                    if (tagProps.type === 'title') {
+                                        return (<h3 className={classNames(styles.whiteTextInDarkMode)}>{tagProps.intlLabel}</h3>);
+                                    }
+                                    if (tagProps.type === 'subtitle') {
+                                        return (<h5 className={classNames(styles.whiteTextInDarkMode)}>{tagProps.intlLabel}</h5>);
                                     }
                                     if (tagProps.type === 'custom') {
                                         onclick = () => {
@@ -224,69 +290,90 @@ class LibraryComponent extends React.Component {
                                             };
                                             tagProps.func(api);
                                         };
+                                        return (
+                                            <TagButton
+                                                active={false}
+                                                className={classNames(
+                                                    styles.filterBarItem,
+                                                    styles.tagButton,
+                                                    tagProps.className
+                                                )}
+                                                key={`tag-button-${id}`}
+                                                onClick={onclick}
+                                                {...tagProps}
+                                            />
+                                        );
                                     }
                                     return (
-                                        <TagButton
-                                            active={this.state.selectedTag === tagProps.tag.toLowerCase()}
-                                            className={classNames(
-                                                styles.filterBarItem,
-                                                styles.tagButton,
-                                                tagProps.className
-                                            )}
-                                            key={`tag-button-${id}`}
-                                            onClick={onclick}
-                                            {...tagProps}
-                                        />
+                                        <div className={classNames(styles.tagCheckboxWrapper)}>
+                                            <div style={{ width: "90%" }}>
+                                                <TagCheckbox
+                                                    active={false}
+                                                    key={`tag-button-${id}`}
+                                                    onClick={onclick}
+                                                    {...tagProps}
+                                                />
+                                            </div>
+                                            <div style={{ width: "7.5%", marginRight: "2.5%", textAlign: "right" }}>
+                                                {this.state.loaded &&
+                                                    (
+                                                        this.state.data.filter(dataItem => (arrayIncludesItemsFrom(
+                                                            dataItem.tags &&
+                                                            dataItem.tags
+                                                                .map(String.prototype.toLowerCase.call, String.prototype.toLowerCase),
+                                                            [tagProps.tag]))).length
+                                                    )
+                                                }
+                                            </div>
+                                        </div>
                                     );
                                 })}
                             </div>
                         }
                     </div>
-                )}
-                <div
-                    className={classNames(styles.libraryScrollGrid, {
-                        [styles.withFilterBar]: this.props.filterable || this.props.tags
-                    })}
-                    ref={this.setFilteredDataRef}
-                >
-                    {this.state.loaded ? this.getFilteredData().map((dataItem, index) => (
-                        <LibraryItem
-                            bluetoothRequired={dataItem.bluetoothRequired}
-                            collaborator={dataItem.collaborator}
-                            extDeveloper={dataItem.extDeveloper}
-                            credits={dataItem.credits}
-                            twDeveloper={dataItem.twDeveloper}
-                            eventSubmittor={dataItem.eventSubmittor}
-                            customInsetColor={dataItem.customInsetColor}
-                            description={dataItem.description}
-                            disabled={dataItem.disabled}
-                            extensionId={dataItem.extensionId}
-                            featured={dataItem.featured}
-                            hidden={dataItem.hidden}
-                            href={dataItem.href}
-                            iconMd5={dataItem.costumes ? dataItem.costumes[0].md5ext : dataItem.md5ext}
-                            iconRawURL={dataItem.rawURL}
-                            icons={dataItem.costumes}
-                            id={index}
-                            incompatibleWithScratch={dataItem.incompatibleWithScratch}
-                            insetIconURL={dataItem.insetIconURL}
-                            internetConnectionRequired={dataItem.internetConnectionRequired}
-                            isPlaying={this.state.playingItem === index}
-                            key={typeof dataItem.name === 'string' ? dataItem.name : dataItem.rawURL}
-                            name={dataItem.name}
-                            showPlayButton={this.props.showPlayButton}
-                            onMouseEnter={this.handleMouseEnter}
-                            onMouseLeave={this.handleMouseLeave}
-                            onSelect={this.handleSelect}
-                        />
-                    )) : (
-                        <div className={styles.spinnerWrapper}>
-                            <Spinner
-                                large
-                                level="primary"
+                    <div
+                        className={classNames(styles.libraryScrollGrid)}
+                        ref={this.setFilteredDataRef}
+                    >
+                        {this.state.loaded ? this.getFilteredData().map((dataItem, index) => (
+                            <LibraryItem
+                                bluetoothRequired={dataItem.bluetoothRequired}
+                                collaborator={dataItem.collaborator}
+                                extDeveloper={dataItem.extDeveloper}
+                                credits={dataItem.credits}
+                                twDeveloper={dataItem.twDeveloper}
+                                eventSubmittor={dataItem.eventSubmittor}
+                                customInsetColor={dataItem.customInsetColor}
+                                description={dataItem.description}
+                                disabled={dataItem.disabled}
+                                extensionId={dataItem.extensionId}
+                                featured={dataItem.featured}
+                                hidden={dataItem.hidden}
+                                href={dataItem.href}
+                                iconMd5={dataItem.costumes ? dataItem.costumes[0].md5ext : dataItem.md5ext}
+                                iconRawURL={dataItem.rawURL}
+                                icons={dataItem.costumes}
+                                id={index}
+                                incompatibleWithScratch={dataItem.incompatibleWithScratch}
+                                insetIconURL={dataItem.insetIconURL}
+                                internetConnectionRequired={dataItem.internetConnectionRequired}
+                                isPlaying={this.state.playingItem === index}
+                                key={typeof dataItem.name === 'string' ? dataItem.name : dataItem.rawURL}
+                                name={dataItem.name}
+                                showPlayButton={this.props.showPlayButton}
+                                onMouseEnter={this.handleMouseEnter}
+                                onMouseLeave={this.handleMouseLeave}
+                                onSelect={this.handleSelect}
                             />
-                        </div>
-                    )}
+                        )) : (
+                            <div className={styles.spinnerWrapper}>
+                                <Spinner
+                                    large
+                                    level="primary"
+                                />
+                            </div>
+                        )}
+                    </div>
                 </div>
             </Modal>
         );

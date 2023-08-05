@@ -89,6 +89,7 @@ class TipsLibrary extends React.PureComponent {
                 filterable
                 data={decksLibraryThumbnailData}
                 id="tipsLibrary"
+                header={"Tips"}
                 tags={tutorialTags}
                 title={this.props.intl.formatMessage(messages.tipsLibraryTitle)}
                 visible={this.props.visible}

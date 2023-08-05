@@ -1,6 +1,5 @@
 import messages from './tag-messages.js';
 export default [
-    {tag: 'divider1', intlLabel: messages.scratch, type: 'divider'},
     {tag: 'themes', intlLabel: messages.themes},
     {tag: 'loops', intlLabel: messages.loops},
     {tag: 'divider2', intlLabel: messages.scratch, type: 'divider'},

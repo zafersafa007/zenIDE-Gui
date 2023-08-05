@@ -241,6 +241,7 @@ class SoundLibrary extends React.PureComponent {
                 showPlayButton
                 data={this.state.data}
                 id="soundLibrary"
+                header={"Sounds"}
                 setStopHandler={this.setStopHandler}
                 tags={soundTags}
                 title={this.props.intl.formatMessage(messages.libraryTitle)}

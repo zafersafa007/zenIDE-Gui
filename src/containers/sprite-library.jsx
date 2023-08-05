@@ -37,6 +37,7 @@ class SpriteLibrary extends React.PureComponent {
             <LibraryComponent
                 data={getSpriteLibrary()}
                 id="spriteLibrary"
+                header={"Sprites"}
                 tags={spriteTags}
                 title={this.props.intl.formatMessage(messages.libraryTitle)}
                 onItemSelected={this.handleItemSelect}
