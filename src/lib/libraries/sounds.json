@@ -552,6 +552,34 @@
         "rate": 22050
     },
     {
+        "name": "Bonk2",
+        "tags": [
+            "wacky",
+            "effects",
+            "cartoon",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/bonk2.mp3"
+    },
+    {
+        "name": "Bonk3",
+        "tags": [
+            "wacky",
+            "effects",
+            "cartoon",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/bonk3.mp3"
+    },
+    {
         "name": "Boom Cloud",
         "tags": [
             "effects",
