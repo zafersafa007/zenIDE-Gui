@@ -1175,6 +1175,32 @@
         "libraryFilePage": "sounds/click03.mp3"
     },
     {
+        "name": "Click4",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/click04.mp3"
+    },
+    {
+        "name": "Click5",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/click05.mp3"
+    },
+    {
         "name": "Clock Ticking",
         "tags": [
             "effects",
@@ -1885,6 +1911,18 @@
         "libraryFilePage": "sounds/dooropen.mp3"
     },
     {
+        "name": "Dream",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/dreaming01.mp3"
+    },
+    {
         "name": "Drip Drop",
         "tags": [
             "music",
@@ -2345,6 +2383,32 @@
         "rate": 22050
     },
     {
+        "name": "Error1",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/error1.mp3"
+    },
+    {
+        "name": "Error2",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/error2.mp3"
+    },
+    {
         "name": "Explosion1",
         "tags": [
             "effects",
@@ -2535,6 +2599,19 @@
         "md5ext": "5fa3108b119ca266029b4caa340a7cd0.wav",
         "sampleCount": 25532,
         "rate": 44100
+    },
+    {
+        "name": "Fail",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/fail.mp3"
     },
     {
         "name": "Fairydust",
@@ -2767,6 +2844,30 @@
         "rate": 22050
     },
     {
+        "name": "Glass Breaking 2",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/glass_shatter2.mp3"
+    },
+    {
+        "name": "Glass Breaking 3",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/glass_shatter3.mp3"
+    },
+    {
         "name": "Glug",
         "tags": [
             "effects",
@@ -2909,6 +3010,58 @@
         "rate": 44100
     },
     {
+        "name": "Gun Empty",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/gun_empty1.mp3"
+    },
+    {
+        "name": "Gun Reload 1",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/gun_reload1.mp3"
+    },
+    {
+        "name": "Gun Reload 2",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/gun_reload2.mp3"
+    },
+    {
+        "name": "Gun Reload 3",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/gun_reload3.mp3"
+    },
+    {
         "name": "Gunshot 1",
         "tags": [
             "effects",
@@ -2971,6 +3124,19 @@
         "md5ext": "9502142875e67f7b0292a117a27e9563.wav",
         "sampleCount": 4928,
         "rate": 44100
+    },
+    {
+        "name": "Harm",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/harm1.mp3"
     },
     {
         "name": "Head Shake",
@@ -3300,6 +3466,174 @@
         "md5ext": "2ca5fbda5288b79a6e12f5ca3c20b0fa.wav",
         "sampleCount": 291593,
         "rate": 22050
+    },
+    {
+        "name": "Keyboard Click 1",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/click1.mp3"
+    },
+    {
+        "name": "Keyboard Click 2",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/click2.mp3"
+    },
+    {
+        "name": "Keyboard Click 3",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/click3.mp3"
+    },
+    {
+        "name": "Keyboard Type 1",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/type1.mp3"
+    },
+    {
+        "name": "Keyboard Type 2",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/type2.mp3"
+    },
+    {
+        "name": "Keyboard Type 3",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/type3.mp3"
+    },
+    {
+        "name": "Keyboard Type 4",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/type4.mp3"
+    },
+    {
+        "name": "Keyboard Type 5",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/type5.mp3"
+    },
+    {
+        "name": "Keyboard Typing 1",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/typing01.mp3"
+    },
+    {
+        "name": "Keyboard Typing 2",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/typing02.mp3"
+    },
+    {
+        "name": "Keyboard Typing 3",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/typing03.mp3"
+    },
+    {
+        "name": "Keyboard Typing Angrily",
+        "tags": [
+            "effects",
+            "ui",
+            "keyboard",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/keyboard/angry_typing01.mp3"
     },
     {
         "name": "Kick Back",
@@ -3687,6 +4021,32 @@
         "rate": 44100,
         "fromPenguinModLibrary": true,
         "libraryFilePage": "sounds/nailgun.mp3"
+    },
+    {
+        "name": "Notification1",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/notification01.mp3"
+    },
+    {
+        "name": "Notification2",
+        "tags": [
+            "effects",
+            "ui",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/notification02.mp3"
     },
     {
         "name": "Ocean Wave",
@@ -4207,6 +4567,18 @@
         "rate": 22050
     },
     {
+        "name": "Slam",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/slam01.mp3"
+    },
+    {
         "name": "Slide Whistle",
         "tags": [
             "wacky",
@@ -4560,6 +4932,136 @@
         "md5ext": "12f86e0188510860970e04df45370c1d.wav",
         "sampleCount": 66636,
         "rate": 44100
+    },
+    {
+        "name": "Sword Clash 1",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_clash1.mp3"
+    },
+    {
+        "name": "Sword Clash 2",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_clash2.mp3"
+    },
+    {
+        "name": "Sword Clash 3",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_clash3.mp3"
+    },
+    {
+        "name": "Sword Clink 1",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_clink1.mp3"
+    },
+    {
+        "name": "Sword Clink 2",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_clink2.mp3"
+    },
+    {
+        "name": "Sword Clink 3",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_clink3.mp3"
+    },
+    {
+        "name": "Sword Slice 1",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_slice1.mp3"
+    },
+    {
+        "name": "Sword Slice 2",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_slice2.mp3"
+    },
+    {
+        "name": "Sword Swing 1",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_swing1.mp3"
+    },
+    {
+        "name": "Sword Swing 2",
+        "tags": [
+            "effects",
+            "swords",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sword_swing2.mp3"
     },
     {
         "name": "Sword Unsheathe 1",
