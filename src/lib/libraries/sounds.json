@@ -1284,14 +1284,13 @@
             "effects",
             "electronic",
             "games",
-            "penguinmod",
-            "banban"
+            "penguinmod"
         ],
         "dataFormat": "mpeg",
         "md5ext": "sound.mp3",
         "rate": 44100,
         "fromPenguinModLibrary": true,
-        "libraryFilePage": "sounds/banban.mp3"
+        "libraryFilePage": "sounds/collect1-1.mp3"
     },
     {
         "name": "Collect3",
