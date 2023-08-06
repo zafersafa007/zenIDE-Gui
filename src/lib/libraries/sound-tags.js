@@ -14,5 +14,6 @@ export default [
     {tag: 'swords', intlLabel: messages.swords},
     {tag: 'guns', intlLabel: messages.guns},
     {tag: 'ui', intlLabel: messages.ui},
+    {tag: 'footsteps', intlLabel: messages.footsteps},
     {tag: 'penguinmod', intlLabel: messages.penguinmod}
 ];

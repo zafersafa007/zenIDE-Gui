@@ -975,6 +975,19 @@
         "rate": 22050
     },
     {
+        "name": "Casual Walk",
+        "tags": [
+            "music",
+            "loops",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/casual_walk.mp3"
+    },
+    {
         "name": "Cave",
         "tags": [
             "music",
@@ -2695,13 +2708,266 @@
         "name": "Footsteps",
         "tags": [
             "effects",
-            "human"
+            "human",
+            "footsteps"
         ],
         "assetId": "c893b0a9b3e2e0594f1f921a12aa66be",
         "dataFormat": "",
         "md5ext": "c893b0a9b3e2e0594f1f921a12aa66be.wav",
         "sampleCount": 235520,
         "rate": 44100
+    },
+    {
+        "name": "Footsteps Concrete 1",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/concrete1.mp3"
+    },
+    {
+        "name": "Footsteps Concrete 2",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/concrete2.mp3"
+    },
+    {
+        "name": "Footsteps Concrete 3",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/concrete3.mp3"
+    },
+    {
+        "name": "Footsteps Grass 1",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/grass1.mp3"
+    },
+    {
+        "name": "Footsteps Grass 2",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/grass2.mp3"
+    },
+    {
+        "name": "Footsteps Grass 3",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/grass3.mp3"
+    },
+    {
+        "name": "Footsteps Gravel 1",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/gravel1.mp3"
+    },
+    {
+        "name": "Footsteps Gravel 2",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/gravel2.mp3"
+    },
+    {
+        "name": "Footsteps Gravel 3",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/gravel3.mp3"
+    },
+    {
+        "name": "Footsteps Mud 1",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/mud1.mp3"
+    },
+    {
+        "name": "Footsteps Mud 2",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/mud2.mp3"
+    },
+    {
+        "name": "Footsteps Mud 3",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/mud3.mp3"
+    },
+    {
+        "name": "Footsteps Snow 1",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/snow1.mp3"
+    },
+    {
+        "name": "Footsteps Snow 2",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/snow2.mp3"
+    },
+    {
+        "name": "Footsteps Snow 3",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/snow3.mp3"
+    },
+    {
+        "name": "Footsteps Wood 1",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/wood1.mp3"
+    },
+    {
+        "name": "Footsteps Wood 2",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/wood2.mp3"
+    },
+    {
+        "name": "Footsteps Wood 3",
+        "tags": [
+            "effects",
+            "human",
+            "footsteps",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/footsteps/wood3.mp3"
     },
     {
         "name": "G Bass",

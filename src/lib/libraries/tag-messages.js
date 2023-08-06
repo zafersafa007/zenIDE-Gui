@@ -171,6 +171,11 @@ export default defineMessages({
         description: 'Tag for filtering a library by ui',
         id: 'gui.libraryTags.ui'
     },
+    footsteps: {
+        defaultMessage: 'Footsteps',
+        description: 'Tag for filtering a library by footsteps',
+        id: 'gui.libraryTags.footsteps'
+    },
     custom: {
         defaultMessage: 'Custom',
         description: 'Tag for filtering a library by custom. Usually this is a custom button, not an actual tag',
