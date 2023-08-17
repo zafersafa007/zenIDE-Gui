@@ -4,6 +4,7 @@ import bindAll from 'lodash.bindall';
 import VM from 'scratch-vm';
 import PaintEditor from '../lib/tw-scratch-paint';
 import {inlineSvgFonts} from 'scratch-svg-renderer';
+import {openFontsModal} from '../reducers/modals';
 
 import {connect} from 'react-redux';
 
@@ -12,15 +13,31 @@ class PaintEditorWrapper extends React.Component {
         super(props);
         bindAll(this, [
             'handleUpdateImage',
-            'handleUpdateName'
+            'handleUpdateName',
+            'handleUpdateFonts'
         ]);
+        this.state = {
+            fonts: this.props.vm.runtime.fontManager.getFonts()
+        };
     }
-    shouldComponentUpdate (nextProps) {
+    componentDidMount() {
+        this.props.vm.runtime.fontManager.on('change', this.handleUpdateFonts);
+    }
+    shouldComponentUpdate(nextProps, nextState) {
         return this.props.imageId !== nextProps.imageId ||
             this.props.rtl !== nextProps.rtl ||
             this.props.name !== nextProps.name ||
             this.props.isDark !== nextProps.isDark ||
-            this.props.customStageSize !== nextProps.customStageSize;
+            this.props.customStageSize !== nextProps.customStageSize ||
+            this.state.fonts !== nextState.fonts;
+    }
+    componentWillUnmount() {
+        this.props.vm.runtime.fontManager.off('change', this.handleUpdateFonts);
+    }
+    handleUpdateFonts() {
+        this.setState({
+            fonts: this.props.vm.runtime.fontManager.getFonts()
+        });
     }
     handleUpdateName (name) {
         this.props.vm.renameCostume(this.props.selectedCostumeIndex, name);
@@ -57,6 +74,7 @@ class PaintEditorWrapper extends React.Component {
                 onUpdateName={this.handleUpdateName}
                 fontInlineFn={inlineSvgFonts}
                 theme={this.props.isDark ? 'dark' : 'light'}
+                customFonts={this.state.fonts}
                 width={this.props.customStageSize.width}
                 height={this.props.customStageSize.height}
             />
@@ -69,6 +87,7 @@ PaintEditorWrapper.propTypes = {
         width: PropTypes.width,
         height: PropTypes.number
     }),
+    onManageFonts: PropTypes.func.isRequired,
     imageFormat: PropTypes.string.isRequired,
     imageId: PropTypes.string.isRequired,
     isDark: PropTypes.bool,
@@ -101,6 +120,11 @@ const mapStateToProps = (state, {selectedCostumeIndex}) => {
     };
 };
 
+const mapDispatchToProps = dispatch => ({
+    onManageFonts: () => dispatch(openFontsModal())
+});
+
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    mapDispatchToProps
 )(PaintEditorWrapper);
