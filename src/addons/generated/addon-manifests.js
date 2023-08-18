@@ -69,7 +69,6 @@ import _tw_remove_feedback from "../addons/tw-remove-feedback/_manifest_entry.js
 import _tw_disable_cloud_variables from "../addons/tw-disable-cloud-variables/_manifest_entry.js";
 import _tw_disable_restore_points from "../addons/tw-disable-restore-points/_manifest_entry.js";
 import _editor_stepping from "../addons/editor-stepping/_manifest_entry.js";
-import _paint_skew from "../addons/paint-skew/_manifest_entry.js";
 
 export default {
   "cat-blocks": _cat_blocks,
@@ -142,6 +141,5 @@ export default {
   "tw-disable-cloud-variables": _tw_disable_cloud_variables,
   "tw-disable-restore-points": _tw_disable_restore_points,
   "editor-stepping": _editor_stepping,
-  "paint-skew": _paint_skew,
   "vol-slider": _vol_slider,
 };
