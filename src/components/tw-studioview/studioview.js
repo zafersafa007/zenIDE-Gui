@@ -243,7 +243,7 @@ StudioView.prototype.loadNextPage = function () {
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     xhr.onload = function () {
-        var rawProjects = xhr.response;
+        var rawProjects = xhr.response.projects;
         if (!Array.isArray(rawProjects)) {
             xhr.onerror();
             return;
