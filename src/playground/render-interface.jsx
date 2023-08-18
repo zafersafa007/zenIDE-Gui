@@ -96,19 +96,20 @@ if (AddonChannels.changeChannel) {
 
 runAddons();
 
-const projectDetailCache = {};
-const getProjectDetailsById = async (id) => {
-    // if we have already gotten the details of this project, avoid making another request since they likely never changed
-    if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
+/* todo: fix this and make it work properly */
+// const projectDetailCache = {};
+// const getProjectDetailsById = async (id) => {
+//     // if we have already gotten the details of this project, avoid making another request since they likely never changed
+//     if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
 
-    const response = await fetch(`https://projects.penguinmod.site/api/projects/getPublished?id=${id}`);
-    // Don't continue if the api never returned 200-299 since we would cache an error as project details
-    if (!response.ok) return {};
+//     const response = await fetch(`https://projects.penguinmod.site/api/projects/getPublished?id=${id}`);
+//     // Don't continue if the api never returned 200-299 since we would cache an error as project details
+//     if (!response.ok) return {};
 
-    const project = await response.json();
-    projectDetailCache[String(id)] = project;
-    return projectDetailCache[String(id)];
-};
+//     const project = await response.json();
+//     projectDetailCache[String(id)] = project;
+//     return projectDetailCache[String(id)];
+// };
 
 const Footer = () => (
     <footer className={styles.footer}>
@@ -268,19 +269,22 @@ class Interface extends React.Component {
                     {isHomepage ? (
                         <React.Fragment>
                             {/* project not approved message */}
+                            {/* would remove this and recode it but its kind of important */}
                             {(window.LastFetchedProject) != null && (window.LastFetchedProject.accepted == false) ? (
                                 <div className={styles.remixWarningBox}>
                                     <p>This project is not approved. Be careful when running this project.</p>
                                 </div>
                             ) : null}
+                            {/* todo: fix this and make it work properly */}
                             {/* project too large to remix message */}
-                            {(window.LastFetchedProject) != null && (window.LastFetchedProject.tooLarge == true) ? (
+                            {/* {(window.LastFetchedProject) != null && (window.LastFetchedProject.tooLarge == true) ? (
                                 <div className={styles.remixWarningBox}>
                                     <p>This project is too large to be remixed. If you would like to remix this project, please contact someone who can manually upload it for you.</p>
                                 </div>
-                            ) : null}
+                            ) : null} */}
+                            {/* todo: fix this and make it work properly */}
                             {/* its time for some absolutely BANGER react code boys */}
-                            {(window.LastFetchedProject) != null && (window.LastFetchedProject.remix != null) ? (
+                            {/* {(window.LastFetchedProject) != null && (window.LastFetchedProject.remix != null) ? (
                                 <div className={styles.unsharedUpdate}>
                                     <div style={{ display: "flex", flexDirection: "row" }}>
                                         <a style={{ height: "32px" }} target="_blank" href={"https://penguinmod.site/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://projects.penguinmod.site/api/pmWrapper/scratchUserImage?username=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
@@ -288,7 +292,7 @@ class Interface extends React.Component {
                                     </div>
                                     <div style={{ display: 'none' }}>{getProjectDetailsById(window.LastFetchedProject.remix).yesIDefinetlyKnowHowToUseReactProperlyShutUp}</div>
                                 </div>
-                            ) : null}
+                            ) : null} */}
                             {isRendererSupported() ? null : (
                                 <WebGlModal isRtl={isRtl} />
                             )}
@@ -310,29 +314,10 @@ class Interface extends React.Component {
                                 </div>
                             ) : null}
                             <VoteFrame id={projectId} darkmode={this.props.isDark}></VoteFrame>
-                            {isHomepage && window.FetchedProjectRemixes ? (
-                                <div>
-                                    {/* i have absolutely no interest in figuring out how the hell to get this to work properly */}
-                                    <div style={{ display: "none" }}>{window.ForceProjectRemixListUpdate}</div>
-                                    <p>Remixes of <b>{window.LastFetchedProject.name}</b></p>
-                                    <div className={styles.remixList}>
-                                        {window.FetchedProjectRemixes.map(remix => {
-                                            return <a key={remix.id} href={"#" + remix.id} style={{ textDecoration: "none", width: "115%" }}>
-                                                <div className={styles.remixProject}>
-                                                    <img style={{ height: "72px" }} src={remix.image} alt={remix.name}></img>
-                                                    <div style={{ width: "100%", display: "flex", textAlign: "left", textDecoration: "none", flexDirection: "column", alignItems: "flex-start" }}>
-                                                        <p style={{ fontSize: "1em" }}><b>{remix.name}</b></p>
-                                                        <p style={{ fontSize: "1em" }}>by <b>{remix.owner}</b></p>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        })}
-                                    </div>
-                                </div>
-                            ) : null}
-                            {((window.LastFetchedProject) != null) ? (
+                            {/* todo: fix this and make it work properly */}
+                            {/* {((window.LastFetchedProject) != null) ? (
                                 <a target="_blank" href={"https://penguinmod.site/profile?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
-                            ) : null}
+                            ) : null} */}
                             <div className={styles.section}>
                                 <p>
                                     <FormattedMessage
@@ -346,7 +331,12 @@ class Interface extends React.Component {
                             <div className={styles.section}>
                                 <FeaturedProjects />
                             </div>
-                            <a target="_blank" href="https://penguinmod.site/search?q=all:projects">View projects in new tab</a>
+                            <a
+                                target="_blank"
+                                href="https://penguinmod.site/search?q=all:projects"
+                            >
+                                See more projects
+                            </a>
                         </React.Fragment>
                     ) : null}
                 </div>

@@ -70,20 +70,21 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
             }
             fetchProjectMeta(projectId)
                 .then(data => {
-                    window.LastFetchedProject = data
-                    window.FetchedProjectRemixes = null
-                    window.CurrentRemixFetchRequestId += 1
-                    let currentReq = window.CurrentRemixFetchRequestId
-                    fetchProjectRemixes(projectId).then(remixes => {
-                        if (!currentReq == window.CurrentRemixFetchRequestId) return console.log("abandoned request");
-                        if (remixes.length <= 0) {
-                            window.FetchedProjectRemixes = null;
-                            return;
-                        }
-                        window.FetchedProjectRemixes = remixes
-                        window.ForceProjectRemixListUpdate += 1
-                    })
-                    data = APIProjectToReadableProject(data)
+                    /* todo: fix this and make it work properly */
+                    // window.LastFetchedProject = data
+                    // window.FetchedProjectRemixes = null
+                    // window.CurrentRemixFetchRequestId += 1
+                    // let currentReq = window.CurrentRemixFetchRequestId
+                    // fetchProjectRemixes(projectId).then(remixes => {
+                    //     if (!currentReq == window.CurrentRemixFetchRequestId) return console.log("abandoned request");
+                    //     if (remixes.length <= 0) {
+                    //         window.FetchedProjectRemixes = null;
+                    //         return;
+                    //     }
+                    //     window.FetchedProjectRemixes = remixes
+                    //     window.ForceProjectRemixListUpdate += 1
+                    // })
+                    data = APIProjectToReadableProject(data);
                     // If project ID changed, ignore the results.
                     if (this.props.projectId !== projectId) {
                         return;
