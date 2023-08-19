@@ -854,7 +854,7 @@ class MenuBar extends React.Component {
                     </div>
                     {/* tw: add a feedback button */}
                     <div className={styles.menuBarItem}>
-                        {this.props.isShowingProject && this.props.canEditTitle && (!window.location.href.includes('#')) ?
+                        {this.props.isShowingProject && this.props.canEditTitle ?
                             (<ShareButton
                                 className={styles.menuBarButton}
                                 isShared={this.props.isShared}

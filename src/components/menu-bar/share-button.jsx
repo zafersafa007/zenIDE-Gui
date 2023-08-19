@@ -9,14 +9,14 @@ import loadingIcon from './share-loading.svg';
 import styles from './share-button.css';
 
 const getProjectThumbnail = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         window.vm.renderer.requestSnapshot(uri => {
             resolve(uri);
-        })
-    })
+        });
+    });
 }
 const getProjectUri = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         window.vm.saveProjectSb3().then(blob => {
             return new Promise(resolve => {
                 const reader = new FileReader();
@@ -24,9 +24,9 @@ const getProjectUri = () => {
                     resolve(element.target.result);
                 }
                 reader.readAsDataURL(blob);
-            })
+            });
         }).then(resolve);
-    })
+    });
 }
 
 const isUploadAvailable = async () => {
@@ -45,6 +45,7 @@ class ShareButton extends React.Component {
         super(props);
         bindAll(this, [
             'handleMessageEvent',
+            'wrapperEventHandler',
             'onUploadProject'
         ]);
         this.state = {
@@ -52,10 +53,14 @@ class ShareButton extends React.Component {
         }
     }
     componentDidMount() {
-        document.addEventListener('message', this.handleMessageEvent);
+        window.addEventListener('message', this.wrapperEventHandler);
     }
     componentWillUnmount() {
-        document.removeEventListener('message', this.handleMessageEvent);
+        window.removeEventListener('message', this.wrapperEventHandler);
+    }
+
+    wrapperEventHandler(e) {
+        this.handleMessageEvent(e);
     }
     async handleMessageEvent(e) {
         if (!e.origin.startsWith(`https://penguinmod.site`)) {
@@ -63,7 +68,7 @@ class ShareButton extends React.Component {
         }
 
         if (!e.data.p4) {
-            return
+            return;
         }
 
         const packagerData = e.data.p4;
@@ -85,6 +90,7 @@ class ShareButton extends React.Component {
                 uri: projectUri
             }
         }, e.origin);
+
         e.source.postMessage({
             p4: {
                 type: 'finished'
@@ -93,7 +99,7 @@ class ShareButton extends React.Component {
     }
     onUploadProject() {
         if (this.state.loading) return;
-        
+
         this.setState({
             loading: true
         });
@@ -112,8 +118,14 @@ class ShareButton extends React.Component {
             _projectName.pop();
             const projectName = _projectName.join(" - ");
 
+            let remixPiece = '';
+            if (location.hash.includes("#")) {
+                const id = location.hash.replace("#", "");
+                remixPiece = `&remix=${id}`;
+            }
+
             const url = location.origin;
-            window.open(`https://penguinmod.site/upload?name=${encodeURIComponent(projectName)}&external=${url}`, "_blank");
+            window.open(`https://penguinmod.site/upload?name=${encodeURIComponent(projectName)}${remixPiece}&external=${url}`, "_blank");
         });
     }
     render() {
@@ -128,11 +140,17 @@ class ShareButton extends React.Component {
                 onClick={this.onUploadProject}
             >
                 <div className={classNames(styles.shareContent)}>
-                    <FormattedMessage
-                        defaultMessage="Upload"
-                        description="Label for project share button"
-                        id="gui.menuBar.pmshare"
-                    />
+                    {window.location.hash.includes("#") ?
+                        <FormattedMessage
+                            defaultMessage="Remix"
+                            description="Menu bar item for remixing"
+                            id="gui.menuBar.remix"
+                        /> :
+                        <FormattedMessage
+                            defaultMessage="Upload"
+                            description="Label for project share button"
+                            id="gui.menuBar.pmshare"
+                        />}
                     {this.state.loading ? (
                         <img
                             className={classNames(styles.icon)}
