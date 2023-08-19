@@ -7562,6 +7562,18 @@
         "rotationCenterY": 130.25802625960853
     },
     {
+        "name": "Nord",
+        "tags": [
+            "nerd"
+        ],
+        "assetId": "18dada8a9aabcfc157e051d2e33aa7fd",
+        "bitmapResolution": 2,
+        "dataFormat": "png",
+        "md5ext": "18dada8a9aabcfc157e051d2e33aa7fd.png",
+        "rotationCenterX": 70,
+        "rotationCenterY": 60
+    },
+    {
         "name": "Octopus-a",
         "tags": [
             "animals",
