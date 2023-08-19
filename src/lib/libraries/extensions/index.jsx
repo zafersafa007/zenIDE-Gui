@@ -373,6 +373,16 @@ const menuItems = [
         twDeveloper: 'LilyMakesThings'
     },
     {
+        name: 'Skins',
+        extensionId: 'https://extensions.turbowarp.org/Lily/Skins.js',
+        tags: ['turbowarp'],
+        iconURL: 'https://extensions.turbowarp.org/images/Lily/Skins.svg',
+        insetIconURL: turbowarpIcon,
+        description: "Have your sprites show themselves as other images or costumes.",
+        featured: true,
+        twDeveloper: 'LilyMakesThings'
+    },
+    {
         name: 'Multiple Timers',
         extensionId: 'jgTimers',
         iconURL: jgTimersExtensionIcon,
