@@ -183,7 +183,7 @@ class LibraryComponent extends React.Component {
         this.props.onRequestClose();
     }
     handleTagClick (tag, enabled) {
-        console.log(tag, enabled);
+        // console.log(tag, enabled);
         if (this.state.playingItem === null) {
             this.setState({
                 filterQuery: '',

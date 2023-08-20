@@ -67,7 +67,7 @@ class LibraryItem extends React.PureComponent {
 
         // remove from favorites
         favorites = favorites.filter(item => {
-            console.log(item._id, id);
+            // console.log(item._id, id);
             return item._id !== id;
         });
 
