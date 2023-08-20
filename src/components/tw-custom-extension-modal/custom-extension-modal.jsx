@@ -254,6 +254,19 @@ const CustomExtensionModal = props => (
                             className={styles.libraryItemImage}
                         />
                     )}
+                    <i>
+                        <FormattedMessage
+                            defaultMessage="This extension will only appear on your menu."
+                            description="Label explaining the custom library extension only appears for themselves."
+                            id="pm.customExtensionModal.libraryOnlyYours1"
+                        />
+                        <br />
+                        <FormattedMessage
+                            defaultMessage="Other people will not see this extension when they open the menu."
+                            description="Label explaining the custom library extension only appears for themselves."
+                            id="pm.customExtensionModal.libraryOnlyYours2"
+                        />
+                    </i>
                 </div>
             )}
 
