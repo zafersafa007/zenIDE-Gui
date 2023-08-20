@@ -868,12 +868,11 @@ class MenuBar extends React.Component {
                             rel="noopener noreferrer"
                             target="_blank"
                         >
-                            {/* todo: icon */}
                             <Button className={styles.feedbackButton}>
                                 <FormattedMessage
                                     defaultMessage="Back to Home"
-                                    description="Button to your moms house"
-                                    id="tw.feedbackButton"
+                                    description="Button to go back to the home page"
+                                    id="pm.backToHomeButton"
                                 />
                             </Button>
                         </a>
