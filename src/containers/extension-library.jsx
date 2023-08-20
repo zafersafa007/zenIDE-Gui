@@ -56,7 +56,7 @@ class ExtensionLibrary extends React.PureComponent {
             return;
         }
         if (extensionId === 'special_penguinmodExtensionLibrary') {
-            window.open('https://penguinmod-extensions-gallery.vercel.app/');
+            window.open('https://extensions.penguinmod.site/');
             return;
         }
         const url = item.extensionURL ? item.extensionURL : extensionId;
@@ -99,6 +99,7 @@ class ExtensionLibrary extends React.PureComponent {
                 filterable={true}
                 tags={extensionTags}
                 id="extensionLibrary"
+                actor="ExtensionLibrary"
                 header={"Extensions"}
                 title={this.props.intl.formatMessage(messages.extensionTitle)}
                 visible={this.props.visible}
