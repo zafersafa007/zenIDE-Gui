@@ -156,8 +156,8 @@ const pmExtensionDevelopers = [
     'silvxrcat',
     'nexuskitten',
     'G1nX-01',
-    // 'SharkPool-SP', // add if Better Input gets merged
-    // 'David-Orangemoon', // add if Pen+ gets merged
+    'SharkPool-SP',
+    'David-Orangemoon',
     // 'pooiod' // add if ListsPlus gets merged
 ].map(fromHardcodedGithub);
 
