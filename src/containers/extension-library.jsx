@@ -4,6 +4,7 @@ import React from 'react';
 import VM from 'scratch-vm';
 import {defineMessages, injectIntl, intlShape} from 'react-intl';
 import log from '../lib/log';
+import {manuallyTrustExtension} from './tw-security-manager.jsx';
 
 import extensionLibraryContent from '../lib/libraries/extensions/index.jsx';
 import extensionTags from '../lib/libraries/extension-tags';
@@ -60,6 +61,9 @@ class ExtensionLibrary extends React.PureComponent {
             return;
         }
         const url = item.extensionURL ? item.extensionURL : extensionId;
+        if (item._unsandboxed && url.startsWith("data:")) {
+            manuallyTrustExtension(url);
+        }
         if (!item.disabled) {
             if (this.props.vm.extensionManager.isExtensionLoaded(extensionId)) {
                 this.props.onCategorySelected(extensionId);

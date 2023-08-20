@@ -18,6 +18,7 @@ const messages = defineMessages({
 
 const CustomExtensionModal = props => (
     <Modal
+        scrollable={true}
         className={styles.modalContent}
         onRequestClose={props.onClose}
         contentLabel={props.intl.formatMessage(messages.title)}
@@ -185,10 +186,75 @@ const CustomExtensionModal = props => (
                             // eslint-disable-next-line max-len
                             defaultMessage="Your browser may not allow PenguinMod to access certain sites. If this is causing issues for you, try loading from a file or text instead."
                             description="Message that appears in custom extension prompt"
-                            id="tw.customExtensionModal.corsProblem"
+                            id="pm.customExtensionModal.corsProblem"
                         />
                     </p>
                 </React.Fragment>
+            )}
+
+            <label className={styles.checkboxContainer}>
+                <FancyCheckbox
+                    className={styles.basicCheckbox}
+                    checked={props.addToLibrary}
+                    onChange={props.onChangeAddToLibrary}
+                />
+                <FormattedMessage
+                    defaultMessage="Add extension to extensions list"
+                    description="Toggle to add a custom extension to the extension library."
+                    id="pm.customExtensionModal.addToLibrary"
+                />
+            </label>
+            {props.addToLibrary && (
+                <div>
+                    <p>
+                        <FormattedMessage
+                            defaultMessage="Name the extension"
+                            description="Box to name the custom extension being added to the extension library"
+                            id="pm.customExtensionModal.libraryName"
+                        />
+                    </p>
+                    <input
+                        type="text"
+                        className={styles.urlInput}
+                        value={props.libraryItemName}
+                        onChange={(...args) => props.onChangeLibraryItem("name", ...args)}
+                        placeholder="My cool extension"
+                        autoFocus
+                    />
+                    <p>
+                        <FormattedMessage
+                            defaultMessage="Describe the extension"
+                            description="Box to create the description for the custom extension being added to the extension library"
+                            id="pm.customExtensionModal.libraryDescription"
+                        />
+                    </p>
+                    <input
+                        type="text"
+                        className={styles.urlInput}
+                        value={props.libraryItemDescription}
+                        onChange={(...args) => props.onChangeLibraryItem("description", ...args)}
+                        placeholder="Makes your project cooler!"
+                    />
+                    <p>
+                        <FormattedMessage
+                            defaultMessage="Upload an Extension Banner"
+                            description="Space to upload an extension banner for the custom extension being added to the extension library"
+                            id="pm.customExtensionModal.libraryImage"
+                        />
+                    </p>
+                    <FileInput
+                        accept=".png,.jpg,.jpeg,.gif"
+                        onChange={(...args) => props.onChangeLibraryItem("rawURL", ...args)}
+                        file={props.libraryItemFile}
+                    />
+                    {props.libraryItemFile && (
+                        <img
+                            alt="Extension Image"
+                            src={props.libraryItemImage}
+                            className={styles.libraryItemImage}
+                        />
+                    )}
+                </div>
             )}
 
             <div className={styles.buttonRow}>
@@ -226,7 +292,10 @@ CustomExtensionModal.propTypes = {
     text: PropTypes.string.isRequired,
     onChangeText: PropTypes.func.isRequired,
     unsandboxed: PropTypes.bool.isRequired,
+    addToLibrary: PropTypes.bool.isRequired,
     onChangeUnsandboxed: PropTypes.func,
+    onChangeAddToLibrary: PropTypes.func,
+    onChangeLibraryItem: PropTypes.func,
     onLoadExtension: PropTypes.func.isRequired,
     onClose: PropTypes.func.isRequired
 };

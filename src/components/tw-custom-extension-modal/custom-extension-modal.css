@@ -16,6 +16,7 @@
 
 .body p,
 .unsandboxed-container,
+.checkbox-container,
 .url-input,
 .text-code-input {
     margin: 1rem 0;
@@ -68,10 +69,12 @@
     font-family: monospace;
 }
 
+.checkbox-container,
 .unsandboxed-container {
     display: flex;
     align-items: center;
 }
+.basic-checkbox,
 .unsandboxed-checkbox {
     margin-right: 0.5rem;
 }
@@ -110,4 +113,8 @@
 }
 .load-button:disabled {
     opacity: 0.8;
+}
+
+.library-item-image {
+    max-width: 478px;
 }

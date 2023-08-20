@@ -122,6 +122,12 @@ const Credits = () => (
             </p>
             <UserList users={UserData.extensionDevelopers} />
             <p><i>The list order is randomized on each refresh.</i></p>
+            <p>
+                PenguinMod also has a few people who made and submitted extensions too!
+                This list may get outdated sometimes, but here they are listed below:
+            </p>
+            <UserList users={UserData.pmExtensionDevelopers} />
+            <p><i>The list order is randomized on each refresh.</i></p>
         </section>
         <section>
             <h2>Addons</h2>

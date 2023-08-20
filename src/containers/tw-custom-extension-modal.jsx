@@ -3,9 +3,18 @@ import React from 'react';
 import bindAll from 'lodash.bindall';
 import {connect} from 'react-redux';
 import log from '../lib/log';
+import localforage from 'localforage';
 import CustomExtensionModalComponent from '../components/tw-custom-extension-modal/custom-extension-modal.jsx';
 import {closeCustomExtensionModal} from '../reducers/modals';
 import {manuallyTrustExtension, isTrustedExtension} from './tw-security-manager.jsx';
+
+const generateRandomId = () => {
+    const randomChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    return randomChars.split('')
+        .map(() => (randomChars.at(Math.round(Math.random() * (randomChars.length - 1)))))
+        .join('')
+        .substring(0, 20);
+};
 
 class CustomExtensionModal extends React.Component {
     constructor (props) {
@@ -23,7 +32,10 @@ class CustomExtensionModal extends React.Component {
             'handleDragOver',
             'handleDragLeave',
             'handleDrop',
-            'handleChangeUnsandboxed'
+            'handleChangeUnsandboxed',
+            'handleChangeAddToLibrary',
+            'handleChangeLibraryItem',
+            'handleLoadingDataUrl'
         ]);
         this.state = {
             files: null,
@@ -31,7 +43,18 @@ class CustomExtensionModal extends React.Component {
             url: '',
             file: null,
             text: '',
-            unsandboxed: false
+            unsandboxed: false,
+            addingToLibrary: false,
+            libraryImageFile: null,
+            libraryItem: {
+                name: 'Extension',
+                description: 'Adds new blocks.',
+                tags: ['myextensions'],
+                rawURL: 'https://penguinmod.site/line_blue.png',
+                featured: true,
+                deletable: true,
+                _id: generateRandomId()
+            }
         };
     }
     getExtensionURL () {
@@ -92,6 +115,7 @@ class CustomExtensionModal extends React.Component {
         }
     }
     async handleLoadExtension () {
+        let failed = false;
         this.handleClose();
         try {
             const url = await this.getExtensionURL();
@@ -100,9 +124,28 @@ class CustomExtensionModal extends React.Component {
             }
             await this.props.vm.extensionManager.loadExtensionURL(url);
         } catch (err) {
+            failed = true;
             log.error(err);
             // eslint-disable-next-line no-alert
             alert(err);
+        } finally {
+            if (failed) return;
+            if (!this.state.addingToLibrary) return;
+            // we are only adding to library if it succeeded to load
+            const id = "pm:favorited_extensions";
+            const libraryItem = this.state.libraryItem;
+            const url = await this.getExtensionURL();
+            const favorites = await localforage.getItem(id);
+            libraryItem.extensionId = url;
+            libraryItem._unsandboxed = this.state.unsandboxed;
+            // console.log(libraryItem);
+            if (!favorites) {
+                await localforage.setItem(id, [libraryItem]);
+                return;
+            }
+            favorites.push(libraryItem);
+            await localforage.setItem(id, favorites);
+            return;
         }
     }
     handleSwitchToFile () {
@@ -158,6 +201,51 @@ class CustomExtensionModal extends React.Component {
             unsandboxed: e.target.checked
         });
     }
+    handleChangeAddToLibrary (e) {
+        this.setState({
+            addingToLibrary: e.target.checked
+        });
+    }
+    async handleLoadingDataUrl (file) {
+        const fr = new FileReader();
+        fr.onerror = () => {
+            return alert("Failed to load the image!");
+        }
+        fr.onload = () => {
+            if (!file.type.startsWith('image/')) {
+                return alert("This is not an image!");
+            }
+            const url = fr.result;
+            const libraryItem = this.state.libraryItem;
+            const newData = {
+                rawURL: url
+            };
+            this.setState({
+                libraryItem: {
+                    ...libraryItem,
+                    ...newData
+                },
+                libraryImageFile: file
+            });
+        };
+        fr.readAsDataURL(file);
+    }
+    handleChangeLibraryItem (key, e) {
+        const newData = {};
+        if (key === "rawURL") {
+            this.handleLoadingDataUrl(e);
+            return;
+        }
+        let value = e.target.value;
+        newData[key] = value;
+        const libraryItem = this.state.libraryItem;
+        this.setState({
+            libraryItem: {
+                ...libraryItem,
+                ...newData
+            }
+        });
+    }
     render () {
         return (
             <CustomExtensionModalComponent
@@ -178,8 +266,17 @@ class CustomExtensionModal extends React.Component {
                 onChangeText={this.handleChangeText}
                 unsandboxed={this.isUnsandboxed()}
                 onChangeUnsandboxed={this.canChangeUnsandboxed() ? this.handleChangeUnsandboxed : null}
+                addToLibrary={this.state.addingToLibrary}
+                onChangeAddToLibrary={this.handleChangeAddToLibrary}
                 onLoadExtension={this.handleLoadExtension}
                 onClose={this.handleClose}
+
+                libraryItemName={this.state.libraryItem.name}
+                libraryItemDescription={this.state.libraryItem.description}
+                libraryItemImage={this.state.libraryItem.rawURL}
+                libraryItemFile={this.state.libraryImageFile}
+
+                onChangeLibraryItem={this.handleChangeLibraryItem}
             />
         );
     }

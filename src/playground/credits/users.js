@@ -8,7 +8,7 @@ const shuffle = list => {
     return list;
 };
 
-const fromHardcoded = ({userId, username, name}) => ({
+const fromHardcoded = ({ userId, username, name }) => ({
     image: `https://trampoline.turbowarp.org/avatars/${userId}`,
     href: `https://scratch.mit.edu/users/${username}/`,
     text: name || username
@@ -17,6 +17,11 @@ const fromHardcoded = ({userId, username, name}) => ({
 const fromHardcodedGithub = username => ({
     image: `https://github.com/${username}.png`,
     href: `https://github.com/${username}/`,
+    text: username
+});
+const fromHardcodedNamed = username => ({
+    image: `https://penguinmod.site/unknown_user.png`,
+    href: "https://studio.penguinmod.site/credits.html#",
     text: username
 });
 
@@ -116,7 +121,7 @@ const addonDevelopers = [
 
 const pmDevelopers = [
     'asmarly',
-    'CST1229',
+    // 'CST1229', // gray area, idrk if they are still a member
     'FreshPenguin112',
     'Ianyourgod',
     'jdev082',
@@ -127,9 +132,13 @@ const pmDevelopers = [
     'showierdata9978'
 ].map(fromHardcodedGithub);
 
+// todo: should translators be only named or...?
 const pmTranslators = [
     'kolikiscool'
 ].map(fromHardcodedGithub);
+const pmTranslatorsNamed = [
+    'n0name'
+].map(fromHardcodedNamed);
 
 const logoArtists = Promise.all([
     '593554048188416001'
@@ -143,11 +152,20 @@ const extensionDevelopers = [
     'MikeDev',
     'LilyMakesThings'
 ].map(fromHardcodedGithub);
+const pmExtensionDevelopers = [
+    'silvxrcat',
+    'nexuskitten',
+    'G1nX-01',
+    // 'SharkPool-SP', // add if Better Input gets merged
+    // 'David-Orangemoon', // add if Pen+ gets merged
+    // 'pooiod' // add if ListsPlus gets merged
+].map(fromHardcodedGithub);
 
 export default {
     addonDevelopers: shuffle(addonDevelopers),
     pmDevelopers: shuffle(pmDevelopers),
     logoArtists: shuffle(logoArtists),
     extensionDevelopers: shuffle(extensionDevelopers),
-    pmTranslators: shuffle(pmTranslators),
+    pmExtensionDevelopers: shuffle(pmExtensionDevelopers),
+    pmTranslators: [].concat(shuffle(pmTranslators), shuffle(pmTranslatorsNamed)),
 };

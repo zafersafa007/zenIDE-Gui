@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import bindAll from 'lodash.bindall';
 import PropTypes from 'prop-types';
 import React from 'react';
+import localforage from 'localforage';
 import {defineMessages, injectIntl, intlShape} from 'react-intl';
 
 import LibraryItem from '../../containers/library-item.jsx';
@@ -58,34 +59,110 @@ class LibraryComponent extends React.Component {
             'handlePlayingEnd',
             'handleSelect',
             'handleTagClick',
-            'setFilteredDataRef'
+            'setFilteredDataRef',
+            'loadLibraryData',
+            'loadLibraryFavorites',
+            'waitForLoading',
+            'handleFavoritesUpdate',
+            'createFilteredData',
+            'getFilteredData'
         ]);
         this.state = {
             playingItem: null,
             filterQuery: '',
             selectedTags: [],
+            favorites: [],
             collapsed: false,
             loaded: false,
             data: props.data
         };
+
+        // used for actor libraries
+        // they have special things like favorited items
+        // the way they load though breaks stuff
+        this.usesSpecialLoading = [
+            "ExtensionLibrary"
+        ];
     }
-    componentDidMount () {
-        if (this.state.data.then) {
-            // If data is a promise, wait for the promise to resolve
-            this.state.data.then(data => {
-                this.setState({
-                    loaded: true,
-                    data
+
+    loadLibraryData () {
+        return new Promise((resolve) => {
+            if (this.state.data.then) {
+                // If data is a promise, wait for the promise to resolve
+                this.state.data.then(data => {
+                    resolve({ key: "data", value: data });
                 });
-            });
-        } else {
-            // Allow the spinner to display before loading the content
-            setTimeout(() => {
-                this.setState({loaded: true});
-            });
+            } else {
+                // Allow the spinner to display before loading the content
+                setTimeout(() => {
+                    const data = this.state.data;
+                    resolve({ key: "data", value: data });
+                });
+            }
+        });
+    }
+    async loadLibraryFavorites () {
+        const favorites = await localforage.getItem("pm:favorited_extensions");
+        return { key: "favorites", value: favorites ? favorites : [] };
+    }
+    async handleFavoritesUpdate () {
+        const favorites = await localforage.getItem("pm:favorited_extensions");
+        this.setState({
+            favorites
+        });
+    }
+
+    async waitForLoading (processes) {
+        // we store values in here
+        const packet = {};
+        for (const process of processes) {
+            // result = { key: "data", value: ... }
+            const result = await process();
+            packet[result.key] = result.value;
+        }
+        return packet;
+    }
+
+    componentDidMount() {
+        if (!this.usesSpecialLoading.includes(this.props.actor)) {
+            // regular loading
+            if (this.state.data.then) {
+                // If data is a promise, wait for the promise to resolve
+                this.state.data.then(data => {
+                    this.setState({
+                        loaded: true,
+                        data
+                    });
+                });
+            } else {
+                // Allow the spinner to display before loading the content
+                setTimeout(() => {
+                    this.setState({ loaded: true });
+                });
+            }
         }
         if (this.props.setStopHandler) this.props.setStopHandler(this.handlePlayingEnd);
+        if (!this.usesSpecialLoading.includes(this.props.actor)) return;
+        // special loading
+        const spinnerProcesses = [this.loadLibraryData];
+        // pm: actors can load extra stuff
+        // pm: if we are acting as the extension library, load favorited extensions
+        if (this.props.actor === "ExtensionLibrary") {
+            spinnerProcesses.push(this.loadLibraryFavorites);
+        }
+        // wait for spinner stuff
+        this.waitForLoading(spinnerProcesses).then((packet) => {
+            const data = { loaded: true, ...packet };
+            this.setState(data);
+        });
     }
+    // uncomment this if favorites start exploding the website lol!
+    // componentWillUnmount () {
+    //     // pm: clear favorites from.... memory idk
+    //     this.setState({
+    //         favorites: []
+    //     });
+    // }
     componentDidUpdate (prevProps, prevState) {
         if (prevState.filterQuery !== this.state.filterQuery ||
             prevState.selectedTags.length !== this.state.selectedTags.length) {
@@ -169,7 +246,7 @@ class LibraryComponent extends React.Component {
     handleFilterClear () {
         this.setState({filterQuery: ''});
     }
-    getFilteredData () {
+    createFilteredData () {
         if (this.state.selectedTags.length <= 0) {
             if (!this.state.filterQuery) return this.state.data;
             return this.state.data.filter(dataItem => (
@@ -191,6 +268,24 @@ class LibraryComponent extends React.Component {
             dataItem.tags
                 .map(String.prototype.toLowerCase.call, String.prototype.toLowerCase),
         this.state.selectedTags)));
+    }
+    getFilteredData () {
+        const filtered = this.createFilteredData();
+
+        if (this.props.actor !== "ExtensionLibrary") {
+            return filtered;
+        }
+
+        const final = [].concat(
+            this.state.favorites
+                .filter(item => (typeof item !== "string"))
+                .map(item => ({ ...item, custom: true }))
+                .reverse(),
+            filtered.filter(item => (this.state.favorites.includes(item.extensionId))),
+            filtered.filter(item => (!this.state.favorites.includes(item.extensionId)))
+        ).map(item => ({ ...item, custom: typeof item.custom === "boolean" ? item.custom : false }));
+        
+        return final;
     }
     scrollToTop () {
         this.filteredDataRef.scrollTop = 0;
@@ -354,6 +449,7 @@ class LibraryComponent extends React.Component {
                                 iconRawURL={dataItem.rawURL}
                                 icons={dataItem.costumes}
                                 id={index}
+                                _id={dataItem._id}
                                 incompatibleWithScratch={dataItem.incompatibleWithScratch}
                                 insetIconURL={dataItem.insetIconURL}
                                 internetConnectionRequired={dataItem.internetConnectionRequired}
@@ -364,6 +460,13 @@ class LibraryComponent extends React.Component {
                                 onMouseEnter={this.handleMouseEnter}
                                 onMouseLeave={this.handleMouseLeave}
                                 onSelect={this.handleSelect}
+
+                                favoritable={this.props.actor === "ExtensionLibrary" && dataItem.extensionId}
+                                favorited={this.state.favorites.includes(dataItem.extensionId)}
+                                deletable={dataItem.deletable}
+                                custom={dataItem.custom}
+                                onFavoriteUpdated={() => this.handleFavoritesUpdate()}
+                                _unsandboxed={dataItem._unsandboxed}
                             />
                         )) : (
                             <div className={styles.spinnerWrapper}>
