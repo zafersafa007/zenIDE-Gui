@@ -243,7 +243,7 @@ const CustomExtensionModal = props => (
                         />
                     </p>
                     <FileInput
-                        accept=".png,.jpg,.jpeg,.gif"
+                        accept=".png,.jpg,.jpeg,.gif,.svg"
                         onChange={(...args) => props.onChangeLibraryItem("rawURL", ...args)}
                         file={props.libraryItemFile}
                     />
