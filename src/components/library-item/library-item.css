@@ -89,6 +89,9 @@
     filter: brightness(0);
     opacity: 0.25;
 }
+[theme="dark"] .library-item-delete>img {
+    filter: saturate(0) brightness(255);
+}
 .library-item-delete:hover > img {
     filter: brightness(1);
     opacity: 1;
@@ -102,6 +105,9 @@
 .library-item-favorite[data-activated="false"] > img[data-usedimage="true"] {
     filter: brightness(0);
     opacity: 0.25;
+}
+[theme="dark"] .library-item-favorite[data-activated="false"]>img[data-usedimage="true"] {
+    filter: saturate(0) brightness(255);
 }
 .library-item-favorite[data-activated="false"]:hover > img[data-usedimage="true"] {
     filter: brightness(1);
