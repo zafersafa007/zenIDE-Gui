@@ -82,6 +82,7 @@ class Blocks extends React.Component {
             'handleBlocksInfoUpdate',
             'onTargetsUpdate',
             'onVisualReport',
+            'onBlockStackError',
             'onWorkspaceUpdate',
             'onWorkspaceMetricsChange',
             'setBlocks',
@@ -294,6 +295,7 @@ class Blocks extends React.Component {
         this.props.vm.addListener('BLOCK_GLOW_ON', this.onBlockGlowOn);
         this.props.vm.addListener('BLOCK_GLOW_OFF', this.onBlockGlowOff);
         this.props.vm.addListener('VISUAL_REPORT', this.onVisualReport);
+        this.props.vm.addListener('BLOCK_STACK_ERROR', this.onBlockStackError);
         this.props.vm.addListener('workspaceUpdate', this.onWorkspaceUpdate);
         this.props.vm.addListener('targetsUpdate', this.onTargetsUpdate);
         this.props.vm.addListener('MONITORS_UPDATE', this.handleMonitorsUpdate);
@@ -308,6 +310,7 @@ class Blocks extends React.Component {
         this.props.vm.removeListener('BLOCK_GLOW_ON', this.onBlockGlowOn);
         this.props.vm.removeListener('BLOCK_GLOW_OFF', this.onBlockGlowOff);
         this.props.vm.removeListener('VISUAL_REPORT', this.onVisualReport);
+        this.props.vm.removeListener('BLOCK_STACK_ERROR', this.onBlockStackError);
         this.props.vm.removeListener('workspaceUpdate', this.onWorkspaceUpdate);
         this.props.vm.removeListener('targetsUpdate', this.onTargetsUpdate);
         this.props.vm.removeListener('MONITORS_UPDATE', this.handleMonitorsUpdate);
@@ -366,7 +369,16 @@ class Blocks extends React.Component {
         this.workspace.glowBlock(data.id, false);
     }
     onVisualReport (data) {
-        this.workspace.reportValue(data.id, data.value);
+        this.workspace.reportValue(data.id, data.value, false);
+    }
+    onBlockStackError (data) {
+        // blocks still exist in fullscreen for some reason
+        if (this.props.isFullScreen) return;
+        if (!this.props.vm.editingTarget) return;
+        this.workspace.glowBlock(data.id, false);
+        this.workspace.reportValue(data.id, data.value, true);
+        this.workspace.errorStack(data.id, true);
+
     }
     getToolboxXML () {
         // Use try/catch because this requires digging pretty deep into the VM
@@ -688,7 +700,8 @@ Blocks.propTypes = {
     workspaceMetrics: PropTypes.shape({
         targets: PropTypes.objectOf(PropTypes.object)
     }),
-    isLiveTest: PropTypes.bool
+    isLiveTest: PropTypes.bool,
+    isFullScreen: PropTypes.bool
 };
 
 Blocks.defaultOptions = {
@@ -737,7 +750,8 @@ const mapStateToProps = state => ({
     toolboxXML: state.scratchGui.toolbox.toolboxXML,
     customProceduresVisible: state.scratchGui.customProcedures.active,
     workspaceMetrics: state.scratchGui.workspaceMetrics,
-    isLiveTest: state.scratchGui.vm.isLiveTest
+    isLiveTest: state.scratchGui.vm.isLiveTest,
+    isFullScreen: state.scratchGui.mode.isFullScreen
 });
 
 const mapDispatchToProps = dispatch => ({

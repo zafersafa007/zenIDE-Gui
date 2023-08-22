@@ -9597,7 +9597,7 @@
     "startaudiocontext" "1.2.1"
 
 "scratch-blocks@github:PenguinMod/PenguinMod-Blocks#develop-builds":
-  "resolved" "git+ssh://git@github.com/PenguinMod/PenguinMod-Blocks.git#7aa0b9c049a1c43dee0a226287062212cea846bd"
+  "resolved" "git+ssh://git@github.com/PenguinMod/PenguinMod-Blocks.git#8545692944c669902d6ea7221740e54548699ebc"
   "version" "0.1.0"
 
 "scratch-paint@file:../scratch-paint":
