@@ -98,6 +98,7 @@ export default async function ({ addon, console }) {
       !e.target.closest("line")
     ) {
       const collapsedText = el.querySelector("text.scratchCommentText");
+      if (!collapsedText) return;
       if (collapsedText.getAttribute("display") !== "none") {
         const textarea = el.querySelector("textarea");
         text = textarea.value;

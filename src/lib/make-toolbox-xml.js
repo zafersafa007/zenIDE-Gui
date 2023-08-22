@@ -1431,6 +1431,7 @@ const liveTests = function () {
                 </shadow>
             </value>
         </block>
+        <block type="motion_mutatorCheckboxTest"></block>
     </category>
     `;
 };
