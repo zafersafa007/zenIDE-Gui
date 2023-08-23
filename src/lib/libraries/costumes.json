@@ -7570,8 +7570,8 @@
         "bitmapResolution": 2,
         "dataFormat": "png",
         "md5ext": "18dada8a9aabcfc157e051d2e33aa7fd.png",
-        "rotationCenterX": 70,
-        "rotationCenterY": 60
+        "rotationCenterX": 140,
+        "rotationCenterY": 120
     },
     {
         "name": "Octopus-a",
@@ -8037,6 +8037,27 @@
         "dataFormat": "svg",
         "md5ext": "6d11aedea7f316215aaa0d08617f4c31.svg",
         "rotationCenterX": 35,
+        "rotationCenterY": 46
+    },
+    {
+        "name": "Penguin-d",
+        "tags": [
+            "animals",
+            "penguin",
+            "bird",
+            "cold",
+            "north pole",
+            "south pole",
+            "ice",
+            "antarctica",
+            "arctic",
+            "robert hunter"
+        ],
+        "assetId": "58999a391fbe7690897bcff97a930d11",
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "md5ext": "58999a391fbe7690897bcff97a930d11.svg",
+        "rotationCenterX": 26,
         "rotationCenterY": 46
     },
     {
