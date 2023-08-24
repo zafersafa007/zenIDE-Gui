@@ -9,7 +9,7 @@ import {updateTargets} from '../reducers/targets';
 import {updateBlockDrag} from '../reducers/block-drag';
 import {updateMonitors} from '../reducers/monitors';
 import {setProjectChanged, setProjectUnchanged} from '../reducers/project-changed';
-import {setRunningState, setTurboState, setStartedState} from '../reducers/vm-status';
+import {setRunningState, setPausedState, setTurboState, setStartedState} from '../reducers/vm-status';
 import {showExtensionAlert} from '../reducers/alerts';
 import {updateMicIndicator} from '../reducers/mic-indicator';
 import {
@@ -58,6 +58,8 @@ const vmListenerHOC = function (WrappedComponent) {
             this.props.vm.on('PROJECT_CHANGED', this.handleProjectChanged);
             this.props.vm.on('RUNTIME_STARTED', this.props.onRuntimeStarted);
             this.props.vm.on('RUNTIME_STOPPED', this.props.onRuntimeStopped);
+            this.props.vm.on('RUNTIME_PAUSED', this.props.onRuntimePaused);
+            this.props.vm.on('RUNTIME_UNPAUSED', this.props.onRuntimeUnpaused);
             this.props.vm.on('PROJECT_START', this.props.onGreenFlag);
             this.props.vm.on('PERIPHERAL_CONNECTION_LOST_ERROR', this.props.onShowExtensionAlert);
             this.props.vm.on('MIC_LISTENING', this.props.onMicListeningUpdate);
@@ -223,6 +225,8 @@ const vmListenerHOC = function (WrappedComponent) {
         onProjectSaved: PropTypes.func.isRequired,
         onRuntimeStarted: PropTypes.func.isRequired,
         onRuntimeStopped: PropTypes.func.isRequired,
+        onRuntimePaused: PropTypes.func.isRequired,
+        onRuntimeUnpaused: PropTypes.func.isRequired,
         onShowExtensionAlert: PropTypes.func.isRequired,
         onTargetsUpdate: PropTypes.func.isRequired,
         onTurboModeOff: PropTypes.func.isRequired,
@@ -275,6 +279,8 @@ const vmListenerHOC = function (WrappedComponent) {
         onProjectSaved: () => dispatch(setProjectUnchanged()),
         onRuntimeStarted: () => dispatch(setStartedState(true)),
         onRuntimeStopped: () => dispatch(setStartedState(false)),
+        onRuntimePaused: () => dispatch(setPausedState(true)),
+        onRuntimeUnpaused: () => dispatch(setPausedState(false)),
         onTurboModeOn: () => dispatch(setTurboState(true)),
         onTurboModeOff: () => dispatch(setTurboState(false)),
         onHasCloudVariablesChanged: hasCloudVariables => dispatch(setHasCloudVariables(hasCloudVariables)),
