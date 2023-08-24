@@ -95,7 +95,7 @@ import gsaTempVariablesExtensionIcon from './penguinmod/extensions/tempvariables
 import gsaColorUtilExtensionIcon from './penguinmod/extensions/colorutil.png';
 import jgIframeExtensionIcon from './penguinmod/extensions/iframe.png';
 import jgExtendedAudioExtensionIcon from './penguinmod/extensions/extendedaudio.png';
-import jgScratchAuthExtensionIcon from './penguinmod/extensions/scratchauth.png';
+import jgScratchAuthExtensionIcon from './penguinmod/extensions/scratchauth2.svg';
 import jgPermissionExtensionIcon from './penguinmod/extensions/permissions.png';
 import silvxrcatOddMessagesExtensionIcon from './penguinmod/extensions/oddmessages.svg';
 import jgCloneManagerExtensionIcon from './penguinmod/extensions/clonemanager.png';
@@ -997,6 +997,14 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod'],
             description: 'In development. Currently not publicly available. Draw on and edit your costumes (either temporarily or not) while the project is running.',
+            featured: true
+        },
+        {
+            name: 'Scripts',
+            extensionId: 'jgScripts',
+            iconURL: defaultExtensionIcon,
+            tags: ['penguinmod'],
+            description: 'In development. Create compiled scripts with blocks while the project is running.',
             featured: true
         },
         {
