@@ -51,6 +51,7 @@ import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
 import twIcon from './tw/tw.svg';
+import galleryIcon from './gallery/gallery.svg';
 import turbowarpIcon from './penguinmod/extensions/turbowarp_icon.svg';
 
 import customExtensionIcon from './custom/custom.svg';
@@ -662,6 +663,7 @@ const menuItems = [
                 id="pm.extraLibraryExtensions.name"
             />
         ),
+        href: 'https://extensions.penguinmod.site/',
         extensionId: 'special_penguinmodExtensionLibrary',
         iconURL: penguinmodLibraryExtensionIcon,
         description: (
@@ -672,6 +674,28 @@ const menuItems = [
             />
         ),
         tags: ['penguinmod'],
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="TurboWarp Extension Gallery"
+                description="Name of extensions.turbowarp.org in extension library"
+                id="tw.extensionGallery.name"
+            />
+        ),
+        href: 'https://extensions.turbowarp.org/',
+        extensionId: 'special_turbowarpExtensionLibrary',
+        iconURL: galleryIcon,
+        description: (
+            <FormattedMessage
+                // eslint-disable-next-line max-len
+                defaultMessage="We list many TurboWarp extensions here for convenience, but you can find even more on extensions.turbowarp.org."
+                description="Description of extensions.turbowarp.org in extension library"
+                id="tw.extensionGallery.description"
+            />
+        ),
+        tags: ['tw'],
         featured: true
     },
     {
