@@ -564,22 +564,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Camera Controls',
-        extensionId: 'DTcameracontrols',
-        iconURL: 'https://extensions.turbowarp.org/images/DT/cameracontrols.svg',
-        tags: ['turbowarp'],
-        insetIconURL: turbowarpIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="Move the visible part of the stage."
-                description=""
-                id="gui.extension.cameracontrols.description"
-            />
-        ),
-        featured: true,
-        twDeveloper: 'DT-is-not-available'
-    },
-    {
         name: 'Clipping and Blending',
         extensionId: 'xeltallivclipblend',
         iconURL: clippingblending,
@@ -883,6 +867,21 @@ const menuItems = [
 
 if (IsLocal || IsLiveTests) {
     const extras = [
+        {
+            name: 'Camera',
+            extensionId: 'pmCamera',
+            iconURL: defaultExtensionIcon,
+            tags: ['penguinmod'],
+            insetIconURL: turbowarpIcon,
+            description: (
+                <FormattedMessage
+                    defaultMessage="Move the visible part of the stage."
+                    description=""
+                    id="gui.extension.cameracontrols.description"
+                />
+            ),
+            featured: true
+        },
         {
             name: 'Legacy Files',
             extensionId: 'jgFiles',
