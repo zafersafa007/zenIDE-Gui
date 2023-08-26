@@ -1431,6 +1431,9 @@ const liveTests = function () {
                 </shadow>
             </value>
         </block>
+        ${blockSeparator}
+        <block type="control_fieldbutton"></block>
+        <block type="operators_expandablejoininputs"></block>
         <block type="motion_mutatorCheckboxTest"></block>
     </category>
     `;

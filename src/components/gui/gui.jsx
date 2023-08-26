@@ -14,6 +14,7 @@ import Blocks from '../../containers/blocks.jsx';
 import CostumeTab from '../../containers/costume-tab.jsx';
 import TargetPane from '../../containers/target-pane.jsx';
 import SoundTab from '../../containers/sound-tab.jsx';
+import FilesTab from '../../containers/files-tab.jsx';
 import StageWrapper from '../../containers/stage-wrapper.jsx';
 import Loader from '../loader/loader.jsx';
 import Box from '../box/box.jsx';
@@ -47,6 +48,12 @@ import addExtensionIcon from './icon--extensions.svg';
 import codeIcon from './icon--code.svg';
 import costumesIcon from './icon--costumes.svg';
 import soundsIcon from './icon--sounds.svg';
+import filesIcon from './icon--files.svg';
+
+const urlParams = new URLSearchParams(location.search);
+
+const IsLocal = String(window.location.href).startsWith(`http://localhost:`);
+const IsLiveTests = urlParams.has('livetests');
 
 const messages = defineMessages({
     addExtension: {
@@ -122,6 +129,7 @@ const GUIComponent = props => {
         onToggleLoginOpen,
         onActivateCostumesTab,
         onActivateSoundsTab,
+        onActivateFilesTab,
         onActivateTab,
         onClickLogo,
         onExtensionButtonClick,
@@ -138,6 +146,7 @@ const GUIComponent = props => {
         onTelemetryModalOptOut,
         showComingSoon,
         soundsTabVisible,
+        filesTabVisible,
         stageSizeMode,
         targetIsStage,
         telemetryModalVisible,
@@ -359,6 +368,22 @@ const GUIComponent = props => {
                                             id="gui.gui.soundsTab"
                                         />
                                     </Tab>
+                                    {(IsLocal || IsLiveTests) && (
+                                        <Tab
+                                            className={tabClassNames.tab}
+                                            onClick={onActivateFilesTab}
+                                        >
+                                            <img
+                                                draggable={false}
+                                                src={filesIcon}
+                                            />
+                                            <FormattedMessage
+                                                defaultMessage="Files"
+                                                description="Button to get to the files panel"
+                                                id="pm.gui.filesTab"
+                                            />
+                                        </Tab>
+                                    )}
                                 </TabList>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     <Box className={styles.blocksWrapper}>
@@ -398,6 +423,9 @@ const GUIComponent = props => {
                                 </TabPanel>
                                 <TabPanel className={tabClassNames.tabPanel}>
                                     {soundsTabVisible ? <SoundTab vm={vm} /> : null}
+                                </TabPanel>
+                                <TabPanel className={tabClassNames.tabPanel}>
+                                    {filesTabVisible ? <FilesTab vm={vm} /> : null}
                                 </TabPanel>
                             </Tabs>
                             {backpackVisible ? (
@@ -470,6 +498,7 @@ GUIComponent.propTypes = {
     logo: PropTypes.string,
     onActivateCostumesTab: PropTypes.func,
     onActivateSoundsTab: PropTypes.func,
+    onActivateFilesTab: PropTypes.func,
     onActivateTab: PropTypes.func,
     onClickAccountNav: PropTypes.func,
     onClickAddonSettings: PropTypes.func,
@@ -495,6 +524,7 @@ GUIComponent.propTypes = {
     renderLogin: PropTypes.func,
     showComingSoon: PropTypes.bool,
     soundsTabVisible: PropTypes.bool,
+    filesTabVisible: PropTypes.bool,
     stageSizeMode: PropTypes.oneOf(Object.keys(STAGE_SIZE_MODES)),
     targetIsStage: PropTypes.bool,
     telemetryModalVisible: PropTypes.bool,

@@ -224,6 +224,26 @@ const soundUpload = function (fileData, fileType, storage, handleSound, handleEr
     handleSound(vmSound);
 };
 
+/**
+ * Handles loading a sound using the provided, context-relevant information.
+ * @param {ArrayBuffer} fileData The sound data to load
+ * @param {string} fileType The MIME type of this file.
+ * @param {ScratchStorage} storage The ScratchStorage instance to cache the sound data
+ * @param {Function} handleFile The function to execute on the sound object of type VMAsset
+ * This function should be responsible for adding the sound to the VM
+ * as well as handling other UI flow that should come after adding the sound
+ * @param {Function} handleError The function to execute if there is an error parsing the sound
+ */
+const externalFileUpload = function (fileData, fileType, storage, handleFile, handleError) {
+    const vmFile = createVMAsset(
+        storage,
+        storage.AssetType.ExternalFile,
+        storage.DataFormat.TXT,
+        new Uint8Array(fileData));
+
+    handleFile(vmFile);
+};
+
 const spriteUpload = function (fileData, fileType, spriteName, vm, handleSprite, handleError = () => {}) {
     switch (fileType) {
     case '':
@@ -275,5 +295,6 @@ export {
     handleFileUpload,
     costumeUpload,
     soundUpload,
-    spriteUpload
+    spriteUpload,
+    externalFileUpload
 };

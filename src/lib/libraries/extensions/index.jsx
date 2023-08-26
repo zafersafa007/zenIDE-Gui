@@ -872,14 +872,14 @@ if (IsLocal || IsLiveTests) {
             extensionId: 'pmCamera',
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod'],
-            insetIconURL: turbowarpIcon,
             description: (
                 <FormattedMessage
-                    defaultMessage="Move the visible part of the stage."
-                    description=""
-                    id="gui.extension.cameracontrols.description"
+                    defaultMessage="Allows the camera to move around anywhere on the stage."
+                    description="The description for the PenguinMod Camera extension."
+                    id="pm.extension.camera.description"
                 />
             ),
+            credits: 'Inspired by⠀⠀⠀⠀⠀⠀ DT-is-not-available',
             featured: true
         },
         {
@@ -991,14 +991,6 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
-            name: 'Costume Drawing',
-            extensionId: 'jgCostumeDrawing',
-            iconURL: defaultExtensionIcon,
-            tags: ['penguinmod'],
-            description: 'In development. Currently not publicly available. Draw on and edit your costumes (either temporarily or not) while the project is running.',
-            featured: true
-        },
-        {
             name: 'Scripts',
             extensionId: 'jgScripts',
             iconURL: defaultExtensionIcon,
@@ -1017,14 +1009,6 @@ if (IsLocal || IsLiveTests) {
             description: 'In development. Do extra things in packaged applications that you can\'t do in the website!',
             featured: true
         },
-        // {
-        //     name: "Javascript",
-        //     extensionId: 'jgJavascript',
-        //     iconURL: defaultExtensionIcon,
-        //     tags: ["penguinmod"],
-        //     description: "this should have been removed from PM permanently",
-        //     featured: true
-        // },
         {
             name: 'the doo doo extension',
             extensionId: 'jgDooDoo',
