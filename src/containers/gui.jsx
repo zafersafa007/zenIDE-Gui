@@ -60,8 +60,8 @@ class GUI extends React.Component {
     }
     render () {
         if (this.props.isError) {
-            throw new Error(
-                `Error in GUI [location=${window.location}]: ${this.props.error.stack ? this.props.error.stack : this.props.error}`);
+            console.log('the below error was caught by the gui');
+            throw this.props.error;
         }
         const {
             /* eslint-disable no-unused-vars */

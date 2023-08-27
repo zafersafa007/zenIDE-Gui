@@ -57,7 +57,7 @@ class SoundTab extends React.Component {
         this.state = { selectedSoundIndex: 0 };
     }
 
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps (nextProps) {
         const {
             editingTarget,
             sprites,
@@ -123,7 +123,7 @@ class SoundTab extends React.Component {
         if (soundItem.fromPenguinModLibrary) {
             vmSound.fromPenguinModLibrary = true;
             vmSound.libraryId = soundItem.libraryFilePage;
-        };
+        }
         this.props.vm.addSound(vmSound).then(() => {
             this.handleNewSound();
         });
@@ -234,7 +234,7 @@ class SoundTab extends React.Component {
                     title: intl.formatMessage(messages.fileUploadSound),
                     img: fileUploadIcon,
                     onClick: this.handleFileUploadClick,
-                    fileAccept: '.wav, .mp3',
+                    fileAccept: '.wav, .mp3, .ogg, .flac, .aac',
                     fileChange: this.handleSoundUpload,
                     fileInput: this.setFileInput,
                     fileMultiple: true
