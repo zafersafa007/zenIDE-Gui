@@ -240,6 +240,7 @@ const soundUpload = function (fileData, fileType, storage, handleSound, handleEr
  * @param {Function} handleError The function to execute if there is an error parsing the sound
  */
 const externalFileUpload = function (fileData, fileType, storage, handleFile, handleError) {
+    // TODO: we should handle TXT and JSON differently
     const vmFile = createVMAsset(
         storage,
         storage.AssetType.ExternalFile,

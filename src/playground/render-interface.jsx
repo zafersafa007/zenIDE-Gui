@@ -53,7 +53,7 @@ const urlparams = new URLSearchParams(location.search);
 const restoring = urlparams.get("restore");
 const restoreHandler = urlparams.get("handler");
 if (String(restoring) === "true") {
-    console.log(restore)
+    // console.log(restore)
     restore(restoreHandler);
 }
 
@@ -221,6 +221,8 @@ class Interface extends React.Component {
             intl,
             hasCloudVariables,
             description,
+            extraProjectInfo,
+            remixedProjectInfo,
             isFullScreen,
             isLoading,
             isPlayerOnly,
@@ -269,30 +271,46 @@ class Interface extends React.Component {
                     {isHomepage ? (
                         <React.Fragment>
                             {/* project not approved message */}
-                            {/* would remove this and recode it but its kind of important */}
-                            {(window.LastFetchedProject) != null && (window.LastFetchedProject.accepted == false) ? (
+                            {(!extraProjectInfo.accepted) && (
                                 <div className={styles.remixWarningBox}>
                                     <p>This project is not approved. Be careful when running this project.</p>
                                 </div>
-                            ) : null}
-                            {/* todo: fix this and make it work properly */}
-                            {/* project too large to remix message */}
-                            {/* {(window.LastFetchedProject) != null && (window.LastFetchedProject.tooLarge == true) ? (
-                                <div className={styles.remixWarningBox}>
-                                    <p>This project is too large to be remixed. If you would like to remix this project, please contact someone who can manually upload it for you.</p>
-                                </div>
-                            ) : null} */}
-                            {/* todo: fix this and make it work properly */}
-                            {/* its time for some absolutely BANGER react code boys */}
-                            {/* {(window.LastFetchedProject) != null && (window.LastFetchedProject.remix != null) ? (
+                            )}
+                            {/* remix info */}
+                            {(extraProjectInfo.isRemix && remixedProjectInfo.loaded) && (
                                 <div className={styles.unsharedUpdate}>
                                     <div style={{ display: "flex", flexDirection: "row" }}>
-                                        <a style={{ height: "32px" }} target="_blank" href={"https://penguinmod.site/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}><img style={{ marginRight: "4px", borderRadius: "4px" }} width="32" height="32" title={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} alt={projectDetailCache[String(window.LastFetchedProject.remix)]?.owner} src={"https://trampoline.turbowarp.org/avatars/by-username/" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}></img></a>
-                                        <p>Thanks to <b><a target="_blank" href={"https://penguinmod.site/profile?user=" + projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.owner}</a></b> for the original project <b><a href={window.location.origin + "/#" + projectDetailCache[String(window.LastFetchedProject.remix)]?.id}>{projectDetailCache[String(window.LastFetchedProject.remix)]?.name}</a></b>.</p>
+                                        <a
+                                            style={{ height: "32px" }}
+                                            target="_blank"
+                                            href={`https://penguinmod.site/profile?user=${remixedProjectInfo.author}`}
+                                        >
+                                            <img
+                                                className={styles.remixAuthorImage}
+                                                title={remixedProjectInfo.author}
+                                                alt={remixedProjectInfo.author}
+                                                src={`https://trampoline.turbowarp.org/avatars/by-username/${remixedProjectInfo.author}`}
+                                            />
+                                        </a>
+                                        <p>
+                                            Thanks to <b>
+                                                <a
+                                                    target="_blank"
+                                                    href={`https://penguinmod.site/profile?user=${remixedProjectInfo.author}`}
+                                                >
+                                                    {remixedProjectInfo.author}
+                                                </a>
+                                            </b> for the original project <b>
+                                                <a
+                                                    href={`${window.location.origin}/#${extraProjectInfo.remixId}`}
+                                                >
+                                                    {remixedProjectInfo.name}
+                                                </a>
+                                            </b>.
+                                        </p>
                                     </div>
-                                    <div style={{ display: 'none' }}>{getProjectDetailsById(window.LastFetchedProject.remix).yesIDefinetlyKnowHowToUseReactProperlyShutUp}</div>
                                 </div>
-                            ) : null} */}
+                            )}
                             {isRendererSupported() ? null : (
                                 <WebGlModal isRtl={isRtl} />
                             )}
@@ -314,10 +332,14 @@ class Interface extends React.Component {
                                 </div>
                             ) : null}
                             <VoteFrame id={projectId} darkmode={this.props.isDark}></VoteFrame>
-                            {/* todo: fix this and make it work properly */}
-                            {/* {((window.LastFetchedProject) != null) ? (
-                                <a target="_blank" href={"https://penguinmod.site/profile?user=" + window.LastFetchedProject.owner}>View other projects by {window.LastFetchedProject.owner}</a>
-                            ) : null} */}
+                            {extraProjectInfo.author && (
+                                <a
+                                    target="_blank"
+                                    href={`https://penguinmod.site/profile?user=${extraProjectInfo.author}`}
+                                >
+                                    View other projects by {extraProjectInfo.author}
+                                </a>
+                            )}
                             <div className={styles.section}>
                                 <p>
                                     <FormattedMessage
@@ -357,6 +379,18 @@ Interface.propTypes = {
         credits: PropTypes.string,
         instructions: PropTypes.string
     }),
+    extraProjectInfo: PropTypes.shape({
+        accepted: PropTypes.bool,
+        isRemix: PropTypes.bool,
+        remixId: PropTypes.number,
+        tooLarge: PropTypes.bool,
+        author: PropTypes.string
+    }),
+    remixedProjectInfo: PropTypes.shape({
+        loaded: PropTypes.bool,
+        name: PropTypes.string,
+        author: PropTypes.string
+    }),
     isFullScreen: PropTypes.bool,
     isLoading: PropTypes.bool,
     isPlayerOnly: PropTypes.bool,
@@ -369,6 +403,8 @@ const mapStateToProps = state => ({
     hasCloudVariables: state.scratchGui.tw.hasCloudVariables,
     customStageSize: state.scratchGui.customStageSize,
     description: state.scratchGui.tw.description,
+    extraProjectInfo: state.scratchGui.tw.extraProjectInfo,
+    remixedProjectInfo: state.scratchGui.tw.remixedProjectInfo,
     isFullScreen: state.scratchGui.mode.isFullScreen,
     isLoading: getIsLoading(state.scratchGui.projectState.loadingState),
     isPlayerOnly: state.scratchGui.mode.isPlayerOnly,

@@ -147,6 +147,13 @@ a {
     text-decoration: none;
 }
 
+.remix-author-image {
+    width: 32px;
+    height: 32px;
+    margin-right: 4px;
+    border-radius: 4px;
+}
+
 .remixList {
     overflow-x: auto;
     display: flex;

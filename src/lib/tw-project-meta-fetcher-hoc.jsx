@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import log from './log';
 
 import { setProjectTitle } from '../reducers/project-title';
-import { setAuthor, setDescription } from '../reducers/tw';
+import { setAuthor, setDescription, setExtraProjectInfo, setRemixedProjectInfo } from '../reducers/tw';
 
 const API_URL = 'https://projects.penguinmod.site/api/projects/getPublished?id=$id';
 const API_REMIX_URL = 'https://projects.penguinmod.site/api/pmWrapper/remixes?id=$id';
@@ -52,7 +52,6 @@ const setIndexable = indexable => {
     }
 };
 
-window.ForceProjectRemixListUpdate = 0
 const TWProjectMetaFetcherHOC = function (WrappedComponent) {
     class ProjectMetaFetcherComponent extends React.Component {
         shouldComponentUpdate(nextProps) {
@@ -63,6 +62,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
             this.props.vm.runtime.renderer.setPrivateSkinAccess(true);
             this.props.onSetAuthor('', '');
             this.props.onSetDescription('', '');
+            this.props.onSetRemixedProjectInfo(false, '', '');
             const projectId = this.props.projectId;
             // Don't try to load metadata for empty projects.
             if (projectId === '0') {
@@ -84,6 +84,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                     //     window.FetchedProjectRemixes = remixes
                     //     window.ForceProjectRemixListUpdate += 1
                     // })
+                    const rawData = data;
                     data = APIProjectToReadableProject(data);
                     // If project ID changed, ignore the results.
                     if (this.props.projectId !== projectId) {
@@ -100,6 +101,45 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                     const credits = data.notes || '';
                     if (instructions || credits) {
                         this.props.onSetDescription(instructions, credits);
+                    }
+                    if (
+                        typeof rawData.accepted === 'boolean'
+                        || rawData.remix > 0 // checks isRemix and remixId existing at the same time
+                        || typeof rawData.tooLarge === 'boolean'
+                        || authorName
+                    ) {
+                        this.props.onSetExtraProjectInfo(
+                            rawData.accepted === true,
+                            rawData.remix > 0,
+                            Number(rawData.remix),
+                            rawData.tooLarge === true,
+                            authorName
+                        );
+                    }
+                    if (rawData.remix > 0) {
+                        // this is a remix, find the original project
+                        fetchProjectMeta(rawData.remix)
+                            .then(remixProject => {
+                                // If project ID changed, ignore the results.
+                                if (this.props.projectId !== projectId) {
+                                    return;
+                                }
+                                // If this project is hidden or not approved, ignore the results.
+                                if (
+                                    typeof remixProject.name === 'string'
+                                    || typeof remixProject.owner === 'string'
+                                ) {
+                                    this.props.onSetRemixedProjectInfo(
+                                        true, // loaded
+                                        remixProject.name,
+                                        remixProject.owner
+                                    );
+                                }
+                            })
+                            .catch(err => {
+                                // this isnt fatal, just log
+                                log.warn('cannot fetch remixed project meta for this project;', err);
+                            });
                     }
                     setIndexable(true);
                 })
@@ -156,6 +196,18 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
             instructions,
             credits
         })),
+        onSetExtraProjectInfo: (accepted, isRemix, remixId, tooLarge, author) => dispatch(setExtraProjectInfo({
+            accepted,
+            isRemix,
+            remixId,
+            tooLarge,
+            author
+        })),
+        onSetRemixedProjectInfo: (loaded, name, author) => dispatch(setRemixedProjectInfo({
+            loaded,
+            name,
+            author
+        })),
         onSetProjectTitle: title => dispatch(setProjectTitle(title))
     });
     return connect(
@@ -163,8 +215,6 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
         mapDispatchToProps
     )(ProjectMetaFetcherComponent);
 };
-
-window.CurrentRemixFetchRequestId = 0
 
 export {
     TWProjectMetaFetcherHOC as default

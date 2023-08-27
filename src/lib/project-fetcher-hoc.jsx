@@ -176,7 +176,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                             if (!res.ok) {
                                 // Treat failure to load as an error
                                 // Throw to be caught by catch later on
-                                throw new Error('Could not find project; ' + err);
+                                throw new Error('Could not find project; ' + projectUrl);
                             }
                             res.arrayBuffer().then(data => {
                                 this.props.onFetchedProjectData(data, loadingState);
