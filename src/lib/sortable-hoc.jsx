@@ -20,11 +20,7 @@ const SortableHOC = function (WrappedComponent) {
             this.containerBox = null;
         }
 
-<<<<<<< Updated upstream
-        componentWillReceiveProps(newProps) {
-=======
         componentWillReceiveProps (newProps) {
->>>>>>> Stashed changes
             if (newProps.dragInfo.dragging && !this.props.dragInfo.dragging) {
                 // Drag just started, snapshot the sorted bounding boxes for sortables.
                 this.boxes = this.sortableRefs.map(el => el && el.getBoundingClientRect());
