@@ -104,6 +104,26 @@ const Credits = () => (
                 from <a href="https://freesound.org/">https://freesound.org/</a> and <a href="https://archive.org/">https://archive.org/</a> under
                 the Public Domain license.
             </p>
+            <h2>Accounts</h2>
+            <p>
+                Login is managed
+                by <a href="https://auth.itinerary.eu.org/">Scratch Auth</a> created
+                by <a href="https://scratch.mit.edu/users/Looky1173/">Looky1173</a>.
+                (thanks for adding us to the user list!)
+                <br />
+                <br />
+                <i>
+                    "Scratch Auth" is not actually affiliated with Scratch,
+                    the Scratch Team, or the Scratch Foundation.
+                </i>
+                <br />
+                <br />
+                <i>
+                    PenguinMod is also not owned or managed by Looky1173, please only comment on his profile
+                    <br />
+                    if the Scratch Auth page tells you that it failed, not if PenguinMod fails to load.
+                </i>
+            </p>
         </section>
         <section>
             <h1>PenguinMod & TurboWarp</h1>
