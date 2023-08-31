@@ -39,6 +39,12 @@ const isTrustedExtension = url => (
 const fetchOriginsTrustedByUser = new Set();
 
 /**
+ * Set of origins manually trusted by the user for embedding.
+ * @type {Set<string>}
+ */
+const embedOriginsTrustedByUser = new Set();
+
+/**
  * @param {URL} parsed Parsed URL object
  * @returns {boolean} True if the URL is part of the builtin set of URLs to always trust fetching from.
  */
@@ -64,10 +70,13 @@ const isAlwaysTrustedForFetching = parsed => (
 
     // Itch
     parsed.origin.endsWith('.itch.io') ||
+
     // GameJolt
     parsed.origin === 'https://api.gamejolt.com' ||
+
     // httpbin
     parsed.origin === 'https://httpbin.org' ||
+
     // ScratchDB
     parsed.origin === 'https://scratchdb.lefty.one'
 );
@@ -106,7 +115,8 @@ const SECURITY_MANAGER_METHODS = [
     'canRecordVideo',
     'canReadClipboard',
     'canNotify',
-    'canGeolocate'
+    'canGeolocate',
+    'canEmbed'
 ];
 
 class TWSecurityManagerComponent extends React.Component {
@@ -226,6 +236,7 @@ class TWSecurityManagerComponent extends React.Component {
         }
         const {showModal} = await this.acquireModalLock();
         // for backwards compatibility, allow urls to be unsandboxed
+        // TODO: this backwards compatibility needs to be deprecated at some point
         // if (url.startsWith('data:')) {
         const allowed = await showModal(SecurityModals.LoadExtension, {
             url,
@@ -352,6 +363,28 @@ class TWSecurityManagerComponent extends React.Component {
             allowedGeolocation = await showModal(SecurityModals.Geolocate);
         }
         return allowedGeolocation;
+    }
+
+    /**
+     * @param {string} url Frame URL
+     * @returns {Promise<boolean>} True if embed is allowed.
+     */
+    async canEmbed (url) {
+        const parsed = parseURL(url);
+        if (!parsed) {
+            return false;
+        }
+        const origin = (parsed.protocol === 'http:' || parsed.protocol === 'https:') ? parsed.origin : null;
+        const {showModal, releaseLock} = await this.acquireModalLock();
+        if (origin && embedOriginsTrustedByUser.has(origin)) {
+            releaseLock();
+            return true;
+        }
+        const allowed = await showModal(SecurityModals.Embed, {url});
+        if (origin && allowed) {
+            embedOriginsTrustedByUser.add(origin);
+        }
+        return allowed;
     }
 
     render () {
