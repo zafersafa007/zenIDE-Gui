@@ -43,12 +43,6 @@ const fetchOriginsTrustedByUser = new Set();
  * @returns {boolean} True if the URL is part of the builtin set of URLs to always trust fetching from.
  */
 const isAlwaysTrustedForFetching = parsed => (
-    // Note that the regexes here don't need to be perfect. It's okay if we let extensions try to fetch
-    // resources from eg. GitHub Pages domains that aren't actually valid usernames. They'll just get
-    // a network error.
-    // URL parsing will always convert the parsed origin to lowercase, so we don't need case
-    // insensitivity here.
-
     // If we would trust loading an extension from here, we can trust loading resources too.
     isTrustedExtension(parsed.href) ||
 
@@ -64,24 +58,16 @@ const isAlwaysTrustedForFetching = parsed => (
     // GitHub
     parsed.origin === 'https://raw.githubusercontent.com' ||
     parsed.origin === 'https://api.github.com' ||
-    parsed.origin.endsWith('.github.io') ||
 
     // GitLab
     parsed.origin === 'https://gitlab.com' ||
-    parsed.origin.endsWith('.gitlab.io') ||
-
-    // BitBucket
-    parsed.origin.endsWith('.bitbucket.io') ||
 
     // Itch
     parsed.origin.endsWith('.itch.io') ||
-
     // GameJolt
     parsed.origin === 'https://api.gamejolt.com' ||
-
     // httpbin
     parsed.origin === 'https://httpbin.org' ||
-
     // ScratchDB
     parsed.origin === 'https://scratchdb.lefty.one'
 );
