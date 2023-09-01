@@ -15,7 +15,7 @@
             
             setTimeout(() => {
                 // scratch auth adds the private code weirdly so just account for it
-                const search = '?t=1' + location.search.replace(/?/gmi, '&');
+                const search = '?t=1' + location.search.replace(/\?/gmi, '&');
                 const searchParams = new URLSearchParams(search);
                 const privateCode = searchParams.get("privateCode");
                 const openerLocation = searchParams.get("openLocation");
