@@ -20,7 +20,13 @@ const showOpenFilePicker = async () => {
             {
                 description: 'PenguinMod Project',
                 accept: {
-                    'application/x.scratch.sb3': ['.pmp', '.pm', '.sb3', '.sb2', '.sb']
+                    'application/x.scratch.sb3': ['.pmp', '.pm']
+                }
+            },
+            {
+                description: 'Scratch Project',
+                accept: {
+                    'application/x.scratch.sb3': ['.sb3', '.sb2', '.sb']
                 }
             }
         ]
