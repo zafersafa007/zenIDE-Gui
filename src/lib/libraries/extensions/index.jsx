@@ -336,6 +336,21 @@ const menuItems = [
         featured: true
     },
     {
+        name: 'Camera',
+        extensionId: 'pmCamera',
+        iconURL: defaultExtensionIcon,
+        tags: ['penguinmod'],
+        description: (
+            <FormattedMessage
+                defaultMessage="Allows the camera to move around anywhere on the stage."
+                description="The description for the PenguinMod Camera extension."
+                id="pm.extension.camera.description"
+            />
+        ),
+        credits: 'Inspired by⠀⠀⠀⠀⠀⠀ DT-is-not-available',
+        featured: true
+    },
+    {
         name: 'JSON',
         extensionId: 'jgJSON',
         iconURL: jgJSONExtensionIcon,
@@ -867,21 +882,6 @@ const menuItems = [
 
 if (IsLocal || IsLiveTests) {
     const extras = [
-        {
-            name: 'Camera',
-            extensionId: 'pmCamera',
-            iconURL: defaultExtensionIcon,
-            tags: ['penguinmod'],
-            description: (
-                <FormattedMessage
-                    defaultMessage="Allows the camera to move around anywhere on the stage."
-                    description="The description for the PenguinMod Camera extension."
-                    id="pm.extension.camera.description"
-                />
-            ),
-            credits: 'Inspired by⠀⠀⠀⠀⠀⠀ DT-is-not-available',
-            featured: true
-        },
         {
             name: 'Legacy Files',
             extensionId: 'jgFiles',
