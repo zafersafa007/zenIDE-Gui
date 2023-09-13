@@ -58,7 +58,6 @@ import customExtensionIcon from './custom/custom.svg';
 import penguinmodLibraryExtensionIcon from './penguinmod/library.svg';
 
 import filesExtensionIcon from './penguinmod/extensions/files.png';
-import jgWebsiteRequestsExtensionIcon from './penguinmod/extensions/websiteRequests.png';
 import jgJSONExtensionIcon from './penguinmod/extensions/json.png';
 import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png';
 import jgPrismExtensionIcon from './penguinmod/extensions/prism.png';
@@ -68,6 +67,9 @@ import jwProtoExtensionIcon from './penguinmod/extensions/proto.png';
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png';
 
 import iygPerlinNoiseExtensionIcon from './penguinmod/extensions/perlinnoisebanner.png';
+
+// thank yo godslayerakp for makin pmCamera :good:
+import pmCameraExtensionIcon from './penguinmod/extensions/pmcamera_thumbnail.png';
 
 // cl waw
 // import cloudlinkThumb from './penguinmod/extensions/cloudlinkThumb.png';
@@ -338,7 +340,7 @@ const menuItems = [
     {
         name: 'Camera',
         extensionId: 'pmCamera',
-        iconURL: defaultExtensionIcon,
+        iconURL: pmCameraExtensionIcon,
         tags: ['penguinmod'],
         description: (
             <FormattedMessage
