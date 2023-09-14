@@ -510,5 +510,15 @@ export default function (vm) {
         return true;
     };
 
+    ScratchBlocks.Toolbox.registerMenu('extensionControls', [
+        {
+            text: 'Remove Extension',
+            enabled: true,
+            callback: ext => {
+                vm.extensionManager.removeExtension(ext);
+            }
+        }
+    ]);
+
     return ScratchBlocks;
 }
