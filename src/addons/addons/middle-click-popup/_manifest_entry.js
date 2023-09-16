@@ -26,6 +26,32 @@ const manifest = {
       "url": "userstyle.css"
     }
   ],
+  "settings": [
+    {
+      "name": "Popup Block Size",
+      "id": "popup_scale",
+      "type": "integer",
+      "min": 1,
+      "max": 100,
+      "default": 64
+    },
+    {
+      "name": "Popup Default Width",
+      "id": "popup_width",
+      "type": "integer",
+      "min": 1,
+      "max": 100,
+      "default": 16
+    },
+    {
+      "name": "Popup Max Search Height",
+      "id": "popup_max_height",
+      "type": "integer",
+      "min": 1,
+      "max": 100,
+      "default": 40
+    }
+  ],
   "info": [
     {
       "text": "This addon was previously part of the \"developer tools\" addon but has moved here.",
