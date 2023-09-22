@@ -310,6 +310,15 @@ const menuItems = [
         featured: true
     },
     {
+        name: 'Pen+',
+        extensionId: 'https://extensions.penguinmod.site/extensions/ObviousAlexC/PenPlus.js',
+        tags: ['categoryexpansion'],
+        iconURL: 'https://extensions.penguinmod.site/images/ObviousAlexC/PenPlus.svg',
+        description: "An extension to the Pen category!",
+        featured: true,
+        extDeveloper: 'pinksheep2917'
+    },
+    {
         name: 'Extended Sound',
         extensionId: 'jgExtendedAudio',
         iconURL: jgExtendedAudioExtensionIcon,
@@ -324,7 +333,7 @@ const menuItems = [
         tags: ['penguinmod', 'categoryexpansion'],
         description: "More events for sending & receiving information, notifing specific sprites or better control when things should happen.",
         featured: true,
-        credits: 'LilyMakesThings'
+        credits: 'Some blocks from LilyMakesThings'
     },
     {
         name: 'Controls Expansion',
@@ -342,6 +351,7 @@ const menuItems = [
         iconURL: pmSensingExpansionExtensionIcon,
         tags: ['penguinmod', 'categoryexpansion'],
         description: "More sensing blocks for specific use cases or interacting with the user's device.",
+        credits: 'Some blocks from SharkPool-SP',
         featured: true
     },
     {
@@ -898,6 +908,14 @@ if (IsLocal || IsLiveTests) {
             iconURL: jgCloneManagerExtensionIcon,
             tags: ['penguinmod'],
             description: 'Mainly sharing data between clones and the main sprite, but also some other small features. This has been replaced by the TurboWarp Clones+ extension.',
+            featured: true
+        },
+        {
+            name: 'Easy Save',
+            extensionId: 'jgEasySave',
+            iconURL: defaultExtensionIcon,
+            tags: ['penguinmod'],
+            description: 'Save variables, lists and extra info to a file, then load those things back in.',
             featured: true
         },
         {
