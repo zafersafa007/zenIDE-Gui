@@ -437,10 +437,10 @@ export class BlockTypeInfo {
       if (input.connection) {
         const innerBlock = input.connection.targetBlock();
         if (innerBlock) {
-          if (innerBlock.inputList.length !== 1 || innerBlock.inputList[0].fieldRow.length !== 1)
-            throw new Error("This should never happen.");
-          let innerField = innerBlock.inputList[0].fieldRow[0];
-          addFieldInputs(innerField, inputIdx, -1);
+          if (!(innerBlock.inputList.length !== 1 || innerBlock.inputList[0].fieldRow.length !== 1)) {
+            let innerField = innerBlock.inputList[0].fieldRow[0];
+            addFieldInputs(innerField, inputIdx, -1);
+          }
         } else {
           if (input.outlinePath) {
             addInput(new BlockInputBoolean(inputIdx, -1));
