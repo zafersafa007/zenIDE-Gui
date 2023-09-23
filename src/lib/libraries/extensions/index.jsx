@@ -119,6 +119,11 @@ import fr3dPhysicsInsetExtensionIcon from './penguinmod/extensions/3d_physics_ic
 // virtal realty
 import jgVrExtensionIcon from './penguinmod/extensions/vr_extension.png';
 
+import theshovelCustomStylesIcon from './penguinmod/orgtw/CustomStyles.svg';
+import theshovelCanvasEffectsIcon from './penguinmod/extensions/canvas_effects.png';
+import theshovelLzCompressIcon from './penguinmod/orgtw/lz-compress2.svg';
+import theshovelColorPickerIcon from './penguinmod/orgtw/ColorPicker.svg';
+
 // events
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
 import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png';
@@ -371,6 +376,15 @@ const menuItems = [
         featured: true
     },
     {
+        name: 'Custom Styles',
+        extensionId: 'shovelcss',
+        iconURL: theshovelCustomStylesIcon,
+        tags: ['penguinmod'],
+        description: 'Customize the appearance of variable monitors and prompts in your project.',
+        extDeveloper: 'TheShovel',
+        featured: true
+    },
+    {
         name: 'Physics',
         extensionId: 'https://extensions.turbowarp.org/box2d.js',
         tags: ['turbowarp'],
@@ -388,6 +402,15 @@ const menuItems = [
         description: 'Smoothly animating values using different easing functions and directions.',
         iconURL: 'https://extensions.turbowarp.org/images/JeremyGamer13/tween.svg',
         tags: ['penguinmod'],
+        featured: true
+    },
+    {
+        name: 'Canvas Effects',
+        extensionId: 'theshovelcanvaseffects',
+        iconURL: theshovelCanvasEffectsIcon,
+        tags: ['penguinmod'],
+        description: 'Apply visual effects to the entire stage.',
+        extDeveloper: 'TheShovel',
         featured: true
     },
     {
@@ -469,6 +492,15 @@ const menuItems = [
         internetConnectionRequired: false
     },
     {
+        name: 'LZ Compress',
+        extensionId: 'shovellzcompresss',
+        iconURL: theshovelLzCompressIcon,
+        tags: ['penguinmod'],
+        description: 'Compress and decompress text using lz-string.',
+        extDeveloper: 'TheShovel',
+        featured: true
+    },
+    {
         name: 'Prism',
         extensionId: 'jgPrism',
         tags: ['penguinmod'],
@@ -492,6 +524,15 @@ const menuItems = [
         description: 'Blocks to place and move around frames that contain HTML content or websites.',
         featured: true,
         internetConnectionRequired: true
+    },
+    {
+        name: 'Color Picker',
+        extensionId: 'shovelColorPicker',
+        iconURL: theshovelColorPickerIcon,
+        tags: ['penguinmod'],
+        description: 'Allow the user to choose a color using the built-in color picker, so you don\'t need to make your own.',
+        extDeveloper: 'TheShovel',
+        featured: true
     },
     {
         name: 'Color Utility Blocks',
