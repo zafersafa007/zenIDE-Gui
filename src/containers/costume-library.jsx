@@ -23,16 +23,6 @@ class CostumeLibrary extends React.PureComponent {
         bindAll(this, [
             'handleItemSelected'
         ]);
-        this.state = {
-            data: getCostumeLibrary()
-        };
-    }
-    componentDidMount () {
-        if (this.state.data.then) {
-            this.state.data.then(data => this.setState({
-                data
-            }));
-        }
     }
     handleItemSelected (item) {
         const vmCostume = {
@@ -47,7 +37,7 @@ class CostumeLibrary extends React.PureComponent {
     render () {
         return (
             <LibraryComponent
-                data={this.state.data.then ? null : this.state.data}
+                data={getCostumeLibrary()}
                 id="costumeLibrary"
                 tags={spriteTags}
                 header={"Costumes"}

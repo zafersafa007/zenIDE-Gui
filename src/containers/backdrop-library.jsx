@@ -23,16 +23,6 @@ class BackdropLibrary extends React.Component {
         bindAll(this, [
             'handleItemSelect'
         ]);
-        this.state = {
-            data: getBackdropLibrary()
-        };
-    }
-    componentDidMount () {
-        if (this.state.data.then) {
-            this.state.data.then(data => this.setState({
-                data
-            }));
-        }
     }
     handleItemSelect (item) {
         const vmBackdrop = {
@@ -48,7 +38,7 @@ class BackdropLibrary extends React.Component {
     render () {
         return (
             <LibraryComponent
-                data={this.state.data.then ? null : this.state.data}
+                data={getBackdropLibrary()}
                 id="backdropLibrary"
                 header={"Backdrops"}
                 tags={backdropTags}
