@@ -922,6 +922,7 @@ const menuItems = [
         helpLink: 'https://scratch.mit.edu/vernier'
     },
     {
+        // not really an extension, but it's easiest to present it as one
         name: (
             <FormattedMessage
                 defaultMessage="Custom Extension"

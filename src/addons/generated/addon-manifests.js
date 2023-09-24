@@ -66,7 +66,6 @@ import _tw_straighten_comments from "../addons/tw-straighten-comments/_manifest_
 import _tw_remove_backpack from "../addons/tw-remove-backpack/_manifest_entry.js";
 import _tw_remove_feedback from "../addons/tw-remove-feedback/_manifest_entry.js";
 import _tw_disable_cloud_variables from "../addons/tw-disable-cloud-variables/_manifest_entry.js";
-import _tw_disable_restore_points from "../addons/tw-disable-restore-points/_manifest_entry.js";
 import _editor_stepping from "../addons/editor-stepping/_manifest_entry.js";
 
 export default {
@@ -137,7 +136,6 @@ export default {
   "tw-remove-backpack": _tw_remove_backpack,
   "tw-remove-feedback": _tw_remove_feedback,
   "tw-disable-cloud-variables": _tw_disable_cloud_variables,
-  "tw-disable-restore-points": _tw_disable_restore_points,
   "editor-stepping": _editor_stepping,
   "vol-slider": _vol_slider,
 };

@@ -12,6 +12,7 @@ import Filter from '../filter/filter.jsx';
 import TagButton from '../../containers/tag-button.jsx';
 import TagCheckbox from '../../containers/tag-checkbox.jsx';
 import Spinner from '../spinner/spinner.jsx';
+import Separator from '../tw-extension-separator/separator.jsx';
 
 import styles from './library.css';
 
@@ -58,6 +59,7 @@ class LibraryComponent extends React.Component {
             'handleMouseLeave',
             'handlePlayingEnd',
             'handleSelect',
+            'handleFavorite',
             'handleTagClick',
             'setFilteredDataRef',
             'loadLibraryData',
@@ -67,6 +69,7 @@ class LibraryComponent extends React.Component {
             'createFilteredData',
             'getFilteredData'
         ]);
+        const favorites = this.readFavoritesFromStorage();
         this.state = {
             playingItem: null,
             filterQuery: '',
@@ -168,16 +171,44 @@ class LibraryComponent extends React.Component {
             prevState.selectedTags.length !== this.state.selectedTags.length) {
             this.scrollToTop();
         }
-        if (prevProps.data !== this.props.data) {
-            // eslint-disable-next-line react/no-did-update-set-state
-            this.setState({
-                data: this.props.data
-            });
+
+        if (this.state.favorites !== prevState.favorites) {
+            try {
+                localStorage.setItem(this.getFavoriteStorageKey(), JSON.stringify(this.state.favorites));
+            } catch (error) {
+                // ignore
+            }
         }
     }
     handleSelect (id) {
         this.handleClose();
         this.props.onItemSelected(this.getFilteredData()[id]);
+    }
+    readFavoritesFromStorage () {
+        let data;
+        try {
+            data = JSON.parse(localStorage.getItem(this.getFavoriteStorageKey()));
+        } catch (error) {
+            // ignore
+        }
+        if (!Array.isArray(data)) {
+            data = [];
+        }
+        return data;
+    }
+    getFavoriteStorageKey () {
+        return `tw:library-favorites:${this.props.id}`;
+    }
+    handleFavorite (id) {
+        const data = this.getFilteredData()[id];
+        const key = data[this.props.persistableKey];
+        this.setState(oldState => ({
+            favorites: oldState.favorites.includes(key) ? (
+                oldState.favorites.filter(i => i !== key)
+            ) : (
+                [...oldState.favorites, key]
+            )
+        }));
     }
     handleClose () {
         this.props.onRequestClose();
@@ -484,22 +515,27 @@ class LibraryComponent extends React.Component {
 }
 
 LibraryComponent.propTypes = {
-    data: PropTypes.oneOfType([PropTypes.arrayOf(
-        /* eslint-disable react/no-unused-prop-types, lines-around-comment */
-        // An item in the library
-        PropTypes.shape({
-            // @todo remove md5/rawURL prop from library, refactor to use storage
-            md5: PropTypes.string,
-            name: PropTypes.oneOfType([
-                PropTypes.string,
-                PropTypes.node
-            ]),
-            rawURL: PropTypes.string
-        })
-        /* eslint-enable react/no-unused-prop-types, lines-around-comment */
-    ), PropTypes.instanceOf(Promise)]),
+    data: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.oneOfType([
+            /* eslint-disable react/no-unused-prop-types, lines-around-comment */
+            // An item in the library
+            PropTypes.shape({
+                // @todo remove md5/rawURL prop from library, refactor to use storage
+                md5: PropTypes.string,
+                name: PropTypes.oneOfType([
+                    PropTypes.string,
+                    PropTypes.node
+                ]),
+                rawURL: PropTypes.string
+            }),
+            PropTypes.string
+            /* eslint-enable react/no-unused-prop-types, lines-around-comment */
+        ])),
+        PropTypes.instanceOf(Promise)
+    ]),
     filterable: PropTypes.bool,
     id: PropTypes.string.isRequired,
+    persistableKey: PropTypes.string,
     intl: intlShape.isRequired,
     onItemMouseEnter: PropTypes.func,
     onItemMouseLeave: PropTypes.func,
@@ -513,6 +549,7 @@ LibraryComponent.propTypes = {
 
 LibraryComponent.defaultProps = {
     filterable: true,
+    persistableKey: 'name',
     showPlayButton: false
 };
 

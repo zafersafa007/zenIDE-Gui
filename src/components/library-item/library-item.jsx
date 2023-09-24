@@ -1,4 +1,4 @@
-import { FormattedMessage } from 'react-intl';
+import {FormattedMessage, intlShape, defineMessages} from 'react-intl';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -54,6 +54,8 @@ class LibraryItemComponent extends React.PureComponent {
                     ) : null}
                     <img
                         className={styles.featuredImage}
+                        loading="lazy"
+                        draggable={false}
                         src={this.props.iconURL}
                     />
                 </div>
@@ -67,6 +69,7 @@ class LibraryItemComponent extends React.PureComponent {
                         <img
                             className={styles.libraryItemInsetImage}
                             src={this.props.insetIconURL}
+                            draggable={false}
                         />
                     </div>
                 ) : null}
@@ -328,6 +331,7 @@ class LibraryItemComponent extends React.PureComponent {
                             className={styles.libraryItemImage}
                             loading="lazy"
                             src={this.props.iconURL}
+                            draggable={false}
                         />
                     </Box>
                 </Box>
@@ -347,6 +351,7 @@ class LibraryItemComponent extends React.PureComponent {
 
 
 LibraryItemComponent.propTypes = {
+    intl: intlShape,
     bluetoothRequired: PropTypes.bool,
     collaborator: PropTypes.string,
     credits: PropTypes.string,
@@ -362,7 +367,6 @@ LibraryItemComponent.propTypes = {
     featured: PropTypes.bool,
     hidden: PropTypes.bool,
     iconURL: PropTypes.string,
-    incompatibleWithScratch: PropTypes.bool,
     insetIconURL: PropTypes.string,
     customInsetColor: PropTypes.string,
     internetConnectionRequired: PropTypes.bool,

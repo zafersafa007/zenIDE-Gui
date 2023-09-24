@@ -69,7 +69,6 @@ const addons = [
     'tw-remove-backpack',
     'tw-remove-feedback',
     'tw-disable-cloud-variables',
-    'tw-disable-restore-points',
     'editor-stepping'
 ];
 

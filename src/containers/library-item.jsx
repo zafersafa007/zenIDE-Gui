@@ -2,7 +2,7 @@ import bindAll from 'lodash.bindall';
 import PropTypes from 'prop-types';
 import React from 'react';
 import localforage from 'localforage';
-import {injectIntl} from 'react-intl';
+import {injectIntl, intlShape, defineMessages} from 'react-intl';
 
 import LibraryItemComponent from '../components/library-item/library-item.jsx';
 
@@ -44,6 +44,11 @@ class LibraryItem extends React.PureComponent {
             return;
         }
         
+        if (e.target.closest('a')) {
+            // Allow clicking on links inside the item
+            return;
+        }
+
         if (!this.props.disabled) {
             if (this.props.href) {
                 window.open(this.props.href);
@@ -173,6 +178,7 @@ class LibraryItem extends React.PureComponent {
             this.props.iconRawURL;
         return (
             <LibraryItemComponent
+                intl={this.props.intl}
                 bluetoothRequired={this.props.bluetoothRequired}
                 collaborator={this.props.collaborator}
                 twDeveloper={this.props.twDeveloper}
@@ -218,6 +224,7 @@ class LibraryItem extends React.PureComponent {
 }
 
 LibraryItem.propTypes = {
+    intl: intlShape,
     bluetoothRequired: PropTypes.bool,
     collaborator: PropTypes.string,
     twDeveloper: PropTypes.string,
@@ -230,9 +237,9 @@ LibraryItem.propTypes = {
     ]),
     disabled: PropTypes.bool,
     extensionId: PropTypes.string,
+    href: PropTypes.string,
     featured: PropTypes.bool,
     hidden: PropTypes.bool,
-    href: PropTypes.string,
     iconMd5: PropTypes.string,
     iconRawURL: PropTypes.string,
     icons: PropTypes.arrayOf(
@@ -254,7 +261,6 @@ LibraryItem.propTypes = {
     onMouseLeave: PropTypes.func.isRequired,
     onSelect: PropTypes.func.isRequired,
     showPlayButton: PropTypes.bool,
-
     favoritable: PropTypes.bool,
     favorited: PropTypes.bool,
     deletable: PropTypes.bool,

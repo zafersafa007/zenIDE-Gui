@@ -4,6 +4,7 @@ import bindAll from 'lodash.bindall';
 import VM from 'scratch-vm';
 import PaintEditor from '../lib/tw-scratch-paint';
 import {inlineSvgFonts} from 'scratch-svg-renderer';
+import ErrorBoundaryHOC from '../lib/error-boundary-hoc.jsx';
 import {openFontsModal} from '../reducers/modals';
 
 import {connect} from 'react-redux';
@@ -124,7 +125,7 @@ const mapDispatchToProps = dispatch => ({
     onManageFonts: () => dispatch(openFontsModal())
 });
 
-export default connect(
+export default ErrorBoundaryHOC('paint')(connect(
     mapStateToProps,
     mapDispatchToProps
-)(PaintEditorWrapper);
+)(PaintEditorWrapper));

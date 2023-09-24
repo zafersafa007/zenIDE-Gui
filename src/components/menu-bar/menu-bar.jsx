@@ -29,10 +29,9 @@ import MenuBarHOC from '../../containers/menu-bar-hoc.jsx';
 import FramerateChanger from '../../containers/tw-framerate-changer.jsx';
 import ChangeUsername from '../../containers/tw-change-username.jsx';
 import CloudVariablesToggler from '../../containers/tw-cloud-toggler.jsx';
-import TWRestorePointLoader from '../../containers/tw-restore-point-loader.jsx';
 import TWSaveStatus from './tw-save-status.jsx';
 
-import {openTipsLibrary, openSettingsModal} from '../../reducers/modals';
+import {openTipsLibrary, openSettingsModal, openRestorePointModal} from '../../reducers/modals';
 import {setPlayer} from '../../reducers/mode';
 import {
     autoUpdateProject,
@@ -84,6 +83,7 @@ import scratchLogo from './scratch-logo.svg';
 import sharedMessages from '../../lib/shared-messages';
 
 import SeeInsideButton from './tw-see-inside.jsx';
+import { notScratchDesktop } from '../../lib/isScratchDesktop.js';
 
 const ariaMessages = defineMessages({
     language: {
@@ -198,10 +198,12 @@ class MenuBar extends React.Component {
         bindAll(this, [
             'handleClickSeeInside',
             'handleClickNew',
+            'handleClickNewWindow',
             'handleClickRemix',
             'handleClickSave',
             'handleClickSaveAsCopy',
             'handleClickPackager',
+            'handleClickRestorePoints',
             'handleClickSeeCommunity',
             'handleClickShare',
             'handleKeyPress',
@@ -232,6 +234,10 @@ class MenuBar extends React.Component {
         }
         this.props.onRequestCloseFile();
     }
+    handleClickNewWindow () {
+        this.props.onClickNewWindow();
+        this.props.onRequestCloseFile();
+    }
     handleClickRemix () {
         this.props.onClickRemix();
         this.props.onRequestCloseFile();
@@ -246,6 +252,10 @@ class MenuBar extends React.Component {
     }
     handleClickPackager () {
         this.props.onClickPackager();
+        this.props.onRequestCloseFile();
+    }
+    handleClickRestorePoints () {
+        this.props.onClickRestorePoints();
         this.props.onRequestCloseFile();
     }
     handleClickSeeCommunity (waitForUpdate) {
@@ -558,6 +568,19 @@ class MenuBar extends React.Component {
                                             {newProjectMessage}
                                         </MenuItem>
                                     </MenuSection>
+                                    {this.props.onClickNewWindow && (
+                                        <MenuItem
+                                            isRtl={this.props.isRtl}
+                                            onClick={this.handleClickNewWindow}
+                                        >
+                                            <FormattedMessage
+                                                defaultMessage="New window"
+                                                // eslint-disable-next-line max-len
+                                                description="Part of desktop app. Menu bar item that creates a new window."
+                                                id="tw.menuBar.newWindow"
+                                            />
+                                        </MenuItem>
+                                    )}
                                     {(this.props.canSave || this.props.canCreateCopy || this.props.canRemix) && (
                                         <MenuSection>
                                             {this.props.canSave && (
@@ -588,9 +611,11 @@ class MenuBar extends React.Component {
                                                 {extended.available && (
                                                     <React.Fragment>
                                                         {extended.name !== null && (
+                                                            // eslint-disable-next-line max-len
                                                             <MenuItem onClick={this.getSaveToComputerHandler(extended.saveToLastFile)}>
                                                                 <FormattedMessage
                                                                     defaultMessage="Save to {file}"
+                                                                    // eslint-disable-next-line max-len
                                                                     description="Menu bar item to save project to an existing file on the user's computer"
                                                                     id="tw.saveTo"
                                                                     values={{
@@ -599,30 +624,35 @@ class MenuBar extends React.Component {
                                                                 />
                                                             </MenuItem>
                                                         )}
+                                                        {/* eslint-disable-next-line max-len */}
                                                         <MenuItem onClick={this.getSaveToComputerHandler(extended.saveAsNew)}>
                                                             <FormattedMessage
                                                                 defaultMessage="Save as..."
-                                                                description="Menu bar item to select a new file to save the project as" // eslint-disable-line max-len
+                                                                // eslint-disable-next-line max-len
+                                                                description="Menu bar item to select a new file to save the project as"
                                                                 id="tw.saveAs"
                                                             />
                                                         </MenuItem>
                                                     </React.Fragment>
                                                 )}
-                                                <MenuItem onClick={this.getSaveToComputerHandler(downloadProject)}>
-                                                    {extended.available ? (
-                                                        <FormattedMessage
-                                                            defaultMessage="Save to separate file..."
-                                                            description="Download the project once, without being able to easily save to the same spot"
-                                                            id="tw.oldDownload"
-                                                        />
-                                                    ) : (
-                                                        <FormattedMessage
-                                                            defaultMessage="Save to your computer"
-                                                            description="Menu bar item for downloading a project to your computer" // eslint-disable-line max-len
-                                                            id="gui.menuBar.downloadToComputer"
-                                                        />
-                                                    )}
-                                                </MenuItem>
+                                                {notScratchDesktop() && (
+                                                    <MenuItem onClick={this.getSaveToComputerHandler(downloadProject)}>
+                                                        {extended.available ? (
+                                                            <FormattedMessage
+                                                                defaultMessage="Save to separate file..."
+                                                                // eslint-disable-next-line max-len
+                                                                description="Download the project once, without being able to easily save to the same spot"
+                                                                id="tw.oldDownload"
+                                                            />
+                                                        ) : (
+                                                            <FormattedMessage
+                                                                defaultMessage="Save to your computer"
+                                                                description="Menu bar item for downloading a project to your computer" // eslint-disable-line max-len
+                                                                id="gui.menuBar.downloadToComputer"
+                                                            />
+                                                        )}
+                                                    </MenuItem>
+                                                )}
                                             </React.Fragment>
                                         )}</SB3Downloader>
                                     </MenuSection>
@@ -641,18 +671,13 @@ class MenuBar extends React.Component {
                                         </MenuSection>
                                     )}
                                     <MenuSection>
-                                        <TWRestorePointLoader>{(className, loadRestorePoint) => (
-                                            <MenuItem
-                                                className={className}
-                                                onClick={loadRestorePoint}
-                                            >
-                                                <FormattedMessage
-                                                    defaultMessage="Load restore point"
-                                                    description="Menu bar item for loading a restore point"
-                                                    id="tw.menuBar.loadRestorePoint"
-                                                />
-                                            </MenuItem>
-                                        )}</TWRestorePointLoader>
+                                        <MenuItem onClick={this.handleClickRestorePoints}>
+                                            <FormattedMessage
+                                                defaultMessage="Restore points"
+                                                description="Menu bar item to manage restore points"
+                                                id="tw.menuBar.restorePoints"
+                                            />
+                                        </MenuItem>
                                     </MenuSection>
                                 </MenuBarMenu>
                             </div>
@@ -942,12 +967,14 @@ MenuBar.propTypes = {
     onClickAddonSettings: PropTypes.func,
     onClickTheme: PropTypes.func,
     onClickPackager: PropTypes.func,
+    onClickRestorePoints: PropTypes.func,
     onClickEdit: PropTypes.func,
     onClickFile: PropTypes.func,
     onClickLanguage: PropTypes.func,
     onClickLogin: PropTypes.func,
     onClickLogo: PropTypes.func,
     onClickNew: PropTypes.func,
+    onClickNewWindow: PropTypes.func,
     onClickRemix: PropTypes.func,
     onClickSave: PropTypes.func,
     onClickSaveAsCopy: PropTypes.func,
@@ -1040,6 +1067,7 @@ const mapDispatchToProps = dispatch => ({
     onClickRemix: () => dispatch(remixProject()),
     onClickSave: () => dispatch(manualUpdateProject()),
     onClickSaveAsCopy: () => dispatch(saveProjectAsCopy()),
+    onClickRestorePoints: () => dispatch(openRestorePointModal()),
     onClickSettings: () => {
         dispatch(openSettingsModal());
         dispatch(closeEditMenu());

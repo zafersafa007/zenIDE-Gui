@@ -16,6 +16,7 @@ const CLEAR_COMPILE_ERRORS = 'tw/CLEAR_COMPILE_ERRORS';
 const SET_FILE_HANDLE = 'tw/SET_FILE_HANDLE';
 const SET_USERNAME_INVALID = 'tw/SET_USERNAME_INVALID';
 const SET_HAS_CLOUD_VARIABLES = 'tw/SET_HAS_CLOUD_VARIABLES';
+const SET_CLOUD_HOST = 'tw/SET_CLOUD_HOST';
 
 export const initialState = {
     framerate: 30,
@@ -57,7 +58,8 @@ export const initialState = {
     compileErrors: [],
     fileHandle: null,
     usernameInvalid: false,
-    hasCloudVariables: false
+    hasCloudVariables: false,
+    cloudHost: ''
 };
 
 const reducer = function (state, action) {
@@ -137,6 +139,10 @@ const reducer = function (state, action) {
     case SET_HAS_CLOUD_VARIABLES:
         return Object.assign({}, state, {
             hasCloudVariables: action.hasCloudVariables
+        });
+    case SET_CLOUD_HOST:
+        return Object.assign({}, state, {
+            cloudHost: action.cloudHost
         });
     default:
         return state;
@@ -268,6 +274,13 @@ const setHasCloudVariables = function (hasCloudVariables) {
     };
 };
 
+const setCloudHost = function (cloudHost) {
+    return {
+        type: SET_CLOUD_HOST,
+        cloudHost
+    };
+};
+
 export {
     reducer as default,
     initialState as twInitialState,
@@ -288,5 +301,6 @@ export {
     clearCompileErrors,
     setFileHandle,
     setUsernameInvalid,
-    setHasCloudVariables
+    setHasCloudVariables,
+    setCloudHost
 };
