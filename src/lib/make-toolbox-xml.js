@@ -58,40 +58,6 @@ const motion = function (isInitialSetup, isStage, targetId) {
                 </shadow>
             </value>
         </block>
-        <block type="motion_turnrightaroundxy">
-            <value name="DEGREES">
-                <shadow type="math_number">
-                    <field name="NUM">15</field>
-                </shadow>
-            </value>
-            <value name="X">
-                <shadow type="math_number">
-                    <field name="NUM">0</field>
-                </shadow>
-            </value>
-            <value name="Y">
-                <shadow type="math_number">
-                    <field name="NUM">0</field>
-                </shadow>
-            </value>
-        </block>
-        <block type="motion_turnleftaroundxy">
-            <value name="DEGREES">
-                <shadow type="math_number">
-                    <field name="NUM">15</field>
-                </shadow>
-            </value>
-            <value name="X">
-                <shadow type="math_number">
-                    <field name="NUM">0</field>
-                </shadow>
-            </value>
-            <value name="Y">
-                <shadow type="math_number">
-                    <field name="NUM">0</field>
-                </shadow>
-            </value>
-        </block>
         ${blockSeparator}
         <block type="motion_goto">
             <value name="TO">
@@ -212,18 +178,6 @@ const motion = function (isInitialSetup, isStage, targetId) {
         <block type="motion_ifonspritebounce">
             <value name="SPRITE">
                 <shadow type="motion_pointtowards_menu"></shadow>
-            </value>
-        </block>
-        <block type="motion_ifonxybounce">
-            <value name="X">
-                <shadow type="math_number">
-                    <field name="NUM">10</field>
-                </shadow>
-            </value>
-            <value name="Y">
-                <shadow type="math_number">
-                    <field name="NUM">10</field>
-                </shadow>
             </value>
         </block>
         ${blockSeparator}

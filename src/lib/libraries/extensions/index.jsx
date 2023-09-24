@@ -134,6 +134,7 @@ import jgPathfindingExtensionIcon from './penguinmod/extensions/pathfinding.png'
 import jgAnimationExtensionIcon from './penguinmod/extensions/animation.png';
 
 // category expansions
+import pmMotionExpansionExtensionIcon from './penguinmod/extensions/motion_expanded.png';
 import pmEventsExpansionExtensionIcon from './penguinmod/extensions/events_expanded.png';
 import pmControlsExpansionExtensionIcon from './penguinmod/extensions/controls_expanded.png';
 import pmSensingExpansionExtensionIcon from './penguinmod/extensions/sensing_expanded.png';
@@ -330,6 +331,15 @@ const menuItems = [
         tags: ['penguinmod', 'categoryexpansion'],
         description: 'Free speed and pitch control, starting sounds at certain positions, stopping sounds, etc.',
         featured: true
+    },
+    {
+        name: 'Motion Expansion',
+        extensionId: 'pmMotionExpansion',
+        iconURL: pmMotionExpansionExtensionIcon,
+        tags: ['penguinmod', 'categoryexpansion'],
+        description: "More small motion blocks for movement or collision.",
+        featured: true,
+        credits: 'Some blocks from NexusKitten'
     },
     {
         name: 'Events Expansion',
