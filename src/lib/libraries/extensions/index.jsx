@@ -979,6 +979,14 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
+            name: 'Debugging',
+            extensionId: 'jgDebugging',
+            iconURL: defaultExtensionIcon,
+            tags: ['penguinmod'],
+            description: 'Log information and run commands. Good for debugging packaged projects or just easily changing things.',
+            featured: true
+        },
+        {
             name: (
                 <FormattedMessage
                     defaultMessage="OOP"
