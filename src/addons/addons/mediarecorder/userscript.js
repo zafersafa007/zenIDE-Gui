@@ -293,6 +293,15 @@ export default async ({ addon, console, msg }) => {
           const audioSource = ctx.createMediaStreamSource(mediaStreamDestination.stream);
           audioSource.connect(dest);
         }
+        // literally any other extension
+        for (const audioData of vm.runtime._extensionAudioObjects.values()) {
+          if (audioData.audioContext && audioData.gainNode) {
+            const mediaStreamDestination = audioData.audioContext.createMediaStreamDestination();
+            audioData.gainNode.connect(mediaStreamDestination);
+            const audioSource = ctx.createMediaStreamSource(mediaStreamDestination.stream);
+            audioSource.connect(dest);
+          }
+        }
       }
       if (opts.micEnabled) {
         const micSource = ctx.createMediaStreamSource(micStream);

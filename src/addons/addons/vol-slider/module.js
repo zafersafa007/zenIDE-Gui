@@ -26,6 +26,12 @@ export const setVolume = (newVolume) => {
         helper.audioGlobalVolumeNode.gain.value = gainNode.value;
       }
     }
+    // literally any other extension
+    for (const audioData of globalVm.runtime._extensionAudioObjects.values()) {
+      if (audioData.gainNode) {
+        audioData.gainNode.gain.value = gainNode.value;
+      }
+    }
   } else {
     volumeBeforeFinishSetup = newVolume;
   }
@@ -81,6 +87,12 @@ const gotAudioEngine = (audioEngine) => {
       return;
     }
     helper.audioGlobalVolumeNode.gain.value = gainNode.value;
+  }
+  // literally any other extension
+  for (const audioData of globalVm.runtime._extensionAudioObjects.values()) {
+    if (audioData.gainNode) {
+      audioData.gainNode.gain.value = gainNode.value;
+    }
   }
 };
 
