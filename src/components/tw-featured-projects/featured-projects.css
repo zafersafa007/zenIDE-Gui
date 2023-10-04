@@ -30,7 +30,7 @@
 
 .projects {
     position: relative;
-    height: 155px;
+    height: 156px;
 }
 .projects.transition {
     transition: .2s height;

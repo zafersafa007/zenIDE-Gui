@@ -4,6 +4,20 @@ https://github.com/forkphorus/forkphorus/tree/master/studioview
 With changes to make it work properly in the scratch-gui environment.
 */
 
+/*
+Further modifications made for PenguinMod (like featured projects)
+*/
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
 /* we wrap it in a <div> */
 .wrapper {
   height: 100%;
@@ -24,15 +38,31 @@ With changes to make it work properly in the scratch-gui environment.
 }
 .studioview-project, .studioview-placeholder {
   display: inline-block;
-  width: 144px;
+  width: 142px;
   padding: 3px;
   margin-bottom: 1px;
   margin-right: 1px;
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+[theme="dark"] .studioview-project,
+[theme="dark"] .studioview-placeholder {
+  border-color: #ffffff4d;
 }
 .featured-studioview-project {
-  border-radius: 4px;
-  background: rgb(255, 213, 55);
-  background: linear-gradient(151deg, rgba(255, 213, 55, 1) 4%, rgba(254, 255, 191, 1) 12%, rgba(255, 213, 55, 1) 21%);
+  background-color: #ffc400;
+  background: linear-gradient(
+      145deg,
+      rgba(255, 196, 0, 1) 0%,
+      rgba(255, 196, 0, 1) 45%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 196, 0, 1) 54%,
+      rgba(255, 196, 0, 1) 100%
+  );
+  background-size: 300% 300%;
+  animation: gradient 3s ease infinite;
 }
 [theme="dark"] .featured-studioview-project > div {
   color: black;
@@ -66,7 +96,7 @@ With changes to make it work properly in the scratch-gui environment.
   text-decoration: none;
 }
 .studioview-title {
-  font-size: 0.8em;
+  font-size: 0.9em;
   font-weight: bold;
 }
 .studioview-author {
