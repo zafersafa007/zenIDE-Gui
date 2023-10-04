@@ -10,6 +10,9 @@
     height: calc(100% - $menu-bar-height);
     background-color: $ui-primary;
 }
+.body-wrapper-playground {
+    height: 100%;
+}
 
 .body-wrapper * {
     box-sizing: border-box;
