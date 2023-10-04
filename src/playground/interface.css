@@ -173,6 +173,34 @@ a {
     border-radius: 4px;
 }
 
+.project-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 8px 0;
+}
+.project-metadata {
+    display: flex;
+    flex-direction: column;
+}
+.project-author-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+.project-metadata h2 {
+    line-height: 1.4em;
+}
+.project-metadata p {
+    font-size: 0.85rem;
+}
+.project-metadata p a,
+.project-metadata a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .remixList {
     overflow-x: auto;
     display: flex;

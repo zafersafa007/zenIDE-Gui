@@ -218,6 +218,7 @@ class Interface extends React.Component {
             /* eslint-disable no-unused-vars */
             intl,
             hasCloudVariables,
+            title,
             description,
             extraProjectInfo,
             remixedProjectInfo,
@@ -258,6 +259,20 @@ class Interface extends React.Component {
                     }) : null}
                 >
                     {isHomepage && announcement ? <DOMElementRenderer domElement={announcement} /> : null}
+                    {isHomepage && projectId !== '0' && title && extraProjectInfo && extraProjectInfo.author && <div className={styles.projectDetails}>
+                        <a target='_blank' href={`https://penguinmod.site/profile?user=${extraProjectInfo.author}`}>
+                            <img
+                                className={styles.projectAuthorImage}
+                                title={extraProjectInfo.author}
+                                alt={extraProjectInfo.author}
+                                src={`https://trampoline.turbowarp.org/avatars/by-username/${extraProjectInfo.author}`}
+                            />
+                        </a>
+                        <div className={styles.projectMetadata}>
+                            <h2>{title}</h2>
+                            <p>by <a target='_blank' href={`https://penguinmod.site/profile?user=${extraProjectInfo.author}`}>{extraProjectInfo.author}</a></p>
+                        </div>
+                    </div>}
                     <GUI
                         onClickAddonSettings={handleClickAddonSettings}
                         onClickTheme={onClickTheme}
@@ -397,6 +412,7 @@ Interface.propTypes = {
 const mapStateToProps = state => ({
     hasCloudVariables: state.scratchGui.tw.hasCloudVariables,
     customStageSize: state.scratchGui.customStageSize,
+    title: state.scratchGui.projectTitle,
     description: state.scratchGui.tw.description,
     extraProjectInfo: state.scratchGui.tw.extraProjectInfo,
     remixedProjectInfo: state.scratchGui.tw.remixedProjectInfo,
