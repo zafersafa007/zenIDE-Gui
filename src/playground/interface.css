@@ -107,6 +107,7 @@ a {
     color: #4af;
 }
 
+.unshared-update,
 .infobox {
     line-height: 1.5em;
     padding: 0.5rem;
@@ -129,10 +130,10 @@ a {
     text-decoration: none;
 }
 
-.unshared-update {
+/* .unshared-update {
     border-color: #ffb9b9;
     background-color: #ffdbdb;
-}
+} */
 [theme="dark"] .unshared-update {
     border-color: #203652;
     background-color: #16202c;
