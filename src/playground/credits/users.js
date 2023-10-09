@@ -149,7 +149,7 @@ const extensionDevelopers = [
     'griffpatch',
     'DT-is-not-available',
     'Vadik1',
-    'MikeDev',
+    'MikeDev101',
     'LilyMakesThings'
 ].map(fromHardcodedGithub);
 const pmExtensionDevelopers = [
