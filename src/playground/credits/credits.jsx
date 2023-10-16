@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import appTarget from '../app-target';
 import styles from './credits.css';
-import {getInitialDarkMode} from '../../lib/tw-theme-hoc.jsx';
+import { getInitialDarkMode } from '../../lib/tw-theme-hoc.jsx';
 
 // import fosshostLogo from './fosshost-light.png';
 import UserData from './users';
@@ -12,7 +12,7 @@ import UserData from './users';
 
 document.documentElement.lang = 'en';
 
-const User = ({image, text, href}) => (
+const User = ({ image, text, href }) => (
     <a
         href={href}
         target="_blank"
@@ -36,7 +36,7 @@ User.propTypes = {
     href: PropTypes.string
 };
 
-const UserList = ({users}) => (
+const UserList = ({ users }) => (
     <div className={styles.users}>
         {users.map((data, index) => (
             <User
@@ -94,7 +94,7 @@ const Credits = () => (
             </a>
             <h2>Domain Provider</h2>
             <p>
-                <a href="https://penguinmod.site">penguinmod.site</a> (and any subdomains) are currently provided by NotHouse.
+                <a href="https://penguinmod.com">penguinmod.com</a> (and any subdomains) are currently provided by NotHouse.
                 Currently no link to any known profile of theirs is publicly known.
             </p>
             <h2>Sound Effects</h2>

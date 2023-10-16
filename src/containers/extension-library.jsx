@@ -2,9 +2,9 @@ import bindAll from 'lodash.bindall';
 import PropTypes from 'prop-types';
 import React from 'react';
 import VM from 'scratch-vm';
-import {defineMessages, injectIntl, intlShape} from 'react-intl';
+import { defineMessages, injectIntl, intlShape } from 'react-intl';
 import log from '../lib/log';
-import {manuallyTrustExtension} from './tw-security-manager.jsx';
+import { manuallyTrustExtension } from './tw-security-manager.jsx';
 
 import extensionLibraryContent from '../lib/libraries/extensions/index.jsx';
 import extensionTags from '../lib/libraries/extension-tags';
@@ -32,13 +32,13 @@ const messages = defineMessages({
 });
 
 class ExtensionLibrary extends React.PureComponent {
-    constructor (props) {
+    constructor(props) {
         super(props);
         bindAll(this, [
             'handleItemSelect'
         ]);
     }
-    handleItemSelect (item) {
+    handleItemSelect(item) {
         // eslint-disable-next-line no-alert
         // if (item.incompatibleWithScratch && !confirm(this.props.intl.formatMessage(messages.incompatible))) {
         //     return;
@@ -57,7 +57,7 @@ class ExtensionLibrary extends React.PureComponent {
             return;
         }
         if (extensionId === 'special_penguinmodExtensionLibrary') {
-            window.open('https://extensions.penguinmod.site/');
+            window.open('https://extensions.penguinmod.com/');
             return;
         }
         const url = item.extensionURL ? item.extensionURL : extensionId;
@@ -91,7 +91,7 @@ class ExtensionLibrary extends React.PureComponent {
             }
         }
     }
-    render () {
+    render() {
         const extensionLibraryThumbnailData = extensionLibraryContent.map(extension => ({
             rawURL: extension.iconURL || extensionIcon,
             disabled: extension.disabled && !this.props.liveTest,

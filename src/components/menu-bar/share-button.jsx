@@ -1,6 +1,6 @@
 import classNames from 'classnames';
-import {connect} from 'react-redux';
-import {FormattedMessage, injectIntl} from 'react-intl';
+import { connect } from 'react-redux';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import React from 'react';
 import bindAll from 'lodash.bindall';
@@ -37,7 +37,7 @@ const isUploadAvailable = async () => {
 };
 
 class ShareButton extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         bindAll(this, [
             'handleMessageEvent',
@@ -48,18 +48,18 @@ class ShareButton extends React.Component {
             loading: false
         };
     }
-    componentDidMount () {
+    componentDidMount() {
         window.addEventListener('message', this.wrapperEventHandler);
     }
-    componentWillUnmount () {
+    componentWillUnmount() {
         window.removeEventListener('message', this.wrapperEventHandler);
     }
 
-    wrapperEventHandler (e) {
+    wrapperEventHandler(e) {
         this.handleMessageEvent(e);
     }
-    async handleMessageEvent (e) {
-        if (!e.origin.startsWith(`https://penguinmod.site`)) {
+    async handleMessageEvent(e) {
+        if (!e.origin.startsWith(`https://penguinmod.com`)) {
             return;
         }
 
@@ -93,7 +93,7 @@ class ShareButton extends React.Component {
             }
         }, e.origin);
     }
-    onUploadProject () {
+    onUploadProject() {
         if (this.state.loading) return;
 
         this.setState({
@@ -117,17 +117,17 @@ class ShareButton extends React.Component {
             }
 
             const url = location.origin;
-            window.open(`https://penguinmod.site/upload?name=${this.props.projectTitle}${remixPiece}&external=${url}`, '_blank');
+            window.open(`https://penguinmod.com/upload?name=${this.props.projectTitle}${remixPiece}&external=${url}`, '_blank');
         });
     }
-    render () {
+    render() {
         return (
             <Button
                 className={classNames(
                     this.props.className,
                     styles.shareButton,
-                    {[styles.shareButtonIsShared]: this.props.isShared},
-                    {[styles.disabled]: this.state.loading},
+                    { [styles.shareButtonIsShared]: this.props.isShared },
+                    { [styles.disabled]: this.state.loading },
                 )}
                 onClick={this.onUploadProject}
             >

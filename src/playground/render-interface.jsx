@@ -39,7 +39,7 @@ import FeaturedProjects from '../components/tw-featured-projects/featured-projec
 import Description from '../components/tw-description/description.jsx';
 import BrowserModal from '../components/browser-modal/browser-modal.jsx';
 import CloudVariableBadge from '../containers/tw-cloud-variable-badge.jsx';
-import {isBrowserSupported} from '../lib/tw-environment-support-prober';
+import { isBrowserSupported } from '../lib/tw-environment-support-prober';
 import AddonChannels from '../addons/channels';
 import { loadServiceWorker } from './load-service-worker';
 import runAddons from '../addons/entry';
@@ -138,7 +138,7 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://studio.penguinmod.site/PenguinMod-Packager">
+                    <a href="https://studio.penguinmod.com/PenguinMod-Packager">
                         {/* Do not translate */}
                         {'PenguinMod Packager'}
                     </a>
@@ -260,7 +260,7 @@ class Interface extends React.Component {
                 >
                     {isHomepage && announcement ? <DOMElementRenderer domElement={announcement} /> : null}
                     {isHomepage && projectId !== '0' && title && extraProjectInfo && extraProjectInfo.author && <div className={styles.projectDetails}>
-                        <a target='_blank' href={`https://penguinmod.site/profile?user=${extraProjectInfo.author}`}>
+                        <a target='_blank' href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}>
                             <img
                                 className={styles.projectAuthorImage}
                                 title={extraProjectInfo.author}
@@ -270,7 +270,7 @@ class Interface extends React.Component {
                         </a>
                         <div className={styles.projectMetadata}>
                             <h2>{title}</h2>
-                            <p>by <a target='_blank' href={`https://penguinmod.site/profile?user=${extraProjectInfo.author}`}>{extraProjectInfo.author}</a></p>
+                            <p>by <a target='_blank' href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}>{extraProjectInfo.author}</a></p>
                         </div>
                     </div>}
                     <GUI
@@ -296,7 +296,7 @@ class Interface extends React.Component {
                                         <a
                                             style={{ height: "32px" }}
                                             target="_blank"
-                                            href={`https://penguinmod.site/profile?user=${remixedProjectInfo.author}`}
+                                            href={`https://penguinmod.com/profile?user=${remixedProjectInfo.author}`}
                                         >
                                             <img
                                                 className={styles.remixAuthorImage}
@@ -309,7 +309,7 @@ class Interface extends React.Component {
                                             Thanks to <b>
                                                 <a
                                                     target="_blank"
-                                                    href={`https://penguinmod.site/profile?user=${remixedProjectInfo.author}`}
+                                                    href={`https://penguinmod.com/profile?user=${remixedProjectInfo.author}`}
                                                 >
                                                     {remixedProjectInfo.author}
                                                 </a>
@@ -345,7 +345,7 @@ class Interface extends React.Component {
                             {extraProjectInfo.author && (
                                 <a
                                     target="_blank"
-                                    href={`https://penguinmod.site/profile?user=${extraProjectInfo.author}`}
+                                    href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
                                 >
                                     View other projects by {extraProjectInfo.author}
                                 </a>
@@ -365,7 +365,7 @@ class Interface extends React.Component {
                             </div>
                             <a
                                 target="_blank"
-                                href="https://penguinmod.site/search?q=all:projects"
+                                href="https://penguinmod.com/search?q=all:projects"
                             >
                                 See more projects
                             </a>

@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import {defineMessages, FormattedMessage} from 'react-intl';
+import { defineMessages, FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -7,7 +7,7 @@ import Box from '../box/box.jsx';
 import Modal from '../../containers/modal.jsx';
 
 import styles from './prompt.css';
-import {SCRATCH_MAX_CLOUD_VARIABLES} from '../../lib/tw-cloud-limits.js';
+import { SCRATCH_MAX_CLOUD_VARIABLES } from '../../lib/tw-cloud-limits.js';
 
 
 const messages = defineMessages({
@@ -90,7 +90,7 @@ const PromptComponent = props => (
                                 />
                             </label>
                             <label
-                                className={classNames({[styles.disabledLabel]: props.cloudSelected})}
+                                className={classNames({ [styles.disabledLabel]: props.cloudSelected })}
                             >
                                 <input
                                     checked={!props.globalSelected}
@@ -108,7 +108,7 @@ const PromptComponent = props => (
                     {props.showCloudOption ?
                         <Box className={classNames(styles.cloudOption)}>
                             <label
-                                className={classNames({[styles.disabledLabel]: !props.canAddCloudVariable})}
+                                className={classNames({ [styles.disabledLabel]: !props.canAddCloudVariable })}
                             >
                                 <input
                                     checked={props.cloudSelected && props.canAddCloudVariable}
@@ -147,7 +147,7 @@ const PromptComponent = props => (
                         values={{
                             packager: (
                                 <a
-                                    href="https://studio.penguinmod.site/PenguinMod-Packager"
+                                    href="https://studio.penguinmod.com/PenguinMod-Packager"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >

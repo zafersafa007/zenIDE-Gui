@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import {FormattedMessage} from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 
 import musicIconURL from './music/music.png';
 import musicInsetIconURL from './music/music-small.svg';
@@ -317,9 +317,9 @@ const menuItems = [
     },
     {
         name: 'Pen+',
-        extensionId: 'https://extensions.penguinmod.site/extensions/ObviousAlexC/PenPlus.js',
+        extensionId: 'https://extensions.penguinmod.com/extensions/ObviousAlexC/PenPlus.js',
         tags: ['categoryexpansion'],
-        iconURL: 'https://extensions.penguinmod.site/images/ObviousAlexC/PenPlus.svg',
+        iconURL: 'https://extensions.penguinmod.com/images/ObviousAlexC/PenPlus.svg',
         description: "An extension to the Pen category!",
         featured: true,
         extDeveloper: 'pinksheep2917'
@@ -725,7 +725,7 @@ const menuItems = [
                 id="pm.extraLibraryExtensions.name"
             />
         ),
-        href: 'https://extensions.penguinmod.site/',
+        href: 'https://extensions.penguinmod.com/',
         extensionId: 'special_penguinmodExtensionLibrary',
         iconURL: penguinmodLibraryExtensionIcon,
         description: (

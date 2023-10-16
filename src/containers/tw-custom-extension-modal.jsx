@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import bindAll from 'lodash.bindall';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import log from '../lib/log';
 import localforage from 'localforage';
 import CustomExtensionModalComponent from '../components/tw-custom-extension-modal/custom-extension-modal.jsx';
-import {closeCustomExtensionModal} from '../reducers/modals';
-import {manuallyTrustExtension, isTrustedExtension} from './tw-security-manager.jsx';
+import { closeCustomExtensionModal } from '../reducers/modals';
+import { manuallyTrustExtension, isTrustedExtension } from './tw-security-manager.jsx';
 
 const generateRandomId = () => {
     const randomChars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
@@ -17,7 +17,7 @@ const generateRandomId = () => {
 };
 
 class CustomExtensionModal extends React.Component {
-    constructor (props) {
+    constructor(props) {
         super(props);
         bindAll(this, [
             'handleChangeFile',
@@ -50,14 +50,14 @@ class CustomExtensionModal extends React.Component {
                 name: 'Extension',
                 description: 'Adds new blocks.',
                 tags: ['myextensions'],
-                rawURL: 'https://penguinmod.site/line_blue.png',
+                rawURL: 'https://penguinmod.com/line_blue.png',
                 featured: true,
                 deletable: true,
                 _id: generateRandomId()
             }
         };
     }
-    getExtensionURL () {
+    getExtensionURL() {
         if (this.state.type === 'url') {
             return this.state.url;
         }
@@ -74,7 +74,7 @@ class CustomExtensionModal extends React.Component {
         }
         return Promise.reject(new Error('Unknown type'));
     }
-    hasValidInput () {
+    hasValidInput() {
         if (this.state.type === 'url') {
             try {
                 const parsed = new URL(this.state.url);
@@ -95,26 +95,26 @@ class CustomExtensionModal extends React.Component {
         }
         return false;
     }
-    handleChangeFile (file) {
+    handleChangeFile(file) {
         this.setState({
             file
         });
     }
-    handleChangeURL (e) {
+    handleChangeURL(e) {
         this.setState({
             url: e.target.value
         });
     }
-    handleClose () {
+    handleClose() {
         this.props.onClose();
     }
-    handleKeyDown (e) {
+    handleKeyDown(e) {
         if (e.key === 'Enter' && this.hasValidInput()) {
             e.preventDefault();
             this.handleLoadExtension();
         }
     }
-    async handleLoadExtension () {
+    async handleLoadExtension() {
         let failed = false;
         this.handleClose();
         try {
@@ -148,36 +148,36 @@ class CustomExtensionModal extends React.Component {
             return;
         }
     }
-    handleSwitchToFile () {
+    handleSwitchToFile() {
         this.setState({
             type: 'file'
         });
     }
-    handleSwitchToURL () {
+    handleSwitchToURL() {
         this.setState({
             type: 'url'
         });
     }
-    handleSwitchToText () {
+    handleSwitchToText() {
         this.setState({
             type: 'text'
         });
     }
-    handleChangeText (e) {
+    handleChangeText(e) {
         this.setState({
             text: e.target.value
         });
     }
-    handleDragOver (e) {
+    handleDragOver(e) {
         if (e.dataTransfer.types.includes('Files')) {
             e.preventDefault();
             e.dataTransfer.dropEffect = 'copy';
         }
     }
-    handleDragLeave () {
+    handleDragLeave() {
 
     }
-    handleDrop (e) {
+    handleDrop(e) {
         const file = e.dataTransfer.files[0];
         if (file) {
             e.preventDefault();
@@ -187,26 +187,26 @@ class CustomExtensionModal extends React.Component {
             });
         }
     }
-    isUnsandboxed () {
+    isUnsandboxed() {
         if (this.state.type === 'url') {
             return isTrustedExtension(this.state.url);
         }
         return this.state.unsandboxed;
     }
-    canChangeUnsandboxed () {
+    canChangeUnsandboxed() {
         return this.state.type !== 'url';
     }
-    handleChangeUnsandboxed (e) {
+    handleChangeUnsandboxed(e) {
         this.setState({
             unsandboxed: e.target.checked
         });
     }
-    handleChangeAddToLibrary (e) {
+    handleChangeAddToLibrary(e) {
         this.setState({
             addingToLibrary: e.target.checked
         });
     }
-    async handleLoadingDataUrl (file) {
+    async handleLoadingDataUrl(file) {
         const fr = new FileReader();
         fr.onerror = () => {
             return alert("Failed to load the image!");
@@ -230,7 +230,7 @@ class CustomExtensionModal extends React.Component {
         };
         fr.readAsDataURL(file);
     }
-    handleChangeLibraryItem (key, e) {
+    handleChangeLibraryItem(key, e) {
         const newData = {};
         if (key === "rawURL") {
             this.handleLoadingDataUrl(e);
@@ -246,7 +246,7 @@ class CustomExtensionModal extends React.Component {
             }
         });
     }
-    render () {
+    render() {
         return (
             <CustomExtensionModalComponent
                 canLoadExtension={this.hasValidInput()}
