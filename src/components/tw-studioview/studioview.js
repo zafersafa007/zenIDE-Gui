@@ -300,11 +300,11 @@ StudioView.prototype.onselect = function (id, el) { };
 StudioView.prototype.onpageload = function () { };
 StudioView.prototype.onend = function () { };
 
-StudioView.STUDIO_API = 'https://projects.penguinmod.site/api';
+StudioView.STUDIO_API = 'https://projects.penguinmod.com/api';
 
 // The URL to download thumbnails from.
 // $id is replaced with the project's ID.
-StudioView.THUMBNAIL_SRC = 'https://projects.penguinmod.site/api/pmWrapper/iconUrl?id=$id';
+StudioView.THUMBNAIL_SRC = 'https://projects.penguinmod.com/api/pmWrapper/iconUrl?id=$id';
 
 // The URL for project pages.
 // $id is replaced with the project ID.

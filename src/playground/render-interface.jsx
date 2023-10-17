@@ -100,7 +100,7 @@ runAddons();
 //     // if we have already gotten the details of this project, avoid making another request since they likely never changed
 //     if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
 
-//     const response = await fetch(`https://projects.penguinmod.site/api/projects/getPublished?id=${id}`);
+//     const response = await fetch(`https://projects.penguinmod.com/api/projects/getPublished?id=${id}`);
 //     // Don't continue if the api never returned 200-299 since we would cache an error as project details
 //     if (!response.ok) return {};
 
