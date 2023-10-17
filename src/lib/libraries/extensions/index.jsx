@@ -408,7 +408,7 @@ const menuItems = [
     {
         name: 'Tweening',
         extensionId: 'jgTween',
-        credits: 'easings.net & Arrow',
+        credits: 'easings.net, Arrow & GarboMuffin',
         description: 'Smoothly animating values using different easing functions and directions.',
         iconURL: 'https://extensions.turbowarp.org/images/JeremyGamer13/tween.svg',
         tags: ['penguinmod'],
