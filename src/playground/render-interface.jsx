@@ -342,15 +342,28 @@ class Interface extends React.Component {
                                 </div>
                             ) : null}
                             <VoteFrame id={projectId} darkmode={this.props.isDark}></VoteFrame>
-                            {extraProjectInfo.author && (
-                                <a
-                                    target="_blank"
-                                    href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
-                                >
-                                    View other projects by {extraProjectInfo.author}
-                                </a>
+                            {projectId !== '0' && (
+                                <div className={styles.centerSector}>
+                                    {extraProjectInfo.author && (
+                                        <a
+                                            target="_blank"
+                                            href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                                        >
+                                            View other projects by {extraProjectInfo.author}
+                                        </a>
+                                    )}
+                                    <a
+                                        target='_blank'
+                                        href={`https://penguinmod.com/report?type=project&id=${projectId}`}
+                                        className={styles.reportLink}
+                                    >
+                                        <img src="/report_flag.png" alt="!"></img>
+                                        Report
+                                    </a>
+                                </div>
                             )}
-                            <div className={styles.section}>
+                            {/* this is pretty pointless now that we have the home page... */}
+                            {/* <div className={styles.section}>
                                 <p>
                                     <FormattedMessage
                                         // eslint-disable-next-line max-len
@@ -359,7 +372,7 @@ class Interface extends React.Component {
                                         id="tw.home.description"
                                     />
                                 </p>
-                            </div>
+                            </div> */}
                             <div className={styles.section}>
                                 <FeaturedProjects />
                             </div>

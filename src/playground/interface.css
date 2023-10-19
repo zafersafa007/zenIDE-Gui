@@ -201,6 +201,22 @@ a {
     font-weight: bold;
 }
 
+.center-sector {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.report-link {
+    color: red !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.report-link > img {
+    height: 16px;
+    margin-right: 4px;
+}
+
 .remixList {
     overflow-x: auto;
     display: flex;
