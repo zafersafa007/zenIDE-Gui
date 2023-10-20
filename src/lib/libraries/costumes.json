@@ -2399,6 +2399,19 @@
         "rotationCenterY": 72
     },
     {
+        "name": "Cheesy Puffs2",
+        "tags": [
+            "hot",
+            "spicy"
+        ],
+        "bitmapResolution": 2,
+        "dataFormat": "png",
+        "rotationCenterX": 87,
+        "rotationCenterY": 72,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/redcheesepuffs.png"
+    },
+    {
         "name": "Chick-a",
         "tags": [
             "animals",
@@ -6742,6 +6755,20 @@
         "rotationCenterY": 248
     },
     {
+        "name": "Lemon",
+        "tags": [
+            "food",
+            "yellow",
+            "fruit"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/lemon.svg"
+    },
+    {
         "name": "Lightning",
         "tags": [
             "weather",
@@ -7691,6 +7718,19 @@
         "md5ext": "b823f73a31e61fd362574e2c24dfc0c2.svg",
         "rotationCenterX": 49,
         "rotationCenterY": 27
+    },
+    {
+        "name": "Orange3",
+        "tags": [
+            "food",
+            "fruit"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/orange.svg"
     },
     {
         "name": "Outfielder-a",
@@ -10361,6 +10401,21 @@
         "md5ext": "5456a723f3b35eaa946b974a59888793.svg",
         "rotationCenterX": 49,
         "rotationCenterY": 63
+    },
+    {
+        "name": "Tomato",
+        "tags": [
+            "food",
+            "red",
+            "crunchy",
+            "fruit"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/tomato.svg"
     },
     {
         "name": "Toucan-a",

@@ -32,6 +32,11 @@ class CostumeLibrary extends React.PureComponent {
             bitmapResolution: item.bitmapResolution,
             skinId: null
         };
+        if (item.fromPenguinModLibrary) {
+            vmCostume.fromPenguinModLibrary = true;
+            vmCostume.libraryId = item.libraryFilePage;
+            vmCostume.dataFormat = item.dataFormat;
+        };
         this.props.vm.addCostumeFromLibrary(item.md5ext, vmCostume);
     }
     render () {
@@ -39,6 +44,7 @@ class CostumeLibrary extends React.PureComponent {
             <LibraryComponent
                 data={getCostumeLibrary()}
                 id="costumeLibrary"
+                actor="CostumeLibrary"
                 tags={spriteTags}
                 header={"Costumes"}
                 title={this.props.intl.formatMessage(messages.libraryTitle)}

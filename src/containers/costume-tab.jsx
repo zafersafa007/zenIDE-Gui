@@ -179,6 +179,11 @@ class CostumeTab extends React.Component {
             bitmapResolution: item.bitmapResolution,
             skinId: null
         };
+        if (item.fromPenguinModLibrary) {
+            vmCostume.fromPenguinModLibrary = true;
+            vmCostume.libraryId = item.libraryFilePage;
+            vmCostume.dataFormat = item.dataFormat;
+        };
         this.handleNewCostume(vmCostume, true /* fromCostumeLibrary */);
     }
     async handleSurpriseBackdrop() {
