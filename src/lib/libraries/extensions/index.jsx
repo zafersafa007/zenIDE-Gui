@@ -59,6 +59,7 @@ import penguinmodLibraryExtensionIcon from './penguinmod/library.svg';
 
 import filesExtensionIcon from './penguinmod/extensions/files.png';
 import jgJSONExtensionIcon from './penguinmod/extensions/json.png';
+import jgTailgatingExtensionIcon from './penguinmod/extensions/tailgating.png';
 import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png';
 import jgPrismExtensionIcon from './penguinmod/extensions/prism.png';
 
@@ -411,6 +412,14 @@ const menuItems = [
         credits: 'easings.net, Arrow & GarboMuffin',
         description: 'Smoothly animating values using different easing functions and directions.',
         iconURL: 'https://extensions.turbowarp.org/images/JeremyGamer13/tween.svg',
+        tags: ['penguinmod'],
+        featured: true
+    },
+    {
+        name: 'Tailgating',
+        extensionId: 'jgTailgating',
+        description: 'Have sprites & clones follow behind other sprites & clones by an offset, like RPG party members.',
+        iconURL: jgTailgatingExtensionIcon,
         tags: ['penguinmod'],
         featured: true
     },
