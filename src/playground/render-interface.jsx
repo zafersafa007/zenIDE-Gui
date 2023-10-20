@@ -213,6 +213,11 @@ class Interface extends React.Component {
             document.title = `${title} - PenguinMod`;
         }
     }
+    copyProjectLink(id) {
+        if ("clipboard" in navigator && "writeText" in navigator.clipboard) {
+            navigator.clipboard.writeText(`https://projects.penguinmod.com/${id}`);
+        }
+    }
     render() {
         const {
             /* eslint-disable no-unused-vars */
@@ -344,6 +349,13 @@ class Interface extends React.Component {
                             <VoteFrame id={projectId} darkmode={this.props.isDark}></VoteFrame>
                             {projectId !== '0' && (
                                 <div className={styles.centerSector}>
+                                    <button
+                                        onClick={() => this.copyProjectLink(projectId)}
+                                        className={styles.shareLink}
+                                    >
+                                        <img src="/share_project.png" alt=">"></img>
+                                        Copy Link
+                                    </button>
                                     {extraProjectInfo.author && (
                                         <a
                                             target="_blank"
