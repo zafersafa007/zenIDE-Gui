@@ -766,7 +766,7 @@ const menuItems = [
                 id="tw.extensionGallery.description"
             />
         ),
-        tags: ['tw'],
+        tags: ['tw', 'turbowarp'],
         featured: true
     },
     {
@@ -948,7 +948,6 @@ const menuItems = [
                 id="tw.customExtension.description"
             />
         ),
-        tags: ['tw'],
         featured: true
     }
 ];
