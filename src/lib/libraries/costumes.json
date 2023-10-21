@@ -1088,7 +1088,7 @@
         "rotationCenterY": 71
     },
     {
-        "name": "Bobert",
+        "name": "Bob",
         "tags": [
             "drawing",
             "character"
@@ -1098,7 +1098,7 @@
         "rotationCenterX": 0,
         "rotationCenterY": 0,
         "fromPenguinModLibrary": true,
-        "libraryFilePage": "images/Bobert.svg"
+        "libraryFilePage": "images/Bob.svg"
     },
     {
         "name": "Bowl-a",
