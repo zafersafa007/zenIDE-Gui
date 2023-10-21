@@ -1088,19 +1088,6 @@
         "rotationCenterY": 71
     },
     {
-        "name": "Bob",
-        "tags": [
-            "drawing",
-            "character"
-        ],
-        "bitmapResolution": 1,
-        "dataFormat": "svg",
-        "rotationCenterX": 0,
-        "rotationCenterY": 0,
-        "fromPenguinModLibrary": true,
-        "libraryFilePage": "images/Bob.svg"
-    },
-    {
         "name": "Bowl-a",
         "tags": [
             "thing",
@@ -1152,6 +1139,19 @@
         "md5ext": "556288a1c996345c751a3dc88b570cfa.svg",
         "rotationCenterX": 135,
         "rotationCenterY": 25
+    },
+    {
+        "name": "Buddy",
+        "tags": [
+            "drawing",
+            "character"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/Buddy.svg"
     },
     {
         "name": "Building-a",
