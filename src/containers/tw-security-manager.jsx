@@ -27,6 +27,9 @@ const isTrustedExtension = url => (
     url.startsWith('https://extensions.penguinmod.com/') ||
     url.startsWith('https://penguinmod-extensions-gallery.vercel.app/') ||
 
+    // Trust other people's galleries. These can be removed in the future, they will just show a pop-up on load if they are.
+    url.startsWith('https://sharkpools-extensions.vercel.app/') || // SharkPool
+
     // For development.
     url.startsWith('http://localhost:8000') ||
     url.startsWith('http://localhost:6000') || // Launcher Home

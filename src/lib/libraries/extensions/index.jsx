@@ -727,49 +727,6 @@ const menuItems = [
         featured: true
     },
     {
-        name: (
-            <FormattedMessage
-                defaultMessage="PenguinMod Extra Extensions"
-                description="Name of library item to open the Extra Extensions gallery"
-                id="pm.extraLibraryExtensions.name"
-            />
-        ),
-        href: 'https://extensions.penguinmod.com/',
-        extensionId: 'special_penguinmodExtensionLibrary',
-        iconURL: penguinmodLibraryExtensionIcon,
-        description: (
-            <FormattedMessage
-                defaultMessage="See some user-submitted extensions. Opens in a new tab."
-                description="Description of library item to open the Extra Extensions gallery"
-                id="pm.extraLibraryExtensions.description"
-            />
-        ),
-        tags: ['penguinmod'],
-        featured: true
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="TurboWarp Extension Gallery"
-                description="Name of extensions.turbowarp.org in extension library"
-                id="tw.extensionGallery.name"
-            />
-        ),
-        href: 'https://extensions.turbowarp.org/',
-        extensionId: 'special_turbowarpExtensionLibrary',
-        iconURL: galleryIcon,
-        description: (
-            <FormattedMessage
-                // eslint-disable-next-line max-len
-                defaultMessage="We list many TurboWarp extensions here for convenience, but you can find even more on extensions.turbowarp.org."
-                description="Description of extensions.turbowarp.org in extension library"
-                id="tw.extensionGallery.description"
-            />
-        ),
-        tags: ['tw', 'turbowarp'],
-        featured: true
-    },
-    {
         name: 'micro:bit',
         extensionId: 'microbit',
         collaborator: 'micro:bit',
@@ -931,6 +888,49 @@ const menuItems = [
         helpLink: 'https://scratch.mit.edu/vernier'
     },
     {
+        name: (
+            <FormattedMessage
+                defaultMessage="PenguinMod Extra Extensions"
+                description="Name of library item to open the Extra Extensions gallery"
+                id="pm.extraLibraryExtensions.name"
+            />
+        ),
+        href: 'https://extensions.penguinmod.com/',
+        extensionId: 'special_penguinmodExtensionLibrary',
+        iconURL: penguinmodLibraryExtensionIcon,
+        description: (
+            <FormattedMessage
+                defaultMessage="See some user-submitted extensions. Opens in a new tab."
+                description="Description of library item to open the Extra Extensions gallery"
+                id="pm.extraLibraryExtensions.description"
+            />
+        ),
+        tags: ['penguinmod'],
+        featured: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="TurboWarp Extension Gallery"
+                description="Name of extensions.turbowarp.org in extension library"
+                id="tw.extensionGallery.name"
+            />
+        ),
+        href: 'https://extensions.turbowarp.org/',
+        extensionId: 'special_turbowarpExtensionLibrary',
+        iconURL: galleryIcon,
+        description: (
+            <FormattedMessage
+                // eslint-disable-next-line max-len
+                defaultMessage="We list many TurboWarp extensions here for convenience, but you can find even more on extensions.turbowarp.org."
+                description="Description of extensions.turbowarp.org in extension library"
+                id="tw.extensionGallery.description"
+            />
+        ),
+        tags: ['tw', 'turbowarp'],
+        featured: true
+    },
+    {
         // not really an extension, but it's easiest to present it as one
         name: (
             <FormattedMessage
@@ -992,6 +992,22 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod'],
             description: 'Log information and run commands. Good for debugging packaged projects or just easily changing things.',
+            featured: true
+        },
+        {
+            name: 'Test Extension Loader',
+            href: 'https://studio.penguinmod.site/loadExt.html',
+            extensionId: 'special_testExtensionLibrary',
+            iconURL: defaultExtensionIcon,
+            description: 'Test loading extensions from a library. For developers.',
+            featured: true
+        },
+        {
+            name: 'Editor',
+            href: 'https://studio.penguinmod.com/editor.html',
+            extensionId: 'special_editorExtensionLibrary',
+            iconURL: penguinmodLibraryExtensionIcon,
+            description: 'Opens the editor with this tab as the parent, still with the library opened. For developers.',
             featured: true
         },
         {

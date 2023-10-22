@@ -31,13 +31,110 @@ const messages = defineMessages({
     }
 });
 
+// Only trust loading extension links from these origins.
+// For user-made libraries.
+const TRUSTED_LOADEXT_ORIGINS = [
+    'https://studio.penguinmod.site', // for development
+    'https://studio.penguinmod.com', // for development
+    'https://extensions.penguinmod.com',
+    'https://sharkpools-extensions.vercel.app',
+];
+
 class ExtensionLibrary extends React.PureComponent {
     constructor(props) {
         super(props);
         bindAll(this, [
-            'handleItemSelect'
+            'handleItemSelect',
+            'wrapperEventHandler'
         ]);
     }
+
+    componentDidMount() {
+        window.addEventListener('message', this.wrapperEventHandler);
+    }
+    componentWillUnmount() {
+        window.removeEventListener('message', this.wrapperEventHandler);
+    }
+    async wrapperEventHandler(e) {
+        // Don't recursively try to run this event.
+        if (e.origin === window.origin) {
+            return;
+        }
+
+        // Only trust loading extension links from these origins.
+        let foundTrustedOrigin = false;
+        for (const trustedOrigin of TRUSTED_LOADEXT_ORIGINS) {
+            if (e.origin.startsWith(trustedOrigin)) {
+                foundTrustedOrigin = true;
+                break;
+            }
+        }
+        if (!foundTrustedOrigin) {
+            console.log(e.origin);
+            e.source.postMessage({
+                p4: {
+                    type: 'error',
+                    error: 'not_trusted'
+                }
+            }, e.origin);
+            return;
+        }
+
+        if (!e.data.loadExt) {
+            e.source.postMessage({
+                p4: {
+                    type: 'error',
+                    error: 'no_loadExt'
+                }
+            }, e.origin);
+            return;
+        }
+
+        const extensionId = e.data.loadExt;
+        if (typeof extensionId !== 'string') {
+            e.source.postMessage({
+                p4: {
+                    type: 'error',
+                    error: 'not_string'
+                }
+            }, e.origin);
+            return;
+        }
+
+        // load the extension like any other custom extension url (this means sandboxing for some urls)
+        if (this.props.vm.extensionManager.isExtensionLoaded(extensionId)) {
+            this.props.onCategorySelected(extensionId);
+            // i mean, technically we succeeded
+            e.source.postMessage({
+                p4: {
+                    type: 'success'
+                }
+            }, e.origin);
+        } else {
+            this.props.vm.extensionManager.loadExtensionURL(extensionId)
+                .then(() => {
+                    this.props.onCategorySelected(extensionId);
+                    // succeeded
+                    e.source.postMessage({
+                        p4: {
+                            type: 'success'
+                        }
+                    }, e.origin);
+                })
+                .catch(err => {
+                    log.error(err);
+                    // The source website is expected to display the error
+                    e.source.postMessage({
+                        p4: {
+                            type: 'error',
+                            error: 'couldnt_load',
+                            pmerror: String(err.stack ? err.stack : err)
+                        }
+                    }, e.origin);
+                });
+        }
+    }
+
     handleItemSelect(item) {
         // eslint-disable-next-line no-alert
         // if (item.incompatibleWithScratch && !confirm(this.props.intl.formatMessage(messages.incompatible))) {
