@@ -9041,6 +9041,19 @@
         "rotationCenterY": 70
     },
     {
+        "name": "Remote",
+        "tags": [
+            "tv",
+            "television"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/remote.svg"
+    },
+    {
         "name": "Retro Robot A",
         "tags": [
             "robot"
