@@ -1011,6 +1011,14 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
+            name: 'SharkpoolGallery',
+            href: 'https://sharkpools-extensions.vercel.app/?originPM=true',
+            extensionId: 'special_sharkpoolExtensionLibrary',
+            iconURL: defaultExtensionIcon,
+            description: 'Temporarily the listing for Sharkpool\'s extensions. For development and will be polished later.',
+            featured: true
+        },
+        {
             name: (
                 <FormattedMessage
                     defaultMessage="OOP"
