@@ -1088,6 +1088,20 @@
         "rotationCenterY": 71
     },
     {
+        "name": "Bingus",
+        "tags": [
+            "cat",
+            "animals",
+            "realistic"
+        ],
+        "bitmapResolution": 2,
+        "dataFormat": "png",
+        "rotationCenterX": 87,
+        "rotationCenterY": 128,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/bingus.png"
+    },
+    {
         "name": "Bowl-a",
         "tags": [
             "thing",
