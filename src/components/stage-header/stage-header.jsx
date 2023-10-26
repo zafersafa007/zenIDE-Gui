@@ -52,9 +52,9 @@ const messages = defineMessages({
         id: 'gui.stageHeader.fullscreenControl'
     },
     openSettingsMessage: {
-        defaultMessage: 'Open advanced settings',
-        description: 'Button to open advanced settings in embeds',
-        id: 'tw.openAdvanced'
+        defaultMessage: 'Open gameplay settings',
+        description: 'Button to open gameplay settings in embeds',
+        id: 'pm.openGameplay'
     }
 });
 

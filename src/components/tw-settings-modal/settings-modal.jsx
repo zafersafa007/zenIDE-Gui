@@ -17,9 +17,9 @@ const BufferedInput = BufferedInputHOC(Input);
 
 const messages = defineMessages({
     title: {
-        defaultMessage: 'Advanced Settings',
+        defaultMessage: 'Settings',
         description: 'Title of settings modal',
-        id: 'tw.settingsModal.title'
+        id: 'pm.settingsModal.title'
     },
     help: {
         defaultMessage: 'Click for help',
@@ -70,7 +70,9 @@ class UnwrappedSetting extends React.Component {
                     [styles.active]: this.props.active
                 })}
             >
-                <div className={styles.label}>
+                <div className={classNames(styles.label, {
+                    [styles.labelUnsetHeight]: this.props.unsetHeight === true
+                })}>
                     {this.props.primary}
                     <button
                         className={styles.helpIcon}
@@ -298,36 +300,62 @@ const CustomStageSize = ({
     stageWidth,
     onStageWidthChange,
     stageHeight,
-    onStageHeightChange
+    onStageHeightChange,
+    onStagePresetUsed
 }) => (
     <Setting
         active={customStageSizeEnabled}
+        unsetHeight={true}
         primary={(
             <div className={classNames(styles.label, styles.customStageSize)}>
                 <FormattedMessage
-                    defaultMessage="Custom Stage Size:"
-                    description="Custom Stage Size option"
-                    id="tw.settingsModal.customStageSize"
+                    defaultMessage="Stage Size:"
+                    description="Stage Size option"
+                    id="pm.settingsModal.stageSize"
                 />
-                <BufferedInput
-                    value={stageWidth}
-                    onSubmit={onStageWidthChange}
-                    className={styles.customStageSizeInput}
-                    type="number"
-                    min="0"
-                    max="1024"
-                    step="1"
-                />
-                <span>{'×'}</span>
-                <BufferedInput
-                    value={stageHeight}
-                    onSubmit={onStageHeightChange}
-                    className={styles.customStageSizeInput}
-                    type="number"
-                    min="0"
-                    max="1024"
-                    step="1"
-                />
+                <div>
+                    <button
+                        className={styles.customStageSizeButton}
+                        data-selected={stageWidth === 480 && stageHeight === 360}
+                        onClick={() => onStagePresetUsed(false)}
+                    >
+                        4:3
+                    </button>
+                    <button
+                        className={styles.customStageSizeButton}
+                        data-selected={stageWidth === 640 && stageHeight === 360}
+                        data-widescreen={true}
+                        onClick={() => onStagePresetUsed(true)}
+                    >
+                        16:9
+                    </button>
+                </div>
+                <div className={styles.customStageSizeContainer}>
+                    <FormattedMessage
+                        defaultMessage="Custom Stage Size:"
+                        description="Custom Stage Size option"
+                        id="tw.settingsModal.customStageSize"
+                    />
+                    <BufferedInput
+                        value={stageWidth}
+                        onSubmit={onStageWidthChange}
+                        className={styles.customStageSizeInput}
+                        type="number"
+                        min="0"
+                        max="1024"
+                        step="1"
+                    />
+                    <span>{'×'}</span>
+                    <BufferedInput
+                        value={stageHeight}
+                        onSubmit={onStageHeightChange}
+                        className={styles.customStageSizeInput}
+                        type="number"
+                        min="0"
+                        max="1024"
+                        step="1"
+                    />
+                </div>
             </div>
         )}
         secondary={
@@ -359,7 +387,8 @@ CustomStageSize.propTypes = {
     stageWidth: PropTypes.number,
     onStageWidthChange: PropTypes.func,
     stageHeight: PropTypes.number,
-    onStageHeightChange: PropTypes.func
+    onStageHeightChange: PropTypes.func,
+    onStagePresetUsed: PropTypes.func
 };
 
 const StoreProjectOptions = ({ onStoreProjectOptions }) => (
@@ -403,16 +432,21 @@ Header.propTypes = {
 const SettingsModalComponent = props => (
     <Modal
         className={styles.modalContent}
-        onRequestClose={props.onClose}
+        onRequestClose={(...args) => {
+            if (!props.isEmbedded) {
+                props.onStoreProjectOptions();
+            }
+            props.onClose(...args)
+        }}
         contentLabel={props.intl.formatMessage(messages.title)}
         id="settingsModal"
     >
         <Box className={styles.body}>
             <Header>
                 <FormattedMessage
-                    defaultMessage="Featured"
+                    defaultMessage="Gameplay"
                     description="Settings modal section"
-                    id="tw.settingsModal.featured"
+                    id="pm.settingsModal.gameplay"
                 />
             </Header>
             <CustomFPS
@@ -453,9 +487,9 @@ const SettingsModalComponent = props => (
             />
             <Header>
                 <FormattedMessage
-                    defaultMessage="Danger Zone"
+                    defaultMessage="Screen Resolution"
                     description="Settings modal section"
-                    id="tw.settingsModal.dangerZone"
+                    id="pm.settingsModal.screenResolution"
                 />
             </Header>
             {!props.isEmbedded && (
@@ -463,11 +497,11 @@ const SettingsModalComponent = props => (
                     {...props}
                 />
             )}
-            {!props.isEmbedded && (
+            {/* {!props.isEmbedded && (
                 <StoreProjectOptions
                     {...props}
                 />
-            )}
+            )} */}
         </Box>
     </Modal>
 );

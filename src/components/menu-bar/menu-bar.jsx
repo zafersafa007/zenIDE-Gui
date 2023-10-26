@@ -787,9 +787,9 @@ class MenuBar extends React.Component {
                                 <MenuSection>
                                     <MenuItem onClick={this.props.onClickSettings}>
                                         <FormattedMessage
-                                            defaultMessage="Advanced Settings"
-                                            description="Menu bar item for advanced settings"
-                                            id="tw.menuBar.moreSettings"
+                                            defaultMessage="Gameplay Settings"
+                                            description="Menu bar item for gameplay settings"
+                                            id="pm.menuBar.moreSettings"
                                         />
                                     </MenuItem>
                                 </MenuSection>
@@ -816,9 +816,9 @@ class MenuBar extends React.Component {
                         >
                             <div>
                                 <FormattedMessage
-                                    defaultMessage="Advanced"
-                                    description="Text for advanced settings menu item"
-                                    id="tw.menuBar.advanced"
+                                    defaultMessage="Settings"
+                                    description="Text for gameplay settings menu item"
+                                    id="pm.menuBar.gameplaySettings"
                                 />
                             </div>
                         </div>
