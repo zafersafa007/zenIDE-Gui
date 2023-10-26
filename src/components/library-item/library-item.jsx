@@ -237,7 +237,7 @@ class LibraryItemComponent extends React.PureComponent {
                                 </div>
                                 <div className={styles.featuredExtensionCollaboration}>
                                     {this.props.collaborator ? (
-                                        <div>
+                                        <div className={styles.smallBottomMargin}>
                                             <div>
                                                 <FormattedMessage
                                                     defaultMessage="Collaboration with"
@@ -253,7 +253,7 @@ class LibraryItemComponent extends React.PureComponent {
                                         </div>
                                     ) : null}
                                     {this.props.twDeveloper ? (
-                                        <div>
+                                        <div className={styles.smallBottomMargin}>
                                             <div>
                                                 Originally for TurboWarp by
                                             </div>
@@ -265,7 +265,7 @@ class LibraryItemComponent extends React.PureComponent {
                                         </div>
                                     ) : null}
                                     {this.props.extDeveloper ? (
-                                        <div>
+                                        <div className={styles.smallBottomMargin}>
                                             <div>
                                                 Created by
                                             </div>
@@ -277,7 +277,7 @@ class LibraryItemComponent extends React.PureComponent {
                                         </div>
                                     ) : null}
                                     {this.props.eventSubmittor ? (
-                                        <div>
+                                        <div className={styles.smallBottomMargin}>
                                             <div>
                                                 Event Submission by
                                             </div>
@@ -289,7 +289,7 @@ class LibraryItemComponent extends React.PureComponent {
                                         </div>
                                     ) : null}
                                     {this.props.credits ? (
-                                        <div>
+                                        <div className={styles.smallBottomMargin}>
                                             <div>
                                                 Credits
                                             </div>

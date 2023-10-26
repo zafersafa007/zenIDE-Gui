@@ -236,6 +236,7 @@ const menuItems = [
         ),
         extensionId: 'text2speech',
         collaborator: 'Amazon Web Services',
+        credits: 'Google TTS',
         iconURL: text2speechIconURL,
         insetIconURL: text2speechInsetIconURL,
         customInsetColor: '#9966FF',

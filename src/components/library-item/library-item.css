@@ -158,6 +158,9 @@
     width: 20px;
     height: 20px;
 }
+.small-bottom-margin {
+    margin-bottom: 4px;
+}
 
 .library-item-image-container-wrapper {
     height: 100px;
