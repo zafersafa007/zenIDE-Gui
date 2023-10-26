@@ -50,12 +50,13 @@ import gdxforInsetIconURL from './gdxfor/gdxfor-small.svg';
 import gdxforConnectionIconURL from './gdxfor/gdxfor-illustration.svg';
 import gdxforConnectionSmallIconURL from './gdxfor/gdxfor-small.svg';
 
+// turbowarp & gallery icons
 import twIcon from './tw/tw.svg';
 import galleryIcon from './gallery/gallery.svg';
-import turbowarpIcon from './penguinmod/extensions/turbowarp_icon.svg';
-
 import customExtensionIcon from './custom/custom.svg';
+import turbowarpIcon from './penguinmod/extensions/turbowarp_icon.svg';
 import penguinmodLibraryExtensionIcon from './penguinmod/library.svg';
+import sharkpoolGalleryIcon from './penguinmod/sharkpool-library.svg';
 
 import filesExtensionIcon from './penguinmod/extensions/files.png';
 import jgJSONExtensionIcon from './penguinmod/extensions/json.png';
@@ -906,7 +907,7 @@ const menuItems = [
                 id="pm.extraLibraryExtensions.description"
             />
         ),
-        tags: ['penguinmod'],
+        tags: ['penguinmod', 'library'],
         featured: true
     },
     {
@@ -928,7 +929,17 @@ const menuItems = [
                 id="tw.extensionGallery.description"
             />
         ),
-        tags: ['tw', 'turbowarp'],
+        tags: ['tw', 'turbowarp', 'library'],
+        featured: true
+    },
+    {
+        name: 'Sharkpool\'s Extension Collection',
+        href: 'https://sharkpools-extensions.vercel.app/?originPM=true',
+        extensionId: 'special_sharkpoolExtensionLibrary',
+        iconURL: sharkpoolGalleryIcon,
+        description: 'Tons of extensions created by SharkPool.\n\nClick on an extension while this menu is open to add it to your project.',
+        credits: 'Listed in the site',
+        tags: ['library'],
         featured: true
     },
     {
@@ -1009,14 +1020,6 @@ if (IsLocal || IsLiveTests) {
             extensionId: 'special_editorExtensionLibrary',
             iconURL: penguinmodLibraryExtensionIcon,
             description: 'Opens the editor with this tab as the parent, still with the library opened. For developers.',
-            featured: true
-        },
-        {
-            name: 'SharkpoolGallery',
-            href: 'https://sharkpools-extensions.vercel.app/?originPM=true',
-            extensionId: 'special_sharkpoolExtensionLibrary',
-            iconURL: defaultExtensionIcon,
-            description: 'Temporarily the listing for Sharkpool\'s extensions. For development and will be polished later.',
             featured: true
         },
         {
