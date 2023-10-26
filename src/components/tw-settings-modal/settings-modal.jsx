@@ -121,8 +121,6 @@ BooleanSetting.propTypes = {
     label: PropTypes.node.isRequired
 };
 
-/*
-dd back: nohqpen
 const HighQualityPen = props => (
     <BooleanSetting
         {...props}
@@ -144,7 +142,6 @@ const HighQualityPen = props => (
         slug="high-quality-pen"
     />
 );
-*/
 
 const CustomFPS = props => (
     <BooleanSetting
@@ -427,13 +424,10 @@ const SettingsModalComponent = props => (
                 value={props.interpolation}
                 onChange={props.onInterpolationChange}
             />
-            {/*
-            add back: nohqpen
             <HighQualityPen
                 value={props.highQualityPen}
                 onChange={props.onHighQualityPenChange}
             />
-            */}
             <WarpTimer
                 value={props.warpTimer}
                 onChange={props.onWarpTimerChange}
