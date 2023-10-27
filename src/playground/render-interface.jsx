@@ -129,9 +129,9 @@ const Footer = () => (
                             id="tw.footer.credits"
                         />
                     </a>
-                    <a href="https://github.com/sponsors/GarboMuffin">
+                    <a href="https://penguinmod.com/donate">
                         <FormattedMessage
-                            defaultMessage="Donate to TurboWarp Developer"
+                            defaultMessage="Donate"
                             description="Donation link in footer"
                             id="tw.footer.donate"
                         />
