@@ -933,7 +933,7 @@ const menuItems = [
         featured: true
     },
     {
-        name: 'Sharkpool\'s Extension Collection',
+        name: 'SharkPool\'s Extension Collection',
         href: 'https://sharkpools-extensions.vercel.app/?originPM=true',
         extensionId: 'special_sharkpoolExtensionLibrary',
         iconURL: sharkpoolGalleryIcon,
