@@ -479,7 +479,7 @@ const menuItems = [
         tags: ['penguinmod'],
         iconURL: jgRuntimeExtensionIcon,
         description: 'Blocks for updating Scratch objects like the stage and sprites.',
-        credits: 'TheShovel, showierdata9978',
+        credits: 'TheShovel, showierdata9978, SharkPool',
         featured: true
     },
     {
