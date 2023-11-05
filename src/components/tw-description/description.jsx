@@ -185,9 +185,9 @@ class Renderer {
     mention (name) {
         return (
             <a
-                href={`https://scratch.mit.edu/users/${name}`}
+                href={`https://penguinmod.com/profile?user=${name}`}
             >
-                {`#${name}`}
+                {`@${name}`}
             </a>
         );
     }
