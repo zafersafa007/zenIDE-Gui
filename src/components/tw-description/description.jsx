@@ -197,6 +197,7 @@ class Renderer {
             <img
                 src={`https://library.penguinmod.com/files/emojis/${name}.png`}
                 alt={name}
+                title={`:${name}:`}
                 className={styles.emoji}
             />
         );
