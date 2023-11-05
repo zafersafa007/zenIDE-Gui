@@ -48,3 +48,9 @@ h1 .emoji {
 em .emoji {
     transform: skew(-12deg, 0deg);
 }
+strong .emoji {
+    filter: contrast(2);
+}
+del .emoji {
+    filter: blur(2px);
+}
