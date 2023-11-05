@@ -1,52 +1,212 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormattedMessage } from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 
 import styles from './description.css';
-import reactStringReplace from 'react-string-replace';
+import {render} from 'PenguinMod-MarkDown';
 
-import mdParser from 'md';
-import escape from 'scratch-vm/src/util/xml-escape';
+class Renderer {
+    constructor (options) {
+        this.options = options || {};
+    }
 
-const decorate = text => {
-    // https://github.com/LLK/scratch-www/blob/25232a06bcceeaddec8fcb24fb63a44d870cf1cf/src/lib/decorate-text.jsx
+    code (code) {
+        return (
+            <pre>
+                <code>
+                    {code}
+                </code>
+            </pre>
+        );
+    }
 
-    const isPmLink = /https:\/(\/\w+\.|\/)penguinmod\.(site\/.*|site)/sg;
-    const escaped = escape(text);
-    const htmlText = mdParser(escaped, {
-        linksInNewTab: link => isPmLink.test(link)
+    blockquote (quote) {
+        return (<blockquote>{quote}</blockquote>);
+    }
+
+    html (html) {
+        return html;
+    }
+
+    heading (text, level) {
+        switch (level) {
+        case 1:
+            return (<h1>{text}</h1>);
+        case 2:
+            return (<h2>{text}</h2>);
+        case 3:
+            return (<h3>{text}</h3>);
+        case 4:
+            return (<h4>{text}</h4>);
+        case 5:
+            return (<h5>{text}</h5>);
+        case 6:
+            return (<h6>{text}</h6>);
+        }
+    }
+
+    hr () {
+        return (<hr />);
+    }
+
+    list (body, ordered, taskList) {
+        const css = taskList
+            ? styles.taskList
+            : null;
+        return (ordered
+            ? (<ol className={css}>{body}</ol>)
+            : (<ul className={css}>{body}</ul>));
+    }
+
+    listitem (text, checked) {
+        if (typeof checked === 'undefined') {
+            return (<li>{text}</li>);
+        }
+
+        return (
+            <li className={styles.taskListItem}>
+                <input
+                    type="checkbox"
+                    className={styles.taskListItemCheckbox}
+                    checked={checked}
+                />
+                {text}
+            </li>
+        );
+    }
+
+    paragraph (text) {
+        return (<p>{text}</p>);
+    }
+
+    table (header, body) {
+        return (
+            <table>
+                <thead>
+                    {header}
+                </thead>
+                <tbody>
+                    {body}
+                </tbody>
+            </table>
+        );
+    }
+
+    tablerow (content) {
+        return (<tr>{content}</tr>);
+    }
+
+    tablecell (content, flags) {
+        const alignment = flags.align
+            ? `text-align:${flags.align}`
+            : null;
+
+        return (flags.header
+            ? <th style={alignment}>{content}</th>
+            : <td style={alignment}>{content}</td>);
+    }
+
+    // span level renderer
+    strong (text) {
+        return (<strong>{text}</strong>);
+    }
+
+    em (text) {
+        return (<em>{text}</em>);
+    }
+
+    codespan (text) {
+        return (<code>{text}</code>);
+    }
+
+    br () {
+        return (<br />);
+    }
+
+    del (text) {
+        return (<del>{text}</del>);
+    }
+
+    link (href, title, text) {
+        if (this.options.sanitize) {
+            let prot;
+            try {
+                prot = decodeURIComponent(unescape(href))
+                    .replace(/[^\w:]/g, '')
+                    .toLowerCase();
+            } catch (err) {
+                return '';
+            }
+            if (
+                // eslint-disable-next-line no-script-url
+                prot.indexOf('javascript:') === 0 ||
+                prot.indexOf('vbscript:') === 0 ||
+                prot.indexOf('data:') === 0
+            ) {
+                // eslint-disable-line no-script-url
+                return '';
+            }
+        }
+        
+        return (
+            <a
+                href={href}
+                title={title}
+            >
+                {text}
+            </a>
+        );
+    }
+
+    image (href, title, text) {
+        return (
+            <img
+                src={href}
+                alt={text}
+                title={title}
+            />
+        );
+    }
+
+    text (text) {
+        return text;
+    }
+
+    project (id) {
+        return (
+            <a
+                href={`https://studio.penguinmod.com/#${id}`}
+            >
+                {`#${id}`}
+            </a>
+        );
+    }
+
+    mention (name) {
+        return (
+            <a
+                href={`https://scratch.mit.edu/users/${name}`}
+            >
+                {`#${name}`}
+            </a>
+        );
+    }
+
+    emoji (name) {
+        return (
+            <img
+                src={`https://library.penguinmod.com/files/emojis/${name}.png`}
+                alt={name}
+                className={styles.emoji}
+            />
+        );
+    }
+}
+
+const decorate = text =>
+    render(text, {
+        renderer: new Renderer()
     });
-    // not disabling this just incase, but this is intentional
-    const html = (<div dangerouslySetInnerHTML={{ __html: htmlText }} />);
-
-    // Make links clickable
-    const linkRegex = /(https?:\/\/[\w\d_\-.]{1,256}(?:\/(?:\S*[\w:/#[\]@$&'()*+=])?)?(?![^?!,:;\w\s]\S))/g;
-    text = reactStringReplace(html, linkRegex, (match, i) => (
-        <a
-            href={match}
-            rel="noreferrer"
-            key={match + i}
-        >{match}</a>
-    ));
-
-    // Make hashtags clickable
-    text = reactStringReplace(text, /#([\w-]+)/g, (match, i) => (
-        <a
-            href={`https://studio.penguinmod.com/#${match}`}
-            key={match + i}
-        >{`#${match}`}</a>
-    ));
-
-    // Make @s clickable
-    text = reactStringReplace(text, /@([\w-]+)/g, (match, i) => (
-        <a
-            href={`https://scratch.mit.edu/users/${match}`}
-            key={match + i}
-        >{`#${match}`}</a>
-    ));
-
-    return text;
-};
 
 const Description = ({
     instructions,
