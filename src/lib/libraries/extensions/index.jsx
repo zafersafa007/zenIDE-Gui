@@ -432,6 +432,7 @@ const menuItems = [
         tags: ['penguinmod'],
         description: 'Apply visual effects to the entire stage.',
         extDeveloper: 'TheShovel',
+        credits: 'SharkPool',
         featured: true
     },
     {
