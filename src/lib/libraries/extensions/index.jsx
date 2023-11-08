@@ -504,14 +504,14 @@ const menuItems = [
     },
     {
         name: 'CloudLink',
-        extensionId: 'https://extensions.turbowarp.org/cloudlink.js',
-        tags: ['turbowarp'],
+        extensionId: 'https://extensions.penguinmod.com/extensions/MikeDev101/cloudlink.js',
+        tags: ['turbowarp', 'penguinmod'],
         insetIconURL: cloudlinkIcon,
-        iconURL: 'https://extensions.turbowarp.org/images/cloudlink.svg',
-        description: 'A cool extension to interact with webservers',
+        iconURL: 'https://extensions.penguinmod.com/images/MikeDev101/cloudlink.svg',
+        description: 'A powerful WebSocket extension for Scratch.',
         featured: true,
         extDeveloper: 'MikeDev',
-        internetConnectionRequired: false
+        internetConnectionRequired: true
     },
     {
         name: 'LZ Compress',
