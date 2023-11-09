@@ -196,4 +196,9 @@ export default defineMessages({
         description: 'Tag for filtering a library by extension collections.',
         id: 'gui.libraryTags.library'
     },
+    extcreate: {
+        defaultMessage: 'Extension Creators',
+        description: 'Tag for finding all extension creator programs / website',
+        id: 'gui.libraryTags.extcreate'
+    },
 });
