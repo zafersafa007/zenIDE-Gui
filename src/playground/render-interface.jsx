@@ -194,6 +194,20 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
+                    <a href="terms.html">
+                        <FormattedMessage
+                            defaultMessage="Terms of Service"
+                            description="Link to Terms of Service"
+                            id="pm.terms"
+                        />
+                    </a>
+                    <a href="privacy.html">
+                        <FormattedMessage
+                            defaultMessage="Privacy Policy"
+                            description="Link to privacy policy"
+                            id="tw.privacy"
+                        />
+                    </a>
                     <a href="https://discord.gg/NZ9MBMYTZh">
                         <FormattedMessage
                             defaultMessage="Feedback & Bugs"
@@ -206,13 +220,6 @@ const Footer = () => (
                             defaultMessage="Source Code"
                             description="Link to source code"
                             id="tw.code"
-                        />
-                    </a>
-                    <a href="privacy.html">
-                        <FormattedMessage
-                            defaultMessage="Privacy Policy"
-                            description="Link to privacy policy"
-                            id="tw.privacy"
                         />
                     </a>
                 </div>
