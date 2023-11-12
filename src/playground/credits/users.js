@@ -132,6 +132,15 @@ const pmDevelopers = [
     'showierdata9978'
 ].map(fromHardcodedGithub);
 
+const pmApiDevelopers = [
+    'JeremyGamer13',
+    'RedMan13',
+    'tnix100',
+    'Ianyourgod',
+    'JoshAtticus',
+    'enderhacker'
+].map(fromHardcodedGithub);
+
 // todo: should translators be only named or...?
 const pmTranslators = [
     'kolikiscool'
@@ -167,5 +176,6 @@ export default {
     logoArtists: shuffle(logoArtists),
     extensionDevelopers: shuffle(extensionDevelopers),
     pmExtensionDevelopers: shuffle(pmExtensionDevelopers),
+    pmApiDevelopers: shuffle(pmApiDevelopers),
     pmTranslators: [].concat(shuffle(pmTranslators), shuffle(pmTranslatorsNamed)),
 };
