@@ -130,7 +130,7 @@ const pmDevelopers = [
     'MaterArc',
     'RedMan13',
     'showierdata9978',
-    'LipeGRS'
+    'PhilTheTrain'
 ].map(fromHardcodedGithub);
 
 const pmApiDevelopers = [
