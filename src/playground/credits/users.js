@@ -129,7 +129,8 @@ const pmDevelopers = [
     'jwklong',
     'MaterArc',
     'RedMan13',
-    'showierdata9978'
+    'showierdata9978',
+    'LipeGRS'
 ].map(fromHardcodedGithub);
 
 const pmApiDevelopers = [
