@@ -245,8 +245,8 @@ const pmTranslators = [
     },
     {
         text: 'keriyo',
-        image: `https://penguinmod.com/unknown_user.png`,
-        href: "https://studio.penguinmod.com/credits.html#",
+        image: `https://trampoline.turbowarp.org/avatars/by-username/keriyo`,
+        href: "https://penguinmod.com/profile?user=keriyo",
     },
     {
         text: 'tijabe',
