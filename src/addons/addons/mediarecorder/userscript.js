@@ -306,8 +306,10 @@ export default async ({ addon, console, msg }) => {
       const stream = new MediaStream();
       if (opts.recordWholeScreen && screenRecordingStream) {
         stream.addTrack(screenRecordingStream.getVideoTracks()[0]);
-        if (opts.audioEnabled) {
+        try {
           stream.addTrack(screenRecordingStream.getAudioTracks()[0]);
+        } catch (e) {
+          console.warn('Cannot add screen recording\'s audio', e);
         }
       } else {
         const videoStream = vm.runtime.renderer.canvas.captureStream();
