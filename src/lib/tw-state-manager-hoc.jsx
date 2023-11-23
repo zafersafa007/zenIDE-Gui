@@ -390,6 +390,12 @@ const TWStateManager = function (WrappedComponent) {
                     miscLimits: false
                 });
             }
+            
+            if (urlParams.has('optimize')) {
+                this.props.vm.setRuntimeOptions({
+                    dangerousOptimizations: true
+                });
+            }
 
             for (const extension of urlParams.getAll('extension')) {
                 this.props.vm.extensionManager.loadExtensionURL(extension);
@@ -508,6 +514,12 @@ const TWStateManager = function (WrappedComponent) {
                 } else {
                     searchParams.set('limitless', '');
                 }
+                
+                if (runtimeOptions.dangerousOptimizations) {
+                    searchParams.set('optimize', '');
+                } else {
+                    searchParams.delete('optimize');
+                }
 
                 setSearchParams(searchParams);
             }
@@ -590,6 +602,7 @@ const TWStateManager = function (WrappedComponent) {
         }),
         runtimeOptions: PropTypes.shape({
             miscLimits: PropTypes.bool,
+            dangerousOptimizations: PropTypes.bool,
             fencing: PropTypes.bool,
             maxClones: PropTypes.number
         }),
