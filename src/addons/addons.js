@@ -7,7 +7,6 @@ const addons = [
     'middle-click-popup',
     'jump-to-def',
     'editor-searchable-dropdowns',
-    'data-category-tweaks-v2',
     'block-palette-icons',
     'hide-flyout',
     'mediarecorder',
