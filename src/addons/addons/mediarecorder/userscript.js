@@ -10,6 +10,8 @@ export default async ({ addon, console, msg }) => {
   let recordBuffer = [];
   let recorder;
   let timeout;
+  // const isMp4CodecSupported = false;
+  const isMp4CodecSupported = MediaRecorder.isTypeSupported('video/webm;codecs=h264');
   while (true) {
     const elem = await addon.tab.waitForElement('div[class*="menu-bar_file-group"] > div:last-child:not(.sa-record)', {
       markAsSeen: true,
@@ -35,8 +37,7 @@ export default async ({ addon, console, msg }) => {
       const recordOptionSecondsInput = Object.assign(document.createElement("input"), {
         type: "number",
         min: 1,
-        max: 300,
-        defaultValue: 30,
+        defaultValue: 300,
         id: "recordOptionSecondsInput",
         className: addon.tab.scratchClass("prompt_variable-name-text-input"),
       });
@@ -53,7 +54,6 @@ export default async ({ addon, console, msg }) => {
       const recordOptionDelayInput = Object.assign(document.createElement("input"), {
         type: "number",
         min: 0,
-        max: 300,
         defaultValue: 0,
         id: "recordOptionDelayInput",
         className: addon.tab.scratchClass("prompt_variable-name-text-input"),
@@ -143,6 +143,27 @@ export default async ({ addon, console, msg }) => {
       recordOptionStop.appendChild(recordOptionStopLabel);
       content.appendChild(recordOptionStop);
 
+      // Record screen
+      const recordOptionScreen = Object.assign(document.createElement("p"), {
+        className: "mediaRecorderPopupOption",
+      });
+      const recordOptionScreenInput = Object.assign(document.createElement("input"), {
+        type: "checkbox",
+        defaultChecked: false,
+        id: "recordOptionScreen",
+      });
+      const recordOptionScreenLabel = Object.assign(document.createElement("label"), {
+        htmlFor: "recordOptionScreen",
+        textContent: 'Record the entire screen',
+      });
+      recordOptionScreen.appendChild(recordOptionScreenInput);
+      recordOptionScreen.appendChild(recordOptionScreenLabel);
+      content.appendChild(recordOptionScreen);
+      recordOptionScreenInput.disabled = true;
+      if ('mediaDevices' in navigator && typeof navigator.mediaDevices.getDisplayMedia === 'function') {
+        recordOptionScreenInput.disabled = false;
+      }
+
       let resolvePromise = null;
       const optionPromise = new Promise((resolve) => {
         resolvePromise = resolve;
@@ -179,6 +200,7 @@ export default async ({ addon, console, msg }) => {
             micEnabled: recordOptionMicInput.checked,
             waitUntilFlag: recordOptionFlagInput.checked,
             useStopSign: !recordOptionStopInput.disabled && recordOptionStopInput.checked,
+            recordWholeScreen: recordOptionScreenInput.checked,
           }),
         { once: true }
       );
@@ -215,8 +237,12 @@ export default async ({ addon, console, msg }) => {
         disposeRecorder();
       } else {
         recorder.onstop = () => {
-          const blob = new Blob(recordBuffer, { type: "video/webm" });
-          downloadBlob("video.webm", blob);
+          const blob = new Blob(recordBuffer, {
+            type: isMp4CodecSupported ?
+              "video/mp4"
+              : "video/webm"
+          });
+          downloadBlob(isMp4CodecSupported ? "video.mp4" : "video.webm", blob);
           disposeRecorder();
         };
         recorder.stop();
@@ -224,7 +250,7 @@ export default async ({ addon, console, msg }) => {
     };
     const startRecording = async (opts) => {
       // Timer
-      const secs = Math.min(300, Math.max(1, opts.secs));
+      const secs = Math.max(1, opts.secs);
 
       // Initialize MediaRecorder
       recordBuffer = [];
@@ -238,6 +264,19 @@ export default async ({ addon, console, msg }) => {
         } catch (e) {
           if (e.name !== "NotAllowedError" && e.name !== "NotFoundError") throw e;
           opts.micEnabled = false;
+        }
+      }
+      let screenRecordingStream;
+      if (opts.recordWholeScreen) {
+        // Show permission dialog before green flag is clicked
+        try {
+          screenRecordingStream = await navigator.mediaDevices.getDisplayMedia({
+            audio: opts.audioEnabled,
+            video: { mediaSource: "screen" }
+          });
+        } catch (e) {
+          console.warn('An error occurred trying to record the whole screen', e);
+          opts.recordWholeScreen = false;
         }
       }
       if (opts.waitUntilFlag) {
@@ -265,8 +304,17 @@ export default async ({ addon, console, msg }) => {
       isWaitingForFlag = false;
       waitingForFlagFunc = abortController = null;
       const stream = new MediaStream();
-      const videoStream = vm.runtime.renderer.canvas.captureStream();
-      stream.addTrack(videoStream.getVideoTracks()[0]);
+      if (opts.recordWholeScreen && screenRecordingStream) {
+        stream.addTrack(screenRecordingStream.getVideoTracks()[0]);
+        try {
+          stream.addTrack(screenRecordingStream.getAudioTracks()[0]);
+        } catch (e) {
+          console.warn('Cannot add screen recording\'s audio', e);
+        }
+      } else {
+        const videoStream = vm.runtime.renderer.canvas.captureStream();
+        stream.addTrack(videoStream.getVideoTracks()[0]);
+      }
 
       const ctx = new AudioContext();
       const dest = ctx.createMediaStreamDestination();
@@ -310,7 +358,11 @@ export default async ({ addon, console, msg }) => {
       if (opts.audioEnabled || opts.micEnabled) {
         stream.addTrack(dest.stream.getAudioTracks()[0]);
       }
-      recorder = new MediaRecorder(stream, { mimeType: "video/webm" });
+      recorder = new MediaRecorder(stream, { mimeType:
+        isMp4CodecSupported ?
+          "video/webm;codecs=h264"
+          : "video/webm"
+      });
       recorder.ondataavailable = (e) => {
         recordBuffer.push(e.data);
       };

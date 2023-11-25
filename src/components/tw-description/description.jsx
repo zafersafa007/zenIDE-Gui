@@ -185,9 +185,9 @@ class Renderer {
     mention (name) {
         return (
             <a
-                href={`https://scratch.mit.edu/users/${name}`}
+                href={`https://penguinmod.com/profile?user=${name}`}
             >
-                {`#${name}`}
+                {`@${name}`}
             </a>
         );
     }
@@ -197,6 +197,7 @@ class Renderer {
             <img
                 src={`https://library.penguinmod.com/files/emojis/${name}.png`}
                 alt={name}
+                title={`:${name}:`}
                 className={styles.emoji}
             />
         );

@@ -81,6 +81,9 @@ const Credits = () => (
             </p>
             <UserList users={UserData.pmDevelopers} />
             <p><i>The list order is randomized on each refresh.</i></p>
+            <p>There are even community members who have helped develop PenguinMod. People like <i>you!</i></p>
+            <UserList users={UserData.pmPullRequestDevelopers} />
+            <p><i>The list order is randomized on each refresh.</i></p>
         </section>
         <section>
             <h2>GitHub Pages</h2>
@@ -94,15 +97,33 @@ const Credits = () => (
             </a>
             <h2>Domain Provider</h2>
             <p>
-                <a href="https://penguinmod.com">penguinmod.com</a> (and any subdomains) are currently provided by NotHouse.
-                Currently no link to any known profile of theirs is publicly known.
+                <a href="https://penguinmod.com">penguinmod.com</a> (and any subdomains) are currently
+                provided by <a href="https://github.com/enderhacker">NotHouse</a>.
+                <br></br>
+                <a href="https://github.com/enderhacker">
+                    <img src="https://avatars.githubusercontent.com/u/61245488?v=4" style={{ width: "128px" }}></img>
+                </a>
             </p>
+            <h2>Server Host</h2>
+            <p>
+                PenguinMod's Project Sharing server is currently hosted by <a href="https://github.com/JoshAtticus">JoshAtticus</a>.
+                <br></br>
+                <a href="https://github.com/JoshAtticus">
+                    <img src="https://avatars.githubusercontent.com/u/72828296?v=4" style={{ width: "128px" }}></img>
+                </a>
+            </p>
+            <p>
+                The PenguinMod Server API is maintained by many people.
+                A list is below, but you can also check <a href="https://github.com/PenguinMod/PenguinMod-IntermediateBackendApi/graphs/contributors">the GitHub repository</a> incase this one is out of date.
+            </p>
+            <UserList users={UserData.pmApiDevelopers} />
+            <p><i>The list order is randomized on each refresh.</i></p>
             <h2>Sound Effects</h2>
             <p>
                 PenguinMod has added some more sounds to the Sound Library.
                 All PenguinMod sounds are
                 from <a href="https://freesound.org/">https://freesound.org/</a> and <a href="https://archive.org/">https://archive.org/</a> under
-                the Public Domain license.
+                Public Domain licenses.
             </p>
             <h2>Accounts</h2>
             <p>

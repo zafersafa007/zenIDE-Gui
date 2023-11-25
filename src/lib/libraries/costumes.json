@@ -6249,6 +6249,20 @@
         "libraryFilePage": "images/jeremy.svg"
     },
     {
+        "name": "Jinx",
+        "tags": [
+            "cat",
+            "animals",
+            "realistic"
+        ],
+        "bitmapResolution": 2,
+        "dataFormat": "png",
+        "rotationCenterX": 98,
+        "rotationCenterY": 145,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/jinx.png"
+    },
+    {
         "name": "Jo Pop Down",
         "tags": [
             "people",

@@ -120,25 +120,140 @@ const addonDevelopers = [
 ].map(fromHardcoded);
 
 const pmDevelopers = [
-    'asmarly',
-    // 'CST1229', // gray area, idrk if they are still a member
+    'enderhacker',
     'FreshPenguin112',
     'Ianyourgod',
-    'jdev082',
+    'JoshAtticus',
     'JeremyGamer13',
     'jwklong',
-    'MaterArc',
+    'tnix100',
     'RedMan13',
     'showierdata9978'
 ].map(fromHardcodedGithub);
 
+const pmPullRequestDevelopers = [
+    'NexusKitten',
+    'LilyMakesThings',
+    'MikeDev101',
+    'kokofixcomputers',
+    'PPPDUD',
+    'qbjl',
+    'minidogg'
+    // add more people probably
+].map(fromHardcodedGithub);
+
+const pmApiDevelopers = [
+    'JeremyGamer13',
+    'RedMan13',
+    'tnix100',
+    'Ianyourgod',
+    'JoshAtticus',
+    'enderhacker'
+].map(fromHardcodedGithub);
+
 // todo: should translators be only named or...?
 const pmTranslators = [
-    'kolikiscool'
-].map(fromHardcodedGithub);
-const pmTranslatorsNamed = [
-    'n0name'
-].map(fromHardcodedNamed);
+    {
+        text: 'kolikiscool',
+        image: `https://github.com/kolikiscool.png`,
+        href: `https://github.com/kolikiscool/`,
+    },
+    {
+        text: 'PhilTheTrain',
+        image: `https://github.com/PhilTheTrain.png`,
+        href: `https://github.com/PhilTheTrain/`,
+    },
+    {
+        text: 'n0name',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'a_pc',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'premie_r',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'NamelessCat',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/NamelessCat`,
+        href: "https://penguinmod.com/profile?user=NamelessCat",
+    },
+    {
+        text: 'Just-Noone',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/Just-Noone`,
+        href: "https://penguinmod.com/profile?user=Just-Noone",
+    },
+    {
+        text: 'goose_but_smart',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/goose_but_smart`,
+        href: "https://penguinmod.com/profile?user=goose_but_smart",
+    },
+    {
+        text: 'Le_Blob77',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/Le_Blob77`,
+        href: "https://penguinmod.com/profile?user=Le_Blob77",
+    },
+    {
+        text: 'MrRedstonia',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/MrRedstonia`,
+        href: "https://penguinmod.com/profile?user=MrRedstonia",
+    },
+    {
+        text: 'TheShovel',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/TheShovel`,
+        href: "https://penguinmod.com/profile?user=TheShovel",
+    },
+    {
+        text: 'SmolBoi37',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/SmolBoi37`,
+        href: "https://penguinmod.com/profile?user=SmolBoi37",
+    },
+    {
+        text: 'GigantTech',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/GigantTech`,
+        href: "https://penguinmod.com/profile?user=GigantTech",
+    },
+    {
+        text: 'hacker_anonimo',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/hacker_anonimo`,
+        href: "https://penguinmod.com/profile?user=hacker_anonimo",
+    },
+    {
+        text: 'zaaxd52',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/zaaxd52`,
+        href: "https://penguinmod.com/profile?user=zaaxd52",
+    },
+    {
+        text: 'G1nX',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/G1nX`,
+        href: "https://penguinmod.com/profile?user=G1nX",
+    },
+    {
+        text: 'FNFFortune',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/FNFFortune`,
+        href: "https://penguinmod.com/profile?user=FNFFortune",
+    },
+    {
+        text: 'Gabberythethughunte',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://penguinmod.com/profile?user=Gabberythethughunte",
+    },
+    {
+        text: 'keriyo',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/keriyo`,
+        href: "https://penguinmod.com/profile?user=keriyo",
+    },
+    {
+        text: 'tijabe',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+];
 
 const logoArtists = Promise.all([
     '593554048188416001'
@@ -154,11 +269,19 @@ const extensionDevelopers = [
 ].map(fromHardcodedGithub);
 const pmExtensionDevelopers = [
     'silvxrcat',
-    'nexuskitten',
+    'NexusKitten',
     'G1nX-01',
     'SharkPool-SP',
     'David-Orangemoon',
-    // 'pooiod' // add if ListsPlus gets merged
+    'pooiod',
+    'WAYLIVES',
+    'MrRedstonia',
+    'MikeDev101',
+    'BopShoes',
+    'AlexSchoolOH',
+    'Monochromasity',
+    'LilyMakesThings',
+    'TheShovel'
 ].map(fromHardcodedGithub);
 
 export default {
@@ -167,5 +290,7 @@ export default {
     logoArtists: shuffle(logoArtists),
     extensionDevelopers: shuffle(extensionDevelopers),
     pmExtensionDevelopers: shuffle(pmExtensionDevelopers),
-    pmTranslators: [].concat(shuffle(pmTranslators), shuffle(pmTranslatorsNamed)),
+    pmApiDevelopers: shuffle(pmApiDevelopers),
+    pmTranslators: shuffle(pmTranslators),
+    pmPullRequestDevelopers: shuffle(pmPullRequestDevelopers)
 };

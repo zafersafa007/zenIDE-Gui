@@ -67,6 +67,31 @@ const handleClickAddonSettings = () => {
     window.open(`${process.env.ROOT}${path}`);
 };
 
+const xmlEscape = function (unsafe) {
+    return unsafe.replace(/[<>&'"]/g, c => {
+        switch (c) {
+        case '<': return '&lt;';
+        case '>': return '&gt;';
+        case '&': return '&amp;';
+        case '\'': return '&apos;';
+        case '"': return '&quot;';
+        }
+    });
+};
+const formatProjectTitle = (_title) => {
+    const title = xmlEscape(String(_title));
+    const emojiRegex = /:(\w+):/g;
+    return title.replace(emojiRegex, (match) => {
+        const emojiName = match.replace(/\:/gmi, "");
+        return `<img
+            src="https://library.penguinmod.com/files/emojis/${emojiName}.png"
+            alt=":${emojiName}:"
+            title=":${emojiName}:"
+            style="width:1.75rem;vertical-align: middle;"
+        >`;
+    });
+};
+
 const messages = defineMessages({
     defaultTitle: {
         defaultMessage: 'A mod of TurboWarp',
@@ -169,6 +194,20 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
+                    <a href="terms.html">
+                        <FormattedMessage
+                            defaultMessage="Terms of Service"
+                            description="Link to Terms of Service"
+                            id="pm.terms"
+                        />
+                    </a>
+                    <a href="privacy.html">
+                        <FormattedMessage
+                            defaultMessage="Privacy Policy"
+                            description="Link to privacy policy"
+                            id="tw.privacy"
+                        />
+                    </a>
                     <a href="https://discord.gg/NZ9MBMYTZh">
                         <FormattedMessage
                             defaultMessage="Feedback & Bugs"
@@ -181,13 +220,6 @@ const Footer = () => (
                             defaultMessage="Source Code"
                             description="Link to source code"
                             id="tw.code"
-                        />
-                    </a>
-                    <a href="privacy.html">
-                        <FormattedMessage
-                            defaultMessage="Privacy Policy"
-                            description="Link to privacy policy"
-                            id="tw.privacy"
                         />
                     </a>
                 </div>
@@ -274,7 +306,7 @@ class Interface extends React.Component {
                             />
                         </a>
                         <div className={styles.projectMetadata}>
-                            <h2>{title}</h2>
+                            <h2 dangerouslySetInnerHTML={{ __html: formatProjectTitle(title) }}></h2>
                             <p>by <a target='_blank' href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}>{extraProjectInfo.author}</a></p>
                         </div>
                     </div>}
