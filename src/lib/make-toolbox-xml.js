@@ -1363,8 +1363,8 @@ const lists = function () {
     <category
         name="Lists"
         id="lists"
-        colour="#FF8C1A"
-        secondaryColour="#DB6E00"
+        colour="#FF661A"
+        secondaryColour="#FF5500"
         custom="LIST">
     </category>
     `;
