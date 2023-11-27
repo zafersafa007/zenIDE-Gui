@@ -45,7 +45,8 @@ class ShareButton extends React.Component {
             'onUploadProject'
         ]);
         this.state = {
-            loading: false
+            loading: false,
+            imageUri: ''
         };
     }
     componentDidMount() {
@@ -72,7 +73,7 @@ class ShareButton extends React.Component {
             return;
         }
 
-        const imageUri = await getProjectThumbnail();
+        const imageUri = this.state.imageUri;
         e.source.postMessage({
             p4: {
                 type: 'image',
@@ -93,8 +94,28 @@ class ShareButton extends React.Component {
             }
         }, e.origin);
     }
-    onUploadProject() {
+    async onUploadProject() {
         if (this.state.loading) return;
+        if (!window.vm) return;
+        if (!window.vm.runtime) return;
+        if (!window.vm.renderer) return;
+
+        // get the project thumbnail
+        await new Promise((resolve) => {
+            getProjectThumbnail().then(dataUrl => {
+                this.setState({
+                    imageUri: dataUrl
+                });
+                resolve();
+            });
+            window.vm.renderer.draw(); // force the callback to run
+            setTimeout(() => {
+                window.vm.renderer.draw(); // force the callback to run
+            }, 50);
+            setTimeout(() => {
+                window.vm.renderer.draw(); // force the callback to run
+            }, 100);
+        });
 
         this.setState({
             loading: true
