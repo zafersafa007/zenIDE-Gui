@@ -981,6 +981,14 @@ const menuItems = [
 if (IsLocal || IsLiveTests) {
     const extras = [
         {
+            name: 'Christmas',
+            extensionId: 'jgChristmas',
+            iconURL: defaultExtensionIcon,
+            tags: ['penguinmod'],
+            description: 'hooraye',
+            featured: true
+        },
+        {
             name: 'Legacy Files',
             extensionId: 'jgFiles',
             iconURL: defaultExtensionIcon,
