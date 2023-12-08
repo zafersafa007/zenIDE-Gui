@@ -330,11 +330,11 @@ const menuItems = [
         extDeveloper: 'pinksheep2917'
     },
     {
-        name: 'Extended Sound',
+        name: 'Sound Systems',
         extensionId: 'jgExtendedAudio',
         iconURL: jgExtendedAudioExtensionIcon,
         tags: ['penguinmod', 'categoryexpansion'],
-        description: 'Free speed and pitch control, starting sounds at certain positions, stopping sounds, etc.',
+        description: 'An audio grouping system for more intensive audio work.',
         featured: true
     },
     {
