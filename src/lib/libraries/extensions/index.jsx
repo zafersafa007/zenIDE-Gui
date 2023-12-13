@@ -1078,6 +1078,7 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod'],
             description: 'Test extension to see if things are possible.\nDO NOT USE THIS IN PRODUCTION as blocks are subject to change and may corrupt your projects.',
+            credits: 'Some features added from LilyMakesThings, CubesterYT, TheShovel',
             featured: true
         },
         {
