@@ -62,12 +62,13 @@ export default async function createThreadsTab({ debug, addon, console, msg }) {
       }
     }
 
-    if (row.type === "compiled") {
-      const el = document.createElement('div');
-      el.className = "sa-debugger-thread-compiled";
-      el.textContent = "Compiled threads can't be stepped and have no stack information.";
-      root.appendChild(el);
-    }
+    // pm: this isnt very useful if every thread will be compiled
+    // if (row.type === "compiled") {
+    //   const el = document.createElement('div');
+    //   el.className = "sa-debugger-thread-compiled";
+    //   el.textContent = "Compiled threads can't be stepped and have no stack information.";
+    //   root.appendChild(el);
+    // }
 
     if (row.targetId && row.blockId) {
       root.appendChild(debug.createBlockLink(debug.getTargetInfoById(row.targetId), row.blockId));
