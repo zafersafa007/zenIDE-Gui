@@ -26,7 +26,7 @@ export default async function ({ addon, console }) {
             // is in CSS.
           },
           {
-            backgroundColor: "hsla(0, 100%, 77%, 1)",
+            backgroundColor: "#60E1FF",
           },
         ],
         {

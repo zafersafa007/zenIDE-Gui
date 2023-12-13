@@ -49,7 +49,7 @@ const manifest = {
       "name": "Show TurboWarp keys",
       "id": "twKeys",
       "type": "boolean",
-      "default": false
+      "default": true
     }
   ],
   "userscripts": [
@@ -57,6 +57,7 @@ const manifest = {
       "url": "userscript.js"
     }
   ],
-  "dynamicDisable": true
+  "dynamicDisable": true,
+  "enabledByDefault": true
 };
 export default manifest;
