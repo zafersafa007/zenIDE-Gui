@@ -102,7 +102,7 @@ const addonDevelopers = [
     },
     {
         userId: '9636514',
-        username: 'Tacodude7729'
+        username: 'Tacodiva7729'
     },
     {
         userId: '14792872',
@@ -116,7 +116,6 @@ const addonDevelopers = [
         userId: '64691048',
         username: 'CST1229'
     }
-    // TODO: retronbv is banned?
 ].map(fromHardcoded);
 
 const pmDevelopers = [
