@@ -953,7 +953,7 @@ const menuItems = [
         credits: 'Started by JeremyGamer13, continued by jwklong',
         tags: ['extcreate'],
         featured: true,
-        disabled: true
+        disabled: !(IsLocal || IsLiveTests)
     },
     {
         // not really an extension, but it's easiest to present it as one
