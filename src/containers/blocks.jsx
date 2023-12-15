@@ -419,10 +419,11 @@ class Blocks extends React.Component {
         // blocks still exist in fullscreen for some reason
         if (this.props.isFullScreen) return;
         if (!this.props.vm.editingTarget) return;
+        const targetBlock = this.workspace.getBlockById(data.id);
+        if (!targetBlock) return; // this happens when we switch sprites
         this.workspace.glowBlock(data.id, false);
         this.workspace.reportValue(data.id, data.value, true);
         this.workspace.errorStack(data.id, true);
-
     }
     getToolboxXML () {
         // Use try/catch because this requires digging pretty deep into the VM
