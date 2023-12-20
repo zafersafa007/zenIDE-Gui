@@ -113,7 +113,9 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                             rawData.remix > 0,
                             Number(rawData.remix),
                             rawData.tooLarge === true,
-                            authorName
+                            authorName,
+                            new Date(rawData.date),
+                            rawData.updating === true
                         );
                     }
                     if (rawData.remix > 0) {
@@ -196,12 +198,14 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
             instructions,
             credits
         })),
-        onSetExtraProjectInfo: (accepted, isRemix, remixId, tooLarge, author) => dispatch(setExtraProjectInfo({
+        onSetExtraProjectInfo: (accepted, isRemix, remixId, tooLarge, author, releaseDate, isUpdated) => dispatch(setExtraProjectInfo({
             accepted,
             isRemix,
             remixId,
             tooLarge,
-            author
+            author,
+            releaseDate,
+            isUpdated
         })),
         onSetRemixedProjectInfo: (loaded, name, author) => dispatch(setRemixedProjectInfo({
             loaded,

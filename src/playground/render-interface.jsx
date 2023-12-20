@@ -17,10 +17,10 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { connect } from 'react-redux';
-import { compose } from 'redux';
-import { FormattedMessage, defineMessages, injectIntl, intlShape } from 'react-intl';
-import { getIsLoading } from '../reducers/project-state.js';
+import {connect} from 'react-redux';
+import {compose} from 'redux';
+import {FormattedMessage, defineMessages, injectIntl, intlShape} from 'react-intl';
+import {getIsLoading} from '../reducers/project-state.js';
 import DOMElementRenderer from '../containers/dom-element-renderer.jsx';
 import AppStateHOC from '../lib/app-state-hoc.jsx';
 import ErrorBoundaryHOC from '../lib/error-boundary-hoc.jsx';
@@ -39,18 +39,18 @@ import FeaturedProjects from '../components/tw-featured-projects/featured-projec
 import Description from '../components/tw-description/description.jsx';
 import BrowserModal from '../components/browser-modal/browser-modal.jsx';
 import CloudVariableBadge from '../containers/tw-cloud-variable-badge.jsx';
-import { isBrowserSupported } from '../lib/tw-environment-support-prober';
+import {isBrowserSupported} from '../lib/tw-environment-support-prober';
 import AddonChannels from '../addons/channels';
-import { loadServiceWorker } from './load-service-worker';
+import {loadServiceWorker} from './load-service-worker';
 import runAddons from '../addons/entry';
 
 import styles from './interface.css';
 import restore from './restore.js';
 
 const urlparams = new URLSearchParams(location.search);
-const restoring = urlparams.get("restore");
-const restoreHandler = urlparams.get("handler");
-if (String(restoring) === "true") {
+const restoring = urlparams.get('restore');
+const restoreHandler = urlparams.get('handler');
+if (String(restoring) === 'true') {
     // console.log(restore)
     restore(restoreHandler);
 }
@@ -78,11 +78,11 @@ const xmlEscape = function (unsafe) {
         }
     });
 };
-const formatProjectTitle = (_title) => {
+const formatProjectTitle = _title => {
     const title = xmlEscape(String(_title));
     const emojiRegex = /:(\w+):/g;
-    return title.replace(emojiRegex, (match) => {
-        const emojiName = match.replace(/\:/gmi, "");
+    return title.replace(emojiRegex, match => {
+        const emojiName = match.replace(/:/gmi, '');
         return `<img
             src="https://library.penguinmod.com/files/emojis/${emojiName}.png"
             alt=":${emojiName}:"
@@ -228,29 +228,61 @@ const Footer = () => (
     </footer>
 );
 
+const monthNames = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+];
+const numberSuffixes = [
+    'st',
+    'nd',
+    'rd',
+    'th',
+    'th',
+    'th',
+    'th',
+    'th',
+    'th',
+    'th'
+]
+const addNumberSuffix = num => {
+    if (!num) return `${num}`;
+    if (num < 20 && num > 10) return `${num}th`;
+    return num + numberSuffixes[(num % 11) - 1];
+};
+
 class Interface extends React.Component {
-    constructor(props) {
+    constructor (props) {
         super(props);
         this.handleUpdateProjectTitle = this.handleUpdateProjectTitle.bind(this);
     }
-    componentDidUpdate(prevProps) {
+    componentDidUpdate (prevProps) {
         if (prevProps.isLoading && !this.props.isLoading) {
             loadServiceWorker();
         }
     }
-    handleUpdateProjectTitle(title, isDefault) {
+    handleUpdateProjectTitle (title, isDefault) {
         if (isDefault || !title) {
             document.title = `PenguinMod - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
         } else {
             document.title = `${title} - PenguinMod`;
         }
     }
-    copyProjectLink(id) {
-        if ("clipboard" in navigator && "writeText" in navigator.clipboard) {
+    copyProjectLink (id) {
+        if ('clipboard' in navigator && 'writeText' in navigator.clipboard) {
             navigator.clipboard.writeText(`https://projects.penguinmod.com/${id}`);
         }
     }
-    render() {
+    render () {
         const {
             /* eslint-disable no-unused-vars */
             intl,
@@ -270,6 +302,15 @@ class Interface extends React.Component {
         } = this.props;
         const isHomepage = isPlayerOnly && !isFullScreen;
         const isEditor = !isPlayerOnly;
+        const isUpdated = extraProjectInfo.isUpdated;
+        const projectReleaseYear = extraProjectInfo.releaseDate.getFullYear();
+        const projectReleaseMonth = monthNames[extraProjectInfo.releaseDate.getMonth()];
+        const projectReleaseDay = addNumberSuffix(extraProjectInfo.releaseDate.getDate());
+        const projectReleaseHour = (extraProjectInfo.releaseDate.getHours() % 12) + 1;
+        const projectReleaseHalf = extraProjectInfo.releaseDate.getHours() > 11
+            ? 'PM'
+            : 'AM';
+        const projectReleaseMinute = extraProjectInfo.releaseDate.getMinutes();
         return (
             <div
                 className={classNames(styles.container, {
@@ -297,7 +338,11 @@ class Interface extends React.Component {
                 >
                     {isHomepage && announcement ? <DOMElementRenderer domElement={announcement} /> : null}
                     {isHomepage && projectId !== '0' && title && extraProjectInfo && extraProjectInfo.author && <div className={styles.projectDetails}>
-                        <a target='_blank' href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}>
+                        <a
+                            target="_blank"
+                            href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                            rel="noreferrer"
+                        >
                             <img
                                 className={styles.projectAuthorImage}
                                 title={extraProjectInfo.author}
@@ -306,8 +351,12 @@ class Interface extends React.Component {
                             />
                         </a>
                         <div className={styles.projectMetadata}>
-                            <h2 dangerouslySetInnerHTML={{ __html: formatProjectTitle(title) }}></h2>
-                            <p>by <a target='_blank' href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}>{extraProjectInfo.author}</a></p>
+                            <h2 dangerouslySetInnerHTML={{__html: formatProjectTitle(title)}} />
+                            <p>by <a
+                                target="_blank"
+                                href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                                rel="noreferrer"
+                            >{extraProjectInfo.author}</a></p>
                         </div>
                     </div>}
                     <GUI
@@ -329,11 +378,12 @@ class Interface extends React.Component {
                             {/* remix info */}
                             {(extraProjectInfo.isRemix && remixedProjectInfo.loaded) && (
                                 <div className={styles.unsharedUpdate}>
-                                    <div style={{ display: "flex", flexDirection: "row" }}>
+                                    <div style={{display: 'flex', flexDirection: 'row'}}>
                                         <a
-                                            style={{ height: "32px" }}
+                                            style={{height: '32px'}}
                                             target="_blank"
                                             href={`https://penguinmod.com/profile?user=${remixedProjectInfo.author}`}
+                                            rel="noreferrer"
                                         >
                                             <img
                                                 className={styles.remixAuthorImage}
@@ -347,6 +397,7 @@ class Interface extends React.Component {
                                                 <a
                                                     target="_blank"
                                                     href={`https://penguinmod.com/profile?user=${remixedProjectInfo.author}`}
+                                                    rel="noreferrer"
                                                 >
                                                     {remixedProjectInfo.author}
                                                 </a>
@@ -378,32 +429,46 @@ class Interface extends React.Component {
                                     />
                                 </div>
                             ) : null}
-                            <VoteFrame id={projectId} darkmode={this.props.isDark}></VoteFrame>
+                            <VoteFrame
+                                id={projectId}
+                                darkmode={this.props.isDark}
+                            />
                             {projectId !== '0' && (
-                                <div className={styles.centerSector}>
-                                    <button
-                                        onClick={() => this.copyProjectLink(projectId)}
-                                        className={styles.shareLink}
-                                    >
-                                        <img src="/share_project.png" alt=">"></img>
-                                        Copy Link
-                                    </button>
-                                    {extraProjectInfo.author && (
+                                <div>
+                                    {`${isUpdated ? 'Updated' : 'Uploaded'} ${projectReleaseMonth} ${projectReleaseDay} ${projectReleaseYear} at ${projectReleaseHour}:${projectReleaseMinute} ${projectReleaseHalf}`}
+                                    <div className={styles.centerSector}>
+                                        <button
+                                            onClick={() => this.copyProjectLink(projectId)}
+                                            className={styles.shareLink}
+                                        >
+                                            <img
+                                                src="/share_project.png"
+                                                alt=">"
+                                            />
+                                            {'Copy Link'}
+                                        </button>
+                                        {extraProjectInfo.author && (
+                                            <a
+                                                target="_blank"
+                                                rel="noreferrer"
+                                                href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                                            >
+                                                {`View other projects by ${extraProjectInfo.author}`}
+                                            </a>
+                                        )}
                                         <a
                                             target="_blank"
-                                            href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                                            rel="noreferrer"
+                                            href={`https://penguinmod.com/report?type=project&id=${projectId}`}
+                                            className={styles.reportLink}
                                         >
-                                            View other projects by {extraProjectInfo.author}
+                                            <img
+                                                src="/report_flag.png"
+                                                alt="!"
+                                            />
+                                            {'Report'}
                                         </a>
-                                    )}
-                                    <a
-                                        target='_blank'
-                                        href={`https://penguinmod.com/report?type=project&id=${projectId}`}
-                                        className={styles.reportLink}
-                                    >
-                                        <img src="/report_flag.png" alt="!"></img>
-                                        Report
-                                    </a>
+                                    </div>
                                 </div>
                             )}
                             {/* this is pretty pointless now that we have the home page... */}
@@ -423,6 +488,7 @@ class Interface extends React.Component {
                             <a
                                 target="_blank"
                                 href="https://penguinmod.com/search?q=all:projects"
+                                rel="noreferrer"
                             >
                                 See more projects
                             </a>
@@ -451,7 +517,9 @@ Interface.propTypes = {
         isRemix: PropTypes.bool,
         remixId: PropTypes.number,
         tooLarge: PropTypes.bool,
-        author: PropTypes.string
+        author: PropTypes.string,
+        releaseDate: PropTypes.shape(Date),
+        isUpdated: PropTypes.bool
     }),
     remixedProjectInfo: PropTypes.shape({
         loaded: PropTypes.bool,
