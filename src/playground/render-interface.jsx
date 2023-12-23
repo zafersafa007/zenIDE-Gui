@@ -435,7 +435,7 @@ class Interface extends React.Component {
                             />
                             {projectId !== '0' && (
                                 <div>
-                                    {`${isUpdated ? 'Updated' : 'Uploaded'} ${projectReleaseMonth} ${projectReleaseDay} ${projectReleaseYear} at ${projectReleaseHour}:${projectReleaseMinute} ${projectReleaseHalf}`}
+                                    {`${isUpdated ? 'Updated' : 'Uploaded'} ${projectReleaseMonth} ${projectReleaseDay} ${projectReleaseYear} at ${projectReleaseHour}:${projectReleaseMinute < 10 ? '0' : ''}${projectReleaseMinute} ${projectReleaseHalf}`}
                                     <div className={styles.centerSector}>
                                         <button
                                             onClick={() => this.copyProjectLink(projectId)}
