@@ -257,7 +257,7 @@ const numberSuffixes = [
 const addNumberSuffix = num => {
     if (!num) return `${num}`;
     if (num < 20 && num > 10) return `${num}th`;
-    return num + numberSuffixes[(num % 11) - 1];
+    return num + numberSuffixes[(num - 1) % 10];
 };
 
 class Interface extends React.Component {
