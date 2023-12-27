@@ -14,7 +14,9 @@ npm-*
 !build/
 !dist/
 build/*
+yarn.lock
 
 # Generated translation files
 /translations
 /locale
+
