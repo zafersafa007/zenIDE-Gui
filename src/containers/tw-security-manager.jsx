@@ -114,6 +114,12 @@ let allowedVideo = false;
 let allowedReadClipboard = false;
 let allowedNotify = false;
 let allowedGeolocation = false;
+const notAllowedToAskUnsandbox = Object.create({});
+let loadingExtensionsRemember = false;
+let rememberedExtensionInfo = {
+    unsandboxed: false,
+    loaded: false
+};
 
 const SECURITY_MANAGER_METHODS = [
     'getSandboxMode',
@@ -126,7 +132,8 @@ const SECURITY_MANAGER_METHODS = [
     'canReadClipboard',
     'canNotify',
     'canGeolocate',
-    'canEmbed'
+    'canEmbed',
+    'canUnsandbox'
 ];
 
 class TWSecurityManagerComponent extends React.Component {
@@ -134,7 +141,8 @@ class TWSecurityManagerComponent extends React.Component {
         super(props);
         bindAll(this, [
             'handleAllowed',
-            'handleDenied'
+            'handleDenied',
+            'projectWillChange'
         ]);
         bindAll(this, SECURITY_MANAGER_METHODS);
         this.nextModalCallbacks = [];
@@ -147,11 +155,22 @@ class TWSecurityManagerComponent extends React.Component {
         };
     }
 
+    projectWillChange() {
+        loadingExtensionsRemember = false;
+        rememberedExtensionInfo = {
+            unsandboxed: false,
+            loaded: false
+        };
+    }
     componentDidMount() {
         const securityManager = this.props.vm.extensionManager.securityManager;
         for (const method of SECURITY_MANAGER_METHODS) {
             securityManager[method] = this[method];
         }
+        this.props.vm.runtime.on('RUNTIME_DISPOSED', this.projectWillChange);
+    }
+    componentWillUnmount() {
+        this.props.vm.runtime.off('RUNTIME_DISPOSED', this.projectWillChange);
     }
 
     // eslint-disable-next-line valid-jsdoc
@@ -235,6 +254,16 @@ class TWSecurityManagerComponent extends React.Component {
         }));
     }
 
+    handleChangeRemember(e) {
+        const checked = e.target.checked;
+        this.setState(oldState => ({
+            data: {
+                ...oldState.data,
+                remember: checked
+            }
+        }));
+    }
+
     /**
      * @param {string} url The extension's URL
      * @returns {Promise<boolean>} Whether the extension can be loaded
@@ -244,17 +273,37 @@ class TWSecurityManagerComponent extends React.Component {
             log.info(`Loading extension ${url} automatically`);
             return true;
         }
+        if (loadingExtensionsRemember) {
+            // TODO: find some way to identify these, custom extensions have too long of URLs
+            if (!rememberedExtensionInfo.loaded) {
+                console.warn('An extension was not loaded');
+                return false;
+            }
+            if (rememberedExtensionInfo.unsandboxed) {
+                console.log('An extension was loaded unsandboxed');
+                manuallyTrustExtension(url);
+            }
+            return true;
+        }
         const { showModal } = await this.acquireModalLock();
         // for backwards compatibility, allow urls to be unsandboxed
-        // TODO: this backwards compatibility needs to be deprecated at some point
         // if (url.startsWith('data:')) {
         const allowed = await showModal(SecurityModals.LoadExtension, {
             url,
             unsandboxed: true,
-            onChangeUnsandboxed: this.handleChangeUnsandboxed.bind(this)
+            remember: false,
+            onChangeUnsandboxed: this.handleChangeUnsandboxed.bind(this),
+            onChangeRemember: this.handleChangeRemember.bind(this),
         });
         if (this.state.data.unsandboxed) {
             manuallyTrustExtension(url);
+        }
+        if (this.state.data.remember) {
+            loadingExtensionsRemember = true;
+            rememberedExtensionInfo = {
+                unsandboxed: this.state.data.unsandboxed,
+                loaded: allowed
+            };
         }
         return allowed;
         // }
@@ -375,6 +424,20 @@ class TWSecurityManagerComponent extends React.Component {
         return allowedGeolocation;
     }
 
+
+    /**
+     * @returns {Promise<boolean>} True if geolocation is allowed.
+     */
+    async canUnsandbox(name) {
+        if (notAllowedToAskUnsandbox[name]) return false;
+        const { showModal } = await this.acquireModalLock();
+        const allowedUnsandbox = await showModal(SecurityModals.Unsandbox, { name: name || "" });
+        if (!allowedUnsandbox) {
+            notAllowedToAskUnsandbox[name] = true;
+        }
+        return allowedUnsandbox;
+    }
+
     /**
      * @param {string} url Frame URL
      * @returns {Promise<boolean>} True if embed is allowed.
@@ -415,6 +478,7 @@ class TWSecurityManagerComponent extends React.Component {
 
 TWSecurityManagerComponent.propTypes = {
     vm: PropTypes.shape({
+        runtime: PropTypes.any.isRequired,
         extensionManager: PropTypes.shape({
             securityManager: PropTypes.shape(
                 SECURITY_MANAGER_METHODS.reduce((obj, method) => {
