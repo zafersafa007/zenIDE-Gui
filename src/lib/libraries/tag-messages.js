@@ -201,4 +201,9 @@ export default defineMessages({
         description: 'Tag for finding all extension creator programs / website',
         id: 'gui.libraryTags.extcreate'
     },
+    datamgmt: {
+        defaultMessage: 'Data Management',
+        description: 'Tag for filtering a library by data management',
+        id: 'gui.libraryTags.datamgmt'
+    },
 });

@@ -6,6 +6,7 @@ export default [
     { tag: 'divider2', intlLabel: messages.scratch, type: 'divider' },
     { tag: 'categoryexpansion', intlLabel: messages.categoryexpansion },
     { tag: 'programminglanguage', intlLabel: messages.programminglanguage },
+    { tag: 'datamgmt', intlLabel: messages.datamgmt },
     { tag: 'hardware', intlLabel: messages.hardware },
     { tag: 'divider1', intlLabel: messages.scratch, type: 'divider' },
     { tag: 'library', intlLabel: messages.library },

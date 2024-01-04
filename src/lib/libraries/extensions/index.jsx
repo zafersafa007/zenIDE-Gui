@@ -316,7 +316,7 @@ const menuItems = [
         twDeveloper: 'GarboMuffin',
         iconURL: filesExtensionIcon,
         insetIconURL: turbowarpIcon,
-        tags: ['turbowarp'],
+        tags: ['turbowarp', 'datamgmt'],
         description: 'Blocks for reading and creating files.',
         featured: true
     },
@@ -385,7 +385,7 @@ const menuItems = [
         name: 'JSON',
         extensionId: 'jgJSON',
         iconURL: jgJSONExtensionIcon,
-        tags: ['penguinmod'],
+        tags: ['penguinmod', 'datamgmt'],
         description: 'Blocks for handling JSON objects and Arrays.',
         featured: true
     },
@@ -991,7 +991,7 @@ if (IsLocal || IsLiveTests) {
             name: 'Legacy Files',
             extensionId: 'jgFiles',
             iconURL: defaultExtensionIcon,
-            tags: ['penguinmod'],
+            tags: ['penguinmod', 'datamgmt'],
             description: 'Basic blocks for files. This has been replaced by the TurboWarp files extension.',
             featured: true
         },
@@ -1017,6 +1017,15 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod'],
             description: 'Legacy extension that was eventually merged into the default toolbox.',
+            featured: true
+        },
+        {
+            name: 'XML',
+            extensionId: 'jwXml',
+            iconURL: defaultExtensionIcon,
+            tags: ['penguinmod', 'datamgmt'],
+            description: 'Enables the creation and getting of XML data. Not yet able to modify data.',
+            extDeveloper: 'jwklong',
             featured: true
         },
         {
