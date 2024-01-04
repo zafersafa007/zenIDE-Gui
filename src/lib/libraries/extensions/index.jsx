@@ -67,7 +67,7 @@ import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png';
 import jgPrismExtensionIcon from './penguinmod/extensions/prism.png';
 
 import jwProtoExtensionIcon from './penguinmod/extensions/proto.png';
-import jwUniteExtensionIcon from './penguinmod/extensions/unite.png';
+import jwUniteExtensionIcon from './penguinmod/extensions/Unite.png';
 import jwXmlExtensionIcon from './penguinmod/extensions/xml.png';
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png';
