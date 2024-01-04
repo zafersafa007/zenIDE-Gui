@@ -67,6 +67,8 @@ import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png';
 import jgPrismExtensionIcon from './penguinmod/extensions/prism.png';
 
 import jwProtoExtensionIcon from './penguinmod/extensions/proto.png';
+import jwUniteExtensionIcon from './penguinmod/extensions/unite.png';
+import jwXmlExtensionIcon from './penguinmod/extensions/xml.png';
 
 import jwStructsExtensionIcon from './penguinmod/extensions/ooplogo.png';
 
@@ -1014,7 +1016,7 @@ if (IsLocal || IsLiveTests) {
         {
             name: 'Unite',
             extensionId: 'jwUnite',
-            iconURL: defaultExtensionIcon,
+            iconURL: jwUniteExtensionIcon,
             tags: ['penguinmod'],
             description: 'Legacy extension that was eventually merged into the default toolbox.',
             featured: true
@@ -1022,7 +1024,7 @@ if (IsLocal || IsLiveTests) {
         {
             name: 'XML',
             extensionId: 'jwXml',
-            iconURL: defaultExtensionIcon,
+            iconURL: jwXmlExtensionIcon,
             tags: ['penguinmod', 'datamgmt'],
             description: 'Enables the creation and getting of XML data. Not yet able to modify data.',
             extDeveloper: 'jwklong',
