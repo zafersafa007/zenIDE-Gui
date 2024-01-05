@@ -173,9 +173,18 @@ class Renderer {
     }
 
     project (id) {
+        if (/^\d{6,}$/.test(id)) {
+            return (
+                <a
+                    href={`https://studio.penguinmod.com/#${id}`}
+                >
+                    {`#${id}`}
+                </a>
+            );
+        }
         return (
             <a
-                href={`https://studio.penguinmod.com/#${id}`}
+                href={`https://penguinmod.com/search?q=%23${id}`}
             >
                 {`#${id}`}
             </a>
