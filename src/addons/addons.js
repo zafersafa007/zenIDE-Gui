@@ -76,7 +76,8 @@ const newAddons = [
     'number-pad',
     'rename-broadcasts',
     'sprite-properties',
-    'paint-snap'
+    'paint-snap',
+    "editor-block-chomping",
 ];
 
 // eslint-disable-next-line import/no-commonjs
