@@ -219,6 +219,7 @@ class Renderer {
             <a
                 href={href}
                 title={title}
+                target='_blank'
             >
                 {text}
             </a>
@@ -240,9 +241,19 @@ class Renderer {
     }
 
     project (id) {
+        if (/^\d{6,}$/.test(id)) {
+            return (
+                <a
+                    href={`https://studio.penguinmod.com/#${id}`}
+                >
+                    {`#${id}`}
+                </a>
+            );
+        }
         return (
             <a
-                href={`https://studio.penguinmod.com/#${id}`}
+                href={`https://penguinmod.com/search?q=%23${id}`}
+                target='_blank'
             >
                 {`#${id}`}
             </a>
@@ -253,6 +264,7 @@ class Renderer {
         return (
             <a
                 href={`https://penguinmod.com/profile?user=${name}`}
+                target='_blank'
             >
                 {`@${name}`}
             </a>
