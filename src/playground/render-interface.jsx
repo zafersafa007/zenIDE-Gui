@@ -253,7 +253,7 @@ const numberSuffixes = [
     'th',
     'th',
     'th'
-]
+];
 const addNumberSuffix = num => {
     if (!num) return `${num}`;
     if (num < 20 && num > 10) return `${num}th`;
