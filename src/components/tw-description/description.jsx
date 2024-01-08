@@ -219,7 +219,8 @@ class Renderer {
             <a
                 href={href}
                 title={title}
-                target='_blank'
+                target="_blank"
+                rel="noreferrer"
             >
                 {text}
             </a>
@@ -253,7 +254,8 @@ class Renderer {
         return (
             <a
                 href={`https://penguinmod.com/search?q=%23${id}`}
-                target='_blank'
+                target="_blank"
+                rel="noreferrer"
             >
                 {`#${id}`}
             </a>
@@ -264,7 +266,8 @@ class Renderer {
         return (
             <a
                 href={`https://penguinmod.com/profile?user=${name}`}
-                target='_blank'
+                target="_blank"
+                rel="noreferrer"
             >
                 {`@${name}`}
             </a>
