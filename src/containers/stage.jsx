@@ -300,6 +300,7 @@ class Stage extends React.Component {
         return touch;
     }
     onTouchDown (e) {
+        console.log('touchdown', e)
         this.updateRect();
         const data = {
             isDown: true,
@@ -313,6 +314,7 @@ class Stage extends React.Component {
         this.onMouseDown(e);
     }
     onTouchUp (e) {
+        console.log('touchup', e)
         const data = {
             isDown: false,
             canvasWidth: this.rect.width,
@@ -325,6 +327,7 @@ class Stage extends React.Component {
         this.onMouseUp(e);
     }
     onTouchMove (e) {
+        console.log('touchmove', e)
         const coordinates = {
             canvasWidth: this.rect.width,
             canvasHeight: this.rect.height,
