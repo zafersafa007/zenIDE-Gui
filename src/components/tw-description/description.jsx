@@ -55,26 +55,27 @@ const defaultCustoms = {
     'longDateClock': '$day $monthName $year $hour:$minute'
 };
 
+let emojis = [];
+(async () => {
+    const emojiHtmlUrl = 'https://corsproxy.io/?https%3A%2F%2Flibrary.penguinmod.com%2Ffiles%2Femojis';
+    const response = await fetch(emojiHtmlUrl);
+    const htmle = await response.text();
+    emojis = htmle
+        .substring(htmle.indexOf('</header><ul id=files>') + 22, htmle.indexOf('</ul></main>'))
+        .split('\n')
+        .map(line => line.trim())
+        .filter(line => line.length > 0) // remove blank lines
+        .filter(line => line.endsWith('.png</a>')) // remove .txt file
+        .map(emoji => {
+            const cut = emoji.substring(22);
+            const final = cut.substring(cut.indexOf('>') + 1, cut.indexOf('.png</a>'));
+            return final;
+        });
+})();
+
 class Renderer {
     constructor (options) {
         this.options = options || {};
-        this.emojis = [];
-        (async () => {
-            const emojiHtmlUrl = 'https://corsproxy.io/?https%3A%2F%2Flibrary.penguinmod.com%2Ffiles%2Femojis';
-            const response = await fetch(emojiHtmlUrl);
-            const htmle = await response.text();
-            this.emojis = htmle
-                .substring(htmle.indexOf('</header><ul id=files>') + 22, htmle.indexOf('</ul></main>'))
-                .split('\n')
-                .map(line => line.trim())
-                .filter(line => line.length > 0) // remove blank lines
-                .filter(line => line.endsWith('.png</a>')) // remove .txt file
-                .map(emoji => {
-                    const cut = emoji.substring(22);
-                    const final = cut.substring(cut.indexOf('>') + 1, cut.indexOf('.png</a>'));
-                    return final;
-                });
-        })();
     }
 
     code (code) {
@@ -275,7 +276,7 @@ class Renderer {
     }
 
     emoji (name) {
-        if (!this.emojis.includes(name)) return `:${name}:`;
+        if (!emojis.includes(name)) return `:${name}:`;
         return (
             <img
                 src={`https://library.penguinmod.com/files/emojis/${name}.png`}
