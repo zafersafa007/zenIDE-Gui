@@ -280,7 +280,7 @@ class Renderer {
         return (
             <img
                 src={`https://library.penguinmod.com/files/emojis/${name}.png`}
-                alt={name}
+                alt={`:${name}:`}
                 title={`:${name}:`}
                 className={styles.emoji}
             />
