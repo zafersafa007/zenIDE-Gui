@@ -194,14 +194,14 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="terms.html">
+                    <a href="https://penguinmod.com/terms">
                         <FormattedMessage
                             defaultMessage="Terms of Service"
                             description="Link to Terms of Service"
                             id="pm.terms"
                         />
                     </a>
-                    <a href="privacy.html">
+                    <a href="https://penguinmod.com/privacy">
                         <FormattedMessage
                             defaultMessage="Privacy Policy"
                             description="Link to privacy policy"
