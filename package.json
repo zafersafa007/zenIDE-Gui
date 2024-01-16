@@ -84,7 +84,7 @@
     "scratch-blocks": "github:PenguinMod/PenguinMod-Blocks#develop-builds",
     "scratch-paint": "github:PenguinMod/PenguinMod-Paint#develop",
     "scratch-render": "github:PenguinMod/PenguinMod-Render#develop",
-    "scratch-render-fonts": "1.0.0-prerelease.20210401210003",
+    "scratch-render-fonts": "github:PenguinMod/penguinmod-render-fonts#master",
     "scratch-storage": "github:PenguinMod/PenguinMod-Storage#develop",
     "scratch-svg-renderer": "github:TurboWarp/scratch-svg-renderer#develop",
     "scratch-vm": "github:PenguinMod/PenguinMod-Vm#develop",
