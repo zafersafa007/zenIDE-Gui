@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
+import {FormattedMessage} from 'react-intl';
 
 import musicIconURL from './music/music.png';
 import musicInsetIconURL from './music/music-small.svg';
@@ -327,7 +327,7 @@ const menuItems = [
         extensionId: 'https://extensions.penguinmod.com/extensions/ObviousAlexC/PenPlus.js',
         tags: ['categoryexpansion'],
         iconURL: 'https://extensions.penguinmod.com/images/ObviousAlexC/PenPlus.svg',
-        description: "An extension to the Pen category!",
+        description: 'An extension to the Pen category!',
         featured: true,
         extDeveloper: 'pinksheep2917'
     },
@@ -344,7 +344,7 @@ const menuItems = [
         extensionId: 'pmMotionExpansion',
         iconURL: pmMotionExpansionExtensionIcon,
         tags: ['penguinmod', 'categoryexpansion'],
-        description: "More small motion blocks for movement or collision.",
+        description: 'More small motion blocks for movement or collision.',
         featured: true,
         credits: 'Some blocks from NexusKitten'
     },
@@ -353,7 +353,7 @@ const menuItems = [
         extensionId: 'pmEventsExpansion',
         iconURL: pmEventsExpansionExtensionIcon,
         tags: ['penguinmod', 'categoryexpansion'],
-        description: "More events for sending & receiving information, notifing specific sprites or better control when things should happen.",
+        description: 'More events for sending & receiving information, notifing specific sprites or better control when things should happen.',
         featured: true,
         credits: 'Some blocks from LilyMakesThings'
     },
@@ -362,7 +362,7 @@ const menuItems = [
         extensionId: 'pmControlsExpansion',
         iconURL: pmControlsExpansionExtensionIcon,
         tags: ['penguinmod', 'categoryexpansion'],
-        description: "More control blocks for animations, complex systems or cleaner one-time use blocks.",
+        description: 'More control blocks for animations, complex systems or cleaner one-time use blocks.',
         featured: true,
         credits: '"new thread" by CubesterYT, CST1229'
     },
@@ -454,7 +454,7 @@ const menuItems = [
         tags: ['turbowarp'],
         iconURL: 'https://extensions.turbowarp.org/images/Lily/Skins.svg',
         insetIconURL: turbowarpIcon,
-        description: "Have your sprites show themselves as other images or costumes.",
+        description: 'Have your sprites show themselves as other images or costumes.',
         featured: true,
         twDeveloper: 'LilyMakesThings'
     },
@@ -626,7 +626,7 @@ const menuItems = [
                 id="canvas.name"
             />
         ),
-        extensionId: 'canvas',
+        extensionId: 'newCanvas',
         iconURL: canvasExtensionBanner,
         tags: ['penguinmod'],
         insetIconURL: canvasExtensionIcon,
@@ -982,6 +982,16 @@ const menuItems = [
 if (IsLocal || IsLiveTests) {
     const extras = [
         {
+            name: 'OLD Canvas',
+            extensionId: 'canvas',
+            iconURL: canvasExtensionBanner,
+            tags: ['penguinmod'],
+            insetIconURL: canvasExtensionIcon,
+            customInsetColor: '#0094FF',
+            description: 'depracated version of HTML Canvas.',
+            featured: true
+        },
+        {
             name: 'Christmas',
             extensionId: 'jgChristmas',
             iconURL: defaultExtensionIcon,
@@ -1210,7 +1220,7 @@ if (IsLocal || IsLiveTests) {
             description: 'In development.',
             credits: 'Vadik1',
             featured: true
-        },
+        }
     ];
     extras.forEach(ext => {
         menuItems.push(ext);
