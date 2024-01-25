@@ -326,6 +326,7 @@ const pmExtensionDevelopers = [
     'NexusKitten',
     'Gen1x-ALT',
     'SharkPool-SP',
+    'DogeisCut', // listed as a collaborator on a SharkPool extension
     'David-Orangemoon',
     'pooiod',
     'WAYLIVES',
@@ -335,7 +336,10 @@ const pmExtensionDevelopers = [
     'AlexSchoolOH',
     'Monochromasity',
     'LilyMakesThings',
-    'TheShovel'
+    'TheShovel',
+    'skyhigh173',
+    'Ruby-Devs',
+    'oc9x97'
 ].map(fromHardcodedGithub);
 
 export default {
