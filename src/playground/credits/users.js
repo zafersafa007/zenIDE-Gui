@@ -173,9 +173,9 @@ const pmTranslators = [
         href: "https://studio.penguinmod.com/credits.html#",
     },
     {
-        text: 'premie_r',
-        image: `https://penguinmod.com/unknown_user.png`,
-        href: "https://studio.penguinmod.com/credits.html#",
+        text: 'onetoanother',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/onetoanother`,
+        href: "https://penguinmod.com/profile?user=onetoanother",
     },
     {
         text: 'NamelessCat',
@@ -237,6 +237,8 @@ const pmTranslators = [
         image: `https://trampoline.turbowarp.org/avatars/by-username/FNFFortune`,
         href: "https://penguinmod.com/profile?user=FNFFortune",
     },
+    // has since left the server
+    // possibly they have a new account, so replace the name & url if so
     {
         text: 'Gabberythethughunte',
         image: `https://penguinmod.com/unknown_user.png`,
@@ -248,9 +250,62 @@ const pmTranslators = [
         href: "https://penguinmod.com/profile?user=keriyo",
     },
     {
-        text: 'tijabe',
+        text: 'DenPlayTS',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/DenPlayTS`,
+        href: "https://penguinmod.com/profile?user=DenPlayTS",
+    },
+    {
+        text: 'Tsalbre',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/Tsalbre`,
+        href: "https://penguinmod.com/profile?user=Tsalbre",
+    },
+    {
+        text: 'MubiLop',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/MubiLop`,
+        href: "https://penguinmod.com/profile?user=MubiLop",
+    },
+    {
+        text: 'TLP136',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/TLP136`,
+        href: "https://penguinmod.com/profile?user=TLP136",
+    },
+    {
+        text: 'Cymock',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/Cymock`,
+        href: "https://penguinmod.com/profile?user=Cymock",
+    },
+    {
+        text: 'ItzzEndr',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/ItzzEndr`,
+        href: "https://penguinmod.com/profile?user=ItzzEndr",
+    },
+    {
+        text: 'Capysussa',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/Capysussa`,
+        href: "https://penguinmod.com/profile?user=Capysussa",
+    },
+    // con-zie is now banned from PenguinMod
+    {
+        text: 'con-zie',
         image: `https://penguinmod.com/unknown_user.png`,
         href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'ImNotScratchY_lolol',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/ImNotScratchY_lolol`,
+        href: "https://penguinmod.com/profile?user=ImNotScratchY_lolol",
+    },
+    {
+        text: 'justablock',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/justablock`,
+        href: "https://penguinmod.com/profile?user=justablock",
+    },
+    // this person may have decided not to translate?
+    // no final info though since they still have access & havent left the server...
+    {
+        text: 'luca2756_lol',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/luca2756_lol`,
+        href: "https://penguinmod.com/profile?user=luca2756_lol",
     },
 ];
 
