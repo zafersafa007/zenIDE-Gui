@@ -322,9 +322,9 @@ const extensionDevelopers = [
     'LilyMakesThings'
 ].map(fromHardcodedGithub);
 const pmExtensionDevelopers = [
-    'silvxrcat',
+    'qbjl',
     'NexusKitten',
-    'G1nX-01',
+    'Gen1x-ALT',
     'SharkPool-SP',
     'David-Orangemoon',
     'pooiod',
