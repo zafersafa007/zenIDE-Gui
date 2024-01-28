@@ -619,28 +619,6 @@ const menuItems = [
         twDeveloper: 'LilyMakesThings'
     },
     {
-        name: (
-            <FormattedMessage
-                defaultMessage="HTML Canvas"
-                description="Name of Text extension"
-                id="canvas.name"
-            />
-        ),
-        extensionId: 'newCanvas',
-        iconURL: canvasExtensionBanner,
-        tags: ['penguinmod'],
-        insetIconURL: canvasExtensionIcon,
-        customInsetColor: '#0094FF',
-        description: (
-            <FormattedMessage
-                defaultMessage="Extra drawing tools using an HTML Canvas. Works well when used with other extensions."
-                description="Description of Text extension"
-                id="text.description"
-            />
-        ),
-        featured: true
-    },
-    {
         name: 'GamePad',
         extensionId: 'Gamepad',
         tags: ['turbowarp'],
@@ -981,6 +959,28 @@ const menuItems = [
 
 if (IsLocal || IsLiveTests) {
     const extras = [
+        {
+            name: (
+                <FormattedMessage
+                    defaultMessage="HTML Canvas"
+                    description="Name of Text extension"
+                    id="canvas.name"
+                />
+            ),
+            extensionId: 'newCanvas',
+            iconURL: canvasExtensionBanner,
+            tags: ['penguinmod'],
+            insetIconURL: canvasExtensionIcon,
+            customInsetColor: '#0094FF',
+            description: (
+                <FormattedMessage
+                    defaultMessage="Extra drawing tools using an HTML Canvas. Works well when used with other extensions."
+                    description="Description of Text extension"
+                    id="text.description"
+                />
+            ),
+            featured: true
+        },
         {
             name: 'OLD Canvas',
             extensionId: 'canvas',
