@@ -1,5 +1,601 @@
 [
     {
+        "name": "Alert 2",
+        "tags": [
+            "effects",
+            "electronic",
+            "games",
+            "space",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/alert2.mp3"
+    },
+    {
+        "name": "Alien Speaking",
+        "tags": [
+            "space",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/alien.mp3"
+    },
+    {
+        "name": "Crowd Speaking",
+        "tags": [
+            "voice",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/audiencevoices.mp3"
+    },
+    {
+        "name": "Bike Horn",
+        "tags": [
+            "effects",
+            "wacky",
+            "cartoon",
+            "horn",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/bikehorn.mp3"
+    },
+    {
+        "name": "Bossa Chords",
+        "tags": [
+            "music",
+            "themes",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/bossa-chords.mp3"
+    },
+    {
+        "name": "Cozy Mall",
+        "tags": [
+            "music",
+            "loops",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/cozy_mall.mp3"
+    },
+    {
+        "name": "Drumbreak 1",
+        "tags": [
+            "loops",
+            "drums",
+            "drumbreak",
+            "percussion",
+            "beat",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/drumbreak/break1.mp3"
+    },
+    {
+        "name": "Drumbreak 2",
+        "tags": [
+            "loops",
+            "drums",
+            "drumbreak",
+            "percussion",
+            "beat",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/drumbreak/break2.mp3"
+    },
+    {
+        "name": "DnB Break 1",
+        "tags": [
+            "loops",
+            "drums",
+            "drumbreak",
+            "percussion",
+            "beat",
+            "dnb",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/drumbreak/dnb1.mp3"
+    },
+    {
+        "name": "DnB Break 2",
+        "tags": [
+            "loops",
+            "drums",
+            "drumbreak",
+            "percussion",
+            "beat",
+            "dnb",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/drumbreak/dnb2.mp3"
+    },
+    {
+        "name": "Cowbell Beat",
+        "tags": [
+            "loops",
+            "beat",
+            "percussion",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/drumbreak/cowbell1.mp3"
+    },
+    {
+        "name": "Attention",
+        "tags": [
+            "human",
+            "voice",
+            "deep",
+            "echo",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/echo/attention-deep-voice.mp3"
+    },
+    {
+        "name": "Evacuation Warning",
+        "tags": [
+            "human",
+            "voice",
+            "echo",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/echo/evacuation_warning.mp3"
+    },
+    {
+        "name": "Faster",
+        "tags": [
+            "human",
+            "voice",
+            "echo",
+            "wacky",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/echo/faster.mp3"
+    },
+    {
+        "name": "Happy Easter",
+        "tags": [
+            "human",
+            "voice",
+            "echo",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/echo/happy-easter.mp3"
+    },
+    {
+        "name": "Mashup",
+        "tags": [
+            "human",
+            "voice",
+            "echo",
+            "deep",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/echo/mashup-deep.mp3"
+    },
+    {
+        "name": "Been Denied",
+        "tags": [
+            "human",
+            "voice",
+            "echo",
+            "deep",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/echo/you-have-been-denied.mp3"
+    },
+    {
+        "name": "Elevator Intermission",
+        "tags": [
+            "music",
+            "loops",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/elevator_intermission.mp3"
+    },
+    {
+        "name": "Enchanting Mysteries",
+        "tags": [
+            "music",
+            "themes",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/enchanting_mysteries.mp3"
+    },
+    {
+        "name": "Exhale",
+        "tags": [
+            "human",
+            "breathing",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/exhale.mp3"
+    },
+    {
+        "name": "Fire in the Hole",
+        "tags": [
+            "human",
+            "voice",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/fire_in_the_hole.mp3"
+    },
+    {
+        "name": "Firework",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/firework.mp3"
+    },
+    {
+        "name": "Fulfilling Jump",
+        "tags": [
+            "music",
+            "themes",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/fulfilling_jump.mp3"
+    },
+    {
+        "name": "Good Morning",
+        "tags": [
+            "human",
+            "voice",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/good-morning.mp3"
+    },
+    {
+        "name": "Huge Wreck",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/hugewreck1.mp3"
+    },
+    {
+        "name": "Hurt 1",
+        "tags": [
+            "effects",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/hurt1.mp3"
+    },
+    {
+        "name": "Hurt 2",
+        "tags": [
+            "effects",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/hurt2.mp3"
+    },
+    {
+        "name": "Hurt 3",
+        "tags": [
+            "effects",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/hurt3.mp3"
+    },
+    {
+        "name": "Hurt 4",
+        "tags": [
+            "effects",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/hurt4.mp3"
+    },
+    {
+        "name": "Hurt 5",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/hurt5.mp3"
+    },
+    {
+        "name": "Hurt Dragon",
+        "tags": [
+            "effects",
+            "dragon",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/hurtdragon1.mp3"
+    },
+    {
+        "name": "Hurt Monster",
+        "tags": [
+            "effects",
+            "monster",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/hurtmonster.mp3"
+    },
+    {
+        "name": "Jolly Bubblegum",
+        "tags": [
+            "music",
+            "themes",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/jolly_bubblegum.mp3"
+    },
+    {
+        "name": "Meow3",
+        "tags": [
+            "animals",
+            "cat",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/meow3.mp3"
+    },
+    {
+        "name": "Mustache",
+        "tags": [
+            "voice",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/mustache.mp3"
+    },
+    {
+        "name": "Nooo",
+        "tags": [
+            "voice",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/nooo.mp3"
+    },
+    {
+        "name": "Relaxing Plaza",
+        "tags": [
+            "music",
+            "themes",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/relaxing_plaza.mp3"
+    },
+    {
+        "name": "Roger That",
+        "tags": [
+            "human",
+            "voice",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/roger_that.mp3"
+    },
+    {
+        "name": "Scream4",
+        "tags": [
+            "voice",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/scream4.mp3"
+    },
+    {
+        "name": "Scream5",
+        "tags": [
+            "voice",
+            "human",
+            "wacky",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/scream5.mp3"
+    },
+    {
+        "name": "Shotgun 1",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/shotgun.mp3"
+    },
+    {
+        "name": "Small Break 1",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/smallbreak1.mp3"
+    },
+    {
+        "name": "Small Break 2",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/smallbreak2.mp3"
+    },
+    {
+        "name": "Small Break 3",
+        "tags": [
+            "effects",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/smallbreak3.mp3"
+    },
+    {
         "name": "A Bass",
         "tags": [
             "music",
@@ -4396,6 +4992,32 @@
         "rate": 44100,
         "fromPenguinModLibrary": true,
         "libraryFilePage": "sounds/nailgun.mp3"
+    },
+    {
+        "name": "Nailgun 2",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/nailgun2.mp3"
+    },
+    {
+        "name": "Nailgun 3",
+        "tags": [
+            "effects",
+            "guns",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/nailgun3.mp3"
     },
     {
         "name": "Notification1",

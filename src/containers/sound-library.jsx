@@ -9,6 +9,10 @@ import LibraryComponent from '../components/library/library.jsx';
 
 import soundIcon from '../components/library-item/lib-icon--sound.svg';
 import soundIconRtl from '../components/library-item/lib-icon--sound-rtl.svg';
+import loopIcon from '../components/library-item/lib-icon--loop.svg';
+import loopIconRtl from '../components/library-item/lib-icon--loop-rtl.svg';
+import themeIcon from '../components/library-item/lib-icon--theme.svg';
+import themeIconRtl from '../components/library-item/lib-icon--theme-rtl.svg';
 
 import {getSoundLibrary} from '../lib/libraries/tw-async-libraries';
 import soundTags from '../lib/libraries/sound-tags';
@@ -26,14 +30,23 @@ const messages = defineMessages({
 const PM_LIBRARY_API = "https://library.penguinmod.com/";
 
 // @todo need to use this hack to avoid library using md5 for image
-const getSoundLibraryThumbnailData = (soundLibraryContent, isRtl) => soundLibraryContent.map(sound => {
+const getSoundLibraryThumbnailData = (soundLibraryContent, isRtl) => soundLibraryContent
+.sort((a, b) => a.name.localeCompare(b.name))
+.map(sound => {
+    const icons = {
+        sound: isRtl ? soundIconRtl : soundIcon,
+        loop: isRtl ? loopIconRtl : loopIcon,
+        theme: isRtl ? themeIconRtl : themeIcon,
+    };
+    const isLoop = sound.tags ? sound.tags.includes('loops') : false;
+    const isTheme = sound.tags ? sound.tags.includes('themes') : false;
     const {
         md5ext,
         ...otherData
     } = sound;
     return {
         _md5: md5ext,
-        rawURL: isRtl ? soundIconRtl : soundIcon,
+        rawURL: isTheme ? icons.theme : (isLoop ? icons.loop : icons.sound),
         ...otherData
     };
 });
