@@ -167,14 +167,14 @@ module.exports = [
                 chunks: ['editor'],
                 template: 'src/playground/index.ejs',
                 filename: 'editor.html',
-                title: 'PenguinMod - A mod of TurboWarp',
+                title: 'PenguinMod - Editor',
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({
                 chunks: ['playground'],
                 template: 'src/playground/index.ejs',
                 filename: 'playground.html',
-                title: 'PenguinMod - A mod of TurboWarp',
+                title: 'PenguinMod - Playground',
                 ...htmlWebpackPluginCommon
             }),
             new HtmlWebpackPlugin({

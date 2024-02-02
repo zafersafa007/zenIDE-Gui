@@ -94,9 +94,9 @@ const formatProjectTitle = _title => {
 
 const messages = defineMessages({
     defaultTitle: {
-        defaultMessage: 'A mod of TurboWarp',
+        defaultMessage: 'Editor',
         description: 'Title of homepage',
-        id: 'tw.guiDefaultTitle'
+        id: 'pm.guiDefaultTitle'
     }
 });
 
