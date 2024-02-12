@@ -1472,25 +1472,25 @@ const makeToolboxXML = function (isInitialSetup, isStage = true, targetId, categ
 
     const everything = [
         xmlOpen,
-        motionXML, gap,
-        looksXML, gap,
-        soundXML, gap,
-        eventsXML, gap,
-        controlXML, gap,
-        sensingXML, gap,
-        operatorsXML, gap,
-        variablesXML, gap,
-        listsXML, gap,
-        myBlocksXML, gap,
-        isLiveTest ? [liveTestsXML, gap] : ''
+        motionXML,
+        looksXML,
+        soundXML,
+        eventsXML,
+        controlXML,
+        sensingXML,
+        operatorsXML,
+        variablesXML,
+        listsXML,
+        myBlocksXML
     ];
+    if (isLiveTest) everything.push(liveTestsXML);
 
     for (const extensionCategory of categoriesXML) {
-        everything.push(gap, extensionCategory.xml);
+        everything.push(extensionCategory.xml);
     }
 
     everything.push(xmlClose);
-    return everything.join('\n');
+    return everything.join(`\n${gap}\n`);
 };
 
 export default makeToolboxXML;
