@@ -2737,6 +2737,47 @@
         "rotationCenterY": 24
     },
     {
+        "name": "Cubey-a",
+        "tags": [
+            "drawing",
+            "happy",
+            "character"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/cubey-a.svg"
+    },
+    {
+        "name": "Cubey-b",
+        "tags": [
+            "drawing",
+            "character"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/cubey-b.svg"
+    },
+    {
+        "name": "Cubey-c",
+        "tags": [
+            "drawing",
+            "happy",
+            "character"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/cubey-c.svg"
+    },
+    {
         "name": "Cursor",
         "tags": [
             "mouse",
@@ -10968,6 +11009,33 @@
         "md5ext": "9546f547835649c415959fc86c9a1717.svg",
         "rotationCenterX": 33.402360253924,
         "rotationCenterY": 62.05085241467614
+    },
+    {
+        "name": "Turkey-a",
+        "tags": [
+            "animals",
+            "thanksgiving"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/turkey.svg"
+    },
+    {
+        "name": "Turkey-b",
+        "tags": [
+            "food",
+            "dinner",
+            "thanksgiving"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/turkeyplate.svg"
     },
     {
         "name": "Unicorn",
