@@ -372,7 +372,11 @@ class Interface extends React.Component {
                             {/* project not approved message */}
                             {(!extraProjectInfo.accepted) && (
                                 <div className={styles.remixWarningBox}>
-                                    <p>This project is not approved. Be careful when running this project.</p>
+                                    <p>
+                                        This project is currently under review.
+                                        Content may not be suitable for all ages,
+                                        and you should be careful when running the project.
+                                    </p>
                                 </div>
                             )}
                             {/* remix info */}
