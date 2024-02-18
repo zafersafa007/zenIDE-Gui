@@ -110,7 +110,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         || authorName
                     ) {
                         this.props.onSetExtraProjectInfo(
-                            rawData.accepted === true && rawData.removedsoft === false,
+                            rawData.accepted === true && !rawData.removedsoft,
                             rawData.remix > 0,
                             Number(rawData.remix),
                             rawData.tooLarge === true,
