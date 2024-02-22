@@ -429,6 +429,18 @@ const looks = function (isInitialSetup, isStage, targetId, costumeName, backdrop
                     </shadow>
                 </value>
             </block>
+            <block type="looks_goTargetlayer">
+                <value name="VISIBLE_OPTION">
+                    <shadow type="looks_getOtherSpriteVisible_menu"/>
+                </value>
+            </block>
+            <block type="looks_layersSetLayer">
+                <value name="NUM">
+                    <shadow type="math_integer">
+                        <field name="NUM">1</field>
+                    </shadow>
+                </value>
+            </block>
             <block type="looks_layersGetLayer"></block>
             ${blockSeparator}
         `}
