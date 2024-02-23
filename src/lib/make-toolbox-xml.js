@@ -883,6 +883,7 @@ const sensing = function (isInitialSetup, isStage) {
         `}
         ${blockSeparator}
         <block id="loudness" type="sensing_loudness"/>
+        <block id="loud" type="sensing_loud"/>
         ${blockSeparator}
         <block type="sensing_resettimer"/>
         <block id="timer" type="sensing_timer"/>
