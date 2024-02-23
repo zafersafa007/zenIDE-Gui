@@ -1050,7 +1050,7 @@ if (IsLocal || IsLiveTests) {
         },
         {
             name: 'Test Extension Loader',
-            href: 'https://studio.penguinmod.site/loadExt.html',
+            href: 'https://studio.penguinmod.com/loadExt.html',
             extensionId: 'special_testExtensionLibrary',
             iconURL: defaultExtensionIcon,
             description: 'Test loading extensions from a library. For developers.',
