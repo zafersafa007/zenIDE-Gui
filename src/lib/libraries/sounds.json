@@ -69,6 +69,48 @@
         "libraryFilePage": "sounds/bossa-chords.mp3"
     },
     {
+        "name": "Overworld",
+        "tags": [
+            "music",
+            "loops",
+            "sharkpool",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sp_overworld.mp3"
+    },
+    {
+        "name": "Ready to Go",
+        "tags": [
+            "music",
+            "loops",
+            "sharkpool",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sp_readytogo.mp3"
+    },
+    {
+        "name": "Shining Aura",
+        "tags": [
+            "music",
+            "themes",
+            "sharkpool",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/sp_shiningaura.mp3"
+    },
+    {
         "name": "Cozy Mall",
         "tags": [
             "music",

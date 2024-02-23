@@ -270,6 +270,7 @@ export default function (vm) {
                 [ScratchBlocks.Msg.SENSING_OF_DIRECTION, 'direction'],
                 [ScratchBlocks.Msg.SENSING_OF_COSTUMENUMBER, 'costume #'],
                 [ScratchBlocks.Msg.SENSING_OF_COSTUMENAME, 'costume name'],
+                ['layer', 'layer'],
                 [ScratchBlocks.Msg.SENSING_OF_SIZE, 'size'],
                 [ScratchBlocks.Msg.SENSING_OF_VOLUME, 'volume']
             ];
