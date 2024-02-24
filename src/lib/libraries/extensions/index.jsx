@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import {FormattedMessage} from 'react-intl';
+import {APP_NAME} from '../../brand';
 
 import musicIconURL from './music/music.png';
 import musicInsetIconURL from './music/music-small.svg';
@@ -700,6 +701,9 @@ const menuItems = [
                 defaultMessage="TurboWarp Blocks"
                 description="Name of TW extension"
                 id="tw.twExtension.name"
+                values={{
+                    APP_NAME: "TurboWarp"
+                }}
             />
         ),
         extensionId: 'tw',
@@ -898,6 +902,9 @@ const menuItems = [
                 defaultMessage="TurboWarp Extension Gallery"
                 description="Name of extensions.turbowarp.org in extension library"
                 id="tw.extensionGallery.name"
+                values={{
+                    APP_NAME: "TurboWarp"
+                }}
             />
         ),
         href: 'https://extensions.turbowarp.org/',
