@@ -79,11 +79,17 @@ const vmListenerHOC = function (WrappedComponent) {
                 document.addEventListener('keydown', this.handleKeyDown);
                 document.addEventListener('keyup', this.handleKeyUp);
             }
-            this.props.vm.postIOData('userData', {username: this.props.username});
+            this.props.vm.postIOData('userData', {
+                username: this.props.username,
+                loggedIn: this.props.usernameLoggedIn
+            });
         }
         componentDidUpdate (prevProps) {
-            if (prevProps.username !== this.props.username) {
-                this.props.vm.postIOData('userData', {username: this.props.username});
+            if (prevProps.username !== this.props.username || prevProps.usernameLoggedIn !== this.props.usernameLoggedIn) {
+                this.props.vm.postIOData('userData', {
+                    username: this.props.username,
+                    loggedIn: this.props.usernameLoggedIn
+                });
             }
 
             // Re-request a targets update when the shouldUpdateTargets state changes to true
@@ -244,6 +250,7 @@ const vmListenerHOC = function (WrappedComponent) {
         shouldUpdateTargets: PropTypes.bool,
         shouldUpdateProjectChanged: PropTypes.bool,
         username: PropTypes.string,
+        usernameLoggedIn: PropTypes.bool,
         vm: PropTypes.instanceOf(VM).isRequired
     };
     VMListener.defaultProps = {
@@ -260,6 +267,7 @@ const vmListenerHOC = function (WrappedComponent) {
         // Do not update the projectChanged state in fullscreen or player only mode
         shouldUpdateProjectChanged: !state.scratchGui.mode.isFullScreen && !state.scratchGui.mode.isPlayerOnly,
         vm: state.scratchGui.vm,
+        usernameLoggedIn: state.scratchGui.tw.usernameLoggedIn,
         username: state.session && state.session.session && state.session.session.user ?
             state.session.session.user.username : state.scratchGui.tw ? state.scratchGui.tw.username : ''
     });

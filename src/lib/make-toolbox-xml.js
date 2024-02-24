@@ -735,6 +735,8 @@ const control = function (isInitialSetup, isStage) {
 
 const sensing = function (isInitialSetup, isStage) {
     const name = translate('SENSING_ASK_TEXT', 'What\'s your name?');
+    // const openDocumentation = translate('OPEN_DOCUMENTATION', 'Open Documentation');
+    const helpManual = translate('HELP_MANUAL', 'Help Manual');
     return `
     <category name="%{BKY_CATEGORY_SENSING}" id="sensing" colour="#4CBFE6" secondaryColour="#2E8EB8">
         ${isStage ? '' : `
@@ -929,7 +931,9 @@ const sensing = function (isInitialSetup, isStage) {
             </value>
         </block>
         ${blockSeparator}
+        <button text="${helpManual}" callbackKey="OPEN_USERNAME_DOCS" />
         <block type="sensing_username"/>
+        <block type="sensing_loggedin"/>
         ${categorySeparator}
     </category>
     `;

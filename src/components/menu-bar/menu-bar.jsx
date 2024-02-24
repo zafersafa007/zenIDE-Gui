@@ -747,7 +747,10 @@ class MenuBar extends React.Component {
                                         </MenuItem>
                                     )}</FramerateChanger>
                                     <ChangeUsername>{changeUsername => (
-                                        <MenuItem onClick={changeUsername}>
+                                        <MenuItem
+                                            className={classNames({ [styles.disabled]: this.props.usernameLoggedIn })}
+                                            onClick={this.props.usernameLoggedIn ? () => {} : changeUsername}
+                                        >
                                             <FormattedMessage
                                                 defaultMessage="Change Username"
                                                 description="Menu bar item for changing the username"
@@ -1005,11 +1008,13 @@ MenuBar.propTypes = {
     showComingSoon: PropTypes.bool,
     userOwnsProject: PropTypes.bool,
     username: PropTypes.string,
+    usernameLoggedIn: PropTypes.bool.isRequired,
     vm: PropTypes.instanceOf(VM).isRequired
 };
 
 MenuBar.defaultProps = {
     logo: scratchLogo,
+    usernameLoggedIn: false,
     onShare: () => { }
 };
 
@@ -1036,6 +1041,7 @@ const mapStateToProps = (state, ownProps) => {
         sessionExists: state.session && typeof state.session.session !== 'undefined',
         errorsMenuOpen: errorsMenuOpen(state),
         username: user ? user.username : null,
+        usernameLoggedIn: state.scratchGui.tw.usernameLoggedIn,
         userOwnsProject: ownProps.authorUsername && user &&
             (ownProps.authorUsername === user.username),
         vm: state.scratchGui.vm
