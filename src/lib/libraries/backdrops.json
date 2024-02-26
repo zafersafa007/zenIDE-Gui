@@ -191,6 +191,20 @@
         "rotationCenterY": 360
     },
     {
+        "name": "Calm Night",
+        "tags": [
+            "outdoors",
+            "lights",
+            "purple"
+        ],
+        "bitmapResolution": 2,
+        "dataFormat": "png",
+        "rotationCenterX": 480,
+        "rotationCenterY": 360,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/backdrops/calm_night.png"
+    },
+    {
         "name": "Canyon",
         "tags": [
             "outdoors",

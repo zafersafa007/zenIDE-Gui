@@ -6487,6 +6487,21 @@
         "rotationCenterY": 260
     },
     {
+        "name": "Joe",
+        "tags": [
+            "people",
+            "crude",
+            "drawing",
+            "human"
+        ],
+        "bitmapResolution": 1,
+        "dataFormat": "svg",
+        "rotationCenterX": 0,
+        "rotationCenterY": 0,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/Joe.svg"
+    },
+    {
         "name": "Jordyn-a",
         "tags": [
             "sports",
@@ -9890,6 +9905,21 @@
         "md5ext": "3cfff37072a4138b977ba406c290b419.svg",
         "rotationCenterX": 55,
         "rotationCenterY": 89
+    },
+    {
+        "name": "Sleeping Dog",
+        "tags": [
+            "dog",
+            "animals",
+            "realistic",
+            "max"
+        ],
+        "bitmapResolution": 2,
+        "dataFormat": "png",
+        "rotationCenterX": 225,
+        "rotationCenterY": 144,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "images/max.png"
     },
     {
         "name": "Smiley-a",
