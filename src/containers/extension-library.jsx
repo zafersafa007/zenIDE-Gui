@@ -155,8 +155,7 @@ class ExtensionLibrary extends React.PureComponent {
             window.open('https://extensions.penguinmod.com/');
             return;
         }
-        let url = (item.extensionURL ? item.extensionURL : extensionId)
-                  .replace("penguinmod.site", "penguinmod.com");
+        const url = (item.extensionURL ? item.extensionURL : extensionId);
         if (item._unsandboxed && url.startsWith("data:")) {
             manuallyTrustExtension(url);
         }
