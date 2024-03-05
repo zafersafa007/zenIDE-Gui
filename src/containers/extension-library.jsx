@@ -89,7 +89,11 @@ class ExtensionLibrary extends React.PureComponent {
             return;
         }
 
-        const extensionId = e.data.loadExt;
+        let extensionId = e.data.loadExt;
+        console.log(extensionId);
+        /*
+        if (extensionId.includes("penguinmod.site") extensionId = extensionId.replace("penguinmod.site", "penguinmod.com")
+        */
         if (typeof extensionId !== 'string') {
             e.source.postMessage({
                 p4: {
