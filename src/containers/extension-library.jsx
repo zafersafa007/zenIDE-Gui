@@ -100,7 +100,7 @@ class ExtensionLibrary extends React.PureComponent {
             return;
         }
         // Support for older projects
-        if (extensionId.includes("penguinmod.site") extensionId = extensionId.replace("penguinmod.site", "penguinmod.com");
+        if (extensionId.includes("penguinmod.site")) extensionId = extensionId.replace("penguinmod.site", "penguinmod.com");
 
         // load the extension like any other custom extension url (this means sandboxing for some urls)
         if (this.props.vm.extensionManager.isExtensionLoaded(extensionId)) {
