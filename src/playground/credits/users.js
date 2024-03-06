@@ -115,6 +115,10 @@ const addonDevelopers = [
     {
         userId: '64691048',
         username: 'CST1229'
+    },
+    {
+        userId: '12498592',
+        username: 'LilyMakesThings'
     }
 ].map(fromHardcoded);
 
@@ -127,6 +131,7 @@ const pmDevelopers = [
     'jwklong',
     'tnix100',
     'RedMan13',
+    'SharkPool-SP',
     'showierdata9978'
 ].map(fromHardcodedGithub);
 
@@ -154,13 +159,13 @@ const pmApiDevelopers = [
 const pmTranslators = [
     {
         text: 'kolikiscool',
-        image: `https://github.com/kolikiscool.png`,
-        href: `https://github.com/kolikiscool/`,
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
     },
     {
-        text: 'PhilTheTrain',
-        image: `https://github.com/PhilTheTrain.png`,
-        href: `https://github.com/PhilTheTrain/`,
+        text: 'Youh',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
     },
     {
         text: 'n0name',
@@ -300,12 +305,20 @@ const pmTranslators = [
         image: `https://trampoline.turbowarp.org/avatars/by-username/justablock`,
         href: "https://penguinmod.com/profile?user=justablock",
     },
-    // this person may have decided not to translate?
-    // no final info though since they still have access & havent left the server...
     {
-        text: 'luca2756_lol',
-        image: `https://trampoline.turbowarp.org/avatars/by-username/luca2756_lol`,
-        href: "https://penguinmod.com/profile?user=luca2756_lol",
+        text: 'inventionpro',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/inventionpro`,
+        href: "https://penguinmod.com/profile?user=inventionpro",
+    },
+    {
+        text: 'SkyBuilder1717',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/SkyBuilder1717`,
+        href: "https://penguinmod.com/profile?user=SkyBuilder1717",
+    },
+    {
+        text: 'Parham1258',
+        image: `https://avatars.githubusercontent.com/u/95162943?v=4`,
+        href: "https://github.com/Parham1258",
     },
 ];
 
@@ -339,7 +352,10 @@ const pmExtensionDevelopers = [
     'TheShovel',
     'skyhigh173',
     'Ruby-Devs',
-    'oc9x97'
+    'oc9x97',
+    'lego7set',
+    'mariocraft987',
+    'Ashimee'
 ].map(fromHardcodedGithub);
 
 export default {

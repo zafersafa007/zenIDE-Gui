@@ -131,6 +131,9 @@ import theshovelCanvasEffectsIcon from './penguinmod/extensions/canvas_effects.p
 import theshovelLzCompressIcon from './penguinmod/orgtw/lz-compress2.svg';
 import theshovelColorPickerIcon from './penguinmod/orgtw/ColorPicker.svg';
 
+// sharkpool
+import sharkpoolPrintingIcon from './penguinmod/extensions/printing.png';
+
 // events
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
 import jgTimersExtensionIcon from './penguinmod/extensions/multipletimers.png';
@@ -633,6 +636,14 @@ const menuItems = [
                 id="GamepadExtension.GamepadExtension.description"
             />
         ),
+        featured: true
+    },
+    {
+        name: 'Printing',
+        tags: ['penguinmod'],
+        extensionId: 'sharkpoolPrinting',
+        iconURL: sharkpoolPrintingIcon,
+        description: 'Allows you to show a dialog for printing text, images, and custom HTML to a printer.',
         featured: true
     },
     {
