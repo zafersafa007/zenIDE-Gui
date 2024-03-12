@@ -320,6 +320,11 @@ const pmTranslators = [
         image: `https://avatars.githubusercontent.com/u/95162943?v=4`,
         href: "https://github.com/Parham1258",
     },
+    {
+        text: 'lem0n0fficial',
+        image: `https://trampoline.turbowarp.org/avatars/by-username/lem0n0fficial`,
+        href: "https://penguinmod.com/profile?user=lem0n0fficial",
+    },
 ];
 
 const logoArtists = Promise.all([
