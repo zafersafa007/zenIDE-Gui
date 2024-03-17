@@ -540,6 +540,7 @@ const menuItems = [
     {
         name: 'Odd Messages',
         extensionId: 'oddMessage',
+        tags: ['penguinmod'],
         iconURL: silvxrcatOddMessagesExtensionIcon,
         description: 'For logging and variable utilization.',
         featured: true,
@@ -640,7 +641,7 @@ const menuItems = [
     },
     {
         name: 'Printing',
-        tags: ['penguinmod'],
+        tags: ['penguinmod', 'hardware'],
         extensionId: 'sharkpoolPrinting',
         iconURL: sharkpoolPrintingIcon,
         description: 'Allows you to show a dialog for printing text, images, and custom HTML to a printer.',
@@ -1037,7 +1038,7 @@ if (IsLocal || IsLiveTests) {
             name: 'Easy Save',
             extensionId: 'jgEasySave',
             iconURL: defaultExtensionIcon,
-            tags: ['penguinmod'],
+            tags: ['penguinmod', 'datamgmt'],
             description: 'Save variables, lists and extra info to a file, then load those things back in.',
             featured: true
         },
