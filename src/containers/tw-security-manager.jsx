@@ -111,7 +111,7 @@ let allowedVideo = false;
 let allowedReadClipboard = false;
 let allowedNotify = false;
 let allowedGeolocation = false;
-const notAllowedToAskUnsandbox = Object.create({});
+const notAllowedToAskUnsandbox = Object.create(null);
 let loadingExtensionsRemember = false;
 let rememberedExtensionInfo = {
     unsandboxed: false,
