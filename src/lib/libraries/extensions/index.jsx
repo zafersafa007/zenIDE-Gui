@@ -172,7 +172,7 @@ const menuItems = [
         iconURL: musicIconURL,
         insetIconURL: musicInsetIconURL,
         customInsetColor: '#CF63CF',
-        tags: ['scratch'],
+        tags: ['scratch', 'noisemaker'],
         description: (
             <FormattedMessage
                 defaultMessage="Play instruments and drums."
@@ -193,7 +193,7 @@ const menuItems = [
         extensionId: 'pen',
         iconURL: penIconURL,
         insetIconURL: penInsetIconURL,
-        tags: ['scratch'],
+        tags: ['scratch', 'graphics'],
         description: (
             <FormattedMessage
                 defaultMessage="Draw with your sprites."
@@ -225,7 +225,7 @@ const menuItems = [
         iconURL: videoSensingIconURL,
         insetIconURL: videoSensingInsetIconURL,
         customInsetColor: '#74BDDC',
-        tags: ['scratch'],
+        tags: ['scratch', 'hardware'],
         description: (
             <FormattedMessage
                 defaultMessage="Sense motion with the camera."
@@ -249,7 +249,7 @@ const menuItems = [
         iconURL: text2speechIconURL,
         insetIconURL: text2speechInsetIconURL,
         customInsetColor: '#9966FF',
-        tags: ['scratch'],
+        tags: ['scratch', 'noisemaker'],
         description: (
             <FormattedMessage
                 defaultMessage="Make your projects talk."
@@ -291,7 +291,7 @@ const menuItems = [
         iconURL: makeymakeyIconURL,
         insetIconURL: makeymakeyInsetIconURL,
         customInsetColor: '#E64D00',
-        tags: ['scratch'],
+        tags: ['scratch', 'hardware'],
         description: (
             <FormattedMessage
                 defaultMessage="Make anything into a key."
@@ -329,9 +329,9 @@ const menuItems = [
     {
         name: 'Pen+',
         extensionId: 'https://extensions.penguinmod.com/extensions/ObviousAlexC/PenPlus.js',
-        tags: ['categoryexpansion'],
+        tags: ['categoryexpansion', 'graphics'],
         iconURL: 'https://extensions.penguinmod.com/images/ObviousAlexC/PenPlus.svg',
-        description: 'An extension to the Pen category!',
+        description: 'An extension to the Pen category! Adds blocks for drawing triangles using textures and tints, drawing images and editing their pixels, etc.',
         featured: true,
         extDeveloper: 'pinksheep2917'
     },
@@ -339,7 +339,7 @@ const menuItems = [
         name: 'Sound Systems',
         extensionId: 'jgExtendedAudio',
         iconURL: jgExtendedAudioExtensionIcon,
-        tags: ['penguinmod', 'categoryexpansion'],
+        tags: ['penguinmod', 'categoryexpansion', 'noisemaker'],
         description: 'An audio grouping system for more intensive audio work.',
         featured: true
     },
@@ -399,7 +399,7 @@ const menuItems = [
         name: 'Custom Styles',
         extensionId: 'shovelcss',
         iconURL: theshovelCustomStylesIcon,
-        tags: ['penguinmod'],
+        tags: ['penguinmod', 'graphics'],
         description: 'Customize the appearance of variable monitors and prompts in your project.',
         extDeveloper: 'TheShovel',
         featured: true
@@ -436,7 +436,7 @@ const menuItems = [
         name: 'Canvas Effects',
         extensionId: 'theshovelcanvaseffects',
         iconURL: theshovelCanvasEffectsIcon,
-        tags: ['penguinmod'],
+        tags: ['penguinmod', 'graphics'],
         description: 'Apply visual effects to the entire stage.',
         extDeveloper: 'TheShovel',
         credits: 'SharkPool',
@@ -455,7 +455,7 @@ const menuItems = [
     {
         name: 'Skins',
         extensionId: 'https://extensions.turbowarp.org/Lily/Skins.js',
-        tags: ['turbowarp'],
+        tags: ['turbowarp', 'graphics'],
         iconURL: 'https://extensions.turbowarp.org/images/Lily/Skins.svg',
         insetIconURL: turbowarpIcon,
         description: 'Have your sprites show themselves as other images or costumes.',
@@ -493,7 +493,7 @@ const menuItems = [
         name: 'Storage',
         extensionId: 'jgStorage',
         iconURL: jgStorageExtensionIcon,
-        tags: ['penguinmod'],
+        tags: ['penguinmod', 'datamgmt'],
         description: 'Store data after PenguinMod has already been closed out. Basic Server Storage is also included.',
         eventSubmittor: 'Fir & silvxrcat',
         featured: true
@@ -524,7 +524,7 @@ const menuItems = [
         name: 'LZ Compress',
         extensionId: 'shovellzcompresss',
         iconURL: theshovelLzCompressIcon,
-        tags: ['penguinmod'],
+        tags: ['penguinmod', 'datamgmt'],
         description: 'Compress and decompress text using lz-string.',
         extDeveloper: 'TheShovel',
         featured: true
@@ -532,7 +532,7 @@ const menuItems = [
     {
         name: 'Prism',
         extensionId: 'jgPrism',
-        tags: ['penguinmod'],
+        tags: ['penguinmod', 'datamgmt'],
         iconURL: jgPrismExtensionIcon,
         description: 'Blocks for specific use-cases or major convenience.',
         featured: true
@@ -626,7 +626,7 @@ const menuItems = [
     {
         name: 'GamePad',
         extensionId: 'Gamepad',
-        tags: ['turbowarp'],
+        tags: ['turbowarp', 'hardware'],
         insetIconURL: turbowarpIcon,
         twDeveloper: 'GarboMuffin',
         iconURL: gp,
@@ -651,7 +651,7 @@ const menuItems = [
         name: 'Clipping and Blending',
         extensionId: 'xeltallivclipblend',
         iconURL: clippingblending,
-        tags: ['turbowarp'],
+        tags: ['turbowarp', 'graphics'],
         insetIconURL: turbowarpIcon,
         description: 'Clipping outside of a specified rectangular area and additive color blending.',
         featured: true,
@@ -705,25 +705,6 @@ const menuItems = [
         iconURL: jgJavascriptExtensionIcon,
         tags: ['penguinmod', 'programminglanguage'],
         description: 'Run your own custom code written in JavaScript!',
-        featured: true
-    },
-    {
-        name: (
-            <FormattedMessage
-                defaultMessage="TurboWarp Blocks"
-                description="Name of TW extension"
-                id="tw.twExtension.name"
-                values={{
-                    APP_NAME: "TurboWarp"
-                }}
-            />
-        ),
-        extensionId: 'tw',
-        twDeveloper: 'GarboMuffin',
-        tags: ['turbowarp'],
-        insetIconURL: turbowarpIcon,
-        iconURL: twIcon,
-        description: 'Weird new blocks.',
         featured: true
     },
     {
@@ -945,7 +926,7 @@ const menuItems = [
     },
     {
         name: 'TurboBuilder',
-        href: 'https://turbobuilder-steel.vercel.app',
+        href: 'https://turbobuilder.vercel.app/',
         extensionId: 'special_turboBuilder',
         iconURL: turboBuilderIcon,
         description: 'Create your own amazing extensions using a scratch-based UI!',
@@ -1040,6 +1021,25 @@ if (IsLocal || IsLiveTests) {
             iconURL: defaultExtensionIcon,
             tags: ['penguinmod', 'datamgmt'],
             description: 'Save variables, lists and extra info to a file, then load those things back in.',
+            featured: true
+        },
+        {
+            name: (
+                <FormattedMessage
+                    defaultMessage="TurboWarp Blocks"
+                    description="Name of TW extension"
+                    id="tw.twExtension.name"
+                    values={{
+                        APP_NAME: "TurboWarp"
+                    }}
+                />
+            ),
+            extensionId: 'tw',
+            twDeveloper: 'GarboMuffin',
+            tags: ['turbowarp'],
+            insetIconURL: turbowarpIcon,
+            iconURL: twIcon,
+            description: 'Weird new blocks. Replaced by Sensing Expansion.',
             featured: true
         },
         {
@@ -1151,15 +1151,6 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
-            name: 'Advanced Text',
-            extensionId: 'jgAdvancedText',
-            eventSubmittor: 'eggo',
-            iconURL: jgAdvancedTextExtensionIcon,
-            tags: ['penguinmod'],
-            description: 'In development. Currently not publicly available.',
-            featured: true
-        },
-        {
             name: 'Interfaces',
             extensionId: 'jgInterfaces',
             iconURL: jgsilvxrcatInterfacesExtensionIcon,
@@ -1228,7 +1219,7 @@ if (IsLocal || IsLiveTests) {
             extensionId: 'jgAnimation',
             iconURL: jgAnimationExtensionIcon,
             tags: ['penguinmod'],
-            description: 'In development. Currently not publicly available.',
+            description: 'In development. Currently buggy and missing features.',
             featured: true
         },
         {

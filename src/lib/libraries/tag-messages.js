@@ -206,4 +206,14 @@ export default defineMessages({
         description: 'Tag for filtering a library by data management',
         id: 'gui.libraryTags.datamgmt'
     },
+    graphics: {
+        defaultMessage: 'Graphics',
+        description: 'Tag for filtering a library by graphics.',
+        id: 'gui.libraryTags.graphics'
+    },
+    noisemaker: {
+        defaultMessage: 'Sound',
+        description: 'Tag for filtering a library by their relation to sound.',
+        id: 'gui.libraryTags.noisemaker'
+    },
 });
