@@ -330,6 +330,11 @@ const pmTranslators = [
         image: `https://trampoline.turbowarp.org/avatars/by-username/Oldcoinmania`,
         href: "https://penguinmod.com/profile?user=Oldcoinmania",
     },
+    {
+        text: 'mariocraft987',
+        image: `https://avatars.githubusercontent.com/u/154646419?v=4`,
+        href: "https://github.com/mariocraft987",
+    },
 ];
 
 const logoArtists = Promise.all([
