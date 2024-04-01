@@ -715,6 +715,58 @@ const menuItems = [
         twDeveloper: 'LilyMakesThings'
     },
     {
+        name: 'the doo doo extension',
+        extensionId: 'jgDooDoo',
+        iconURL: defaultExtensionIcon,
+        tags: ['penguinmod', 'joke'],
+        description: 'dr bob eae',
+        featured: true
+    },
+    {
+        name: 'Christmas',
+        extensionId: 'jgChristmas',
+        iconURL: 'https://extensions.penguinmod.com/images/JeremyGamer13/christmas.png',
+        tags: ['penguinmod', 'joke'],
+        description: 'hooraye',
+        featured: true
+    },
+    {
+        name: 'an amazing extension',
+        extensionId: 'jgBestExtension',
+        iconURL: 'https://extensions.penguinmod.com/images/JeremyGamer13/epic.png',
+        internetConnectionRequired: true,
+        tags: ['penguinmod', 'joke'],
+        description: 'this is SUCH A GOOD EXTENSION USE IT NOW',
+        featured: true
+    },
+    {
+        name: 'Epic utilities',
+        extensionId: 'https://extensions.penguinmod.com/extensions/SharkPool/AprilFools.js',
+        iconURL: 'https://extensions.penguinmod.com/images/JeremyGamer13/epicutils.png',
+        tags: ['penguinmod', 'joke'],
+        description: 'the super good utilities brought to you by todays sponsor sharkpool (the epic utilities)',
+        featured: true
+    },
+    {
+        name: 'image blocks',
+        extensionId: 'https://extensions.penguinmod.com/extensions/Ashime/funneimageblocks.js',
+        iconURL: 'https://extensions.penguinmod.com/images/JeremyGamer13/screenshot1.png',
+        tags: ['penguinmod', 'joke'],
+        internetConnectionRequired: true,
+        description: 'who needs cat blocks when you have penguin block',
+        extDeveloper: 'Ashimee, 0znzw, CST1229',
+        featured: true
+    },
+    {
+        name: 'fire in the hole',
+        extensionId: 'https://extensions.penguinmod.com/extensions/JeremyGamer13/FireInTheHole.js',
+        iconURL: 'https://library.penguinmod.com/files/emojis/cluelesssmile.png',
+        tags: ['penguinmod', 'joke'],
+        internetConnectionRequired: true,
+        description: 'april fools took too long man this joke is not funny anymore',
+        featured: true
+    },
+    {
         name: 'GamePad',
         extensionId: 'Gamepad',
         tags: ['turbowarp', 'hardware'],
@@ -1084,14 +1136,6 @@ if (IsLocal || IsLiveTests) {
             featured: true
         },
         {
-            name: 'Christmas',
-            extensionId: 'jgChristmas',
-            iconURL: defaultExtensionIcon,
-            tags: ['penguinmod', 'joke'],
-            description: 'hooraye',
-            featured: true
-        },
-        {
             name: 'Legacy Files',
             extensionId: 'jgFiles',
             iconURL: defaultExtensionIcon,
@@ -1270,14 +1314,7 @@ if (IsLocal || IsLiveTests) {
             description: 'In development. Do extra things in packaged applications that you can\'t do in the website!',
             featured: true
         },
-        {
-            name: 'the doo doo extension',
-            extensionId: 'jgDooDoo',
-            iconURL: defaultExtensionIcon,
-            tags: ['penguinmod', 'joke'],
-            description: 'dr bob eae',
-            featured: true
-        },
+        
         {
             name: 'Inline Blocks',
             extensionId: 'pmInlineBlocks',
