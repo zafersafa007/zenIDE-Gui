@@ -826,30 +826,6 @@ class MenuBar extends React.Component {
                                         />
                                     </MenuItem>
                                 </MenuSection>
-                                <MenuSection>
-                                    <h1>SUPER EDITOR EFFECTS</h1>
-                                    <MenuItem onClick={() => this.handleClickMode()}>
-                                        Disable effects
-                                    </MenuItem>
-                                    <MenuItem onClick={() => this.handleClickMode('night')}>
-                                        Night light
-                                    </MenuItem>
-                                    <MenuItem onClick={() => this.handleClickMode('blur')}>
-                                        JeremyGamer13's eyesight
-                                    </MenuItem>
-                                    <MenuItem onClick={() => this.handleClickMode('comic')}>
-                                        Comicbook
-                                    </MenuItem>
-                                    <MenuItem onClick={() => this.handleClickMode('upsidedown')}>
-                                        Australia
-                                    </MenuItem>
-                                    <MenuItem onClick={() => this.handleClickMode('toxic')}>
-                                        Radioactive
-                                    </MenuItem>
-                                    <MenuItem onClick={() => this.handleClickMode('uhd')}>
-                                        RTX UHD Graphics
-                                    </MenuItem>
-                                </MenuSection>
                             </MenuBarMenu>
                         </div>
                         {this.props.onClickAddonSettings && (
