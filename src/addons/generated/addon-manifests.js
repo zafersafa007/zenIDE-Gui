@@ -63,10 +63,9 @@ import _script_snap from "../addons/script-snap/_manifest_entry.js";
 import _fullscreen from "../addons/fullscreen/_manifest_entry.js";
 import _hide_stage from "../addons/hide-stage/_manifest_entry.js";
 import _tw_straighten_comments from "../addons/tw-straighten-comments/_manifest_entry.js";
-import _tw_remove_backpack from "../addons/tw-remove-backpack/_manifest_entry.js";
 import _tw_remove_feedback from "../addons/tw-remove-feedback/_manifest_entry.js";
+import _tw_remove_backpack from "../addons/tw-remove-backpack/_manifest_entry.js";
 import _tw_disable_cloud_variables from "../addons/tw-disable-cloud-variables/_manifest_entry.js";
-import _editor_stepping from "../addons/editor-stepping/_manifest_entry.js";
 
 export default {
   "cat-blocks": _cat_blocks,
@@ -133,9 +132,8 @@ export default {
   "fullscreen": _fullscreen,
   "hide-stage": _hide_stage,
   "tw-straighten-comments": _tw_straighten_comments,
-  "tw-remove-backpack": _tw_remove_backpack,
   "tw-remove-feedback": _tw_remove_feedback,
+  "tw-remove-backpack": _tw_remove_backpack,
   "tw-disable-cloud-variables": _tw_disable_cloud_variables,
-  "editor-stepping": _editor_stepping,
   "vol-slider": _vol_slider,
 };
