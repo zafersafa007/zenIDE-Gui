@@ -133,6 +133,7 @@ import theshovelColorPickerIcon from './penguinmod/orgtw/ColorPicker.svg';
 
 // sharkpool
 import sharkpoolPrintingIcon from './penguinmod/extensions/printing.png';
+import jgScriptsExtensionIcon from './penguinmod/extensions/scripts.svg';
 
 // events
 import jgStorageExtensionIcon from './penguinmod/extensions/storage.png';
@@ -1298,9 +1299,9 @@ if (IsLocal || IsLiveTests) {
         {
             name: 'Scripts',
             extensionId: 'jgScripts',
-            iconURL: defaultExtensionIcon,
+            iconURL: jgScriptsExtensionIcon,
             tags: ['penguinmod'],
-            description: 'In development. Create compiled scripts with blocks while the project is running.',
+            description: 'Create compiled scripts with blocks while the project is running.',
             featured: true
         },
         {
