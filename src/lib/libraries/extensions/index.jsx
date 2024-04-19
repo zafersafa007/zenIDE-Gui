@@ -549,6 +549,14 @@ const menuItems = [
         internetConnectionRequired: true
     },
     {
+        name: 'Scripts',
+        extensionId: 'jgScripts',
+        iconURL: jgScriptsExtensionIcon,
+        tags: ['penguinmod', 'datamgmt'],
+        description: 'Create compiled scripts with blocks while the project is running.',
+        featured: true
+    },
+    {
         name: 'Pang API',
         extensionId: 'https://extensions.penguinmod.com/extensions/SammerLOL/pangapi.js',
         iconURL: 'https://extensions.penguinmod.com/images/SammerLOL/pangapi.png',
@@ -1294,14 +1302,6 @@ if (IsLocal || IsLiveTests) {
             credits: 'silvxrcat',
             tags: ['penguinmod'],
             description: 'In development.',
-            featured: true
-        },
-        {
-            name: 'Scripts',
-            extensionId: 'jgScripts',
-            iconURL: jgScriptsExtensionIcon,
-            tags: ['penguinmod'],
-            description: 'Create compiled scripts with blocks while the project is running.',
             featured: true
         },
         {
