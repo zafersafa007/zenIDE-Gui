@@ -60,6 +60,7 @@ import penguinmodLibraryExtensionIcon from './penguinmod/library.svg';
 import sharkpoolGalleryIcon from './penguinmod/sharkpool-library.svg';
 
 import turboBuilderIcon from './penguinmod/turbobuilder.png';
+import turboBuilderDevIcon from './penguinmod/turbobuilder-dev.png';
 
 import filesExtensionIcon from './penguinmod/extensions/files.png';
 import jgJSONExtensionIcon from './penguinmod/extensions/json.png';
@@ -1026,6 +1027,17 @@ const menuItems = [
         tags: ['extcreate'],
         featured: true,
         disabled: !(IsLocal || IsLiveTests)
+    },
+    {
+        // not really an extension, but it's easiest to present it as one
+        name: 'TurboBuilder - Dev Branch',
+        href: 'https://turbobuilder-dev.vercel.app/',
+        extensionId: 'special_turboBuilderDev',
+        iconURL: turboBuilderDevIcon,
+        description: 'Publicly available developer branch, with the latest features.',
+        credits: 'Started by JeremyGamer13, continued by jwklong',
+        tags: ['extcreate'],
+        featured: true
     },
     {
         // not really an extension, but it's easiest to present it as one
