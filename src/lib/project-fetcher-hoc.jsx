@@ -5,6 +5,7 @@ import bindAll from 'lodash.bindall';
 import { connect } from 'react-redux';
 import Project from './project.protobuf.js';
 import Pbf from './pbf.js';
+import JSZip from 'jszip';
 
 import { setProjectUnchanged } from '../reducers/project-changed';
 import {
@@ -268,15 +269,28 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                     storage.setProjectToken(projectId);
                     assetPromise = storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
                 } else {
-                    projectUrl = `http://localhost:8080/api/v1/projects/getproject?requestType=protobuf&safe=true&projectId=${projectId}`
+                    projectUrl = `http://localhost:8080/api/v1/projects/getprojectwrapper?safe=true&projectId=${projectId}`
                     // TODO: convert the protobuf to a pmp. Get the pbf file from the server to do this.
                     assetPromise = progressMonitor.fetchWithProgress(projectUrl)
-                        .then(r => {
+                        .then(async r => {
                             this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
                             if (!r.ok) {
                                 throw new Error(`Request returned status ${r.status}`);
                             }
-                            return r.arrayBuffer();
+                            const project = await r.json();
+
+                            const pbf = new Pbf(new Uint8Array(project.project.data));
+                            const json = protobufToJson(pbf);
+
+                            // now get the assets
+                            let zip = new JSZip();
+                            zip.file("project.json", JSON.stringify(json));
+                            
+                            for (const asset of project.assets) {
+                                zip.file(asset.name, asset.data);
+                            }
+
+                            return zip.generateAsync({ type: "arraybuffer" });
                         })
                         .then(buffer => ({ data: buffer }))
                         .catch(error => {
@@ -300,13 +314,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 })
                 .then(projectAsset => {
                     if (projectAsset) {
-                        // convert the protobuf to json then to array buffer
-                        const pbf = new Pbf(projectAsset.data);
-                        const json = protobufToJson(pbf);
-
-                        const projectData = new TextEncoder().encode(JSON.stringify(json));
-
-                        this.props.onFetchedProjectData(projectData, loadingState);
+                        this.props.onFetchedProjectData(projectAsset.data, loadingState);
                     } else {
                         // pm: Failed to grab data, use the "fetch" API as a backup
                         // we shouldnt be interrupted by the fetch replacement in tw-progress-monitor
