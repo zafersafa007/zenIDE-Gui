@@ -11,8 +11,7 @@ import classNames from 'classnames';
 /**
  * @class
  */
-var StudioView = function (studioId) {
-    this.studioId = studioId;
+var StudioView = function () {
     this.offset = 0;
     this.ended = false;
     this.loadingPage = false;
@@ -243,7 +242,9 @@ StudioView.prototype.loadNextPage = function () {
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     xhr.onload = function () {
-        var rawProjects = xhr.response.projects;
+        var rawProjects = xhr.response;
+        console.log(rawProjects, "raw :devious:");
+        console.log(rawProjects);
         if (!Array.isArray(rawProjects)) {
             xhr.onerror();
             return;
@@ -253,7 +254,7 @@ StudioView.prototype.loadNextPage = function () {
             var p = rawProjects[i];
             projects.push({
                 id: p.id,
-                title: p.name,
+                title: p.title,
                 author: p.author.username,
                 featured: p.featured,
             });
@@ -287,8 +288,9 @@ StudioView.prototype.loadNextPage = function () {
         this.ended = true;
     }.bind(this);
 
-    var url = StudioView.STUDIO_API + "/pmWrapper/projects"
+    var url = StudioView.STUDIO_API + "/projects/getprojects"
     xhr.open('GET', url);
+    console.log("getting " + url);
     xhr.send();
 };
 
@@ -300,11 +302,11 @@ StudioView.prototype.onselect = function (id, el) { };
 StudioView.prototype.onpageload = function () { };
 StudioView.prototype.onend = function () { };
 
-StudioView.STUDIO_API = 'https://projects.penguinmod.com/api';
+StudioView.STUDIO_API = 'http://localhost:8080/api/v1';
 
 // The URL to download thumbnails from.
 // $id is replaced with the project's ID.
-StudioView.THUMBNAIL_SRC = 'https://projects.penguinmod.com/api/pmWrapper/iconUrl?id=$id';
+StudioView.THUMBNAIL_SRC = 'http://localhost:8080/api/v1/projects/getproject?projectId=$id&requestType=thumbnail';
 
 // The URL for project pages.
 // $id is replaced with the project ID.

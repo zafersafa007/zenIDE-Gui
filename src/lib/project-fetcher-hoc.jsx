@@ -42,7 +42,7 @@ const fetchProjectToken = projectId => {
     if (hashParams.has('token')) {
         return Promise.resolve(hashParams.get('token'));
     }
-    return fetch(`https://projects.penguinmod.com/api/projects/getPublished?id=${projectId}`)
+    return fetch(`http://localhost:8080/api/v1/projects/getproject?id=${projectId}&requestType=metadata`)
         .then(r => {
             if (!r.ok) return null;
             return r.json();
@@ -136,7 +136,8 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                     storage.setProjectToken(projectId);
                     assetPromise = storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
                 } else {
-                    projectUrl = `https://projects.penguinmod.com/api/projects/getPublished?type=file&safe=true&id=${projectId}`
+                    projectUrl = `http://localhost:8080/api/v1/projects/getproject?requestType=protobuf&safe=true&projectId=${projectId}`
+                    // TODO: convert the protobuf to a pmp. Get the pbf file from the server to do this.
                     assetPromise = progressMonitor.fetchWithProgress(projectUrl)
                         .then(r => {
                             this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
