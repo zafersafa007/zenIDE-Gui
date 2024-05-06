@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { intlShape, injectIntl } from 'react-intl';
 import bindAll from 'lodash.bindall';
 import { connect } from 'react-redux';
+import Project from './project.protobuf.js';
+import Pbf from './pbf.js';
 
 import { setProjectUnchanged } from '../reducers/project-changed';
 import {
@@ -56,6 +58,136 @@ const fetchProjectToken = projectId => {
             return null;
         });
 };
+
+function protobufToJson(buffer) {
+    const json = Project.read(buffer);
+
+    const newJson = {
+        targets: [],
+        monitors: [],
+        extensionData: {},
+        extensions: json.extensions,
+        extensionURLs: {},
+        meta: {
+            semver: json.metaSemver,
+            vm: json.metaVm,
+            agent: json.metaAgent || ""
+        }
+    };
+
+    for (const target of json.targets) {
+        let newTarget = {
+            isStage: target.isStage,
+            name: target.name,
+            variables: {},
+            lists: {},
+            broadcasts: {},
+            customVars: [],
+            blocks: {},
+            comments: {},
+            currentCostume: target.currentCostume,
+            costumes: [],
+            sounds: [],
+            id: target.id,
+            volume: target.volume,
+            layerOrder: target.layerOrder,
+            tempo: target.tempo,
+            videoTransparency: target.videoTransparency,
+            videoState: target.videoState,
+            textToSpeechLanguage: target.textToSpeechLanguage || null,
+            visible: target.visible,
+            x: target.x,
+            y: target.y,
+            size: target.size,
+            direction: target.direction,
+            draggable: target.draggable,
+            rotationStyle: target.rotationStyle
+        };
+
+        for (const variable in target.variables) {
+            newTarget.variables[variable] = [target.variables[variable].name, target.variables[variable].value];
+        }
+
+        for (const list in target.lists) {
+            newTarget.lists[list] = [target.lists[list].name, target.lists[list].value];
+        }
+
+        for (const broadcast in target.broadcasts) {
+            newTarget.broadcasts[broadcast] = target.broadcasts[broadcast];
+        }
+
+        for (const customVar in target.customVars) {
+            newTarget.customVars.push(target.customVars[customVar]);
+        }
+
+        for (const block in target.blocks) {
+            newTarget.blocks[block] = {
+                opcode: target.blocks[block].opcode,
+                next: target.blocks[block].next || null,
+                parent: target.blocks[block].parent || null,
+                inputs: {},
+                fields: {},
+                shadow: target.blocks[block].shadow,
+                topLevel: target.blocks[block].topLevel,
+                x: target.blocks[block].x,
+                y: target.blocks[block].y
+            }
+
+            for (const input in target.blocks[block].inputs) {
+                newTarget.blocks[block].inputs[input] = JSON.parse(target.blocks[block].inputs[input]);
+            }
+
+            for (const field in target.blocks[block].fields) {
+                newTarget.blocks[block].fields[field] = JSON.parse(target.blocks[block].fields[field]);
+            }
+        }
+
+        for (const comment in target.comments) {
+            newTarget.comments[comment] = target.comments[comment];
+        }
+
+        for (const costume in target.costumes) {
+            newTarget.costumes[costume] = target.costumes[costume];
+        }
+
+        for (const sound in target.sounds) {
+            newTarget.sounds[sound] = target.sounds[sound];
+        }
+
+        newJson.targets.push(newTarget);
+    }
+
+    for (const monitor in json.monitors) {
+        let newMonitor = {
+            id: json.monitors[monitor].id,
+            mode: json.monitors[monitor].mode,
+            opcode: json.monitors[monitor].opcode,
+            params: json.monitors[monitor].params,
+            spriteName: json.monitors[monitor].spriteName || null,
+            value: json.monitors[monitor].value,
+            width: json.monitors[monitor].width,
+            height: json.monitors[monitor].height,
+            x: json.monitors[monitor].x,
+            y: json.monitors[monitor].y,
+            visible: json.monitors[monitor].visible,
+            sliderMin: json.monitors[monitor].sliderMin,
+            sliderMax: json.monitors[monitor].sliderMax,
+            isDiscrete: json.monitors[monitor].isDiscrete
+        }
+
+        newJson.monitors.push(newMonitor);
+    }
+
+    for (const extensionData in json.extensionData) {
+        newJson.extensionData[extensionData] = JSON.parse(json.extensionData[extensionData]);
+    }
+
+    for (const extensionURL in json.extensionURLs) {
+        newJson.extensionURLs[extensionURL] = json.extensionURLs[extensionURL];
+    }
+
+    return newJson;
+}
 
 /* Higher Order Component to provide behavior for loading projects by id. If
  * there's no id, the default project is loaded.
@@ -168,7 +300,13 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                 })
                 .then(projectAsset => {
                     if (projectAsset) {
-                        this.props.onFetchedProjectData(projectAsset.data, loadingState);
+                        // convert the protobuf to json then to array buffer
+                        const pbf = new Pbf(projectAsset.data);
+                        const json = protobufToJson(pbf);
+
+                        const projectData = new TextEncoder().encode(JSON.stringify(json));
+
+                        this.props.onFetchedProjectData(projectData, loadingState);
                     } else {
                         // pm: Failed to grab data, use the "fetch" API as a backup
                         // we shouldnt be interrupted by the fetch replacement in tw-progress-monitor

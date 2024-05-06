@@ -243,8 +243,6 @@ StudioView.prototype.loadNextPage = function () {
     xhr.responseType = 'json';
     xhr.onload = function () {
         var rawProjects = xhr.response;
-        console.log(rawProjects, "raw :devious:");
-        console.log(rawProjects);
         if (!Array.isArray(rawProjects)) {
             xhr.onerror();
             return;
@@ -290,7 +288,6 @@ StudioView.prototype.loadNextPage = function () {
 
     var url = StudioView.STUDIO_API + "/projects/getprojects"
     xhr.open('GET', url);
-    console.log("getting " + url);
     xhr.send();
 };
 

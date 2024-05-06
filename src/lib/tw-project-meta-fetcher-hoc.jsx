@@ -95,7 +95,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         this.props.onSetProjectTitle(title);
                     }
                     const authorName = data.author.username;
-                    const authorThumbnail = `https://trampoline.turbowarp.org/avatars/by-username/${data.author.username}`;
+                    const authorThumbnail = `https://localhost:8080/api/v1/users/getpfp?username=${data.author.username}`;
                     this.props.onSetAuthor(authorName, authorThumbnail);
                     const instructions = data.desc || '';
                     const credits = data.notes || '';

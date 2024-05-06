@@ -348,7 +348,7 @@ class Interface extends React.Component {
                                 className={styles.projectAuthorImage}
                                 title={extraProjectInfo.author}
                                 alt={extraProjectInfo.author}
-                                src={`https://trampoline.turbowarp.org/avatars/by-username/${extraProjectInfo.author}`}
+                                src={`http://localhost:8080/api/v1/users/getpfp?username=${extraProjectInfo.author}`}
                             />
                         </a>
                         <div className={styles.projectMetadata}>
@@ -394,7 +394,7 @@ class Interface extends React.Component {
                                                 className={styles.remixAuthorImage}
                                                 title={remixedProjectInfo.author}
                                                 alt={remixedProjectInfo.author}
-                                                src={`https://trampoline.turbowarp.org/avatars/by-username/${remixedProjectInfo.author}`}
+                                                src={`http://localhost:8080/api/v1/users/getpfp?username=${remixedProjectInfo.author}`}
                                             />
                                         </a>
                                         <p>
