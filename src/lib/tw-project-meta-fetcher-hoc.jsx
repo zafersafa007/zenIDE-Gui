@@ -12,10 +12,10 @@ const API_REMIX_URL = 'http://localhost:8080/api/v1/projects/getremixes?projectI
 function APIProjectToReadableProject(apiProject) {
     return {
         id: apiProject.id,
-        name: apiProject.name,
+        name: apiProject.title,
         desc: apiProject.instructions,
         notes: apiProject.notes,
-        author: { id: -1, username: apiProject.owner }
+        author: { id: apiProject.author.id, username: apiProject.author.username }
     }
 }
 
@@ -110,13 +110,13 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         || authorName
                     ) {
                         this.props.onSetExtraProjectInfo(
-                            rawData.accepted === true && !rawData.removedsoft,
+                            rawData.public && !rawData.softRejected,
                             rawData.remix > 0,
                             Number(rawData.remix),
-                            rawData.tooLarge === true,
+                            false,
                             authorName,
-                            new Date(rawData.date),
-                            rawData.updating === true
+                            new Date(rawData.lastUpdate),
+                            rawData.lastUpdate !== rawData.date
                         );
                     }
                     if (rawData.remix > 0) {
