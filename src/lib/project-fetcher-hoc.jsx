@@ -287,10 +287,12 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                             zip.file("project.json", JSON.stringify(json));
                             
                             for (const asset of project.assets) {
-                                zip.file(asset.name, asset.data);
+                                zip.file(asset.id, new Uint8Array(asset.buffer.data).buffer);
                             }
 
-                            return zip.generateAsync({ type: "arraybuffer" });
+                            const arrayBuffer = await zip.generateAsync({ type: "arraybuffer" });
+
+                            return arrayBuffer
                         })
                         .then(buffer => ({ data: buffer }))
                         .catch(error => {
