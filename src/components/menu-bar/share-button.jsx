@@ -28,12 +28,12 @@ const getProjectUri = () => new Promise(resolve => {
 const isUploadAvailable = async () => {
     let res = null;
     try {
-        res = await fetch('http://localhost:8080/api/v1/ping');
+        res = await fetch('http://localhost:8080/api/v1/projects/canuploadprojects').then(res => res.json());
     } catch {
         // failed to fetch entirely
         return false;
     }
-    return res.ok;
+    return res.canUpload;
 };
 
 class ShareButton extends React.Component {
