@@ -131,8 +131,11 @@ function protobufToJson(buffer) {
                 shadow: target.blocks[block].shadow,
                 topLevel: target.blocks[block].topLevel,
                 x: target.blocks[block].x,
-                y: target.blocks[block].y,
-                mutation: {
+                y: target.blocks[block].y
+            }
+
+            if (target.blocks[block].mutation) {
+                newTarget.blocks[block].mutation = {
                     tagName: target.blocks[block].mutation.tagName,
                     proccode: target.blocks[block].mutation.proccode,
                     argumentids: target.blocks[block].mutation.argumentids,
@@ -142,7 +145,8 @@ function protobufToJson(buffer) {
                     returns: target.blocks[block].mutation._returns,
                     edited: target.blocks[block].mutation.edited,
                     optype: target.blocks[block].mutation.optype,
-                    color: target.blocks[block].mutation.color
+                    color: target.blocks[block].mutation.color,
+                    children: []
                 }
             }
 
@@ -198,6 +202,8 @@ function protobufToJson(buffer) {
     for (const extensionURL in json.extensionURLs) {
         newJson.extensionURLs[extensionURL] = json.extensionURLs[extensionURL];
     }
+
+    console.log(newJson);
 
     return newJson;
 }
