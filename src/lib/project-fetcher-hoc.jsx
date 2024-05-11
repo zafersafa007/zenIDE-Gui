@@ -131,7 +131,19 @@ function protobufToJson(buffer) {
                 shadow: target.blocks[block].shadow,
                 topLevel: target.blocks[block].topLevel,
                 x: target.blocks[block].x,
-                y: target.blocks[block].y
+                y: target.blocks[block].y,
+                mutation: {
+                    tagName: target.blocks[block].mutation.tagName,
+                    proccode: target.blocks[block].mutation.proccode,
+                    argumentids: target.blocks[block].mutation.argumentids,
+                    argumentnames: target.blocks[block].mutation.argumentnames,
+                    argumentdefaults: target.blocks[block].mutation.argumentdefaults,
+                    warp: target.blocks[block].mutation.warp,
+                    returns: target.blocks[block].mutation._returns,
+                    edited: target.blocks[block].mutation.edited,
+                    optype: target.blocks[block].mutation.optype,
+                    color: target.blocks[block].mutation.color
+                }
             }
 
             for (const input in target.blocks[block].inputs) {
