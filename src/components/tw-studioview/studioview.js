@@ -303,7 +303,7 @@ StudioView.STUDIO_API = 'http://localhost:8080/api/v1';
 
 // The URL to download thumbnails from.
 // $id is replaced with the project's ID.
-StudioView.THUMBNAIL_SRC = 'http://localhost:8080/api/v1/projects/getproject?projectId=$id&requestType=thumbnail';
+StudioView.THUMBNAIL_SRC = 'http://localhost:8080/api/v1/projects/getproject?projectID=$id&requestType=thumbnail';
 
 // The URL for project pages.
 // $id is replaced with the project ID.
