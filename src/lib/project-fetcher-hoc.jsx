@@ -45,7 +45,7 @@ const fetchProjectToken = projectId => {
     if (hashParams.has('token')) {
         return Promise.resolve(hashParams.get('token'));
     }
-    return fetch(`http://localhost:8080/api/v1/projects/getproject?id=${projectId}&requestType=metadata`)
+    return fetch(`http://localhost:8080/api/v1/projects/getproject?projectID=${projectId}&requestType=metadata`)
         .then(r => {
             if (!r.ok) return null;
             return r.json();
@@ -202,8 +202,6 @@ function protobufToJson(buffer) {
     for (const extensionURL in json.extensionURLs) {
         newJson.extensionURLs[extensionURL] = json.extensionURLs[extensionURL];
     }
-
-    console.log(newJson);
 
     return newJson;
 }

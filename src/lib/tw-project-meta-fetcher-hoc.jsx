@@ -6,7 +6,7 @@ import log from './log';
 import { setProjectTitle } from '../reducers/project-title';
 import { setAuthor, setDescription, setExtraProjectInfo, setRemixedProjectInfo } from '../reducers/tw';
 
-const API_URL = 'http://localhost:8080/api/v1/projects/getproject?projectId=$id&requestType=metadata';
+const API_URL = 'http://localhost:8080/api/v1/projects/getproject?projectID=$id&requestType=metadata';
 const API_REMIX_URL = 'http://localhost:8080/api/v1/projects/getremixes?projectId=$id';
 
 function APIProjectToReadableProject(apiProject) {
