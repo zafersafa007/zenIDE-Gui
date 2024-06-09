@@ -379,7 +379,7 @@ const menuItems = [
         tags: ['penguinmod', 'categoryexpansion'],
         description: 'More control blocks for animations, complex systems or cleaner one-time use blocks.',
         featured: true,
-        credits: '"new thread" by CubesterYT, CST1229'
+        credits: '"new thread" by CubesterYT, CST1229, SharkPool'
     },
     {
         name: 'Sensing Expansion',
