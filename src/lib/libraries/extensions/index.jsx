@@ -65,7 +65,7 @@ import turboBuilderDevIcon from './penguinmod/turbobuilder-dev.png';
 import filesExtensionIcon from './penguinmod/extensions/files.svg';
 import jgJSONExtensionIcon from './penguinmod/extensions/json.png';
 import jgTailgatingExtensionIcon from './penguinmod/extensions/tailgating.png';
-import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.png';
+import jgRuntimeExtensionIcon from './penguinmod/extensions/runtime.svg';
 import jgPrismExtensionIcon from './penguinmod/extensions/prism.png';
 
 import jwProtoExtensionIcon from './penguinmod/extensions/proto.svg';
