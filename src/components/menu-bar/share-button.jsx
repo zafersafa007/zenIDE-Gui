@@ -28,12 +28,12 @@ const getProjectUri = () => new Promise(resolve => {
 const isUploadAvailable = async () => {
     let res = null;
     try {
-        res = await fetch('https://projects.penguinmod.com/api');
+        res = await fetch('https://projects.penguinmod.com/api/v1/projects/canuploadprojects').then(res => res.json());
     } catch {
         // failed to fetch entirely
         return false;
     }
-    return res.ok;
+    return res.canUpload;
 };
 
 class ShareButton extends React.Component {
@@ -60,7 +60,7 @@ class ShareButton extends React.Component {
         this.handleMessageEvent(e);
     }
     async handleMessageEvent(e) {
-        if (!e.origin.startsWith(`https://penguinmod.com`)) {
+        if (!e.origin.startsWith(`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/`)) {
             return;
         }
 
@@ -148,7 +148,7 @@ class ShareButton extends React.Component {
             }
 
             const url = location.origin;
-            window.open(`https://penguinmod.com/${targetPage}?name=${this.props.projectTitle}${editPiece}${remixPiece}&external=${url}`, '_blank');
+            window.open(`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app//${targetPage}?name=${this.props.projectTitle}${editPiece}${remixPiece}&external=${url}`, '_blank');
         });
     }
     render() {
