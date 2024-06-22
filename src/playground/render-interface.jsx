@@ -449,7 +449,7 @@ class Interface extends React.Component {
                                             className={styles.shareLink}
                                         >
                                             <img
-                                                src="/share_project.png"
+                                                src="share_project.png"
                                                 alt=">"
                                             />
                                             {'Copy Link'}
@@ -461,7 +461,7 @@ class Interface extends React.Component {
                                             className={styles.reportLink}
                                         >
                                             <img
-                                                src="/report_flag.png"
+                                                src="report_flag.png"
                                                 alt="!"
                                             />
                                             {'Report'}
