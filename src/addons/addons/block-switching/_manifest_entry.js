@@ -13,7 +13,7 @@ const manifest = {
     },
     {
       "name": "JeremyGamer13",
-      "link": "https://penguinmod.com/profile?user=JGamerTesting"
+      "link": "https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/profile?user=JGamerTesting"
     }
   ],
   "dynamicDisable": true,
