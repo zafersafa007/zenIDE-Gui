@@ -60,8 +60,8 @@ class ShareButton extends React.Component {
         this.handleMessageEvent(e);
     }
     async handleMessageEvent(e) {
-        if (!e.origin.startsWith(`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/`)) {
-            return;
+        if (!e.origin.startsWith(`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app`)) {
+            //return; // BTODO: uncomment this line for prod (also change the link)
         }
 
         if (!e.data.p4) {
@@ -148,7 +148,7 @@ class ShareButton extends React.Component {
             }
 
             const url = location.origin;
-            window.open(`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app//${targetPage}?name=${this.props.projectTitle}${editPiece}${remixPiece}&external=${url}`, '_blank');
+            window.open(`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/${targetPage}?name=${this.props.projectTitle}${editPiece}${remixPiece}&external=${url}`, '_blank');
         });
     }
     render() {
