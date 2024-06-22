@@ -61,7 +61,7 @@ class ShareButton extends React.Component {
     }
     async handleMessageEvent(e) {
         if (!e.origin.startsWith(`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app`)) {
-            //return;
+            //return; // BTODO: uncomment this line for prod (also change the link)
         }
 
         if (!e.data.p4) {
