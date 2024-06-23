@@ -105,6 +105,10 @@ function protobufToJson(buffer) {
             rotationStyle: target.rotationStyle
         };
 
+        if (newTarget.isStage) {
+            delete newTarget.visible, delete newTarget.size, delete newTarget.direction, delete newTarget.draggable, delete newTarget.rotationStyle;
+        }
+
         for (const variable in target.variables) {
             newTarget.variables[variable] = [target.variables[variable].name, target.variables[variable].value];
         }
@@ -286,7 +290,6 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                     assetPromise = storage.load(storage.AssetType.Project, projectId, storage.DataFormat.JSON);
                 } else {
                     projectUrl = `https://projects.penguinmod.com/api/v1/projects/getprojectwrapper?safe=true&projectId=${projectId}`
-                    // TODO: convert the protobuf to a pmp. Get the pbf file from the server to do this.
                     assetPromise = progressMonitor.fetchWithProgress(projectUrl)
                         .then(async r => {
                             this.props.vm.runtime.renderer.setPrivateSkinAccess(false);
