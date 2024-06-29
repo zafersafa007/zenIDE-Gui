@@ -135,15 +135,19 @@ const pmDevelopers = [
     'showierdata9978'
 ].map(fromHardcodedGithub);
 
-const pmPullRequestDevelopers = [
+const pmPullRequestDevelopers = [ // these people made a PR that got merged, or got a dev to add something they made
     'NexusKitten',
     'LilyMakesThings',
     'MikeDev101',
     'kokofixcomputers',
     'PPPDUD',
     'qbjl',
-    'minidogg'
-    // add more people probably
+    'minidogg',
+    'concertalyis',
+    'Steve0Greatness',
+    'ilikecoding-197',
+    'NotEmbin'
+    // list could be missing some people, but theres not really a way to tell
 ].map(fromHardcodedGithub);
 
 const pmApiDevelopers = [
