@@ -40,13 +40,18 @@ const getSoundLibraryThumbnailData = (soundLibraryContent, isRtl) => soundLibrar
     };
     const isLoop = sound.tags ? sound.tags.includes('loops') : false;
     const isTheme = sound.tags ? sound.tags.includes('themes') : false;
+
     const {
         md5ext,
+        assetId,
         ...otherData
     } = sound;
     return {
         _md5: md5ext,
-        rawURL: isTheme ? icons.theme : (isLoop ? icons.loop : icons.sound),
+        rawURL: sound.fromPenguinModLibrary ?
+            `${PM_LIBRARY_API}files/sound_previews/${sound.libraryFilePage.replace(/\//g, "_").replace(".mp3", ".png")}` :
+            `${PM_LIBRARY_API}files/scratch_sound_previews/${assetId}.png`,
+        overlayURL: isTheme ? icons.theme : (isLoop ? icons.loop : icons.sound),
         ...otherData
     };
 });

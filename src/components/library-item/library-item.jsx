@@ -333,6 +333,14 @@ class LibraryItemComponent extends React.PureComponent {
                             src={this.props.iconURL}
                             draggable={false}
                         />
+                        {this.props.overlayURL && (
+                            <img
+                                className={styles.libraryItemImageOverlay}
+                                loading="lazy"
+                                src={this.props.overlayURL}
+                                draggable={false}
+                            />
+                        )}
                     </Box>
                 </Box>
                 <span className={styles.libraryItemName}>{this.props.name}</span>
@@ -367,6 +375,7 @@ LibraryItemComponent.propTypes = {
     featured: PropTypes.bool,
     hidden: PropTypes.bool,
     iconURL: PropTypes.string,
+    overlayURL: PropTypes.string,
     insetIconURL: PropTypes.string,
     customInsetColor: PropTypes.string,
     internetConnectionRequired: PropTypes.bool,

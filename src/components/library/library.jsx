@@ -453,6 +453,7 @@ class LibraryComponent extends React.Component {
                                 href={dataItem.href}
                                 iconMd5={dataItem.costumes ? dataItem.costumes[0].md5ext : dataItem.md5ext}
                                 iconRawURL={this.props.actor === "CostumeLibrary" ? `${PM_LIBRARY_API}files/${dataItem.libraryFilePage}` : dataItem.rawURL}
+                                overlayURL={dataItem.overlayURL}
                                 icons={dataItem.costumes}
                                 id={index}
                                 _id={dataItem._id}
