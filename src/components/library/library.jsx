@@ -312,7 +312,6 @@ class LibraryComponent extends React.Component {
                 */}
                 {this.props.header ? (
                     <h1
-                        style={{ marginLeft: "6px" }}
                         className={classNames(
                             styles.libraryHeader,
                             styles.whiteTextInDarkMode
@@ -415,7 +414,7 @@ class LibraryComponent extends React.Component {
                                                     {...tagProps}
                                                 />
                                             </div>
-                                            <div style={{ width: "7.5%", marginRight: "2.5%", textAlign: "right" }}>
+                                            <div className={styles.libraryTagCount}>
                                                 {this.state.loaded &&
                                                     (
                                                         this.state.data.filter(dataItem => (arrayIncludesItemsFrom(
@@ -457,6 +456,9 @@ class LibraryComponent extends React.Component {
                                 icons={dataItem.costumes}
                                 id={index}
                                 _id={dataItem._id}
+                                styleForSound={this.props.actor === "SoundLibrary"}
+                                soundType={dataItem.soundType}
+                                soundLength={dataItem.soundLength}
                                 incompatibleWithScratch={dataItem.incompatibleWithScratch}
                                 insetIconURL={dataItem.insetIconURL}
                                 internetConnectionRequired={dataItem.internetConnectionRequired}

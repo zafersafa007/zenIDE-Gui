@@ -26,6 +26,15 @@
     background: $ui-primary;
 }
 
+.library-item-sound {
+    width: 200px;
+    max-width: 200px;
+    flex-basis: 200px;
+    height: 100px;
+    padding: 0.25rem;
+    padding-bottom: 0;
+}
+
 .library-item-extension {
     align-self: stretch;
 }
@@ -228,8 +237,19 @@
     left: 0;
     top: 0;
     width: 100%;
+}
+
+.library-item-waveform {
+    position: absolute;
+    left: 0;
+    width: calc(100% - 3rem);
+    height: 3rem;
     max-width: 100%;
     max-height: 100%;
+}
+[dir="rtl"] .library-item-waveform {
+    left: initial;
+    right: 0;
 }
 
 .library-item-inset-image {
@@ -249,6 +269,29 @@
     text-overflow: ellipsis;
     white-space: pre-wrap;
     min-width: 0;
+}
+.library-item-sound-name {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 0;
+}
+.library-item-sound-type {
+    text-align: left;
+    width: 100%;
+    margin-top: 0;
+    opacity: 0.65;
+}
+
+[dir="rtl"] .library-item-sound-name,
+[dir="rtl"] .library-item-sound-type {
+    text-align: right;
+}
+
+.library-item-sound-info-container {
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .featured-item {
