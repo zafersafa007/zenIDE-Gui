@@ -99,6 +99,7 @@ import cursorThumb from './penguinmod/extensions/cursor.svg';
 
 // LilyMakesThings 🙏
 // import lmsMcUtilsIcon from './penguinmod/extensions/mcutils.png';
+import lilyTempVariablesExtensionIcon from './penguinmod/orgtw/TempVariables2.svg';
 
 // more icons so they arent just red when the extension color is not red
 import gsaTempVariablesExtensionIcon from './penguinmod/extensions/tempvariables.svg';
@@ -497,6 +498,16 @@ const menuItems = [
         iconURL: gsaTempVariablesExtensionIcon,
         tags: ['penguinmod'],
         description: 'Create variables for use in one block stack. Useful to not clutter the variable list with variables you only use once.',
+        credits: 'LilyMakesThings',
+        featured: true
+    },
+    {
+        name: 'TurboWarp Temporary Variables',
+        extensionId: 'lmsTempVars2',
+        iconURL: lilyTempVariablesExtensionIcon,
+        tags: ['turbowarp'],
+        description: 'Create disposable runtime or thread variables.',
+        insetIconURL: turbowarpIcon,
         credits: 'LilyMakesThings',
         featured: true
     },
