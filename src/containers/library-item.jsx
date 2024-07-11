@@ -191,6 +191,10 @@ class LibraryItem extends React.PureComponent {
                 featured={this.props.featured}
                 hidden={this.props.hidden}
                 iconURL={iconURL}
+                overlayURL={this.props.overlayURL}
+                styleForSound={this.props.styleForSound}
+                soundType={this.props.soundType}
+                soundLength={this.props.soundLength}
                 icons={this.props.icons}
                 id={this.props.id}
                 _id={this.props._id}
@@ -242,6 +246,10 @@ LibraryItem.propTypes = {
     hidden: PropTypes.bool,
     iconMd5: PropTypes.string,
     iconRawURL: PropTypes.string,
+    overlayURL: PropTypes.string,
+    styleForSound: PropTypes.bool,
+    soundType: PropTypes.string,
+    soundLength: PropTypes.number,
     icons: PropTypes.arrayOf(
         PropTypes.shape({
             baseLayerMD5: PropTypes.string, // 2.0 library format, TODO GH-5084
