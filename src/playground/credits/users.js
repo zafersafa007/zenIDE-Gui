@@ -146,7 +146,8 @@ const pmPullRequestDevelopers = [ // these people made a PR that got merged, or 
     'concertalyis',
     'Steve0Greatness',
     'ilikecoding-197',
-    'NotEmbin'
+    'NotEmbin',
+    'NotCryptid' // rx or ry single fix
     // list could be missing some people, but theres not really a way to tell
 ].map(fromHardcodedGithub);
 
