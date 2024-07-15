@@ -632,8 +632,8 @@ const menuItems = [
     },
     {
         name: 'PenguinAI',
-        extensionId: 'https://extensions.penguinmod.com/extensions/MubiLop/penguinai.js',
-        iconURL: 'https://extensions.penguinmod.com/images/MubiLop/penguinai.png',
+        extensionId: 'https://extensions.penguinmod.com/extensions/MubiLop/penguingpt.js',
+        iconURL: 'https://extensions.penguinmod.com/images/MubiLop/penguingpt.png',
         tags: ['penguinmod'],
         description: 'Talk to AI! Use Models like DALL-E-3, GPT, LLama, Claude, and more! Please read PenguinMod\'s Privacy Policy before use.',
         extDeveloper: 'MubiLop',
