@@ -631,11 +631,11 @@ const menuItems = [
         extDeveloper: 'silvxrcat'
     },
     {
-        name: 'PenguinGPT',
+        name: 'PenguinAI',
         extensionId: 'https://extensions.penguinmod.com/extensions/MubiLop/penguingpt.js',
         iconURL: 'https://extensions.penguinmod.com/images/MubiLop/penguingpt.png',
         tags: ['penguinmod'],
-        description: 'Talk to ChatGPT! Use models like DALL-E 3, Midjourney, and GPT 4. Please read PenguinMod\'s Privacy Policy before use.',
+        description: 'Talk to AI! Use Models like DALL-E-3, GPT, LLama, Claude, and more! Please read PenguinMod\'s Privacy Policy before use.',
         extDeveloper: 'MubiLop',
         internetConnectionRequired: true,
         featured: true
