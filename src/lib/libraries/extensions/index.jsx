@@ -631,11 +631,11 @@ const menuItems = [
         extDeveloper: 'silvxrcat'
     },
     {
-        name: 'PenguinGPT',
+        name: 'PenguinAI',
         extensionId: 'https://extensions.penguinmod.com/extensions/MubiLop/penguingpt.js',
         iconURL: 'https://extensions.penguinmod.com/images/MubiLop/penguingpt.png',
         tags: ['penguinmod'],
-        description: 'Talk to ChatGPT! Use models like DALL-E 3, Midjourney, and GPT 4. Please read PenguinMod\'s Privacy Policy before use.',
+        description: 'Talk to AI! Use Models like DALL-E-3, GPT, LLama, Claude, and more! Please read PenguinMod\'s Privacy Policy before use.',
         extDeveloper: 'MubiLop',
         internetConnectionRequired: true,
         featured: true
@@ -648,6 +648,28 @@ const menuItems = [
         description: 'Blocks to place and move around frames that contain HTML content or websites.',
         featured: true,
         internetConnectionRequired: true
+    },
+    {
+        name: (
+            <FormattedMessage
+                defaultMessage="HTML Canvas"
+                description="Name of Text extension"
+                id="canvas.name"
+            />
+        ),
+        extensionId: 'newCanvas',
+        iconURL: canvasExtensionBanner,
+        tags: ['penguinmod'],
+        insetIconURL: canvasExtensionIcon,
+        customInsetColor: '#0094FF',
+        description: (
+            <FormattedMessage
+                defaultMessage="Extra drawing tools using an HTML Canvas. Works well when used with other extensions."
+                description="Description of Text extension"
+                id="text.description"
+            />
+        ),
+        featured: true
     },
     {
         name: 'Color Picker',

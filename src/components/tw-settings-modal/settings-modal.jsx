@@ -483,10 +483,6 @@ const SettingsModalComponent = props => (
                 onChange={props.onFramerateChange}
                 onCustomizeFramerate={props.onCustomizeFramerate}
             />
-            <Interpolation
-                value={props.interpolation}
-                onChange={props.onInterpolationChange}
-            />
             <HighQualityPen
                 value={props.highQualityPen}
                 onChange={props.onHighQualityPenChange}
@@ -542,6 +538,30 @@ const SettingsModalComponent = props => (
                     {...props}
                 />
             )} */}
+            <details>
+                <summary className={styles.summary}>
+                    <Header>
+                        <span className={styles.dropdown}>⯈</span>
+                        <FormattedMessage
+                            defaultMessage="Unsupported"
+                            description="Old unsupported settings section"
+                            id="pm.settingsModal.unsupported"
+                        />
+                    </Header>
+                </summary>
+                <div className={styles.warning}>
+                    <FormattedMessage
+                        // eslint-disable-next-line max-len
+                        defaultMessage="The settings here are unsupported and can break at any time. These settings are here as they either have better methods to create their effects with better results, or break often when used with other extensions."
+                        description="Warning about old unsupported settings in settings menu"
+                        id="pm.settingsModal.unsupportedWarning"
+                    />
+                </div>
+                <Interpolation
+                    value={props.interpolation}
+                    onChange={props.onInterpolationChange}
+                />
+            </details>
         </Box>
     </Modal>
 );
