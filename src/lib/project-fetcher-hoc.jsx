@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import { intlShape, injectIntl } from 'react-intl';
 import bindAll from 'lodash.bindall';
 import { connect } from 'react-redux';
-import Project from './project.protobuf.js';
-import Pbf from './pbf.js';
+import protobufBundle from './project.protobuf.json';
+import protobuf from 'protobufjs';
 import JSZip from 'jszip';
+
+let protoRoot = protobuf.Root.fromJSON(protobufBundle);
+let Project = protoRoot.lookupType('project.Project');
 
 import { setProjectUnchanged } from '../reducers/project-changed';
 import {
@@ -61,7 +64,8 @@ const fetchProjectToken = projectId => {
 };
 
 function protobufToJson(buffer) {
-    const json = Project.read(buffer);
+    const message = Project.decode(buffer);
+    const json = Project.toObject(message);
 
     const newJson = {
         targets: [],
@@ -73,12 +77,13 @@ function protobufToJson(buffer) {
             semver: json.metaSemver,
             vm: json.metaVm,
             agent: json.metaAgent || ""
-        }
+        },
+        customFonts: json.fonts
     };
 
     for (const target of json.targets) {
         let newTarget = {
-            isStage: target.isStage,
+            isStage: target.isStage || false,
             name: target.name,
             variables: {},
             lists: {},
@@ -298,8 +303,7 @@ const ProjectFetcherHOC = function (WrappedComponent) {
                             }
                             const project = await r.json();
 
-                            const pbf = new Pbf(new Uint8Array(project.project.data));
-                            const json = protobufToJson(pbf);
+                            const json = protobufToJson(new Uint8Array(project.project.data));
 
                             // now get the assets
                             let zip = new JSZip();
