@@ -122,7 +122,6 @@
     "eslint-plugin-jest": "22.17.0",
     "eslint-plugin-react": "7.24.0",
     "gh-pages": "3.2.3",
-    "gh-pages-webpack-plugin": "github:FreshPenguin112/gh-pages-webpack-plugin",
     "html-webpack-plugin": "^4.5.2",
     "jest": "21.2.1",
     "jest-junit": "7.0.0",

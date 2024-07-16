@@ -510,6 +510,276 @@
         "libraryFilePage": "sounds/meow3.mp3"
     },
     {
+        "name": "Metal Creak 1",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/creak/creak01.mp3"
+    },
+    {
+        "name": "Metal Creak 2",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/creak/creak02.mp3"
+    },
+    {
+        "name": "Metal Creak 3",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/creak/creak03.mp3"
+    },
+    {
+        "name": "Metal Door 1",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/door/door01.mp3"
+    },
+    {
+        "name": "Metal Door 2",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/door/door02.mp3"
+    },
+    {
+        "name": "Metal Door 3",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/door/door03.mp3"
+    },
+    {
+        "name": "Metal Hit 1",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/hit/hit01.mp3"
+    },
+    {
+        "name": "Metal Hit 2",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/hit/hit02.mp3"
+    },
+    {
+        "name": "Metal Hit 3",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/hit/hit03.mp3"
+    },
+    {
+        "name": "Metal Hit 4",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/hit/hit04.mp3"
+    },
+    {
+        "name": "Metal Hit 5",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/hit/hit05.mp3"
+    },
+    {
+        "name": "Metal Pipe 1",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/pipe/pipe01.mp3"
+    },
+    {
+        "name": "Metal Pipe 2",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/pipe/pipe02.mp3"
+    },
+    {
+        "name": "Metal Scrape 1",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/scrape/scrape01.mp3"
+    },
+    {
+        "name": "Metal Scrape 2",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/scrape/scrape02.mp3"
+    },
+    {
+        "name": "Metal Scrape 3",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/scrape/scrape03.mp3"
+    },
+    {
+        "name": "Metal Scrape 4",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/scrape/scrape04.mp3"
+    },
+    {
+        "name": "Metal Sheet 1",
+        "tags": [
+            "effects",
+            "material",
+            "metal",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/material/metal/sheet/sheet01.mp3"
+    },
+    {
         "name": "Mustache",
         "tags": [
             "voice",
@@ -560,33 +830,6 @@
         "rate": 44100,
         "fromPenguinModLibrary": true,
         "libraryFilePage": "sounds/roger_that.mp3"
-    },
-    {
-        "name": "Scream4",
-        "tags": [
-            "voice",
-            "human",
-            "penguinmod"
-        ],
-        "dataFormat": "mpeg",
-        "md5ext": "sound.mp3",
-        "rate": 44100,
-        "fromPenguinModLibrary": true,
-        "libraryFilePage": "sounds/scream4.mp3"
-    },
-    {
-        "name": "Scream5",
-        "tags": [
-            "voice",
-            "human",
-            "wacky",
-            "penguinmod"
-        ],
-        "dataFormat": "mpeg",
-        "md5ext": "sound.mp3",
-        "rate": 44100,
-        "fromPenguinModLibrary": true,
-        "libraryFilePage": "sounds/scream5.mp3"
     },
     {
         "name": "Shotgun 1",
@@ -1095,6 +1338,19 @@
         "rate": 44100
     },
     {
+        "name": "Bell Ding",
+        "tags": [
+            "effects",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/bellding.mp3"
+    },
+    {
         "name": "Bell Toll",
         "tags": [
             "effects",
@@ -1201,6 +1457,21 @@
         "rate": 44100,
         "fromPenguinModLibrary": true,
         "libraryFilePage": "sounds/boing4.mp3"
+    },
+    {
+        "name": "Boing 5",
+        "tags": [
+            "effects",
+            "cartoon",
+            "wacky",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/boing5.mp3"
     },
     {
         "name": "Bonk",
@@ -3931,6 +4202,20 @@
         "rate": 44100
     },
     {
+        "name": "Groovy Break",
+        "tags": [
+            "music",
+            "loops",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/groovy_break.mp3"
+    },
+    {
         "name": "Growl",
         "tags": [
             "animals",
@@ -4369,6 +4654,76 @@
         "md5ext": "f62e9f7deeb0e06268df6edffa14f5de.wav",
         "sampleCount": 62993,
         "rate": 22050
+    },
+    {
+        "name": "Impact 1",
+        "tags": [
+            "effects",
+            "cinematic",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/impact/impact01.mp3"
+    },
+    {
+        "name": "Impact 2",
+        "tags": [
+            "effects",
+            "cinematic",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/impact/impact02.mp3"
+    },
+    {
+        "name": "Impact 3",
+        "tags": [
+            "effects",
+            "cinematic",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/impact/impact03.mp3"
+    },
+    {
+        "name": "Impact 4",
+        "tags": [
+            "effects",
+            "cinematic",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/impact/impact04.mp3"
+    },
+    {
+        "name": "Impact 5",
+        "tags": [
+            "effects",
+            "cinematic",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/impact/impact05.mp3"
     },
     {
         "name": "Inspect",
@@ -4946,6 +5301,62 @@
         "rate": 44100
     },
     {
+        "name": "Monster Snarl 1",
+        "tags": [
+            "effects",
+            "monster",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/monster/snarl/snarl01.mp3"
+    },
+    {
+        "name": "Monster Snarl 2",
+        "tags": [
+            "effects",
+            "monster",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/monster/snarl/snarl02.mp3"
+    },
+    {
+        "name": "Monster Snarl 3",
+        "tags": [
+            "effects",
+            "monster",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/monster/snarl/snarl03.mp3"
+    },
+    {
+        "name": "Monster Snarl 4",
+        "tags": [
+            "effects",
+            "monster",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/monster/snarl/snarl04.mp3"
+    },
+    {
         "name": "Moo",
         "tags": [
             "animals",
@@ -4975,7 +5386,9 @@
         "tags": [
             "loops",
             "music",
-            "cinematic"
+            "cinematic",
+            "voice",
+            "vocals"
         ],
         "assetId": "84f7b490f0f536cc1337ab7948aa3aa7",
         "dataFormat": "",
@@ -5479,6 +5892,63 @@
         "libraryFilePage": "sounds/scream3.mp3"
     },
     {
+        "name": "Scream4",
+        "tags": [
+            "voice",
+            "human",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/scream4.mp3"
+    },
+    {
+        "name": "Scream5",
+        "tags": [
+            "voice",
+            "human",
+            "wacky",
+            "penguinmod"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/scream5.mp3"
+    },
+    {
+        "name": "Scream6",
+        "tags": [
+            "voice",
+            "human",
+            "wacky",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/scream6.mp3"
+    },
+    {
+        "name": "Scream7",
+        "tags": [
+            "voice",
+            "human",
+            "wacky",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/scream7.mp3"
+    },
+    {
         "name": "Screech",
         "tags": [
             "animals",
@@ -5616,6 +6086,58 @@
         "rate": 44100,
         "fromPenguinModLibrary": true,
         "libraryFilePage": "sounds/slam01.mp3"
+    },
+    {
+        "name": "Slam 2",
+        "tags": [
+            "effects",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/slam02.mp3"
+    },
+    {
+        "name": "Slam 3",
+        "tags": [
+            "effects",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/slam03.mp3"
+    },
+    {
+        "name": "Slam 4",
+        "tags": [
+            "effects",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/slam04.mp3"
+    },
+    {
+        "name": "Slam 5",
+        "tags": [
+            "effects",
+            "penguinmod",
+            "new"
+        ],
+        "dataFormat": "mpeg",
+        "md5ext": "sound.mp3",
+        "rate": 44100,
+        "fromPenguinModLibrary": true,
+        "libraryFilePage": "sounds/slam05.mp3"
     },
     {
         "name": "Slide Whistle",

@@ -10,8 +10,8 @@ export default async ({ addon, console, msg }) => {
   let recordBuffer = [];
   let recorder;
   let timeout;
-  // const isMp4CodecSupported = false;
-  const isMp4CodecSupported = MediaRecorder.isTypeSupported('video/webm;codecs=h264');
+  const isMp4CodecSupported = false;
+  // const isMp4CodecSupported = MediaRecorder.isTypeSupported('video/webm;codecs=h264');
   while (true) {
     const elem = await addon.tab.waitForElement('div[class*="menu-bar_file-group"] > div:last-child:not(.sa-record)', {
       markAsSeen: true,
