@@ -313,6 +313,7 @@ class LibraryItemComponent extends React.PureComponent {
                     styles.libraryItem, {
                     [styles.hidden]: this.props.hidden,
                     [styles.libraryItemSound]: this.props.styleForSound,
+                    [styles.libraryItemNew]: this.props.isNew,
                 }
                 )}
                 role="button"
@@ -324,6 +325,11 @@ class LibraryItemComponent extends React.PureComponent {
                 onMouseEnter={this.props.showPlayButton ? null : this.props.onMouseEnter}
                 onMouseLeave={this.props.showPlayButton ? null : this.props.onMouseLeave}
             >
+                {this.props.isNew && (
+                    <div className={styles.libraryItemNewBadge}>
+                        NEW
+                    </div>
+                )}
                 {/* Layers of wrapping is to prevent layout thrashing on animation */}
                 <Box className={styles.libraryItemImageContainerWrapper}>
                     <Box
@@ -368,7 +374,8 @@ class LibraryItemComponent extends React.PureComponent {
                 {this.props.showPlayButton ? (
                     <PlayButton
                         className={classNames({
-                            [styles.libraryItemSoundPlayButton]: this.props.styleForSound
+                            [styles.libraryItemSoundPlayButton]: this.props.styleForSound,
+                            [styles.libraryItemNewPlayButton]: this.props.isNew,
                         })}
                         isPlaying={this.props.isPlaying}
                         onPlay={this.props.onPlay}
@@ -397,6 +404,7 @@ LibraryItemComponent.propTypes = {
     disabled: PropTypes.bool,
     extensionId: PropTypes.string,
     featured: PropTypes.bool,
+    isNew: PropTypes.bool,
     hidden: PropTypes.bool,
     iconURL: PropTypes.string,
     overlayURL: PropTypes.string,
