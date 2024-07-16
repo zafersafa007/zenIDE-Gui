@@ -73,7 +73,8 @@ function protobufToJson(buffer) {
             semver: json.metaSemver,
             vm: json.metaVm,
             agent: json.metaAgent || ""
-        }
+        },
+        customFonts: json.fonts
     };
 
     for (const target of json.targets) {
