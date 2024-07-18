@@ -119,7 +119,7 @@ function protobufToJson(buffer) {
         }
 
         for (const list in target.lists) {
-            newTarget.lists[list] = [target.lists[list].name, target.lists[list].value];
+            newTarget.lists[list] = [target.lists[list].name, target.lists[list].value || []];
         }
 
         for (const broadcast in target.broadcasts) {
