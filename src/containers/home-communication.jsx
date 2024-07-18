@@ -4,7 +4,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {setUsername, setUsernameInvalid, setUsernameLoggedIn} from '../reducers/tw';
 
-let origin = "https://penguinmod.com";
+let origin = "https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app";
 // origin = 'https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/';
 
 class HomeCommunication extends React.Component {

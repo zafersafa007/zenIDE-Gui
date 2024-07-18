@@ -66,7 +66,7 @@ const isAlwaysTrustedForFetching = parsed => (
     parsed.origin.endsWith('.turbowarp.xyz') ||
 
     // Any PenguinMod service such as projects
-    parsed.origin === 'https://penguinmod.com' ||
+    parsed.origin === 'https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app' ||
     parsed.origin.endsWith('.penguinmod.com') ||
 
     // GitHub
