@@ -127,20 +127,68 @@ const pmDevelopers = [
 ].map(fromHardcodedGithub);
 
 const pmPullRequestDevelopers = [ // these people made a PR that got merged, or got a dev to add something they made
-    'NexusKitten',
-    'LilyMakesThings',
-    'MikeDev101',
-    'kokofixcomputers',
-    'PPPDUD',
-    'qbjl',
-    'minidogg',
-    'concertalyis',
-    'Steve0Greatness',
-    'ilikecoding-197',
-    'NotEmbin',
-    'NotCryptid' // rx or ry single fix
+    {
+        text: 'NexusKitten',
+        image: `https://github.com/NexusKitten.png`,
+        href: `https://github.com/NexusKitten/`,
+    },
+    {
+        text: 'LilyMakesThings',
+        image: `https://github.com/LilyMakesThings.png`,
+        href: `https://github.com/LilyMakesThings/`,
+    },
+    {
+        text: 'MikeDev101',
+        image: `https://github.com/MikeDev101.png`,
+        href: `https://github.com/MikeDev101/`,
+    },
+    {
+        text: 'kokofixcomputers',
+        image: `https://github.com/kokofixcomputers.png`,
+        href: `https://github.com/kokofixcomputers/`,
+    },
+    {
+        text: 'PPPDUD',
+        image: `https://github.com/PPPDUD.png`,
+        href: `https://github.com/PPPDUD/`,
+    },
+    {
+        text: 'qbjl',
+        image: `https://github.com/qbjl.png`,
+        href: `https://github.com/qbjl/`,
+    },
+    {
+        text: 'minidogg',
+        image: `https://github.com/minidogg.png`,
+        href: `https://github.com/minidogg/`,
+    },
+    {
+        text: 'concertalyis',
+        image: `https://github.com/concertalyis.png`,
+        href: `https://github.com/concertalyis/`,
+    },
+    {
+        text: 'Steve0Greatness',
+        image: `https://github.com/Steve0Greatness.png`,
+        href: `https://github.com/Steve0Greatness/`,
+    },
+    {
+        text: 'ilikecoding-197',
+        image: `https://github.com/ilikecoding-197.png`,
+        href: `https://github.com/ilikecoding-197/`,
+    },
+    {
+        text: 'NotEmbin',
+        image: `https://github.com/NotEmbin.png`,
+        href: `https://github.com/NotEmbin/`,
+    },
+    {  // rx or ry single fix
+        text: 'NotCryptid',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: `https://github.com/NotCryptid/`,
+    },
     // list could be missing some people, but theres not really a way to tell
-].map(fromHardcodedGithub);
+];
 
 const pmApiDevelopers = [
     'JeremyGamer13',
