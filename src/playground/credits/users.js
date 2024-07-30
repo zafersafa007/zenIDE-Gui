@@ -25,15 +25,6 @@ const fromHardcodedNamed = username => ({
     text: username
 });
 
-const fromHardcodedDiscord = async userId => {
-    const res = await fetch(`https://pmupdatereader.jeremygamer13.repl.co/user/${userId}`);
-    const json = await res.json();
-    return {
-        image: json.avatarURL,
-        text: json.username
-    };
-};
-
 const addonDevelopers = [
     {
         userId: '34018398',
@@ -160,7 +151,6 @@ const pmApiDevelopers = [
     'enderhacker'
 ].map(fromHardcodedGithub);
 
-// todo: should translators be only named or...?
 const pmTranslators = [
     {
         text: 'kolikiscool',
@@ -337,9 +327,89 @@ const pmTranslators = [
     },
 ];
 
-const logoArtists = Promise.all([
-    '593554048188416001'
-].map(fromHardcodedDiscord));
+const pmCostumeSubmittors = [
+    // github accounts
+    {
+        text: 'budc123',
+        image: `https://github.com/budc123.png`,
+        href: `https://github.com/budc123/`,
+    },
+    {
+        text: 'concertalyis',
+        image: `https://github.com/concertalyis.png`,
+        href: `https://github.com/concertalyis/`,
+    },
+    {
+        text: 'WojtekCodesToday',
+        image: `https://github.com/WojtekCodesToday.png`,
+        href: `https://github.com/WojtekCodesToday/`,
+    },
+    // unknown
+    {
+        text: 'maroonmball',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'eviepepsi',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: '1340073',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'cubeycreator',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'novaspiderultra',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'poundpound0209',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'gdplayer1035',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'cognitixsammy',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'thebusyman',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+    {
+        text: 'gen1x_lmao',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+];
+const pmSoundSubmittors = [
+    // github accounts
+    {
+        text: 'ddededodediamante',
+        image: `https://github.com/ddededodediamante.png`,
+        href: `https://github.com/ddededodediamante/`,
+    },
+    // unknown
+    {
+        text: 'maroonmball',
+        image: `https://penguinmod.com/unknown_user.png`,
+        href: "https://studio.penguinmod.com/credits.html#",
+    },
+];
 
 const extensionDevelopers = [
     'GarboMuffin',
@@ -360,7 +430,7 @@ const pmExtensionDevelopers = [
     'WAYLIVES',
     'MrRedstonia',
     'MikeDev101',
-    'BopShoes',
+    'liablelua',
     'AlexSchoolOH',
     'Monochromasity',
     'LilyMakesThings',
@@ -370,16 +440,17 @@ const pmExtensionDevelopers = [
     'oc9x97',
     'lego7set',
     'mariocraft987',
-    'Ashimee'
+    'AshimeeAlt'
 ].map(fromHardcodedGithub);
 
 export default {
     addonDevelopers: shuffle(addonDevelopers),
     pmDevelopers: shuffle(pmDevelopers),
-    logoArtists: shuffle(logoArtists),
     extensionDevelopers: shuffle(extensionDevelopers),
     pmExtensionDevelopers: shuffle(pmExtensionDevelopers),
     pmApiDevelopers: shuffle(pmApiDevelopers),
     pmTranslators: shuffle(pmTranslators),
+    pmSoundSubmittors: shuffle(pmSoundSubmittors),
+    pmCostumeSubmittors: shuffle(pmCostumeSubmittors),
     pmPullRequestDevelopers: shuffle(pmPullRequestDevelopers)
 };
