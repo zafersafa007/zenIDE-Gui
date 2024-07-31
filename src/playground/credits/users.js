@@ -188,7 +188,7 @@ const pmPullRequestDevelopers = [ // these people made a PR that got merged, or 
         href: `https://github.com/NotCryptid/`,
     },
     {
-        text: 'Dogeiscut',
+        text: 'DogeisCut',
         image: `https://github.com/DogeisCut.png`,
         href: `https://github.com/Dogeiscut/`,
     },
