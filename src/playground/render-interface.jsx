@@ -125,6 +125,7 @@ runAddons();
 //     // if we have already gotten the details of this project, avoid making another request since they likely never changed
 //     if (projectDetailCache[String(id)] != null) return projectDetailCache[String(id)];
 
+//     // TODO: when this is fixed change this to the new api
 //     const response = await fetch(`https://projects.penguinmod.com/api/projects/getPublished?id=${id}`);
 //     // Don't continue if the api never returned 200-299 since we would cache an error as project details
 //     if (!response.ok) return {};
@@ -154,7 +155,7 @@ const Footer = () => (
                             id="tw.footer.credits"
                         />
                     </a>
-                    <a href="https://penguinmod.com/donate">
+                    <a href="https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/donate">
                         <FormattedMessage
                             defaultMessage="Donate"
                             description="Donation link in footer"
@@ -163,7 +164,7 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://studio.penguinmod.com/PenguinMod-Packager">
+                    <a href="https://jwklong.github.io/penguinmod.github.io/PenguinMod-Packager">
                         {/* Do not translate */}
                         {'PenguinMod Packager'}
                     </a>
@@ -194,14 +195,14 @@ const Footer = () => (
                     </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://penguinmod.com/terms">
+                    <a href="https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/terms">
                         <FormattedMessage
                             defaultMessage="Terms of Service"
                             description="Link to Terms of Service"
                             id="pm.terms"
                         />
                     </a>
-                    <a href="https://penguinmod.com/privacy">
+                    <a href="https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/privacy">
                         <FormattedMessage
                             defaultMessage="Privacy Policy"
                             description="Link to privacy policy"
@@ -340,21 +341,21 @@ class Interface extends React.Component {
                     {isHomepage && projectId !== '0' && title && extraProjectInfo && extraProjectInfo.author && <div className={styles.projectDetails}>
                         <a
                             target="_blank"
-                            href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                            href={`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/profile?user=${extraProjectInfo.author}`}
                             rel="noreferrer"
                         >
                             <img
                                 className={styles.projectAuthorImage}
                                 title={extraProjectInfo.author}
                                 alt={extraProjectInfo.author}
-                                src={`https://trampoline.turbowarp.org/avatars/by-username/${extraProjectInfo.author}`}
+                                src={`https://projects.penguinmod.com/api/v1/users/getpfp?username=${extraProjectInfo.author}`}
                             />
                         </a>
                         <div className={styles.projectMetadata}>
                             <h2 dangerouslySetInnerHTML={{__html: formatProjectTitle(title)}} />
                             <p>by <a
                                 target="_blank"
-                                href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
+                                href={`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/profile?user=${extraProjectInfo.author}`}
                                 rel="noreferrer"
                             >{extraProjectInfo.author}</a></p>
                         </div>
@@ -386,21 +387,21 @@ class Interface extends React.Component {
                                         <a
                                             style={{height: '32px'}}
                                             target="_blank"
-                                            href={`https://penguinmod.com/profile?user=${remixedProjectInfo.author}`}
+                                            href={`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/profile?user=${remixedProjectInfo.author}`}
                                             rel="noreferrer"
                                         >
                                             <img
                                                 className={styles.remixAuthorImage}
                                                 title={remixedProjectInfo.author}
                                                 alt={remixedProjectInfo.author}
-                                                src={`https://trampoline.turbowarp.org/avatars/by-username/${remixedProjectInfo.author}`}
+                                                src={`https://projects.penguinmod.com/api/v1/users/getpfp?username=${remixedProjectInfo.author}`}
                                             />
                                         </a>
                                         <p>
                                             Thanks to <b>
                                                 <a
                                                     target="_blank"
-                                                    href={`https://penguinmod.com/profile?user=${remixedProjectInfo.author}`}
+                                                    href={`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/profile?user=${remixedProjectInfo.author}`}
                                                     rel="noreferrer"
                                                 >
                                                     {remixedProjectInfo.author}
@@ -448,7 +449,7 @@ class Interface extends React.Component {
                                             className={styles.shareLink}
                                         >
                                             <img
-                                                src="/share_project.png"
+                                                src="share_project.png"
                                                 alt=">"
                                             />
                                             {'Copy Link'}
@@ -456,11 +457,11 @@ class Interface extends React.Component {
                                         <a
                                             target="_blank"
                                             rel="noreferrer"
-                                            href={`https://penguinmod.com/report?type=project&id=${projectId}`}
+                                            href={`https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/report?type=project&id=${projectId}`}
                                             className={styles.reportLink}
                                         >
                                             <img
-                                                src="/report_flag.png"
+                                                src="report_flag.png"
                                                 alt="!"
                                             />
                                             {'Report'}
@@ -473,7 +474,7 @@ class Interface extends React.Component {
                             </div>
                             <a
                                 target="_blank"
-                                href="https://penguinmod.com/search?q=all:projects"
+                                href="https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app/search?q=all:projects"
                                 rel="noreferrer"
                             >
                                 See more projects
