@@ -11,7 +11,8 @@ import classNames from 'classnames';
 /**
  * @class
  */
-var StudioView = function () {
+var StudioView = function (studioId) {
+    this.studioId = studioId;
     this.offset = 0;
     this.ended = false;
     this.loadingPage = false;
@@ -242,7 +243,7 @@ StudioView.prototype.loadNextPage = function () {
     var xhr = new XMLHttpRequest();
     xhr.responseType = 'json';
     xhr.onload = function () {
-        var rawProjects = xhr.response;
+        var rawProjects = xhr.response.projects;
         if (!Array.isArray(rawProjects)) {
             xhr.onerror();
             return;
@@ -252,7 +253,7 @@ StudioView.prototype.loadNextPage = function () {
             var p = rawProjects[i];
             projects.push({
                 id: p.id,
-                title: p.title,
+                title: p.name,
                 author: p.author.username,
                 featured: p.featured,
             });
@@ -286,7 +287,7 @@ StudioView.prototype.loadNextPage = function () {
         this.ended = true;
     }.bind(this);
 
-    var url = StudioView.STUDIO_API + "/projects/getprojects"
+    var url = StudioView.STUDIO_API + "/pmWrapper/projects"
     xhr.open('GET', url);
     xhr.send();
 };
@@ -299,15 +300,15 @@ StudioView.prototype.onselect = function (id, el) { };
 StudioView.prototype.onpageload = function () { };
 StudioView.prototype.onend = function () { };
 
-StudioView.STUDIO_API = 'https://projects.penguinmod.com/api/v1';
+StudioView.STUDIO_API = 'https://projects.penguinmod.com/api';
 
 // The URL to download thumbnails from.
 // $id is replaced with the project's ID.
-StudioView.THUMBNAIL_SRC = 'https://projects.penguinmod.com/api/v1/projects/getproject?projectID=$id&requestType=thumbnail';
+StudioView.THUMBNAIL_SRC = 'https://projects.penguinmod.com/api/pmWrapper/iconUrl?id=$id';
 
 // The URL for project pages.
 // $id is replaced with the project ID.
-StudioView.PROJECT_PAGE = 'https://jwklong.github.io/penguinmod.github.io/#$id';
+StudioView.PROJECT_PAGE = 'https://studio.penguinmod.com/#$id';
 
 // The amount of "placeholders" to insert before the next page loads.
 StudioView.PLACEHOLDER_COUNT = 9;

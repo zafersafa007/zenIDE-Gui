@@ -6,16 +6,16 @@ import log from './log';
 import { setProjectTitle } from '../reducers/project-title';
 import { setAuthor, setDescription, setExtraProjectInfo, setRemixedProjectInfo } from '../reducers/tw';
 
-const API_URL = 'https://projects.penguinmod.com/api/v1/projects/getproject?projectID=$id&requestType=metadata';
-const API_REMIX_URL = 'https://projects.penguinmod.com/api/v1/projects/getremixes?projectId=$id';
+const API_URL = 'https://projects.penguinmod.com/api/projects/getPublished?id=$id';
+const API_REMIX_URL = 'https://projects.penguinmod.com/api/pmWrapper/remixes?id=$id';
 
 function APIProjectToReadableProject(apiProject) {
     return {
         id: apiProject.id,
-        name: apiProject.title,
+        name: apiProject.name,
         desc: apiProject.instructions,
         notes: apiProject.notes,
-        author: { id: apiProject.author.id, username: apiProject.author.username }
+        author: { id: -1, username: apiProject.owner }
     }
 }
 
@@ -95,7 +95,7 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         this.props.onSetProjectTitle(title);
                     }
                     const authorName = data.author.username;
-                    const authorThumbnail = `https://localhost:8080/api/v1/users/getpfp?username=${data.author.username}`;
+                    const authorThumbnail = `https://trampoline.turbowarp.org/avatars/by-username/${data.author.username}`;
                     this.props.onSetAuthor(authorName, authorThumbnail);
                     const instructions = data.desc || '';
                     const credits = data.notes || '';
@@ -110,13 +110,13 @@ const TWProjectMetaFetcherHOC = function (WrappedComponent) {
                         || authorName
                     ) {
                         this.props.onSetExtraProjectInfo(
-                            rawData.public && !rawData.softRejected,
+                            rawData.accepted === true && !rawData.removedsoft,
                             rawData.remix > 0,
                             Number(rawData.remix),
-                            false,
+                            rawData.tooLarge === true,
                             authorName,
-                            new Date(rawData.lastUpdate),
-                            rawData.lastUpdate !== rawData.date
+                            new Date(rawData.date),
+                            rawData.updating === true
                         );
                     }
                     if (rawData.remix > 0) {

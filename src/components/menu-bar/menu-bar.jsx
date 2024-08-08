@@ -922,7 +922,7 @@ class MenuBar extends React.Component {
                     <div className={styles.menuBarItem}>
                         <a
                             className={styles.feedbackLink}
-                            href="https://penguinmod-home-git-new-backend-live-penguinmod.vercel.app"
+                            href="https://penguinmod.com"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
