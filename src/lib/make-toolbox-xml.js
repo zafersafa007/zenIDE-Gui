@@ -1434,6 +1434,12 @@ const liveTests = function () {
         <block type="control_fieldbutton"></block>
         <block type="operators_expandablejoininputs"></block>
         <block type="motion_mutatorCheckboxTest"></block>
+        ${blockSeparator}
+        <block type="data_filterlist">
+            <value name="ITEM">
+                <shadow type="data_filterlistitem">
+            </value>
+        </block>
     </category>
     `;
 };
