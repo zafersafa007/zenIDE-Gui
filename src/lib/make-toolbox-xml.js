@@ -1437,7 +1437,7 @@ const liveTests = function () {
         ${blockSeparator}
         <block type="data_filterlist">
             <value name="INDEX">
-                <shadow type="data_filterlistitem"></shadow>
+                <shadow type="data_filterlistindex"></shadow>
             </value>
             <value name="ITEM">
                 <shadow type="data_filterlistitem"></shadow>
