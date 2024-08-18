@@ -526,6 +526,12 @@ const TWStateManager = function (WrappedComponent) {
                 } else {
                     searchParams.delete('optimize');
                 }
+                
+                if (runtimeOptions.oobRendering) {
+                    searchParams.delete('oob');
+                } else {
+                    searchParams.set('oob', '');
+                }
 
                 setSearchParams(searchParams);
             }
