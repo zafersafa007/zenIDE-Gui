@@ -308,7 +308,7 @@ const OOBRendering = props => (
             <FormattedMessage
                 defaultMessage="When disabled, everything outside the stage will not be rendered."
                 description="Out of Bounds Rendering setting help"
-                id="pm.settingsModal.oobRendering"
+                id="pm.settingsModal.oobRenderingHelp"
             />
         }
         // slug="out-of-bounds-rendering"
