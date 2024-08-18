@@ -32,7 +32,8 @@ class UsernameModal extends React.Component {
             'handleStagePresetUsed',
             'handleDisableCompilerChange',
             'handleStoreProjectOptions',
-            'handleEnableDangerousOptimizationsChange'
+            'handleEnableDangerousOptimizationsChange',
+            'handleOobRenderingChange'
         ]);
     }
     handleFramerateChange (e) {
