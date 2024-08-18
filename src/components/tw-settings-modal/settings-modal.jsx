@@ -299,8 +299,8 @@ const OOBRendering = props => (
         {...props}
         label={
             <FormattedMessage
-                defaultMessage="Out of Bounds Rendering"
-                description="Enable Out of Bounds Rendering setting"
+                defaultMessage="Disable Out of Bounds Rendering"
+                description="Disable Out of Bounds Rendering setting"
                 id="pm.settingsModal.oobRendering"
             />
         }
