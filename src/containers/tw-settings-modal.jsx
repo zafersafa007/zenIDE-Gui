@@ -69,9 +69,13 @@ class UsernameModal extends React.Component {
         });
     }
     handleEnableDangerousOptimizationsChange (e) {
-        console.log(e.target.checked);
         this.props.vm.setRuntimeOptions({
             dangerousOptimizations: e.target.checked
+        });
+    }
+    handleOobRenderingChange (e) {
+        this.props.vm.setRuntimeOptions({
+            oobRendering: !e.target.checked
         });
     }
     handleWarpTimerChange (e) {
@@ -125,6 +129,7 @@ class UsernameModal extends React.Component {
                 onRemoveFencingChange={this.handleRemoveFencingChange}
                 onRemoveLimitsChange={this.handleRemoveLimitsChange}
                 onEnableDangerousOptimizationsChange={this.handleEnableDangerousOptimizationsChange}
+                onOobRenderingChange={this.handleOobRenderingChange}
                 onWarpTimerChange={this.handleWarpTimerChange}
                 onStageWidthChange={this.handleStageWidthChange}
                 onStageHeightChange={this.handleStageHeightChange}

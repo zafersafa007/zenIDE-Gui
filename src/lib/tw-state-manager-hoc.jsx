@@ -396,6 +396,12 @@ const TWStateManager = function (WrappedComponent) {
                     dangerousOptimizations: true
                 });
             }
+            
+            if (urlParams.has('oob')) {
+                this.props.vm.setRuntimeOptions({
+                    oobRendering: false
+                });
+            }
 
             for (const extension of urlParams.getAll('extension')) {
                 this.props.vm.extensionManager.loadExtensionURL(extension);

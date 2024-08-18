@@ -33,6 +33,7 @@ export const initialState = {
         maxClones: 300,
         miscLimits: true,
         dangerousOptimizations: false,
+        oobRendering: true,
         fencing: true
     },
     isWindowFullScreen: false,
