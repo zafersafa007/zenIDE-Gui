@@ -294,7 +294,7 @@ const EnableDangerousOptimizations = props => (
     />
 );
 
-const disableOffscreenRendering = props => (
+const DisableOffscreenRendering = props => (
     <BooleanSetting
         {...props}
         label={
@@ -538,7 +538,7 @@ const SettingsModalComponent = props => (
                     id="pm.settingsModal.optimizations"
                 />
             </Header>
-            <disableOffscreenRendering
+            <DisableOffscreenRendering
                 value={props.disableOffscreenRendering}
                 onChange={props.onDisableOffscreenRenderingChange}
             />
