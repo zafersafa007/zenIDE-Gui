@@ -360,6 +360,8 @@ const TWStateManager = function (WrappedComponent) {
 
             if (urlParams.has('livetests') || String(window.location.href).startsWith(`http://localhost:`)) {
                 // massive mega brained hack bc i cant figure out how to make a state
+                // ok so now i do know how to make it a state but because of the way
+                // this is used + pure laziness this wont be changing
                 this.props.vm.isLiveTest = true;
             }
 
