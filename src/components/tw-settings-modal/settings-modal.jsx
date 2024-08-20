@@ -294,19 +294,19 @@ const EnableDangerousOptimizations = props => (
     />
 );
 
-const OOBRendering = props => (
+const disableOffscreenRendering = props => (
     <BooleanSetting
         {...props}
         label={
             <FormattedMessage
-                defaultMessage="Disable Out of Bounds Rendering"
+                defaultMessage="Disable Off Screen Rendering"
                 description="Disable Out of Bounds Rendering setting"
                 id="pm.settingsModal.oobRendering"
             />
         }
         help={
             <FormattedMessage
-                defaultMessage="When disabled, everything outside the stage will not be rendered."
+                defaultMessage="When enabled all sprites that are off screen will not be rendered."
                 description="Out of Bounds Rendering setting help"
                 id="pm.settingsModal.oobRenderingHelp"
             />
@@ -538,9 +538,9 @@ const SettingsModalComponent = props => (
                     id="pm.settingsModal.optimizations"
                 />
             </Header>
-            <OOBRendering
-                value={props.oobRendering}
-                onChange={props.onOobRenderingChange}
+            <disableOffscreenRendering
+                value={props.disableOffscreenRendering}
+                onChange={props.onDisableOffscreenRenderingChange}
             />
             <EnableDangerousOptimizations
                 value={props.dangerousOptimizations}
@@ -614,8 +614,8 @@ SettingsModalComponent.propTypes = {
     dangerousOptimizations: PropTypes.bool,
     onDisableCompilerChange: PropTypes.func,
     onEnableDangerousOptimizationsChange: PropTypes.func,
-    oobRendering: PropTypes.bool,
-    onOobRenderingChange: PropTypes.func
+    disableOffscreenRendering: PropTypes.bool,
+    onDisableOffscreenRenderingChange: PropTypes.func
 };
 
 export default injectIntl(SettingsModalComponent);

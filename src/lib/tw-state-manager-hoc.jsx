@@ -399,9 +399,9 @@ const TWStateManager = function (WrappedComponent) {
                 });
             }
             
-            if (urlParams.has('oob')) {
+            if (urlParams.has('nooffscreen')) {
                 this.props.vm.setRuntimeOptions({
-                    oobRendering: false
+                    disableOffscreenRendering: true
                 });
             }
 
@@ -529,8 +529,8 @@ const TWStateManager = function (WrappedComponent) {
                     searchParams.delete('optimize');
                 }
                 
-                if (runtimeOptions.oobRendering) {
-                    searchParams.delete('oob');
+                if (runtimeOptions.disableOffscreenRendering) {
+                    searchParams.delete('nooffscreen');
                 } else {
                     searchParams.set('oob', '');
                 }
@@ -618,7 +618,8 @@ const TWStateManager = function (WrappedComponent) {
             miscLimits: PropTypes.bool,
             dangerousOptimizations: PropTypes.bool,
             fencing: PropTypes.bool,
-            maxClones: PropTypes.number
+            maxClones: PropTypes.number,
+            disableOffscreenRendering: PropTypes.bool
         }),
         highQualityPen: PropTypes.bool,
         framerate: PropTypes.number,
