@@ -529,7 +529,7 @@ const TWStateManager = function (WrappedComponent) {
                     searchParams.delete('optimize');
                 }
                 
-                if (runtimeOptions.disableOffscreenRendering) {
+                if (!runtimeOptions.disableOffscreenRendering) {
                     searchParams.delete('nooffscreen');
                 } else {
                     searchParams.set('nooffscreen', '');
