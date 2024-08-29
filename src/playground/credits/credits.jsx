@@ -58,13 +58,13 @@ const Credits = () => (
             </h1>
         </header>
         <section>
-            <h1>PenguinMod</h1>
+            <h1>zenIDE</h1>
         </section>
         <section>
             <h2>Thank you</h2>
             <p>
                 Without TurboWarp and PenguinMod, zenIDE may have never existed.
-                Thank you to everyone who worked on Scratch, TurboWarp and zenIDE,
+                Thank you to everyone who worked on Scratch, TurboWarp and PenguinMod,
                 you have made many people finally be able to make whatever they can imagine.
             </p>
             <a href="https://scratch.mit.edu/donate">
@@ -73,6 +73,10 @@ const Credits = () => (
             <br></br><br></br>
             <a href="https://github.com/sponsors/GarboMuffin">
                 Donate to support TurboWarp.
+            </a>
+            <br></br><br></br>
+            <a href="https://penguinmod.com/donate">
+                Donate to support PenguinMod.
             </a>
         </section>
         <section>
@@ -101,32 +105,13 @@ const Credits = () => (
         <section>
             <h1>PenguinMod</h1>
             <p>
-                You can check out PenguinMod's credits <a href="https://studio.penguinmod.com/credits.html">here</a>.
+                You can check out PenguinMod's individual credits <a href="https://studio.penguinmod.com/credits.html">here</a>.
                 <br></br>
                 <a href="https://penguinmod.com/donate">
                     Donate to support PenguinMod.
                 </a>
             </p>
         </section>
-        {/* RIP Fosshost */}
-        {/* <section>
-            <h2>Fosshost</h2>
-            <p>
-                The TurboWarp project is proudly hosted by <a href="https://fosshost.org/">Fosshost</a> who provide free computing resources to the open source community.
-            </p>
-            <p>
-                <a href="https://fosshost.org/donate">
-                    Donate to support Fosshost.
-                </a>
-            </p>
-            <a href="https://fosshost.org/">
-                <img
-                    src={fosshostLogo}
-                    width="250"
-                    height="125"
-                />
-            </a>
-        </section> */}
         <section>
             <h2>Scratch</h2>
             <p>
