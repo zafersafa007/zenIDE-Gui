@@ -160,17 +160,6 @@ const Footer = () => (
                         {/* Do not translate */}
                         {'zenIDE Packager'}
                     </a>
-                    <a href="https://desktop.turbowarp.org/">
-                        {/* Do not translate */}
-                        {'TurboWarp Desktop'}
-                    </a>
-                    <a href="https://docs.turbowarp.org/embedding">
-                        <FormattedMessage
-                            defaultMessage="Embedding"
-                            description="Link in footer to embedding documentation for embedding link"
-                            id="tw.footer.embed"
-                        />
-                    </a>
                     <a href="https://docs.turbowarp.org/url-parameters">
                         <FormattedMessage
                             defaultMessage="URL Parameters"
@@ -178,37 +167,9 @@ const Footer = () => (
                             id="tw.footer.parameters"
                         />
                     </a>
-                    <a href="https://docs.turbowarp.org/">
-                        <FormattedMessage
-                            defaultMessage="Documentation"
-                            description="Link in footer to additional documentation"
-                            id="tw.footer.documentation"
-                        />
-                    </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://penguinmod.com/terms">
-                        <FormattedMessage
-                            defaultMessage="Terms of Service"
-                            description="Link to Terms of Service"
-                            id="pm.terms"
-                        />
-                    </a>
-                    <a href="https://penguinmod.com/privacy">
-                        <FormattedMessage
-                            defaultMessage="Privacy Policy"
-                            description="Link to privacy policy"
-                            id="tw.privacy"
-                        />
-                    </a>
-                    <a href="https://discord.gg/NZ9MBMYTZh">
-                        <FormattedMessage
-                            defaultMessage="Feedback & Bugs"
-                            description="Link to feedback/bugs page"
-                            id="tw.feedback"
-                        />
-                    </a>
-                    <a href="https://github.com/PenguinMod">
+                    <a href="https://github.com/zafersafa007/zenIDE-Gui">
                         <FormattedMessage
                             defaultMessage="Source Code"
                             description="Link to source code"
@@ -265,14 +226,9 @@ class Interface extends React.Component {
     }
     handleUpdateProjectTitle (title, isDefault) {
         if (isDefault || !title) {
-            document.title = `PenguinMod - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
+            document.title = `zenIDE - ${this.props.intl.formatMessage(messages.defaultTitle)}`;
         } else {
-            document.title = `${title} - PenguinMod`;
-        }
-    }
-    copyProjectLink (id) {
-        if ('clipboard' in navigator && 'writeText' in navigator.clipboard) {
-            navigator.clipboard.writeText(`https://projects.penguinmod.com/${id}`);
+            document.title = `${title} - zenIDE`;
         }
     }
     render () {
@@ -330,28 +286,6 @@ class Interface extends React.Component {
                     }) : null}
                 >
                     {isHomepage && announcement ? <DOMElementRenderer domElement={announcement} /> : null}
-                    {isHomepage && projectId !== '0' && title && extraProjectInfo && extraProjectInfo.author && <div className={styles.projectDetails}>
-                        <a
-                            target="_blank"
-                            href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
-                            rel="noreferrer"
-                        >
-                            <img
-                                className={styles.projectAuthorImage}
-                                title={extraProjectInfo.author}
-                                alt={extraProjectInfo.author}
-                                src={`https://trampoline.turbowarp.org/avatars/by-username/${extraProjectInfo.author}`}
-                            />
-                        </a>
-                        <div className={styles.projectMetadata}>
-                            <h2 dangerouslySetInnerHTML={{__html: formatProjectTitle(title)}} />
-                            <p>by <a
-                                target="_blank"
-                                href={`https://penguinmod.com/profile?user=${extraProjectInfo.author}`}
-                                rel="noreferrer"
-                            >{extraProjectInfo.author}</a></p>
-                        </div>
-                    </div>}
                     <GUI
                         onClickAddonSettings={handleClickAddonSettings}
                         onClickTheme={onClickTheme}
@@ -362,53 +296,6 @@ class Interface extends React.Component {
                     />
                     {isHomepage ? (
                         <React.Fragment>
-                            {/* project not approved message */}
-                            {(!extraProjectInfo.accepted) && (
-                                <div className={styles.remixWarningBox}>
-                                    <p>
-                                        This project is currently under review.
-                                        Content may not be suitable for all ages,
-                                        and you should be careful when running the project.
-                                    </p>
-                                </div>
-                            )}
-                            {/* remix info */}
-                            {(extraProjectInfo.isRemix && remixedProjectInfo.loaded) && (
-                                <div className={styles.unsharedUpdate}>
-                                    <div style={{display: 'flex', flexDirection: 'row'}}>
-                                        <a
-                                            style={{height: '32px'}}
-                                            target="_blank"
-                                            href={`https://penguinmod.com/profile?user=${remixedProjectInfo.author}`}
-                                            rel="noreferrer"
-                                        >
-                                            <img
-                                                className={styles.remixAuthorImage}
-                                                title={remixedProjectInfo.author}
-                                                alt={remixedProjectInfo.author}
-                                                src={`https://trampoline.turbowarp.org/avatars/by-username/${remixedProjectInfo.author}`}
-                                            />
-                                        </a>
-                                        <p>
-                                            Thanks to <b>
-                                                <a
-                                                    target="_blank"
-                                                    href={`https://penguinmod.com/profile?user=${remixedProjectInfo.author}`}
-                                                    rel="noreferrer"
-                                                >
-                                                    {remixedProjectInfo.author}
-                                                </a>
-                                            </b> for the original project <b>
-                                                <a
-                                                    href={`${window.location.origin}/#${extraProjectInfo.remixId}`}
-                                                >
-                                                    {remixedProjectInfo.name}
-                                                </a>
-                                            </b>.
-                                        </p>
-                                    </div>
-                                </div>
-                            )}
                             {isBrowserSupported() ? null : (
                                 <BrowserModal isRtl={isRtl} />
                             )}
@@ -461,16 +348,6 @@ class Interface extends React.Component {
                                     </div>
                                 </div>
                             )}
-                            <div className={styles.section}>
-                                <FeaturedProjects />
-                            </div>
-                            <a
-                                target="_blank"
-                                href="https://penguinmod.com/search?q=all:projects"
-                                rel="noreferrer"
-                            >
-                                See more projects
-                            </a>
                         </React.Fragment>
                     ) : null}
                 </div>
