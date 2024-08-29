@@ -29,7 +29,7 @@ export default async function ({ addon, console, msg }) {
   const localHeading = document.createElement("span");
   const localList = document.createElement("table");
   localHeading.className = "sa-var-manager-heading";
-  localHeading.innerText = msg("for-this-sprite");
+  localHeading.innerText = msg("bu-kukla-için");
   localVars.appendChild(localHeading);
   localVars.appendChild(localList);
 
@@ -37,7 +37,7 @@ export default async function ({ addon, console, msg }) {
   const globalHeading = document.createElement("span");
   const globalList = document.createElement("table");
   globalHeading.className = "sa-var-manager-heading";
-  globalHeading.innerText = msg("for-all-sprites");
+  globalHeading.innerText = msg("tüm-kuklalar-için");
   globalVars.appendChild(globalHeading);
   globalVars.appendChild(globalList);
 
@@ -55,7 +55,7 @@ export default async function ({ addon, console, msg }) {
   varTabIcon.src = addon.self.getResource("/icon.svg") /* rewritten by pull.js */;
 
   const varTabText = document.createElement("span");
-  varTabText.innerText = msg("variables");
+  varTabText.innerText = msg("değişkenler");
 
   varTab.appendChild(varTabIcon);
   varTab.appendChild(varTabText);
