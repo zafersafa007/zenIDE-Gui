@@ -140,8 +140,8 @@ const Footer = () => (
             <div className={styles.footerText}>
                 <FormattedMessage
                     // eslint-disable-next-line max-len
-                    defaultMessage="PenguinMod and TurboWarp are not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
-                    description="Disclaimer that PenguinMod and TurboWarp are not connected to Scratch"
+                    defaultMessage="zenIDE, PenguinMod and TurboWarp are not affiliated with Scratch, the Scratch Team, or the Scratch Foundation."
+                    description="Disclaimer that zenIDE, PenguinMod and TurboWarp are not connected to Scratch"
                     id="tw.footer.disclaimer"
                 />
             </div>
@@ -154,18 +154,11 @@ const Footer = () => (
                             id="tw.footer.credits"
                         />
                     </a>
-                    <a href="https://penguinmod.com/donate">
-                        <FormattedMessage
-                            defaultMessage="Donate"
-                            description="Donation link in footer"
-                            id="tw.footer.donate"
-                        />
-                    </a>
                 </div>
                 <div className={styles.footerSection}>
-                    <a href="https://studio.penguinmod.com/PenguinMod-Packager">
+                    <a href="https://zafersafa007.github.io/zenIDE-Packager">
                         {/* Do not translate */}
-                        {'PenguinMod Packager'}
+                        {'zenIDE Packager'}
                     </a>
                     <a href="https://desktop.turbowarp.org/">
                         {/* Do not translate */}
