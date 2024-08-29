@@ -319,35 +319,6 @@ class Interface extends React.Component {
                                     darkmode={this.props.isDark}
                                 />
                             )}
-                            {projectId !== '0' && extraProjectInfo.author && (
-                                <div>
-                                    {`${isUpdated ? 'Updated' : 'Uploaded'} ${projectReleaseMonth} ${projectReleaseDay} ${projectReleaseYear} at ${projectReleaseHour}:${projectReleaseMinute < 10 ? '0' : ''}${projectReleaseMinute} ${projectReleaseHalf}`}
-                                    <div className={styles.centerSector}>
-                                        <button
-                                            onClick={() => this.copyProjectLink(projectId)}
-                                            className={styles.shareLink}
-                                        >
-                                            <img
-                                                src="/share_project.png"
-                                                alt=">"
-                                            />
-                                            {'Copy Link'}
-                                        </button>
-                                        <a
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            href={`https://penguinmod.com/report?type=project&id=${projectId}`}
-                                            className={styles.reportLink}
-                                        >
-                                            <img
-                                                src="/report_flag.png"
-                                                alt="!"
-                                            />
-                                            {'Report'}
-                                        </a>
-                                    </div>
-                                </div>
-                            )}
                         </React.Fragment>
                     ) : null}
                 </div>
